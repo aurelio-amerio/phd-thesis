@@ -1,0 +1,208 @@
+\chapter{Introduction}
+\label{chap:dgrb}
+\initial{H}umanity has always been deeply fascinated by the cosmos and the celestial vaults. Ancient civilisations believed that night was a curtain which was drawn on the sky at night, and that stars and night lights were nothing but tears in this cosmic sheet. We have made great advancements from that time, but how we see stars and galaxies today has not varied substantially. 
+In fact, one of the main messengers of astrophysical sources remains unchanged, which is light, albeit now we can detect and measure photons spanning in over 20 energy decades, as opposed to only the visible light which our ancestors contemplated.
+In this thesis, we are going to study only the most energetic photons, the so called gamma-rays, and we will explore a wide range of gamma-ray sources, including those too faint to be resolved singularly.
+Photons of energy above 100 KeV are called gamma-rays, and it is believed that gamma-rays can reach the PeV-EeV scale, although currently the most energetic photons detected reach more or less 100 TeV.
+Gamma-ray astronomy is interesting for several reasons. For example, not only photons are emitted by astrophysical bodies like stars in the Milky Way or distant galaxies, but they are also closely tied to every cosmic messenger, including cosmic rays, neutrinos, and gravitational waves. 
+Gamma-rays offer a unique view of the non thermal Universe and they can be used to study some of the most energetic and violent events in the cosmos, such as gamma-ray bursts and super nova explosions. 
+In this work, we will not study these transient events and we will focus on somewhat static gamma-ray sources, and in particular we are interested in extragalactic gamma-ray sources as observed by the Fermi Large Area Telescope (Fig. \ref{fig:FermiMap-introduction}).
+
+\begin{figure}[t]
+\centering
+\includegraphics[scale=0.6]{chapter_03/img/fermi_counts_map.png}
+\caption{Fermi photon-counts map for gamma-rays of energy within 1 and 10 GeV, in units of counts per pixel. This image includes the data which has been collected over the first 6-years of the experiment.}
+\label{fig:FermiMap-introduction}
+\end{figure}
+
+Nowadays, the universe has been observed through the lens of many other messengers, including charged cosmic rays, neutrinos and gravitational waves. Since many physical mechanisms involve the production of multiple messengers, the study of one phenomenon through different messengers (the so-called multi-messenger astronomy) has become a powerful tool to understand the properties of astrophysical bodies and events. In particular, gamma-rays are excellent messengers to be studied together with other signals since they are associated to almost any astrophysical source and process, as long as they are energetic enough to produce gamma-rays. They cannot be reflected or refracted, they are not influenced by magnetic fields and since the universe is practically transparent to them (up to 100 GeV), they ultimately point directly towards the source of emission. 
+
+In the following sections of this chapter, we will give an overview of the main gamma-ray production mechanisms. Afterwards, we will briefly describe the main gamma-ray emitting astrophysical sources currently known. We will then study the Fermi Large Area Telescope, which is the gamma-ray detector which we will use in our analysis. Finally, we will introduce the gamma-ray source-count distribution function, whose extragalactic component is ultimately the main goal of this thesis. 
+
+\section{Gamma-ray production}  
+\label{sec:gamma-ray-production}
+Photons cannot be directly accelerated; thus the production of very energetic photons (gamma-rays) is linked to processes which can either transfer energy to photons, or energetic particles which decay into photons. 
+Two different models have been proposed to explain the production of gamma-rays: 
+\begin{itemize}
+    \item Bottom up scenario: the production of gamma-rays is due to the interaction with or of accelerated charged particles from astrophysical sources.
+    \item Top down scenario: gamma-rays are the product of the annihilation or decay of exotic particles (for example Dark Matter). Since a signal of Dark Matter has not yet been measured, we expect top down gamma-ray production to be subdominant.
+\end{itemize}
+
+\subsection{Bottom up scenario}
+Gamma-rays production is intrinsically related to the production of cosmic rays (CRs). CRs are charged particles (mainly protons) whose energy covers a broad spectrum. Since they are charged, they can be accelerated by galactic magnetic fields and thus they don't track back to the source of origin.   
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.5\textwidth]{chapter_01/img/Cosmic-ray-spectrum.png}
+\caption{Cosmic ray spectrum. Credit: Blümer et al. [2009].}
+\label{fig:cr-spectrum}
+\end{figure}
+\noindent
+
+The CR spectrum (see Fig. \ref{fig:cr-spectrum}) is approximately described by a power low $dN/dE \sim E^{-\Gamma}$, where $\Gamma$ is the spectral index and it varies depending on the energy of the CR. This is due to the fact that CRs get accelerated to different energies by different mechanisms. The acceleration mechanisms of cosmic rays lie beyond the scope of this work, for more information we address the interested reader to the review by A.R. Bell \cite{BELL201356}.
+The approximate energies at which the spectral index changes are respectively called knee ($4 \cdot 10^{15}$ eV), second knee ($10^{17}$ eV) and ankle ($4.8 \cdot 10^{18}$ eV). Around $4.2 \cdot 10^{19}$ eV a strong suppression of the CR flux has been observed with a significance of more than $20\sigma$. This suppression can be ascribed to energy losses during propagation (the so-called GZK effect) or to an intrinsic limit of sources, that are not able to accelerate particles beyond a certain energy. 
+The study of high energy CRs is extremely interesting, as it allows to probe processes at energies unobtainable using human made particle accelerators. Unfortunately, it is really difficult to measure cosmic rays of energy > 1 PeV, in fact the flux of cosmic rays decreases with their energy and they can only be measured indirectly from ground telescopes which analyze the particle shower triggered by CRs when they enter the atmosphere. 
+
+According to the bottom up scenario, gamma-rays can be produced by the interaction of charged particles with magnetic fields. Furthermore, both gamma-rays and neutrinos can be produced by the interaction of CRs with nuclear targets, such as the interstellar medium. If the parent population producing gamma-rays is made of leptons or hadrons, we talk about leptonic or hadronic emission, respectively.
+
+\subsection{Leptonic emission}
+The two main gamma-ray production mechanisms which involve leptonic particles are \textbf{Synchrotron Emission} and \textbf{Inverse Compton Scattering}.
+The emission of gamma-rays from a population of positrons/electrons usually occurs when they are permeated by a magnetic field and/or when these particles are relativistic. This kind of emission is thought to be possible either in galactic or extragalactic settings. For example, the intense magnetic fields of pulsars inside our galaxy can produce synchrotron radiation, while at an extragalactic level it can be related to active galactic nuclei and relativistic particle jets. 
+
+Relativistic particles accelerated in a magnetic field radiate synchrotron photons. The energy loss of a charged particle of mass $M$ is proportional to $\sim E_{CR}^2M^{-4}$. The greater the mass of the charged particle, the lesser will be the energy loss and therefore the energy of the synchrotron photon. This means that leptons, being less massive than hadrons, will be the main particles to emit synchrotron radiation. Since the energy loss is proportional to the energy squared of the cosmic ray, more energetic CRs will emit more synchrotron radiation\footnote{Synchrotron energy loss is one of the main reasons why high energy circular particle accelerators like LHC employ hadrons (mainly protons) and not electrons. It would be impossible to accelerate leptons to the same energies which can be reached with hadrons at the same experiment. In order to accelerate electrons to high energies, it is necessary to employ linear accelerators like the one at SLAC.}. The energy of a synchrotron photon is given by the relation \cite{Aharonian_1997}:
+
+\begin{equation}
+E_{s y n c}=0.2 \frac{B}{10 \mu \mathrm{G}}\left(\frac{E_{e}}{1 \mathrm{TeV}}\right)^{2} \mathrm{eV}
+\end{equation}
+\noindent
+For example, given a typical galactic magnetic field of 10 $\mu G$ and a population of electrons with energy $\sim$TeV, synchrotron photons will have an energy $\sim$0.2 eV (visible light).
+While at this scale this mechanism alone is not responsible for the production of gamma-rays, it is interesting to study its relation with \af{ICS_}.
+
+We call Compton Scattering a process where a photon interacts with a target at rest and it transfers part of its energy to the target. As the name suggests, ICS refers to the inverse process, and in particular it involves relativistic electrons scatter low energy photons. The photons gain energy at the cost of kinetic energy of the electrons. This process can happen in two different regimes, depending on the energy of the photon $E_\gamma$: the Thompson regime ($E_\gamma << m_e c^2$) or the Klein-Nishina regime ($E_\gamma >> m_e c^2$).
+
+In the surroundings of \acrfullpl{AGN_} or \acrfullpl{SNR_}, both synchrotron and ICS can take place concurrently, leading to interesting effects. Ultra-relativistic electrons are accelerated in a magnetic field and emit photons up to the X-ray band. These photons in turn interact via Compton Scattering with the parent population of electrons, further boosting their energy. Please recall that the energy loss associated with synchrotron radiation is proportional to the energy squared of the electron $E_e$, and the electron population is ultra-relativistic. This means that the more energetic the parent population, the more energetic the produced synchrotron photons we be and the more they will be able to boost the parent population in return. This process is called \textbf{Synchrotron Self Compton} and it can produce gamma-rays in the GeV-TeV energy range.
+
+\subsection{Hadronic emission}
+Gamma-rays can also be produced by the interaction of accelerated protons (or heavier nuclei) with the surrounding environment. When a hadron collides with a nucleon (for example inside a molecular cloud), it can initiate a hadronic cascade, which will contain among the other products an equal number of $\pi^+$, $\pi^-$ and $\pi^0$. Due to its short lifetime, a $\pi^0$ will immediately decay into two photons (gamma-rays) having each approximately half the energy of the pion. This process is called \textbf{hadron-nucleon collision}, or pp interaction when only protons are involved. 
+
+Another hadronic process which can produce gamma-rays is the \textbf{photoproduction}. Protons can interact with a sea of photons (for example from synchrotron emission or bremsstrahlung of accelerated electrons) and produce a resonance. The main channel for photoproduction is through the $\Delta^+$ resonance, though the cross-section is relatively small (of the order of mb), and thus this process is important in environments when the photon density is much higher than the matter density. \\
+Two main processes which involve the $\Delta^+$ resonance are:
+\begin{equation*}
+\begin{array}{l}
+p+\gamma \rightarrow \Delta^{+} \rightarrow \pi^{+}+n \\
+p+\gamma \rightarrow \Delta^{+} \rightarrow \pi^{0}+p
+\end{array}
+\end{equation*}
+\noindent
+The $\pi^{0}$ will decay into two gamma-rays, while we note that the $\pi^{+}$ will decay into a $\mu^+$ and a neutrino $\nu_\mu$. Therefore, gamma-ray production from hadrons is always accompanied by the production of neutrinos.
+
+\subsection{Top down scenario}
+According to the top down scenario, gamma-rays can be produced by the annihilation or decay of exotic particles. In particular, it is believed that gamma-rays can possibly originate also from dark matter (DM). There are several candidates for dark matter, among which WIMPs (weakly interacting massive particles) are some of the most popular. The expected flux of gamma-rays from annihilation processes can be expressed as:
+
+\begin{equation}
+\phi_{\gamma}=\frac{1}{4 \pi} \underbrace{\frac{\left\langle\sigma_{a n n} v\right\rangle}{2 m_{D M}^{2}} \frac{d N_{\gamma}}{d E}}_{\text {Particle Physics }} \underbrace{\int_{\Delta \Omega-l . o . s .} d l(\Omega) \rho_{D M}^{2}}_{\text {Astrophysics }}
+\end{equation}
+\noindent
+The first term is related to the particle physic properties of dark matter: $\left\langle\sigma_{a n n} v\right\rangle$ is the velocity-weighted annihilation cross-section of DM particles of mass $m_{DM}$ and $dN_\gamma / dE$ is the gamma-ray spectrum per annihilation event. The second term (the so called J factor) is connected to the astrophysical properties of dark matter. In particular, it is the integral over the line of sight and solid angle of the cone of observation $\Delta\Omega$ of the squared dark matter density $\rho_{D M}^{2}$. 
+Since a signal of dark matter has not yet been identified, we expect the photon production from dark matter to be subdominant if compared to other production mechanisms. For this reason, reaching a better understanding of the distribution of gamma-ray sources at fluxes below the resolution threshold becomes extremely interesting in order to further advance dark matter searches. In fact, if a dark matter signal is present, it is hidden and to be searched in the almost isotropic diffused gamma-ray background, which is the main topic of this thesis.
+
+\section{Gamma-ray sources and the diffuse gamma-ray background} 
+In the previous sections, we have explored some of the main mechanisms responsible for gamma-ray production. We will now study the main astrophysical sources which are responsible for gamma-ray emission. 
+Gamma-rays can be either of galactic or extragalactic origin. In this work we are mainly interested in gamma-rays of extragalactic origin, thus galactic gamma-rays constitute a foreground, the so called diffuse galactic foreground. 
+As the name suggests, the galactic foreground is a kind of diffuse radiation which is produced by the interaction of \acrfullpl{CR_} with the galactic interstellar radiation field and the nuclei of the galactic interstellar medium. 
+
+Gamma-rays of extragalactic origin form the so called \af{EGB_}. It is referred as a background, since along the galactic plane it is overshadowed by the galactic diffuse emission, which accounts for roughly 80\% of the total detected gamma-rays. 
+There are several components which form the EGB: the resolved sources, the unresolved sources and a truly diffuse almost isotropic background. Sources which are luminous enough to be distinguished against the rest are called resolved sources. They can be either point-like or extended and they are listed in source catalogues. It is believed that the unresolved component of the EGB is mainly constituted by the same kind of sources which, when they emit a higher flux of gamma-rays, can be resolved individually. Furthermore, there may be subdominant contributions connected to exotic physics and in particular dark matter.
+We will talk about the astrophysical sources which can constitute both the resolved and unresolved regime in more details in the following sections.
+Finally, the last component of the EGB consists in a truly diffuse isotropic background, due to diffuse processes like ultra high energy cosmic rays cascades. For a recent estimation of the EGB intensity, see Fig. \ref{fig:fermi-EGB}.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.8\textwidth]{chapter_01/img/total-egb-fermi.png}
+\caption{Comparison of the total EGB intensity derived by the Fermi collaboration to other measurements of the X-ray and gamma-ray background. Credit: Ackermann et al. 2015 \cite{Ackermann_2015}.}
+\label{fig:fermi-EGB}
+\end{figure}
+
+In this work, we are mainly interested in studying the unresolved component of the EGB. We want to estimate the number of extragalactic gamma-ray sources which are too faint to be resolved singularly, and in particular the differential number of sources per gamma-ray flux unit (see Section \ref{sec:ch1-dnds}). The unresolved component of the EGB is often referred as the \af{DGRB_}.
+
+The \as{DGRB_} (also called the Unresolved Gamma Ray Background) is what remains of the total gamma-ray emission after the subtraction of the resolved point sources and the diffuse galactic foreground. 
+It is constituted by the cumulative gamma-ray emission of sources which are not bright enough to be resolved individually. It is thought that the \as{DGRB_} is mainly of extragalactic origin. Studying the decomposition of the \as{EGB_} is instrumental in order to understand the origin of the non-thermal cosmic radiation field. 
+
+In our analysis, we will study the \as{DGRB_} through the photon-counts sky map provided by the Fermi \af{LAT_} (Fig. \ref{fig:fermi-lat}). There are several macro-components which we need to take into account, namely the Galactic Foreground (constituted by the gamma-rays originated in the Milky Way), and the \as{EGB_}. 
+
+We will model the galactic foreground using a template provided by the Fermi \as{LAT_} collaboration (\verb|gll_iem_v07.fits|) which takes into account the complex mechanisms responsible for the diffuse galactic emission. It is important to notice that this model still has considerable uncertainties, and its improvement is one of the main objectives of the Fermi LAT collaboration. Please recall that the galactic emission accounts for roughly 80\% of the gamma-ray counts along the galactic plane. For this reason, and taking into account the uncertainties of the template, it is not possible to exactly subtract the galactic contributions close to the galactic plane. Since we are interested in the extragalactic sources, we will then mask the galactic plane in our analysis (namely in a 30° band above and below the galactic plane).
+
+%%%%%%%%%%%%%% valuta se togliere
+
+The resolved point sources include all the astrophysical elements which can be identified as such, including blazars, misaligned AGNs, star-forming galaxies and millisecond pulsars. On the other hand, unresolved sources are too faint to be distinguished (resolved) individually and thus form an almost isotropic diffused component. 
+\\
+Although there are several well-established sources which constitute the \af{EGB_}, yet its exact composition remains unknown. It is of great interest to achieve a better understanding of both the cumulative gamma-ray emission and the single components as this might be able to shed light on more exotic and subdominant components such as dark matter. In the scenario where we measured excesses of gamma-ray counts which could not be explained by the models of standard sources, new and interesting perspectives would open, including the possibility of gamma-ray emissions due to dark matter annihilation or decay. 
+Since a dark matter signal has not yet been observed, and the origin of most of the resolved extragalactic sources is known, signals of exotic physic are to be searched in the \as{DGRB_}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In the following sections, we are going to explore some of the main astrophysical sources which have been proposed as contributions to the \as{DGRB_}. In particular, we will talk about some well-established components which are almost "guaranteed" to be part of the \as{DGRB_}. For this part, we will follow closely the review by Fornasa et al. \cite{DGRB-review}.
+
+\subsection{Blazars}
+\label{sec:Blazars}
+Blazars are some of the brightest sources in the sky. A blazar is an \af{AGN_} with a relativistic jet originating from its centre and directed towards the observer (Fig. \ref{fig:blazar}). The gamma-ray emission of those jets generally outshines the radiation emitted by the accretion of the supermassive Black Hole which is believed to lie in the nucleus of those galaxies. \\
+Blazars emit photons in two different energy bands: the low-energy peak, located between \af{UV_} and radio frequencies, is due to the synchrotron emission of the electrons accelerated by the jets. The high-energy peak is constituted instead by the \af{IC_} of the same population of electrons.
+Blazars can furthermore be divided in two categories depending on their nuclear non-thermal emission: BL Lacs and \acrfullpl{FSRQ_}.
+It is estimated that blazars may constitute ~20\% of the total \as{DGRB_}\cite{Blazars} in the 0.1-100 GeV energy band.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.7\textwidth]{chapter_01/img/blazar.png}
+\caption{A blazar is an active galactic nucleus whose relativistic beam is aligned with the Earth ($\alpha<14$°). Edited from a graphical render by IceCube/NASA. }
+\label{fig:blazar}
+\end{figure}
+
+\subsection{Misaligned Active Galactic Nuclei}
+\label{sec:mAGN}
+\gls{mAGN_} are \gls{AGN_} whose jet is not aligned with the observer. In particular, the gamma-ray beam which originates from the AGN forms an angle $\alpha>14^\circ$ with the line connecting the observer to the AGN (Fig. \ref{fig:blazar}), as opposed to blazars, whose gamma-ray beam forms an angle $\alpha<14^\circ$. It is possible to further distinguish between radio galaxies (with a viewing angle larger than 44°) and radio quasars \cite{mAGN-1}. Radio galaxies are classified either as Fanaroff-Riley Type I or Type II, based on their morphology, and it is thought that they are in correspondence respectively to BL Lacs and \gls{FSRQ_} \cite{mAGN-2}.
+
+FRIs have a peak emission at the center of the \gls{AGN_} which is dominated by two opposite side decelerating jets. On the other hand, FRIIs have radio lobes with bright hotspots and their jets and core (when detected) are subdominant. 
+
+The mechanism of gamma-ray production is less clear for \glspl{mAGN_}. They display gamma-ray emission in two bands (similarly to blazars): the low-energy peak may be due to synchrotron radiation, while at higher energy most of the radiation maybe be due to synchrotron self-Compton \cite{mAGN-3}. There may also be contributions due to external IC within one parsec from the center of the AGN \cite{mAGN-4}, while synchrotron self-Compton emission is produced outside that region \cite{mAGN-3}.
+Due to the absence of Doppler boost, \glspl{mAGN_} are expected to be less bright. On the other hand, their less restrictive jet alignment would make them more abundant than blazars, and thus they may be important contributors to the \gls{DGRB_} \cite{mAGN-5}. 
+
+\subsection{Star-forming galaxies}
+\label{sec:SFG}
+
+As the name suggests, \glspl{SFG_} are galaxies where there is active star formation. An interesting example of a \gls{SFG_} is the Milky Way, especially considering that most of the gamma-ray emission measured by the Fermi \gls{LAT_} is associated with it \cite{SFG-1}. Galactic \glspl{CR_} (mainly protons and electrons) may produce gamma-rays while interacting with the galactic interstellar medium and the galactic radiation field (see Section \ref{sec:gamma-ray-production}). Similar emission processes are expected to happen for other \glspl{SFG_}. Although faint, \glspl{SFG_} are expected to be numerous and thus they may contribute significantly to the unresolved \gls{EGB_}.
+
+
+\subsection{Subdominant contributions}
+\label{sec:subdominant-contributions}
+It is possible that other subdominant sources may contribute to the unresolved gamma-ray background. In particular millisecond pulsars, pure diffused components and possibly dark matter. 
+
+Pulsars are rapidly spinning neutron stars which emit a beam of radiation that periodically intersects the Earth. A millisecond pulsar is a pulsar whose rotational period is less than approximately 10 milliseconds. A contribution to the \gls{DGRB_} due to millisecond pulsars located at high Galactic latitude is possible, although it has been constrained to be subdominant \cite{msp-1}.
+
+Other not point-like gamma-ray components may include extended sources like pair halo emission from AGNs, clusters of galaxies, or pure diffused signals from cascades of ultra-high-energy cosmic rays on the cosmic microwave background \cite{fornasa:2015}. Finally, it is possible that there may be a faint and unresolved contribution from dark matter annihilation or decay.
+
+%% aggiungere qualcosa sulle msp? conclusione?
+
+\section{Fermi Large Area Telescope}
+\label{sec:fermi-lat}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.7\textwidth]{chapter_01/img/Fermi-FGSTinSpace_0.jpg}
+\caption{Digital render of the Fermi LAT (Credit: NASA).}
+\label{fig:fermi-lat}
+\end{figure}
+\noindent
+The Fermi Large Area Telescope is a high energy gamma-ray telescope. It has a wide field of view (>2 sr) and can measure gamma-rays whose energy is comprised between 20 MeV and 300 GeV.
+It is designed to measure the direction, energy and arrival time of gamma-rays, while rejecting background events from cosmic rays. 
+High energy gamma-rays cannot be reflected or refracted, thus special techniques to reveal them need to be employed. The Fermi LAT is a pair-conversion telescope: a high energy gamma-ray interacts inside the telescope and produces an electron positron ($e^+e^-$) pair, which can be detected using a precision converter-tracker and a calorimeter. It is constituted of a 4x4 grid of 16 modules supported by a low-mass aluminium grid structure. 
+The tracker module is constituted of several tungsten foils, where photons will preferably interact and produce $e^+e^-$ pairs. Those particles are then tracked using SSDs (high efficiency silicon detectors) through successive planes.
+The electron positron signature is also extremely useful to discriminate background events originating from charged cosmic rays, which usually involve only a single charged particle signal.
+Based on where the $e^+e^-$ pair is formed, the detection events are subdivided into "front" and "back" events. Front events appear in the first 12 tracking planes. Those planes include thin converters to optimize the Point Spread Function for lower energy gamma-rays and the angular resolution. Back events appear in the last four layers, after the "front" layers. They are 6 times thicker than the first layers to maximise the effective area, and they are necessary to reveal higher energy gamma-rays, which would otherwise possibly pass through the front layers unscathed. In our analysis, since we will work with gamma-rays whose energy is comprised between 1 and 10 GeV, we will consider only the front events, which have a better angular resolution.
+
+The calorimeter is then used to measure the energy of the $e^+e^-$ pair. By interacting with the calorimeter, the pair produces an electromagnetic particle shower whose energy is measured by the calorimeter. Furthermore, the calorimeter is used to analyze the shower development profile, providing an additional tool to discriminate background from signal events and estimate the shower energy leakage fluctuations (which need to be taken into account for precise measurements of high energy gamma-rays). 
+
+Other notable parts of the Fermi LAT include the Anti Coincidence Detector (ACD), which provides charged particle background rejection, and the data acquisition system, which processes the events on-board performing background rejection tasks and streams the data to Earth.
+
+The Fermi-LAT project has several scientific goals, including studying gamma-ray bursts, probing the nature of dark matter, understanding the process of particle acceleration in celestial sources and using gamma-rays to study the early stages of the universe. 
+For the aims of this thesis, we are mainly interested in its goal to study the diffuse emission of gamma-rays and the origin of unidentified sources. 
+
+The data collected by the Fermi Large Area Telescope can be used to identify an ever increasing number of point sources, which are listed in source catalogues such as the 4FGL. Those catalogues can then be employed to determine the source-count distribution function (described in the following section) for each family of sources (blazars, mAGN, SFG, etc.) or the cumulative source-count distribution function.
+In this work, we aim to determine the cumulative source-count distribution function using machine learning techniques which don't rely on source catalogues, nonetheless we will need to test our predictions and find if they are compatible with the results derived using source catalogues. In fact, source catalogues are arguably the most reliable way to determine the source-count distribution function in the range of gamma-ray flux where there are resolved extragalactic sources. 
+
+\section{Gamma-ray source-count distribution function}
+\label{sec:ch1-dnds}
+The gamma-ray source-count distribution function describes how many gamma-ray sources have a certain gamma-ray flux S. In this work, we will mainly consider the differential gamma-ray source-count distribution function $dN/dS$, which describes the differential number of sources per gamma-ray flux unit. By integrating this function, it is possible to determine the number of point sources which emit gamma-rays in a certain flux bin. 
+It is important to notice that the number of sources in each given flux bin is subject to statistical fluctuation which we will need to take into account. For this reason, since there are not many sources with high gamma-ray fluxes, the high flux estimation of the $dN/dS$ will intrinsically be determined with wider error bands. 
+On the other hand, sources with a low gamma-ray flux will be more abundant and the statistics will be more significative, but they will be more difficult to resolve and count as they are many and fainter.
+
+In general, it is possible to distinguish extragalactic point sources up to a certain flux. Below that minimum flux, point sources will become undetectable and they will become part of an almost isotropic diffuse gamma-ray background. The fact that this background is not exactly isotropic is crucial to our analysis.
+Although point sources with lower photon fluxes cannot yet be resolved singularly, they have a collective effect on the gamma-ray counts measured by the Fermi-LAT. We ultimately expect to be able to probe the source-count distribution function even in the region of flux populated by unresolved sources by employing a machine learning approach, focusing on the cumulative photon counts collected by the Fermi-LAT regardless of the emission source (blazar, SFG, mAGN, or other components). 
+
+
+
+\section{Summary}
+In this chapter we have introduced the main mechanisms of gamma-ray production, with a particular focus to cosmic rays and leptonic/hadronic emission. We have briefly described some of the main components that can constitute the resolved extragalactic sources and which are likely to contribute to the unresolved gamma-ray background, each up to a certain degree. Furthermore, we have described how the Fermi-LAT telescope works and some of its results which are most interesting for this work. Finally, we have introduced the gamma-ray source-count distribution function and some of its properties.
+
+% aggiungere cosa farò nel prossimo capitolo?
+
+

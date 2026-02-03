@@ -1,0 +1,45 @@
+\chapter{Conclusion}
+\label{chap:conclusion}
+In this short final chapter, we will summarise the main results of this thesis, how our technique can be extended in the future, and which would be some interesting follow-up works.
+
+\section{Main results}
+The main result of this thesis is the prediction of the source-count distribution function for the Fermi LAT photon count map, using the first 6-years of data collected by the Fermi collaboration (Fig. \ref{fig:6-y-pred-replica}).
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.8\textwidth]{chapter_06/img/fermi_prediction.png}
+\caption{Neural Network prediction of the differential source-count distribution function using the 6-year Fermi LAT photon-counts map (1-10 GeV). The NN prediction is displayed in light blue, while the datapoints from the 4FGL 8-year source catalogues are represented by the blue error bars. Replica of Fig. \ref{fig:6-y-pred}.}
+\label{fig:6-y-pred-replica}
+\end{figure}
+\noindent
+We have shown that a neural network is capable of deriving the source-count distribution function of extragalactic gamma-ray sources with energy within 1 and 10 GeV. Neural networks are thus viable alternatives to other statistical technique in this field, such as the 1pPDF. 
+We have also shown that a Spherical ResNet is a solid architecture and that it is not heavily influenced by the galactic foreground template, nor it is biased. Nonetheless, we believe that with further improvements in the galactic foreground modelling, it will be possible to also improve our model for the extragalactic source-count distribution function. 
+
+We have also given an updated prediction, using the up-to-date data collected by the Fermi LAT collaboration over 12-years (Fig. \ref{fig:12-y-pred-replica}). This result confirms the prediction found using the Fermi 6-year photon counts map and it hints to the possibility of further probing the source-count distribution function at even lower gamma-ray fluxes.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.8\textwidth]{chapter_06/img/fermi_prediction-12-y.png}
+\caption{Neural Network prediction of the differential source-count distribution function using the 12-year Fermi LAT photon-counts map (1-10 GeV). This model was trained on maps with gamma-ray sources whose minimum flux is $S_{min}= 10^{-11}cm^{-2}s^{-1}$. The NN prediction is displayed in light blue, while the datapoints from the 4FGL 8-year source catalogues are represented by the blue error bars. Replica of Fig. \ref{fig:12-y-pred-1e-11}.}
+\label{fig:12-y-pred-replica}
+\end{figure}
+
+Finally, our results are compatible both with the source-count distribution function estimated using the 4FGL catalogue, and the ones obtained by Zechlin et al. \cite{Cuoco-1pdf} within the error bands, further validating the reliability of our technique (see Fig. \ref{fig:6-y-pred-comparison-replica}).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.7\textwidth]{chapter_06/img/fermi_prediction_comparison.png}
+\caption{Comparison of our prediction for the 6-year dataset with Zechlin et al. (hybrid model, 3 breaks) \cite{Cuoco-1pdf}. Replica of Fig. \ref{fig:6-y-pred-comparison}.}
+\label{fig:6-y-pred-comparison-replica}
+\end{figure}
+\noindent
+
+\section{Next steps and improvements}
+In this work we have considered the first 6-years of data collected by the Fermi Large Area Telescope to draw a direct comparison with the work from Zechlin et al. \cite{Cuoco-1pdf}. We have also presented how this technique can be extended to fit 12-years of data from Fermi LAT. A first step for the future will be to consolidate the results obtained in the 12-years case. In the future, we will try to determine the lowest gamma-ray flux for which the neural network can determine the source-count distribution function, and in particular extend it to sources with $S_{min}=10^{-12} \, cm^{-2}s^{-1}$. In order to do this, we don't exclude the possibility that it might be necessary to consider sky maps at a higher resolution ($N_{side}$=128 or 256). 
+
+In the future, it would be interesting to extend this technique to fit the $dN/dS$ over multiple energy bins simultaneously. While this would be almost impossible with the 1pPDF technique, in our case it would only require more computational resources. Drawing inspiration from Convolutional Neural Networks where RGB images are viewed as separate stacked monochromatic images, we could consider each potential energy bin as a different color, and treat them accordingly. This technique would be more interesting than training a different neural network for each energy bin, as it would be possible to draw information from all the energy bins simultaneously. We would expect the neural network, if properly built, to be able to cross-correlate the information from each energy bin, in order to potentially yield better performance even in the single bin scenario. 
+Another interesting test would be to use different functional forms for the source-count distribution function. The multi break power low shape has originally been proposed because it has few degrees of freedoms, which helps when the goal of the analysis is to determine those parameters. In our case, since the Neural Network will produce a continuous output, we can adopt an arbitrarily complex functional form without making the task for the neural network significantly more difficult. In fact, the output of our model is more a smooth curve than properly a multi break power low. 
+
+In this work, we have used the Krachmalnicoff and Tomasi implementation of a spherical convolution \cite{nnhealpix}. As there is not yet a standard way to perform spherical convolution, it would be interesting to repeat this same analysis in a few years, when the topic will be better understood, and possibly new neural network architectures will be defined to better deal with spherical images.
+
+Finally, one aspect which is not yet well understood is error estimation for neural networks. In this work we have performed a statistical analysis of the predictions of the neural network on the test dataset and we have estimated the error bands accordingly. Recently, a new approach has been proposed for error estimation in neural networks and it is based on Bayesian statistics. In a Bayesian neural network, the NN will try to minimise simultaneously a loss (like the mean squared error loss) and the posterior error distribution through the definition of a negative log likelihood. Therefore, since the error estimation on the prediction is a byproduct of the optimisation technique, a Bayesian NN will be capable of both giving a prediction and the uncertainty estimation for that prediction. It would then be extremely interesting to extend our model and define a Bayesian Spherical Neural Network, in order to test whether the error bands will improve or change significantly. 
+
