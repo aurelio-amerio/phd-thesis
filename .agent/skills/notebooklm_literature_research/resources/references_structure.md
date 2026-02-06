@@ -24,10 +24,10 @@
 ### [Section X.1] [Topic Name]
 **Topics:** [List key sub-topics]
 
-*   **[Review Author] ([Year]):**
+*   **[Review Author 1] ([Year]):**
     *   **[Chapter/Section]:** Read **Sec X.X** ([Description]). [Explain specific details found here].
-*   **[Other Review]:**
-    *   **[Chapter/Section]:** Read **Sec Y.Y** ([Description]).
+*   **[Review Author 2] ([Year]):**
+    *   **[Chapter/Section]:** Read **Sec Y.Y** ([Description]). [Explain complementary perspective].
 
 ### [Section X.2] [Topic Name]
 **Topics:** [List key sub-topics]
