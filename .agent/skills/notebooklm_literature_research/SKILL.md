@@ -20,7 +20,7 @@ Use this skill when we are **establishing the state of the art**. It focuses on 
 1.  **Granular Querying**: Do not ask for an entire chapter at once. Break requests down by sub-section (e.g., "1.1 Cosmological Context", "1.2 Particle Nature").
 2.  **Specific Prompt Engineering**:
     *   **Dual-Reference Standard:** Always propose **at least 2 distinct references** for each topic in the "Breakdown" section to provide complementary perspectives (e.g., Theory vs. Observation, or two contrasting reviews), prioritizing review articles and/or books. 
-    *   **Crucial:** Prioritize Review Articles that are **already included in the NotebookLM corpus** (e.g., Physics Reports, Annual Reviews) over external textbooks proposed by general knowledge. Only cite external textbooks if the notebook lacks specific coverage.
+    *   **Crucial:** Prioritize Review Articles and books that are **already included in the NotebookLM corpus** (e.g., Physics Reports, Annual Reviews) over external textbooks proposed by general knowledge. Only cite external textbooks if the notebook lacks specific coverage.
     *   Explicitly ask for **"Specific Papers with arXiv numbers"** to get the primary sources for detailed citation.
     *   Ask **"Why is it relevant?"** to ensure the source fits the specific narrative argument.
     *   **Always** ask for a list of **"Additional Sources"** (5-8 papers) for each subsection, including authors, year, arXiv number, and a brief 5-10 word summary.
