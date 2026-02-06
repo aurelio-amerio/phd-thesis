@@ -1,4 +1,4 @@
-# Chapter 04: The Galactic Center Excess (GCE) - References & Sources
+# Chapter 4: The Galactic Center Excess (GCE) - References & Sources
 
 ## 1. Reviews & Textbooks
 *General consensus, theoretical foundations, and state-of-the-art summaries.*
@@ -31,6 +31,10 @@
 ### Abazajian et al. (2014) - "Resilience of the Bright $\gamma$-ray Excess in the Galactic Center to Interstellar Emission Modeling"
 *   **Source:** *arXiv:1402.4090*
     *   **Relevance:** A rigorous analysis demonstrating that the excess persists across various background models, solidifying its existence as a physical signal rather than a modeling artifact.
+
+### List, Rodd et al. (2025) - "On the Energy Distribution of the Galactic Center Excess' Sources"
+*   **Source:** *arXiv:2507.17804*
+    *   **Relevance:** A simulation-based inference study utilizing neural networks to analyze both the spatial and spectral properties of the GCE. It finds that when energy information is included, the required point sources must be extremely numerous ($>3.5 \times 10^4$ at 90% CL) and faint. This makes the signal statistically indistinguishable from the Poissonian emission predicted by Dark Matter, effectively nullifying the previous "bright point source" preference of spatial-only NPTF analyses.
 
 ---
 
@@ -79,3 +83,7 @@
     *   **Relevance:** Read for the derivation of the gamma-ray luminosity function of MSPs from 47 Tucanae and field MSPs, highlighting the tension with the GCE requirements.
 *   **Feng et al. (2024) [arXiv:2310.15859]:**
     *   **Relevance:** Read for a complementary study on MSP populations in 157 globular clusters and their dynamical evolution, discussing the tidal disruption scenario.
+
+#### Post-Paper 3 Developments
+*   **List, Rodd et al. (2025) [arXiv:2507.17804]:**
+    *   **Relevance:** Read for the latest result using neural network simulation-based inference. It confirms that if the GCE is point sources, they must be extremely numerous ($\sim 10^5$) and intrinsically dim, making them indistinguishable from the diffuse DM prediction. This independent result strongly aligns with the "Missing Point Sources" tension identified in Amerio et al. (2025).
