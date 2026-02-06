@@ -1,6 +1,6 @@
 # PhD Thesis Structure: Probing the Dark Universe
 
-**Tentative Title:** Probing the Dark Universe: Machine Learning and Statistical Approaches to Gamma-Ray Dark Matter Searches 
+**Tentative Title:** Probing the Dark Universe: Machine Learning and Statistical Approaches to Gamma-Ray Dark Matter Searches
 
 **Format:** Cumulative Dissertation (Compendium)
 
@@ -17,7 +17,7 @@
 - **Part I: Theoretical Foundations:** A guide to the introductory chapters (1-3) which establish the physical framework ($\Lambda$CDM, WIMPs) and the methodological toolkit (SBI, Bayesian Inference).
 - **Part II: The Galactic Center and Resolved Structures:** Summarize the investigation into specific targets.
   - *Paper 3:* Investigating the Millisecond Pulsar hypothesis for the Galactic Center Excess.
-  - *Paper 4:* The search for individual DM subhalos among unassociated sources using ML classifiers.
+  - *Paper 4:* The search for individual DM subhalos among unassociated sources using ML techniques.
 - **Part III: The Unresolved Sky:** Summarize the shift to population studies.
   - *Paper 1:* Recovering the source-count distribution ($dN/dS$) of faint sources below the detection threshold.
   - *Paper 2:* Constructing probabilistic catalogs to utilize sub-threshold information.
@@ -56,14 +56,14 @@
 - **3.2 Simulation-Based Inference (SBI):**
   - The concept of "Likelihood-Free" inference.
   - Neural Posterior Estimation (NPE).
-  - *Relevance:* Foundation for **Paper 1**.
+  - *Grounding:* Mathematical foundation for **Paper 1**.
 - **3.3 Machine Learning on the Sphere:**
   - Convolutional Neural Networks (CNNs).
   - Handling spherical data (DeepSphere/HEALPix).
 - **3.4 The Domain Shift Challenge:**
   - Training on simulations vs. testing on real data.
   - Domain adaptation techniques.
-  - *Relevance:* Critical context for **Paper 4**.
+  - *Grounding:* Critical context for **Paper 4**.
 
 ## **Part II: The Galactic Center and Resolved Sources**
 
@@ -78,7 +78,7 @@
   - Using Globular Clusters to constrain the MSP luminosity function.
   - *Context:* Setting the stage for the following paper.
 
-### **[INSERT PAPER 3]**
+**INSERT PAPER 3**
 
 - **Title:** Millisecond Pulsars in Globular Clusters and Implications for the Galactic Center Gamma-Ray Excess
 - **File:** `001) paper 3 - 2412.05220.pdf`
@@ -96,7 +96,7 @@
   - Application of the methods from Chapter 3 to source classification.
   - Addressing the domain shift between simulated subhalos and real Fermi data.
 
-### **[INSERT PAPER 4]**
+**INSERT PAPER 4**
 
 - **Title:** Search for dark matter subhalos among unassociated Fermi-LAT sources in presence of dataset shift
 - **File:** `001) paper 4 - 2503.14584v1.pdf`
@@ -113,7 +113,7 @@
   - How $dN/dS$ connects the resolved (catalogs) to the unresolved (background).
   - Using the $dN/dS$ to probe non-Poissonian populations.
 
-### **[INSERT PAPER 1]**
+**INSERT PAPER 1**
 
 - **Title:** Extracting the gamma-ray source-count distribution below the Fermi-LAT detection limit with deep learning
 - **File:** `001) paper 1 - 2302.01947.pdf`
@@ -128,7 +128,7 @@
   - Using the $dN/dS$ (derived in Chapter 6) as a prior for source detection.
   - Recovering sub-threshold information.
 
-### **[INSERT PAPER 2]**
+$$INSERT PAPER 2$$
 
 - **Title:** Deepening gamma-ray point-source catalogues with sub-threshold information
 - **File:** `001) paper 2 - 2306.16483.pdf`
@@ -139,15 +139,23 @@
 ### **Chapter 8: Cross-Correlations and Future Prospects**
 
 - **8.1 The Cosmic Web:**
+
   - Dark Matter traces Large Scale Structure (LSS).
+
 - **8.2 Cross-Correlation Formalism:**
+
   - Angular Power Spectra ($C_\ell$).
+
   - Correlating Gamma-rays (Fermi/CTA) with Galaxy Catalogs/Lensing.
+
+  - *Theoretical Basis:* Drawing on the formalism from Camera et al. (2013) 1212.5018 and Fornengo et al. (2014) 1312.4835, and the comprehensive framework detailed in the thesis of Pinetti (2022) 2212.00125.
+
 - **8.3 Looking Forward (CTA):**
+
   - Moving from Fermi-LAT to the Cherenkov Telescope Array Observatory (CTAO).
   - Sensitivity forecasts for cross-correlation studies.
 
-### **[INSERT PAPER 5]**
+**INSERT PAPER 5**
 
 - **Title:** Cherenkov Telescope Array Observatory sensitivity to dark matter and galaxy cross-correlations
 - **File:** `001) paper 5 - 2505.20383.pdf`
