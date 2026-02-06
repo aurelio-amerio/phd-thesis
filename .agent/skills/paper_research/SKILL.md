@@ -1,5 +1,5 @@
 ---
-name: thesis_paper_research
+name: paper_research
 description: Research assistant for extracting specific methodology and results from the author's papers. Prioritizes Author Papers (001).
 ---
 
