@@ -40,10 +40,16 @@
 
 ### **Chapter 2: The Gamma-Ray Sky and Fermi-LAT**
 
-- **2.1 Gamma-Ray Astrophysics:**
-  - Astrophysical backgrounds (Galactic Diffuse Emission, Isotropic Diffuse Gamma-Ray Background).
-  - Known sources (Blazars, Pulsars).
-- **2.2 The Fermi Large Area Telescope:**
+- **2.1 Gamma-Ray Production Mechanisms:**
+  - **Hadronic Emission:** Cosmic Ray interactions with interstellar gas (neutral pion decay $\pi^0 \to \gamma\gamma$). The dominant component of the Galactic Diffuse Emission.
+  - **Leptonic Emission:** Inverse Compton Scattering (electrons up-scattering CMB/starlight) and Bremsstrahlung (interaction with ionized gas).
+  - *Relevance:* These processes form the "Galactic Foreground" model, the primary systematic uncertainty discussed in **Paper 4** (dataset shift) and **Paper 3** (GCE background).
+- **2.2 The Astrophysical Gamma-Ray Sky:**
+  - **Blazars (FSRQs & BL Lacs):** The dominant extragalactic population. Their luminosity function determines the bright end of the $dN/dS$ (relevant for **Paper 1**).
+  - **Pulsars and Millisecond Pulsars (MSPs):** The dominant Galactic point-source population. Crucial for the GCE debate (**Paper 3**) and the main contaminant in subhalo searches (**Paper 4**).
+  - **Star-Forming Galaxies & Misaligned AGNs:** Faint populations contributing to the unresolved background and the low-flux end of the $dN/dS$ (**Paper 1**).
+  - **The Diffuse Backgrounds:** Distinguishing between the Galactic Diffuse Emission (GDE) and the Isotropic Diffuse Gamma-Ray Background (IGRB).
+- **2.3 The Fermi Large Area Telescope:**
   - Instrument overview.
   - Point Spread Function (PSF) and Energy Dispersion.
   - Standard data reduction pipelines (Fermi Science Tools).
@@ -59,7 +65,7 @@
   - *Grounding:* Mathematical foundation for **Paper 1**.
 - **3.3 Machine Learning on the Sphere:**
   - Convolutional Neural Networks (CNNs).
-  - Handling spherical data (DeepSphere/HEALPix).
+  - Handling spherical data: Custom implementation (`map2patches`) featuring mapped convolutions on the sphere.
 - **3.4 The Domain Shift Challenge:**
   - Training on simulations vs. testing on real data.
   - Domain adaptation techniques.
@@ -78,7 +84,7 @@
   - Using Globular Clusters to constrain the MSP luminosity function.
   - *Context:* Setting the stage for the following paper.
 
-**INSERT PAPER 3**
+### **[INSERT PAPER 3]**
 
 - **Title:** Millisecond Pulsars in Globular Clusters and Implications for the Galactic Center Gamma-Ray Excess
 - **File:** `001) paper 3 - 2412.05220.pdf`
@@ -96,7 +102,7 @@
   - Application of the methods from Chapter 3 to source classification.
   - Addressing the domain shift between simulated subhalos and real Fermi data.
 
-**INSERT PAPER 4**
+### **[INSERT PAPER 4]**
 
 - **Title:** Search for dark matter subhalos among unassociated Fermi-LAT sources in presence of dataset shift
 - **File:** `001) paper 4 - 2503.14584v1.pdf`
@@ -113,7 +119,7 @@
   - How $dN/dS$ connects the resolved (catalogs) to the unresolved (background).
   - Using the $dN/dS$ to probe non-Poissonian populations.
 
-**INSERT PAPER 1**
+### **[INSERT PAPER 1]**
 
 - **Title:** Extracting the gamma-ray source-count distribution below the Fermi-LAT detection limit with deep learning
 - **File:** `001) paper 1 - 2302.01947.pdf`
@@ -128,7 +134,7 @@
   - Using the $dN/dS$ (derived in Chapter 6) as a prior for source detection.
   - Recovering sub-threshold information.
 
-$$INSERT PAPER 2$$
+### **[INSERT PAPER 2]**
 
 - **Title:** Deepening gamma-ray point-source catalogues with sub-threshold information
 - **File:** `001) paper 2 - 2306.16483.pdf`
@@ -139,23 +145,16 @@ $$INSERT PAPER 2$$
 ### **Chapter 8: Cross-Correlations and Future Prospects**
 
 - **8.1 The Cosmic Web:**
-
   - Dark Matter traces Large Scale Structure (LSS).
-
 - **8.2 Cross-Correlation Formalism:**
-
   - Angular Power Spectra ($C_\ell$).
-
   - Correlating Gamma-rays (Fermi/CTA) with Galaxy Catalogs/Lensing.
-
-  - *Theoretical Basis:* Drawing on the formalism from Camera et al. (2013) 1212.5018 and Fornengo et al. (2014) 1312.4835, and the comprehensive framework detailed in the thesis of Pinetti (2022) 2212.00125.
-
+  - *Theoretical Basis:* Drawing on the formalism from Camera et al. (2013) `'1212.5018'` and Fornengo et al. (2014) `'1312.4835'`, and the comprehensive framework detailed in the thesis of Pinetti (2022) `'2212.00125'`.
 - **8.3 Looking Forward (CTA):**
-
   - Moving from Fermi-LAT to the Cherenkov Telescope Array Observatory (CTAO).
   - Sensitivity forecasts for cross-correlation studies.
 
-**INSERT PAPER 5**
+### **[INSERT PAPER 5]**
 
 - **Title:** Cherenkov Telescope Array Observatory sensitivity to dark matter and galaxy cross-correlations
 - **File:** `001) paper 5 - 2505.20383.pdf`
