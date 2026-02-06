@@ -1,5 +1,5 @@
 ---
-name: nlm_literature_research
+name: literature_review
 description: Research assistant that generates structured `references.md` reports for thesis chapters. It identifies reviews, key papers, and section-specific additional sources via NotebookLM.
 ---
 

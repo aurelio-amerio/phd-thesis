@@ -1,5 +1,5 @@
 ---
-name: paper_research
+name: paper_analysis
 description: Research assistant for extracting specific methodology and results from the author's papers. Prioritizes Author Papers (001).
 ---
 

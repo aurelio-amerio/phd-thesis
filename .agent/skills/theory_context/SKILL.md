@@ -1,5 +1,5 @@
 ---
-name: theory_research
+name: theory_context
 description: Research assistant for gathering general theoretical context and field consensus. Prioritizes Review Articles (002).
 ---
 

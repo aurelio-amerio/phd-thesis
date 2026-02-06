@@ -1,5 +1,5 @@
 ---
-name: chapter_outlining
+name: chapter_outline
 description: Research assistant that generates detailed, structural chapter outlines by synthesizing thesis context, local references, and NotebookLM insights.
 ---
 
