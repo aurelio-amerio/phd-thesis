@@ -413,7 +413,7 @@
 
 % 
 \frontmatter
-\includepdf[pages=-]{frontmatter/title_page_amerio.pdf}
+\import{frontmatter/}{title_page.tex}
 \import{frontmatter/}{copyright.tex}
 \clearemptydoublepage
 \pagenumbering{roman}
@@ -442,7 +442,7 @@
 \import{frontmatter/}{ringraziamenti.tex}
 \clearemptydoublepage
 
-%\input{frontmatter/abstract}
+\import{frontmatter/}{abstract.tex}
 \clearemptydoublepage
 %si toglie perché la table of contents dure 2 pagine
 
@@ -460,23 +460,29 @@
 \clearemptydoublepage
 
 
-% \import{chapter_02/}{chapter_2.tex}
-% \clearemptydoublepage
+\import{chapter_02/}{chapter_2.tex}
+\clearemptydoublepage
 
-% \import{chapter_03/}{chapter_3.tex}
-% \clearemptydoublepage
+\import{chapter_03/}{chapter_3.tex}
+\clearemptydoublepage
 
-% \import{chapter_04/}{chapter_4.tex}
-% \clearemptydoublepage
+\import{chapter_04/}{chapter_4.tex}
+\clearemptydoublepage
 
-% \import{chapter_05/}{chapter_5.tex}
-% \clearemptydoublepage
+\import{chapter_05/}{chapter_5.tex}
+\clearemptydoublepage
 
-% \import{chapter_06/}{chapter_6.tex}
-% \clearemptydoublepage
+\import{chapter_06/}{chapter_6.tex}
+\clearemptydoublepage
 
-% \import{conclusion/}{conclusion.tex}
-% \clearemptydoublepage
+\import{chapter_07/}{chapter_7.tex}
+\clearemptydoublepage
+
+\import{chapter_08/}{chapter_8.tex}
+\clearemptydoublepage
+
+\import{conclusion/}{conclusion.tex}
+\clearemptydoublepage
 
 % \appendix
 % \import{appendix_A/}{appendix_A.tex}
