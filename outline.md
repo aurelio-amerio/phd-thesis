@@ -1,35 +1,163 @@
-# Thesis Outline
+# PhD Thesis Structure: Probing the Dark Universe
 
-## Frontmatter
-- [ ] Title Page
-- [ ] Copyright
-- [ ] Acknowledgements
-- [ ] Abstract (`introduction/introduction.tex`)
-- [ ] Table of Contents
+**Tentative Title:** Probing the Dark Universe: Machine Learning and Statistical Approaches to Gamma-Ray Dark Matter Searches 
 
-## Chapters
+**Format:** Cumulative Dissertation (Compendium)
 
-### Chapter 1: Introduction (`chapter_01/chapter_1.tex`)
-- Current status: Just started.
-- Context: Dark Matter, Cosmology (based on main.tex macros).
+## **Introduction**
 
-### Chapter 2: [Topic TBD]
-- (Placeholder)
+### **0.1 Scope of the Thesis**
 
-### Chapter 3: [Topic TBD]
-- (Placeholder)
+- **The Quest for Dark Matter:** Briefly introduce the current status of Dark Matter (DM) searches, highlighting the transition from "golden gun" signals (bright, smoking-gun spectral lines) to the need for advanced statistical extraction from noise-dominated regimes.
+- **The Data Landscape:** The role of the *Fermi* Large Area Telescope (LAT) after more than a decade of operations. The challenge of extracting new physics from an instrument where the "low-hanging fruit" has arguably been harvested.
+- **The Methodological Shift:** Introduce the central thesis argument: that progress requires moving beyond standard frequentist "thresholding" (detecting individual bright sources) toward **statistical learning** and **population studies** (analyzing the collective properties of faint/unresolved sources) using Machine Learning and Simulation-Based Inference.
 
-### Chapter 4: [Topic TBD]
-- (Placeholder)
+### **0.2 Outline and Summary of Contributions**
 
-### Chapter 5: [Topic TBD]
-- (Placeholder)
+- **Part I: Theoretical Foundations:** A guide to the introductory chapters (1-3) which establish the physical framework ($\Lambda$CDM, WIMPs) and the methodological toolkit (SBI, Bayesian Inference).
+- **Part II: The Galactic Center and Resolved Structures:** Summarize the investigation into specific targets.
+  - *Paper 3:* Investigating the Millisecond Pulsar hypothesis for the Galactic Center Excess.
+  - *Paper 4:* The search for individual DM subhalos among unassociated sources using ML classifiers.
+- **Part III: The Unresolved Sky:** Summarize the shift to population studies.
+  - *Paper 1:* Recovering the source-count distribution ($dN/dS$) of faint sources below the detection threshold.
+  - *Paper 2:* Constructing probabilistic catalogs to utilize sub-threshold information.
+- **Part IV: Large Scale Anisotropies:** Summarize the study of the cosmic web.
+  - *Paper 5:* Forecasting the sensitivity of future observatories (CTA) to DM via cross-correlations with galaxy catalogs.
 
-### Chapter 6: [Topic TBD]
-- (Placeholder)
+## **Part I: Theoretical and Methodological Foundations**
 
-## Backmatter
-- [ ] Conclusion
-- [ ] Appendix
-- [ ] Glossary / Acronyms
-- [ ] Bibliography
+### **Chapter 1: The Dark Matter Problem**
+
+- **1.1 The Cosmological Context:**
+  - Evidence for Dark Matter (Rotation curves, CMB, Large Scale Structure).
+  - The $\Lambda$CDM paradigm.
+- **1.2 The Particle Nature of Dark Matter:**
+  - Limitations of the Standard Model.
+  - The WIMP Miracle and thermal freeze-out.
+- **1.3 Indirect Detection:**
+  - Annihilation and Decay channels.
+  - Gamma-ray production mechanisms (prompt emission, secondary radiation).
+
+### **Chapter 2: The Gamma-Ray Sky and Fermi-LAT**
+
+- **2.1 Gamma-Ray Astrophysics:**
+  - Astrophysical backgrounds (Galactic Diffuse Emission, Isotropic Diffuse Gamma-Ray Background).
+  - Known sources (Blazars, Pulsars).
+- **2.2 The Fermi Large Area Telescope:**
+  - Instrument overview.
+  - Point Spread Function (PSF) and Energy Dispersion.
+  - Standard data reduction pipelines (Fermi Science Tools).
+
+### **Chapter 3: Statistical Methods and Machine Learning in Astrophysics**
+
+- **3.1 Frequentist vs. Bayesian Inference:**
+  - Profile Likelihoods (Standard Fermi analysis).
+  - Bayesian Priors and Posteriors.
+- **3.2 Simulation-Based Inference (SBI):**
+  - The concept of "Likelihood-Free" inference.
+  - Neural Posterior Estimation (NPE).
+  - *Relevance:* Foundation for **Paper 1**.
+- **3.3 Machine Learning on the Sphere:**
+  - Convolutional Neural Networks (CNNs).
+  - Handling spherical data (DeepSphere/HEALPix).
+- **3.4 The Domain Shift Challenge:**
+  - Training on simulations vs. testing on real data.
+  - Domain adaptation techniques.
+  - *Relevance:* Critical context for **Paper 4**.
+
+## **Part II: The Galactic Center and Resolved Sources**
+
+### **Chapter 4: The Galactic Center Excess (GCE)**
+
+- **4.1 The Signal:**
+  - Morphology and Spectrum of the GCE.
+- **4.2 Interpretations:**
+  - Dark Matter Annihilation vs. Millisecond Pulsars (MSPs).
+  - The "Cusp vs. Core" debate (NFW, Burkert profiles).
+- **4.3 Stellar Clusters as Laboratories:**
+  - Using Globular Clusters to constrain the MSP luminosity function.
+  - *Context:* Setting the stage for the following paper.
+
+### **[INSERT PAPER 3]**
+
+- **Title:** Millisecond Pulsars in Globular Clusters and Implications for the Galactic Center Gamma-Ray Excess
+- **File:** `001) paper 3 - 2412.05220.pdf`
+- **Key Contribution:** Constraining the MSP contribution to the GCE.
+
+### **Chapter 5: Searching for Dark Matter Substructures**
+
+- **5.1 Halo Substructure in** $\Lambda$**CDM:**
+  - Hierarchical clustering and the subhalo mass function.
+  - Dark satellites vs. Dwarf Spheroidal Galaxies (dSphs).
+- **5.2 The Unassociated Source Problem:**
+  - Criteria for associating gamma-ray sources.
+  - Classifying unassociated sources as potential dark subhalos.
+- **5.3 Machine Learning Classification:**
+  - Application of the methods from Chapter 3 to source classification.
+  - Addressing the domain shift between simulated subhalos and real Fermi data.
+
+### **[INSERT PAPER 4]**
+
+- **Title:** Search for dark matter subhalos among unassociated Fermi-LAT sources in presence of dataset shift
+- **File:** `001) paper 4 - 2503.14584v1.pdf`
+- **Key Contribution:** Constraints on the subhalo population using ML classification.
+
+## **Part III: The Unresolved Sky**
+
+### **Chapter 6: From Individual Sources to Populations**
+
+- **6.1 The Limits of Detection:**
+  - *Transitional Argument:* As shown in Part II, individual identification of subhalos is limited by the instrument's sensitivity and the "look-elsewhere" effect. If DM subhalos exist below the detection threshold, they must be searched for statistically.
+- **6.2 The Source Count Distribution (**$dN/dS$**):**
+  - Definition and relationship to the Luminosity Function.
+  - How $dN/dS$ connects the resolved (catalogs) to the unresolved (background).
+  - Using the $dN/dS$ to probe non-Poissonian populations.
+
+### **[INSERT PAPER 1]**
+
+- **Title:** Extracting the gamma-ray source-count distribution below the Fermi-LAT detection limit with deep learning
+- **File:** `001) paper 1 - 2302.01947.pdf`
+- **Key Contribution:** Deriving the $dN/dS$ using SBI and Deep Learning.
+
+### **Chapter 7: Probabilistic Cataloging**
+
+- **7.1 The Problem with Thresholding:**
+  - Inconsistencies in standard Test Statistic (TS) cuts due to varying background levels.
+  - The "Quality Factor" alternative.
+- **7.2 Priors from Populations:**
+  - Using the $dN/dS$ (derived in Chapter 6) as a prior for source detection.
+  - Recovering sub-threshold information.
+
+### **[INSERT PAPER 2]**
+
+- **Title:** Deepening gamma-ray point-source catalogues with sub-threshold information
+- **File:** `001) paper 2 - 2306.16483.pdf`
+- **Key Contribution:** Creating probabilistic catalogs to dig into the noise.
+
+## **Part IV: Large Scale Anisotropies**
+
+### **Chapter 8: Cross-Correlations and Future Prospects**
+
+- **8.1 The Cosmic Web:**
+  - Dark Matter traces Large Scale Structure (LSS).
+- **8.2 Cross-Correlation Formalism:**
+  - Angular Power Spectra ($C_\ell$).
+  - Correlating Gamma-rays (Fermi/CTA) with Galaxy Catalogs/Lensing.
+- **8.3 Looking Forward (CTA):**
+  - Moving from Fermi-LAT to the Cherenkov Telescope Array Observatory (CTAO).
+  - Sensitivity forecasts for cross-correlation studies.
+
+### **[INSERT PAPER 5]**
+
+- **Title:** Cherenkov Telescope Array Observatory sensitivity to dark matter and galaxy cross-correlations
+- **File:** `001) paper 5 - 2505.20383.pdf`
+- **Key Contribution:** Forecasting the power of cross-correlations with next-gen instruments.
+
+## **Part V: Conclusions**
+
+### **Chapter 9: Summary and Outlook**
+
+- **9.1 Synthesis:**
+  - Combining individual source classification (Paper 3, 4) with population statistics (Paper 1, 2) and large-scale correlations (Paper 5) provides the most robust constraints.
+- **9.2 Final Remarks:**
+  - The role of ML in the future of astroparticle physics.
