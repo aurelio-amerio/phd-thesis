@@ -7,3 +7,7 @@
 - once the general thesis outline, do a reference search chapter by chapter, using the literature_research skill
 - for each chapter, create a chapter outline using the thesis outline and the outlining skill
 - ... 
+
+
+# tools 
+https://github.com/jacob-bd/notebooklm-mcp-cli 
