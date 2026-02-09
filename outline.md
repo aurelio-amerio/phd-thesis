@@ -7,10 +7,10 @@
 ## **Introduction**
 
 ### **0.1 Scope of the Thesis**
-
-- **The Quest for Dark Matter:** Briefly introduce the current status of Dark Matter (DM) searches, highlighting the transition from "golden gun" signals (bright, smoking-gun spectral lines) to the need for advanced statistical extraction from noise-dominated regimes.
+TBD
+<!-- - **The Quest for Dark Matter:** Briefly introduce the current status of Dark Matter (DM) searches, highlighting the transition from "golden gun" signals (bright, smoking-gun spectral lines) to the need for advanced statistical extraction from noise-dominated regimes.
 - **The Data Landscape:** The role of the *Fermi* Large Area Telescope (LAT) after more than a decade of operations. The challenge of extracting new physics from an instrument where the "low-hanging fruit" has arguably been harvested.
-- **The Methodological Shift:** Introduce the central thesis argument: that progress requires moving beyond standard frequentist "thresholding" (detecting individual bright sources) toward **statistical learning** and **population studies** (analyzing the collective properties of faint/unresolved sources) using Machine Learning and Simulation-Based Inference.
+- **The Methodological Shift:** Introduce the central thesis argument: that progress requires moving beyond standard frequentist "thresholding" (detecting individual bright sources) toward **statistical learning** and **population studies** (analyzing the collective properties of faint/unresolved sources) using Machine Learning and Simulation-Based Inference. -->
 
 ### **0.2 Outline and Summary of Contributions**
 
@@ -99,8 +99,8 @@
   - Criteria for associating gamma-ray sources.
   - Classifying unassociated sources as potential dark subhalos.
 - **5.3 Machine Learning Classification:**
-  - Application of the methods from Chapter 3 to source classification.
-  - Addressing the domain shift between simulated subhalos and real Fermi data.
+  - Application of the methods from Chapter 3 to source classification and population studies.
+  - Addressing the domain shift between associated and unassociated sources.
 
 ### **[INSERT PAPER 4]**
 
