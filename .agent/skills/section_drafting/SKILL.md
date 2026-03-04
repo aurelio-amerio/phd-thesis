@@ -171,6 +171,20 @@ For each key point in the section outline:
 - Cross-references: `\label{sec:X.Y.Z}`, `\ref{sec:...}`
 - No bullet points in final prose — everything in flowing paragraphs
 
+**Literature figures**: Automated figure extraction from papers is not currently available. When a figure from the literature would strengthen the section, insert a LaTeX figure environment with a placeholder and a caption that references the source so the user can fetch the image manually:
+
+```latex
+\begin{figure}[t]
+    \centering
+    % TODO: insert Figure 3 from arXiv:2302.01947 (Amerio et al., 2023)
+    \includegraphics[width=\columnwidth]{figures/placeholder.pdf}
+    \caption{Reconstructed source-count distribution from \cite{Amerio:2023uet}, Figure~3.}
+    \label{fig:dnds_result}
+\end{figure}
+```
+
+The `% TODO` comment must include: (1) the figure number, (2) the arXiv ID or DOI, and (3) the author/year for easy lookup. The user will replace the placeholder with the actual figure file.
+
 ### Step 6: Self-Review
 
 Before presenting the draft, check:
