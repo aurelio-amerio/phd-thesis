@@ -38,3 +38,12 @@
 #### Additional Sources ([Section X.X])
 *   **[Author] et al. ([Year])** *[arXiv:XXXX.XXXX]* - [Brief 5-10 word description].
 *   **[Author] et al. ([Year])** *[arXiv:XXXX.XXXX]* - [Brief 5-10 word description].
+
+---
+
+## 4. Reference Data Table
+*Quick-lookup table for all references cited above. Bib Key is looked up from `bibliography.bib` by arXiv number. **N/A** means the entry is missing and must be added.*
+
+| Paper Name | Authors | arXiv | Bib Key |
+|---|---|---|---|
+| [Shortened title...] | [Surname1, Surname2 et al.] | [XXXX.XXXXX] | [`bib_key`] or **N/A** |
