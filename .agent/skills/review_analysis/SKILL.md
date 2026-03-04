@@ -113,10 +113,7 @@ For every reference extracted:
 
 ### Knowledge Saving
 
-Save extracted insights to `.agent/knowledge/` as standalone files:
-- `gce_interpretations_cirelli_review.md`
-- `nfw_profile_derivation_dodelson.md`
-- `indirect_detection_methodology_hooper.md`
+**REQUIRED**: Use the `knowledge` skill (save mode) to persist extracted insights to `.agent/knowledge/`. The `knowledge` skill defines the standard file format and handles deduplication.
 
 ## Usage Examples
 

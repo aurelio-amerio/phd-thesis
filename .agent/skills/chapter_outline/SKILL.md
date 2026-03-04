@@ -19,6 +19,18 @@ This skill orchestrates the creation of deep, structurally robust chapter outlin
 
 ## Workflow Steps
 
+### Step 0: Knowledge Retrieval
+
+Before starting research, check for existing insights relevant to this chapter.
+
+```
+→ Call knowledge skill (retrieve mode) for the target chapter topic
+→ Input: chapter title/topic from outline.md
+→ Output: any pre-existing insights that can inform or skip research steps
+```
+
+If relevant knowledge files exist, use them to **skip or accelerate** subsequent research steps (e.g., if definitions are already extracted, skip that portion of literature research).
+
 ### Step 1: Context Analysis
 
 Understand where this chapter fits in the larger picture.
@@ -155,4 +167,4 @@ Iterate on the draft:
 
 - `chapter_XX/chapter_outline.md` — the detailed structural outline
 - `chapter_XX/references.md` — references with data table (produced in Step 3)
-- `.agent/knowledge/` — key insights saved for future reference (produced in Steps 3–5)
+- `.agent/knowledge/` — key insights saved via the `knowledge` skill (produced in Steps 3–5)

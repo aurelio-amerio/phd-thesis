@@ -117,10 +117,7 @@ Structure output as notes for writing contextual chapters:
 
 ### Knowledge Saving
 
-Save methodology insights to `.agent/knowledge/`:
-- `paper1_sbi_methodology.md`
-- `paper4_domain_adaptation_approach.md`
-- `paper5_cross_correlation_sensitivity.md`
+**REQUIRED**: Use the `knowledge` skill (save mode) to persist methodology insights to `.agent/knowledge/`. The `knowledge` skill defines the standard file format and handles deduplication.
 
 ## Usage Examples
 

@@ -42,8 +42,21 @@
 ---
 
 ## 4. Reference Data Table
-*Quick-lookup table for all references cited above. Bib Key is looked up from `bibliography.bib` by arXiv number. **N/A** means the entry is missing and must be added.*
+*Quick-lookup table with **provenance tracking**. Bib Key is looked up from `bibliography.bib` by arXiv number (or via InspireHEP MCP). **N/A** means the entry is missing and must be added.*
 
-| Paper Name | Authors | arXiv | Bib Key |
+> **Legend:** ✅ = paper is a separate source in NotebookLM (content directly queryable). ❌ = paper is only **cited within** a review; use the "Cited In" column to find context.
+
+| Paper Name | Bib Key | In NB | Cited In |
 |---|---|---|---|
-| [Shortened title...] | [Surname1, Surname2 et al.] | [XXXX.XXXXX] | [`bib_key`] or **N/A** |
+| **[Section Header]** | | | |
+| [Review paper...] | [`bib_key`] | ✅ | — |
+| [Specific paper...] | [`bib_key`] or **N/A** | ❌ | [Review1, Review2] |
+
+### Summary
+
+| Status | Count |
+|---|---|
+| ✅ In notebook (directly queryable) | **X** |
+| ❌ Cited within reviews only | **Y** |
+
+> **Important:** For papers marked ❌, we cannot directly query their content. When writing, reference these using context extracted from the review(s) listed in "Cited In". Follow the **Citation Preference Hierarchy** from the skill instructions: cite the review for context + the specific paper for scholarly credit.
