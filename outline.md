@@ -80,8 +80,13 @@
 - **3.3 Machine Learning in Astrophysics:**
   - ML approaches (classification, regression, density estimation).
   - Why ML is suited to noise-dominated gamma-ray data.
+  - *(Technical details of NPE → Chapter 6; flow matching/diffusion → Chapter 9)*
 - **3.4 The Domain Shift Challenge:**
   - Problem statement: training on simulations vs. testing on real data.
+  - *(Domain adaptation techniques → Chapter 5)*
+- **3.5 Cross-Correlations as a Complementary Probe:**
+  - At cosmological scales, the angular cross-power spectrum ($C_\ell$) between gamma-ray maps and galaxy/lensing catalogs provides sensitivity to the collective DM signal from unresolved structure.
+  - *More details on the formalism in Chapter 10; introduced here to complete the methodological landscape.*
 
 
 ---
