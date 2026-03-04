@@ -4,25 +4,38 @@
 
 **Format:** Cumulative Dissertation (Compendium)
 
+**Narrative Arc:** The thesis follows a *decreasing signal strength → increasing methodological sophistication* progression. We start from the strongest expected DM signal (Galactic Center), move to fainter resolved targets (subhalos), then probe below the detection threshold with population methods, advance the inference tools themselves, and finally connect to the cosmic web at the largest scales. Each chapter's limitations naturally motivate the next chapter's innovations.
+
+**Design Principles:**
+- *Physics drives the narrative* — each chapter starts from a physics problem, then introduces the ML/statistical tool that solves it.
+- *Methods in context* — ML techniques appear where they are first used, not in a standalone toolbox chapter.
+- *Modularity* — Parts II, III, IV, and V can be read largely independently after Part I. A reader interested only in the GCE need not read Part III.
+
+---
+
 ## **Introduction**
 
 ### **0.1 Scope of the Thesis**
-TBD
-<!-- - **The Quest for Dark Matter:** Briefly introduce the current status of Dark Matter (DM) searches, highlighting the transition from "golden gun" signals (bright, smoking-gun spectral lines) to the need for advanced statistical extraction from noise-dominated regimes.
-- **The Data Landscape:** The role of the *Fermi* Large Area Telescope (LAT) after more than a decade of operations. The challenge of extracting new physics from an instrument where the "low-hanging fruit" has arguably been harvested.
-- **The Methodological Shift:** Introduce the central thesis argument: that progress requires moving beyond standard frequentist "thresholding" (detecting individual bright sources) toward **statistical learning** and **population studies** (analyzing the collective properties of faint/unresolved sources) using Machine Learning and Simulation-Based Inference. -->
+
+- **The Quest for Dark Matter:** The current status of DM searches and the transition from bright, smoking-gun signals to advanced statistical extraction from noise-dominated regimes.
+- **The Data Landscape:** The role of the *Fermi* LAT after more than a decade of operations. The challenge of extracting new physics from an instrument where the low-hanging fruit has been harvested.
+- **The Methodological Shift:** The central thesis argument: progress requires moving beyond standard frequentist thresholding toward **statistical learning** and **population studies** using Machine Learning and Simulation-Based Inference.
 
 ### **0.2 Outline and Summary of Contributions**
 
-- **Part I: Theoretical Foundations:** A guide to the introductory chapters (1-3) which establish the physical framework ($\Lambda$CDM, WIMPs) and the methodological toolkit (SBI, Bayesian Inference).
-- **Part II: The Galactic Center and Resolved Structures:** Summarize the investigation into specific targets.
+- **Part I: Theoretical Foundations** — introductory chapters (1–3) establishing the physical framework (ΛCDM, WIMPs) and the shared methodological vocabulary (SBI, Bayesian Inference).
+- **Part II: The Galactic Center and Resolved Structures** — investigating DM in specific, resolved targets.
   - *Paper 3:* Investigating the Millisecond Pulsar hypothesis for the Galactic Center Excess.
   - *Paper 4:* The search for individual DM subhalos among unassociated sources using ML techniques.
-- **Part III: The Unresolved Sky:** Summarize the shift to population studies.
-  - *Paper 1:* Recovering the source-count distribution ($dN/dS$) of faint sources below the detection threshold.
+- **Part III: The Unresolved Sky** — the shift to population studies below the detection threshold.
+  - *Paper 1:* Recovering the source-count distribution ($dN/dS$) of faint sources using SBI.
   - *Paper 2:* Constructing probabilistic catalogs to utilize sub-threshold information.
-- **Part IV: Large Scale Anisotropies:** Summarize the study of the cosmic web.
-  - *Paper 5:* Forecasting the sensitivity of future observatories (CTA) to DM via cross-correlations with galaxy catalogs.
+- **Part IV: Advancing Simulation-Based Inference** *(provisional)* — improving the inference tools themselves.
+  - *Paper 6:* GenSBI — a library for SBI using flow matching and diffusion models.
+- **Part V: Large Scale Anisotropies** — studying DM at cosmological scales.
+  - *Paper 5:* Forecasting the sensitivity of CTA to DM via cross-correlations with galaxy catalogs.
+
+---
 
 ## **Part I: Theoretical and Methodological Foundations**
 
@@ -54,24 +67,30 @@ TBD
   - Point Spread Function (PSF) and Energy Dispersion.
   - Standard data reduction pipelines (Fermi Science Tools).
 
-### **Chapter 3: Statistical Methods and Machine Learning in Astrophysics**
+### **Chapter 3: Statistical Methods for Noise-Dominated Regimes**
+
+> *Compact conceptual overview (~15 pages). Technique-specific details are introduced in the chapters where they are first applied, keeping each Part modular and self-contained.*
 
 - **3.1 Frequentist vs. Bayesian Inference:**
-  - Profile Likelihoods (Standard Fermi analysis).
+  - Profile Likelihoods (standard Fermi analysis).
   - Bayesian Priors and Posteriors.
-- **3.2 Simulation-Based Inference (SBI):**
+- **3.2 The Simulation-Based Inference Paradigm:**
   - The concept of "Likelihood-Free" inference.
-  - Neural Posterior Estimation (NPE).
-  - *Grounding:* Mathematical foundation for **Paper 1**.
-- **3.3 Machine Learning on the Sphere:**
-  - Convolutional Neural Networks (CNNs).
-  - Handling spherical data: Custom implementation (`map2patches`) featuring mapped convolutions on the sphere.
+  - Why SBI matters for complex forward models with intractable likelihoods.
+  - *(Technical details of NPE → Chapter 6; flow matching/diffusion → Chapter 9)*
+- **3.3 Machine Learning in Astrophysics:**
+  - Taxonomy of ML approaches (classification, regression, density estimation).
+  - Why ML is suited to noise-dominated gamma-ray data.
+  - *(CNN architectures and domain adaptation → Chapter 5)*
 - **3.4 The Domain Shift Challenge:**
-  - Training on simulations vs. testing on real data.
-  - Domain adaptation techniques.
-  - *Grounding:* Critical context for **Paper 4**.
+  - Problem statement: training on simulations vs. testing on real data.
+  - *(Domain adaptation techniques → Chapter 5)*
+
+---
 
 ## **Part II: The Galactic Center and Resolved Sources**
+
+> *Modular: can be read after Part I without requiring Parts III–V. Deals with DM searches in specific, resolved targets. The GCE provides the strongest expected signal but remains inconclusive, motivating the search for DM in other galactic targets.*
 
 ### **Chapter 4: The Galactic Center Excess (GCE)**
 
@@ -98,9 +117,10 @@ TBD
 - **5.2 The Unassociated Source Problem:**
   - Criteria for associating gamma-ray sources.
   - Classifying unassociated sources as potential dark subhalos.
-- **5.3 Machine Learning Classification:**
-  - Application of the methods from Chapter 3 to source classification and population studies.
-  - Addressing the domain shift between associated and unassociated sources.
+- **5.3 Machine Learning Classification & Domain Adaptation:**
+  - CNN architecture for source classification.
+  - Domain adaptation: covariate shift, importance weighting, and the specific techniques used to handle the gap between associated and unassociated sources.
+  - *(This section absorbs the ML technique details previously in Ch 3.3–3.4)*
 
 ### **[INSERT PAPER 4]**
 
@@ -108,16 +128,24 @@ TBD
 - **File:** `001) paper 4 - 2503.14584v1.pdf`
 - **Key Contribution:** Constraints on the subhalo population using ML classification.
 
+---
+
 ## **Part III: The Unresolved Sky**
+
+> *Modular: can be read after Part I without requiring Part II. Shifts from individual source identification to population-level statistics. Motivated by the fact that individual identification of subhalos hits sensitivity limits — if DM subhalos exist below the detection threshold, they must be searched for statistically.*
 
 ### **Chapter 6: From Individual Sources to Populations**
 
 - **6.1 The Limits of Detection:**
-  - *Transitional Argument:* As shown in Part II, individual identification of subhalos is limited by the instrument's sensitivity and the "look-elsewhere" effect. If DM subhalos exist below the detection threshold, they must be searched for statistically.
+  - *Transitional Argument:* Individual identification is limited by sensitivity and the look-elsewhere effect. Population methods are needed to probe below threshold.
 - **6.2 The Source Count Distribution (**$dN/dS$**):**
   - Definition and relationship to the Luminosity Function.
   - How $dN/dS$ connects the resolved (catalogs) to the unresolved (background).
   - Using the $dN/dS$ to probe non-Poissonian populations.
+- **6.3 Simulation-Based Inference for** $dN/dS$**:**
+  - Neural Posterior Estimation (NPE): architecture, training, validation.
+  - Machine Learning on the sphere: `map2patches`, mapped convolutions.
+  - *(This section absorbs the NPE and spherical ML details previously in Ch 3.2–3.3)*
 
 ### **[INSERT PAPER 1]**
 
@@ -140,17 +168,50 @@ TBD
 - **File:** `001) paper 2 - 2306.16483.pdf`
 - **Key Contribution:** Creating probabilistic catalogs to dig into the noise.
 
-## **Part IV: Large Scale Anisotropies**
+---
 
-### **Chapter 8: Cross-Correlations and Future Prospects**
+## **Part IV: Advancing Simulation-Based Inference** *(provisional)*
 
-- **8.1 The Cosmic Web:**
+> *Modular and self-contained. This Part may be included depending on the completion of the associated paper. It is motivated by the SBI methodology introduced in Chapter 6: the NPE approach works, but modern generative models (flow matching, diffusion) can improve flexibility and performance.*
+
+### **Chapter 9: Generative Models for Simulation-Based Inference**
+
+- **9.1 Beyond Normalizing Flows:**
+  - Limitations of standard NPE with normalizing flows.
+  - The shift toward flow matching and diffusion models for density estimation.
+- **9.2 Optimal Transport Flow Matching:**
+  - Conditional flow matching formulation.
+  - Advantages over normalizing flows (training stability, expressivity).
+- **9.3 Diffusion Models for SBI:**
+  - Score-based generative models for posterior estimation.
+  - Connections to flow matching.
+- **9.4 GenSBI: A Library for Generative SBI:**
+  - Architecture and design (JAX/Flax NNX, Flux1/Simformer models).
+  - High-level recipes API for common SBI workflows.
+  - Benchmark results.
+  - *Looking back:* How GenSBI could be applied to improve the dN/dS inference from Paper 1.
+
+### **[INSERT PAPER 6]** *(provisional)*
+
+- **Title:** TBD (GenSBI paper)
+- **Repository:** [`github.com/aurelio-amerio/GenSBI`](https://github.com/aurelio-amerio/GenSBI)
+- **Key Contribution:** A modern SBI library using flow matching and diffusion models.
+
+---
+
+## **Part V: Large Scale Anisotropies**
+
+> *Modular: can be read after Part I without requiring Parts II–IV. Connects gamma-ray observations to the cosmic web at cosmological scales, providing a complementary approach to DM searches.*
+
+### **Chapter 10: Cross-Correlations and Future Prospects**
+
+- **10.1 The Cosmic Web:**
   - Dark Matter traces Large Scale Structure (LSS).
-- **8.2 Cross-Correlation Formalism:**
+- **10.2 Cross-Correlation Formalism:**
   - Angular Power Spectra ($C_\ell$).
   - Correlating Gamma-rays (Fermi/CTA) with Galaxy Catalogs/Lensing.
-  - *Theoretical Basis:* Drawing on the formalism from Camera et al. (2013) `'1212.5018'` and Fornengo et al. (2014) `'1312.4835'`, and the comprehensive framework detailed in the thesis of Pinetti (2022) `'2212.00125'`.
-- **8.3 Looking Forward (CTA):**
+  - *Theoretical Basis:* Drawing on the formalism from Camera et al. (2013) `'1212.5018'` and Fornengo et al. (2014) `'1312.4835'`, and the framework detailed in the thesis of Pinetti (2022) `'2212.00125'`.
+- **10.3 Looking Forward (CTA):**
   - Moving from Fermi-LAT to the Cherenkov Telescope Array Observatory (CTAO).
   - Sensitivity forecasts for cross-correlation studies.
 
@@ -160,11 +221,13 @@ TBD
 - **File:** `001) paper 5 - 2505.20383.pdf`
 - **Key Contribution:** Forecasting the power of cross-correlations with next-gen instruments.
 
-## **Part V: Conclusions**
+---
 
-### **Chapter 9: Summary and Outlook**
+## **Part VI: Conclusions**
 
-- **9.1 Synthesis:**
-  - Combining individual source classification (Paper 3, 4) with population statistics (Paper 1, 2) and large-scale correlations (Paper 5) provides the most robust constraints.
-- **9.2 Final Remarks:**
+### **Chapter 11: Summary and Outlook**
+
+- **11.1 Synthesis:**
+  - Combining individual source classification (Papers 3, 4) with population statistics (Papers 1, 2), advanced inference tools (Paper 6), and large-scale correlations (Paper 5) provides the most robust constraints on DM.
+- **11.2 Final Remarks:**
   - The role of ML in the future of astroparticle physics.
