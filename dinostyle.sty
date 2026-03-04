@@ -1,0 +1,385 @@
+%% mythesis.sty
+%% PhD Thesis Style File — Aurelio Amerio
+%%
+%% Consolidates all package loading, layout settings, chapter styles,
+%% page styles, math commands and thesis-specific macros so that main.tex
+%% can stay clean and minimal.
+%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mythesis}[2026/03/04 v1.0 PhD Thesis Style]
+
+% ============================================================
+% 1. ENCODING & LANGUAGE
+% ============================================================
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[english]{babel}
+\RequirePackage[none]{hyphenat}          % disable hyphenation
+
+% ============================================================
+% 2. FONT
+% ============================================================
+% New Century Schoolbook with math support (fouriernc pulls in fourier internally)
+\RequirePackage{fouriernc}
+\RequirePackage{microtype}               % improved pdf typography
+
+% ============================================================
+% 3. MATH PACKAGES
+% ============================================================
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+\RequirePackage{amssymb}
+\RequirePackage{amsthm}
+\RequirePackage{mathtools}
+\RequirePackage{mathrsfs}               % script math font (\mathscr for Lagrangians etc.)
+\RequirePackage{bigints}
+\newcommand\hmmax{0}
+\newcommand\bmmax{0}                    % prevent "too many math alphabets"
+\RequirePackage{bm}
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+
+% ============================================================
+% 4. GRAPHICS & FIGURES
+% ============================================================
+\RequirePackage{graphicx}
+\RequirePackage{float}
+\RequirePackage{longtable,rotating}
+\RequirePackage{color}
+\RequirePackage{tikz}                   % also loads pgf; used by \pgftextcircled
+\usetikzlibrary{arrows,shapes,automata,backgrounds,petri,topaths}
+
+% ============================================================
+% 5. CAPTIONS & SUBCAPTIONS
+% ============================================================
+\RequirePackage[labelfont=bf]{caption}
+\captionsetup{labelfont=bf}
+\captionsetup[figure]{labelfont={bf}, name={Fig.}, labelsep=period}
+\captionsetup[table]{labelfont={bf}, name={Table}, labelsep=period,
+                     justification=raggedright, singlelinecheck=false}
+\RequirePackage{subcaption}
+
+% ============================================================
+% 6. TABLES & VERBATIM
+% ============================================================
+\RequirePackage{verbatim}
+
+% ============================================================
+% 7. BIBLIOGRAPHY
+% ============================================================
+\RequirePackage[square,numbers]{natbib}
+
+% ============================================================
+% 8. HYPERREF & URLS  (load near last)
+% ============================================================
+% Thesis metadata — override these in main.tex before \begin{document}
+\newcommand{\thesisauthor}{Author Name}
+\newcommand{\thesistitle}{Thesis Title}
+\newcommand{\thesisadvisorone}{Advisor One}
+\newcommand{\thesisadvisortwo}{Advisor Two}
+
+\RequirePackage{url}
+\RequirePackage[hidelinks,
+                colorlinks=true,
+                urlcolor=black,
+                linkcolor=black,
+                citecolor=black]{hyperref}
+\RequirePackage{memhfixc}               % memoir + hyperref fix (after hyperref)
+
+% Pass metadata to hyperref after the user has set \thesisauthor / \thesistitle
+\AtBeginDocument{%
+  \hypersetup{pdfauthor={\thesisauthor}, pdftitle={\thesistitle}}%
+}
+
+% ============================================================
+% 9. MISC UTILITIES
+% ============================================================
+\RequirePackage{import}                 % relative \includegraphics paths
+\RequirePackage{ifpdf}
+\RequirePackage{pdfpages}
+\RequirePackage{calc,soul}
+\RequirePackage{lettrine}               % drop-cap initials used in chapters
+% Note: titlesec is NOT used — memoir handles sectioning natively
+
+% ============================================================
+% 10. GLOSSARIES & ACRONYMS
+% ============================================================
+\RequirePackage[acronym,toc]{glossaries}
+\RequirePackage{glossary-mcols}
+\glsdisablehyper
+
+% Convenience shortcuts
+\newcommand{\as}{\acrshort}
+\newcommand{\al}{\acrlong}
+\newcommand{\af}{\acrfull}
+
+% ============================================================
+% 11. MEMOIR PAGE LAYOUT  (memoir-specific)
+% ============================================================
+\settrimmedsize{297mm}{210mm}{*}
+\setlength{\trimtop}{0pt}
+\setlength{\trimedge}{\stockwidth}
+\addtolength{\trimedge}{-\paperwidth}
+\settypeblocksize{634pt}{448.13pt}{*}
+\setulmargins{4cm}{*}{*}
+\setlrmargins{*}{*}{1.5}
+\setmarginnotes{17pt}{51pt}{\onelineskip}
+\setheadfoot{\onelineskip}{2\onelineskip}
+\setheaderspaces{*}{2\onelineskip}{*}
+\checkandfixthelayout
+
+% Binding-friendly margins
+\setlength{\oddsidemargin}{0.55cm}
+\setlength{\evensidemargin}{-0.55cm}
+
+% ============================================================
+% 12. TYPOGRAPHY & SPACING  (ported from jcappub.sty)
+% ============================================================
+
+% Line spacing: JCAP uses default single spacing
+\renewcommand{\baselinestretch}{}
+\setlength\lineskip{1\p@}
+\setlength\normallineskip{1\p@}
+
+% Paragraph
+\frenchspacing
+\setlength\parskip{0\p@ \@plus \p@}
+\AtBeginDocument{\setlength\parindent{1.2\parindent}}
+
+% Break penalties (matches JCAP exactly)
+\@lowpenalty   51
+\@medpenalty  151
+\@highpenalty 301
+\widowpenalty 1000
+\clubpenalty  1000
+
+% Floats
+\setcounter{topnumber}{4}
+\renewcommand\topfraction{1}
+\setcounter{bottomnumber}{1}
+\renewcommand\bottomfraction{.6}
+\setcounter{totalnumber}{5}
+\renewcommand\textfraction{0}
+\renewcommand\floatpagefraction{0.8}
+\setlength{\floatsep}{14pt plus 8pt minus 6pt}
+
+% Array / table spacing
+\setlength\arraycolsep{2\p@}
+\setlength\tabcolsep{6\p@}
+\setlength\arrayrulewidth{.4\p@}
+\setlength\doublerulesep{2\p@}
+\setlength\tabbingsep{\labelsep}
+\skip\@mpfootins = \skip\footins
+\setlength\fboxsep{3\p@}
+\setlength\fboxrule{.4\p@}
+
+% Equation numbering: section.equation (JCAP style)
+\numberwithin{equation}{section}
+
+% No leader dots in the TOC (JCAP style)
+\renewcommand{\@dotsep}{10000}
+
+% Memoir sectioning depth
+\setsecnumdepth{subsection}
+\maxsecnumdepth{subsubsection}
+
+% Memoir float sub-environments
+\newsubfloat{figure}
+\newsubfloat{table}
+
+% ============================================================
+% 13. CHAPTER STYLE  (Daleif modified)
+% ============================================================
+\makeatletter
+\newlength\dlf@normtxtw
+\setlength\dlf@normtxtw{\textwidth}
+\newsavebox{\feline@chapter}
+\newcommand\feline@chapter@marker[1][4cm]{%
+  \sbox\feline@chapter{%
+    \resizebox{!}{#1}{\fboxsep=1pt%
+      \colorbox{gray}{\color{white}\thechapter}%
+    }}%
+  \rotatebox{90}{%
+    \resizebox{%
+      \heightof{\usebox{\feline@chapter}}+\depthof{\usebox{\feline@chapter}}}%
+    {!}{\scshape\so\@chapapp}}\quad%
+  \raisebox{\depthof{\usebox{\feline@chapter}}}{\usebox{\feline@chapter}}%
+}
+\newcommand\feline@chm[1][4cm]{%
+  \sbox\feline@chapter{\feline@chapter@marker[#1]}%
+  \makebox[0pt][c]{% i.e. \rlap
+    \makebox[1cm][r]{\usebox\feline@chapter}%
+  }}
+\makechapterstyle{daleifmodif}{%
+  \renewcommand\chapnamefont{\normalfont\Large\scshape\raggedleft\so}
+  \renewcommand\chaptitlefont{\normalfont\Large\bfseries\scshape}
+  \renewcommand\chapternamenum{}\renewcommand\printchaptername{}
+  \renewcommand\printchapternum{\null\hfill\feline@chm[2.5cm]\par}
+  \renewcommand\afterchapternum{\par\vskip\midchapskip}
+  \renewcommand\printchaptertitle[1]{\color{gray}\chaptitlefont\raggedleft ##1\par}
+}
+\makeatother
+\chapterstyle{daleifmodif}
+
+% ============================================================
+% 13b. SECTION HEADING STYLE  (ported from jcappub.sty)
+% ============================================================
+% memoir uses \setsecheadstyle etc., but since we need the same
+% look as JCAP we patch via \@startsection directly.
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}%
+  {-3.5ex \@plus -1.3ex \@minus -.7ex}%
+  {2.3ex \@plus.4ex \@minus .4ex}%
+  {\normalfont\large\bfseries}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+  {-2.3ex \@plus -1ex \@minus -.5ex}%
+  {1.2ex \@plus .3ex \@minus .3ex}%
+  {\normalfont\normalsize\bfseries}}
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+  {-2.3ex \@plus -1ex \@minus -.5ex}%
+  {1ex \@plus .2ex \@minus .2ex}%
+  {\normalfont\normalsize\bfseries}}
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+  {1.75ex \@plus 1ex \@minus .2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{5}{\z@}%
+  {1.75ex \@plus 1ex \@minus .2ex}%
+  {-1em}%
+  {\normalfont\normalsize\itshape}}
+\makeatother
+
+% ============================================================
+% 14. PAGE STYLE
+% ============================================================
+\makepagestyle{myvf}
+\makeoddfoot{myvf}{}{\thepage}{}
+\makeevenfoot{myvf}{}{\thepage}{}
+\makeheadrule{myvf}{\textwidth}{\normalrulethickness}
+\makeevenhead{myvf}{\small\textsc{\leftmark}}{}{}
+\makeoddhead{myvf}{}{}{\small\textsc{\rightmark}}
+\pagestyle{myvf}
+
+% Utility: fills blank pages to next odd-numbered page
+\newcommand{\clearemptydoublepage}{%
+  \newpage{\thispagestyle{empty}\cleardoublepage}}
+
+% Index
+\makeindex
+
+% ============================================================
+% 15. LETTRINE (decorative drop-cap)
+% ============================================================
+\newcommand{\initial}[1]{%
+  \lettrine[lines=3,lhang=0.33,nindent=0em]{%
+    \color{gray}{\textsc{#1}}}{}}
+
+% ============================================================
+% 16. CAPTION COMMANDS (memoir-style)
+% ============================================================
+\newcommand{\mycaption}[2][\@empty]{%
+  \captionnamefont{\scshape}
+  \changecaptionwidth
+  \captionwidth{0.9\linewidth}
+  \captiondelim{.\:}
+  \indentcaption{0.75cm}
+  \captionstyle[\centering]{}
+  \setlength{\belowcaptionskip}{10pt}
+  \ifx\@empty#1\caption{#2}\else\caption[#1]{#2}%
+  \fi}
+
+\newcommand{\mysubcaption}[2][\@empty]{%
+  \subcaptionsize{\small}
+  \hangsubcaption
+  \subcaptionlabelfont{\rmfamily}
+  \sidecapstyle{\raggedright}
+  \setlength{\belowcaptionskip}{10pt}
+  \ifx\@empty#1\subcaption{#2}\else\subcaption[#1]{#2}%
+  \fi}
+
+% ============================================================
+% 17. MATH COMMANDS & OPERATORS
+% ============================================================
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+
+\newcommand{\de}{{\textrm d}}
+\newcommand{\pd}{\partial}
+\newcommand{\dint}{\displaystyle\int}
+\newcommand{\drm}{\textrm}
+
+\newcommand{\mDM}{m_{\rm DM}}
+\newcommand{\HI}{\drm{HI}}
+\newcommand{\core}{\drm{core}}
+\newcommand{\tot}{\drm{tot}}
+
+\newcommand{\parcial}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\vectorr}[1]{\mathbf{#1}}
+\newcommand{\vecol}[2]{\left(\begin{array}{c}
+    \displaystyle#1 \\ \displaystyle#2
+  \end{array}\right)}
+\newcommand{\mados}[4]{\left(\begin{array}{cc}
+    \displaystyle#1 & \displaystyle#2 \\
+    \displaystyle#3 & \displaystyle#4
+  \end{array}\right)}
+
+\newcommand{\range}[1]{\textnormal{range }#1}
+\newcommand{\innerp}[2]{\left\langle#1,#2\right\rangle}
+\newcommand{\prom}[1]{\left\langle#1\right\rangle}
+\newcommand{\tra}[1]{\textnormal{tra}\:#1}
+\newcommand{\sign}[1]{\textnormal{sign\,}#1}
+\newcommand{\sech}[1]{\textnormal{sech }#1}
+\newcommand{\diag}[1]{\textnormal{diag }#1}
+\newcommand{\arcsech}[1]{\textnormal{arcsech }#1}
+\newcommand{\arctanh}[1]{\textnormal{arctanh }#1}
+
+% TikZ encircled text
+\newcommand{\pgftextcircled}[1]{%
+  \setbox0=\hbox{#1}%
+  \dimen0\wd0%
+  \divide\dimen0 by 2%
+  \begin{tikzpicture}[baseline=(a.base)]%
+    \useasboundingbox (-\the\dimen0,0pt) rectangle (\the\dimen0,1pt);
+    \node[circle,draw,outer sep=0pt,inner sep=0.1ex] (a) {#1};
+  \end{tikzpicture}}
+
+% ============================================================
+% 18. PROOF ENVIRONMENT (custom tombstone)
+% ============================================================
+\newcommand{\blackged}{\hfill$\blacksquare$}
+\newcommand{\whiteged}{\hfill$\square$}
+\newcounter{proofcount}
+\renewenvironment{proof}[1][\proofname.]{%
+  \par
+  \ifnum\theproofcount>0\pushQED{\whiteged}\else\pushQED{\blackged}\fi%
+  \refstepcounter{proofcount}
+  \normalfont\trivlist
+  \item[\hskip\labelsep\itshape{\bfseries\em #1}]\ignorespaces
+}{%
+  \addtocounter{proofcount}{-1}%
+  \popQED\endtrivlist}
+
+% ============================================================
+% 19. IMPROVED SQUARE ROOT
+% ============================================================
+\let\oldsqrt\sqrt
+\def\sqrt{\mathpalette\DHLhksqrt}
+\def\DHLhksqrt#1#2{%
+  \setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
+  \advance\dimen0-0.2\ht0
+  \setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+  {\box0\lower0.4pt\box2}}
+
+% ============================================================
+% 20. MISC FORMATTING
+% ============================================================
+\newcommand{\red}[1]{{\color{red} #1}}
+\newcommand{\keywords}[1]{\par\noindent{\small{\bf Keywords:} #1}}
+
+% Draft watermark (only if \ifdraftdoc is true — requires memoir)
+\ifdraftdoc
+  \RequirePackage{draftwatermark}
+  \SetWatermarkScale{0.3}
+  \SetWatermarkText{\bf Draft: \today}
+\fi
