@@ -2,7 +2,7 @@
 
 **Tentative Title:** Probing the Dark Universe: Machine Learning and Statistical Approaches to Gamma-Ray Dark Matter Searches
 
-**Format:** Cumulative Dissertation (Compendium)
+**Format:** Traditional thesis (chapters + papers included verbatim)
 
 **Narrative Arc:** The thesis follows a *decreasing signal strength → increasing methodological sophistication* progression. We start from the strongest expected DM signal (Galactic Center), move to fainter resolved targets (subhalos), then probe below the detection threshold with population methods, advance the inference tools themselves, and finally connect to the cosmic web at the largest scales. Each chapter's limitations naturally motivate the next chapter's innovations.
 
@@ -13,7 +13,7 @@
 
 ---
 
-## **Introduction**
+## **Introduction/Abstract**
 
 ### **0.1 Scope of the Thesis**
 
@@ -77,14 +77,12 @@
 - **3.2 The Simulation-Based Inference Paradigm:**
   - The concept of "Likelihood-Free" inference.
   - Why SBI matters for complex forward models with intractable likelihoods.
-  - *(Technical details of NPE → Chapter 6; flow matching/diffusion → Chapter 9)*
 - **3.3 Machine Learning in Astrophysics:**
-  - Taxonomy of ML approaches (classification, regression, density estimation).
+  - ML approaches (classification, regression, density estimation).
   - Why ML is suited to noise-dominated gamma-ray data.
-  - *(CNN architectures and domain adaptation → Chapter 5)*
 - **3.4 The Domain Shift Challenge:**
   - Problem statement: training on simulations vs. testing on real data.
-  - *(Domain adaptation techniques → Chapter 5)*
+
 
 ---
 
@@ -118,15 +116,14 @@
   - Criteria for associating gamma-ray sources.
   - Classifying unassociated sources as potential dark subhalos.
 - **5.3 Machine Learning Classification & Domain Adaptation:**
-  - CNN architecture for source classification.
-  - Domain adaptation: covariate shift, importance weighting, and the specific techniques used to handle the gap between associated and unassociated sources.
-  - *(This section absorbs the ML technique details previously in Ch 3.3–3.4)*
+  - Mixture models, density estimation, and classification.
+  - Domain adaptation: prior and covariate shift formalisms.
 
 ### **[INSERT PAPER 4]**
 
 - **Title:** Search for dark matter subhalos among unassociated Fermi-LAT sources in presence of dataset shift
 - **File:** `001) paper 4 - 2503.14584v1.pdf`
-- **Key Contribution:** Constraints on the subhalo population using ML classification.
+- **Key Contribution:** Constraints on the subhalo population using a ML probabilistic approach.
 
 ---
 
@@ -137,7 +134,7 @@
 ### **Chapter 6: From Individual Sources to Populations**
 
 - **6.1 The Limits of Detection:**
-  - *Transitional Argument:* Individual identification is limited by sensitivity and the look-elsewhere effect. Population methods are needed to probe below threshold.
+  - *Transitional Argument:* Individual identification is limited by sensitivity and the look-elsewhere effect (decide if I wanna talk about LEE or not). Population methods are needed to probe below threshold.
 - **6.2 The Source Count Distribution (**$dN/dS$**):**
   - Definition and relationship to the Luminosity Function.
   - How $dN/dS$ connects the resolved (catalogs) to the unresolved (background).
@@ -145,7 +142,6 @@
 - **6.3 Simulation-Based Inference for** $dN/dS$**:**
   - Neural Posterior Estimation (NPE): architecture, training, validation.
   - Machine Learning on the sphere: `map2patches`, mapped convolutions.
-  - *(This section absorbs the NPE and spherical ML details previously in Ch 3.2–3.3)*
 
 ### **[INSERT PAPER 1]**
 
@@ -170,12 +166,12 @@
 
 ---
 
-## **Part IV: Advancing Simulation-Based Inference** *(provisional)*
+## **Part IV: Advancing Simulation-Based Inference** *(maybe)*
 
 > *Modular and self-contained. This Part may be included depending on the completion of the associated paper. It is motivated by the SBI methodology introduced in Chapter 6: the NPE approach works, but modern generative models (flow matching, diffusion) can improve flexibility and performance.*
 
 ### **Chapter 9: Generative Models for Simulation-Based Inference**
-
+*(the structure of this section may change)*
 - **9.1 Beyond Normalizing Flows:**
   - Limitations of standard NPE with normalizing flows.
   - The shift toward flow matching and diffusion models for density estimation.
@@ -191,7 +187,7 @@
   - Benchmark results.
   - *Looking back:* How GenSBI could be applied to improve the dN/dS inference from Paper 1.
 
-### **[INSERT PAPER 6]** *(provisional)*
+### **[INSERT PAPER 6]** *(maybe)*
 
 - **Title:** TBD (GenSBI paper)
 - **Repository:** [`github.com/aurelio-amerio/GenSBI`](https://github.com/aurelio-amerio/GenSBI)
