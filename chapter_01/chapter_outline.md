@@ -48,16 +48,14 @@
     *   **CMB Lensing:** Intervening DM structures smooth high-$\ell$ acoustic peaks and convert E-mode to B-mode polarization (Planck Collaboration 2020, arXiv:1807.06210).
 *   **Large Scale Structure (LSS):**
     *   **Structure Formation:** Baryons were coupled to photons (Silk Damping) and could not collapse early. DM potential wells grew before recombination, matching the observed power spectrum $P(k)$.
-*   **Baryon Acoustic Oscillations (BAO):**
-    *   Acoustic waves in the pre-recombination plasma freeze into the matter distribution, leaving a preferred distance scale ($\sim 150$ Mpc) between galaxies — a "standard ruler."
-    *   Detected in SDSS, BOSS, and DESI surveys → independently constrains $\Omega_m$ (Eisenstein et al. 2005).
-*   **Type Ia Supernovae:**
-    *   Standardizable candles measuring the luminosity distance–redshift relation.
-    *   Combined with CMB + BAO → $\Omega_\Lambda \approx 0.7$, $\Omega_m \approx 0.3$ (Riess et al. 1998; Perlmutter et al. 1999; Scolnic et al. 2018 Pantheon sample).
-*   **Integrated Sachs-Wolfe (ISW) Effect:**
-    *   Evolving gravitational potentials in a dark-energy dominated universe impart net energy changes to CMB photons traversing them.
-    *   Detected via cross-correlation of CMB anisotropies with galaxy surveys → independent confirmation of DM scaffolding.
-*   *Transition:* The confluence of all evidence at different scales strongly supports the $\Lambda$CDM paradigm — but *what* is DM?
+*   **Concordance Cosmology (BAO, SNe Ia, ISW):**
+    *   Multiple independent probes confirm the $\Lambda$CDM concordance: BAO as a standard ruler ($\sim 150$ Mpc scale; Eisenstein et al. 2005), Type Ia supernovae measuring accelerated expansion (Riess et al. 1998; Perlmutter et al. 1999; Scolnic et al. 2018), and the ISW effect via CMB–galaxy cross-correlations.
+    *   Combined result: $\Omega_\Lambda \approx 0.7$, $\Omega_m \approx 0.3$.
+*   **Big Bang Nucleosynthesis (BBN) — The Non-Baryonic Argument:**
+    *   BBN constrains the baryon density to $\Omega_b h^2 \approx 0.022$ from light element abundances (D, $^4$He, $^7$Li).
+    *   Since $\Omega_m \gg \Omega_b$, the majority of matter must be **non-baryonic** — DM cannot be made of ordinary atoms.
+    *   This is the critical logical bridge: evidence (Sec 1.1) shows DM exists, BBN proves it is not baryonic → it must be a new particle (Sec 1.2).
+*   *Transition:* The confluence of all evidence at different scales strongly supports the $\Lambda$CDM paradigm. BBN proves DM is non-baryonic — but *what* is it?
 
 ---
 
@@ -113,9 +111,15 @@
 
 ---
 
-## 1.3 Indirect Detection Principles (The "How")
-**Goal**: Build the mathematical formalism used in Papers 1–5 and establish the detection strategy.
-**Narrative:** We know *why* it's there, *what* it might be, and *when* it was made. Now, *how* do we see it? This section follows Cirelli et al.'s "Particle-to-Astrophysics Pipeline" structure: start at the interaction level, move to unattenuated messengers, then address propagation and secondary signals.
+## 1.3 Measuring the Dark Matter Signal (The "How")
+**Goal**: Build the mathematical formalism used in Papers 1–5 and establish the detection strategy. Frame the section around the question: *"How do we actually measure a DM signal?"*
+**Narrative:** We know *why* it's there, *what* it might be, and *when* it was made. Now, *how* do we see it? This section answers that by connecting DM structure (density profiles) → signal prediction (flux formalism) → observational targets. We follow Cirelli et al.'s "Particle-to-Astrophysics Pipeline" structure.
+
+### 1.3.0 The Three Pillars of DM Detection
+*   **Direct Detection:** Scattering of DM off nuclei in underground detectors (LZ, XENON).
+*   **Collider Searches:** Production at the LHC — missing transverse energy signatures.
+*   **Indirect Detection:** Observing SM products of DM annihilation/decay in astrophysical environments.
+*   *This thesis focuses on **indirect detection via gamma-rays** — the cleanest messenger for DM searches at the GeV–TeV scale.*
 
 ### 1.3.1 Annihilation and Decay Physics
 *   **Annihilation:** $\chi\chi \to SM\bar{SM} \to \text{stable particles } (\gamma, \nu, e^\pm, p)$.
@@ -142,29 +146,36 @@
     *   **Bremsstrahlung:** $e^\pm$ on gas.
     *   *Significance:* Crucial for the Galactic Center Excess interpretation (Chapter 4).
 
-### 1.3.3 The Flux Factorization ($J$-factor and $D$-factor)
+### 1.3.3 How DM is Structured: Density Profiles
+*   **Why this matters:** The DM signal strength is entirely determined by *how dark matter is distributed* in space. The density profile is the crucial link between the evidence of Sec 1.1 and the detectability of DM.
+*   **Density Profiles:**
+    *   **NFW (Cusp):** $\rho \propto r^{-1}(1+r/r_s)^{-2}$. Derived from N-body CDM simulations (Navarro, Frenk & White 1997).
+    *   **Einasto:** $\rho \propto \exp(-A r^\alpha)$. Provides slightly better fits to high-resolution simulations.
+    *   **Burkert/Core:** $\rho \propto \text{const}$ at $r \to 0$. Empirical fits to rotation curves of dwarf galaxies.
+    *   *Systematic Uncertainty:* The choice of profile fundamentally changes the J-factor and resulting limits (discussed in Chapter 4).
+*   **Substructure:**
+    *   DM halos contain dense substructures (subhalos), including dwarf spheroidals and dark satellites. Since annihilation $\propto \rho^2$, clumps increase the rate: replace $\rho^2$ with $(1+B)\rho^2$ (boost factor).
+    *   Major uncertainty: the minimum subhalo mass $M_{min}$ — physically motivated by DM kinetic decoupling temperature ($\sim 10^{-6} M_\odot$), far below simulation resolution.
+    *   *Reference:* Springel et al. (arXiv:0809.0898).
+
+### 1.3.4 The Flux Factorization ($J$-factor and $D$-factor)
 *   **Annihilation — the master equation:**
     $$ \frac{d\Phi}{dE} = \underbrace{\frac{1}{4\pi} \frac{\langle \sigma v \rangle}{2m_\chi^2} \frac{dN}{dE}}_{\text{Particle Physics}} \times \underbrace{\int_{\Delta\Omega} \int_{los} \rho^2(r) \, dl \, d\Omega}_{\text{Astrophysics (J-factor)}} $$
 *   **Decay — the analogous equation:**
     $$ \frac{d\Phi}{dE} = \frac{1}{4\pi} \frac{1}{\tau m_\chi} \frac{dN}{dE} \times \int_{\Delta\Omega} \int_{los} \rho(r) \, dl \, d\Omega $$
     where $\tau$ is the DM lifetime.
-*   **Density Profiles:**
-    *   **NFW (Cusp):** $\rho \propto r^{-1}(1+r/r_s)^{-2}$. Derived from CDM simulations.
-    *   **Burkert/Core:** $\rho \propto \text{const}$ at $r \to 0$. Empirical fits to rotation curves.
-    *   *Systematic Uncertainty:* The choice of profile fundamentally changes the J-factor and resulting limits (discussed in Chapter 4).
-*   **The Boost Factor from Substructure:**
-    *   DM halos contain dense substructures (subhalos). Since annihilation $\propto \rho^2$, clumps exponentially increase the rate: replace $\rho^2$ with $(1+B)\rho^2$.
-    *   Major uncertainty: the minimum subhalo mass $M_{min}$ — physically motivated by DM kinetic decoupling temperature ($\sim 10^{-6} M_\odot$), far below simulation resolution.
-    *   *Reference:* Springel et al. (arXiv:0809.0898).
+*   **Key insight:** The factorization separates what we *know* (particle physics model) from what we *measure in the sky* (astrophysical J/D-factor). The density profiles of Sec 1.3.3 directly determine the J/D-factor.
 
-### 1.3.4 Multi-Messenger Signals (Brief Overview)
-*   **Neutrinos:** Travel unattenuated; probe DM captured in Sun/Earth cores (IceCube, arXiv:1612.05949).
-*   **Electrons and Positrons ($e^\pm$):** Diffuse through Galactic B-fields, lose energy rapidly → probe local DM sources ($\lesssim 1$ kpc) (PAMELA, arXiv:0810.4995).
-*   **Antiprotons ($\bar{p}$):** Negligible energy losses → preserve spectral shape, sample larger Galactic volume (Cuoco et al., arXiv:1610.03071).
-*   **Anti-nuclei:** Extremely low astrophysical background → essentially background-free detection window (Donato et al., arXiv:0803.2640).
-*   *Note:* This thesis focuses on **gamma-rays** — the motivation for the Fermi-LAT instrument detailed in Chapter 2.
+### 1.3.5 Observational Targets for Gamma-Ray Searches
+*   **Galactic Center:** Brightest expected DM signal due to proximity and high density (NFW cusp). However, intense astrophysical backgrounds (pulsars, cosmic-ray interactions, diffuse emission) make signal extraction extremely challenging → motivates Chapter 4 (GCE).
+*   **DM Subhalos (dSphs + Dark Satellites):** DM-dominated systems with negligible astrophysical backgrounds. Lower J-factors but far cleaner signal environment. The thesis studies both known dSphs and unresolved dark subhalos → motivates Chapters 5-6.
+*   **Extragalactic / UGRB:** Integrated signal from all DM halos across cosmic history. Widest field of view but significant astrophysical uncertainties in the unresolved gamma-ray background → motivates Chapter 8 (cross-correlations).
+*   *Note:* The complementary strengths of these targets drive the multi-pronged approach in Parts II–V.
 
-### 1.3.5 Status of the Field (The Motivation)
+### 1.3.6 Multi-Messenger Context
+*   DM annihilation/decay also produces neutrinos (IceCube), $e^\pm$ (PAMELA, AMS-02), antiprotons (Cuoco et al. 2017), and anti-nuclei (Donato et al. 2008). Each messenger probes different DM environments and energy scales. This thesis focuses exclusively on **gamma-rays** — the cleanest, most directly interpretable messenger for GeV–TeV DM.
+
+### 1.3.7 Status of the Field (The Motivation)
 *   **The "WIMP Crisis":**
     *   Fermi-LAT dSphs limits (*Ackermann et al. 2015*) exclude the canonical thermal cross-section for $m_\chi \lesssim 100$ GeV ($b\bar{b}$).
     *   Direct Detection (LZ/XENON) limits are pushing towards the "Neutrino Floor."
