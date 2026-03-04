@@ -9,6 +9,16 @@
 
 ---
 
+## 1.0 Chapter Introduction
+**Goal**: Provide a brief, untitled opening (2–4 paragraphs) that orients the reader before the first numbered section. This text appears at the start of the chapter with no section heading.
+**Narrative**: Follow a funnel structure — broad context → specific problem → chapter roadmap:
+- **Opening context**: The nature of dark matter is one of the central open questions in modern physics. Multiple independent lines of evidence, spanning galactic to cosmological scales, point to a large non-luminous matter component.
+- **The central question**: If dark matter exists, *what is it* and *how can we detect it?* The WIMP paradigm provides a concrete, testable framework through the thermal freeze-out mechanism.
+- **Chapter roadmap**: This chapter builds the theoretical and observational foundation for the thesis. We first review the multi-scale evidence for dark matter (Sec. 1.1), then introduce the WIMP paradigm and the thermal relic calculation (Sec. 1.2), and finally develop the indirect detection formalism — density profiles, J/D-factors, and observational targets — that underpins the searches in Parts II–V (Sec. 1.3).
+- **Bridge to the thesis**: Emphasize that the formalism developed here (especially the flux factorization and the status-of-the-field argument) directly motivates the advanced statistical and ML approaches that form the core of the thesis.
+
+---
+
 ## 1.1 Evidence for Dark Matter (The "Why")
 **Goal**: Establish DM not as a hypothesis, but as an observational necessity across all astrophysical scales.
 **Narrative:** We adopt the "Mini-Midi-Maxi" classification structure from Cirelli et al. (2024), building the case from galactic to cosmological scales. Each scale provides independent evidence, creating an overwhelming multi-scale argument.

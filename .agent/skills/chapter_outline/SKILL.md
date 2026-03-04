@@ -125,6 +125,14 @@ Create (or update) `chapter_XX/chapter_outline.md`.
 - **Next Chapter**: [How this chapter leads into the next one]
 - **Inserted Paper**: [If applicable, which paper is inserted and its key contribution]
 
+## [X.0] Chapter Introduction
+**Goal**: Provide a brief, untitled opening (2–4 paragraphs) that orients the reader before the first numbered section. This text appears at the start of the chapter with no section heading.
+**Narrative**: Follow a funnel structure:
+- Opening context: broad motivation for the chapter's topic
+- The central question this chapter addresses
+- Chapter roadmap: one-sentence preview of each main section (X.1, X.2, …) and how they connect
+- Bridge to the thesis: how the chapter's content feeds into the rest of the thesis
+
 ## [X.1] [Section Title]
 **Goal**: [What this section achieves in the argument]
 **Narrative**: [How the story progresses through this section]
@@ -147,6 +155,7 @@ Create (or update) `chapter_XX/chapter_outline.md`.
 ```
 
 **Rules**:
+- **Chapter Introduction (X.0)**: Mandatory for every chapter. Untitled in the final output — provides opening paragraphs before the first numbered section
 - **H2 sections**: Main structural divisions
 - **H3 subsections**: Specific logical steps
 - **Bullets**: Key points with specific reference citations

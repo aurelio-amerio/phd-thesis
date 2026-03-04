@@ -73,6 +73,16 @@ Know these exist and reference if the situation calls for it:
 
 ## Section Granularity
 
+### `/draft X introduction` — Chapter Introduction
+
+Draft the untitled opening paragraphs of Chapter X (the "Section X.0" from the chapter outline). This is **not** a subsection intro — it covers the entire chapter at a high level.
+
+- **Length**: 2–4 paragraphs.
+- **Structure**: Funnel pattern from the Personal Style profile: broad context → specific problem → gap → "In this chapter we…" roadmap.
+- **Input**: Reads the **full** `chapter_outline.md` (all sections) plus `outline.md` (thesis arc) to understand the chapter's scope and connections.
+- **No subsubsection research**: Unlike `/draft X.Y`, this mode does not drill into individual reference queries. It synthesises the chapter's Goal, Narrative, and Connections blocks into flowing prose.
+- **Output**: Saved to `chapter_XX/sections/X.0_introduction.md`.
+
 ### `/draft X.Y` — Subsection Level
 
 **Ask the user** which mode:
@@ -95,11 +105,15 @@ Draft a single subsubsection. Before writing, **read existing context**:
 
 ### Step 0: Parse Input & Determine Mode
 
-1. Parse `X.Y.Z` or `X.Y` from the user's `/draft` command
+1. Parse the user's `/draft` command:
+   - `X introduction` → chapter introduction mode
+   - `X.Y` → subsection mode
+   - `X.Y.Z` → subsubsection mode
 2. Map chapter `X` → directory `chapter_0X/`
 3. Locate the target in `chapter_outline.md`
-4. If subsection (`X.Y`): ask user for **intro-only** or **full-section** mode
-5. If subsubsection (`X.Y.Z`): proceed directly
+4. If **chapter introduction** (`X introduction`): proceed to draft the X.0 block — read the full chapter outline and thesis connections, skip per-subsection research
+5. If **subsection** (`X.Y`): ask user for **intro-only** or **full-section** mode
+6. If **subsubsection** (`X.Y.Z`): proceed directly
 
 ### Step 1: Context Loading
 
