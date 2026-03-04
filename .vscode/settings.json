@@ -1,0 +1,7 @@
+{
+    "[latex]": {
+        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrapColumn": 100,
+        "editor.minimap.enabled": false
+    }
+}
