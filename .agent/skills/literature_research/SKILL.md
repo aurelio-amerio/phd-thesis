@@ -96,23 +96,16 @@ Every reference identified during research falls into one of two categories:
 
 When writing thesis text, we can only paraphrase and build arguments from sources we can actually read. For ❌ Referenced Sources, we rely on the review's discussion of that paper. The "Cited In" column in the data table tells us which review(s) to query for context about that paper.
 
-### Lightweight Context via InspireHEP (Optional)
+### External Lookup via `paper_lookup` Skill
 
-For ❌ Referenced Sources, you can use `mcp_inspirehep_get_paper_details` to retrieve metadata such as the **abstract**, author list, citation count, and publication info. This is useful when:
+For ❌ Referenced Sources, use the `paper_lookup` skill to retrieve additional information. Common uses:
 
-- **Evaluating whether a paper is worth citing** — the abstract helps judge relevance without needing full text
-- **Disambiguating papers** — when a review mentions a result but doesn't specify which paper
-- **Checking citation impact** — citation count helps gauge significance
+- **Quick metadata/abstract**: `paper_lookup` Recipe 1 (InspireHEP `get_paper_details`)
+- **Full paper text**: `paper_lookup` Recipe 2 (arXiv `download_paper` → `read_paper`)
+- **BibTeX entry**: `paper_lookup` Recipe 4 (InspireHEP `get_bibtex`)
+- **Figures**: `paper_lookup` Recipe 3 (InspireHEP `get_paper_figures` + download)
 
-```
-# Wrap arXiv ID in URL to avoid numeric parsing issues:
-mcp_inspirehep_get_paper_details(arxiv_id="https://arxiv.org/abs/1503.02641")
-# Old-format IDs work directly (they contain letters):
-mcp_inspirehep_get_paper_details(arxiv_id="hep-ph/0512090")
-# Returns: title, authors, abstract, citation_count, publication info, etc.
-```
-
-> **⚠️ Guardrails**: This is a **triage tool**, not a content source. Use it to *decide* whether to cite a paper, not to *write* based on it. The abstract alone is insufficient for paraphrasing results or building arguments. For that, always rely on the review(s) that discuss the paper (listed in "Cited In"), or add the paper to the NotebookLM notebook as a full source.
+> **⚠️ Guardrails**: External lookups are a **triage tool**, not a content source. Use them to *decide* whether to cite a paper, not to *write* based on an abstract alone. For building arguments, always rely on the review(s) that discuss the paper (listed in "Cited In"), or add the paper to the NotebookLM notebook as a full source.
 
 ## Citation Preference Hierarchy
 

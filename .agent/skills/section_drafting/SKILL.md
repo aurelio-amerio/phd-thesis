@@ -185,7 +185,22 @@ For each key point in the section outline:
 - Cross-references: `\label{sec:X.Y.Z}`, `\ref{sec:...}`
 - No bullet points in final prose — everything in flowing paragraphs
 
-**Literature figures**: Automated figure extraction from papers is not currently available. When a figure from the literature would strengthen the section, insert a LaTeX figure environment with a placeholder and a caption that references the source so the user can fetch the image manually:
+**Literature figures**: Figures from published papers can be retrieved using the `paper_lookup` skill. Use InspireHEP's `get_paper_figures` to obtain figure URLs, then download them with `curl`. When a figure from the literature would strengthen the section:
+
+1. Use `paper_lookup` Recipe 3 to download the figure
+2. Save it to `figures/` in the chapter directory
+3. Insert a LaTeX figure environment referencing the downloaded file
+
+```latex
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{figures/cirelli_fig1_dm_profiles.png}
+    \caption{DM density profiles and parameters, from \cite{Cirelli:2010xx}, Figure~1.}
+    \label{fig:dm_profiles}
+\end{figure}
+```
+
+If the figure is **not available** on InspireHEP (not all papers have indexed figures), fall back to a placeholder with a `% TODO` comment:
 
 ```latex
 \begin{figure}[t]
