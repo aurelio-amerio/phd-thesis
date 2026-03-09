@@ -47,6 +47,8 @@
 - **1.2 The Particle Nature of Dark Matter:**
   - Limitations of the Standard Model.
   - The WIMP Miracle and thermal freeze-out.
+
+- 1.2b parlare di tute le forme di detection, non solo indirect (collider, direct, cosmologia)
 - **1.3 Indirect Detection:**
   - Annihilation and Decay channels.
   - Gamma-ray production mechanisms (prompt emission, secondary radiation).
