@@ -41,17 +41,22 @@
 
 ### **Chapter 1: The Dark Matter Problem**
 
-- **1.1 The Cosmological Context:**
-  - Evidence for Dark Matter (Rotation curves, CMB, Large Scale Structure).
+- **1.1 Evidence for Dark Matter:**
+  - Multi-scale evidence (Rotation curves, galaxy clusters, CMB, Large Scale Structure).
   - The $\Lambda$CDM paradigm.
-- **1.2 The Particle Nature of Dark Matter:**
-  - Limitations of the Standard Model.
-  - The WIMP Miracle and thermal freeze-out.
-
-- 1.2b parlare di tute le forme di detection, non solo indirect (collider, direct, cosmologia)
-- **1.3 Indirect Detection:**
-  - Annihilation and Decay channels.
-  - Gamma-ray production mechanisms (prompt emission, secondary radiation).
+- **1.2 The WIMP Paradigm:**
+  - Limitations of the Standard Model, landscape of candidates.
+  - Thermal freeze-out and the WIMP Miracle.
+- **1.3 Searching for Dark Matter:**
+  - The detection triangle: direct, collider, and indirect searches as complementary probes.
+  - Direct detection (~1 page): nuclear recoil, noble liquid TPCs (LZ, XENONnT), neutrino fog.
+  - Collider searches (~1 page): missing-$E_T$, mono-X, simplified models, LHC status.
+  - Why indirect detection: unique sensitivity to the thermal annihilation cross-section.
+- **1.4 Indirect Detection via Gamma-Rays:**
+  - Annihilation and Decay channels, spectral features.
+  - Density profiles, J/D-factor formalism.
+  - Observational targets (Galactic Center, dSphs, extragalactic).
+  - Multi-messenger context, status of the field.
 
 ### **Chapter 2: The Gamma-Ray Sky and Fermi-LAT**
 

@@ -81,6 +81,10 @@ mcp_notebooklm_notebook_query(
 5. **Comparative Views**: Compare how different reviews cover the same topic.
    - *Prompt*: `"Compare how [Review A] and [Review B] present [Topic]. What differences in emphasis or interpretation exist?"`
 
+6. **Figure Identification**: Identify key figures from papers cited in the review that illustrate core concepts.
+   - *Prompt*: `"Which figures from the papers discussed in [Review X] are considered canonical illustrations of [Topic]? For each, provide the paper's arXiv ID, figure number, and a brief description of what it shows."`
+   - This feeds into `section_drafting` Step 4b and `paper_lookup` Recipe 3 for actual downloads.
+
 ## Output
 
 ### Citation-Ready Notes
@@ -101,6 +105,10 @@ Structure extracted content as:
 1. The review begins by establishing...
 2. It then transitions to...
 3. The argument concludes with...
+
+### Key Figures
+- **Fig. N** from [arXiv:XXXX.XXXXX]: [description of what it shows] → illustrates [concept]
+- **Fig. M** from [arXiv:YYYY.YYYYY]: [description] → illustrates [concept]
 ```
 
 ### Bib Key Lookup

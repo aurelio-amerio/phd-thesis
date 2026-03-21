@@ -140,6 +140,7 @@ Create (or update) `chapter_XX/chapter_outline.md`.
 ### [X.1.1] [Subsection Title]
 - Key point 1 → cite [Reference] (Sec X.X)
 - Key point 2 → cite [Reference]
+- **Figure**: [description] → from [arXiv:XXXX.XXXXX], Fig. N
 - Transition: [How this leads to the next subsection]
 
 ### [X.1.2] [Subsection Title]
@@ -159,6 +160,7 @@ Create (or update) `chapter_XX/chapter_outline.md`.
 - **H2 sections**: Main structural divisions
 - **H3 subsections**: Specific logical steps
 - **Bullets**: Key points with specific reference citations
+- **Figure annotations**: Mark key literature figures with `**Figure**: [description] → from [arXiv:ID], Fig. N`. These signal to `section_drafting` Step 4b which figures to fetch and download
 - **Transitions**: Explicitly note how each section leads to the next
 - **Connections**: First section documents how this chapter connects to the rest of the thesis
 

@@ -107,6 +107,23 @@ For ❌ Referenced Sources, use the `paper_lookup` skill to retrieve additional 
 
 > **⚠️ Guardrails**: External lookups are a **triage tool**, not a content source. Use them to *decide* whether to cite a paper, not to *write* based on an abstract alone. For building arguments, always rely on the review(s) that discuss the paper (listed in "Cited In"), or add the paper to the NotebookLM notebook as a full source.
 
+### Phase 3: Figure Scouting
+
+After Phases 1–2 identify the key references, query NotebookLM for **figures from the literature** that could illustrate thesis content:
+
+```
+mcp_notebooklm_notebook_query(
+    notebook_id="1b7df790-7858-4fc8-879c-39f41238c4ae",
+    query="Which figures from the papers we discussed are considered
+           canonical or frequently-referenced illustrations of [topic]?
+           For each, state the paper (arXiv ID), figure number,
+           and what it shows.",
+    conversation_id=<previous_conversation_id>
+)
+```
+
+Record figure candidates in `references.md` (see **Figure Candidates Table** in the Output section). These feed into `section_drafting` Step 4b and `paper_lookup` Recipe 3 for download.
+
 ## Citation Preference Hierarchy
 
 When citing a claim or result, follow this priority order:
@@ -188,7 +205,25 @@ Include as **Section 4** of `references.md`. Format:
 3. Mark ✅ if found, ❌ if not
 4. For ❌ entries, note which review(s) cited the paper based on the query response
 
-### 3. Knowledge Insights
+### 3. Figure Candidates Table
+
+If Phase 3 identified relevant figures, include as **Section 5** of `references.md`:
+
+| Figure | Paper | Bib Key | Description | Section |
+|---|---|---|---|---|
+| Fig. 1 | arXiv:XXXX.XXXXX | `Author:2020abc` | Rotation curve of NGC 6503 | 1.1.1 |
+| Fig. 3 | arXiv:YYYY.YYYYY | `Author:2022def` | DM density profiles comparison | 1.2.2 |
+
+**Column definitions**:
+- **Figure**: Figure number in the original paper
+- **Paper**: arXiv ID (or DOI for non-arXiv papers)
+- **Bib Key**: from `bibliography.bib` lookup
+- **Description**: What the figure shows (1 line)
+- **Section**: Which thesis section would use this figure
+
+These candidates are consumed by `section_drafting` Step 4b, which attempts download via `paper_lookup` Recipe 3.
+
+### 4. Knowledge Insights
 
 **REQUIRED**: After producing `references.md`, use the `knowledge` skill (save mode) to persist key insights to `.agent/knowledge/`. The `knowledge` skill defines the standard file format (YAML frontmatter + body) and handles deduplication.
 

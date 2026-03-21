@@ -83,9 +83,14 @@ Figures are available via InspireHEP for papers that have them indexed.
 mcp_inspirehep_get_paper_figures(arxiv_id="https://arxiv.org/abs/<ID>")
 # Returns: list of {caption, url, description} for each figure
 
-# Step 2: Download a specific figure
-# run_command: curl -L -o "figures/<filename>.png" "<figure_url>"
+# Step 2: Download a specific figure to the chapter's figures directory
+# run_command: curl -L -o "chapter_XX/figures/<bib_key>_figN.<ext>" "<figure_url>"
 ```
+
+**Save path convention**: `chapter_XX/figures/<bib_key>_figN.<ext>` where:
+- `<bib_key>` is the paper's BibTeX key (e.g., `Navarro:1996gj`)
+- `figN` is the figure number from the paper
+- `<ext>` is the file extension — check the URL for the format (`.png`, `.pdf`, `.jpg`). If the URL has no extension, try `.png` first
 
 **Important**: The InspireHEP MCP server provides figure **URLs only** — it does not download files. Use `curl -L -o` or equivalent to download the actual image files from the returned URLs.
 

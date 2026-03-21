@@ -14,7 +14,7 @@
 **Narrative**: Follow a funnel structure — broad context → specific problem → chapter roadmap:
 - **Opening context**: The nature of dark matter is one of the central open questions in modern physics. Multiple independent lines of evidence, spanning galactic to cosmological scales, point to a large non-luminous matter component.
 - **The central question**: If dark matter exists, *what is it* and *how can we detect it?* The WIMP paradigm provides a concrete, testable framework through the thermal freeze-out mechanism.
-- **Chapter roadmap**: This chapter builds the theoretical and observational foundation for the thesis. We first review the multi-scale evidence for dark matter (Sec. 1.1), then introduce the WIMP paradigm and the thermal relic calculation (Sec. 1.2), and finally develop the indirect detection formalism — density profiles, J/D-factors, and observational targets — that underpins the searches in Parts II–V (Sec. 1.3).
+- **Chapter roadmap**: This chapter builds the theoretical and observational foundation for the thesis. We first review the multi-scale evidence for dark matter (Sec. 1.1), then introduce the WIMP paradigm and the thermal relic calculation (Sec. 1.2). We then survey the three complementary experimental strategies for detecting DM — direct, collider, and indirect searches (Sec. 1.3) — before developing the indirect detection formalism in detail: density profiles, J/D-factors, and observational targets (Sec. 1.4), which underpins the searches in Parts II–V.
 - **Bridge to the thesis**: Emphasize that the formalism developed here (especially the flux factorization and the status-of-the-field argument) directly motivates the advanced statistical and ML approaches that form the core of the thesis.
 
 ---
@@ -33,7 +33,7 @@
 *   **Velocity Dispersions (Dwarf Spheroidals):**
     *   Dispersion-supported systems like Draco, Sculptor, and Segue 1 have extreme mass-to-light ratios ($M/L \sim 10$–$1000$), indicating DM domination.
     *   Masses derived from line-of-sight velocity dispersions of constituent stars (Walker et al. 2009; Wolf et al. 2010).
-    *   → Transition: dSphs reappear in Ch. 5 (substructure searches) and in the Fermi-LAT constraints (Sec. 1.3.4).
+    *   → Transition: dSphs reappear in Ch. 5 (substructure searches) and in the Fermi-LAT constraints (Sec. 1.4.4).
 
 ### 1.1.2 Cluster Scale ("Midi")
 *   **Dynamical Evidence:**
@@ -113,25 +113,63 @@
 *   **Sommerfeld Enhancement (brief introduction):**
     *   Non-perturbative correction: long-range attractive force from light mediator ($m_{med} \ll m_{DM}$) boosts low-velocity cross-sections ($S \propto 1/v_{rel}$).
     *   Since $v_{\text{freeze-out}} \sim 0.3c \gg v_{\text{today}} \sim 10^{-3}c$, the present-day annihilation rate can be orders of magnitude larger than at freeze-out.
-    *   → Detailed treatment deferred to Sec. 1.3 and Chapter 4 where it impacts GCE interpretation.
+    *   → Detailed treatment deferred to Sec. 1.4 and Chapter 4 where it impacts GCE interpretation.
     *   *Reference:* Hisano et al. (arXiv:hep-ph/0610249); Arkani-Hamed et al. (arXiv:0810.0713).
 *   **Co-annihilation:** If other dark-sector states have mass splitting $\Delta m \lesssim T_{\text{f.o.}}$, the effective annihilation cross-section is modified (e.g., Ellis et al. 1984).
 *   **Resonances:** $s$-channel mediator with $m_{med} \approx 2 m_\chi$ causes sharp temperature-dependent cross-section enhancement (Griest & Seckel).
-*   *Transition:* The WIMP miracle motivates focused experimental searches — how do we detect DM indirectly?
+*   *Transition:* The WIMP miracle motivates focused experimental searches — how do we detect DM?
 
 ---
 
-## 1.3 Measuring the Dark Matter Signal (The "How")
-**Goal**: Build the mathematical formalism used in Papers 1–5 and establish the detection strategy. Frame the section around the question: *"How do we actually measure a DM signal?"*
-**Narrative:** We know *why* it's there, *what* it might be, and *when* it was made. Now, *how* do we see it? This section answers that by connecting DM structure (density profiles) → signal prediction (flux formalism) → observational targets. We follow Cirelli et al.'s "Particle-to-Astrophysics Pipeline" structure.
+## 1.3 Searching for Dark Matter (The "How" — Overview)
+**Goal**: Survey the three complementary experimental strategies for detecting DM. Direct and collider searches receive a concise treatment (~1 page each) to orient the reader; indirect detection is introduced here and then developed in full detail in Sec. 1.4.
+**Narrative:** We know *why* DM is there and *what* it might be. Now, *how* do we find it? The same $\chi$–SM interaction that sets the relic density can be probed from three directions: scattering (direct), production (collider), and annihilation/decay (indirect). We describe each strategy, its current status, and why indirect detection via gamma-rays is the focus of this thesis.
 
-### 1.3.0 The Three Pillars of DM Detection
-*   **Direct Detection:** Scattering of DM off nuclei in underground detectors (LZ, XENON).
-*   **Collider Searches:** Production at the LHC — missing transverse energy signatures.
-*   **Indirect Detection:** Observing SM products of DM annihilation/decay in astrophysical environments.
-*   *This thesis focuses on **indirect detection via gamma-rays** — the cleanest messenger for DM searches at the GeV–TeV scale.*
+### 1.3.1 The Detection Triangle
+*   **Unifying picture:** The same DM–SM coupling that governs freeze-out can be read in three directions — *direct detection* (DM scatters off SM), *collider production* (SM → DM), and *indirect detection* (DM → SM). This complementarity is naturally represented by rotating the Feynman diagram for the $\chi$–SM vertex.
+*   **Complementarity:** No single approach covers the full parameter space. Direct detection excels at low masses and spin-independent couplings; colliders probe short-lived mediators and high-energy production; indirect detection is uniquely sensitive to the annihilation cross-section that sets the thermal relic abundance.
+*   *This thesis focuses on **indirect detection via gamma-rays**, which directly probes the thermal cross-section target.*
 
-### 1.3.1 Annihilation and Decay Physics
+### 1.3.2 Direct Detection (~1 page)
+*   **Principle:** A WIMP from the local halo ($v \sim 220$ km/s, $\rho_\odot \sim 0.4$ GeV/cm$^3$) scatters elastically off a target nucleus, depositing $\mathcal{O}(\text{keV})$ recoil energy.
+*   **Key observables:**
+    *   **Nuclear recoil energy spectrum:** Expected exponential shape $dR/dE_R \propto e^{-E_R/E_0}$, with the rate $\propto \sigma_{\chi N} \cdot \rho_\odot / m_\chi$.
+    *   **Annual modulation:** Earth's orbital motion modulates the WIMP flux by $\sim 5\%$ (Drukier, Freese & Spergel 1986). DAMA/LIBRA observes a persistent modulation signal; its interpretation remains debated.
+*   **Spin-independent vs. spin-dependent:** SI scattering benefits from coherent enhancement ($\sigma \propto A^2$), making heavy nuclei (Xe, Ge) favorable targets. SD scattering probes the WIMP–nucleon axial coupling, with weaker sensitivity.
+*   **Current experiments and status:**
+    *   **Noble liquid TPCs:** LZ (Aalbers et al. 2023) and XENONnT (Aprile et al. 2023) — dual-phase xenon detectors achieving world-leading SI limits ($\sigma_{SI} \lesssim 10^{-47}$ cm$^2$ at $m_\chi \sim 30$ GeV).
+    *   **PandaX-4T** (Meng et al. 2021): Competitive xenon results from CJPL.
+    *   **Low-mass frontier:** Cryogenic bolometers (SuperCDMS, CRESST-III) and charge-coupled devices (SENSEI, DAMIC) extend sensitivity to sub-GeV WIMPs.
+*   **The Neutrino Fog:** Coherent elastic neutrino–nucleus scattering (CE$\nu$NS) from solar, atmospheric, and diffuse supernova neutrinos creates an irreducible background floor. Future ton-scale detectors (DARWIN/XLZD) will approach this limit, requiring directional detection or novel statistical techniques to make further progress (O'Hare 2021).
+*   *Takeaway:* Direct detection sets the strongest constraints on the WIMP–nucleon coupling for $m_\chi \gtrsim 5$ GeV but is insensitive to the annihilation cross-section probed by indirect detection.
+
+### 1.3.3 Collider Searches (~1 page)
+*   **Principle:** If WIMPs couple to SM particles, they can be pair-produced at colliders. Since WIMPs escape the detector unseen, the hallmark signature is **missing transverse energy** ($E_T^{\text{miss}}$) recoiling against a visible object.
+*   **Search strategies at the LHC:**
+    *   **Mono-X searches:** Events with a single jet, photon, $W/Z$, or Higgs boson recoiling against $E_T^{\text{miss}}$ (ATLAS & CMS Collaborations).
+    *   **Invisible Higgs decays:** Constrain $\text{BR}(h \to \text{invisible}) < 11\%$ (ATLAS, CMS Run 2), sensitive to light DM via the Higgs portal.
+    *   **Disappearing tracks / long-lived particles:** Compressed spectra in supersymmetric models produce short tracks from near-degenerate charginos (ATLAS 2022).
+*   **Theoretical frameworks:**
+    *   **EFT approach:** Effective operators $\mathcal{O} \sim (\bar{q}q)(\bar{\chi}\chi)/\Lambda^2$. Valid only when mediator mass $M_{med} \gg \sqrt{s}$; breaks down at LHC energies.
+    *   **Simplified models:** Explicit $s$-channel mediator ($Z'$) or $t$-channel exchange. Provide consistent kinematic distributions and allow direct comparison with direct/indirect detection constraints (LHC Dark Matter Working Group, Boveia & Doglioni 2018).
+*   **Current status:**
+    *   Mono-jet searches at $\sqrt{s} = 13$ TeV exclude mediator masses up to $\sim 2$ TeV for light DM (ATLAS & CMS Run 2 summaries).
+    *   No excess above SM backgrounds has been observed.
+    *   **Complementarity with other searches:** Collider limits are strongest for light mediators and low $m_\chi$, a region less accessible to direct detection (below the neutrino fog) and indirect detection (below the kinematic threshold for significant gamma-ray production).
+*   *Takeaway:* Colliders uniquely probe the mediator sector and provide model-dependent but complementary constraints. However, they cannot confirm a DM *cosmological* origin — that requires measuring the relic cross-section, which is the domain of indirect detection.
+
+### 1.3.4 Why Indirect Detection?
+*   **The unique strength of indirect detection:** It directly probes the *annihilation cross-section* $\langle \sigma v \rangle$ — the same quantity that determines the thermal relic abundance. A detection at the canonical value $\langle \sigma v \rangle \approx 2.2 \times 10^{-26}$ cm$^3$/s would constitute evidence for a thermal WIMP.
+*   **Messengers:** DM annihilation/decay produces all stable SM particles — $\gamma$, $\nu$, $e^\pm$, $\bar{p}$, $\bar{d}$. Gamma-rays propagate undeflected and unattenuated (at GeV energies), providing directional and spectral information → the cleanest channel.
+*   *Transition:* The following section develops the indirect detection formalism in detail — the physics of annihilation/decay, the density profiles that determine signal strength, and the observational targets that define the thesis program.
+
+---
+
+## 1.4 Indirect Detection via Gamma-Rays (The Formalism)
+**Goal**: Build the mathematical formalism used in Papers 1–5 and establish the detection strategy. Frame the section around the question: *"How do we predict and measure a gamma-ray DM signal?"*
+**Narrative:** This section connects DM structure (density profiles) → signal prediction (flux formalism) → observational targets. We follow Cirelli et al.'s "Particle-to-Astrophysics Pipeline" structure.
+
+### 1.4.1 Annihilation and Decay Physics
 *   **Annihilation:** $\chi\chi \to SM\bar{SM} \to \text{stable particles } (\gamma, \nu, e^\pm, p)$.
     *   Maximum energy: $E = m_{DM}$.
     *   Signal $\propto \rho^2$ → J-factor (line-of-sight integral of $\rho^2$).
@@ -145,7 +183,7 @@
     *   **Hard Channels ($\tau^+\tau^-$):** Final state radiation, sharp cutoffs.
     *   **Phenomenology:** The choice of channel determines the spectral shape we search for in the Fermi-LAT data.
 
-### 1.3.2 Spectral Features and Signatures
+### 1.4.2 Spectral Features and Signatures
 *   **Prompt Gamma-Ray Emission:**
     *   Continuum: $\pi^0 \to \gamma\gamma$ dominates.
     *   **Monochromatic Lines:** $\chi\chi \to \gamma\gamma$, $\gamma Z$, $\gamma h$ — sharp lines at $E_\gamma = m_{DM}$. Loop-level processes. "Smoking gun" signature.
@@ -156,7 +194,7 @@
     *   **Bremsstrahlung:** $e^\pm$ on gas.
     *   *Significance:* Crucial for the Galactic Center Excess interpretation (Chapter 4).
 
-### 1.3.3 How DM is Structured: Density Profiles
+### 1.4.3 How DM is Structured: Density Profiles
 *   **Why this matters:** The DM signal strength is entirely determined by *how dark matter is distributed* in space. The density profile is the crucial link between the evidence of Sec 1.1 and the detectability of DM.
 *   **Density Profiles:**
     *   **NFW (Cusp):** $\rho \propto r^{-1}(1+r/r_s)^{-2}$. Derived from N-body CDM simulations (Navarro, Frenk & White 1997).
@@ -168,27 +206,27 @@
     *   Major uncertainty: the minimum subhalo mass $M_{min}$ — physically motivated by DM kinetic decoupling temperature ($\sim 10^{-6} M_\odot$), far below simulation resolution.
     *   *Reference:* Springel et al. (arXiv:0809.0898).
 
-### 1.3.4 The Flux Factorization ($J$-factor and $D$-factor)
+### 1.4.4 The Flux Factorization ($J$-factor and $D$-factor)
 *   **Annihilation — the master equation:**
     $$ \frac{d\Phi}{dE} = \underbrace{\frac{1}{4\pi} \frac{\langle \sigma v \rangle}{2m_\chi^2} \frac{dN}{dE}}_{\text{Particle Physics}} \times \underbrace{\int_{\Delta\Omega} \int_{los} \rho^2(r) \, dl \, d\Omega}_{\text{Astrophysics (J-factor)}} $$
 *   **Decay — the analogous equation:**
     $$ \frac{d\Phi}{dE} = \frac{1}{4\pi} \frac{1}{\tau m_\chi} \frac{dN}{dE} \times \int_{\Delta\Omega} \int_{los} \rho(r) \, dl \, d\Omega $$
     where $\tau$ is the DM lifetime.
-*   **Key insight:** The factorization separates what we *know* (particle physics model) from what we *measure in the sky* (astrophysical J/D-factor). The density profiles of Sec 1.3.3 directly determine the J/D-factor.
+*   **Key insight:** The factorization separates what we *know* (particle physics model) from what we *measure in the sky* (astrophysical J/D-factor). The density profiles of Sec 1.4.3 directly determine the J/D-factor.
 
-### 1.3.5 Observational Targets for Gamma-Ray Searches
+### 1.4.5 Observational Targets for Gamma-Ray Searches
 *   **Galactic Center:** Brightest expected DM signal due to proximity and high density (NFW cusp). However, intense astrophysical backgrounds (pulsars, cosmic-ray interactions, diffuse emission) make signal extraction extremely challenging → motivates Chapter 4 (GCE).
 *   **DM Subhalos (dSphs + Dark Satellites):** DM-dominated systems with negligible astrophysical backgrounds. Lower J-factors but far cleaner signal environment. The thesis studies both known dSphs and unresolved dark subhalos → motivates Chapters 5-6.
 *   **Extragalactic / UGRB:** Integrated signal from all DM halos across cosmic history. Widest field of view but significant astrophysical uncertainties in the unresolved gamma-ray background → motivates Chapter 8 (cross-correlations).
 *   *Note:* The complementary strengths of these targets drive the multi-pronged approach in Parts II–V.
 
-### 1.3.6 Multi-Messenger Context
+### 1.4.6 Multi-Messenger Context
 *   DM annihilation/decay also produces neutrinos (IceCube), $e^\pm$ (PAMELA, AMS-02), antiprotons (Cuoco et al. 2017), and anti-nuclei (Donato et al. 2008). Each messenger probes different DM environments and energy scales. This thesis focuses exclusively on **gamma-rays** — the cleanest, most directly interpretable messenger for GeV–TeV DM.
 
-### 1.3.7 Status of the Field (The Motivation)
+### 1.4.7 Status of the Field (The Motivation)
 *   **The "WIMP Crisis":**
     *   Fermi-LAT dSphs limits (*Ackermann et al. 2015*) exclude the canonical thermal cross-section for $m_\chi \lesssim 100$ GeV ($b\bar{b}$).
-    *   Direct Detection (LZ/XENON) limits are pushing towards the "Neutrino Floor."
+    *   Direct Detection (LZ/XENON) limits are pushing towards the "Neutrino Fog."
 *   **The Thesis Argument:**
     *   The "low-hanging fruit" (bright peaks, canonical WIMPs) have not been found.
     *   **We must move from "Thresholding" to "Statistics":**
@@ -201,6 +239,7 @@
 ## Chapter Summary
 - The DM problem is established by converging evidence across galactic, cluster, and cosmological scales.
 - The WIMP paradigm provides a natural mass and cross-section window (GeV–TeV) through the thermal freeze-out mechanism.
-- Indirect detection via gamma-rays offers a clean, model-independent probe of DM annihilation and decay.
+- Direct detection, collider searches, and indirect detection offer complementary probes of the DM–SM interaction, each sensitive to different regions of parameter space.
+- Indirect detection via gamma-rays uniquely probes the thermal annihilation cross-section — the central observable for this thesis.
 - The null results of simple WIMP searches motivate the advanced statistical and ML approaches developed in this thesis.
 - **Bridge to Chapter 2:** Having established the physics targets, the next chapter introduces the Fermi-LAT instrument and the astrophysical gamma-ray sky that constitutes the observational setting.

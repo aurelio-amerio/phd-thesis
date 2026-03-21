@@ -23,11 +23,13 @@ Examples: `/draft 1.2` (subsection), `/draft 1.2.3` (subsubsection)
    - Step 1: Context loading
    - Step 2: Source registry
    - Step 3: Knowledge retrieval
-   - Step 4: Targeted NotebookLM research
-   - Step 5: Draft writing (three-layer pipeline)
-   - Step 6: Self-review
-   - Step 7: Coherence check
-   - Step 8: Output and iteration
+   - Step 4: Reference-guided NotebookLM research
+   - Step 5: Figure discovery
+   - Step 6: Draft writing (three-layer pipeline)
+   - Step 7: Self-review & quality gate
+   - Step 8: Coherence check
+   - Step 9: Review pass (automatic — runs `review` skill, applies fixes)
+   - Step 10: Present to user
 
 ## Writing Pipeline
 
