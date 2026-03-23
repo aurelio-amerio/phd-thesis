@@ -40,26 +40,25 @@ p(\textbf{Z}|\textbf{X},\{\btheta_k\},\boldsymbol{\pi})~
 
 Eq.~(\ref{E_log}) is maximized according to the following iterative procedure:
 \begin{enumerate}
-    \item Initialize $\{\btheta_k\}=\{\btheta_k\}_\textrm{old}$, and $\boldsymbol{\pi} = \boldsymbol{\pi}_\textrm{old}$;
-    \item Evaluate $p(\textbf{Z}|\textbf{X},\{\btheta_k\}_\textrm{old},\boldsymbol{\pi}_\textrm{old})$;
+    \item Initialize $\{\btheta_k\}=\{\btheta_k\}_\mathrm{old}$, and $\boldsymbol{\pi} = \boldsymbol{\pi}_\mathrm{old}$;
+    \item Evaluate $p(\textbf{Z}|\textbf{X},\{\btheta_k\}_\mathrm{old},\boldsymbol{\pi}_\mathrm{old})$;
     \item Plug the posterior obtained in step 2 into expr.(\ref{E_log}), such that now the only term containing the optimizable parameters $\{\btheta_k\},\boldsymbol{\pi}$ is the log-likelihood. So we get the expression:
-    \begin{equation}
+    \begin{equation*}
       Q(\{\btheta_k\},\boldsymbol{\pi}) \equiv
      \sum_\textbf{Z} 
-    p(\textbf{Z}|\bx,\{\btheta_k\}_\textrm{old},\boldsymbol{\pi}_\textrm{old})~
+    p(\textbf{Z}|\bx,\{\btheta_k\}_\mathrm{old},\boldsymbol{\pi}_\mathrm{old})~
 \ln p(\textbf{X,Z}|\{\btheta_k\},\boldsymbol{\pi})~.  
-    \end{equation}
+    \end{equation*}
     \item Update the parameters as:
-    \begin{equation}
-      \{\btheta_k\}_\textrm{new},\boldsymbol{\pi}_\textrm{new} =
-      \underset{\{\btheta_k\},\boldsymbol{\pi}}
-      \textrm{argmax}~Q(\{\btheta_k\},\boldsymbol{\pi})
-    \end{equation}
+    \begin{equation*}
+      \{\btheta_k\}_\mathrm{new},\boldsymbol{\pi}_\mathrm{new} =
+      \underset{\{\btheta_k\},\boldsymbol{\pi}}{\mathrm{argmax}}~Q(\{\btheta_k\},\boldsymbol{\pi})
+    \end{equation*}
     \item Repeat above steps until convergence
 \end{enumerate}
 Note that in step 4 above, the optimization of $\boldsymbol{\pi}$ is analytical, i.e., using a Lagrange-multiplier optimization with the condition $\sum_j \pi_j = 1$, we obtain:
 \begin{equation}
-    (\pi_k)_\textrm{new} = \frac{1}{N}\sum_i^N \gamma(z_{ik})~,
+    (\pi_k)_\mathrm{new} = \frac{1}{N}\sum_i^N \gamma(z_{ik})~,
 \end{equation}
 where $\gamma(z_{ik})$ is given by eq.~(\ref{gamma}). The optimization of $\{\btheta_k\}$ is in general not analytical.
 
