@@ -25,7 +25,7 @@ Experimental uncertainties in the reconstruction of energy and direction of gamm
 We simulate sources by convolving with the \Fermi-LAT point spread function (PSF) and exposure
 using {\Fermi} Science Tools (fermitools) version 2.2.0\footnote{\url{https://github.com/fermi-lat/Fermitools-conda/wiki}}.
 
-In table \ref{tab:settings} we summarize the analysis settings, which are similar to the standard event selection cuts used in the construction of gamma-ray source catalogs. 
+In table \ref{tab:halos:settings} we summarize the analysis settings, which are similar to the standard event selection cuts used in the construction of gamma-ray source catalogs. 
 Likewise, we convolve the diffuse Galactic foreground and isotropic emission with the PSF and exposure to obtain the diffuse foreground emission.
 For each simulation, we add the emission from 10,000 DM sources randomly and isotropically distributed in the sky together with the foreground emission. We chose this number of sources to roughly match the number of resolved sources in the 4FGL catalog and to have sufficient statistics for the DM sources, while avoiding excessively demanding simulations. We thus obtain a map for the expected photon counts due to a DM population with a specific mass, annihilation channel, and a common flux.
 
@@ -45,7 +45,7 @@ Galactic foreground model & \verb|gll_iem_v7.fits| \\
 \hline
 \end{tabular}
 \caption{{\tt Fermi Science Tools} settings used for the 15-year data set analysis.}
-\label{tab:settings}
+\label{tab:halos:settings}
 \end{table}
 
 We employ each simulation (associated with a specific total gamma-ray flux for the DM source) to estimate $p_\textrm{DM}(\alpha,\beta|\phi_\textrm{DM};\btheta_\textrm{DM})$ as follows.

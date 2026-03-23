@@ -25,11 +25,11 @@ null-hypothesis model.
 For this purpose, we define a test statistic ($TS$) function in each pixel, quantifying how well the  observed photon counts agree with the background-only hypothesis:    
 \begin{equation}
     TS_i \equiv \frac{(x_i - \lambda_i)^2}{\lambda_i}~,
-\label{eq:TS}
+\label{eq:catalog:TS}
 \end{equation}
 where we indicate with $\lambda_i$ the best-fit background-only model counts in the pixel $i$, computed according to eq.~\eqref{eq:mapB};  $x_i$ can be either the observed photon counts 
-(when applied to the actual photon count map of data, leading to the single set $TS^\textrm{data}_i$) or the  photon counts in pixel $i$ generated via synthetic maps. If the maps are generated according to  the hypothesis eq.~\eqref{eq:mapK}, the procedure yields the single set $TS^\textrm{cat}_i$; if the maps are randomly taken from the model of eq.~\eqref{eq:map}, we obtain a number of sets $TS^\textrm{sim}_i$ equal to the number of realisations.
-The $TS$ choice of eq.~\eqref{eq:TS} is inspired by Pearson's $\chi^2$ test statistic for Poisson distributed counts,
+(when applied to the actual photon count map of data, leading to the single set $TS^\textrm{data}_i$) or the  photon counts in pixel $i$ generated via synthetic maps. If the maps are generated according to  the hypothesis eq.~\eqref{eq:mapK}, the procedure yields the single set $TS^\textrm{cat}_i$; if the maps are randomly taken from the model of eq.~\eqref{eq:catalog:map}, we obtain a number of sets $TS^\textrm{sim}_i$ equal to the number of realisations.
+The $TS$ choice of eq.~\eqref{eq:catalog:TS} is inspired by Pearson's $\chi^2$ test statistic for Poisson distributed counts,
 whose variance $\sigma_i^2=\lambda_i$. 
 This choice also loosely mimics the one adopted by the \Fermi-LAT collaboration, albeit no exact correspondence can be expected.  In fact, \Fermi-LAT uses a recursive procedure where, after a first step similar to the above, energy-dependent renormalisations of the background are allowed independently in each ``region of interest''.  We prefer to use a simple and coherent definition valid for all pixels in the sky, also because we do not assume a particular probability distribution for the $TS$ values. Rather, we use it as a ``signal interest label'', and derive a probabilistic interpretation for it from simulations of synthetic maps (see below). 
 

@@ -1,11 +1,11 @@
 \section{Data selection and model components}
-\label{sec:data}
+\label{sec:catalog:data}
 %%%%
 \subsection{Data selection}
 We consider the updated 14 years \Fermi-LAT data set (from week 9 to week 745) in the $(1,10)$ GeV energy range~\footnote{The energy range is chosen for consistency with the $\dNdS$ determination used below.} and Pass 8 event selection \cite{Fermi-LAT:2013jgq,Bruel:2018lac}. This ensures a good balance between high statistics and good angular resolution of the detector. We employ the {\tt Fermi Science Tools} suite version 2.0.8 ~\cite{Fermitools} to analyse \Fermi-LAT data with the following settings: 
 We adopt the \verb|P8R3_SOURCEVETO_V3| instrument response functions (IRF), event class (EVCLASS) 2048 ({\tt SOURCEVETO}) and event type (EVTYPE) 1 (\verb|FRONT|). We used standard quality selection criteria, i.e. \verb|DATA QUAL==1| and \verb|LAT CONFIG==1|.
 Atmospheric $\gamma$~rays from the Earth limb emission are removed by adopting a cut on the maximum zenith angle {\tt ZMAX} of 90 degrees. We consider \verb|FRONT| events in order to have an optimal angular resolution, and the {\tt SOURCEVETO} class of events, in order to have a good suppression of the charged cosmic-ray background while still retaining a large event statistics. 
-In table~\ref{tab:settings}, we provide the reader with  a summary of the settings.
+In table~\ref{tab:catalog:settings}, we provide the reader with  a summary of the settings.
 %
 
 We employ the {\tt Fermi Science Tools} to compute photon counts map, exposure map and point spread function (PSF) of the LAT.
@@ -33,7 +33,7 @@ ZMAX & 90 \\
 \hline
 \end{tabular}
 \caption{{\tt Fermi Science Tools} settings used for the 14-year data set analysis. }
-\label{tab:settings}
+\label{tab:catalog:settings}
 \end{table}
 
 \subsection{Null- and alternative-hypothesis models}
@@ -56,7 +56,7 @@ where
 \end{itemize}
 The parameters $A_\textrm{gal}$ and $F_0$ are determined via a fit to the \Fermi-LAT photon counts map, as explained in section~\ref{sec:procedure}. In order to obtain a background map in units of counts in each of the $N_\textrm{pix}$ pixels, we multiply by the exposure map $\mathcal{E}$ and the steradian-to-pixel conversion factor $4\pi / N_\textrm{pix}$:
 \begin{equation}
-    C_\mathcal{B} = \frac{4\pi}{N_\textrm{pix}} \int_{1 \, \rmfamily GeV}^{10 \, \rmfamily GeV} \mathcal{B}(E)\, \mathcal{E}(E)\textrm{d}E \,.
+    C_\mathcal{B} = \frac{4\pi}{N_\textrm{pix}} \int_{1 \, \textrm{GeV}}^{10 \, \textrm{GeV}} \mathcal{B}(E)\, \mathcal{E}(E)\textrm{d}E \,.
 \end{equation}
 The exposure map is extracted using the {\tt Fermi Science Tools} for 10 logarithmic bins in the (1, 10) GeV range (and treated as the corresponding piecewise function when performing the integral), in order to be consistent with the binning of the Galactic foreground model.
 %
@@ -84,7 +84,7 @@ derived in~\cite{Amerio:2023uet}.
 Analogously to the catalogue, we include an additional source component, $\mathcal{S}$, on top of the background-only model:
 \begin{equation}
     \mathcal{M} = \mathcal{S} + A_\textrm{gal}\cdot\mathcal{G} + F_\textrm{iso}
-    \label{eq:map}
+    \label{eq:catalog:map}
 \end{equation}
 The map $\mathcal{S}$ is constituted of point sources randomly placed  on the sphere, drawn according to the $\dNdS$ inferred in~\cite{Amerio:2023uet}. 
 We produced 5000 realisations of this source model, by considering variations of the 
@@ -92,7 +92,7 @@ $\dNdS$ parameters inferred in~\cite{Amerio:2023uet}. In particular, we adopt th
 For each parameter configuration of the $\dNdS$, the $F_\textrm{iso}$ is consistently determined by the procedure proposed in~\cite{Amerio:2023uet}.
 Note that the residual Poisson-distributed isotropic component $F_\textrm{iso}$  is now lower than  $F_0$ in eq.~\eqref{eq:mapB}, since part of the flux $F_0$ is accounted for by the discrete sources. 
 
-We note that both the $\mathcal{K}$ and $\mathcal{M}$ maps are simulated, i.e.~are ``theoretical skies'', not the ``measured sky''. The map ${\cal K}$ is deterministic, meaning we  simulate it by accounting for the Fermi PSF for the point-like sources whose fluxes and positions are given by the 4FGL catalogue, on the top of the assumed smooth background (the remaining contributions to the $\mathcal{K}$ map in eq. 2.3). In the case of the map ${\cal M}$, we rely on statistical information, in which the d$N$/d$S$ does not describe the position of any gamma-ray source, nor does it tell us their exact number. Rather, the integral of d$N$/d$S$ in a flux bin tells us the expected number of sources in that bin, while the actual number of sources is only defined up to Poisson fluctuations. Once such a number of sources per flux bin has been determined, we place them at uniformly random positions in the sky, accounting for the ${\cal S}$ term in Eq.~\eqref{eq:map}. In summary, we run the simulator developed in~\cite{Amerio:2023uet} in order to build the maps ${\cal M}$.
+We note that both the $\mathcal{K}$ and $\mathcal{M}$ maps are simulated, i.e.~are ``theoretical skies'', not the ``measured sky''. The map ${\cal K}$ is deterministic, meaning we  simulate it by accounting for the Fermi PSF for the point-like sources whose fluxes and positions are given by the 4FGL catalogue, on the top of the assumed smooth background (the remaining contributions to the $\mathcal{K}$ map in eq. 2.3). In the case of the map ${\cal M}$, we rely on statistical information, in which the d$N$/d$S$ does not describe the position of any gamma-ray source, nor does it tell us their exact number. Rather, the integral of d$N$/d$S$ in a flux bin tells us the expected number of sources in that bin, while the actual number of sources is only defined up to Poisson fluctuations. Once such a number of sources per flux bin has been determined, we place them at uniformly random positions in the sky, accounting for the ${\cal S}$ term in Eq.~\eqref{eq:catalog:map}. In summary, we run the simulator developed in~\cite{Amerio:2023uet} in order to build the maps ${\cal M}$.
 
 
 %%%%

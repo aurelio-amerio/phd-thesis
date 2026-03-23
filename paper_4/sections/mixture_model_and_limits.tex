@@ -1,5 +1,5 @@
 \section{Mixture model of gamma-ray sources and limits on DM annihilation}
-\label{sec:results}
+\label{sec:halos:results}
 
 \subsection{Model optimization}
 \label{sec:model-opt}
@@ -21,7 +21,7 @@ We optimize the likelihood for a set of DM mass values: $\mdm$ = 10, 30, 100, 30
 \be
 \textrm{TS}(\sigmav) = -2\ln \frac{{\cal L}(\sigmav)}
 {{\cal L}_\textrm{max}}, 
-\label{eq:TS}
+\label{eq:halos:TS}
 \ee
 where ${\cal L}(\sigmav)$ is the likelihood optimized over the rest of parameters $\pi_k$ and $\btheta_\textrm{cov}$, and ${\cal L}_\textrm{max}={\cal L}(\sigmav^*,\pi_k^*,\btheta_\textrm{cov}^*)$ is the value of the likelihood for the best-fit parameters. 
 Following the Wilks' theorem, we assume that TS follows the $\chi^2$ distribution. 
@@ -62,7 +62,7 @@ In particular, for the model without the DM component, we find that the prior sh
     Distributions of sources in the plane of the spectral parameters ($\alpha$, $\beta$) for $E_0$ = 1~GeV.
     \panel{Left panel}: PDFs of Galactic and extragalactic sources weighted by the corresponding class fractions. The sources are colored according to the catalog class.
     \panel{Middle panel}: best-fit mixture model for the unassociated sources. The background colors show the individual components of the astrophysical-only model from eq.~(\ref{eq:mixture}), where the DM subhalo contribution is set to zero. Specifically, we plot the decomposition of the mixture model into class-conditional PDFs weighted by their best-fit class prevalence $\pi_k p(x | k)$ for the extragalactic (blue) and Galactic (red) populations. For visualization, the distributions are integrated over the flux dimension. The color bar represents the value of the resulting probability density (shown in gray to represent both red and blue colors).
-    \panel{Right panel}: Class probabilities for unassociated 4FGL-DR4 sources (for $\rmfamily E_0 = 1 \,GeV$), on top of the mixture distribution (same as the middle panel). The color scale is proportional to the class probabilities, according to the formula $\textrm{color}(x_i)=\textrm{red}\cdot p(C_k= \textrm{gal}|x_i) + \textrm{blue}\cdot p(C_k=\textrm{ext}|x_i)$, e.g., a purple-colored source is a source for which the posterior class probabilities are similar and the classification is ambiguous. 
+    \panel{Right panel}: Class probabilities for unassociated 4FGL-DR4 sources (for $E_0 = 1 \, \textrm{GeV}$), on top of the mixture distribution (same as the middle panel). The color scale is proportional to the class probabilities, according to the formula $\textrm{color}(x_i)=\textrm{red}\cdot p(C_k= \textrm{gal}|x_i) + \textrm{blue}\cdot p(C_k=\textrm{ext}|x_i)$, e.g., a purple-colored source is a source for which the posterior class probabilities are similar and the classification is ambiguous. 
     }
     \label{fig:mixtures}
 \end{figure}
@@ -86,7 +86,7 @@ In particular, for the model without the DM component, we find that the prior sh
 \begin{tabular}{|rccccc|}
 %\multicolumn{6}{c}{\textbf{Best-fit astro-only model}} \\
 \toprule
-type & $\rmfamily N_{ext}$ & $\rmfamily N_{Gal}$ & \% Ext & \% Gal & $\rmfamily N_{tot}$\\
+type & $N_{\textrm{ext}}$ & $N_{\textrm{Gal}}$ & \% Ext & \% Gal & $N_{\textrm{tot}}$\\
 \midrule
 assoc & 466 & 31 & 94\% & 6\% & 497\\
 unas & 160.6 & 66.4 & 71\% & 29\% & 227\\
@@ -186,7 +186,7 @@ We find that our method can recover the DM signal within statistical fluctuation
 \toprule
  & \multicolumn{5}{c|}{\textbf{best-fit model}} & \multicolumn{3}{c|}{\textbf{upper bound}} \\ 
  $\mdm$ & \% DM & $N_\textrm{subhalo}^\textrm{ROI}$  & $N_\textrm{subhalo}^\textrm{total}$ & $\langle \sigma v \rangle$ & $\Delta \textrm{TS}_0$ & $N_\textrm{subhalo}^\textrm{ROI}$ & $N_\textrm{subhalo}^\textrm{total}$ & $\langle \sigma v \rangle$ \\
-  $\rmfamily [GeV]$ & & & & [$\rmfamily cm^3 \, s^{-1}$] & & & & [$\rmfamily cm^3 \, s^{-1}$] \\
+  $\textrm{[GeV]}$ & & & & [$\textrm{cm}^3 \, \textrm{s}^{-1}$] & & & & [$\textrm{cm}^3 \, \textrm{s}^{-1}$] \\
 \midrule
 10 & 0.0 & 0.00 & 0.00 & 0.0 & 0.0 & 2.83& 6.56& $5.6 \times 10^{-26}$\\
 30 & 6.8 & 15.37 & 36.23 & $2.7 \times 10^{-25}$& 3.5 & 27.30 & 64.20 & $3.6 \times 10^{-25}$\\

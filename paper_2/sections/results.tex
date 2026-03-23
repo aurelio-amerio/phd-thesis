@@ -1,5 +1,5 @@
 \section{Results}
-\label{sec:results}
+\label{sec:dnds:results}
 
 After the training and validation processes described in the previous Section, we have applied the fully trained CNN to the 14 years \fermi data. The result of our baseline analysis, which adopts the \verb|gll_iem_v07| galactic foreground and a latitude cut of $|b|<30^\circ$, is shown in Fig. \ref{fig:prediction-fermi-12y}. The blue line is the reconstructed $\dnds$ and the error bands are the Bayesian errors obtained as described in Section \ref{sec:bayesian-error}. The blue points show the $\dnds$ of the resolved sources, obtained from the 4FGL-DR3 catalog. We can see that in the resolved limit, the CNN reconstructs a $\dnds$ fully compatible with the one derived from the catalog, but then extends it to the unresolved regime with a behaviour compatible with $\dnds \sim S^{-2}$ down to the smallest flux considered of $S = 5 \cdot 10^{-12}$ cm$^{-2}$ s$^{-1}$.
 Below $S \sim  10^{-10}$ cm$^{-2}$ s$^{-1}$ the $\dnds$ exhibits a slight turn-up, although the feature has a very low statistical significance.

@@ -2,7 +2,7 @@
 \label{sec:approach}
 
 \subsection{Data selection}
-\label{sec:data}
+\label{sec:halos:data}
 
 
 In this work we use the 4FGL-DR4 catalog~\cite{2022ApJS..260...53A, 2023arXiv230712546B}. We group the known types of associated sources into two classes:%
@@ -182,7 +182,7 @@ Overall, our model of the unassociated source takes the form:
 \tilde{p}_\textrm{unas}(\bx) 
 = \left(\sum_{k=1}^K \pi_k p_\textrm{assoc}(\bx|k)\right) \tilde{C}(\bx; \btheta_\textrm{cov}) + \pi_\textrm{DM}(\btheta_\textrm{DM}) p_\textrm{DM}(\bx; \btheta_\textrm{DM}),
 \ee
-where $K = 2$ is the number of classes of associated sources (Galactic and extragalactic, cf. section~\ref{sec:data}). 
+where $K = 2$ is the number of classes of associated sources (Galactic and extragalactic, cf. section~\ref{sec:halos:data}). 
 The DM distribution $p_\textrm{DM}(\bx; \btheta_\textrm{DM})$ is determined below in section~\ref{sec:DM_model}. 
 
 The optimizable parameters in this model are: $\pi_k$, describing the prevalence of the classes of associated sources; $\btheta_\textrm{cov}\equiv\{b_d,c_d\}$ for $d = 1,\,2,\,3$, parametrizing the covariate shift in eq.~(\ref{eq:sigmoid}), and $\sigmav$, the annihilation cross section, which we have included in the definition of $\btheta_\textrm{DM}=\{\sigmav,\mdm,\textrm{ch.}\}$. The other parameters, namely the DM mass $\mdm$ as well as the annihilation channel `ch.', are kept fixed during the optimization procedure.

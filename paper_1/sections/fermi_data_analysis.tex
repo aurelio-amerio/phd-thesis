@@ -4,7 +4,7 @@
 
 In this section, we describe our procedure for measuring the spectrum and intensity of the gamma-ray emission from each of the Milky Way's 157 globular clusters~\cite{harris2010newcatalogglobularclusters}.
 We employ the python package, Fermipy~\cite{wood2017fermipyopensourcepythonpackage}, as provided by the Fermi collaboration, to process the data collected by the Fermi-LAT. 
-We work with HEALPix maps of order 11, corresponding to approximately $0.03^{\circ}$ bins, and utilize 15.8 years of data.\footnote{MET range:  239557414 - 733276805} We consider photons in the range of 100 MeV to 100 GeV, divided into 5 logarithmic bins per decade. We adopt the standard event selection for gamma-ray point sources, using the \verb|SOURCE| event class and \verb|FRONT| + \verb|BACK| event types. We also employ a zenith angle cut of $90^{\circ}$ and a rocking angle cut of $52^{\circ}$ in order to reduce the contribution from the Earth's limb. We require data quality=1 and only consider data that was taken while in survey mode. We do not use data that was collected while passing through the South Atlantic Anomaly. These and other aspects of our analysis are summarized in Table~\ref{tab:settings}.
+We work with HEALPix maps of order 11, corresponding to approximately $0.03^{\circ}$ bins, and utilize 15.8 years of data.\footnote{MET range:  239557414 - 733276805} We consider photons in the range of 100 MeV to 100 GeV, divided into 5 logarithmic bins per decade. We adopt the standard event selection for gamma-ray point sources, using the \verb|SOURCE| event class and \verb|FRONT| + \verb|BACK| event types. We also employ a zenith angle cut of $90^{\circ}$ and a rocking angle cut of $52^{\circ}$ in order to reduce the contribution from the Earth's limb. We require data quality=1 and only consider data that was taken while in survey mode. We do not use data that was collected while passing through the South Atlantic Anomaly. These and other aspects of our analysis are summarized in Table~\ref{tab:msp:settings}.
 
 \begin{table}[t]
 \centering
@@ -25,7 +25,7 @@ Source catalog & \verb|gll_psc_v35| \\
 \hline
 \end{tabular}
 \caption{{\tt Fermi Science Tools} settings used in this analysis. }
-\label{tab:settings}
+\label{tab:msp:settings}
 \end{table}
 
 For each globular cluster, we study a $14^{\circ} \times 14^{\circ}$ region-of-interest (ROI) centered around the nominal position of the source. We then fit the energy spectrum of the globular cluster, adopting a parameterization in the form of a power law with an exponential cut-off:
@@ -39,7 +39,7 @@ We include in our fit any sources in the 4FGL-DR4 catalog that are located withi
 Following standard procedure, we run the source localization pipeline, readjust the centroid of the globular cluster, and look for new point sources with a power-law spectrum. 
 We then move to the characterization of the globular cluster, performing a 3D likelihood scan in the ($\alpha$, $E_{c}$, $N_0$) parameter space. 
 %
-During this procedure, we model the Galactic diffuse emission and isotropic background contributions according to the templates provided by the Fermi collaboration (see Table \ref{tab:settings}). We allow their normalization to float, as well as the energy spectrum normalization of any other resolved source within 3 degrees.
+During this procedure, we model the Galactic diffuse emission and isotropic background contributions according to the templates provided by the Fermi collaboration (see Table \ref{tab:msp:settings}). We allow their normalization to float, as well as the energy spectrum normalization of any other resolved source within 3 degrees.
 %
 This allows us to identify, for each value of the integrated flux, the combination of these parameters that yields the greatest likelihood. 
 
