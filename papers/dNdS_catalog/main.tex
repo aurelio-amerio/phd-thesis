@@ -185,7 +185,7 @@ LAPTH-035/23
 
 \section{Introduction}
 
-Our view of the high-energy $\gamma$-ray sky has been revolutionised  by the Large Area Telescope (LAT) onboard the \Fermi~satellite, which is on its surveying mission since 2008: Since the publication of the fourth source  catalogue (4FGL) based on 8 years of data~\cite{Fermi-LAT:2019yla}, incremental updates appear periodically. The latest incarnation, the data release 3 (DR3) based on 12 yrs of data~\cite{Fermi-LAT:2022byn}, includes 6658 point-like sources in the energy range from 50 MeV to 1 TeV, with extragalactic blazars constituting the largest associated class. Apart for revealing entirely new classes of objects (such as Galactic millisecond pulsars~\cite{Caraveo:2013lra}), the explosion of the number of $\gamma$-ray sources has allowed for numerous applications in multi-wavelength and multi-messenger astrophysics and astroparticle physics. Unsurprisingly, the essential requirement for a source to enter a catalogue is  that its signal strength is significantly above the background, dominated by $\gamma$ rays associated to energy-loss processes of cosmic rays in the interstellar gas and radiation field. Since the pioneering analysis of EGRET data~\cite{Mattox:1996zz}, the signal strength is typically quantified by a test statistics $2\ln({\cal L}/{\cal L}_0)$,  comparing the maximum value of the likelihood function including the source, ${\cal L}$, vs. the one without the source, ${\cal L}_0$. 
+Our view of the high-energy $\gamma$-ray sky has been revolutionised  by the Large Area Telescope (LAT) onboard the \Fermi~satellite, which is on its surveying mission since 2008: Since the publication of the fourth source  catalogue (4FGL) based on 8 years of data~\cite{Fermi-LAT:2019yla}, incremental updates appear periodically. The latest incarnation, the data release 3 (DR3) based on 12 yrs of data~\cite{Fermi-LAT:2022byn}, includes 6658 point-like sources in the energy range from 50 MeV to 1 TeV, with extragalactic blazars constituting the largest associated class. Apart for revealing entirely new classes of objects (such as Galactic millisecond pulsars~\cite{Caraveo:2013lra}), the explosion of the number of $\gamma$-ray sources has allowed for numerous applications in multi-wavelength and multi-messenger astrophysics and astroparticle physics. Unsurprisingly, the essential requirement for a source to enter a catalogue is  that its signal strength is significantly above the background, dominated by $\gamma$ rays associated to energy-loss processes of cosmic rays in the interstellar gas and radiation field. Since the pioneering analysis of EGRET data~\cite{Mattox:1996zz}, the signal strength is typically quantified by a test statistics $2\ln(\mathcal{L}/\mathcal{L}_0)$,  comparing the maximum value of the likelihood function including the source, $\mathcal{L}$, vs. the one without the source, $\mathcal{L}_0$. 
 
 However, many more sources are believed to hide below the detection threshold. In particular, a significant part of the quasi-isotropic, high Galactic latitude emission, is attributed to point-like sources too dim to be individually detected by the LAT~\cite{Fornasa:2015qua}. Nonetheless, a statistical approach relying on the pixel-count distribution has long been suggested to provide a diagnostic tool to 
 separate truly diffuse $\gamma$-ray signals from unresolved sources roughly isotropically distributed~\cite{Dodelson:2009ih}. Since its pioneering application in~\cite{Malyshev:2011zi}, a number of articles have used it~\cite{Zechlin:2015wdz,Zechlin:2016pme,Lisanti:2016jub}
@@ -271,7 +271,7 @@ The parameters $A_\textrm{gal}$ and $F_0$ are determined via a fit to the \Fermi
 The exposure map is extracted using the \texttt{Fermi Science Tools} for 10 logarithmic bins in the (1, 10) GeV range (and treated as the corresponding piecewise function when performing the integral), in order to be consistent with the binning of the Galactic foreground model.
 %
 We also account for the PSF, responsible for an angular smoothing of the map,  via the \texttt{Fermi Science Tools}. 
-Similarly to the map ${\cal E}$, we average over the (1, 10) GeV range  with a $E^{-2.4}$ weight, according to the overall energy dependence of the data  at high Galactic latitudes \cite{Fornasa:2016ohl}. 
+Similarly to the map $\mathcal{E}$, we average over the (1, 10) GeV range  with a $E^{-2.4}$ weight, according to the overall energy dependence of the data  at high Galactic latitudes \cite{Fornasa:2016ohl}. 
 
 
 
@@ -281,10 +281,10 @@ On the other hand, our first alternative hypothesis model is based on the 4FGL-D
 %
 We generate a new map 
 \begin{equation}
-    \mathcal{K} = {\cal C}+ A_\textrm{gal}\cdot\mathcal{G} + F_{0}\,,
+    \mathcal{K} = \mathcal{C}+ A_\textrm{gal}\cdot\mathcal{G} + F_{0}\,,
     \label{eq:mapK}
 \end{equation}
-including the same background model as in eq.~\eqref{eq:mapB} (i.e.~same parameters for $A_\textrm{gal}$ and $F_0$), and adding a synthetic map associated to the list of sources in the 4FGL-DR3 catalogue with $|b|\geq 30^\circ$, ${\cal C}$. The map is appropriately smoothed via the PSF and convoluted with the exposure map, and converted into a pixelized count map, as previously described. 
+including the same background model as in eq.~\eqref{eq:mapB} (i.e.~same parameters for $A_\textrm{gal}$ and $F_0$), and adding a synthetic map associated to the list of sources in the 4FGL-DR3 catalogue with $|b|\geq 30^\circ$, $\mathcal{C}$. The map is appropriately smoothed via the PSF and convoluted with the exposure map, and converted into a pixelized count map, as previously described. 
 
 \medskip
 % synthetic dNdS
@@ -302,7 +302,7 @@ $\dNdS$ parameters inferred in~\cite{Amerio:2023uet}. In particular, we adopt th
 For each parameter configuration of the $\dNdS$, the $F_\textrm{iso}$ is consistently determined by the procedure proposed in~\cite{Amerio:2023uet}.
 Note that the residual Poisson-distributed isotropic component $F_\textrm{iso}$  is now lower than  $F_0$ in eq.~\eqref{eq:mapB}, since part of the flux $F_0$ is accounted for by the discrete sources. 
 
-We note that both the $\mathcal{K}$ and $\mathcal{M}$ maps are simulated, i.e.~are ``theoretical skies'', not the ``measured sky''. The map ${\cal K}$ is deterministic, meaning we  simulate it by accounting for the Fermi PSF for the point-like sources whose fluxes and positions are given by the 4FGL catalogue, on the top of the assumed smooth background (the remaining contributions to the $\mathcal{K}$ map in eq. 2.3). In the case of the map ${\cal M}$, we rely on statistical information, in which the d$N$/d$S$ does not describe the position of any gamma-ray source, nor does it tell us their exact number. Rather, the integral of d$N$/d$S$ in a flux bin tells us the expected number of sources in that bin, while the actual number of sources is only defined up to Poisson fluctuations. Once such a number of sources per flux bin has been determined, we place them at uniformly random positions in the sky, accounting for the ${\cal S}$ term in Eq.~\eqref{eq:map}. In summary, we run the simulator developed in~\cite{Amerio:2023uet} in order to build the maps ${\cal M}$.
+We note that both the $\mathcal{K}$ and $\mathcal{M}$ maps are simulated, i.e.~are ``theoretical skies'', not the ``measured sky''. The map $\mathcal{K}$ is deterministic, meaning we  simulate it by accounting for the Fermi PSF for the point-like sources whose fluxes and positions are given by the 4FGL catalogue, on the top of the assumed smooth background (the remaining contributions to the $\mathcal{K}$ map in eq. 2.3). In the case of the map $\mathcal{M}$, we rely on statistical information, in which the d$N$/d$S$ does not describe the position of any gamma-ray source, nor does it tell us their exact number. Rather, the integral of d$N$/d$S$ in a flux bin tells us the expected number of sources in that bin, while the actual number of sources is only defined up to Poisson fluctuations. Once such a number of sources per flux bin has been determined, we place them at uniformly random positions in the sky, accounting for the $\mathcal{S}$ term in Eq.~\eqref{eq:map}. In summary, we run the simulator developed in~\cite{Amerio:2023uet} in order to build the maps $\mathcal{M}$.
 
 
 %%%%
@@ -446,14 +446,14 @@ A question arises though: Are the identified pixels in the sky truly associated 
 \label{fig:2}
 \end{figure}
 
-In figure~\ref{fig:2} we compute, as a function of the flux, the fraction of all the pixels in the catalogue map ${\cal K}$, having a flux $S>S_i$, which coincide with the pixels of our  firing pixels map obeying the same flux condition, for different $TS$ cuts. The pixel coincidence is actually relaxed to a distance corresponding to the 68\% containment angle of the PSF, which naively accounts for the uncertainty of the quoted source centroids in the 4FGL catalogue.  
-In figure~\ref{fig:2} we compute the fraction of all the pixels in the catalogue map ${\cal K}$ with flux $S>S_i$, whose positions are found in spatial coincidence with  pixels in our firing-pixels map obeying the same flux condition.\footnote{The pixel-wise spatial coincidence is actually relaxed to a distance corresponding to the 68\% containment angle of the PSF, which naively accounts for the uncertainty of the quoted source centroids in the 4FGL catalogue.} We display the fraction as a function of the flux and for different $TS$ cuts. 
+In figure~\ref{fig:2} we compute, as a function of the flux, the fraction of all the pixels in the catalogue map $\mathcal{K}$, having a flux $S>S_i$, which coincide with the pixels of our  firing pixels map obeying the same flux condition, for different $TS$ cuts. The pixel coincidence is actually relaxed to a distance corresponding to the 68\% containment angle of the PSF, which naively accounts for the uncertainty of the quoted source centroids in the 4FGL catalogue.  
+In figure~\ref{fig:2} we compute the fraction of all the pixels in the catalogue map $\mathcal{K}$ with flux $S>S_i$, whose positions are found in spatial coincidence with  pixels in our firing-pixels map obeying the same flux condition.\footnote{The pixel-wise spatial coincidence is actually relaxed to a distance corresponding to the 68\% containment angle of the PSF, which naively accounts for the uncertainty of the quoted source centroids in the 4FGL catalogue.} We display the fraction as a function of the flux and for different $TS$ cuts. 
 
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.6\textwidth]{img/pixel_firing_4FGL_all_log.pdf}
-\caption{Analogous to  figure~\ref{fig:2}, but for differential flux; i.e. number of pixels for a given flux bin. White histograms correspond to the whole catalogue map ${\cal K}$, while colored histograms are only those pixels in ${\cal K}$ coinciding (within the 68\% PSF containment angle) with the firing pixels of our \dNdS~model map. }
+\caption{Analogous to  figure~\ref{fig:2}, but for differential flux; i.e. number of pixels for a given flux bin. White histograms correspond to the whole catalogue map $\mathcal{K}$, while colored histograms are only those pixels in $\mathcal{K}$ coinciding (within the 68\% PSF containment angle) with the firing pixels of our \dNdS~model map. }
 \label{fig:2b}
 \end{figure}
 

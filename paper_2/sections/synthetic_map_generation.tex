@@ -23,9 +23,9 @@ A flux map $\mathcal{M}$ will therefore be obtained as the sum of three contribu
     \mathcal{M} = \mathcal{S} + A_\textrm{gal} \cdot \mathcal{G} + \fiso
     \label{eq:dnds:map}
 \end{equation}
-where $\cal S$ is the map due to the underlying distribution of sources (obtained from a $\dnds$ model as described in the next subsection), $\mathcal{G}$ is a template map for the foreground emission and $\fiso$ is a constant that denotes the isotropic component discussed above. The constant $A_\textrm{gal}$ is a normalization constant for the galactic foreground template. 
+where $\mathcal{S}$ is the map due to the underlying distribution of sources (obtained from a $\dnds$ model as described in the next subsection), $\mathcal{G}$ is a template map for the foreground emission and $\fiso$ is a constant that denotes the isotropic component discussed above. The constant $A_\textrm{gal}$ is a normalization constant for the galactic foreground template. 
 
-The count map {$\cal N$} is then obtained by multiplying the flux map by the \fermi exposure map {$\cal E$}, depicted in Fig. \ref{fig:exposure}, and by taking into account the steradian-to-pixel conversion factor. Specifically, the counts in pixel $a$ are obtained as:
+The count map $\mathcal{N}$ is then obtained by multiplying the flux map by the \fermi exposure map $\mathcal{E}$, depicted in Fig. \ref{fig:exposure}, and by taking into account the steradian-to-pixel conversion factor. Specifically, the counts in pixel $a$ are obtained as:
 \begin{equation}
     \mathcal{N}_a = \mathcal{M}_a \cdot \mathcal{E}_a \cdot \frac{4\pi}{N_\textrm{pix}}
     \label{eq:count}
@@ -37,7 +37,7 @@ Since the exposure slightly changes with energy, the above procedure could be im
 Eq. \ref{eq:count} also implies that we do not adopt energy dispersion. In the energy range 1-10 GeV the energy dispersion is about 10\% \cite{Fermi-LAT:2013jgq} and may induce normalization changes of similar size.
 Thus, as explained in the next section, we will re-derive the galactic foreground normalization with a dedicated fit in order to avoid possible biases in the normalization.
 
-From the count map {$\cal N$}, which contains the number of photon counts in each pixel as determined by the model, we finally produce a Poisson realization {$\cal N_P$}, by extracting in each pixel a photon count from a Poisson distribution with mean equal to the photon number of the corresponding pixel in {$\cal N$}. {$\cal N_P$} constitutes our synthetic map realization, which mimics a count map of an experiment with the \fermi specifications, where the underling model is the one of Eq. \ref{eq:dnds:map}.
+From the count map $\mathcal{N}$, which contains the number of photon counts in each pixel as determined by the model, we finally produce a Poisson realization $\mathcal{N}_\mathcal{P}$, by extracting in each pixel a photon count from a Poisson distribution with mean equal to the photon number of the corresponding pixel in $\mathcal{N}$. $\mathcal{N}_\mathcal{P}$ constitutes our synthetic map realization, which mimics a count map of an experiment with the \fermi specifications, where the underling model is the one of Eq. \ref{eq:dnds:map}.
 
 In the next Sections we discuss in more detail how the components of Eq. \ref{eq:dnds:map} are modeled.
 
@@ -109,7 +109,7 @@ For definiteness, in this work we adopt 3 breaks and 4 slopes. The ranges in whi
 
 The prior ranges for the power-law slopes are anchored to the results from the 4FGL catalog in the resolved regime, and allow for progressively wider variability moving toward the unresolved regime. Since catalog data exhibit a source count compatible with $S^{-2}$, except for large fluxes, where the slope increases, we adopt priors for $n_1$ and $n_2$ around these behaviours. For $n_3$ and $n_4$, we progressively enlarge the prior ranges, in order to allow for more variability especially in the sub-threshold (unresolved) regime we are interested in. An example of a $\dnds$ generated from this procedure is shown in the right panel of Fig. \ref{fig:dNdS-annotato}, which also illustrates the notation.
 
-The maps {$\cal S$} are generated according to the following procedure:
+The maps $\mathcal{S}$ are generated according to the following procedure:
 \begin{enumerate}
 \item A $\dnds$ is selected by random sampling of its parameters in the intervals and with the priors defined in Table \ref{tab:prior-dNdS};
 
@@ -130,7 +130,7 @@ In order to avoid possible biases in the generated maps, due to the resolution o
 \begin{figure}[t]
 \centering
 \includegraphics[scale=0.6]{img/data_selection/gf7.pdf}
-\caption{$\tt {gll\_iem\_v07}$ galactic foreground model \cite{4FGL}, integrated in the $(1,10)$ GeV energy bin, in units of photons/(cm$^2$ s sr), at the Healpix resolution $N_\textrm{side} = 128$ ($n=7$).}
+\caption{\texttt{gll\_iem\_v07} galactic foreground model \cite{4FGL}, integrated in the $(1,10)$ GeV energy bin, in units of photons/(cm$^2$ s sr), at the Healpix resolution $N_\textrm{side} = 128$ ($n=7$).}
 \label{fig:galactic-foreground}
 \end{figure}
 

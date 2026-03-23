@@ -246,10 +246,10 @@ In order to characterise the sources, we focus on their energy spectra modeled w
 \ln \frac{F(E)}{K} = - \alpha \ln \frac{E}{E_0} - \beta \left(\ln \frac{E}{E_0} \right)^2,
 \ee
 where the parameters correspond to the following columns in the 4FGL-DR4 catalog:
-$K$ -- {\tt LP\_ Flux\_Density},
-$\alpha$ -- {\tt LP\_Index},
-$\beta$ -- {\tt LP\_beta},
-and $E_0$ -- {\tt Pivot\_Energy}.
+$K$ -- \texttt{LP\_ Flux\_Density},
+$\alpha$ -- \texttt{LP\_Index},
+$\beta$ -- \texttt{LP\_beta},
+and $E_0$ -- \texttt{Pivot\_Energy}.
 %
 \\
 \new{The LP model provides a well-motivated spectral choice; it offers a significant improvement over a simple power law, as evidenced in the \texttt{LP\_SigCurv} column in the 4FGL-DR4 catalog, and performs at least as well as a power law with exponential cut off both for the unassociated and for the associated Galactic and extragalactic sources (figure~\ref{fig:LP_vs_PLEC}).} \old{At the same time, it avoids the complexity and statistical weaknesses of using high-dimensional binned fluxes.} 
@@ -271,9 +271,9 @@ We use the following three parameters as input features:
 $\log_{10}\phi$ -- the logarithm of the
  flux integrated between 100 MeV and 1 TeV (obtained by summing fluxes in energy bins provided in the catalog);
 \item 
-$\alpha$ -- {\tt LP\_Index} rescaled to $E_0 = 1$ GeV or $E_0 = 100$ MeV depending on the choice of DM mass, i.e., above or below 20 GeV respectively;
+$\alpha$ -- \texttt{LP\_Index} rescaled to $E_0 = 1$ GeV or $E_0 = 100$ MeV depending on the choice of DM mass, i.e., above or below 20 GeV respectively;
 \item
-$\beta$ -- {\tt LP\_beta}.
+$\beta$ -- \texttt{LP\_beta}.
 \een
 We collect these variables for each source $i$ inside a vector ${\bx}_i\equiv \{\log_{10}(\phi_i), \alpha_i, \beta_i\}$.
 %
@@ -498,7 +498,7 @@ The fit is performed within a circular region centered on the target DM source. 
 We use the same Gaussian priors for the $\beta$ parameter as in the 4FGL-DR4 catalog with mean 0.1 and sigma 0.3~\cite{2023arXiv230712546B}.
 For details see appendix~\ref{app:sim-ps}.
 \item
-We keep DM subhalos detected with significance TS~$>25$, where $\textrm{TS}=-2\ln {\cal L}/{\cal L}_*$ is the likelihood-ratio test statistic between the models with and without the subhalo. Such a threshold corresponds to the significance for PS detection in the {\Fermi}-LAT catalogs.
+We keep DM subhalos detected with significance TS~$>25$, where $\textrm{TS}=-2\ln \mathcal{L}/\mathcal{L}_*$ is the likelihood-ratio test statistic between the models with and without the subhalo. Such a threshold corresponds to the significance for PS detection in the {\Fermi}-LAT catalogs.
 The fraction of subhalos passing the significance cut defines the detection efficiency $\varepsilon_\textrm{eff}(\phi_\textrm{DM})$, which is a function of the DM flux. 
 \item
 In order to get a good estimate of the DM distribution, $p_\textrm{DM}(\log_{10} \phi_\textrm{DM}, \alpha,\beta|\btheta_\textrm{DM})$, we simulate realizations of the gamma-ray sky until we detect at least 20,000 DM subhalos across all simulations or the number of simulations reaches 1,000. The latter can happen for parameters, where DM subhalos have very small detection probability.%
@@ -579,7 +579,7 @@ This is to be expected, since for faint sources (small $\sigmav$ or small J-fact
 Our general aim is to either detect a population of DM subhalos among the \Fermi-LAT unassociated sources or to put an upper limit on $\langle\sigma v\rangle$ for different DM masses. For a fixed DM mass and annihilation channel, we determine the best-fit cross section $\langle\sigma v\rangle^*$ (optimized simultaneously with the other parameters) by maximizing the full likelihood built from the model in eq.~(\ref{eq:mixture}), defined as:
 \be
 \label{eq:L}
-{\cal L}(\langle\sigma v\rangle, \pi_k, \btheta_\textrm{cov}) = \prod_{i=1}^{N^\textrm{ROI}_\textrm{unas}} \tilde{p}_\textrm{unas}(\bx_i|\sigmav,\pi_k, \btheta_\textrm{cov};\mdm,\textrm{ch.}).
+\mathcal{L}(\langle\sigma v\rangle, \pi_k, \btheta_\textrm{cov}) = \prod_{i=1}^{N^\textrm{ROI}_\textrm{unas}} \tilde{p}_\textrm{unas}(\bx_i|\sigmav,\pi_k, \btheta_\textrm{cov};\mdm,\textrm{ch.}).
 \ee
 
 We maximize eq.~(\ref{eq:L}) with the Expectation-Maximization (EM) algorithm, which is efficient for the cases of probabilistic mixture models~\cite{10.1162/089976602753284446_Saerens}, see appendix~\ref{app:EM} for more details.
@@ -591,11 +591,11 @@ In our case, we use the associated sources (training data) to determine PDFs of 
 
 We optimize the likelihood for a set of DM mass values: $\mdm$ = 10, 30, 100, 300, 1000 GeV, and determine, for each $\mdm$, the upper bound on $\sigmav$ at 95\% confidence level (CL) by profiling the test-statistic 
 \be
-\textrm{TS}(\sigmav) = -2\ln \frac{{\cal L}(\sigmav)}
-{{\cal L}_\textrm{max}}, 
+\textrm{TS}(\sigmav) = -2\ln \frac{\mathcal{L}(\sigmav)}
+{\mathcal{L}_\textrm{max}}, 
 \label{eq:TS}
 \ee
-where ${\cal L}(\sigmav)$ is the likelihood optimized over the rest of parameters $\pi_k$ and $\btheta_\textrm{cov}$, and ${\cal L}_\textrm{max}={\cal L}(\sigmav^*,\pi_k^*,\btheta_\textrm{cov}^*)$ is the value of the likelihood for the best-fit parameters. 
+where $\mathcal{L}(\sigmav)$ is the likelihood optimized over the rest of parameters $\pi_k$ and $\btheta_\textrm{cov}$, and $\mathcal{L}_\textrm{max}=\mathcal{L}(\sigmav^*,\pi_k^*,\btheta_\textrm{cov}^*)$ is the value of the likelihood for the best-fit parameters. 
 Following the Wilks' theorem, we assume that TS follows the $\chi^2$ distribution. 
 We compute the upper bound on $\sigmav$ as the value corresponding to the 95\% coverage probability (one-sided), which for one degree of freedom corresponds to
 TS = 3.84.

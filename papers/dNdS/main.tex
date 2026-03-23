@@ -177,16 +177,16 @@ Stability of the results against foreground modeling will be tested through the 
 \end{itemize}
 \noindent
 %
-A flux map ${\cal M}$ will therefore be obtained as the sum of three contributions:
+A flux map $\mathcal{M}$ will therefore be obtained as the sum of three contributions:
 \begin{equation}
-    {\cal M} = {\cal S} + A_\textrm{gal} \cdot {\cal G} + \fiso
+    \mathcal{M} = \mathcal{S} + A_\textrm{gal} \cdot \mathcal{G} + \fiso
     \label{eq:map}
 \end{equation}
-where $\cal S$ is the map due to the underlying distribution of sources (obtained from a $\dnds$ model as described in the next subsection), ${\cal G}$ is a template map for the foreground emission and $\fiso$ is a constant that denotes the isotropic component discussed above. The constant $A_\textrm{gal}$ is a normalization constant for the galactic foreground template. 
+where $\mathcal{S}$ is the map due to the underlying distribution of sources (obtained from a $\dnds$ model as described in the next subsection), $\mathcal{G}$ is a template map for the foreground emission and $\fiso$ is a constant that denotes the isotropic component discussed above. The constant $A_\textrm{gal}$ is a normalization constant for the galactic foreground template. 
 
-The count map {$\cal N$} is then obtained by multiplying the flux map by the \fermi exposure map {$\cal E$}, depicted in Fig. \ref{fig:exposure}, and by taking into account the steradian-to-pixel conversion factor. Specifically, the counts in pixel $a$ are obtained as:
+The count map $\mathcal{N}$ is then obtained by multiplying the flux map by the \fermi exposure map $\mathcal{E}$, depicted in Fig. \ref{fig:exposure}, and by taking into account the steradian-to-pixel conversion factor. Specifically, the counts in pixel $a$ are obtained as:
 \begin{equation}
-    {\cal N}_a = {\cal M}_a \cdot {\cal E}_a \cdot \frac{4\pi}{N_\textrm{pix}}
+    \mathcal{N}_a = \mathcal{M}_a \cdot \mathcal{E}_a \cdot \frac{4\pi}{N_\textrm{pix}}
     \label{eq:count}
 \end{equation}
 %
@@ -196,7 +196,7 @@ Since the exposure slightly changes with energy, the above procedure could be im
 Eq. \ref{eq:count} also implies that we do not adopt energy dispersion. In the energy range 1-10 GeV the energy dispersion is about 10\% \cite{Fermi-LAT:2013jgq} and may induce normalization changes of similar size.
 Thus, as explained in the next section, we will re-derive the galactic foreground normalization with a dedicated fit in order to avoid possible biases in the normalization.
 
-From the count map {$\cal N$}, which contains the number of photon counts in each pixel as determined by the model, we finally produce a Poisson realization {$\cal N_P$}, by extracting in each pixel a photon count from a Poisson distribution with mean equal to the photon number of the corresponding pixel in {$\cal N$}. {$\cal N_P$} constitutes our synthetic map realization, which mimics a count map of an experiment with the \fermi specifications, where the underling model is the one of Eq. \ref{eq:map}.
+From the count map $\mathcal{N}$, which contains the number of photon counts in each pixel as determined by the model, we finally produce a Poisson realization $\mathcal{N}_\mathcal{P}$, by extracting in each pixel a photon count from a Poisson distribution with mean equal to the photon number of the corresponding pixel in $\mathcal{N}$. $\mathcal{N}_\mathcal{P}$ constitutes our synthetic map realization, which mimics a count map of an experiment with the \fermi specifications, where the underling model is the one of Eq. \ref{eq:map}.
 
 In the next Sections we discuss in more detail how the components of Eq. \ref{eq:map} are modeled.
 
@@ -260,7 +260,7 @@ Following \cite{Cuoco-1pdf}, the differential source-count distribution $\dnds$ 
 where $S_0$ is a reference flux value which we choose to be $S_0 = 3 \cdot 10^{-8} \textrm{cm}^{-2} \textrm{s}^{-1}$,  and $n_j$ are the power-law indices. $S$ denotes the source flux in the energy interval $(1,10)$ GeV. The $dN/dS$ distribution is normalized with an overall factor $A_S$. 
 
 For definiteness, in this work we adopt 3 breaks and 4 slopes. The ranges in which the parameters are varied to produce different source-count distributions is reported in Table \ref{tab:prior-dNdS}. The ranges have been chosen in order to intercept the expected features of the $\dnds$ and are broad enough to allow for a good variability in the modeling of the source counts, in order to expose the CNN to a wide set of options. In fact, the prior ranges of the three break positions are chosen relative to the \fermi threshold for resolving point sources, $S_\textrm{th} \sim 2 \cdot 10^{-10}$ cm$^{-2}$ s$^{-1}$, such that $S_1$, $S_2$, $S_3$ are respectively larger, across and below $S_\textrm{th}$. The flux interval over which we will try to reconstruct the $\dnds$ is set as $[5 \cdot 10^{-12}, 1 \cdot 10^{-7}]$ cm$^{-2}$ s$^{-1}$. The upper limit of this interval is set by the brightest sources in the catalog, while the lower limit is set at about 1.6 orders of magnitude below the \fermi threshold for resolving sources. Sources fainter than the lower limit of this interval are assumed to just contribute to the isotropic component.
-{  This lower limit, indeed, is also close to the theoretical sensitivity given by the flux of a point source contributing exactly one photon, which we calculate as $F_\textrm{sens}= 1/{\cal E}_{av}=3.74 \cdot 10^{-12}$ cm$^{-2}$ s$^{-1}$  where ${\cal E}_{av}$ is the average exposure in the region $|b|>30^\circ$ where we perform the analysis.}
+{  This lower limit, indeed, is also close to the theoretical sensitivity given by the flux of a point source contributing exactly one photon, which we calculate as $F_\textrm{sens}= 1/\mathcal{E}_{av}=3.74 \cdot 10^{-12}$ cm$^{-2}$ s$^{-1}$  where $\mathcal{E}_{av}$ is the average exposure in the region $|b|>30^\circ$ where we perform the analysis.}
 
 
 
@@ -268,7 +268,7 @@ For definiteness, in this work we adopt 3 breaks and 4 slopes. The ranges in whi
 
 The prior ranges for the power-law slopes are anchored to the results from the 4FGL catalog in the resolved regime, and allow for progressively wider variability moving toward the unresolved regime. Since catalog data exhibit a source count compatible with $S^{-2}$, except for large fluxes, where the slope increases, we adopt priors for $n_1$ and $n_2$ around these behaviours. For $n_3$ and $n_4$, we progressively enlarge the prior ranges, in order to allow for more variability especially in the sub-threshold (unresolved) regime we are interested in. An example of a $\dnds$ generated from this procedure is shown in the right panel of Fig. \ref{fig:dNdS-annotato}, which also illustrates the notation.
 
-The maps {$\cal S$} are generated according to the following procedure:
+The maps $\mathcal{S}$ are generated according to the following procedure:
 \begin{enumerate}
 \item A $\dnds$ is selected by random sampling of its parameters in the intervals and with the priors defined in Table \ref{tab:prior-dNdS};
 
@@ -276,7 +276,7 @@ The maps {$\cal S$} are generated according to the following procedure:
 
 \item A Poisson extraction on $N_i$ determines the number of sources $N_{P,i}$ in each flux interval;
 
-\item The sources are randomly positioned on the sphere by uniformly sampling $\cos\theta$ in $[-1,1]$ and $\varphi$ in $[0, 2\pi]$, $\theta$ and $\varphi$ being the spherical coordinates. The selected angular position is then converted into a pixel position in the Healpix pixeling scheme with the {\tt ang2pix} routine. An example of a point-source map is shown in the upper panel of Fig. \ref{fig:point-sources};
+\item The sources are randomly positioned on the sphere by uniformly sampling $\cos\theta$ in $[-1,1]$ and $\varphi$ in $[0, 2\pi]$, $\theta$ and $\varphi$ being the spherical coordinates. The selected angular position is then converted into a pixel position in the Healpix pixeling scheme with the \texttt{ang2pix} routine. An example of a point-source map is shown in the upper panel of Fig. \ref{fig:point-sources};
 
 \item Finally, convolution with the \fermi PSF shown in Fig. \ref{fig:PSF} is applied to each point source. Since sources are assumed to be point-like, we simply replace each point source with an extended circular object with a radial profile equal to the PSF, and whose total flux is equal to the one of the original source. Since the image formation process is linear in the intensity, in case of overlapping sources (either because of their spatial position, or because of the PSF smearing) the resulting flux is additive. An example of flux map with the PSF applied is shown in the lower panel of Fig. \ref{fig:point-sources}.
 \end{enumerate}
@@ -289,7 +289,7 @@ In order to avoid possible biases in the generated maps, due to the resolution o
 \begin{figure}[t]
 \centering
 \includegraphics[scale=0.6]{img/data_selection/gf7.pdf}
-\caption{$\tt {gll\_iem\_v07}$ galactic foreground model \cite{4FGL}, integrated in the $(1,10)$ GeV energy bin, in units of photons/(cm$^2$ s sr), at the Healpix resolution $N_\textrm{side} = 128$ ($n=7$).}
+\caption{\texttt{gll\_iem\_v07} galactic foreground model \cite{4FGL}, integrated in the $(1,10)$ GeV energy bin, in units of photons/(cm$^2$ s sr), at the Healpix resolution $N_\textrm{side} = 128$ ($n=7$).}
 \label{fig:galactic-foreground}
 \end{figure}
 
@@ -305,9 +305,9 @@ the galactic templates \verb|gll_iem_v07| and \verb|gll_iem_v05| directly to the
 \mathcal{L}=\prod_{a=1}^{N_\textrm{pix}} \frac{\lambda_{a}^{k_{a}} e^{-\lambda_{a}}}{k_{a} !}
 \end{equation}
 %
-where $k_a$ is the number of photons in pixel $a$ of the \fermi count map and $\lambda_a$ the corresponding quantity from the model count-map, given by $\lambda_a = (A_\textrm{gal}\ {\cal G}_a + F'_\textrm{iso}) \cdot {\cal E}_a \cdot \frac{4\pi}{N_\textrm{pix}} $, where $A_\textrm{gal}$ and $F'_\textrm{iso}$ are the two fit parameters. In performing the fit we mask the sky with the low-latitude cut and with a $2^\circ$ circular mask around each of the sources in the 4FGL catalog. 
+where $k_a$ is the number of photons in pixel $a$ of the \fermi count map and $\lambda_a$ the corresponding quantity from the model count-map, given by $\lambda_a = (A_\textrm{gal}\ \mathcal{G}_a + F'_\textrm{iso}) \cdot \mathcal{E}_a \cdot \frac{4\pi}{N_\textrm{pix}} $, where $A_\textrm{gal}$ and $F'_\textrm{iso}$ are the two fit parameters. In performing the fit we mask the sky with the low-latitude cut and with a $2^\circ$ circular mask around each of the sources in the 4FGL catalog. 
 We added a prime on the $F'_\textrm{iso}$ derived from the maximum-likelihood fit above to explicitly distinguish it from the $F_\textrm{iso}$ introduced earlier.
-Confronting with Eq. (\ref{eq:map}), the $F'_\textrm{iso}$ term denotes the sum of the purely isotropic contribution $F_\textrm{iso}$  and the contribution of sources, ${\cal S}$ term, below the 4FGL detection threshold.
+Confronting with Eq. (\ref{eq:map}), the $F'_\textrm{iso}$ term denotes the sum of the purely isotropic contribution $F_\textrm{iso}$  and the contribution of sources, $\mathcal{S}$ term, below the 4FGL detection threshold.
 
 
 \begin{table}[t]
@@ -349,11 +349,11 @@ Example plots are shown in the Appendix \ref{sec:agal-var}.}
 
 \subsection{Count maps}
 
-With a flux map ${\cal M}$ available, we can now produce a synthetic photon-count map ${\cal N}$ as described in Eq. \ref{eq:count}. 
+With a flux map $\mathcal{M}$ available, we can now produce a synthetic photon-count map $\mathcal{N}$ as described in Eq. \ref{eq:count}. 
 One example is shown in Fig. \ref{fig:map-total-counts}. 
-In order to generate maps compatible with a counting experiment like \fermi, we then add Poisson noise to the map performing a Poisson realization of the number of photons in each pixel of the map ${\cal N}$, and we dub this final map as ${\cal N}_{\cal P}$ count map. One example is shown in Fig. \ref{fig:map-effective}, which also shows the same map with the latitude cut applied: these are the type of maps that we use to train and validate the neural network. We have generated in total 1 million maps, 90\% of which have been used for training and 10\% for validation. The maps have been stored as a \verb|TFRecord| dataset\footnote{\verb|https://www.tensorflow.org/tutorials/load_data/tfrecord|} for use with Tensorflow \cite{tensorflow2015-whitepaper}. The maps have been generated in Healpix format with $N_\textrm{side} = 128$ resolution (order $n=7$) and then downsampled to $N_\textrm{side} = 64$ (order $n=6$) for the training and validation (this resolution corresponds to 49152 pixels). 
+In order to generate maps compatible with a counting experiment like \fermi, we then add Poisson noise to the map performing a Poisson realization of the number of photons in each pixel of the map $\mathcal{N}$, and we dub this final map as $\mathcal{N}_\mathcal{P}$ count map. One example is shown in Fig. \ref{fig:map-effective}, which also shows the same map with the latitude cut applied: these are the type of maps that we use to train and validate the neural network. We have generated in total 1 million maps, 90\% of which have been used for training and 10\% for validation. The maps have been stored as a \verb|TFRecord| dataset\footnote{\verb|https://www.tensorflow.org/tutorials/load_data/tfrecord|} for use with Tensorflow \cite{tensorflow2015-whitepaper}. The maps have been generated in Healpix format with $N_\textrm{side} = 128$ resolution (order $n=7$) and then downsampled to $N_\textrm{side} = 64$ (order $n=6$) for the training and validation (this resolution corresponds to 49152 pixels). 
 
-The training of the CNN and the subsequent analysis of the \fermi data can be performed equivalently with maps in units of photon-count or in units of flux. Nonetheless, we will work with maps in units of flux, which are easily obtained from the ${\cal N}_{\cal P}$ count maps by using the exposure map and by inverting Eq. (\ref{eq:count}).  The reason to convert the ${\cal N}_{\cal P}$ count maps in units of flux is motivated by the fact that 
+The training of the CNN and the subsequent analysis of the \fermi data can be performed equivalently with maps in units of photon-count or in units of flux. Nonetheless, we will work with maps in units of flux, which are easily obtained from the $\mathcal{N}_\mathcal{P}$ count maps by using the exposure map and by inverting Eq. (\ref{eq:count}).  The reason to convert the $\mathcal{N}_\mathcal{P}$ count maps in units of flux is motivated by the fact that 
 count maps contain a spurious large-scale angular dependence
 introduced by the exposure map (see Fig. \ref{fig:exposure}) which
 might confuse the CNN, while this potential issue is avoided
@@ -739,14 +739,14 @@ We first determine and remove the monopole ($l=0$) and dipole ($l=1$) components
 
 \item  This map is then subject to harmonic space decomposition:
 \begin{equation}
-{\cal M}_\textrm{masked}(\theta,\phi) = \sum_{l=0}^{\infty} \sum_{m=-l}^{l} a_{lm} Y_{lm}(\theta,\phi)
+\mathcal{M}_\textrm{masked}(\theta,\phi) = \sum_{l=0}^{\infty} \sum_{m=-l}^{l} a_{lm} Y_{lm}(\theta,\phi)
 \label{eq:multipole}
 \end{equation}
-where $\theta$ and $\phi$ are angles on the sphere, $Y_{lm}(\theta,\phi)$ the spherical harmonics and the harmonic coefficients $a_{lm}$ completely encode the same information present in the map ${\cal M}_\textrm{masked}$  (notice that, even though in Eq. (\ref{eq:multipole}) we formally decompose over all multipoles, the monopole and dipole amplitude are vanishing, since they have been removed from  ${\cal M}_\textrm{masked}$);
+where $\theta$ and $\phi$ are angles on the sphere, $Y_{lm}(\theta,\phi)$ the spherical harmonics and the harmonic coefficients $a_{lm}$ completely encode the same information present in the map $\mathcal{M}_\textrm{masked}$  (notice that, even though in Eq. (\ref{eq:multipole}) we formally decompose over all multipoles, the monopole and dipole amplitude are vanishing, since they have been removed from  $\mathcal{M}_\textrm{masked}$);
 
 \item The harmonic coefficients $a_{lm}$ are determined with the \verb|map2alm| Healpy function. The ones that are retained for the foreground cleaning are those referring to multipole values $l < l_\textrm{max}$, where $l_\textrm{max}$ will be varied and the dependence of the results with $l_\textrm{max}$ will be studied (at this level, the monopole and dipole are not present, because of the above point);
 
-\item By using the $a_{lm}$ corresponding to multipoles $l < l_\textrm{max}$, we use Eq. (\ref{eq:multipole}) to construct a map ${\cal M}_\textrm{residual}$ which contains only the large-scale component. This is performed with \verb|alm2map| Healpy function.
+\item By using the $a_{lm}$ corresponding to multipoles $l < l_\textrm{max}$, we use Eq. (\ref{eq:multipole}) to construct a map $\mathcal{M}_\textrm{residual}$ which contains only the large-scale component. This is performed with \verb|alm2map| Healpy function.
 
 \item We subtract the residual map from the original map, thus obtaining a map where the large scale residual components have been removed. The size of the scale is determined by $l < l_\textrm{max}$.
 
