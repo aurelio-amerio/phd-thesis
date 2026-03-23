@@ -1,0 +1,11 @@
+.DS_Store
+*.toc
+*.log
+*.out
+*.aux
+*.gz
+*.bbl
+*.blg
+jcapexample.pdf
+main.pdf
+DM_halos_main.pdf

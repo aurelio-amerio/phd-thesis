@@ -1,0 +1,67 @@
+refs:N-body general
+
+
+refs:WIMP DM review
+\cite{2016PhR...636....1C, 2017NatPh..13..224C, MiniReview_Gammaldi}
+
+
+
+% Details on literature on DM subhalos
+
+2014GrCo...20...47B - Belotsky  et al
+2010PhRvD..82f3501B - Buckley & Hooper, DM halos in 1FGL, by hand
+2017JCAP...04..018H - Hooper & Witte, DM halos in Fermi data, extension, analysis by hand
+2016JCAP...05..028S - Gaskins, Diemand et al, DM subhalos in 3FGL, by hand
+2012A&A...538A..93Z - Zechlin, Horns et al, DM subhalos in 1FGL, by hand
+2012JCAP...11..050Z - Zechlin & Horns, DM subhalos in 2FGL, by hand
+2019JCAP...07..020C - Coronado-Blazquez et al, DM halos in several FGLs, by hand and ML
+2017PhRvD..96f3009C - Calore et al, DM subhalos in 3FGL and 2FHL, by hand, extension
+2019Galax...7...90C - Calore et al, DM subhalos in FGLs, uncertainty due to N-body simulations
+2016ApJ...825...69M - Mirabal et al, ML for DM subhalos
+2015JCAP...12..035B - Bertoni et al, DM subhalos in 3FGL, by hand, extension
+2023MNRAS.520.1348G - Gammaldi et al, DM subhalos, ML
+2019JCAP...11..045C - Coronado-Blazquez et al, DM halos, by hand, extension
+2022PhRvD.105h3006C - Coronado-Blazquez et al, extension
+2023JCAP...07..033B - Butter et al, DM suhbalos, ML
+2012ApJ...747..121A - Fermi LAT, DM halos in 1 year, by hand
+2012PhRvD..86d3504B - Belikov, DM halos in 2FGL, by hand
+2014PhRvD..89a6014B - Berlin & Hooper, DM subhalos, by hand, extension
+
+refs:DM subhalos as unassoc sources
+\cite{2010PhRvD..82f3501B, 2012A&A...538A..93Z, 2012ApJ...747..121A, 2012JCAP...11..050Z, 2012PhRvD..86d3504B, 2014GrCo...20...47B, 2014PhRvD..89a6014B, 2015JCAP...12..035B, 2016JCAP...05..028S, 2016ApJ...825...69M, 2017JCAP...04..018H, 2017PhRvD..96f3009C,  2019Galax...7...90C, 2019JCAP...11..045C, 
+2019JCAP...07..020C, 2022PhRvD.105h3006C, 2023JCAP...07..033B,  2023MNRAS.520.1348G}
+
+refs:DM subhalos by hand
+\cite{2010PhRvD..82f3501B, 2012A&A...538A..93Z, 2012ApJ...747..121A, 2012JCAP...11..050Z, 2012PhRvD..86d3504B, 2014PhRvD..89a6014B, 2015JCAP...12..035B, 2016JCAP...05..028S, 2017JCAP...04..018H, 2017PhRvD..96f3009C, 2019JCAP...07..020C, 2019JCAP...11..045C}
+
+refs:DM subhalos by ML
+\cite{2016ApJ...825...69M, 2019JCAP...11..045C, 2023JCAP...07..033B, 2023MNRAS.520.1348G}
+
+
+refs:DM subhalos by extension
+\cite{2014PhRvD..89a6014B, 2015JCAP...12..035B, 2017PhRvD..96f3009C, 2022PhRvD.105h3006C, 2019JCAP...11..045C}
+
+
+refs:quantification reviews
+\cite{10.1145/3117807_Gonzalez_quantification, 2022arXiv221108063M, esuli2023learning}
+
+
+% General ML (including halos) for Fermi source classification
+\cite{2012ApJ...753...83A, 2016ApJ...825...69M, 2016ApJ...820....8S, 2017A&A...602A..86L, 2019JCAP...11..045C, 2020MNRAS.492.5377L, 2020MNRAS.495.1093H, 2021RAA....21...15Z, 2021MNRAS.505.5853G, 2022A&A...660A..87B, 2023JCAP...07..033B, 2023MNRAS.521.6195M, 2023RASTI...2..735M, 2023MNRAS.520.1348G}
+
+2012ApJ...753...83A - Ackermann et al (Fermi LAT), 1FGL
+2016ApJ...820....8S - Saz Parkinson et al, 3FGL
+2017A&A...602A..86L - Lefaucheur et al, 3FGL
+2020MNRAS.492.5377L - Luo et al
+2021RAA....21...15Z - Zhu et al
+2020MNRAS.495.1093H - Hui et al
+2021MNRAS.505.5853G - Germani et al
+2022A&A...660A..87B - Bhat and Malyshev
+2023RASTI...2..735M - Malyshev
+2023MNRAS.521.6195M - Malyshev & Bhat
+
+
+
+% classification of blazars
+% \citep{2013MNRAS.428..220H, 2014ApJ...782...41D, 2016MNRAS.462.3180C, 2017MNRAS.470.1291S, 2019MNRAS.490.4770K, 2020MNRAS.493.1926K}
+

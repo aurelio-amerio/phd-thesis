@@ -1,0 +1,1740 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{jcappub}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{bbold}
+\pdfoutput=1
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{natbib}
+\bibliographystyle{JHEP}
+%\bibliographystyle{abbrvnat}
+\usepackage{hyperref} 
+\usepackage{enumitem}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{xcolor}
+\usepackage{comment}
+\usepackage{soul}
+\usepackage{lineno}
+\linenumbers
+
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+\newcommand{\aure}[1]{\textcolor{orange}{[AA: #1]}}
+\newcommand{\BZ}[1]{\textcolor{blue}{[BZ: #1]}}
+\newcommand{\dima}[1]{\textcolor{purple}{{Dima: #1}}}
+\newcommand{\masc}[1]{\textcolor{ForestGreen}{{MASC: #1}}}
+
+\newcommand{\Fermi}{{\textit{Fermi}}}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+
+\newcommand{\bx}{{\bf x}}
+\newcommand{\btheta}{\boldsymbol{\theta}}
+\newcommand{\sigmav}{\langle \sigma v \rangle}
+\newcommand{\Msub}{M_{\rm sub}}
+\newcommand{\Vmax}{V_{\rm max}}
+
+
+
+
+\newcommand{\mnras}{{MNRAS}}
+\newcommand{\apjs}{{ApJS}}
+\newcommand{\apj}{{ApJ}}
+\newcommand{\prd}{{Physical Review D}}
+\newcommand{\prl}{{PRL}}
+\newcommand{\jcap}{{JCAP}}
+\newcommand{\nat}{{Nature}}
+\newcommand{\physrep}{{Physics Reports}}
+\newcommand{\aap}{{A\&A}}
+
+
+
+\usepackage[normalem]{ulem}
+
+%\newcommand{\nnn}{\noindent\newline\newline}
+
+
+\newcommand{\DMsubhaloUnas}{\cite{2010PhRvD..82f3501B, 2012A&A...538A..93Z, 2012ApJ...747..121A, 2012JCAP...11..050Z, 2012PhRvD..86d3504B, 2014GrCo...20...47B, 2014PhRvD..89a6014B, 2015JCAP...12..035B, 2016JCAP...05..028S, 2016ApJ...825...69M, 2017JCAP...04..018H, 2017PhRvD..96f3009C,  2019Galax...7...90C, 2019JCAP...11..045C, 
+2019JCAP...07..020C, 2022PhRvD.105h3006C, 2023JCAP...07..033B,  2023MNRAS.520.1348G}}
+
+\newcommand{\DMsubhaloML}{\cite{2016ApJ...825...69M, 2019JCAP...11..045C, 2023JCAP...07..033B, 2023MNRAS.520.1348G}}
+
+\newcommand{\DMsubhaloHand}{\cite{2010PhRvD..82f3501B, 2012A&A...538A..93Z, 2012ApJ...747..121A, 2012JCAP...11..050Z, 2012PhRvD..86d3504B, 2014PhRvD..89a6014B, 2015JCAP...12..035B, 2016JCAP...05..028S, 2017JCAP...04..018H, 2017PhRvD..96f3009C, 2019JCAP...07..020C, 2019JCAP...11..045C}}
+
+\newcommand{\FermiMLclassif}{
+\cite{2012ApJ...753...83A, 2016ApJ...825...69M, 2016ApJ...820....8S, 2017A&A...602A..86L, 2019JCAP...11..045C, 2020MNRAS.492.5377L, 2020MNRAS.495.1093H, 2021RAA....21...15Z, 2021MNRAS.505.5853G, 2022A&A...660A..87B, 2023JCAP...07..033B, 2023MNRAS.521.6195M, 2023RASTI...2..735M, 2023MNRAS.520.1348G}}
+
+\title{Search for dark matter subhalos among unassociated Fermi-LAT sources in presence of dataset shift}
+
+\author[a]{Aurelio Amerio,}
+\author[b]{Dmitry Malyshev,}
+\author[a]{Bryan Zaldívar,}
+\author[c]{Viviana Gammaldi,}
+\author[d,e]{Miguel A. Sánchez-Conde}
+
+% The "\note" macro will give a warning: "Ignoring empty anchor..."
+% you can safely ignore it.
+
+\affiliation[a]{Instituto de F\'isica Corpuscular (IFIC), University of Valencia and CSIC, Calle Catedrático José Beltrán 2, 46980 Paterna, Spain}
+\affiliation[b]{Erlangen Centre for Astroparticle Physics,
+Nikolaus-Fiebiger-Str. 2, Erlangen 91058, Germany
+}
+\affiliation[c]{Department of Information Technology, Escuela Politécnica Superior, Universidad San Pablo-CEU, CEU Universities, Campus Montepríncipe, Boadilla del Monte, Madrid 28668, Spain}
+\affiliation[d]{Instituto de F\'isica Te\'orica UAM-CSIC,
+Universidad Aut\'onoma de Madrid, \\
+C/ Nicol\'as Cabrera, 13-15, 28049 Madrid, Spain}
+\affiliation[e]{Departamento de F\'isica Te\'orica, M-15,
+Universidad Aut\'onoma de Madrid, \\
+E-28049 Madrid, Spain}
+
+% e-mail addresses: one for each author, in the same order as the authors
+\emailAdd{aurelio.amerio@ific.uv.es}
+\emailAdd{dmitry.malyshev@fau.de}
+\emailAdd{b.zaldivar.m@csic.es}
+\emailAdd{viviana.gammaldi@ceu.es}
+\emailAdd{miguel.sanchezconde@uam.es}
+
+
+%\date{December 2022}
+
+\abstract{We search for dark matter (DM) annihilating subhalos of the Milky Way halo among the {\Fermi} Large Area Telescope (LAT) unassociated sources. We construct, for the first time, a statistical model of the unassociated sources at latitudes above 10 degrees. The latter is built as a combination of both DM annihilation subhalos as well as Galactic and extragalactic astrophysical components. 
+%that includes DM annihilating subhalos as well as extra-galactic and Galactic sources.
+The astrophysical components are constructed based on distributions of associated sources, while the distribution of DM subhalos is derived from Monte Carlo simulations. In this model we take into account the differences in the distributions of associated and unassociated sources including both covariate and prior probability shifts (both being forms of ``dataset shifts''). Previous searches of DM subhalos were based on classify-and-count strategies, while the approach adopted in this work is based on quantification learning, which allows one to determine a well-defined statistical interpretation of the contribution of a population of DM subhalos to the unassociated \Fermi-LAT sources. 
+We find that the contribution of DM subhalos is not significant for a range of DM masses from 10 GeV to 1 TeV in the $b\bar{b}$ annihilation channel and derive a statistical 95\% confidence upper limit on the DM annihilation cross section in this channel.
+While the derived limits are consistent with previous classify-and-count approaches, our generative statistical model opens new avenues for population studies of \Fermi-LAT sources and, more generally, for searches of anomalies on top of backgrounds in presence of  statistical and systematic uncertainties.}
+%The derived limit is competitive with the previous limits based on classify-and-count approaches.}
+
+\begin{document}
+
+\maketitle 
+
+
+\section{Introduction}
+\label{sec: intro}
+
+%\dima{According to author's manual \url{https://jcap.sissa.it/jcap/help/JCAP/TeXclass/DOCS/JCAP-author-manual.pdf} equations and references can be abbreviated as eq. and ref., everything else should be written in full and lower-case, e.g., section should be written as ``section''. Also equation numbers always have parentheses around, e.g., eq. (2.3). \bigskip }
+
+
+The nature of dark matter (DM) remains one of the biggest mysteries in astrophysics.
+N-body cosmological simulations predict that galaxies, such as the Milky Way, are surrounded by a cloud of DM overdensities, which are called subhalos \cite{2001MNRAS.328..726S,2007ApJ...667..859D,2008Natur.454..735D,2009Sci...325..970K,2012AnP...524..507F,2019Galax...7...81Z,2020NatRP...2...42V}.
+Subhalos with masses above ${\sim 10^8~M_{\odot}}$ are expected to contain stars: these subhalos are detected as dwarf spheroidal galaxies.
+Smaller and more numerous subhalos may have no usual matter (such as stars or dust) inside them.
+In this paper, we focus on subhalos with masses smaller than ${\sim 10^8~M_{\odot}}$, which are not associated to
+dwarf spheroidal galaxies.
+These subhalos can be detected either by gravitational effects or through annihilation or decay of DM particles into the Standard Model (SM) particles.
+One of the most popular types of particle DM candidates is the Weakly Interacting Massive Particle (WIMP) with masses in the GeV -- TeV range annihilating into SM particles, such as $b\bar{b}$ or $\tau^+\tau^-$ 
+%refs:WIMP DM review
+\cite{2016PhR...636....1C, 2017NatPh..13..224C, MiniReview_Gammaldi}.
+For sufficiently large masses of DM particles, e.g., above about a GeV, the DM annihilation in subhalos can be detected by the {\Fermi} Large Area Telescope (LAT).
+Although DM subhalos may emit radiation at other frequencies, e.g., in radio wavelengths due to synchrotron radiation from the electrons and positrons created in DM annihilations, the corresponding signal is expected to be small for DM subhalos with masses less than ${\sim 10^8~M_{\odot}}$ \cite{2015JCAP...02..032C} (the radio emission from the dwarf spheroidal galaxies can be rather significant but has large uncertainties \cite{2007PhRvD..75b3513C, 2013PhRvD..88h3535N, 2014JCAP...10..016R}).
+%Provided that the fluxes of neutrinos and photons at other wavelengths are expected to be too small to be realistically measured \dima{Reference?},
+As a result, the DM subhalos would primarily manifest themselves as a population of unassociated gamma-ray sources in {\Fermi}-LAT catalogs with approximately isotropic distribution in the sky 
+%refs:DM subhalos as unassoc sources
+\DMsubhaloUnas.
+%Thus, one of the smoking gun signatures of DM halos is a population of gamma-ray sources approximately isotropically distributed over the sky without counterparts in other wavelengths (some sources may have a detectable extension and a cuspy profile, but we assume pointlike morphology of the sources in this work).
+
+The latest \Fermi-LAT catalog (4FGL-DR4)~\cite{2022ApJS..260...53A, 2023arXiv230712546B} contains 2428 unassociated sources (unIDs), which is about one third of all detected sources.
+Among these sources, 1282 are at latitudes $|b| > 10^\circ$.
+Provided that unIDs have no known counterparts at other wavelengths, these gamma-ray sources are natural candidates to search for DM-dominated subhalos shining in gamma rays
+due to DM annihilation.
+The problem is that the majority of unIDs are expected to be astrophysical sources, where the lack of association can be due to poor localization of the gamma-ray source or, in case of pulsars, beaming effects.
+
+The search for DM subhalos 
+%and the corresponding limits on DM annihilation 
+has been previously performed with the ``classify-and-count'' strategy, where a number of DM subhalo candidates has been selected either based on their gamma-ray properties 
+consistent with the expectations for DM subhalos~\DMsubhaloHand, or based on classification of gamma-ray sources with machine learning (ML)~\DMsubhaloML.
+The limits on DM annihilation have been derived assuming that there cannot be more DM subhalos among \Fermi-LAT unIDs than the number of DM subhalo candidates.
+
+A general caveat of previous searches of DM candidates based on gamma-ray properties is that the same source may be consistent both with a DM subhalo as well as an astrophysical source, e.g., an active galactic nucleus (AGN) or a pulsar.
+Thus, unless there is a smoking gun signature of a DM subhalo, such as a physical extension consistent with the distribution of DM 
+%refs:DM subhalos by extension
+\cite{2014PhRvD..89a6014B, 2015JCAP...12..035B, 2017PhRvD..96f3009C, 2022PhRvD.105h3006C, 2019JCAP...11..045C}, this analysis does not allow one to claim a detection of a population of DM subhalos among \Fermi-LAT unIDs.
+Although one can estimate an upper limit on DM annihilation assuming that the number of DM subhalos cannot exceed the number of DM subhalo candidates,
+it is, nevertheless, challenging to calculate a statistical significance of the DM exclusion.
+For instance, in ML-based approaches the estimate of the number of DM subhalo candidates depends on the threshold for the probability that an unassociated source is a DM subhalo.
+The threshold is selected by hand, i.e., it is not based on a statistical argument. In addition, the probability itself that a source is a DM subhalo depends on the training dataset, e.g., on the choice of the fractions of DM-like and astrophysical sources. Usually one uses 50/50\% split of astrophysical and DM subhalo sources based on the requirement that the classes are balanced in the training dataset (smaller or larger fractions of DM-like sources in the training dataset would result in respectively smaller or larger predicted DM-like probabilities). However, the 50\% fraction of DM-like sources in the training dataset does not come from data, provided that there are no DM subhalos among associated sources. If one, for example, uses balanced classes for classification of sources into pulsars and AGNs, then one would predict a larger fraction of pulsars among unassociated sources
+than what would be expected from associated sources, where there are almost 10 times more AGNs than pulsars. Such bias coming from balancing of classes has to be corrected (calibrated) in order to obtain realistic class probabilities.
+For the calibration one would use a realistic testing dataset, which is not available for the DM subhalos (since none of them has been found in gamma-ray data).
+The problem of difference of class prevalences for training and testing (or target) datasets is known as prior shift.
+Similar problem (implicitly) exist for searches of DM subhalos, which are not based on ML estimates of DM-like probabilities.
+
+Another problem, which affects the searches of DM subhalos but has not been addressed in the literature so far (e.g., in the classify-and-count approach) is that the distribution of associated and unassociated sources are different as a function of most of features, such as flux, spectral index, spectral curvature, variability etc.~\cite{2022ApJS..260...53A, 2023RASTI...2..735M}.
+This difference can be due to bias in associations, e.g., it is easier to associate bright sources at high latitudes (cf. covariate shift discussion in section~\ref{sec:cov_prior}). It may also be a signature of a new class of sources, such as DM subhalos (cf. prior shift discussion above and in section~\ref{sec:cov_prior}).
+A priori the reason for the differences in the distributions is not known. As a result, one needs to put additional constraints, e.g., on the association bias, in order to break the degeneracy between the association bias and the presence of a new class of sources.
+
+In other words, the distributions of associated and unassociated \Fermi-LAT gamma-ray sources are different as a function of source parameters.
+This difference may be due to association bias (described by covariate shift), different fractions of astrophysical classes of sources (described by prior shift), or there may be a new class of sources, e.g., DM subhalos (which is a particular case of a prior shift - from zero to non-zero prevalence).
+A solution to this problem is not possible in the classify-and-count approach, since it relies on the prior assumptions of the prevalence of classes, which cannot be adjusted in the absence of a realistic testing set.
+In order to overcome the limitation of the classify-and-count approach we use, for the first time in searches of DM subhalos, a different analysis method referred as quantification learning rather than classification.
+
+The main purpose of quantification analysis 
+%refs:quantification reviews
+\cite{10.1145/3117807_Gonzalez_quantification, 2022arXiv221108063M, esuli2023learning} 
+is to accurately predict the prevalence of classes rather than to optimize the performance for classification of individual sources, which is the main goal of classification analysis.
+One of the methods in quantification learning is known as template matching~\cite{2024arXiv240100490M}. It is familiar in astrophysics in modeling of large-scale radio, X-ray, or gamma-ray emission as a linear combination of templates based on tracers of the different components of emission, e.g., the distribution of dust is used as a tracer of hadronic component of diffuse gamma-ray emission due to interactions of high-energy cosmic rays with gas.
+
+In this paper, we construct for the first time a statistical model for the distribution of unassociated sources at latitudes $|b| > 10^\circ$. It consists of a mixture model, i.e. a linear combination of probability distribution functions (PDFs)
+of classes of astrophysical sources plus a contribution of DM subhalos.
+The PDFs of classes of astrophysical sources are determined from the associated sources, while the distribution of DM subhalos is determined from Monte Carlo simulations assuming a model of J-factors from N-body DM simulations and particular parameters for DM (DM mass, annihilation cross section and channel).
+The prior shift problem is solved by fitting the relative contribution of the different components to the data (the distribution of unassociated sources), while the covariate shift problem is solved by adding a modulation to the PDFs of the classes of associated sources (the parameters of the modulation are also fit to the data simultaneously with the class prevalence).
+
+\begin{comment}
+% this is an old version of introduction, which has been reformulated above
+
+%can be performed in two ways: (1) determine individual sources, which resemble DM subhalos~\SubhaloCandidates \dima{Refs (@all)};(2) search for a sub-population of sources, which is inconsistent with the expectations for populations of astrophysical sources~\SubhaloPopulation \dima{Refs (@all)}.
+%In the second approach, each of the sources may be consistent with an astrophysical explanation, e.g., via pulsars, but a population of sources is not consistent with the expected populations of astrophysical sources.
+%For a recent review on searches of DM subhalos in gamma rays see, e.g., ~\cite{2023MNRAS.520.1348G}.
+
+To summarize, the two caveats in the searches of DM subhalos among gamma-ray sources, which have not been addressed in the previous studies of DM subhalos are:
+\ben
+\item
+The differences in the the distribution of associated and unassociated sources as a function of most of source parameters, such as flux, spectral index, spectral curvature, variability etc.
+This difference can be due to bias in associations, e.g., it is easier to associate bright sources at high latitudes (cf. covariate shift discussion in section~\ref{sec:cov_prior}). It may also be a signature of a new class of sources, such as DM subhalos (cf. prior shift discussion in section~\ref{sec:cov_prior}).
+A priori the reason for the differences in the distributions is not known. As a result, one needs to put additional constraints, e.g., on the association bias, in order to break the degeneracy between the association bias and the presence of a new class of sources.
+\item
+A related issue, which especially affects supervised ML approaches, is that the DM halos are not yet detected, i.e., there is no prior knowledge on the fraction of DM subhalos among gamma-ray sources (this is also related to the prior shift problem discussed in section~\ref{sec:cov_prior}).
+One can determine properties of DM halos from simulations (assuming a fixed DM mass and annihilation channel), but for the training, one also needs to choose the fraction of samples in the new class relative to the total number of sources in the training sample.
+ML algorithms have been usually trained with 50/50\% ratio of DM and astrophysical sources \cite{Gammaldi:2022wwz}.
+But this choice is not based on the data nor on the expected fraction of DM halos. For a smaller (larger) fraction of DM halos in training, 
+one would ``detect'' fewer (more) DM subhalos among the unIDs.
+This arbitrariness in the creation of the training sample prevents a rigorous statistical interpretation of the results. 
+\een
+The main purpose of our work is to address these two caveats. We adopt a semi-supervised learning approach in Section \ref{sec:approach},
+where the model of unassociated sources includes, on the one hand, a covariate shift, 
+which describes the difference in the distributions of associated and unassociated sources as a function of input features (covariates), and on the other hand a prior shift, which allows the fractions of classes of sources (e.g., class prevalences) to be different for associated and unassociated sources.
+We note that class prevalence may change not only for the DM halos (from zero prevalence in associated sources to a non-zero prevalence among the unassociated sources),
+but also for astrophysical sources, such as pulsars and active galactic nuclei (AGNs).
+
+%Last but not least, up to our knowledge,
+%a full statistical model for the distribution of unassociated gamma-ray sources, i.e., we determine the probability distribution $p(\bx)$, with $\bx$ being the source parameters. Traditionally though, previous supervised learning studies have focused on estimating the conditional probability $p(k|\bx)$ of the class of source $k$ given the input features. 
+%joint probability distribution function (PDF) of the unassociated sources $p(\bx, k)$ as a function of source parameters $\bx$ and classes $k$, whereas the supervised learning methods have been used to determine the conditional probability of classes given the input features $p(k|\bx)$. This distinction is crucial for the analysis of a possible population of DM subhalos among unassociated \Fermi-LAT sources as it allows us to use $p(\bx)$ as the model likelihood to determine, e.g., the 95\% confidence upper bound on the contribution of DM subhalos and, correspondingly, on the DM annihilation cross section. It also allows us to generate mock data for Monte Carlo studies. Finally, upon estimation of the class prevalence $\pi(k)$, it allows us to build the joint distribution $p(\bx,k)$, and consequently the conditional probability of the class $k$ given the features $\bx_i$ of a given source $i$. At the same time we can calculate the conditional probabilities for individual sources as$p(k|\bx_i) = p(\bx_i, k) / p(\bx_i)$, where $p(\bx_i) = \sum_k p(\bx_i, k)$. We can also generate mock data by sampling from the joint PDF of the optimized model. 
+%Indeed, previous studies [refs] attempting to characterise the unassociated sources from a statistical point of view have focused on discriminative probabilistic approaches, aimed at modelling directly the conditional probability $p(k|\bx)$ that a given source characterised by parameters $\bx$ is assigned to a class $k$. In this work, we estimate the full joint probability distribution function for each class $p(\bx, k)$ (see  section \ref{sec:approach} for more details).
+\end{comment}
+
+In more formal terms, 
+we construct PDFs of astrophysical classes, denoted as $p(\bx|k)$,
+which represent the probability of a source with features $\bx$ given a source class $k$. 
+The PDFs for unassociated sources are determined by modulating the PDFs of the associated ones by functions of input features $\bx$ (these functions are the same for all classes $k$).
+Previous supervised learning studies have focused on estimating the conditional probability $p(k|\bx)$ of the class of source $k$ given the input features 
+%refs:DM subhalos ML
+\FermiMLclassif, as typically done by probabilistic classification models.
+Estimating $p(\bx|k)$ instead brings several crucial advantages. First of all (see section~\ref{sec:approach}), it allows us to model the difference between distributions of associated and unassociated sources as a combination of both covariate and prior shifts.
+The latter allows us to model the different prevalence of classes of astrophysical sources for training (associated sources) and target (unassociated sources) datasets as well as to include a new class of sources among the unassociated ones, which in this analysis is modeled as DM subhalos.
+Moreover, upon specification of the class prior $p(k)$, the joint distribution $p(k,\bx)=p(\bx|k)p(k)$ can be sampled to generate mock data, which can be used in Monte Carlo analyses.\footnote{That's why probabilistic models estimating $p(\bx|k)$ are called ``generative models'', as opposed to ``discriminative'' models focusing on $p(k|\bx)$.} Finally, the joint PDF  $p(\bx, k)$ can be marginalized over the class $k$ to estimate $p(\bx)$, i.e., the marginal distribution of the source features. 
+%In doing so, we estimate the fraction (``prevalence'') of astrophysical and DM sources, which addresses the caveat \# 2. 
+The quantity $p(\bx)$
+represents a probability density for a source with parameters $\bx$. 
+The product of $p(\bx_i)$ over unassociated sources is the model likelihood, which we maximize to obtain the optimum model parameters both for the prior and covariate shifts.
+In particular, we use such likelihood to estimate the best fit and upper bounds on the DM annihilation cross section $\sigmav$.
+Although generative models have been constructed previously in analyses of \Fermi-LAT source distributions, e.g., \cite{2023MNRAS.520.1348G}, they were not used for construction of maximum likelihood models, which we do in the current work.
+
+The paper is organized as follows.
+In section~\ref{sec:data},
+we describe the selection of the data.
+We discuss the covariate and prior shifts in section~\ref{sec:cov_prior}. We present our statistical model in section~\ref{sec:stat-model}. 
+The model of J-factors used in this paper is reviewed in section~\ref{sec:sim-jfactor}, while the simulation of gamma-ray sources corresponding to DM subhalos is presented in section~\ref{sec:DM_model}. 
+The corresponding limits on DM annihilation determined from the observed gamma-ray sources are presented in section~\ref{sec:results}.
+Section~\ref{sec:conclusions} contains discussion and conclusions. 
+We provide details about the statistical model and its optimization in appendices.
+
+
+\section{Statistical analysis}
+\label{sec:approach}
+
+\subsection{Data selection}
+\label{sec:data}
+
+
+In this work we use the 4FGL-DR4 catalog~\cite{2022ApJS..260...53A, 2023arXiv230712546B}. We group the known types of associated sources into two classes:%
+\footnote{Cf. table 5 in ref.~\cite{2022ApJS..260...53A} for details about the types of sources. Galactic sources: psr, hmb, sfr, snr, pwn, gc, gal, bin, msp, lmb, spp, glc, nov. Extragalactic sources: bll, sbg, rdg, css, bcu, ssrq, fsrq, sey, nlsy1, agn.}
+\begin{itemize}
+    \item galactic: pulsars, binaries, star-forming regions, supernova remnants, pulsar wind nebulae, globular clusters, and novae,
+    \item extragalactic (mostly AGNs): blazars, quasars, starburst galaxies, normal galaxies, radio galaxies and radio sources, Seyfert galaxies, and non-blazar active galaxies.
+\end{itemize}
+
+In order to characterise the sources, we focus on their energy spectra modeled with the log-parabola function
+%Provided that the log-parabola spectrum has four parameters, but only three of them are independent,we fix $E_0 = 1$ GeV ($E_0 = 100$ MeV) for $m_{DM}> 20$ GeV ($m_{DM} < 20$ GeV). We use the following parametrization of the spectrum:
+\be
+\label{eq:log_par}
+\ln \frac{F(E)}{K} = - \alpha \ln \frac{E}{E_0} - \beta \left(\ln \frac{E}{E_0} \right)^2,
+\ee
+where the parameters correspond to the following columns in the 4FGL-DR4 catalog:
+$K$ -- {\tt LP\_ Flux\_Density},
+$\alpha$ -- {\tt LP\_Index},
+$\beta$ -- {\tt LP\_beta},
+and $E_0$ -- {\tt Pivot\_Energy}.
+Provided that only three parameters are independent and that $E_0$ in the catalog is different for different sources, we rescale $E_0$ to a fixed value of 1 GeV (for analysis of $M_{DM}> 20$ GeV) or 100 MeV (for $M_{DM} < 20$ GeV). 
+We use the following three parameters as input features:
+%the derived observables on which we make probability density estimation with our algorithm: 
+\ben
+\item 
+$\log_{10}\phi$ -- the logarithm of the
+ flux integrated between 100 MeV and 1 TeV (obtained by summing fluxes in energy bins provided in the catalog);
+\item 
+$\alpha$ -- {\tt LP\_Index} rescaled to $E_0 = 1$ GeV or $E_0 = 100$ MeV depending on the choice of DM mass, i.e., above or below 20 GeV respectively;
+\item
+$\beta$ -- {\tt LP\_beta}.
+\een
+We collect these variables for each source $i$ inside a vector ${\bx}_i\equiv \{\log_{10}(\phi_i), \alpha_i, \beta_i\}$.
+%and consider a dataset of sources $\{{\bx}_i\}$. 
+%\red{ Since the value of $E_0$, the ``Pivot\_Energy'' parameter in the 4FGL-DR4 catalog, depends on the source in the catalog. 
+%In general, the 4FGL catalog uses a value of $E_0$ that varies on a per-source basis, for this reason, we need to rescale the parameters for our choice of $E_0$.}
+% \aure{check this formula, I'm not sure it's right, why does phi0 not enter here?}
+% We note that the $\alpha$ parameter is determined from the catalog $\alpha_{\rm 4FGL}$ and $E_{0 (\rm 4FGL)}$ values as
+% \be
+% \alpha = \alpha_{\rm 4FGL} + 2 \beta \ln \frac{E_0}{E_{0(\rm 4FGL)}},
+% \ee
+% where $\alpha$ ($\alpha_{\rm 4FGL}$) describes the spectral slope at $E_0$ ($E_{0(\rm 4FGL)}$).
+% The $\beta$ parameter is the same as in the catalog.
+%In our analysis, the input features are the $\alpha$, $\beta$ and the $\log_{10}$ of integral flux between 100 MeV and 1 TeV, which we denote as $\log_{10}(\phi)$.
+In our analysis, we consider only sources with Galactic latitudes $|b| > 10^\circ$.
+
+
+
+\subsection{Covariate and prior shifts}
+\label{sec:cov_prior}
+
+
+\begin{figure}
+    \centering
+    % \includegraphics[width=0.45\textwidth]{img/ass_vs_unass_LP_index1000MeV_high}
+    % \includegraphics[width=0.45\textwidth]{img/ass_vs_unass_LP_beta_high} \\
+    % \includegraphics[width=0.45\textwidth]{img/ass_vs_unass_LP_index1000MeV_low}
+    % \includegraphics[width=0.45\textwidth]{img/ass_vs_unass_LP_beta_low}
+    \includegraphics[width=1.0\textwidth]{img/source_distribution/alpha_beta_hist_full_range_E01000MeV}
+    \caption{Distributions of $\alpha$ and $\beta$ parameters for associated and unassociated sources for $E_0=1$ GeV.}
+    \label{fig:alpha_beta_hist_E01000MeV}
+\end{figure}
+
+%\label{sec: covariate-prior}
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.8\textwidth]{img/prior_vs_covariate_shift}
+%    \caption{Prior vs covariate shift (placeholder).}
+ %   \label{fig:pr_cov_shifts}
+%\end{figure}
+
+
+
+The basic assumption behind a supervised classification task is that the joint distribution of the input features $\bx$
+and output classes (type of sources) $k$  are the same for the training and target datasets:
+\be
+p_{\rm train} (\bx, k) = p_{\rm target} (\bx, k),
+\ee
+while, in general, a dataset shift represents a situation where the training and target distributions are different
+$p_{\rm train} (\bx, k) \neq p_{\rm target} (\bx, k)$.
+In our case, the training dataset is the associated sources, while the target dataset is the unassociated sources.
+Consequently, we will use associated (assoc) and unassociated (unas) subscripts for the training and target datasets respectively.
+%\BZ{I gave it a try, please check if you like it}:
+
+The joint distribution of features $\bx$ and class labels $k$ can be expressed as a product of conditional and marginal probabilities in two equivalent ways:
+\be
+p(\bx, k) = p(k|\bx) p(\bx) = p(\bx|k) p(k).
+\ee
+This decomposition gives rise to two distinct types of dataset shift~\citep{MorenoTorres2012AUV}:
+\ben
+\item
+{ Covariate shift}: the conditional class probabilities remain unchanged,\\
+{$p_{\rm assoc}(k|\bx) = p_{\rm unas}(k|\bx)$}, but the feature distributions differ, $p_{\rm assoc}(\bx) \neq p_{\rm unas}(\bx)$.
+\item
+{ Prior shift}: the feature distributions conditioned on the class are invariant, $p_{\rm assoc}(\bx|k) = p_{\rm unas}(\bx|k)$, but the class prevalence changes, $p_{\rm assoc}(k) \neq p_{\rm unas}(k)$.
+\een
+Note that for the covariate shift, differences in the marginal distribution of the features $p(\bx)$ generally lead to differences in the marginal class probabilities $p(k)$.
+%, as a direct consequence of Bayes’ theorem. 
+Analogously, for prior shift, changes in the marginal class distributions $p(k)$ in general result in changes in the marginal feature distributions $p(\bx)$. We show the distributions of the $\alpha$ and $\beta$ parameters in figure~\ref{fig:alpha_beta_hist_E01000MeV}. Notice that the distributions are different for associated and unassociated sources.
+In principle, this difference can be due to either a covariate shift or a prior shift. 
+
+\subsection{Statistical model}
+\label{sec:stat-model}
+
+In general, our goal is to construct a probabilistic model for the distribution of unassociated sources $\tilde{p}_{\rm unas}(\bx)$ under the assumption that it is a mixture of classes of associated sources plus a possible new class of sources.
+
+In the covariate shift assumption (in absence of a prior shift) this task is actually trivial as
+\be
+\label{eq:cov0}
+p_{\rm unas}(\bx) 
+= \sum_k p_{\rm unas}(k|\bx) p_{\rm unas}(\bx) 
+= \sum_k p_{\rm assoc}(k|\bx) p_{\rm assoc}(\bx) C(\bx),
+\ee
+%where the first equality is due to the fact that the sum of conditional probabilities is equal to one: $\sum_k p_{\rm unas}(k|\bx) = 1$, 
+where in the second equality we use the covariate shift assumption $p_{\rm assoc}(k|\bx) = p_{\rm unas}(k|\bx)$ and define $C(\bx) = p_{\rm unas}(\bx) / p_{\rm assoc}(\bx)$.
+The function $C(\bx)$ describes the covariate shift, i.e., the difference in the distribution of training and target datasets.
+
+Moreover, we can add a new class of sources with a PDF 
+$p_{\rm new}(\bx)$ and define a model for the unassociated sources as:
+\be
+\label{eq:cov1}
+\tilde{p}_{\rm unas}(\bx) 
+= \sum_k p_{\rm assoc}(k|\bx) p_{\rm assoc}(\bx) \tilde{C}(\bx) + \pi_{\rm new} p_{\rm new}(\bx),
+\ee
+where 
+$\tilde{C}(\bx) = {\rm max}(p_{\rm unas}(\bx) - \pi_{\rm new}p_{\rm new}(\bx), 0) / p_{\rm assoc}(\bx)$ can be viewed as a generalized covariate shift that describes the difference in the distribution of training dataset and a part of the target dataset that corresponds to the same classes as in the training dataset.
+If $p_{\rm unas}(\bx) \geq \pi_{\rm new}p_{\rm new}(\bx)$ for $\forall \bx$, then 
+%$\tilde{C}(\bx) \neq {C}(\bx)$ and 
+the model in eq.~(\ref{eq:cov0}) is equal to the model in eq.~(\ref{eq:cov1}), i.e., the two models are indistinguishable until the new class predicts more sources in some region of space than there are unassociated sources.
+Although mathematically we cannot exclude a situation when all unassociated sources in some region of space belong to a new class, this is not very likely from the physical point of view.
+In order for the model to be more constraining we put additional physical conditions on the generalized covariate shift function $\tilde{C}(\bx)$.
+In particular, we model $\tilde{C}(\bx)$ as a product of 1-dimentional functions
+\be
+\label{eq:cov_model}
+\tilde{C}(\bx) = \prod_{d=1}^3 f_d(x_d),
+\ee
+where each $f_d(x_d)$ is monotonous. 
+The product is over the dimensions $d$ of the space of input variables. 
+In particular, we assume here that the covariate shift in each of the input variables is independent of the other input variables. 
+%We additionally require that the covariate shift $\tilde C(\bx)$ is monotonous. 
+%Which corresponds, for instance, to a condition that the expected ratio of unassociated and associated sources is a decreasing function of flux. 
+We implement $f_d(x_d)$ using sigmoid functions
+\be
+\label{eq:sigmoid}
+f(x_d;b_d,c_d) = \frac{1}
+{1+e^{-b_d(x_d - c_d)}},
+\ee
+where each function has two parameters $(b_d,c_d)$ determined from maximizing the likelihood of the model. 
+Our region of interest (ROI) in feature space will be restricted to a window in every dimension where the ratio 
+$p_{\rm unas}/p_{\rm assoc}$ 
+of the empirical distributions are monotonous. 
+%\dima{@Aurelio: if we use the covariate shift function as in equation (2.5), then the more relevant quantity is $p_{\rm unas}/p_{\rm assoc}$. I'd suggest to use this ratio also in figure 2, instead of $p_{\rm assoc}/p_{\rm unas}$. Also can you add the sigmoid model on the right panel of figure 2, so that we can compare it with the ratios?}\aure{Added to TODO list, WIP}
+We approximate the empirical distributions of associated and unassociated gamma-ray sources using kernel density estimation (KDE) with a Gaussian kernel \cite{bishop}. 
+%\aure{Added to KDE details, please check if it's clear enough}
+%
+In order to find the optimal bandwidth for the kernels, we perform 5-fold cross-validation repeated 20 times. 
+For each of the repetitions, we randomize the dataset,  split it into 5 subsets, and repeat the training 5 times: each time with a new subset is used for testing and the remaining four subsets are used for training.
+The performance is evaluated by calculating the likelihood of the model on the testing dataset.
+The optimal bandwidth parameter is obtained from the maximum of the performance averaged over the 100 evaluations (20 repetitions with 5 training/testing splits in each repetition).
+%We subdivide the associated sources into 5 splits, scramble the dataset, and repeat the procedure 20 times, obtaining M=100 folds in total. 
+%We resort to repetitions since the dataset of associated sources is rather small, and it would hinder accurate estimation of the optimal bandwidth otherwise. For each value of the bandwidth on an N-dimensional grid, we leave one fold out and define a KDE model on the remaining folds \dima{remaining 99 or remaining 4 folds?}. 
+%We then evaluate the performance of the model (in the form of the likelihood) on the left-out fold, and repeat the procedure for every fold. At the end of the procedure, we will have an $M \times N$ grid of likelihood values. We average the likelihood values across all the folds, and in the N-dimensional vector of average performances, we identify the bandwidth value that on average performs best for the dataset. 
+%%%%%
+% We define the KDE model for all associated sources using this bandwidth parameter.
+%To identify the region of  the parameter space where  the ratio $p_{\rm unas}/p_{\rm assoc}$ is monotonous we employ the following strategy. 
+%For each parameter ($\alpha$, $\beta$, $\log_{10}\phi$), we compute the 1D KDE for the associated and unassociated sources for all the observations, computing their optimal bandwidth respectively.
+The optimal bandwidth parameters for associated and unassociated sources are computed independently.
+We show the corresponding KDE models in the $E_0 = 1$ GeV case in the left panels in figure~\ref{fig:dist_ratio}.
+The right panels of figure~\ref{fig:dist_ratio} show the ratios of the KDE models, where the bands represent the statistical uncertainty.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.45\textwidth]{img/source_distribution/alpha_hist_E01000MeV.pdf}
+    \includegraphics[width=0.45\textwidth]{img/source_distribution/alpha_ratio_E01000MeV.pdf}
+    
+    \includegraphics[width=0.45\textwidth]{img/source_distribution/beta_hist_E01000MeV.pdf}
+    \includegraphics[width=0.45\textwidth]{img/source_distribution/beta_ratio_E01000MeV.pdf}
+    
+    \includegraphics[width=0.45\textwidth]{img/source_distribution/log10flux_hist_E01000MeV.pdf}
+    \includegraphics[width=0.45\textwidth]{img/source_distribution/log10flux_ratio_E01000MeV.pdf}
+    \caption{\textit{Left column:} distributions of associated and unassociated sources modeled with KDE for the case of $E_0$ = 1 GeV. 
+    \textit{Right column:} the ratio of the distributions $p_{\rm unas}/p_{\rm assoc}$. The red vertical lines show the range of parameters that we use in the analysis. We estimate the error (purple bands) as the Poisson error in the histograms and compute the relative errors for the associated and unassociated distributions, which we sum in quadrature. 
+    % \aure{rephrase and describe again the error, I didn't plot the error which goes to infinity}
+    % \dima{We could also bootstrap (sample with replacement) the assoc and unas sources and plot the 68\% band of the ratio of PDFs.}
+    }
+    \label{fig:dist_ratio}
+\end{figure}
+
+The ROI is determined as the intervals in parameter space where the ratio of the KDE models is monotonous within statistical uncertainties.
+In the $E_0 = 1$ GeV case, we restrict our analysis to $\alpha \in [0.8,\, 1.7]$.
+Analogously, in the $E_0 = 100$ MeV case, $\alpha \in [0.2,\, 0.8]$.
+The range of the $\beta$ parameter is the same in both cases, $[0.1, \, 0.55]$.
+Finally, we restrict the $\log_{10}\phi$ parameter to the interval $[-10.3, \, -8.2]$.
+%The ratio of PDFs is monotonous inside these intervals, which we identify as the ROI,  within the statistical uncertainty bands shown in the right panels of figure~\ref{fig:dist_ratio}. 
+%Such a range of parameters satisfies the first condition we have set for our data selection. 
+In addition, we compute the 3D KDE models and identify the optimal bandwidth parameters independently for galactic and extragalactic classes of sources, which yields the $p_{\rm assoc}(\bx|k)$ used in the analysis.
+
+In general, the weight (prevalence) of classes of sources does not need to be the same for associated and unassociated sources, i.e., there can be a prior probability shift in addition to the covariate shift.
+In order to allow a change in the prevalence of the classes of sources, we express the terms in the sum in eq.~(\ref{eq:cov1}) in the form suitable for the prior shift:
+\be
+p_{\rm assoc}(k|\bx) p_{\rm assoc}(\bx) \equiv
+p_{\rm assoc}(\bx, k) = \pi_k p_{\rm assoc}(\bx|k)
+\ee
+where for associated sources $\pi_k = \pi_k^{\rm assoc}$ is the prevalence of class $k$, while for unassociated sources, $\pi_k$ are in general unknown and will be determined from the fit of the model to the data.
+Overall, our model of the unassociated source takes the form:
+\be
+\label{eq:mixture}
+\tilde{p}_{\rm unas}(\bx) 
+= \left(\sum_{k=1}^K \pi_k p_{\rm assoc}(\bx|k)\right) \tilde{C}(\bx; \btheta_{\rm cov}) + \pi_{\rm DM}(\btheta_{\rm DM}) p_{\rm DM}(\bx; \btheta_{\rm DM}),
+\ee
+where $K = 2$ is the number of classes of associated sources (galactic and extragalactic, cf. section~\ref{sec:data}). 
+%Note that in writing expr.(\ref{eq:mixture}) we have assumed that the covariate shift function $\tilde{C}(\bx;\btheta_{\rm cov})$ is the same for all the $K$ classes. This is of course a simplification, which we nonetheless consider good enough given the methodological scope of this work. 
+The DM distribution $p_{\rm DM}(\bx; \btheta_{\rm DM})$ is determined below in section~\ref{sec:DM_model}. 
+
+The optimizable parameters in this model are: $\pi_k$, describing the prevalence of the classes of associated sources; $\btheta_{\rm cov}\equiv\{b_d,c_d\}$ for $d = 1,\,2,\,3$, parametrizing the covariate shift in eq.~(\ref{eq:sigmoid}), and $\sigmav$, the annihilation cross section, which we have included in the definition of $\btheta_{\rm DM}=\{\sigmav,m_{\rm DM},{\rm ch.}\}$. The other parameters, namely the DM mass $m_{\rm DM}$ as well as the annihilation channel `ch.', are kept fixed during the optimization procedure.
+
+
+ %The covariate shift function $\tilde{C}(\bx; \btheta_{\rm cov})$ is specified in section~\ref{sec:ROI}, while the 
+
+Note that for $\tilde{C}(\bx; \btheta_{\rm cov}) = 1$, the model reduces to a prior shift model, while for $\pi_k = \pi_k^{\rm assoc}$ and $\pi_{\rm DM} = 0$ the model reduces to a covariate shift model.
+Thus, in general, the model in eq.~(\ref{eq:mixture}) is a combination of covariate and prior shift models. We point out that the model in eq.~(\ref{eq:mixture}), identified as the likelihood of a given unassociated source, %, is a full probabilistic model. In particular, it 
+allows us to:
+\ben
+\item
+determine the unknown parameters of the model by maximizing the likelihood;
+\item
+detect or put an upper bound at a given level of confidence for a possible new component, such as DM;
+\item
+generate new data (for Monte Carlo tests);
+\item
+determine the conditional class probabilities of individual sources using the probability rule
+$p(k|\bx) = p(\bx, k)/\tilde{p}_{\rm unas}(\bx)$. In the case of astrophysical classes 
+$p(\bx, k) = \pi_k p_{\rm assoc}(\bx|k) \tilde{C}(\bx; \btheta_{\rm cov})$, while
+for the DM class: $p(\bx, {\rm DM}) = \pi_{\rm DM} p_{\rm DM}(\bx; \btheta_{\rm DM})$.
+\een
+
+We stress that, as far as we are aware of, this is the first time a generative probabilistic model for the unassociated sources has been proposed. Previous studies have focused on modeling directly the conditional probabilities $p(k|\bx)$, which does not give access to the data likelihood. In this respect, our approach is more informative.
+
+%\dima{Stopped proof reading here.}
+
+\begin{comment}
+\subsection{Statistical model}
+\label{sec: statmodel}
+
+%As specified Section \ref{sec:data}, we characterise each source $i$ with three observables: $\log_{10}(\phi_i)$, $\alpha_i$, and $\beta_i$ derived from their energy spectrum.  
+Analogously to the associated sources, the population of unassociated (and thus, unlabelled) sources is expected to be composed of different types of sources (plus, hypothetically, an extra component which could be due to DM). 
+In the pr
+
+This is our main motivation to model the distribution of the unassociated sources as a mixture:
+
+\begin{equation}
+    p_{\rm unas}(\bx) = \sum_{k=1}^K \pi_k 
+    p_k(\bx),
+    %p_k(\bx|\btheta_k)~,
+    \label{eq:mixture}
+\end{equation}
+where in this work we choose $K = 3$ components: galactic sources, extra-galactic sources (cf. Section \ref{sec:data}), and DM. The terms $\pi_k$ are the prior weights of each component, i.e., the prior probabilities of classes. The terms $p_k(\bx)$ are the conditional probabilities $p(\bx|k)$.
+%and each of them depends on their own set of parameters $\btheta_k$. 
+Consequently, each term in the above sum is the joint distribution $p(\bx, k) = p(\bx|k) \pi_k$, so that summing over $k$ gives a model for the PDF of unassociated sources $p_{\rm unas}(\bx)$.
+
+We point out that the model in eq.~(\ref{eq:mixture}) 
+is a probabilistic model of unassociated sources.
+In particular, it allows us to:
+\ben
+\item
+determine the unknown parameters of the model by maximizing the corresponding log likelihood;
+\item
+detect or put an upper bound at a given level of confidence for a possible new component, such as DM;
+\item
+generate new data (for Monte Carlo tests);
+\item
+determine the class probabilities of individual sources using the rule for calculating conditional probabilities
+\be
+   p(k|\bx) 
+   = \frac{p(\bx, k)}{p(\bx)} 
+   = \frac{\pi_k p_k(\bx)}
+   {\sum_j \pi_j p_j(\bx)}.
+\ee
+
+\een
+
+is, on the one hand, a generative probabilistic model since, once optimised, it allows us in principle to generate new data by just sampling this distribution. As a by-product of this approach, we have access to the probability $p(C_k|\bx)$ for a given unassociated source to be of class $C_k$, given a value of its observable $\bx$, by simply writing the Bayes theorem:
+\begin{equation}
+   p(C_k|\bx) = 
+   \frac{\pi_k p_k(\bx|\btheta_k)}
+   {\sum_j \pi_j p_j(\bx|\btheta_j)} ~.
+\end{equation}
+On the other hand, our treatment is, a priori, framed as an unsupervised learning approach, since the optimisation procedure does not use labelled data (we do not know the labels of the unassociated sources, by definition). However, we will actually leverage the information of the associated sources and their known labels, in order to propose a physically motivated model for the unassociated sources. In this sense, our approach is formally ``semi-supervised''.  In particular, we model the galactic and extra-galactic unassociated conditional distributions $p_k(\bx|\btheta_k)$ as:
+\begin{equation}
+ p_k(\bx|\btheta_k) = p_k^{\rm assoc}(\bx)\cdot M(\bx;\btheta_k) ~,~~ (k={\rm gal., extragal.})  
+ \label{eq: cov_shift}
+\end{equation}
+where the function $M(\bx;\btheta_k)$ will be chosen in fact to be the same across classes $C_k$, i.e. $\btheta_k = \btheta,~\forall k$. This choice implies that expr.(\ref{eq:mixture}) can be rewritten as:
+\begin{equation}
+    p_{\rm unas}(\bx) = \left(\sum_{k=1}^2 \pi_k p^{\rm assoc}_k(\bx) \right) M(\bx;\btheta)
+    + \pi_{\rm DM}p_{\rm DM}(\bx|\btheta_{\rm DM})~,
+    \label{eq:mixture 2}
+\end{equation}
+where we have explicitly separated the DM contribution to the mixture, with its own weight $\pi_{\rm DM}$ and conditional distribution $p_{\rm DM}(\bx|\btheta_{\rm DM})$, to be defined below. In the meantime, note that the function $M(\bx;\btheta)$, unique for all astrophysical classes, represent our modeling of the covariate shift. This is because it is how we parametrize the difference between the ``train'' (associate sources) distribution and the ``target'' (unassociate sources) distribution (see section \ref{sec: covariate-prior}). More concretely, we choose:
+\begin{equation}
+M(\bx;\btheta) = \prod_d {\rm sigmoid}(x_d;b_d,c_d)~,
+\label{eq:covariate_shift_M}
+\end{equation}
+where $d$ runs over the dimensions of $\bx$, and for notational convenience, we regrouped in the vector $\btheta = \{a_d,b_d\}$ the parameters $a_d,b_d$ for each dimension. The sigmoid function with these two parameters is defined as
+\begin{equation}
+{\rm sigmoid}(x_d;b_d,c_d) = \frac{1}
+{1+e^{-b_d(x_d - c_d)}}  ~.  
+\end{equation}
+The distributions $p^{\rm assoc}_k(\bx)$ in expr.(\ref{eq:mixture 2}) are precisely the empirical distributions of the associated sources shown in figure~\ref{fig:alpha_beta_hist}, after parametrizing them with kernel-density estimation (KDE) techniques. On the other hand, we describe next how we compute the DM distributions $p_{\rm DM}(\bx|\btheta_{\rm DM})$ and weight $\pi_{\rm DM}$.
+\end{comment}
+
+
+
+
+
+\begin{comment}
+As is often the case in any ML work, an accurate choice of the preprocessing pipeline for our data is instrumental in achieving good results. 
+In this case, there are different needs that we need to satisfy:
+\begin{itemize}
+    \item We need to ensure that the model we have chosen for the covariate shift can properly describe the data distribution. 
+    \item The fraction of unassociated sources that could be DM candidates should be as large as possible to be highly sensible to a DM signal
+    \item We need to maintain a large enough variety of sources to ensure a good discriminative power between astrophysical sources and DM
+\end{itemize}
+\end{comment}
+
+\begin{comment}
+As we show below,
+this selection of parameters is also interesting for the search for a DM signal. %\red{Following \cite{}}, 
+We expect the energy spectrum of a DM source to be in general harder and more curved than that of sources of astrophysical origin. This, in turn, means having values of the spectral index $\alpha$ lower than 2, and values of the curvature parameter $\beta$ larger than 0.1, on average. Confronting these ranges with Fig \ref{fig:alpha_beta_hist}, we realize that the chosen data cuts remove a large portion of astrophysical sources (as they tend to be softer and less curved), thus satisfying the second condition. \red{We can further check this hypothesis by considering the DM distribution plots from Sec \ref{}. As we can see, these ranges encompass closely a large portion of the DM distributions (as much as possible, given the constraints we have from the validity of the covariate shift model), thus ensuring a comparatively higher fraction of potential DM candidates.}
+
+Finally, the choice of such ranges for the energy spectrum parameters ensures proper fitting of the astrophysical part of the model and higher discriminative power. If we were to consider a narrower region of the parameter space, we would in fact increase the potential fraction of DM sources among the unassociated sources, but we would lose too much in statistics. Furthermore, given the documented overlap between the theoretical energy spectrum of DM and that of pulsars \aure{add ref}, we could end up in a case where it would not be possible to distinguish a signal from DM and that of a pulsar, severely crippling our sensibility to a DM signal versus an astrophysical one.
+
+\red{For these reasons, we believe that the parameter ranges we have chosen are a good and reasonable starting point for our analysis, although further a posteriori optimizations could lead to higher signal-to-noise ratios. We leave these considerations for future works. }
+\end{comment}
+
+\section{Dark matter subhalos model}
+\label{sec:DM_model}
+
+\subsection{Subhalo J factors from N-body simulations}
+\label{sec:sim-jfactor}
+
+A key component of our pipeline is the J-factor distribution of the Galactic subhalo population. In this work, we follow ref.~\cite{2024MNRAS.530.2496A} and adopt the J-factor values provided for two different prescriptions%
+\footnote{All the data are available at \url{https://projects.ift.uam-csic.es/damasco/?page_id=831}.}: one derived from the mass enclosed within the subhalos' tidal radii, $J_{\rm tidal}^{\Msub}$, and another based on the maximum circular velocity of each subhalo, $J_{\rm tidal}^{\Vmax}$. Although the latter approach is generally considered more reliable, as it does not depend on a DM density profile to model the subhalo's structural properties (see ref.~\cite{2024MNRAS.530.2496A} for details), we use both J-factor sets in this study to enable direct comparisons with previous results.
+
+The calculation of astrophysical J-factors in ref.~\cite{2024MNRAS.530.2496A} is based on the Via Lactea II (VL-II) N-body cosmological simulation \cite{2007ApJ...667..859D}, a DM-only simulation of a Milky-Way-sized halo resolving subhalos down to approximately $10^4$ solar masses. 
+%They analyzed the abundance, spatial distribution, and structural properties of subhalos in terms of both mass and maximum circular velocity. 
+To explore subhalos below the VL-II resolution limit, 
+the simulation was repopulated with millions of smaller subhalos, extending the analysis down by nearly five orders of magnitude 
+to about $10^{-1}$ solar masses~\cite{2022PhRvD.105h3006C}.
+%\red{What's the smallest mass?}\masc{in the previous sentence we provide Mmin of the simulation so this should be enough: 5 orders of mag below that value...}\dima{I've still added the mass here, although I understand that this is a bit redundant.}
+%\dima{Does it mean that there were new simulations performed in addition to VL-II?}
+Additionally, by placing the Earth at random positions consistent with its Galactocentric distance, 
+thousands of realizations of a Milky Way-like galaxy were created to obtain statistically robust results. 
+This led to accurate J-factor distributions (based on both mass and circular velocity) for the entire subhalo population of a galaxy like our own in a $\Lambda$CDM universe. A limitation of ref.~\cite{2024MNRAS.530.2496A} is the absence of baryonic effects in the parent simulation. Baryons are expected to significantly influence the DM subhalo population, particularly in the Galaxy's innermost regions (e.g.,~\cite{2019MNRAS.487.4409K,2017MNRAS.471.1709G,2021MNRAS.501.3558G}), however none of these hydrodynamical simulations resolve subhalos lighter than $\sim 10^6$ solar masses. Thus, the survival of such low-mass subhalos to tidal stripping, especially with baryonic influences, remains uncertain~\cite{2018MNRAS.474.3043V,2020MNRAS.491.4591E,2023MNRAS.518...93A}.
+
+In addition to $J_{\rm tidal}^{\Msub}$ and $J_{\rm tidal}^{\Vmax}$ from ref.~\cite{2024MNRAS.530.2496A}, we also utilize $J_{0.1}^{\Msub}$ and $J_{0.1}^{\Vmax}$, derived from the same simulation work. These values correspond to J-factors integrated not up to the tidal radius of each subhalo but rather to the corresponding radius subtending 0.1$^\circ$ in the sky. 
+This choice aligns with the typical angular resolution of the {\Fermi} LAT in the GeV range. By using $J_{0.1}^{\Msub}$ and $J_{0.1}^{\Vmax}$, we focus on point-like subhalo emissions, as would appear in \Fermi-LAT point-source catalogs. 
+Notably, ref.~\cite{2022PhRvD.105h3006C} concludes that the brightest Galactic subhalos in the \Fermi-LAT gamma-ray sky, if detected, would be extended, with angular sizes around $0.2^\circ\,–\,0.3^\circ$. Consequently, for such subhalos, our $J_{0.1}^{\Msub}$ and $J_{0.1}^{\Vmax}$ values are expected to be significantly lower than their corresponding $J_{\rm tidal}^{\Msub}$ and $J_{\rm tidal}^{\Vmax}$ values. 
+We adopt $J_{0.1}^{\Vmax}$ as our nominal case in this paper, while we use the other J-factor values to compare with previous literature. 
+
+Figure~\ref{fig:Jfactors} illustrates the four sets of J-factor distributions discussed in this section, along with their corresponding number density, which will be the relevant quantity for our pipeline.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{img/jfactor/Jfactor_number_density_J.pdf}
+    \caption{J-factor number density times J for the different J-factor cases considered in this work. See section~\ref{sec:sim-jfactor} for further details.}
+    \label{fig:Jfactors}
+\end{figure}
+
+
+\subsection{Gamma-ray emission from DM subhalos}
+\label{sec:DM_model}
+
+
+%\aure{this part has to be reviewed. We changed the distribution formula to also include the flux dependence, which we use as a feature.}
+Given a DM setup $\btheta_{\rm DM}$ (i.e., a DM mass $M_{\rm DM}$, annihilation channel,
+and annihilation cross section $\langle\sigma v\rangle$), and an expected distribution of J-factors  determined from DM N-body simulations (described in section \ref{sec:sim-jfactor}), 
+we estimate the expected distribution of DM annihilating subhalos that can be detected by {\Fermi} LAT for a certain observation time and instrument response functions (IRFs). 
+%This will give us the term $\pi_{\rm DM}(\btheta_{\rm DM}) p_{\rm DM}(\bx; \btheta_{\rm DM})$ in eq.~(\ref{eq:mixture}). 
+The procedure is as follows:
+\ben
+\item
+We start with a distribution $p(J)$ of J-factors expected from N-body DM simulations (cf. figure~\ref{fig:Jfactors} in section~\ref{sec:sim-jfactor}). We sample the values of $J$ from $p(J)$. %Provided that all unIDs are detected as point-like objects, we integrate the J-factors up to 0.1 degree from the center.
+\item
+Given a J factor and DM parameters
+$\btheta_{\rm DM} = \{\langle\sigma v\rangle, M_{\rm DM}, {\rm ch.}\}$, 
+we determine the expected gamma-ray spectrum as
+\begin{equation}
+\label{eq:DM_spec}
+\phi_{\rm DM}(E;\btheta_{\rm DM}, J) = \frac{J}{4\pi} \frac{\langle \sigma v \rangle}{2m_{\rm DM}^2} \left.\frac{dN_\gamma}{dE}\right|_{\rm ch.},
+\end{equation}
+where $dN_\gamma/dE$ is the theoretical spectrum of gamma rays produced in an annihilation of a pair of DM particles. 
+\item
+We place DM subhalos at random positions in the sky with J-factors sampled in step 1 and with the spectra defined in eq.~(\ref{eq:DM_spec}).
+%until we get 20,000 detected subhalos (see step 7 below).
+\item 
+For the diffuse gamma-ray background, we use the official \Fermi-LAT diffuse model template employed in the construction of the 4FGL-DR4 source catalog (\verb|gll_iem_v7|) and the corresponding isotropic background.
+\item
+We fit the gamma-ray data around each of the simulated DM subhalos with $|b| > 10^\circ$,
+where we use the log-parabola model in eq.~(\ref{eq:log_par}) with fitting parameters $\{\log_{10}\phi, \alpha,\beta\}$. 
+For the ROI, we use an energy-dependent radius between $0.5^\circ$ and $5^\circ$.
+We use the same Gaussian priors for the $\beta$ parameter as in the 4FGL-DR4 catalog with mean 0.1 and sigma 0.3~\cite{2023arXiv230712546B}.
+For details see appendix~\ref{sec:sim-ps}.
+%\dima{We fit three parameters, right?}\aure{yes, we assume all the background sources fixed, since we know their real theoretical spectrum in each energy bin}
+%Due to statistical fluctuations, the fit of the spectrum will be imperfect, resulting in a distribution $p_{\rm DM}(\alpha,\beta|\phi_{\rm DM};\btheta_{\rm DM})$ which differ from a delta function centered on the true values. Note that we have made explicit the dependence of this distribution on the value of $\btheta_{\rm DM}$. 
+\item
+We keep DM subhalos detected with significance TS~$>25$, where ${\rm TS}=-2\ln {\cal L}/{\cal L}_*$ is the likelihood-ratio test statistic between the models with and without the subhalo. Such a threshold corresponds to the significance for PS detection in the {\Fermi}-LAT catalogs.
+%, {roughly corresponding to $5 \sigma$}.
+%\BZ{@Aurelio: please expand on this} \aure{I wouldn't make it much more verbose here, but a TS=25 means that we are applying the Wilks' theorem, where we compare a model where the normalization of the specific gamma-ray source is left free. If the likelihood with the best fit value of the norm has a TS $>$ 25 if compared to the model where there is no such source (norm=0), then we claim detection} 
+The fraction of subhalos passing the significance cut defines the detection efficiency $\varepsilon_{\rm eff}(\phi_{\rm DM})$, which is a function of the DM flux. 
+\item
+%\sout{We repeat the simulation 1000 times and determine the expected distribution of DM subhalos as a function of input variables, $p_{\rm DM}(\log \phi_{\rm DM}, \alpha,\beta|\btheta_{\rm DM})$, by averaging over the 1000 simulations. }\BZ{I do not understand this statement.}\aure{This statement had to be reviewed, as it was not entirely correct.}
+In order to get a good estimate of the DM distribution, $p_{\rm DM}(\log_{10} \phi_{\rm DM}, \alpha,\beta|\btheta_{\rm DM})$, we simulate realizations of the gamma-ray sky until we detect at least 20,000 DM subhalos across all simulations or the number of simulations reaches 1,000. The latter can happen for parameters, where DM subhalos have very small detection probability.%
+\footnote{The limit of 1000 simulations is needed to avoid infinite iterations for low-efficiency parameter combinations.
+For details on simulation and detection of DM subhalos, see appendix~\ref{sec:sim-ps}.
+}
+%, which we use to construct the distribution through a KDE.
+\een
+In order to reduce the computation time, 
+%following this procedure while formally correct would be extremely resource-intensive and time-consuming. To reduce the number of simulations, 
+we perform simulations in flux bins.
+At first, we determine the distribution of $\alpha$ and $\beta$ parameters, given the flux $\phi_{\rm DM}$ and DM parameters $\btheta_{\rm DM}$, $p_{\rm DM}(\alpha,\beta|\phi_{\rm DM};\btheta_{\rm DM})$, by modeling the distribution of recovered $\alpha$ and $\beta$ parameters in this flux bin (see appendix~\ref{sec:sim-ps} for details).
+Then we multiply this distribution by the distribution of fluxes, which depends on the distribution of J-factors
+$n(\phi_{\rm DM}) = \frac{dN}{d\phi_{\rm DM}} (\phi_{\rm DM};\btheta_{\rm DM}) = \frac{dN}{dJ} \frac{dJ}{d\phi_{\rm DM}}$
+and by detection efficiency as a function of flux $\varepsilon_{\rm eff}(\phi_{\rm DM})$ to determine the probability density times the DM subhalo weight in eq.~(\ref{eq:mixture}):
+\begin{equation}
+\pi_{\rm DM}(\btheta_{\rm DM}) p_{\rm DM}(\bx;\btheta_{\rm DM}) = 
+\frac{1}{N^{\rm ROI}_{\rm unas}}
+p_{\rm DM}(\alpha,\beta|\phi_{\rm DM};\btheta_{\rm DM}) 
+n(\phi_{\rm DM})
+\varepsilon_{\rm eff}(\phi_{\rm DM}),
+\label{eq:pDM}
+\end{equation}
+where $N^{\rm ROI}_{\rm unas}$ is the number of unassociated sources in the ROI.
+\begin{comment}
+The above steps allow us to estimate $p_{\rm DM}(\alpha,\beta|\phi_{\rm DM};\btheta_{\rm DM})$. Furthermore, 
+to obtain $p_{\rm DM}(\bx;\btheta_{\rm DM})$ (entering in expr.\ref{eq:mixture}), we note that 
+\begin{equation}
+p_{\rm DM}(\bx;\btheta_{\rm DM}) = p_{\rm DM}(\alpha,\beta|\phi_{\rm DM};\btheta_{\rm DM}) p(\phi_{\rm DM};\btheta_{\rm DM})~,
+\end{equation}
+where $p(\phi_{\rm DM};\btheta_{\rm DM})$ is obtained from $p(J)$ --- from step 1 --- through expr.(\ref{eq:DM_spec}).  
+\end{comment}
+We note that given the DM parameters, the contribution of DM subhalos to unassociated sources is fixed.
+In particular, the number of subhalos in our ROI is
+\be 
+\label{eq:N_ROI}
+N^{\rm ROI}_{\rm sub}(\btheta_{\rm DM}) =
+\int_{\rm ROI} d\alpha d\beta d\phi_{\rm DM}~p_{\rm DM}(\alpha,\beta|\phi_{\rm DM};\btheta_{\rm DM}) ~n(\phi_{\rm DM}) \varepsilon_{\rm eff}(\phi_{\rm DM}),
+\ee
+%In this expression, $n(\phi_{\rm DM})$ is the number of halos emitting gamma-rays with flux $\phi_{\rm DM}$, which can be computed directly from  $n(J)$ -- the number of halos with a given value of J factor, see figure~\ref{fig:Jfactors} -- using expr.(\ref{eq:DM_spec}). In expr.(\ref{eq:N_ROI}) we have also included the efficiency factor $\varepsilon_{\rm eff}(\phi_{\rm DM})$, computed in step 6 above. Having computed $N^{\rm ROI}_{\rm sub}$, we compute 
+while the DM weight $\pi_{\rm DM}$ in eq.~(\ref{eq:mixture}) is 
+\be
+\pi_{\rm DM}(\btheta_{\rm DM}) = \frac{N^{\rm ROI}_{\rm sub}(\btheta_{\rm DM})}{N^{\rm ROI}_{\rm unas}}.
+\ee
+%Note that we have made explicit the dependence of the DM weight on $\btheta_{\rm DM}$. With this we have completely specified the DM component of the mixture model in eq.~(\ref{eq:mixture}).
+
+%In practice, we compute the expected distribution of DM subhalos for a grid of values of $\langle\sigma v\rangle$ and interpolate among the grid points to obtain the model likelihood as a function of continuous variable $\langle\sigma v\rangle$.
+
+%Combining the results according to eq. (\ref{eq:dm-dist}) we obtain the DM distributions. 
+In figure~\ref{fig:dmdist-all} we show the distributions of DM subhalos in $\alpha$ and $\beta$ parameters (we integrate the distributions in the flux dimension for presentation purposes) for different DM masses at some characteristic $\langle\sigma v\rangle$ values. 
+We note that the DM distributions are not fully contained inside the  ROI that we selected in this analysis, which is indicated as a green box in the plots. 
+%This fact reduces the subhalo detection efficiency by a factor $N^{\rm ROI}_{\rm sub} / N_{\rm total}$, where $N_{\rm total}$ is the overall integral of the subhalo distribution.
+In particular, a significant fraction of the DM subhalo distribution is truncated for DM masses of 10 GeV, 30 GeV, and 1 TeV.
+For these masses our analysis can be further improved by adopting a covariate shift model suitable for a larger region in feature space.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.45\linewidth]{img/dm_dist/pDM_integrated_mDM_10_GeV.pdf}
+    \includegraphics[width=0.45\linewidth]{img/dm_dist/pDM_integrated_mDM_30_GeV.pdf}
+    \includegraphics[width=0.45\linewidth]{img/dm_dist/pDM_integrated_mDM_100_GeV.pdf}
+    \includegraphics[width=0.45\linewidth]{img/dm_dist/pDM_integrated_mDM_300_GeV.pdf}
+    \includegraphics[width=0.45\linewidth]{img/dm_dist/pDM_integrated_mDM_1000_GeV.pdf}
+    \caption{DM distribution at different DM masses, $b\overline{b}$ annihilation channel, integrated in flux for visualization purposes. The $\langle\sigma v\rangle$ values are chosen close to our bound values. 
+    The green boxes show the ranges of parameters used for this analysis. 
+    %the RoI, while the red shade highlights the area we exclude from our analysis.
+    %\aure{maybe it would make sense to plot the distributions in a larger range, and delimit with lines the RoI, so it is clear that part of the distribution is cut out, and how much of it}
+    }
+    \label{fig:dmdist-all}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.49\linewidth]{img/dm_dist_countour/pDM_integrated_mDM_100_GeV_sigmav.pdf}
+    \includegraphics[width=0.49\linewidth]{img/dm_dist_countour/pDM_integrated_mDM_100_GeV_J_factor.pdf}
+    \caption{Contour plots at half maximum of the DM subhalo distribution for different values of $\sigmav$ and J-factor models at $m_{DM}$ = 100 GeV. Left panel: contour lines for different choices of $\sigmav$ for $J_{0.1}^{Vmax}$. 
+    Right panel: contour lines for different J-factor models for $\sigmav = 10^{-25}$ ${\rm cm}^{3} \, {\rm s}^{-1}$.}
+    \label{fig:DM_dist_countour}
+\end{figure}
+
+
+In figure~\ref{fig:DM_dist_countour} we show the contour levels for the half maximum of the DM subhalo distribution for different choices of $\sigmav$ and J-factor models for $m_{DM}$ = 100 GeV. 
+The distribution shifts to higher values of $\beta$ for larger $\sigmav$ values. Analogously, choosing $J_{tidal}$ shifts the distribution to higher $\beta$ values compared to $J_{0.1}$.
+This is to be expected, since for faint sources (small $\sigmav$ or small J-factors) the fit has large statistical uncertainties and the best-fit value of the $\beta$ parameter is more affected by the priors on $\beta$ than in case of bright sources.
+
+%, as can be expected from figure~\ref{fig:Jfactors}.}
+%The reason is that for higher $\sigmav$ values or higher J-factors there are more bright DM subhalos with less uncertainty on the reconstruction of the spectrum, hence better constraints on the $\beta$ parameter.
+
+
+\section{Mixture model of gamma-ray sources and limits on DM annihilation}
+\label{sec:results}
+
+Our general aim is to either detect a population of DM subhalos among the \Fermi-LAT unassociated sources or to put an upper limit on $\langle\sigma v\rangle$ for different DM masses. For a fixed DM mass and annihilation channel, we determine the best-fit cross section $\langle\sigma v\rangle^*$ (optimized simultaneously with the other parameters) by maximizing the full likelihood built from the model in eq.~(\ref{eq:mixture}), defined as:
+\be
+\label{eq:L}
+{\cal L}(\langle\sigma v\rangle, \pi_k, \btheta_{\rm cov}) = \prod_{i=1}^{N^{\rm ROI}_{\rm unas}} \tilde{p}_{\rm unas}(\bx_i|\sigmav,\pi_k, \btheta_{\rm cov};m_{\rm DM},{\rm ch.}).
+\ee
+%In words, the full likelihood is the product over the $N^{\rm ROI}_{\rm sources}$ unassociated sources entering our ROI, of their corresponding probabilities given by expr.(\ref{eq:mixture}). Note that for the latter we have made explicit its dependence on all the parameters.
+We maximize eq.~(\ref{eq:L}) with the Expectation-Maximization (EM) algorithm, which is efficient for the cases of probabilistic mixture models~\cite{10.1162/089976602753284446_Saerens}, see appendix~\ref{sec:EM} for more details.
+From the ML point of view our approach can be thought as semi-supervised learning: we optimize a probabilistic model $p_{\rm unas}({\bf x})$ for unlabeled data (the unassociated sources), while also exploiting the information of labeled data, i.e., the associated sources, which we use to build the mixture components. 
+%Note that in the ML context, we use a semi-supervised learning approach 
+%since, on the one hand, we use the distributions of associated sources to construct the PDFs of distributions of classes of astrophysical sources. On the other hand, these distributions are modified for the construction of the model of unassociated sources we also introduce a new component modeled as the DM subhalo distribution with $\sigmav$ optimized by fitting to the distribution of unassociated sources.
+%this is a priori an unsupervised learning problem (the probability density estimation of unlabeled data, since by definition of unIDs we do not know their labels/classes). However we are using information of labeled data (the associated sources with their known classes) to guide the modeling of unIDs. So in this way, strictly speaking, we follow a semi-supervised approach.
+
+We optimize the likelihood for a set of DM mass values: $m_{\rm DM}$ = 10, 30, 100, 300, 1000 GeV, and determine, for each $m_{\rm DM}$, the upper bound on $\sigmav$ at 95\% confidence level (CL) by profiling the test-statistic 
+\be
+{\rm TS}(\sigmav) = -2\ln \frac{{\cal L}(\sigmav)}
+{{\cal L}_{\rm max}}, 
+\label{eq:TS}
+\ee
+where ${\cal L}(\sigmav)$ is the likelihood optimized over the rest of parameters $\pi_k$ and $\btheta_{\rm cov}$, and ${\cal L}_{\rm max}={\cal L}(\sigmav^*,\pi_k^*,\btheta_{\rm cov}^*)$ is the value of the likelihood for the best-fit parameters. 
+Following the Wilks' theorem,
+%\footnote{In practice, this implies assuming that the maximum likelihood estimators follow a Gaussian distribution.} 
+we assume that TS follows the $\chi^2$ distribution. %with one degree of freedom (d.o.f.). 
+We compute the upper bound on $\sigmav$ as the value corresponding to the 95\% coverage probability (one-sided), which for one degree of freedom corresponds to
+TS = 3.84.
+
+\begin{comment}
+% move to appendix?
+For this reason, before we can add these distributions to the mixture together with astrophysical sources, we need to cut the distribution to the ROI and ensure that it is properly normalized to 1. Furthermore, cutting the DM distribution will also influence the number of observable DM subhalos. For this reason, we need to recompute the number of subhalos according to the formula:
+\begin{equation}
+    N'_{sub}=N_{\rm sub}\int_{ROI} d\alpha \, d\beta \, d\log_{10}\phi \,\, p(\alpha,\beta,\log_{10}\phi|\theta_{DM})
+\end{equation}
+Therefore, the relative weight of the number of the DM component in the mixture will change. The fact that for $m_{DM}=10$GeV and $m_{DM}=30$GeV we are cutting out of the ROI half of the distribution will render our results potentially less competitive for these masses. For this reason, potential refinements on the covariate shift model to support a wider range of parameters could improve the sensibility to the presence (or absence) of DM subhalos.
+\end{comment}
+
+\begin{comment}
+% appendix or obsolete?
+the gamma-ray spectrum is completely defined, which leads to a point in the space of $\bx=(\log_{10}(\phi), \alpha, \beta)$. However, due to statistical fluctuations, the DM spectrum is not reconstructed perfectly.
+%depending on statistics, the location of the DM source and its flux, the foreground emission will limit our ability to extract the DM spectrum. 
+Consequently, DM subhalos with the same DM parameters
+distributed across the sky will produce a distribution in the space of parameters $\bx$. 
+This distribution, $p_{\rm DM}(\bx|\btheta_{\rm DM}, J)$, is what we aim to model in this section. 
+We denote the parameters related to DM annihilation as
+\be
+\btheta_{\rm DM} = \{\langle\sigma v\rangle, M_{\rm DM}, {\rm ch.}\}, 
+\ee
+where 
+$\langle\sigma v\rangle$ is the annihilation cross section, 
+$M_{\rm DM}$ is the DM mass, 
+ch.$\equiv$ is the annihilation channel. 
+%The dependence on $\btheta_{\rm DM}$ comes entirely through the DM flux, since:
+The flux from a DM subhalo is
+\be
+    \phi_{\rm DM}(\btheta_{\rm DM}, J) = \frac{J}{4\pi} \frac{\langle \sigma v \rangle}{2m^2} \int_{E_{\rm min}}^{E_{\rm max}}   \frac{dN_\gamma}{dE} \, dE
+    = \frac{\langle\sigma v\rangle}{8\pi m^2} N_\gamma J,
+\label{eq:fluxDM}
+\ee
+where $N_\gamma$ is the energy-integrated DM spectrum, 
+which depends on the DM mass and annihilation channel. 
+%% new
+
+In order to derive the energy spectrum distribution for DM, we first subdivide the joint distribution as:
+\begin{equation}
+    p_{DM}(\log_{10}(\phi), \alpha, \beta, |\btheta_{\rm DM}) = p_{DM}(\alpha, \beta | \log_{10}(\phi),\btheta_{\rm DM}) \, p(\log_{10}(\phi)|\btheta_{\rm DM})
+\end{equation}
+We derive $ p_{DM}(\alpha, \beta | \phi)$ through point source simulations, as detailed in section~\ref{sec:sim-ps} and section~\ref{sec:sim-ps}. We obtain  $p_{DM}(\alpha, \beta | \log_{10}(\phi),\btheta_{\rm DM}) = p_{DM}(\alpha, \beta | 10^{\log_{10}(\phi)},\btheta_{\rm DM})$ \aure{Is this correct? Since we condition on phi, it's not necessary to introduce the inverse jacobian when doing the change of variables, as phi in this equation is not one of the \textbf{x} of the distribution, but rather a parameter}.
+On the other hand, we model the probability of observing a DM source with a certain total flux $\phi$ using the J-factor number density \red {from \cite{}, detailed in section~\ref{}} convoluted with the detection efficiency of Fermi, which we derive in section~\ref{}. We shall define 
+\begin{equation}
+    p(J|\btheta_{\rm DM}) = \frac{n(J)\epsilon(J|\btheta_{\rm DM})}{N_{\rm sub}}
+\end{equation}
+where $N_{\rm sub}$ is the integral of the numerator over the range of J factors available in the simulation, and it corresponds to the number of DM subhalos that should be detected by Fermi, given $\langle\sigma v\rangle$, DM mass and annihilation channel. 
+Using the formula for change of variables in distribution functions, we get:
+\begin{equation}
+    p(\phi|\btheta_{\rm DM}) = p(J(\phi)|\btheta_{\rm DM})\left|\frac{d J}{d \phi}\right|= p\left(\frac{8\pi m^2 \phi}{\langle\sigma v\rangle N_\gamma} \, |\, \btheta_{\rm DM}\right) \frac{8\pi m^2}{\langle\sigma v\rangle N_\gamma}
+\end{equation}
+Analogously, we write $p(\log_{10}(\phi)|\btheta_{\rm DM})$ as 
+\begin{equation}
+    p(\log_{10}(\phi)|\btheta_{\rm DM}) = p\left(\frac{8\pi m^2 10^{\log_{10}(\phi)}}{\langle\sigma v\rangle N_\gamma} \, |\, \btheta_{\rm DM}\right) \frac{8\pi m^2}{\langle\sigma v\rangle N_\gamma} 10^{\log_{10}(\phi)}\log(10)
+    \label{eq:dm-dist}
+\end{equation}
+We now have all the ingredients to write  $p_{DM}(\alpha, \beta,\log_{10}(\phi)|\btheta_{\rm DM})$.
+\end{comment}
+
+%% old
+
+%The latter has a distribution $p(J)$ that can be extracted from DM simulations (see below). 
+% Note that eq.~(\ref{eq:fluxDM}) implies that for the minimum flux $\phi_{\rm thres}$ corresponding to Fermi's detection threshold, increasing the value of  $\langle\sigma v\rangle$ implies to consider DM simulated sources with smaller values of $J$, down to 
+% \begin{equation}
+%   J_{\rm thres}(\btheta_{\rm DM})  \equiv 
+%   \frac{m^2}{\langle\sigma v\rangle N_\gamma} \phi_{\rm thres}~.  
+% \end{equation}
+
+% Together with $\bx$, the J-factors are also stochastic quantities. We can thus write the joint distribution:
+
+% \begin{equation}
+%   p(\bx,J) = p(J)~p(\bx|J) \equiv p(J)~  p_{\rm DM}(\bx|\phi_{\rm DM})~p_{\rm eff}(\phi_{\rm DM})~,
+%   \label{eq:p_joint}
+% \end{equation}
+% where we have introduced ``by hand'' the detection efficiency $p_{\rm eff}(\phi_{\rm DM})$, accounting for the probability of Fermi-LAT measuring a DM source with flux $\phi_{\rm DM}$. The idea then is to obtain our quantity of interest, $p_{\rm DM}(\bx|\btheta_{\rm DM})$, by marginalizing Expr.(\ref{eq:p_joint}) over $J$:
+% \begin{equation}
+%  p_{\rm DM}(\bx|\btheta_{\rm DM})  =
+%  \frac{1}{N_{\rm DM}}
+%  \int_{0}^\infty dJ~n(J)~  p_{\rm DM}(\bx|\phi_{\rm DM}(J, \btheta_{\rm DM}))~p_{\rm eff}(\phi_{\rm DM}(J, \btheta_{\rm DM}))~.
+%  \label{eq:pDM}
+% \end{equation}
+% where we have made explicit again the dependence of $\phi_{\rm DM}$ on $J$ and $\btheta_{\rm DM}$. On the other hand, we have substituted $p(J)$ by the number $n(J)$ of subhalos with a given $J$, which is the quantity we can directly extract from the simulations (cf section \ref{sec:sim}). The normalization factor $N_{\rm DM}$, obtained by integrating over $\bx$ the numerator of the above expression, represents the total number of detectable DM subhalos.  
+
+\begin{comment}
+% obsolete?
+Finally, the DM weight $\pi_{\rm DM}$ is intuitively defined as:
+\begin{equation}
+ \pi_{\rm DM} = 
+ \frac{N_{\rm sub}}{N_{\rm tot}}~,
+ \label{eq: DM_weight}
+\end{equation}
+where $N_{\rm tot}$ is the total number of unassociated sources. Even though by definition the DM weight in expr.(\ref{eq: DM_weight}) is not guaranteed to obey $\pi_{\rm DM}\leq 1$, in practice we enforce this condition by discarding any value of $\btheta_{\rm DM}$ leading to a DM weight not obeying it.
+\end{comment}
+
+%Once we have defined the DM distribution, the mixture model in eq.~(\ref{eq:mixture}) is completely specified and can be used to find the best-fit values and upper limits on the annihilation cross section $\sigmav$ as a function of the DM mass.
+%and the model can be optimized (cf appendix \ref{sec:algorithm}). 
+
+%\section{Results}
+% This section seems to be too short, I've merged it with Section 2
+
+%\section{Results}
+%\label{sec: results}
+
+%\aure{We could present the results for the astro only model and the model with DM separately.}
+
+We maximize the likelihood of the model in eq.~(\ref{eq:L}) to determine the best-fit parameters.
+At first, we fix the DM contribution to be zero and determine the best-fit model with the known astrophysical sources only.
+For reference, we show the model for the associated sources (no fitting) in the left panel of figure~\ref{fig:mixtures}.
+The distributions of Galactic and extragalactic sources shown in this figure are the $p_{\rm assoc}(\bx|k)$ PDFs in eq.~(\ref{eq:mixture}).
+The best-fit mixture model for unassociated sources with two classes of astrophysical sources, Galactic and extragalactic, but without a DM contribution is shown in the right panel of figure~\ref{fig:mixtures}. 
+We note that the extragalactic sources are dominated by AGNs, which usually have close to a power-law spectra (small $\beta$ values).
+The Galactic sources often have curved spectra (large $\beta$ values).
+The distributions of extragalactic and Galactic sources are shown by the blue and red colors respectively.
+The relative contribution of Galactic sources is larger for the unassociated sources compared to the associated ones (brighter red color in the right panel compared to the left panel in figure~\ref{fig:mixtures}), which is expected, since the fraction of unassociated sources is larger near the Galactic plane compared to high latitutudes~\cite{2022ApJS..260...53A}.
+The model on the right panel of figure~\ref{fig:mixtures} is obtained by optimizing the prior and covariate shift parameters, $\pi_k$ and $\btheta_{\rm cov}$.
+We display the optimized galactic and extragalactic components separately in figure~\ref{fig:unas_mixture_astro}.
+
+
+
+%\aure{I have changed Fig 5 to include both the plot for assoc and unas, to make it bigger. In Fig 6 we have only the decomposition of the unas plot. This way we put more emphasis on the decomposition of the unassociated sources, and the results will look bigger and clearer, in my opinion.}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.49\linewidth]{img/model0/model0_as_sources_E0_1000MeV.pdf}
+    \includegraphics[width=0.49\linewidth]{img/model0/model0_covaraite_shift.pdf}
+    \caption{The decomposition of associated sources into Galactic and extragalactic sources (\textit{left panel}) and the best-fit models for unassociated sources (\textit{right panel}) for the ROI corresponding to $E_0 = 1$ GeV.}
+    \label{fig:mixtures}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.49\linewidth]{img/model0/model0_covaraite_shift_ext.pdf}
+    \includegraphics[width=0.49\linewidth]{img/model0/model0_covaraite_shift_gal.pdf}
+    \caption{Mixture model for unassociated sources with two classes (Galactic and extragalactic) for the ROI cut associated with $E_0 = 1$ GeV. 
+    \textit{Left panel}: extragalactic component. \textit{Right panel}: galactic component.}
+    \label{fig:unas_mixture_astro}
+\end{figure}
+
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.5\linewidth]{img/model0/model0_as_sources_E0_1000MeV.pdf}
+%     \caption{Mixture model for associated sources with two components.}
+%     \label{fig:assoc_mixture}
+% \end{figure}
+
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.30\linewidth]{img/model0/model0_covaraite_shift.pdf}
+%     \includegraphics[width=0.30\linewidth]{img/model0/model0_covaraite_shift_ext.pdf}
+%     \includegraphics[width=0.30\linewidth]{img/model0/model0_covaraite_shift_gal.pdf}
+%     \caption{Mixture model for unassociated sources with two classes (Galactic and extragalactic). 
+%     Left panel: the total model, middle panel: extragalactic component, right panel: Galactic component.\aure{we need to put more emphasis on these plots, maybe make them bigger?}}
+%     \label{fig:unas_mixture_astro}
+% \end{figure}
+
+The best-fit model including the DM component with DM mass of 100 GeV is shown in figure~\ref{fig:mixture_DM_tot}.
+Here we simultaneously fit the parameters $\pi_k$, $\btheta_{\rm cov}$ and $\sigmav$.
+The corresponding components are presented in figure~\ref{fig:mixture_DM_components}.
+The DM component is shown by the green color.
+Provided that all DM subhalos have the same gamma-ray spectra, the corresponding  distribution of DM subhalos is much better localized in the $\alpha$ and $\beta$ plane than the extragalactic and Galactic components.
+The spread in the DM subhalo distribution comes from statistical uncertainties.
+We note that not only the overall normalization but also the shape of the distribution of DM subhalos in the right panel of figure~\ref{fig:mixture_DM_components}
+changes for different annihilation cross sections and J-factor models (cf. figure~\ref{fig:DM_dist_countour}).
+The reason is that the distribution depends on the relative contribution of subhalos with different J-factors, e.g., smaller J-factors correspond to proportionally smaller flux and larger uncertainties, which affect the shape of the distribution.
+Nevertheless, for larger $\sigmav$ values the expected contribution of DM subhalos also increases. 
+
+
+%%%%%% model with DM
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{img/mixture_with_dm/all_comps.pdf}
+    \caption{Mixture model for unassociated sources including the DM component with $M_{\rm DM} = 100$ GeV. }
+    \label{fig:mixture_DM_tot}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.32\linewidth]{img/mixture_with_dm/ext.pdf}
+    \includegraphics[width=0.32\linewidth]{img/mixture_with_dm/gal.pdf}
+    \includegraphics[width=0.32\linewidth]{img/mixture_with_dm/dm.pdf}
+    \caption{Components of the mixture model in figure~\ref{fig:mixture_DM_tot}.}
+    \label{fig:mixture_DM_components}
+\end{figure}
+
+\begin{comment}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.45\linewidth]{img/model0/likelihood_samples_model0_covariate_shift_E0_100.pdf}
+    \includegraphics[width=0.45\linewidth]{img/model0/likelihood_samples_model0_covariate_shift_E0_1000.pdf}
+    \caption{Likelihood samples for covariate shift model. Left: model for E0=100MeV, Right: model for E0=1GeV \aure{These samples come from bootstrap by replacement. In the future, I should fix my HMC and perform proper samples from the likelihood. Nonetheless, this should already tell us the model is performing properly.}}
+    \label{fig:L_hist}
+\end{figure}
+\end{comment}
+
+%%%%%% bounds
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{img/bounds/sigmav_bounds_flux_bb.pdf}
+    \caption{
+    Bounds on the annihilation cross section $\sigmav$ of DM for the $b\bar{b}$ channel. 
+    Solid (dashed) black line: the limit derived with the 
+    $V_{\rm max}$ ($M_{\rm sub}$) determination of the J-factor integrated within the radius of $0.1^\circ$.
+    Gray band: 95\% containment of the upper limit due to statistical fluctuations of the distribution of sources.
+    Solid (dashed) red line: the limit derived with the 
+    $V_{\rm max}$ ($M_{\rm sub}$) determination of the J-factor integrated within the tidal radius. 
+    Solid and dashed purple lines: the limits derived by Calore et al. (2019)~\cite{2019Galax...7...90C}. 
+    Dashed orange line: limits derived by Coronado-Bl{\'a}zquez et al. (2019)~\cite{2019JCAP...11..045C}. 
+    Solid green line: the limits derived by Butter et al. (2023)~\cite{2023JCAP...07..033B}.
+    Green and yellow bands: limits derived for dwarf spheroidal Galaxies~\cite{2024PhRvD.109f3024M}.
+    Dotted black line: the expectation for the WIMP DM thermal relic cross-section from \cite{Steigman_2012}.
+    }
+    \label{fig:bounds-bb}
+\end{figure}
+
+
+The corresponding upper limits for $\sigmav$ are shown in figure~\ref{fig:bounds-bb}.
+In particular, the limits for the J-factor integrated within $0.1^\circ$ and $V_{\rm max}$ ($M_{\rm sub}$) J-factor
+determination method is shown by the black solid (dashed) line. On the other hand,
+the limits corresponding to the J-factor integrated up to the tidal radius for 
+the $V_{\rm max}$ and $M_{\rm sub}$ J-factor determination methods 
+%the same determination methods 
+are shown by the red solid and dashed lines, respectively.
+
+%%%%%%%%%%
+To derive the uncertainty band for the annihilation cross-section bounds, we adopt a bootstrap strategy. 
+We identify the best-fit model for each DM mass, and for that model, we use the probability density function of eq.~(\ref{eq:mixture}) to sample 100 new datasets via Hybrid (a.k.a. ``Hamilton'') Monte Carlo (HMC) \cite{2017arXiv170102434B} and the NUTS algorithm \cite{2011arXiv1111.4246H}. 
+For each new simulated dataset, we derive the bounds on $\sigmav$ and show the 95\% containment interval for the resulting distribution of bound values as a gray band in the figure. 
+% We display this interval as a gray band in figure~\ref{fig:bounds-bb}, which we identify as the uncertainty on our bounds for  the annihilation cross section of DM $\sigmav$. 
+
+
+
+
+%%%%%%
+% The gray uncertainty band is calculated as 95\% containment of upper limits by performing random realizations of distributions of sources in the feature space using the best-fit model PDF (for details, see appendix \ref{sec:bootstrap}).
+% This band shows the possible fluctuations of the upper limit due to random realizations of the distributions of sources in the feature space.
+%%%%%%%%
+
+For comparison we show the limit obtained by assuming that there are 16 DM subhalos in the 3FGL catalog by the purple solid line~\cite{2019Galax...7...90C},
+as well as the best possible sensitivity of the 3FGL catalog to DM subhalos (assuming that no unassociated sources correspond to DM subhalos) shown by purple dash dotted line~\cite{2019Galax...7...90C}
+and the orange dashed line~\cite{2019JCAP...11..045C}. The solid green line corresponds to more recent bounds derived using an ML approach \cite{2023JCAP...07..033B}. 
+%\dima{Please check Calore et al and Coronado-Bl{\'a}zquez references. Also do we use a more recent paper: 2204.00267? I'm wondering we should also include uncertainty due to realizations of subhalos near the Earth? This gives a large uncertainty for the 1-halo upper limit (e.g., 1910.13722).}
+The expected number of subhalos for the best-fit models and at the upper bound value for 
+$\langle \sigma v \rangle$
+is shown in table~\ref{tab:Nsub_values} both inside our ROI and in the full range of parameters.
+%We note that the expected number of subhalos in the best-fit model is below 10 in the ROI that we consider for all DM masses (``$N_{\rm sub}$ best-fit model, ROI'' column),  while the 95\% confidence upper bound on the number of subhalos is above 20 for $M_{\rm DM} > 10$ GeV (``$N_{\rm sub}$ upper bound, ROI'' column).
+%This is a reason why our limits are worse, than, e.g., the limits in ref.~\cite{2019Galax...7...90C_Calore_2019} for a comparable scenario (the black dashed line in figure~\ref{fig:bounds-bb}) derived for a possible number of 16 DM subhalos in the 3FGL catalog.
+
+
+\begin{table}[h]
+\centering
+\resizebox{0.75\textwidth}{!}{%
+\begin{tabular}{l*{4}{l}}
+\toprule
+$M_{DM}$ [GeV] & \multicolumn{2}{l}{$N_{\rm sub}$ best-fit model} & \multicolumn{2}{l}{$N_{\rm sub}$ upper bound} \\
+ & ROI & total & ROI & total \\
+\midrule
+10 & 0.00 & 0.00 & 1.91 & 4.41\\
+30 & 15.37 & 36.23 & 27.30 & 64.20\\
+100 & 5.45 & 6.21 & 19.36 & 21.86\\
+300 & 4.59 & 7.66 & 13.23 & 21.46\\
+1000 & 0.00 & 0.00 & 2.06 & 8.61\\
+\bottomrule
+\end{tabular}
+}
+\caption{Expected number of DM subhalos for the best-fit model (colunns 2 and 3) and for the upper bound value of $\langle \sigma v \rangle$ (columns 4 and 5). We show the number of DM subhalos in the range of parameters that we use for the analysis (``ROI'' columns) and the total number of subhalos we would get for the full range of parameters (``total'' columns). $N_{\rm sub}$ is restricted to be non-negative. %\aure{I uncommented the table, since now the values are more in line with what we would expected. Should we still avoid this discussion or include it?}
+}
+\label{tab:Nsub_values}
+\end{table}
+
+\begin{comment}
+% move to appendix?
+With the aim of computing bounds on the DM parameter space, we utilize the statistical model presented above as the likelihood of our dataset 
+${\cal D}_{\rm unas}$ of unassociated sources:
+
+\begin{equation}
+p({\cal D}_{\rm unas}|\btheta,\btheta_{\rm  DM}) =  \prod_{i=1}^{N_{\rm tot}} 
+p_{\rm unas}(\bx_i|\btheta,\btheta_{\rm DM})~,
+\label{eq: total likelihood}
+\end{equation}
+where we have used expr.(\ref{eq:mixture 2}) while making explicit now its dependence on the astrophysical and DM parameters, $\btheta$ and $\btheta_{\rm DM}$, respectively. Thus, for a given DM mass $m$, we compute the profiled likelihood 
+\begin{equation}
+{\cal L}(\langle\sigma v\rangle)\equiv 
+p({\cal D}_{\rm unas}|\btheta_{\rm opt}(\btheta_{\rm DM}),\langle\sigma v\rangle)
+\label{eq: prof-lik}~,
+\end{equation}
+where we fix the DM annihilation channel to either be $\chi\bar\chi\to b\bar b$ or $\chi\bar\chi\to \tau^+\tau^-$ through all the analysis. The optimum astrophysical parameters $\btheta_{\rm opt}$ are of course a function of the DM parameters, since:
+\begin{equation}
+\btheta_{\rm opt} = \underset{\btheta}{\rm argmin}~ 
+p({\cal D}_{\rm unas}|\btheta,\btheta_{\rm  DM})~.
+\label{eq: theta_opt}
+\end{equation}
+In particular, we perform the above optimization with the Expectation-Maximization algorithm, which is conceived for optimizing distribution functions consisting of mixtures, as the one we consider in this work (See details in appendix \ref{sec:EM}). 
+
+Finally, we follow the standard strategy of computing bounds on the annihilation cross section as a function of the mass, by building the likelihood-ratio test statistic:
+\begin{equation}
+{\rm TS}(\langle\sigma v\rangle) = -2\ln \frac{{\cal L}(\langle\sigma v\rangle)}
+{{\cal L}_{\rm max}}~, 
+\label{eq:TS}
+\end{equation}
+where ${\cal L}_{\rm max}$ is the maximum likelihood, evaluated at the global best fit $\{\btheta_\star,\langle\sigma v\rangle_\star\}$. The Wilks theorem is applied, such that the above TS is assumed to follow a $\Delta\chi^2$ distribution, with 1 degree of freedom in this case (the annihilation cross section). By computing the maximum allowed value of the TS (corresponding to a given confidence level), we can thus obtain bounds on the cross section for a given DM mass, as shown in the results below (see section \ref{sec:DMbounds}).
+\end{comment}
+
+\begin{comment}
+\subsection{Uncertainty estimation through bootstrap}
+\label{sec:bootstrap}
+
+% Discuss profile likelihood for the sigma v and the use of bootstrap to derive statistical uncertainty on the 95\% upper limits. 
+
+In order to derive the uncertainty band for the annihilation cross-section bounds, we adopt a bootstrap strategy. 
+We identify the best-fit model for each DM mass, and for that model, we use the probability density function of eq.~(\ref{eq:mixture}) to sample 100 new datasets through Hamiltonian Monte Carlo \cite{2017arXiv170102434B} and the NUTS algorithm \cite{2011arXiv1111.4246H}. 
+For each new simulated dataset, we derive the bounds on $\sigmav$ and compute the 95\% confidence interval for the resulting distribution of bound values. We display this interval as a gray band in figure~\ref{fig:bounds-bb}, which we identify as the uncertainty on our bounds for  the annihilation cross section of DM $\sigmav$. 
+\end{comment}
+
+
+
+
+
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.8\linewidth]{img/bounds/sigmav_bounds_flux_tau.pdf}
+%     \caption{$\tau^+\tau^-$ bounds}
+%     \label{fig:bounds-tau}
+% \end{figure}
+
+\section{Conclusions and discussion}
+\label{sec:conclusions}
+In this work, we have searched for DM annihilating subhalos among the unassociated \Fermi-LAT sources. We developed the first fully probabilistic model of gamma-ray sources, incorporating both known astrophysical source classes and a potential new population of gamma-ray sources modeled as DM subhalos annihilating into Standard Model particles. 
+
+We characterize gamma-ray sources using their  energy spectra fitted by the log-parabola function.
+We take the parameters $\bf x$ of the log-parabola fit as the input features. 
+We then
+construct a probabilistic model $p({\bf x})$ for the unassociated sources as a weighted mixture of three source classes: Galactic and extragalactic astrophysical sources plus the hypothetical DM subhalos. The Galactic and extragalactic components encompass various source types classified by the \Fermi-LAT collaboration. We analyze data shifts between associated and unassociated sources within a general framework of quantification learning, considering two effects: (1) a covariate shift affecting all source classes similarly due to observational differences, and (2) a prior probability shift, which allows for changes in class prevalence, including the possible presence of a new source class among the unassociated sources.
+
+The astrophysical components of the mixture model are the conditional PDFs $p(\mathbf{x}|k)$ for the two astrophysical classes $k$, Galactic and extragalactic.
+They are built from the corresponding empirical distributions of the associated sources, modified by an optimizable covariate-shift function. The DM subhalo component of the mixture is determined by Monte Carlo simulations based on a set of DM parameters (mass, annihilation channel, and cross section), including the distribution of J-factors coming from N-body simulations. The global likelihood of the model is obtained by multiplying the PDFs $p({\bf x}_i)$ of the unassociated sources $i$ with ${\bf x}_i$ inside the range of parameters that we consider. 
+
+By optimizing the model likelihood, we extract the best-fit parameters, including $\sigmav$, for various DM masses in the $b\bar{b}$ annihilation channel.
+No significant excess corresponding to DM subhalos is observed beyond Galactic and extragalactic sources.
+Consequently, we derive 95\% upper bounds on the DM annihilation cross section. To our knowledge, this is the first time an upper bound on DM annihilation has been obtained by constraining the contribution of DM subhalos to unassociated \Fermi-LAT sources using a maximum likelihood approach.
+Our constraints are competitive with previous limits derived from DM subhalo searches using classify-and-count methods.
+With respect to the latter, our approach, based on quantification learning, offers several advantages :
+\begin{enumerate}[label=(\roman*)]
+    \item It accounts for differences in distributions (data shifts) between associated and unassociated source populations.
+    \item It determines the potential contribution of a new hypothetical source population, e.g., the DM annihilating subhalos, without imposing ad hoc assumptions on its fraction relative to known sources. This is a key advantage over traditional supervised machine learning classification.
+    \item The probabilistic model enables one to generate mock data (samples of unassociated sources), which we use to validate our approach and estimate the uncertainties of the upper bounds on the DM annihilation cross section. 
+    %However, the possibility to generate mock observations corresponding to the unassociated sources population opens up many other applications.
+    \item The model provides both the PDF $p(\mathbf{x}|k)$ of observed source features $\mathbf{x}$ given a source class $k$ (either astrophysical or DM), and the posterior probability $p(k|\mathbf{x})$ of a source belonging to a given class based on observed features.
+\end{enumerate}
+Thus, our approach allows one not only to determine
+the conditional probabilities $p(k|\mathbf{x})$, which is the main objective of ML classification models, but also to estimate the overall likelihood of the model given the distribution of unassociated sources. This likelihood serves as a tool to search for, or constrain, a new class of sources absent from the training data, i.e., the associated \Fermi-LAT sources.
+\begin{comment}
+From the perspective of our primary goal—estimating the fractional contribution of DM subhalos to unassociated \Fermi-LAT sources—our work falls within the domain of quantification learning \cite{10.1145/3117807_Gonzalez_quantification, 2022arXiv221108063M, esuli2023learning}, rather than traditional classification. Our model possesses several distinguishing features within quantification analysis \cite{HOFER2015177}:
+\begin{enumerate}
+    \item It simultaneously accounts for both covariate and prior shifts.
+    \item The target dataset is unlabeled, preventing the use of standard objective functions (e.g., cross-entropy or KL divergence) commonly employed in quantification research. Instead, we optimize the model likelihood.
+    \item The likelihood framework not only facilitates model optimization but also enables statistically robust upper bounds on a new, anomalous source population.
+\end{enumerate}
+\end{comment}
+This work bridges the gap between ML approaches for characterizing unassociated sources traditionally focused on classification and the standard astrophysical analysis using maximum likelihood models. As a result, we construct a model capable of both classifying sources and constraining a new source population. Our approach is broadly applicable to searches of anomalies in distributions for datasets exhibiting both covariate and prior shifts, where the target data is unlabeled.
+%as in Ref.~\cite{HOFER2015177}.
+
+
+\begin{comment}
+\section{Conclusions and discussion -- old}
+\label{sec:conclusions}
+%\dima{Stopped proof reading here.}
+
+
+In this work we have searched for DM annihilating subhalos among the unassociated \Fermi-LAT sources.
+We have constructed, for the first time, a full probabilistic model of the gamma-ray sources including both astrophysical classes of sources and a new population of sources, the DM subhalos.
+%, aimed at characterizing the large fraction of sources in the \Fermi-LAT 4FGL-DR4 catalog, which at present remain unassociated. 
+Our approach is based on quantification learning, which allows us to make several improvements in the searches of DM subhalos compared to previous analyses based on classify-and-count strategy: 
+\begin{enumerate}[label=(\roman*)]
+    \item We take into account differences (``data shifts'') of the populations of associated and unassociated sources,
+    \item We determine a possible contribution of a new hypothetical population of sources, interpreted as DM, without making ad hoc assumptions on their fraction relative to the other sources. This represents an advantage of our method over traditional supervised ML classification tasks,
+    \item We use the the probabilistic model to generate mock data, which we have used to test our model as well as to estimate statistical uncertainty of the upper bounds on DM annihilation cross section,
+    \item The probabilistic model also allows one to calculate both the likelihood $p(\bx|k)$ of observed source features $\bx$ to come from a given source class $k$ as well as the probability $p(k|\bx)$ of a given source class given the observed features.
+\end{enumerate}
+
+ %The latter quantity $p(k|\bx)$, framed in the ML context as a ``classification'' task, has been so far the direct target of several studies in the literature. Consequently, our modeling approach not only exhibits a broader scope compared to existing methods but also provides enhanced informational richness, enabling a more comprehensive analysis.  
+Note that by estimating the class conditional probabilities $p(k|\bx)$ we are essentially covering the scope of probabilistic ML classification models.
+%The conditional probability $p(k|\bx)$ provides the class prediction for the unassociated sources, i.e., we also make a prediction on the class probabilities of individual sources, which is the objective of classification algorithms.
+Thus, in our approach we can both provide predictions for classes of individual sources and estimate the overall likelihood of our model for the distribution of unassociated sources.
+The  likelihood of the model allows us to search for (or to put upper bounds on) a new hypothetical class of sources, not present in the training dataset (the associated \Fermi-LAT sources).
+In this work we model the new class of sources as DM subhalos annihilating to standard model particles.
+We use the model likelihood to determine the best-fit values of annihilation cross section $\sigmav$ for a set of DM masses in the $b\bar{b}$ annihilation channel.
+Since no significant excess has been detected in addition to Galactic and extragalactic sources, we put upper bounds on the annihilation cross section $\sigmav$.
+%As an application, we interpret the new hypothetical class of source as a DM (DM) emitting in gamma-rays from the self-annihilation into Standard Model particles coming the Fermi's unassociated sources. Having optimized a likelihood model for those sources, we set upper bounds on the annihilation cross section $\sigmav$ as a function of the DM mass. Depending on the setup, 
+Our bounds are competitive to previous limits on DM annihilation derived from analyses of DM subhalos with the classify-and-count strategy.
+
+
+We have characterized the gamma-ray sources by their measured energy spectra. 
+We build the probabilistic model as a mixture of distributions corresponding to three different source classes $k$: Galactic and extragalactic astrophysical sources plus the DM annihilating subhalos. 
+The Galactic and extragalactic sources contain different sets of source types as classified by the {\Fermi}-LAT collaboration. 
+We study the data shifts of the unassociated sources with respect to the associated ones in a generic framework where they are due to a combination of two effects: an observational difference between the associated and unassociated sources, which affects all classes in the same way (the covariate shift), as well as a possible change in the prevalence of classes, including the possibility of a new hypothetical class among the unassociated sources (the prior probability shift). 
+This allows us to build the model for the conditional probabilities $p(\bx|k={\rm astro})$ of the astrophysical classes contributing to the unassociated population. 
+We build the model PDF of unassociated sources as the mixture (i.e. a weighted addition) of the astrophysical (Galactic and extragalactic) and DM components.
+Given the set of DM parameters (MD mass, annihilation channel and cross section) we use the distribution of J-factors extracted from N-body simulations to determine the contribution of DM subhalos to the model of the unassociated sources.
+We optimize the likelihood of the model (given the observed distribution of unassociated sources) to determine the best-fit parameters (including the annihilation cross section) as well as to estimate the 95\% upper bounds on the DM annihilation cross section.
+To the best of our knowledge, this is the first time an upper bound on DM annihilation is obtained from a constraint on the contribution of DM subhalos to unassociated \Fermi-LAT sources using a maximum likelihood approach.
+
+
+From the point of view of the main objective of the paper (estimation of the fractional contribution of DM subhalos to unassociated \Fermi-LAT sources), this work belongs to the quantification~\cite{10.1145/3117807_Gonzalez_quantification, 2022arXiv221108063M, esuli2023learning}
+rather than classification ML.
+There are several features of our model, which make it unique  within the framework of quantification analysis (see also~\cite{HOFER2015177}):
+\ben
+\item 
+We combine both the covariate and prior shifts; 
+\item 
+Our target dataset is unlabeled. As a result, we cannot use most of the standard objective functions used in quantification research (such as cross-entropy or KL divergence) to optimize our model, but use the model likelihood instead;
+\item
+The model likelihood allows us not only to find an optimal model, but also to put a statistically well-defined upper bound on a new hypothetical (anomalous) population of sources.
+\een
+This work bridges the gap between ML approaches to characterization of unassociated sources, which so far mostly focused on the classification task, and the standard astrophysical analysis with maximum likelihood models.
+As a result, we construct a model that can be used both to classify sources and to obtain an upper bound on a new population of sources.
+This approach can be applied to analysis of data with both covariate and prior dataset shifts, where the target data is unlabeled as in ref.~\cite{HOFER2015177}.
+
+\end{comment}
+
+\acknowledgments
+%
+AA and BZ acknowledge the support from Generalitat Valenciana through the “GenT program”, ref.: CIDEGENT/2020/055.
+The work of DM is supported by the DFG grant MA 8279/3-1. 
+The work of VG was supported by PID2022-139841NB-I00 and PID2021-125331NB-I00. 
+The work of MASC was supported by the grants PID2021-125331NB-I00 and CEX2020-001007-S, both funded by \allowbreak{MCIN/AEI/10.13039/501100011033} and by ``ERDF A way of making Europe''. MASC also acknowledges the MultiDark Network, ref. RED2022-134411-T. 
+The authors gratefully acknowledge the computer resources  of ARTEMISA and the technical support provided by the Instituto de Fisica Corpuscular, IFIC(CSIC-UV). ARTEMISA was created thanks to the European Union through the 2014-2020 ERDF Operative Programme of Comunitat Valenciana, project IDIFEDER/2018/048, and nowadays it is supported by the grants
+EUR2022-134028, and ASFAE/2022/024. 
+We acknowledge the use of several statistical and optimization tools, including Jax \cite{jax}, Tensorflow Probability \cite{tensorflow2015-whitepaper}, Optim.jl \cite{mogensen2018optim}, Healpy \cite{healpy}, and Scipy \cite{scipy}.
+
+%\dima{stopped reading here}
+
+
+\bibliography{DM_halos}% Produces the bibliography via BibTeX.
+
+\pagebreak
+
+\appendix
+%\section{Optimisation algorithm}
+%\BZ{shall we present this section directly as an appendix ?}
+%\label{sec:algorithm}
+
+%\section{Simulations of DM subhalos}
+%\label{sec:sim}
+
+% \subsection{DM subhalo energy spectrum fitting}
+% \label{sec:sim-ps}
+% Due to the high number of DM sources, and the large number of simulations, we cannot employ the full detection and characterization pipeline which is usually adopted by the Fermi collaboration.
+% We exploit the additional information available to us from simulations to perform a simplified yet accurate analysis pipeline. 
+% The true theoretical energy spectrum of each DM source is fixed (and known) in our simulations, and so are the foreground components. The positions of the DM sources are known as well, and the sources are all effective point sources. For these reasons, we make the following assumptions in our analysis:
+% \begin{itemize}
+%     \item We assume that the energy spectrum of each background source (i.e. any source different from the one we are fitting) is known and fixed to the theoretical one (while in general they are jointly optimised together with the target of the fit)
+%     \item We assume that the diffuse galactic foreground and isotropic foreground components are exact and fixed (while in general they are left free to float, as they come from global fits and their normalization may be locally inexact)
+%     \item We assume that the localization of the source is known (which in this case is true, but not in the case of source detection on real data)
+%     \item We assume that there are no low TS background sources, as we know exactly what we put inside our simulation
+% \end{itemize}
+
+% By making these assumptions, we can fit each DM source individually, regardless of the others. One caveat would be that, due to the Poisson fluctuations, the actual energy spectrum of the background sources is not the same for each source and is not exactly the theoretical one. For this reason, optimising only the parameters of the target source and not also the ones of the surrounding sources may lead to greater uncertainties and lower TS values. Nonetheless, we have tested our procedure and we have found no bias in the estimation of the energy spectrum parameters, and for this reason, we refrain from further complicating our fitting pipeline. \red{We notice that having a lower TS if compared to that which would be obtained from the full Fermi pipeline leads to a lower detection efficiency, which leads to slightly weaker but more conservative bounds on the annihilation cross-section. We estimate that our TS values are on average 20\% lower than the the nominal values from the Fermi catalogue, which leads to a detection efficiency approximately 5-10\% worse than the Fermi one, when evaluated on the 4FGL-DR4 catalogue} 
+
+% To perform a maximum likelihood estimation fit of the DM energy spectrum for each source, we define the likelihood as follows:
+% \begin{equation}
+%     \mathcal{L} = \prod_{e=1}^{N_{bin}} \prod_{j \, \in \, {\rm disc}_e}  
+%     \mathcal{P}(k_{e,j}, \lambda_{e,j}(\bx))
+% \end{equation}
+% Specifically, for each energy bin, we identify a disc around the source corresponding to the 68\% containment angle of the PSF, and for each pixel of the disc, we compare the effective photon counts $k_{ij}$ with the estimated photon counts $\lambda_{ij}(\bx)$ using a Poisson likelihood. The estimated photon counts are a sum of the galactic foreground in the disc, the isotropic background, the emission of the other background (fixed) DM sources and the flexible photon counts coming from the target source:
+% \begin{equation}
+%     \lambda(\bx) = \lambda_{gal} + \lambda_{iso} + \lambda_{S \neq S_i} + \lambda_{S_i}(\bx)
+% \end{equation}
+% Where specifically, for a source $i$:
+% \begin{equation}
+%     \lambda_{S_i, e,j} = \left[\int_{E_{min}^e}^{E_{max}^e} \phi_{0,i}\frac{E}{E_0}^{-\alpha_i - \beta_i\log(E/E_0)} dE\right] \cdot {\rm PSF_{i,j}^e} \cdot {\rm exposure_{j}^e} \cdot \frac{4\pi}{12 N_{\rm side}^2}
+%     \label{eq:lambda}
+% \end{equation}
+% We repeat the fitting procedure for each DM source, at a fixed total flux, and we build the DM distribution $p_{DM}(\alpha, \beta|\phi)\equiv p_{DM}^{KDE}(\alpha, \beta|\phi)$ through Kernel Density Estimation. \aure{Once we multiply by the peff... we obtain these distributions... TODO: decide what to say here}
+
+
+
+
+\section{Simulation of gamma-ray signal from DM subhalos}
+\label{sec:sim-ps}
+
+In this appendix we provide details about the simulation of gamma-ray signal from DM subhalos.
+Eq.~(\ref{eq:pDM}) describes the probability of observing a DM subhalo 
+given a DM model.
+%parametrized by a set of variables \textbf{x}, which describe the DM model parameters: the DM mass, annihilation channel, and annihilation cross-section. 
+This equation includes three terms that need to be estimated through simulations: 
+the number density $n(\phi_{\rm DM})$ of DM subhalos as a function of expected flux
+ (section~\ref{sec:DM_model}), the probability $p_{\rm DM}(\alpha,\beta|\phi_{\rm DM};\btheta_{\rm DM})$  of observing a source with the log-parabola spectrum parameters $(\alpha,\,\beta)$ given a DM model, which we obtain by computing and fitting simulations of DM point sources, and the efficiency $\varepsilon_{\rm eff}(\phi_{\rm DM})$ of the detection of a source, which we obtain from the same set of simulations by identifying the fraction of sources which can be detected by Fermi-LAT.  
+We now describe how the DM distribution conditioned on the gamma-ray flux is derived and how we estimate the detection efficiency for DM subhalos.
+% In the following subsections, we detail how DM point-source simulations are performed for this work, and we briefly summarize how the J-factor distribution is derived in the literature. 
+
+%\subsection{Simulation of gamma-ray signal from DM subhalos}
+
+
+We compute the DM distribution above conditioned on the gamma-ray flux, through realistic photon-counts simulations of DM point sources. 
+We decompose the gamma-ray sky into two main components: a foreground contribution, constituted by the diffuse galactic emission and an isotropic background, and the signal from the DM point sources. 
+We model the diffuse galactic emission using the \verb|gll_iem_v7| template provided by the \Fermi-LAT collaboration, as well as the corresponding isotropic background model. %which by definition is a constant estimated in each energy bin. 
+%
+We integrate eq.~(\ref{eq:DM_spec}) in 16 logarithmic energy bins between 100 MeV and 1 TeV to obtain the theoretical energy spectrum in units of the photon flux per energy bin.
+We specify the spectral energy distribution (SED), $dN_\gamma/dE$, using the recent estimations from CosmiXs \cite{2024JCAP...03..035A}.
+
+Furthermore, we notice that the J factor and annihilation cross-section term factor out of the integral into an overall constant that ultimately defines the total flux normalization: 
+\begin{equation}
+   \Phi_i = A \int_{E_{min, i}}^{E_{max,i} }\frac{dN_\gamma}{dE}dE \,.
+\end{equation}
+
+% We model the DM theoretical energy spectrum by realizing that, following eq.~(\ref{eq:DM_spec}), the J factor and annihilation cross section term factor out of the integral into an overall constant that ultimately defines the total flux normalization. 
+% \aure{We need to decide how to denote the flux integrated in energy bins, which is what we use to generate the map, and how to distinguish it from the energy spectrum, which we are currently also defining as $\phi(E)$}
+For this reason, once we fix the SED for a specific DM annihilation channel and mass, the energy spectrum $\phi(E)$ is defined except for an energy-independent normalization term. 
+By fixing the overall flux normalization, we obtain the expected gamma-ray flux due to a specific DM source. 
+Experimental uncertainties in the reconstruction of energy and direction of gamma rays induce a spread in the distribution of photons associated with a point source.
+We simulate sources by convolving with the \Fermi-LAT point spread function (PSF) and exposure
+using {\Fermi} Science Tools (fermitools) version 2.2.0\footnote{\url{https://github.com/fermi-lat/Fermitools-conda/wiki}}.
+\begin{comment}
+% I believe that this is not necessary.
+%map in order to obtain the theoretical photon counts associated with DM source as it would be seen by Fermi:
+
+
+% uncertainty in the reconstruction of the We convolved this quantity with the Fermi Point Spread Function (PSF) and the instrument exposure, both of which we obtained using the Fermi Science Tools (fermitools) analysis suite.
+
+
+\begin{equation}
+    \mathcal{C}_{S_i, e,pix} = \left[\int_{E_{min}^e}^{E_{max}^e} \phi_{0,i}\frac{dN_{\gamma}}{dE}dE\right] \cdot {\rm PSF_{i,pix}^e} \cdot {\rm exposure_{pix}^e} \cdot \frac{4\pi}{12 N_{\rm side}^2}
+    \label{eq:counts}
+\end{equation}
+Both the PSF and exposure map are obtained using the Fermi Science Tools (fermitools) analysis suite.
+\end{comment}
+
+In table \ref{tab:settings} we summarize the analysis settings, which are similar to the standard event selection cuts used in the construction of gamma-ray source catalogs. 
+% These are not the same events, in particular, standard catalogs use Source class events, the energy range is also a bit different etc.
+Likewise, we convolve the diffuse galactic foreground and isotropic emission with the PSF and exposure to obtain the diffuse foreground emission.
+For each simulation, we add the emission from 10,000 DM sources randomly and isotropically distributed in the sky together with the foreground emission. We chose this number of sources to roughly match the number of resolved sources in the 4FGL catalog and to have sufficient statistics for the DM sources, while avoiding excessively demanding simulations. We thus obtain a map for the expected photon counts due to a DM population with a specific mass, annihilation channel, and a common flux.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{ | l| l|  }
+\hline
+Healpix order & 8\\ 
+Weeks & $9-795$\\ 
+Emin & 100 MeV\\
+Emax & 1 TeV\\
+Instrument Response Functions (IRFs) & \verb|P8R3_SOURCEVETO_V3| \\
+EVCLASS & 128 (Source)\\ 
+EVTYPE & 3 (Front+Back)\\
+ZMAX & $90^\circ$ under 1 GeV, $105^\circ$ otherwise\\
+Galactic foreground model & \verb|gll_iem_v7.fits| \\
+\hline
+\end{tabular}
+\caption{\texttt{Fermi Science Tools} settings used for the 15-year data set analysis.}
+\label{tab:settings}
+\end{table}
+
+We employ each simulation (associated with a specific total gamma-ray flux for the DM source) to estimate $p_{\rm DM}(\alpha,\beta|\phi_{\rm DM};\btheta_{\rm DM})$ as follows.
+First, we perform a Poisson realization of the expected photon counts map.
+%, to obtain a map of effective photon counts. This step simulates the random Poisson process that is measuring individual photons. 
+Then we proceed with fitting the energy spectrum of each source with a log parabola function, yielding the DM distribution conditioned on the flux.
+Finally, we estimate the detection efficiency $\varepsilon_{\rm eff}(\phi_{\rm DM})$ by studying the TS of the DM sources for a given map. We define the TS of a source by comparing the overall likelihood with and without the target source. We define the TS as:
+\begin{equation}
+TS = -2\ln\left(\frac{\mathcal{L}}{\mathcal{L}_0}\right),
+\end{equation}
+where $\mathcal{L}$ is the likelihood of the best fit model including the source, and $\mathcal{L}_0$ is the likelihood of the model without the source. 
+If the TS of a source is larger than 25 we include that source to a database of resolved sources, for which the SED fit parameters are reliable and can be used for the estimation of $p_{\rm DM}(\alpha,\beta|\phi_{\rm DM};\btheta_{\rm DM})$. Else, we discard the source as a low TS source which would not be measured by Fermi-LAT.
+
+The detection efficiency $\varepsilon_{\rm eff}(\phi_{\rm DM})$ of Fermi-LAT to a DM source with a specific flux and SED is then defined as the ratio between the number of detected sources and the overall number of sources included in the simulation: 
+\be
+\varepsilon_{\rm eff} = \frac{N_{\rm sources}(TS>25)}{N_{\rm sources}^{\rm tot}}
+\ee
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{img/efficiency/efficiency.pdf}
+    \caption{detection efficiency for the $b\overline{b}$ annihilation channel simulations.}
+    \label{fig:efficiencty}
+\end{figure}
+
+
+% \sout{If a nominal number of \red{N} sources has not been added to the dataset, we proceed to compute another Poisson realization of the theoretical counts map and repeat the fitting procedure until the target number of data points has been reached, or until a maximum number of \red{M} Poisson realization have been performed. 
+% If the detection efficiency for a specific gamma-ray flux is lower than $10^{-5}$, we discard the simulation and conclude that no reliable analysis can be done on such low fluxes. }
+
+In order to avoid biasing the estimation of the DM distribution due to a low number of detectable sources or due to a very specific realization of the sky, we perform additional simulations of the gamma-ray sky until we detect a total of at least 20,000 DM sources or until 1,000 simulations have been performed. 
+Once we have built a dataset of measurements for the energy spectrum of DM sources, we estimate the probability density function $p_{DM}(\alpha, \beta|\phi_{DM})$ by employing KDE, in analogy with what we did in section~\ref{sec:stat-model} for the astrophysical sources.
+
+
+%\subsection{DM subhalo energy spectrum fitting}
+%\label{sec:spectrum-fitting}
+
+Due to the high number of DM sources, and the large number of simulations, we cannot employ the full detection and characterization pipeline which is usually adopted by the \Fermi-LAT collaboration.
+We exploit the additional information available to us from simulations to perform a simplified %yet accurate 
+analysis pipeline. 
+The true energy spectrum of each DM source is fixed (and known) in our simulations, and so are the foreground components. The positions of the DM sources are known as well, and the sources are all point-like sources. For these reasons, we make the following assumptions in our analysis:
+\begin{itemize}
+    \item We assume that the energy spectrum of each background source (i.e. any source different from the one we are fitting) is known and fixed to the theoretical one (while in general they are jointly optimized together with the target of the fit);
+    \item We fix the diffuse galactic and the isotropic background components;
+    %\dima{I thought we allowed the overall normalization of backgrounds to float?} \aure{No, we decided to make DM simulations with a fixed galactic foreground and isotropic background. As such, when we are doing inference on the dark matter spectrum parameters in the simulated map, they are not locally incorrect and do not need to be refitted.}
+    \item We assume that the localization of the source is known (which in this case is true, but not in the case of source detection on real data);
+    \item We assume that there are no low TS background sources, as we know exactly what we put inside our simulation.
+\end{itemize}
+
+By making these assumptions, we fit each DM source individually, regardless of the others. 
+%One caveat would be that, due to the Poisson fluctuations, the actual energy spectrum of the background sources is not the same for each source and is not exactly the theoretical one. For this reason, optimizing only the parameters of the target source and not also the ones of the surrounding sources may lead to greater uncertainties and lower TS values. Nonetheless, we have tested our procedure and we have found no bias in the estimation of the energy spectrum parameters, and for this reason, we refrain from further complicating our fitting pipeline.
+\begin{comment}
+\red{We notice that having a lower TS if compared to that which would be obtained from the full Fermi pipeline leads to a lower detection efficiency, which leads to slightly weaker but more conservative bounds on the annihilation cross-section. 
+% We estimate that our TS values are on average 20\% lower than the the nominal values from the Fermi catalogue, which leads to a detection efficiency approximately 5-10\% worse than the Fermi one, when evaluated on the 4FGL-DR4 catalogue
+}
+\end{comment}
+To perform a maximum likelihood estimation fit of the DM energy spectrum for each source, we define the likelihood as follows:
+\begin{equation}
+    \mathcal{L} = \prod_{e=1}^{N_{bin}} \prod_{j \, \in \, {\rm disc}_e}  
+    \mathcal{P}(k_{e,j}, \lambda_{e,j}(\bx))
+\end{equation}
+Specifically, for each energy bin, we identify a disc around the source corresponding to the 95\% containment angle of the PSF with a minimal angle of $0.5^\circ$ and a maximal angle of $5^\circ$.
+This ensures high enough statistics for the high-energy bins, and reduces the background noise for low-energy bins while leaving the intermediate-energy bins unaffected. 
+\begin{comment}
+\red{Notice that since we compute the likelihood pixel and energy-wise, we retain all the information from the PSF, automatically suppressing noise away from the peak of the radial profile of a source}.  \aure{what I want to say here is that even though we are including many more pixels by using 0.5 degrees for the high energy bins, the fact that we are computing the pixel likelihood ensures we are not influenced negatively by the background sources outside of the PSF containment radius. @Dima formulated this aspect very precisely in the emails when we were discussing this topic, and this phrase needs to be rewritten}
+\end{comment}
+
+For each pixel of the disc, we compare the photon counts $k_{ij}$ with the estimated photon counts $\lambda_{ij}(\bx)$ using the Poisson likelihood. The estimated photon counts are a sum of the galactic foreground in the disc, the isotropic background, the emission of the other background (fixed) DM sources and the photon counts coming from the target source:
+\begin{equation}
+    \lambda(\bx) = \lambda_{gal} + \lambda_{iso} + \lambda_{S \neq S_i} + \lambda_{S_i}(\bx)
+\end{equation}
+Where specifically, for a source $i$ and pixels $j$:
+\begin{equation}
+    \lambda_{S_i, e,j} = \left[\int_{E_{min}^e}^{E_{max}^e} \phi_{0,i}\frac{E}{E_0}^{-\alpha_i - \beta_i\log(E/E_0)} dE\right] \cdot {\rm PSF_{i,j}^e} \cdot {\rm exposure_{j}^e} \cdot \frac{4\pi}{12 N_{\rm side}^2}.
+    \label{eq:lambda}
+\end{equation}
+%which resembles eq.~(\ref{eq:counts}), but for a log-parabola energy spectrum.
+We repeat the fitting procedure for each DM source, at a fixed total flux, and we build the DM distribution $p_{DM}(\alpha, \beta|\phi)\equiv p_{DM}^{KDE}(\alpha, \beta|\phi)$ through the KDE.
+
+\section{Details of model optimization with the EM algorithm}
+\label{sec:EM}
+
+%\aure{@Bryan we need to review this part}
+Maximum likelihood estimation of the parameters of a mixture model is a challenging task due to the interplay between the mixture weights and the distribution parameters. 
+A standard iterative algorithm for this task is the  Expectation Maximization (EM) algorithm \cite{bishop, hastie2009elements}. 
+
+The proposal is to introduce latent binary vectors ${\bf z}_i$, corresponding to each data point $\bx_i$, where dim(${\bf z}_i)=K$, where $K$ is the number of mixture components. These latent variables are interpreted as the stochastic membership of point $\bx_i$ to the $k$th component of the mixture, such that all elements of ${\bf z}_i$ are zero, except for $z_{ik}=1$. In other words, ${\bf z}_i$ is a categorical random variable represented with the one-hot-encoding scheme. The coefficients $\pi_k$ of the likelihood in eq.~(\ref{eq:mixture}) are interpreted as the parameters determining the corresponding categorical {\it prior} distribution of ${\bf z}_i$, i.e. $p(z_{ik}=1)=\pi_k~\forall i$, such that  
+\begin{equation}
+ p({\bf z}_i) = \prod_k^K \pi_k^{z_{ik}} ~.  
+\end{equation}
+With this interpretation for ${\bf z}_i$, we can identify $ p(\bx_i | z_{ik}=1) = p_k(\bx_i|\btheta_k)$, such that
+\begin{equation}
+p(\bx_i|{\bf z}_i) = \prod_k^K p_k(\bx_i|\btheta_k)^{z_{ik}}~.
+\end{equation}
+We then have all the elements to compute the {\it posterior} distribution of ${\bf z}_i$ as:
+\begin{equation}
+p(z_{ik}=1 | \bx_i) = \frac{p_k(\bx_i|\btheta_k) \pi_k}
+{\sum_j^K p_j(\bx_i|\btheta_j) \pi_j} \equiv \gamma(z_{ik})~.
+\label{gamma}
+\end{equation}
+
+In order to find the optimum parameters $\{\btheta_k\}$ and weights $\boldsymbol{\pi}$, the idea is to consider the joint likelihood $p(\bx_i, {\bf z}_i)$ 
+for the whole dataset of points $\bx_i$ with associated latent variables ${\bf z}_i$:
+\begin{equation}
+\label{p(X,Z)}
+p({\bf X,Z}|\{\btheta_k\},\boldsymbol{\pi})
+=\prod_i^N \prod_k^K [\pi_k p_k(\bx_i|\btheta_k)]^{z_{ik}}~.
+\end{equation}
+In spite of this apparent complication of introducing extra variables in the problem (i.e. the latent variables), the likelihood in eq.~(\ref{p(X,Z)}) is arguably easier to optimize than the original likelihood $p(\bx|\{\btheta_k\},\boldsymbol{\pi}) = \prod_i p(\bx_i)$, where each term in the product is built as in eq.~(\ref{eq:mixture}). One of the reasons for this is that, when computing the log-likelihood, eq.~(\ref{eq:mixture}) leads to log of a sum, which computationally challenging to optimize, especially in the large $K$ regime. However, $\log p({\bf X,Z}|\{\btheta_k\},\boldsymbol{\pi})$ is very similar to the cross-entropy cost function, which is easily optimizable.  
+
+An obvious problem is that in eq.~(\ref{p(X,Z)}) we do not know the $z_{ik}$ variables. The EM algorithm considers instead the expectation value of this likelihood (or more concretely, of the log-likelihood), under the posterior distribution of ${\bf Z}$, i.e.
+\begin{equation}
+\label{E_log}
+\mathbb{E}_{\bf Z} 
+[\log p({\bf X,Z}|\{\btheta_k\},\boldsymbol{\pi}) ] =
+\sum_{\bf Z} 
+p({\bf Z}|{\bf X},\{\btheta_k\},\boldsymbol{\pi})~
+\ln p({\bf X,Z}|\{\btheta_k\},\boldsymbol{\pi})~.
+\end{equation}
+
+Eq.~(\ref{E_log}) is maximized according to the following iterative procedure:
+\begin{enumerate}
+    \item Initialize $\{\btheta_k\}=\{\btheta_k\}_{\rm old}$, and $\boldsymbol{\pi} = \boldsymbol{\pi}_{\rm old}$;
+    \item Evaluate $p({\bf Z}|{\bf X},\{\btheta_k\}_{\rm old},\boldsymbol{\pi}_{\rm old})$;
+    \item Plug the posterior obtained in step 2 into expr.(\ref{E_log}), such that now the only term containing the optimizable parameters $\{\btheta_k\},\boldsymbol{\pi}$ is the log-likelihood. So we get the expression:
+    \begin{equation}
+      Q(\{\btheta_k\},\boldsymbol{\pi}) \equiv
+     \sum_{\bf Z} 
+    p({\bf Z}|\bx,\{\btheta_k\}_{\rm old},\boldsymbol{\pi}_{\rm old})~
+\ln p({\bf X,Z}|\{\btheta_k\},\boldsymbol{\pi})~.  
+    \end{equation}
+    \item Update the parameters as:
+    \begin{equation}
+      \{\btheta_k\}_{\rm new},\boldsymbol{\pi}_{\rm new} =
+      \underset{\{\btheta_k\},\boldsymbol{\pi}}
+      {\rm argmax}~Q(\{\btheta_k\},\boldsymbol{\pi})
+    \end{equation}
+    \item Repeat above steps until convergence
+\end{enumerate}
+Note that in step 4 above, the optimization wrt $\boldsymbol{\pi}$ is analytical. By doing a Lagrange-multiplier optimization with the condition $\sum_j \pi_j = 1$, it is straightforward to obtain:
+\begin{equation}
+    (\pi_k)_{\rm new} = \frac{1}{N}\sum_i^N \gamma(z_{ik})~,
+\end{equation}
+where $\gamma(z_{ik})$ is given by eq.~(\ref{gamma}). The optimization wrt $\{\btheta_k\}$ will not be analytical in general, depending on how complicated the expressions for $p_k(\bx_i|\btheta_k)$ are.
+
+
+% \section{Best-fit parameters and upper limits}
+% \label{sec:bootstrap}
+
+% % Discuss profile likelihood for the sigma v and the use of bootstrap to derive statistical uncertainty on the 95\% upper limits. 
+
+% In section \ref{sec:results} we defined the procedure to derive bounds for the annihilation cross section of DM. In order to derive the uncertainty band for that estimation, we adopt a bootstrap strategy. 
+% We identify the best-fit model for each DM mass, and for that model, we use the probability density function of eq.~(\ref{eq:mixture}) to sample 100 new datasets through Hamiltonian Monte Carlo \cite{2017arXiv170102434B} and the NUTS algorithm \cite{2011arXiv1111.4246H}. 
+% For each new simulated dataset, we derive the bounds on $\sigmav$ and compute the 95\% confidence interval for the resulting distribution of bound values. We display this interval as a gray band in figure~\ref{fig:bounds-bb}, which we identify as the uncertainty on our bounds for  the annihilation cross section of DM $\sigmav$.  \aure{move it to main text}
+
+
+
+
+%\begin{thebibliography}{99}
+%\bibitem{Bishop}{``Patern recognition and machine learning'', Bishop.}
+%\bibitem{CosmiXs}{CosmiXs: Cosmic messenger spectra for indirect DM searches, arxiv:2312.01153}
+%\end{thebibliography}
+\end{document}
+
+
+
+\section*{\red{Everything below is from the notes}}
+
+\section{Modelling the distribution of covariates} \label{sec:covariate_dist}
+
+
+This procedure is heavily inspired in the Mixture of Gaussians model discussed in detail in sec 9.2 to sec 9.3.1 in~\cite{Bishop}.
+
+Let $\bx$ be a set of covariates (or features), chosen to characterise the population of associated sources. The idea is to propose the following statistical model for the distribution $p(\bx)$:
+\begin{equation}
+    p(\bx) = \sum_{k=1}^K \pi_k p_k(\bx|\btheta_k)
+    \label{eq:p(x)a}
+\end{equation}
+\begin{equation}
+    p(\bx) = \left(\sum_{k=1}^K \pi_k p^{\rm assoc}_k(\bx) \right) M(\bx)
+    \label{eq:p(x)b}
+\end{equation}
+
+$ M(\bx) = \prod_d m(x_d; \btheta_d)$, where $ m(x_d; \btheta_d) =\rm{sigmoid(x_d;\btheta_d)}$, being $d$ the index running over the components of $\bx$. In eq.~(\ref{eq:p(x)b}), the index $k$ runs over all the $K$ components of the mixture distribution, corresponding to different types of sources. As a starting point one could consider, for example $K=5$ components: {\tt psr,fsrq,bll,bcu} as well as DM. Each type of source (corresponding to each value of $k$) will be modelled by a different probability distribution $p_k(\bx|\btheta_k)$, parametrised with its own vector of parameters $\btheta_k$. The coefficients $\pi_k$ should obey $\sum_k\pi_k=1$.
+
+As a first step the idea would be to take expr. \ref{eq:p(x)a} as the likelihood of the data, and maximise it wrt its parameters, both $\{\btheta_k\}$ and $\boldsymbol{\pi}=\{\pi_k\}$.
+
+The Maximum Likelihood Estimate (MLE) of this type of model is in general challenging, although one could always give a first try by brute-force optimization with some stochastic gradient descent algorithm implemented in tensorflow for example.
+
+A possibility discussed in~\cite{Bishop} is to follow the so-called Expectation-Maximization (EM) algorithm, which we briefly sketch next.
+
+
+% \subsection{The EM algorithm}
+
+% The proposal is to introduce latent binary vectors ${\bf z}_i$, corresponding to each data point $\bx_i$, where dim(${\bf z}_i)=K$. These latent variables are interpreted as the stochastic membership of point $\bx_i$ to the $k$th component of the mixture, in whose case all elements of ${\bf z}_i$ are zero, except for $z_{ik}=1$. In other words, ${\bf z}_i$ is a categorical random variable being represented with the one-hot-encoding scheme. The coefficients $\pi_k$ of the likelihood (\ref{p(x)}) are interpreted as the parameters determining the corresponding categorical {\it prior} distribution of ${\bf z}_i$, i.e. $p(z_{ik}=1)=\pi_k,~\forall i$, such that  
+% \begin{equation}
+%  p({\bf z}_i) = \prod_k^K \pi_k^{z_{ik}} ~.  
+% \end{equation}
+% With this interpretation for ${\bf z}_i$ having to do with the membership, we can identify $ p(\bx_i | z_{ik}=1) = p_k(\bx_i|\btheta_k)$, such that
+% \begin{equation}
+% p(\bx_i|{\bf z}_i) = \prod_k^K p_k(\bx_i|\btheta_k)^{z_{ik}}~.
+% \end{equation}
+% We then have all the elements to compute the {\it posterior} distribution of ${\bf z}_i$, as:
+% \begin{equation}
+% p(z_{ik}=1 | \bx_i) = \frac{p_k(\bx_i|\btheta_k) \pi_k}
+% {\sum_j^K p_j(\bx_i|\btheta_j) \pi_j} \equiv \gamma(z_{ik})~.
+% \label{gamma}
+% \end{equation}
+
+% In order to find the optimum parameters $\{\btheta_k\}, \boldsymbol{\pi}$, the idea is to consider the joint likelihood $p(\bx_i, {\bf z}_i)$ 
+% for the whole dataset of points $\bx_i$ with associated latent variables ${\bf z}_i$:
+% \begin{equation}
+% \label{p(X,Z)}
+% p({\bf X,Z}|\{\btheta_k\},\boldsymbol{\pi})
+% =\prod_i^N \prod_k^K [\pi_k p_k(\bx_i|\btheta_k)]^{z_{ik}}~.
+% \end{equation}
+% In spite of this apparent complication of introducing extra variables in the problem (i.e. the latent variables), expr.(\ref{p(X,Z)}) is arguably easier to optimise than the original likelihood $p(\bx|\{\btheta_k\},\boldsymbol{\pi}) = \prod_i p(\bx_i)$, where each term in the product is built as in expr.(\ref{p(x)}). One of the reasons for this is that, when computing the log-likelihood, expr.(\ref{p(x)}) leads to terms being the log of a sum, which are known to be computationally challenging, especially in the large $K$ regime. However, $\log p({\bf X,Z}|\{\btheta_k\},\boldsymbol{\pi})$ is very similar to the cross-entropy cost function, which is easily optimizable.  
+
+% An obvious problem is that in expr.(\ref{p(X,Z)}) we don't know the $z_{ik}$ variables. Then, the EM algorithm considers instead the expectation value of this likelihood (or more concretely, of the log-likelihood), under the posterior distribution of ${\bf Z}$, i.e.
+% \begin{eqnarray}
+% \label{E_log}
+% \mathbb{E}_{\bf Z} 
+% [\log p({\bf X,Z}|\{\btheta_k\},\boldsymbol{\pi}) ] =
+% \sum_{\bf Z} 
+% p({\bf Z}|\bx,\{\btheta_k\},\boldsymbol{\pi})~
+% \log p({\bf X,Z}|\{\btheta_k\},\boldsymbol{\pi})~.
+% \end{eqnarray}
+
+% Expr.(\ref{E_log}) is maximised according to the following iterative procedure:
+% \begin{enumerate}
+%     \item Initialize $\{\btheta_k\}=\{\btheta_k\}_{\rm old}$, and $\boldsymbol{\pi} = \boldsymbol{\pi}_{\rm old}$
+%     \item Evaluate $p({\bf Z}|\bx,\{\btheta_k\}_{\rm old},\boldsymbol{\pi}_{\rm old})$ 
+%     \item Plug the posterior obtained in step 2 into expr.(\ref{E_log}), such that now the only term containing the optimizable parameters $\{\btheta_k\},\boldsymbol{\pi}$ is the log-likelihood. So we get the expression:
+%     \begin{equation}
+%       Q(\{\btheta_k\},\boldsymbol{\pi}) \equiv
+%      \sum_{\bf Z} 
+%     p({\bf Z}|\bx,\{\btheta_k\}_{\rm old},\boldsymbol{\pi}_{\rm old})~
+% \log p({\bf X,Z}|\{\btheta_k\},\boldsymbol{\pi})~.  
+%     \end{equation}
+%     \item Update the parameters as:
+%     \begin{equation}
+%       \{\btheta_k\}_{\rm new},\boldsymbol{\pi}_{\rm new} =
+%       \underset{\{\btheta_k\},\boldsymbol{\pi}}
+%       {\rm argmax}~Q(\{\btheta_k\},\boldsymbol{\pi})
+%     \end{equation}
+%     \item Repeat above steps until convergence
+% \end{enumerate}
+% Note that in step 4 above, the optimization wrt $\boldsymbol{\pi}$ is analytical. By doing a Lagrange-multiplier optimisation with the condition $\sum_j \pi_j = 1$, it is straightforward to obtain:
+% \begin{equation}
+%     (\pi_k)_{\rm new} = \frac{1}{N}\sum_i^N \gamma(z_{ik})~,
+% \end{equation}
+% where $\gamma(z_{ik})$ is given by expr.(\ref{gamma}). The optimization wrt $\{\btheta_k\}$ will not be analytical in general, depending on how complicated the expressions for $p_k(\bx_i|\btheta_k)$ are.
+
+\subsection{Shapes of the mixture distributions}
+
+\subsubsection{Astrophysical components}
+%This is where the physics input is needed, to propose shapes of the different $p_k(\bx|\btheta_k)$ distributions.
+Every component of the mixture of distributions for the unassociated sources is modelled by implementing a covariate shift from the corresponding distributions of the associated sources. Since we only have samples of the latter (i.e. histograms defining the empirical distributions), it would be convenient to fit these empirical distributions to a smooth PDF, in order to have, a posteriori, analytical expressions for the distributions of the unassociated sources depending on optimizable parameters. 
+
+We thus propose to parameterize the distribution of each class among the associated sources using Kernel Density Estimation (KDE) (section 2.5.1 of~\cite{Bishop}), for example using a Gaussian kernel:
+
+\begin{equation}
+%p(\mathbf{x}) = \frac{1}{N}\sum_{n=1}^N \frac{\exp\left [ -\frac{||\mathbf{x}-\mathbf{x_n}||^2}{2h^2}   \right ]}{(2\pi h^2)^{1/2}}
+p_k^{{\rm assoc}}(\mathbf{x}) = \frac{1}{N}\sum_{n=1}^N {\mathcal{N}(\bx| \bx_n, \Sigma(h))]}~,
+\end{equation}
+where $\bx_n$ are the data points (as many dimensions as number of features), and the covariance matrix is typically taken to be either proportional to the identity, $\Sigma(h)=h\cdot\mathbb{1}$, or diagonal, $\Sigma({\bf h})={\rm diag}(h_1,h_2,...)$, depending on parameter(s) $h$ to be optimized\footnote{either set with a "rule of thumb" (see \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.gaussian_kde.html}{scipy documentation}) or by more sophisticated optimization (there is some literature on that in the documentation).}. The resulting pdf will potentially be greatly influenced by this parameter (which is the standard deviation of the Gaussian kernel). This kind of optimisation grows in difficulty with the number of features we study. Properly approximating the pdf of a multidimensional observable is in fact one of the most challenging and interesting modern problems, which is being studied (among other methods) with artificial intelligence techniques, such as normalizing flows and diffusion models. We will denote the distributions obtained this way as $p_k^A(\bx)$, where $A$ refers to the associated sources. Ultimately, defining the empirical pdf of the associated sources is an important step 0 that we need to perform before we go on trying to study the unassociated sources, and we will have to think of the best way to do it, with KDE being a good starting point. 
+\\~\\
+
+\subsubsection{Dark matter component}
+
+Given a DM mass and annihilation channel, the gamma-ray spectrum is completely defined, which lead to a single value of $\bx=\{\alpha,\beta\}$. However, in a realistic scenario the DM spectrum is not reconstructed perfectly: depending on statistics, on the location of the DM source and its flux, the foreground emission will limit our ability to extract the DM spectrum. Consequently, a given DM mass and annihilation channel will produce a distribution in $\bx$. This distribution, $p_{\rm DM}(\bx|\btheta_{\rm DM})$, is what we aim at modelling in this section. It will depend on the DM parameters
+\begin{equation}
+   \btheta_{\rm DM} = \{\langle\sigma v\rangle, m, {\rm ch.}\}~, 
+\end{equation}
+ where ch.$\equiv$ annihilation channel, $m$ the DM mass, $\langle\sigma v\rangle$ the annihilation cross section. The dependence on $\btheta_{\rm DM}$ comes entirely through the DM flux, since:
+
+\begin{equation*}
+    \red{\phi_{\rm DM} = \frac{1}{4\pi} \frac{\langle \sigma v \rangle}{2m^2} \int_{E_{\rm min}}^{E_{\rm max}} J\frac{dN_\gamma}{dE} \, dE ~ , }
+\end{equation*}
+
+
+ \begin{equation}
+  \phi_{\rm DM} = \frac{\langle\sigma v\rangle}{4\pi m^2} J N_\gamma~,   
+ \end{equation}
+\aure{check equation}
+
+ where $N_\gamma$ is the energy-integrated DM spectrum, depending on the DM mass and channel, and $J$ is the ``J-factor''. The latter has a distribution $p(J)$ that can be extracted from DM simulations. 
+Note that eq.~(\ref{eq:fluxDM}) implies that for the minimum flux $\phi_{\rm thres}$ corresponding to Fermi's detection threshold, increasing the value of  $\langle\sigma v\rangle$ implies to consider DM simulated sources with smaller values of $J$, down to 
+\begin{equation}
+  J_{\rm thres}(\btheta_{\rm DM})  \equiv 
+  \frac{m^2}{\langle\sigma v\rangle N_\gamma} \phi_{\rm thres}~.  
+\end{equation}
+
+Together with $\bx$, the J-factors are also stochastic quantities. We can thus write the joint distribution:
+\begin{equation}
+p(\mathbf{x},J) = p(J) \, p(\mathbf{x}|J) \equiv p(J) \, p_{\rm DM}(\mathbf{x}|\phi_{\rm DM}(J,\btheta_{\rm DM})) \, p_{\rm eff}(\phi_{\rm DM}(J, \btheta_{\rm DM})) \, ,
+\end{equation}
+where we have included by hand the detection efficiency 
+
+and the idea is to obtain our quantity of interest, $p_{\rm DM}(\bx|\btheta_{\rm DM})$, by marginalizing Expr.(\ref{eq:p_joint}) over $J$:
+\begin{equation}
+p_{\rm DM}(\mathbf{x}|\btheta_{\rm DM}) = \int_{0}^\infty dJ \, p(J) \, p_{\rm DM}(\mathbf{x}|\phi_{\rm DM}(J,\btheta_{\rm DM})) \, p_{\rm eff}(\phi_{\rm DM}(J, \btheta_{\rm DM})) \, ,
+\end{equation}
+
+where $p_{eff}(\phi_{\rm DM}(J, \btheta_{\rm DM}))$ is the detection efficiency, which is the probability of Fermi-LAT measuring a DM source with flux $\phi$. Note: we still need to decide how to define the efficiency, but a viable proxy would be to consider the fraction of simulated DM sources which have $\Delta TS = 2(\log(\mathcal{L}_{\rm MLE} - \log(\mathcal{L_0}))\gtrapprox 8$ .        
+
+By considering the simulations of DM halos from https://arxiv.org/abs/2309.02330 we can compute a histogram for the number of DM halos in a certain J-factor bin: $N(J_i)$. If I divide this quantity by the width of the bin, I obtain the number density $n(J) = dN/dJ$. In practice, since there are 1000 re-populations in the simulations, I further need to divide by 1000, to obtain the correct number density.  
+
+It is possible to write the 
+
+The procedure in order to compute Expr.(\ref{eq:pDM}) is the following:
+\begin{enumerate}
+    \item Define a grid in flux, in the range $[\phi_{\rm thres}, \phi_{\rm max}]$, where $\phi_{\rm max}$ is the maximum flux found among the unassociated sources of the current catalog.
+    \item For a given flux value $\phi_i$ of the grid, place $N_s$ DM sources randomly all over the sky. A proposal is to start with $N_s=10^4$. Avoid positions coinciding with any identified point or extended source.
+    \item Build a sky map by adding to those sources a foreground template and isotropic contribution. This is done according to a predefined energy binning. The proposal is to start with 4 bins per decade of energy, covering from 100MeV to 1TeV.
+
+    \item Fix a DM annihilation channel, mass, and cross-section. 
+    \item Reconstruct the dN/dE as a function of energy for every source, and fit a log-parabola in order to extract the values of the features $\bx$.
+    \item The histogram of all the values of $\bx$ obtained across the $N_s$ sources defines the distribution $p_{\rm DM}(\bx|\phi_{\rm DM}(J,\btheta_{\rm DM}))$. The J-factor value corresponding to this distribution is given by Expr.(\ref{eq:fluxDM}), since $\phi_{\rm DM}=\phi_i$ is fixed from step 2. In this sense, it is more convenient to rewrite this distribution as $p_{\rm DM}(\bx|J(\phi_i,\btheta_{\rm DM}))$ instead.
+    \item Marginalize over the J-factors using Expr.(\ref{eq:pDM})
+\end{enumerate}
+
+
+\section{Simulations}
+In order to determine $p_{\rm DM}(\bx|\phi, \btheta_{\rm DM})$, first we compute the energy spectrum $d\phi / dE$ for a specific DM source using CosmiXs~\cite{2024JCAP...03..035A}. By considering eq.~(\ref{eq:fluxDM}),  we realise that it is possible to determine the integrated flux in a specific energy bin by integrating the theoretical energy spectrum and multiplying it by a normalisation factor which sets the total gamma-ray flux of a source.
+
+We integrate the energy spectrum in 16 logarithmic energy bins within 100 MeV and 1 TeV and multiply it by the desired normalization in order to obtain the theoretical gamma-ray flux in each bin, given a fixed total flux. 
+
+Using this information, we can populate an empty sky map with an arbitrary number of DM sources, each of which has the same total gamma-ray flux. After adding the galactic foreground component and the isotropic background, we can fit each of those sources and use the resulting $\alpha$ and $\beta$ sets of parameters to construct an empirical distribution for $p_{\rm DM}(\bx|\phi, \btheta_{\rm DM})$. Specifically, we simulate 1000 sources per map, and we perform 20 Poisson realizations for each theoretical count map, in order to obtain 20 effective realizations for every fixed total flux, and a total of 20.000 sets of  $\btheta_{\rm DM}$. 
+
+\subsection{Parameter fitting}
+Since we are the ones performing the simulations, we have some extra information that normally wouldn't be available while building a catalogue. In particular, we know the real position of the source and its theoretical gamma-ray flux. As such, a simplified fitting procedure can be performed for each DM source. 
+
+The core idea is to perform a Poisson likelihood fit for each source, which means optimising the following negative log likelihood:
+\begin{equation}
+    NLL = -\sum_{e=1}^{N} \log \mathcal{P}(k_e, \lambda_e) ~,
+    \label{eq:nll}
+\end{equation}
+
+where $k_e$ are the counts contained in a finite region around a specific source in the energy bin $e$, and $\lambda_e$ are the relative theoretical counts.
+As such, $\lambda_e$ will be given by:
+
+\begin{equation}
+    \lambda = \lambda_{gal} + \lambda_{iso} + \lambda_{S \neq S_i} + \lambda_{S_i}
+\end{equation}
+$\lambda_{gal}$ is the galactic foreground template,  $\lambda_{iso}$ are the counts due to the isotropic background,  $\lambda_{S_i}$ are the counts associated to a specific source $i$ (which we model using a log-parabola, goal of our fitting) while $\lambda_{S \neq S_i}$ are the theoretical counts due to all the other sources (which are known and given by the DM energy spectrum convoluted with the exposure). 
+
+$\lambda_{S_i}$ is modeled with a log parabola of this form:
+\begin{equation}
+    \lambda_{S_i, e} = \sum_{x\in disc}\left[\int_{E_{min}^e}^{E_{max}^e} \phi_{0,i}\frac{E}{E_0}^{-\alpha_i - \beta_i\log(E/E_0)} dE\right] \cdot {\rm PSF_{i,x}^e} \cdot {\rm exposure_{x}^e} \cdot \frac{4\pi}{12 N_{\rm side}^2} \cdot C_{\rm perc}^e 
+    \label{eq:lambda}
+\end{equation}
+where $x$ denotes a specific pixel of the map in a disc around the fit source, and $C_{\rm perc}$ is the containment percentage associated to the that disc.
+
+For each source, we consider a disk of radius equivalent to the 68\% containment angle of the PSF, relative to each energy bin. For a given resolution (in this case, we are working with nside=256) it might occour that the 68\% containment angle for a specific energy bin might be smaller than the distance between two pixels. For this reason, for high energies it is impossible to consider exactly the 68\% containment angle. In order to have better statistic, we thus consider a disc of radius greater then the distance between the center of two pixels, and we compute the effective containment angle associated to that radius. This means that for every source, we will consider a containment angle greater or equal to the radius associated to 68\% containment.
+
+In practice the fit algorithm is the following:
+
+\begin{itemize}
+\item Fix the $m_{DM}$, choose an annihilation channel, and choose a total flux $\phi^\prime$
+\item Simulate an associated theoretical counts map for 1000 DM sources in the sky, and perform a Poisson realisation to get a map in units of effective counts: $\mathcal{M}$
+\item From the theoretical map, subtract the theoretical (known) pixel-counts due to $S_i$. We will call this map $\mathcal{M}_i$
+\item For each energy bin, identify the disc around a source which has a radius $\geq$ than the 68\% containment angle, as detailed previously
+\item From $\mathcal{M}_i$, for each energy bin extract the counts in the pixels of the disc (each bin will have an associated disc of different radius, as the PSF varies with the energy). This yields the $ \lambda_{gal} + \lambda_{iso} + \lambda_{S \neq S_i}$ term
+\item Add the term from eq.~(\ref{eq:lambda}) to obtain the total $\lambda$ to be plugged in eq.~(\ref{eq:nll})
+\item Optimise the negative log likelihood in order to find the MLE parameters for $\phi_0^i$, $\alpha^i$ and $\beta^i$
+\item Repeat the procedure for each source in the sky and for each desired poisson realization of the theoretical map, in order to obtain the distribution $p_{\rm DM}(\bx|\phi^{\prime}, \btheta_{\rm DM})$ for a specific total flux $\phi^\prime$ 
+\end{itemize}
+
+\subsection{Refinement of $p_{DM}$ (WIP)} 
+
+When building $p_{\rm DM}(\bx|\phi^{\prime}, \btheta_{\rm DM})$ , we would like to include in the histograms for $\alpha$ and $\beta$ only those sources which have a "high enough" significance to be potentially detected by Fermi LAT. Specifically, we would like to include in the building of the histogram only those sources for which $\Delta TS = 2(\log(\mathcal{L}_{\rm MLE} - \log(\mathcal{L_0}))\gtrapprox 25$
+
+
+\section*{(Old things we tried/thought, but not longer used.)}
+On the other hand, in principle, we could model the pdf of the unassociated sources as $p_k^U(\bx) = p_k^A(\bx)M(\bx)$ as proposed in section~\ref{sec:covariate_dist}. Unfortunately, while this recipe is valid, it requires to normalize again the distribution(s) of unassociated sources (since the fitting parameters inside $M(\bx)$ will also enter in the normalization), and the problem becomes difficult to deal with numerically as the dimensionality of \textbf{x} increases. 
+%Taking inspiration from normalizing flows (\href{https://arxiv.org/abs/1908.09257}{abs/1908.09257}) we still try to model the distribution of the unassociated sources as a function of the distribution of associated sources, but instead of directly modifying the pdf we propose a coordinate change (a bijection) that connects the known distributions $p^A_k(\bx)$ to the unknown distribution of the unassociated sources $p^U_k(\bx)$. 
+
+
+For example, let's imagine the following situation, where we are only modeling one class $k$ of associated vs unassociated sources, such that the distribution of the associated sources is a Gaussian with mean 0 and variance 1, and the true distribution of unassociated sources is also a Gaussian but with mean 2 and variance 1 (figure~\ref{fig:shift}). It is possible to map the distribution of associated sources into that of unassociated sources through the function $y=f(x) = x+2$. Furthermore, once $f(x)$ is defined, it is easy to write the pdf of the derived variable $Y$as:
+\begin{equation}
+p_Y(y) = p_X(f^{-1}(y))\left|J(f^{-1}(y))\right|^{-1}~,
+\end{equation}
+where $J$ is the Jacobian of the transformation. %In this case, $p_2(y) = p_1(y-2)$. 
+This ensures that the new distribution is already normalized, and it becomes easy to perform maximum likelihood estimation of the parameters of a potential transformation $f(x;\btheta)$. Of course, $f(x): \mathbb{R} \to \mathbb{R}$, since the domain of $Y$ and $X$ should be the same.
+One convenient possibility is to use a rescaled sigmoid (as proposed before), now written in the form:
+\begin{equation}
+f(x; \btheta) = \frac{2a}{e^{-b(x-c)}+1} + c - a 
+\label{eq:bijec}
+\end{equation}
+
+where $\btheta = \{a,b,c\}$. This sigmoid maps $\mathbb{R} \rightarrow [c-a,c+a]$, as such $a$ must be chosen big enough to guarantee $p_k^A(c+a)=p_k^A(c-a)=0$.
+If $a$ is large enough, this bijection has the advantage that by tuning $a$ and $b$ it can behave as the identity. At this point fixing $b$ and modifying $c$ will result in a rigid shift of the distribution. Otherwise fixing $c$ and modifying $b$ or $a$ will result in a stretching of the distribution. Modifying all the 3 parameters simultaneously can make the distribution more asymmetric, which is also an interesting possibility. 
+As such, this can be a good starting point for a bijection to take us from the empirical distribution of associated sources to the one of unassociated sources. 
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{img/shift.pdf}
+    \caption{Example of a "shift" bijection}
+    \label{fig:shift}
+\end{figure}
+
+In the multivariate case, we could as a first exercise consider all the features to be independent, so for each dimension we would have a term like expr.(\ref{eq:bijec}). Writing this for every component $k$ of the mixture, we have:
+\begin{equation}
+  f_k(\bx; \{\btheta_{d,k}\}) = (f_{k,1}(x_1;\btheta_{1,k}), \, ... \, , f_{k,D}(x_D;\btheta_{D,k}))
+\end{equation}
+%At this point, we can define a bijection for each component k, create a mixture of transformed empirical dsitributions, and fit that to the data (the unassociated sources) as described in Sec \ref{sec:EM}. 
+In practice this would mean fitting $(3*D*K)+K-1$ parameters (i.e. 3 parameters per feature $d$ per component $k$, plus the mixture weights, which are $K-1$ independent parameters).
+
+

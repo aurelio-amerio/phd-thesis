@@ -1,0 +1,102 @@
+
+Comments from Dima:
+
+- line 61. @Miguel or Viviana: general N-body DM simulations references
+Dima: I've also added a couple of my favorite VL-II papers in Nature and Science.
+
+- line 611. @Bryan: add grants
+
+-- done
+
+- general. mention prior on beta!
+
+-- Dima: I've added information about priors on beta in point 5 on page 12 (marked in red).
+
+-- Aure: thanks! removed red color -> done
+
+Comments from Bryan:
+
+- I have rephrased the abstract. Concretely, a phrase somehow at the beginning, but mainly the last sentence which seemed to me likely to give a negative impression. I have reworded it for a more optimistic message, I think.
+
+Dima: the abstract looks good to me. I've edited the last sentence a bit to mention that, in general, our approach also opens new avenues searches of anomalies in presence of statistical and systematic uncertainties, i.e., I think our analysis has a much broader applicability than the analysis of Fermi-LAT sources.
+
+-- done
+
+- Introduction, sentence around line 88, when explaining the "classify-and-count" practice. It is not clear -at least to me- what are the "DM subhalo candidates" mentioned there. Maybe it is worth clarifying this method a bit further.
+
+Dima: "candidates" are sources consistent with expectation for DM subhalos, it seems self-evident to me, i.e., I'm not sure if we need to mention that (at least it would look strange to me).
+
+-- done
+
+- Discussion around line 166. Note that in our previous paper with Miguel and Viviana, we do consider ML classifiers which estimate p(x|k) (cf Naive Bayes and GP for classification), although we certainly didn't do a dedicated analysis of this conditional probability. I don't know now how to correct this without being in detriment of our present "primer" analysis of p(x|k)
+
+Dima: I have always been in favor of the joint probability p(x, k) rather than the conditional p(x|k). The current text looks OK to me. I guess we could also mention that p(x|k) has been used in previous analyses (with the references) but not for a construction of a statistical model.
+I've added a sentence in lines 185-187 about that.
+
+-- done
+
+- can we switch notation, so having \tilde{p}_unas for eq.2.4 and simply p_unas for eq.2.5 ? after all, the latter is our model and the tilde may be distracting. The same applies to C(x) and \tilde{C}(x)
+
+Dima: I'd keep the current notations to stress that C(x) with tilde is not the standard covariate shift but a modified one.
+
+-- done
+
+-  we simulate 20.000 DM halos...how is this quantity chosen? we should justify it somehow
+
+Aure: This is explained better at line 751 in the appendix, and I will clarify this further in the text. We don't simulate 20.000 DM sources. We simulate 10.000 sources (given that the 4FGL catalog has 9000+ sources, we rounded that number up) and perform additional simulations (so at least a total of 2) until we detect at least 20.000 sources. Shall we reference the appendix here for more information? 
+I should clarify why 10.000 -> compromise between number of simulations, and number of subhalos detected per simulation. Add clarification in appendix and/or footnote in main text
+
+Dima: I've modified Step 7 on page 12 to reflect the fact that we perform simulations until we either haved 20,000 sources or 1,000 simulations.
+
+-- done
+
+- step 5 (line 375). "We fit the gamma-ray data around each of the simulated DM halos...". This is not  well defined: can we quantify precisely "around"? what area we choose?
+
+Aure: This is explained in detail  at line 793 in the appendix, we should reference it in the main text
+
+Dima: I've added a general information on the radius in point 5 and a reference to Appendix A.
+
+-- done
+
+- I'm now thinking that it is not ideal to call Sect.4 "Limits on DM annihilation cross section", since in that section we first show our results (figs.5 and 6) of our model, which btw is the most interesting outcome of our work in my opinion. We can simply call this section "Final results" ?
+
+Dima: that's a good point. However, I'm generally in favor of more descriptive titles, e.g., "Limits on ..." rather than more abstract ones, such as "Final results", which can mean anything. Section renamed as: "Mixture model of gamma-ray sources and limits on DM annihilation"
+
+-- done
+
+- I've rephrased the paragraph about Semi-Supervised Learning (below eq.4.1). I think it is clearer and more concise now.
+
+Dima: looks good to me. I've removed "somehow", which sounds a bit colloquial to me for a paper.
+
+-- done
+
+- Discussion around figs.5 & 6. Those results are just presented but not discussed. It would be nice to have some minimum discussion about it. For example, the fact that the distribution of the galactic component seems to be higher in the high-alpha & high-beta region for unassociated sources wrt the associated sources. I think this is an effect of the C(x) function we fitted. This could be interesting.
+
+Dima: very good point. I've added some discussions about figures 5 and 6 in lines 442 - 449 and for figures 7 and 8 in lines 455 - 459.
+I'm not sure if we need more than that.
+Aure: talk about figure 5 and 6 (prior shift, and covariate shift)
+
+-- done?
+-- Aure: I think it should be enough, it seems clearer to me
+
+
+- Discussion around lines 443-448, right before starting to talk about the DM limits. I think it would be nice to support that paragraph with some figures, like fig 8-right but for other DM setups (even other masses). I don't want to make all the combinatorics here between J-factors, sigmav & masses, but maybe if we agree about, say, 4 setups (incl. the one in fig.8, so three more) to show in 4 panels in a new figure only about the DM contribution. That would be nice in my opinion.
+
+If we want to add another figure where we compare sigmav values and Jfactors, I propose we choose one mass, for example 100GeV, and we plot the full width half maximum curve level for different choices. We could make two plots: one where we fix the Jfactor and change sigmav, and one where we fix sigmav and change the Jfactor. This would give an intuition of how the distribution changes without having to plot the full distribution. What do you think? 
+On the other hand, I'm not sure how fundamental this is, and I fear it might dilute the discussion even further. 
+
+-- Aurelio is working on some contour plots to compare different distributions: now added in a new figure (figure 5).
+
+-- done
+
+- Sect. 5 (Conclusions). I had the impression when reading it that the conclusions have been rewritten several times and some parts are written as if talking about something for the first time, which is not the case. So there is no natural flow of the discussion, and I think we still need to iterate over it. I will try to iterate on it tomorrow. 
+
+The conclusions have been reformulated by Bryan and Dima
+
+-- done?
+
+
+Feedback on the paper: 
+- give some examples regarding these points for other/future telescopes (like LHAASO or IceCube)
+searches of anomalies on top of backgrounds in presence of statistical and systematic uncertainties. (Abstract)
+searches of anomalies in distributions for datasets exhibiting both covariate and prior shifts, where the target data is unlabeled (Conclusions)
