@@ -1,0 +1,22 @@
+% Paper 2: Extracting the gamma-ray source-count distribution below the Fermi-LAT detection limit with deep learning
+% Authors: A. Amerio, A. Cuoco, N. Fornengo
+% Published in JCAP
+%
+\chapter{Extracting the gamma-ray source-count distribution below the Fermi-LAT detection limit with deep learning}
+\label{ch:dnds}
+
+% Abstract converted to introductory paragraph
+We reconstruct the extra-galactic gamma-ray source-count distribution, or $\dnds$, of resolved and unresolved sources by adopting machine learning techniques. Specifically, we train a convolutional neural network on synthetic 2-dimensional sky-maps, which are built by varying parameters of underlying source-counts models and incorporate  the  \fermi instrumental response functions. The trained neural network is then applied to the \fermi data, from which we estimate the source count distribution down to flux levels a factor of 50 below the \fermi threshold.
+We perform our analysis using 14 years of data collected in the $(1,10)$ GeV energy range. The results we obtain show a source count distribution which, in the resolved regime, is in excellent agreement with the one derived from cataloged sources, and then extends as $\dnds \sim S^{-2}$ in the unresolved regime, down to fluxes of $5 \cdot 10^{-12}$ cm$^{-2}$ s$^{-1}$. The neural network architecture and the devised methodology have the flexibility to enable future analyses to study the energy dependence of the source-count distribution.
+
+\input{sections/introduction}
+\input{sections/data_selection}
+\input{sections/synthetic_map_generation}
+\input{sections/nn_architecture_training}
+\input{sections/results}
+\input{sections/conclusions}
+
+%% Appendices (chapter-level)
+\begin{subappendices}
+\input{sections/appendix_further_tests}
+\end{subappendices}

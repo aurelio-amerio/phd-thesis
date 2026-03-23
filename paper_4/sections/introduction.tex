@@ -1,0 +1,93 @@
+\section{Introduction}
+\label{sec: intro}
+The nature of dark matter (DM) remains one of the biggest mysteries in astrophysics.
+N-body cosmological simulations predict that galaxies, such as the Milky Way, are surrounded by a cloud of DM overdensities, which are called subhalos \cite{2001MNRAS.328..726S,2007ApJ...667..859D,2008Natur.454..735D,2009Sci...325..970K,2012AnP...524..507F,2019Galax...7...81Z,2020NatRP...2...42V}.
+Subhalos with masses above ${\sim 10^8~M_{\odot}}$ are expected to contain stars: these subhalos are detected as dwarf spheroidal galaxies.
+Smaller and more numerous subhalos may have no usual matter (such as stars or dust) inside them.
+In this paper, we focus on subhalos with masses smaller than ${\sim 10^8~M_{\odot}}$, which are not associated to
+dwarf spheroidal galaxies.
+These subhalos can be detected either by gravitational effects or through annihilation or decay of DM particles into Standard Model (SM) particles.
+One of the most popular types of particle DM candidates is the Weakly Interacting Massive Particle (WIMP) with masses in the GeV -- TeV range annihilating into SM particles, such as $b\bar{b}$ or $\tau^+\tau^-$ 
+%refs:WIMP DM review
+\cite{2016PhR...636....1C, 2017NatPh..13..224C, MiniReview_Gammaldi}.
+For sufficiently large masses of DM particles, e.g., above about 1 GeV, DM annihilation events in subhalos can be detected by the {\Fermi} Large Area Telescope (LAT).
+Although DM subhalos may emit radiation at other frequencies, e.g., in radio wavelengths due to synchrotron radiation from the electrons and positrons created in DM annihilations, the corresponding signal is expected to be small for DM subhalos with masses less than ${\sim 10^8~M_{\odot}}$ \cite{2015JCAP...02..032C} (the radio emission from the dwarf spheroidal galaxies can be rather significant but has large uncertainties \cite{2007PhRvD..75b3513C, 2013PhRvD..88h3535N, 2014JCAP...10..016R}).
+As a result, the DM subhalos would primarily manifest themselves as a population of unassociated gamma-ray sources in {\Fermi}-LAT catalogs with approximately isotropic distribution in the sky 
+%refs:DM subhalos as unassoc sources
+\DMsubhaloUnas.
+
+
+The latest \Fermi-LAT catalog (4FGL-DR4)~\cite{2022ApJS..260...53A, 2023arXiv230712546B} contains 2428 unassociated sources (unIDs), which is about one third of all detected sources.
+Among these sources, 1282 are at latitudes $|b| > 10^\circ$.
+Provided that unIDs have no known counterparts at other wavelengths, these gamma-ray sources are natural candidates to search for DM-dominated subhalos shining in gamma rays
+due to DM annihilation.
+The problem is that the majority of unIDs are expected to be astrophysical sources, where the lack of association can be due to poor localization of the gamma-ray source or, in case of pulsars, beaming effects.
+
+The search for DM subhalos has been previously performed with the ``classify-and-count'' strategy, where a number of DM subhalo candidates has been selected either based on their gamma-ray properties 
+consistent with the expectations for DM subhalos~\DMsubhaloHand, or based on classification of gamma-ray sources with machine learning (ML)~\DMsubhaloML.
+The limits on DM annihilation have been derived assuming that there cannot be more DM subhalos among \Fermi-LAT unIDs than the number of DM subhalo candidates.
+
+A general caveat of previous searches of DM candidates based on gamma-ray properties is that the same source may be consistent both with a DM subhalo as well as an astrophysical source, e.g., an active galactic nucleus (AGN) or a pulsar.
+Thus, unless there is a smoking gun signature of a DM subhalo, such as a physical extension consistent with the distribution of DM 
+%refs:DM subhalos by extension
+\cite{2014PhRvD..89a6014B, 2015JCAP...12..035B, 2017PhRvD..96f3009C, 2022PhRvD.105h3006C, 2019JCAP...11..045C}, this analysis does not allow one to claim a detection of a population of DM subhalos among \Fermi-LAT unIDs.
+Although one can estimate an upper limit on DM annihilation assuming that the number of DM subhalos cannot exceed the number of DM subhalo candidates,
+it is, nevertheless, challenging to calculate a statistical significance of the DM exclusion.
+For instance, in ML-based approaches the estimate of the number of DM subhalo candidates depends on the threshold for the probability that an unassociated source is a DM subhalo.
+The threshold is selected by hand, i.e., it is not based on a statistical argument. In addition, the probability itself that a source is a DM subhalo depends on the training dataset, e.g., on the choice of the fractions of DM-like and astrophysical sources. Usually one uses 50/50\% split of astrophysical and DM subhalo sources based on the requirement that the classes are balanced in the training dataset (smaller or larger fractions of DM-like sources in the training dataset would result in respectively smaller or larger predicted DM-like probabilities). However, the 50\% fraction of DM-like sources in the training dataset does not come from data, provided that there are no DM subhalos among associated sources. If one, for example, uses balanced classes for classification of sources into pulsars and AGNs, then one would predict a larger fraction of pulsars among unassociated sources
+than what would be expected from associated sources, where there are almost 10 times more AGNs than pulsars. Such bias coming from balancing of classes has to be corrected (calibrated) in order to obtain realistic class probabilities.
+For the calibration one would use a realistic testing dataset, which is not available for the DM subhalos (since none of them has been found in gamma-ray data).
+The problem of difference of class prevalences for training and testing (or target) datasets is known as prior shift.
+Similar problem (implicitly) exist for searches of DM subhalos, which are not based on ML estimates of DM-like probabilities.
+
+Another problem, which affects the searches of DM subhalos but has not been addressed in the literature so far (e.g., in the classify-and-count approach) is that the distribution of associated and unassociated sources are different as a function of most of features, such as flux, spectral index, spectral curvature, variability etc.~\cite{2022ApJS..260...53A, 2023RASTI...2..735M}.
+This difference can be due to bias in associations, e.g., it is easier to associate bright sources at high latitudes (cf. covariate shift discussion in section~\ref{sec:cov_prior}). It may also be a signature of a new class of sources, such as DM subhalos (cf. prior shift discussion above and in section~\ref{sec:cov_prior}).
+A priori the reason for the differences in the distributions is not known. As a result, one needs to put additional constraints, e.g., on the association bias, in order to break the degeneracy between the association bias and the presence of a new class of sources.
+
+In other words, the distributions of associated and unassociated \Fermi-LAT gamma-ray sources are different as a function of source parameters.
+This difference may be due to association bias (described by covariate shift), different fractions of astrophysical classes of sources (described by prior shift), or there may be a new class of sources, e.g., DM subhalos (which is a particular case of a prior shift - from zero to non-zero prevalence).
+A solution to this problem is not possible in the classify-and-count approach, since it relies on the prior assumptions of the prevalence of classes, which cannot be adjusted in the absence of a realistic testing set.
+In order to overcome the limitation of the classify-and-count approach we use, for the first time in searches of DM subhalos, a different analysis method referred as quantification learning rather than classification.
+
+The main purpose of quantification analysis 
+%refs:quantification reviews
+\cite{10.1145/3117807_Gonzalez_quantification, 2022arXiv221108063M, esuli2023learning} 
+is to accurately predict the prevalence of classes rather than to optimize the performance for classification of individual sources, which is the main goal of classification analysis.
+One of the methods in quantification learning is known as template matching~\cite{2024arXiv240100490M}. It is familiar in astrophysics in modeling of large-scale radio, X-ray, or gamma-ray emission as a linear combination of templates based on tracers of the different components of emission, e.g., the distribution of dust is used as a tracer of hadronic component of diffuse gamma-ray emission due to interactions of high-energy cosmic rays with gas.
+
+In this paper, we construct for the first time a statistical model for the distribution of unassociated sources at latitudes $|b| > 10^\circ$.%
+\footnote{We exclude sources with $|b| < 10^\circ$, since the main background in this analysis is the astrophysical sources among the unassociated ones. Almost half of the unassociated sources (1146 out of 2428) are within this range of latitudes and most of them are expected to be the astrophysical Galactic sources. The decrease in the area, on the other hand, is about 17\%, i.e., assuming an isotropic distribution of DM subhalos around the Earth, the increase in signal-to-noise ratio due to masking of the Galactic plane can be estimated as $ (1. - 0.17) \sqrt{2428/1146} \approx 1.14$.
+This increase is likely larger due to higher flux detection threshold (smaller detectability volume for DM subhalos) toward the Galactic plane, i.e., the decrease in signal is less than 17\% as a result of masking the Galactic plane.
+}
+It consists of a mixture model, i.e. a linear combination of probability distribution functions (PDFs)
+of classes of astrophysical sources plus a contribution of DM subhalos.
+The PDFs of classes of astrophysical sources are determined from the associated sources, while the distribution of DM subhalos is determined from Monte Carlo simulations assuming a model of J-factors from N-body DM simulations and particular parameters for DM (mass, annihilation cross section, and channel).
+The prior shift problem is addressed by fitting the relative contribution of the different components to the data (the distribution of unassociated sources), while the covariate shift problem is addressed by adding a modulation to the PDFs of the classes of associated sources (the parameters of the modulation are also fit to the data simultaneously with the class prevalence).
+
+In more formal terms, 
+we construct PDFs of astrophysical classes, denoted as $p(\bx|k)$,
+which represent the probability of a source with features $\bx$ given a source class $k$. 
+The PDFs for unassociated sources are determined by modulating the PDFs of the associated ones by functions of input features $\bx$ (these functions are the same for all classes $k$).
+Previous supervised learning studies have focused on estimating the conditional probability $p(k|\bx)$ of the class of source $k$ given the input features 
+%refs:DM subhalos ML
+\FermiMLclassif, as typically done by probabilistic classification models.
+Estimating $p(\bx|k)$ instead brings several crucial advantages. First of all (see section~\ref{sec:approach}), it allows us to model the difference between distributions of associated and unassociated sources as a combination of both covariate and prior shifts.
+The latter allows us to model the different prevalence of classes of astrophysical sources for training (associated sources) and target (unassociated sources) datasets as well as to include a new class of sources among the unassociated ones, which in this analysis is modeled as DM subhalos.
+Moreover, upon specification of the class prior $p(k)$, the joint distribution $p(k,\bx)=p(\bx|k)p(k)$ can be sampled to generate mock data, which can be used in Monte Carlo analyses.\footnote{That's why probabilistic models estimating $p(\bx|k)$ are called ``generative models'', as opposed to ``discriminative'' models focusing on $p(k|\bx)$.} Finally, the joint PDF  $p(\bx, k)$ can be marginalized over the class $k$ to estimate $p(\bx)$, i.e., the marginal distribution of the source features. 
+The quantity $p(\bx)$
+represents a probability density for a source with parameters $\bx$. 
+The product of $p(\bx_i)$ over unassociated sources is the model likelihood, which we maximize to obtain the optimum model parameters both for the prior and covariate shifts.
+In particular, we use such likelihood to estimate the best fit and upper bounds on the DM annihilation cross section $\sigmav$.
+Although generative models have been constructed previously in analyses of \Fermi-LAT source distributions, e.g. \cite{2023MNRAS.520.1348G}, they were not used for construction of maximum likelihood models, which we do in the current work.
+
+The paper is organized as follows.
+In section~\ref{sec:data},
+we describe the selection of the data.
+We discuss the covariate and prior shifts in section~\ref{sec:cov_prior}. We present our statistical model in section~\ref{sec:stat-model}. 
+The model of J-factors used in this paper is reviewed in section~\ref{sec:sim-jfactor}, while the simulation of gamma-ray sources corresponding to DM subhalos is presented in section~\ref{sec:DM_model}. 
+We optimize the model in section~\ref{sec:model-opt}, while
+the corresponding limits on DM annihilation determined from the observed gamma-ray sources are presented in section~\ref{sec:dm-limits}.
+Section~\ref{sec:conclusions} contains discussion and conclusions. 
+We provide details about the statistical model and
+perform several \old{model performance and} consistency tests in appendices.
+

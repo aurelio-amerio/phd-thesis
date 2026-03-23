@@ -1,0 +1,28 @@
+% Paper 4: Search for dark matter subhalos among unassociated Fermi-LAT sources
+%           in presence of dataset shift
+% Authors: Aurelio Amerio, Dmitry V. Malyshev, Bryan Zaldívar,
+%          Viviana Gammaldi, Miguel A. Sánchez-Conde
+% Published in JCAP
+%
+\chapter{Search for dark matter subhalos among unassociated Fermi-LAT sources in presence of dataset shift}
+\label{ch:dm_halos}
+
+% Abstract converted to introductory paragraph
+We present a search for dark matter (DM) annihilating subhalos of the Milky Way halo among the {\Fermi} Large Area Telescope (LAT) unassociated sources. For this purpose, we construct the first statistical model of the unassociated sources at latitudes above 10 degrees, combining potential DM subhalos with Galactic and extragalactic astrophysical components. 
+The distributions of astrophysical sources are constructed based on associated sources, while the DM subhalo distribution is derived from Monte Carlo simulations. We account for differences between associated and unassociated source distributions using a model with covariate and prior probability shifts, which are particular cases of more general dataset shifts. 
+This approach is based on quantification learning, advancing beyond previous classify-and-count strategies by providing a well-defined statistical interpretation of the potential contribution from a DM subhalo population. 
+For the $b\bar{b}$ annihilation channel and DM masses from 10 GeV to 1 TeV, we find no significant contribution from DM subhalos, and therefore derive 95\% confidence upper limits on the annihilation cross section.
+Our analysis yields limits consistent with previous classify-and-count approaches, 
+while the underlying generative model provides a more robust statistical framework, opening new avenues for population studies of \Fermi-LAT sources and, more generally, for searches of anomalies, such as a new class of sources in addition to the known classes of sources, in presence of statistical and systematic uncertainties.
+
+\input{sections/introduction}
+\input{sections/statistical_analysis}
+\input{sections/dm_subhalos_model}
+\input{sections/mixture_model_and_limits}
+\input{sections/conclusions}
+
+\begin{subappendices}
+\input{sections/appendix_simulation}
+\input{sections/appendix_em_algorithm}
+\input{sections/appendix_consistency_checks}
+\end{subappendices}

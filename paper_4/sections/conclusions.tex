@@ -1,0 +1,29 @@
+\section{Discussion and conclusions}
+\label{sec:conclusions}
+In this work, we have searched for DM annihilating subhalos among the unassociated \Fermi-LAT sources. We developed the first fully probabilistic model of gamma-ray sources, incorporating both known astrophysical source classes and a potential new population of gamma-ray sources modeled as DM subhalos annihilating into Standard Model particles. 
+
+We characterize gamma-ray sources using their  energy spectra fitted by the log-parabola function.
+We take the parameters $\bf x$ of the log-parabola fit as the input features. 
+We then
+construct a probabilistic model $p({\bf x})$ for the unassociated sources as a weighted mixture of three source classes: Galactic and extragalactic astrophysical sources plus the hypothetical DM subhalos. The Galactic and extragalactic components encompass various source types classified by the \Fermi-LAT collaboration. We analyze data shifts between associated and unassociated sources within a general framework of quantification learning, considering two effects: (1) a covariate shift affecting all source classes in the same way, and (2) a prior probability shift, which allows for changes in class prevalence, including the possible presence of a new source class among the unassociated sources.
+
+The astrophysical components of the mixture model are the conditional PDFs $p({\bf x}|k)$ for the two astrophysical classes $k$, Galactic and extragalactic.
+They are built from the corresponding empirical distributions of the associated sources, modified by an optimizable covariate-shift function. The DM subhalo component of the mixture is determined by Monte Carlo simulations based on a set of DM parameters (mass, annihilation channel, and cross section), including the distribution of J-factors coming from N-body simulations. The global likelihood of the model is obtained by multiplying the PDFs $p({\bf x}_i)$ of the unassociated sources $i$ with ${\bf x}_i$ inside the range of parameters that we consider. 
+
+By optimizing the model likelihood, we extract the best-fit parameters, including $\sigmav$, for various DM masses in the $b\bar{b}$ annihilation channel.
+No significant excess corresponding to DM subhalos is observed beyond Galactic and extragalactic sources.
+Consequently, we derive 95\% upper bounds on the DM annihilation cross section. To our knowledge, this is the first time an upper bound on DM annihilation has been obtained by constraining the contribution of DM subhalos to unassociated \Fermi-LAT sources using a maximum likelihood approach.
+Our constraints are competitive with previous limits derived from DM subhalo searches using classify-and-count methods.
+With respect to the latter, our approach, based on quantification learning, offers several advantages :
+\begin{enumerate}[label=(\roman*)]
+    \item It accounts for differences in distributions (data shifts) between associated and unassociated source populations.
+    \item It determines the potential contribution of a new hypothetical source population, e.g., the DM annihilating subhalos, without imposing ad hoc assumptions on its fraction relative to known sources. This is a key advantage over traditional supervised machine learning classification.
+    \item The probabilistic model enables one to generate mock data (samples of unassociated sources), which we use to validate our approach and estimate the uncertainties of the upper bounds on the DM annihilation cross section. 
+    \item The model provides both the PDF $p({\bf x}|k)$ of observed source features ${\bf x}$ given a source class $k$ (either astrophysical or DM), and the posterior probability $p(k|{\bf x})$ of a source belonging to a given class based on observed features.
+\end{enumerate}
+Thus, our approach allows one not only to determine
+the conditional probabilities $p(k|{\bf x})$, which is the main objective of ML classification models, but also to estimate the overall likelihood of the model given the distribution of unassociated sources. This likelihood serves as a tool to search for, or constrain, a new class of sources absent from the training data, i.e., the associated \Fermi-LAT sources.
+
+This work bridges the gap between ML approaches for characterizing unassociated sources traditionally focused on classification and the standard astrophysical analysis using maximum likelihood models. As a result, we construct a model capable of both classifying sources and constraining a new source population. 
+Our approach is broadly applicable to searches of anomalies in distributions for datasets exhibiting both covariate and prior shifts, where the target data is unlabeled.
+
