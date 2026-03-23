@@ -19,7 +19,7 @@ we first compare the performance of four models in eq. (\ref{eq:mixture}) withou
 
 The model without either prior or covariate shifts is constructed from the catalog of associated sources following sections \ref{sec:cov_prior} and \ref{sec:stat-model}, where the prior probability of a class is given by the relative class prevalence $\pi_k$ in the 4FGL-DR4 catalog, while the PDFs of the Galactic and extragalactic components are derived from the corresponding associated sources.
 The model with either prior or covariate shift follows eq. (\ref{eq:mixture}), 
-where we fix the covariate shift modulation to be equal to 1 (i.e., $\tilde{C}(\bx; \btheta_{\rm cov}) = 1$), or fix the prior probabilities to the corresponding values for associated sources.
+where we fix the covariate shift modulation to be equal to 1 (i.e., $\tilde{C}(\bx; \btheta_\textrm{cov}) = 1$), or fix the prior probabilities to the corresponding values for associated sources.
 
 
 % table to compare models
@@ -28,7 +28,7 @@ where we fix the covariate shift modulation to be equal to 1 (i.e., $\tilde{C}(\
 \resizebox{0.95\textwidth}{!}{
 \begin{tabular}{|lcccc|ccc|}
 \toprule
-model & $2\Delta \log \LL_{as,x}$ & $\Delta{\rm dof}_{as,x}$ & $N\sigma_{as,x}$ & ${\rm AIC}_{as,x}$ & $2\Delta \log \LL_{x,p+c}$ & $\Delta{\rm dof}_{x,p+c}$ & $N\sigma_{x,p+c}$\\
+model & $2\Delta \log \LL_{as,x}$ & $\Delta\textrm{dof}_{as,x}$ & $N\sigma_{as,x}$ & $\textrm{AIC}_{as,x}$ & $2\Delta \log \LL_{x,p+c}$ & $\Delta\textrm{dof}_{x,p+c}$ & $N\sigma_{x,p+c}$\\
 \midrule
 associated          & 0       & 0  & 0.0  & -178 &  64.7 & 7 & 6.7\\
 prior               & 49.5    & 1  & 7.0  & -225 & 14.2 & 6 & 2.2\\
@@ -48,10 +48,10 @@ For example, the value of $2\Delta \log \LL_{as,x} = 33.4$ in the fourth row and
 We compare the performance of the four models evaluated on the unassociated sources in the ROI for $E_0$ = 1 GeV in table \ref{tab:models}.
 In column 2, we show the difference in log likelihood between the model specified in the first column and the model based on distributions of associated sources.
 We report the corresponding additional degrees of freedom in column 3.
-We find that the prior shift model leads to a larger increase in likelihood for one degree of freedom (we have a constraint that the sum of priors is equal to 1: $\pi_{\rm gal} + \pi_{\rm ext} =1$) compared to a model with covariate shift only.
+We find that the prior shift model leads to a larger increase in likelihood for one degree of freedom (we have a constraint that the sum of priors is equal to 1: $\pi_\textrm{gal} + \pi_\textrm{ext} =1$) compared to a model with covariate shift only.
 The corresponding significance of exclusion of the null hypothesis (the ``as'' model) is presented in column 4.
 It is derived by assuming the $\chi^2$ distribution for $-2\Delta \log \mathcal{L}$ with the corresponding number of degrees of freedom from column 3.
-In column 5 we show the Akaike information criterion, ${\rm AIC} = -2\log\mathcal{L} + 2 k$, where $k$ is the number of degrees of freedom.
+In column 5 we show the Akaike information criterion, $\textrm{AIC} = -2\log\mathcal{L} + 2 k$, where $k$ is the number of degrees of freedom.
 We find that although log likelihood of the full prior $+$ covariate shift model is the largest,
 both the significance of exclusion of the null hypothesis and the AIC for this model are comparable to the ones for the prior shift only model.
 Thus, we conclude that the prior shift is the dominant effect compared to the covariate shift.
@@ -89,7 +89,7 @@ The ``$p+c$'' model provides a reasonable fit to the data for all the distributi
     \includegraphics[width=0.45\linewidth]{img/model0/likelihood_samples_model0_covariate_shift_E0_100.pdf}
     \includegraphics[width=0.45\linewidth]{img/model0/likelihood_samples_model0_covariate_shift_E0_1000.pdf}
     }
-    \caption{Distribution of log-likelihood for the ``$p+c$'' model with astro-only components for 1000 datasets simulated from the best-fit ``$p+c$'' model for $\rm E_0=100 \, {\rm MeV}$ (\panel{left panel}) and $\rm E_0=1 \, {\rm GeV}$ (\panel{right panel}). The red line represents the log-likelihood of the ``$p+c$'' model with astro-only components for the unassociated 4FGL-DR4 sources.}
+    \caption{Distribution of log-likelihood for the ``$p+c$'' model with astro-only components for 1000 datasets simulated from the best-fit ``$p+c$'' model for $\rmfamily E_0=100 \, \textrm{MeV}$ (\panel{left panel}) and $\rmfamily E_0=1 \, \textrm{GeV}$ (\panel{right panel}). The red line represents the log-likelihood of the ``$p+c$'' model with astro-only components for the unassociated 4FGL-DR4 sources.}
     \label{fig:loglike-bootstrap}
 \end{figure}
 
@@ -131,8 +131,8 @@ The $\sigmav$ values for the injected DM signal (red dashed-dotted lines, $\sigm
 relative to the median values for the distributions (solid green lines).
 Thus, our methodology is capable of reconstructing a simulated signal, when present, in the majority of cases. 
 
-Finally, we \old{showcase} \new{illustrate} the model's predictive capabilities. Using eq.~(\ref{gamma}), we derive the posterior probability that each unassociated source belongs to a given class $k$ (e.g., extragalactic, Galactic, or DM). The predicted class label, $C_i^{\text{pred}}$, is then assigned to the class with the highest posterior probability: $C_i^{\text{pred}} = \operatorname{argmax}_k \{ \tilde{p}(z_{ik}=1|{\bf x}_i) \}$.
-Figure~\ref{fig:predictions-real} displays the posterior probabilities and predicted classes for all unassociated sources. The left panel shows results from our best-fit model with only astrophysical classes (for ${\rm E}_0 = 1 \, {\rm GeV}$), while the right panel shows the best-fit model including DM (for the $\mdm=30$ GeV case).
+Finally, we \old{showcase} \new{illustrate} the model's predictive capabilities. Using eq.~(\ref{gamma}), we derive the posterior probability that each unassociated source belongs to a given class $k$ (e.g., extragalactic, Galactic, or DM). The predicted class label, $C_i^{\text{pred}}$, is then assigned to the class with the highest posterior probability: $C_i^{\text{pred}} = \operatorname{argmax}_k \{ \tilde{p}(z_{ik}=1|\textbf{x}_i) \}$.
+Figure~\ref{fig:predictions-real} displays the posterior probabilities and predicted classes for all unassociated sources. The left panel shows results from our best-fit model with only astrophysical classes (for $\textrm{E}_0 = 1 \, \textrm{GeV}$), while the right panel shows the best-fit model including DM (for the $\mdm=30$ GeV case).
 
 \old{To further assess performance,}
 \new{For comparison,}
@@ -150,9 +150,9 @@ For instance, while not all DM sources were correctly classified due to signific
     \includegraphics[width=0.45\linewidth]{img/predictions/model0_30GeV_predictions.pdf}
     \includegraphics[width=0.45\linewidth]{img/predictions/model_30GeV_predictions.pdf}
     }
-    \caption{Predicted source classes for unassociated 4FGL-DR4 sources according to the posterior class probabilities for the $\rm E_0 = 1 \,GeV$ case.
+    \caption{Predicted source classes for unassociated 4FGL-DR4 sources according to the posterior class probabilities for the $\rmfamily E_0 = 1 \,GeV$ case.
     \panel{Left panel}: best-fit model with astrophysical only classes.
-    \panel{Right panel}: best-fit model for astrophysical classes and DM ($\mdm = 30$ GeV, $\sigmav \sim 2.7\cdot 10^{-25} \, {\rm cm}^{3}\,{\rm s}^{-1}$). The green contours represent the 68\% and 95\% containment levels for the DM distribution. 
+    \panel{Right panel}: best-fit model for astrophysical classes and DM ($\mdm = 30$ GeV, $\sigmav \sim 2.7\cdot 10^{-25} \, \textrm{cm}^{3}\,\textrm{s}^{-1}$). The green contours represent the 68\% and 95\% containment levels for the DM distribution. 
     }
     \label{fig:predictions-real}
 \end{figure}
@@ -167,11 +167,11 @@ For instance, while not all DM sources were correctly classified due to signific
     \hspace{-3mm}
     \includegraphics[width=0.33\linewidth]{img/predictions/bootstrap_model_30GeV_predictions.pdf}
     }
-    \caption{Estimated best-fit distributions and true or predicted source classes for a bootstrap simulation, with $\mdm = 30$ GeV and $\sigmav \sim 2.7\times 10^{-25} \, {\rm cm}^{3}\,{\rm s}^{-1}$.
+    \caption{Estimated best-fit distributions and true or predicted source classes for a bootstrap simulation, with $\mdm = 30$ GeV and $\sigmav \sim 2.7\times 10^{-25} \, \textrm{cm}^{3}\,\textrm{s}^{-1}$.
     \panel{Left panel}: markers colored according to their true class $C_i^{true}$ in the simulation.
     \panel{Middle panel}: markers colored according to their posterior class probability 
     following the same convention as figure~\ref{fig:mixture_DM_tot}.
-    \panel{Right panel}: markers colored according to the predicted class, given by $C_i^{pred} = {\rm argmax}_k \{ \tilde{p}(z_{ik}=1|{\bf x}_i) \}$.
+    \panel{Right panel}: markers colored according to the predicted class, given by $C_i^{pred} = \textrm{argmax}_k \{ \tilde{p}(z_{ik}=1|\textbf{x}_i) \}$.
     }
     \label{fig:predictions-bootstrap}
 \end{figure}

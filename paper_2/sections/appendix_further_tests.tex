@@ -11,7 +11,7 @@ In this appendix we describe further tests that we have performed to cross-check
 \begin{figure}[t]
 \centering
 \includegraphics[width=1.0\textwidth]{img/model_plots/model_42/baseline/pendenza2.pdf}
-\caption{  Same as Fig. \ref{fig:random-maps}  but for 6 different random realization of the same flat $S^2\dnds$ and same $F_{\rm iso,true}=4.84 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$.  }
+\caption{  Same as Fig. \ref{fig:random-maps}  but for 6 different random realization of the same flat $S^2\dnds$ and same $F_\textrm{iso,true}=4.84 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$.  }
 \label{fig:flat-maps}
 \end{figure}
 
@@ -55,26 +55,26 @@ We first determine and remove the monopole ($l=0$) and dipole ($l=1$) components
 
 \item  This map is then subject to harmonic space decomposition:
 \begin{equation}
-{\cal M}_{\rm masked}(\theta,\phi) = \sum_{l=0}^{\infty} \sum_{m=-l}^{l} a_{lm} Y_{lm}(\theta,\phi)
+{\cal M}_\textrm{masked}(\theta,\phi) = \sum_{l=0}^{\infty} \sum_{m=-l}^{l} a_{lm} Y_{lm}(\theta,\phi)
 \label{eq:multipole}
 \end{equation}
-where $\theta$ and $\phi$ are angles on the sphere, $Y_{lm}(\theta,\phi)$ the spherical harmonics and the harmonic coefficients $a_{lm}$ completely encode the same information present in the map ${\cal M}_{\rm masked}$  (notice that, even though in Eq. (\ref{eq:multipole}) we formally decompose over all multipoles, the monopole and dipole amplitude are vanishing, since they have been removed from  ${\cal M}_{\rm masked}$);
+where $\theta$ and $\phi$ are angles on the sphere, $Y_{lm}(\theta,\phi)$ the spherical harmonics and the harmonic coefficients $a_{lm}$ completely encode the same information present in the map ${\cal M}_\textrm{masked}$  (notice that, even though in Eq. (\ref{eq:multipole}) we formally decompose over all multipoles, the monopole and dipole amplitude are vanishing, since they have been removed from  ${\cal M}_\textrm{masked}$);
 
-\item The harmonic coefficients $a_{lm}$ are determined with the \verb|map2alm| Healpy function. The ones that are retained for the foreground cleaning are those referring to multipole values $l < l_{\rm max}$, where $l_{\rm max}$ will be varied and the dependence of the results with $l_{\rm max}$ will be studied (at this level, the monopole and dipole are not present, because of the above point);
+\item The harmonic coefficients $a_{lm}$ are determined with the \verb|map2alm| Healpy function. The ones that are retained for the foreground cleaning are those referring to multipole values $l < l_\textrm{max}$, where $l_\textrm{max}$ will be varied and the dependence of the results with $l_\textrm{max}$ will be studied (at this level, the monopole and dipole are not present, because of the above point);
 
-\item By using the $a_{lm}$ corresponding to multipoles $l < l_{\rm max}$, we use Eq. (\ref{eq:multipole}) to construct a map ${\cal M}_{\rm residual}$ which contains only the large-scale component. This is performed with \verb|alm2map| Healpy function.
+\item By using the $a_{lm}$ corresponding to multipoles $l < l_\textrm{max}$, we use Eq. (\ref{eq:multipole}) to construct a map ${\cal M}_\textrm{residual}$ which contains only the large-scale component. This is performed with \verb|alm2map| Healpy function.
 
-\item We subtract the residual map from the original map, thus obtaining a map where the large scale residual components have been removed. The size of the scale is determined by $l < l_{\rm max}$.
+\item We subtract the residual map from the original map, thus obtaining a map where the large scale residual components have been removed. The size of the scale is determined by $l < l_\textrm{max}$.
 
 \end{itemize}
 
-With this algorithm we obtain maps where the large scale residual features associated to imperfect  galactic foreground subtraction are further removed. The results we obtain on the reconstructed $\dnds$ for the \fermi data (after this ``multipole cleaning") are shown in Fig. \ref{fig:multipole-cleaningv7}, for different values of $l_{\rm max}$ and for the \verb|gll_iem_v07| template. By comparing Fig. \ref{fig:multipole-cleaningv7} with Fig. \ref{fig:prediction-fermi-12y}, which refers to the same foreground template and latitude cut, we can see that the results are extremely stable up to $l_{\rm max} \sim 100$. This means that our baseline analysis is not affected by incomplete foreground subtraction, and can be considered reliable.
-The fall-off of the $\dnds$ when $l_{\rm max} > 100$ is expected 
-since $l_{\rm max} = 100$
+With this algorithm we obtain maps where the large scale residual features associated to imperfect  galactic foreground subtraction are further removed. The results we obtain on the reconstructed $\dnds$ for the \fermi data (after this ``multipole cleaning") are shown in Fig. \ref{fig:multipole-cleaningv7}, for different values of $l_\textrm{max}$ and for the \verb|gll_iem_v07| template. By comparing Fig. \ref{fig:multipole-cleaningv7} with Fig. \ref{fig:prediction-fermi-12y}, which refers to the same foreground template and latitude cut, we can see that the results are extremely stable up to $l_\textrm{max} \sim 100$. This means that our baseline analysis is not affected by incomplete foreground subtraction, and can be considered reliable.
+The fall-off of the $\dnds$ when $l_\textrm{max} > 100$ is expected 
+since $l_\textrm{max} = 100$
 corresponds to an angular scale of the order of $2^\circ$, 
-which starts to be compatible with the size of (PSF-smeared) point sources. Therefore, a cleaning with $l_{\rm max} > 100$ starts to remove point sources instead of galactic foregrounds.
+which starts to be compatible with the size of (PSF-smeared) point sources. Therefore, a cleaning with $l_\textrm{max} > 100$ starts to remove point sources instead of galactic foregrounds.
 
-The same analysis has been performed on a pipeline fully based on  \verb|gll_iem_v05|: the result is shown in Fig. \ref{fig:multipole-cleaningv5}, to be compared with Fig. \ref{fig:prediction-fermi-12y-fg-v5}. Also in this case, the results are extremely stable up to $l_{\rm max} \sim 100$, and the same above considerations apply.
+The same analysis has been performed on a pipeline fully based on  \verb|gll_iem_v05|: the result is shown in Fig. \ref{fig:multipole-cleaningv5}, to be compared with Fig. \ref{fig:prediction-fermi-12y-fg-v5}. Also in this case, the results are extremely stable up to $l_\textrm{max} \sim 100$, and the same above considerations apply.
 
 Finally, to check the strength of the method against the imperfect knowledge of the background, we performed the same analysis of multipole cleaning by adopting our baseline pipeline (based on \verb|gll_iem_v07|) on maps generated with \verb|gll_iem_v05| (similarly to what has been done for  Fig. \ref{fig:flat-maps-v5}). The results are shown in Fig. \ref{fig:multipole-cleaning-v5-and-v7} , where again we see that the results are pretty consistent, up to $l\sim 100$.
  It can be seen, moreover, that the procedure of multipole cleaning helps in removing the, nonetheless small, positive bias which is present toward low fluxes in this case.  
@@ -118,10 +118,10 @@ In conclusion, these tests give confidence on the reliability of the method and 
 
 
 
-\subsection{Changing $A_{\rm gal}$}
+\subsection{Changing $A_\textrm{gal}$}
 \label{sec:agal-var}
 
-In order to test the stability of the results against changes in the values of $A_{\rm gal}$, we have provided, as input to our trained CNN, \fermi maps cleaned with different values of $A_{\rm gal}$, ranging from 0.78 to 1.0 (our fiducial value is $0.888 \pm 0.005$, thus the chosen range encompass many standard deviations around its central value). The results are shown in Fig. \ref{fig:Agal_change} below. It can be seen that the $dN/dS$ is considerably robust and stable to different values of $A_{\rm gal}$, despite the large range explored. Instead, different values of $A_{\rm gal}$ seem to imply a significant variation in the reconstructed value of $F_{\rm iso}$, as expected since at the large Galactic latitudes explored in our analysis ($|b| > 30^\circ$) there is a certain amount of degeneracy between a purely isotropic emission and the Galactic foreground emission itself. However, this does not affect the reconstructed $dN/dS$.
+In order to test the stability of the results against changes in the values of $A_\textrm{gal}$, we have provided, as input to our trained CNN, \fermi maps cleaned with different values of $A_\textrm{gal}$, ranging from 0.78 to 1.0 (our fiducial value is $0.888 \pm 0.005$, thus the chosen range encompass many standard deviations around its central value). The results are shown in Fig. \ref{fig:Agal_change} below. It can be seen that the $dN/dS$ is considerably robust and stable to different values of $A_\textrm{gal}$, despite the large range explored. Instead, different values of $A_\textrm{gal}$ seem to imply a significant variation in the reconstructed value of $F_\textrm{iso}$, as expected since at the large Galactic latitudes explored in our analysis ($|b| > 30^\circ$) there is a certain amount of degeneracy between a purely isotropic emission and the Galactic foreground emission itself. However, this does not affect the reconstructed $dN/dS$.
 
 
 
@@ -153,7 +153,7 @@ The spherical CNN has similar performances as the  CNN that uses \verb|map2patch
 \includegraphics[width=0.45\textwidth]{img/model_plots/model_42/baseline/Agal/fermi_prediction_Agal_0.980000.pdf}
 \includegraphics[width=0.45\textwidth]{img/model_plots/model_42/baseline/Agal/fermi_prediction_Agal_1.000000.pdf}
 \caption{%Same as Fig. \ref{fig:prediction-fermi-12y} 
-Reconstructed $\dnds$ and $\fiso$  and their Bayesian errors, when the trained CNN is applied to the \fermi map  using  different values of $A_{\rm gal}$ as indicated in the panel labels.}
+Reconstructed $\dnds$ and $\fiso$  and their Bayesian errors, when the trained CNN is applied to the \fermi map  using  different values of $A_\textrm{gal}$ as indicated in the panel labels.}
 \label{fig:Agal_change}
 \end{figure}
 
@@ -185,8 +185,8 @@ Reconstructed $\dnds$ and $\fiso$  and their Bayesian errors, when the trained C
 \centering
 \includegraphics[width=1.0\textwidth]{img/model_plots/model_42/spherical/pendenza2.pdf}
 \caption{Same as Fig. \ref{fig:SphericalNN-test-random}  but for 6 different random realization of a flat $S^2\dnds$ and same 
-$F_{\rm iso}$.}
-%$F_{\rm iso,true}=4.84 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$.   }
+$F_\textrm{iso}$.}
+%$F_\textrm{iso,true}=4.84 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$.   }
 \label{fig:SphericalNN-test-flat}
 \end{figure}
 

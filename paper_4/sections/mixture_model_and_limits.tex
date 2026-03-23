@@ -7,7 +7,7 @@
 Our general aim is to either detect a population of DM subhalos among the \Fermi-LAT unassociated sources or to put an upper limit on $\langle\sigma v\rangle$ for different DM masses. For a fixed DM mass and annihilation channel, we determine the best-fit cross section $\langle\sigma v\rangle^*$ (optimized simultaneously with the other parameters) by maximizing the full likelihood built from the model in eq.~(\ref{eq:mixture}), defined as:
 \be
 \label{eq:L}
-{\cal L}(\langle\sigma v\rangle, \pi_k, \btheta_{\rm cov}) = \prod_{i=1}^{N^{\rm ROI}_{\rm unas}} \tilde{p}_{\rm unas}(\bx_i|\sigmav,\pi_k, \btheta_{\rm cov};\mdm,{\rm ch.}).
+{\cal L}(\langle\sigma v\rangle, \pi_k, \btheta_\textrm{cov}) = \prod_{i=1}^{N^\textrm{ROI}_\textrm{unas}} \tilde{p}_\textrm{unas}(\bx_i|\sigmav,\pi_k, \btheta_\textrm{cov};\mdm,\textrm{ch.}).
 \ee
 
 We maximize eq.~(\ref{eq:L}) with the Expectation-Maximization (EM) algorithm, which is efficient for the cases of probabilistic mixture models~\cite{10.1162/089976602753284446_Saerens}, see appendix~\ref{app:EM} for more details.
@@ -19,11 +19,11 @@ In our case, we use the associated sources (training data) to determine PDFs of 
 
 We optimize the likelihood for a set of DM mass values: $\mdm$ = 10, 30, 100, 300, 1000 GeV, and determine, for each $\mdm$, the upper bound on $\sigmav$ at 95\% confidence level (CL) by profiling the test-statistic 
 \be
-{\rm TS}(\sigmav) = -2\ln \frac{{\cal L}(\sigmav)}
-{{\cal L}_{\rm max}}, 
+\textrm{TS}(\sigmav) = -2\ln \frac{{\cal L}(\sigmav)}
+{{\cal L}_\textrm{max}}, 
 \label{eq:TS}
 \ee
-where ${\cal L}(\sigmav)$ is the likelihood optimized over the rest of parameters $\pi_k$ and $\btheta_{\rm cov}$, and ${\cal L}_{\rm max}={\cal L}(\sigmav^*,\pi_k^*,\btheta_{\rm cov}^*)$ is the value of the likelihood for the best-fit parameters. 
+where ${\cal L}(\sigmav)$ is the likelihood optimized over the rest of parameters $\pi_k$ and $\btheta_\textrm{cov}$, and ${\cal L}_\textrm{max}={\cal L}(\sigmav^*,\pi_k^*,\btheta_\textrm{cov}^*)$ is the value of the likelihood for the best-fit parameters. 
 Following the Wilks' theorem, we assume that TS follows the $\chi^2$ distribution. 
 We compute the upper bound on $\sigmav$ as the value corresponding to the 95\% coverage probability (one-sided), which for one degree of freedom corresponds to
 TS = 3.84.
@@ -36,7 +36,7 @@ In these plots, we display the distributions evaluated in the analysis ROI for $
 We note that the extragalactic sources are dominated by AGNs, which usually have close to a power-law spectra (small $\beta$ values).
 The Galactic sources often have curved spectra (large $\beta$ values).
 The relative contribution of Galactic sources is larger for the unassociated sources compared to the associated ones (brighter red color in the right panel compared to the left panel in figure~\ref{fig:mixtures}).
-The model on the middle and right panels of figure~\ref{fig:mixtures} is obtained by optimizing the prior and covariate shift parameters, $\pi_k$ and $\btheta_{\rm cov}$.
+The model on the middle and right panels of figure~\ref{fig:mixtures} is obtained by optimizing the prior and covariate shift parameters, $\pi_k$ and $\btheta_\textrm{cov}$.
 We display the optimized Galactic and extragalactic components separately in figure~\ref{fig:unas_mixture_astro}.
 The corresponding best-fit parameters $\pi_k$ (the class prevalence) are presented in table~\ref{tab:class_prevalence_astro}. 
 As qualitatively discussed above, the expected contribution of Galactic sources to unassociated sources at high latitudes (29\%) is significantly larger than the fraction of associated Galactic sources (6\%) in the ROI.
@@ -62,7 +62,7 @@ In particular, for the model without the DM component, we find that the prior sh
     Distributions of sources in the plane of the spectral parameters ($\alpha$, $\beta$) for $E_0$ = 1~GeV.
     \panel{Left panel}: PDFs of Galactic and extragalactic sources weighted by the corresponding class fractions. The sources are colored according to the catalog class.
     \panel{Middle panel}: best-fit mixture model for the unassociated sources. The background colors show the individual components of the astrophysical-only model from eq.~(\ref{eq:mixture}), where the DM subhalo contribution is set to zero. Specifically, we plot the decomposition of the mixture model into class-conditional PDFs weighted by their best-fit class prevalence $\pi_k p(x | k)$ for the extragalactic (blue) and Galactic (red) populations. For visualization, the distributions are integrated over the flux dimension. The color bar represents the value of the resulting probability density (shown in gray to represent both red and blue colors).
-    \panel{Right panel}: Class probabilities for unassociated 4FGL-DR4 sources (for $\rm E_0 = 1 \,GeV$), on top of the mixture distribution (same as the middle panel). The color scale is proportional to the class probabilities, according to the formula ${\rm color}(x_i)={\rm red}\cdot p(C_k= {\rm gal}|x_i) + {\rm blue}\cdot p(C_k={\rm ext}|x_i)$, e.g., a purple-colored source is a source for which the posterior class probabilities are similar and the classification is ambiguous. 
+    \panel{Right panel}: Class probabilities for unassociated 4FGL-DR4 sources (for $\rmfamily E_0 = 1 \,GeV$), on top of the mixture distribution (same as the middle panel). The color scale is proportional to the class probabilities, according to the formula $\textrm{color}(x_i)=\textrm{red}\cdot p(C_k= \textrm{gal}|x_i) + \textrm{blue}\cdot p(C_k=\textrm{ext}|x_i)$, e.g., a purple-colored source is a source for which the posterior class probabilities are similar and the classification is ambiguous. 
     }
     \label{fig:mixtures}
 \end{figure}
@@ -86,7 +86,7 @@ In particular, for the model without the DM component, we find that the prior sh
 \begin{tabular}{|rccccc|}
 %\multicolumn{6}{c}{\textbf{Best-fit astro-only model}} \\
 \toprule
-type & $\rm N_{ext}$ & $\rm N_{Gal}$ & \% Ext & \% Gal & $\rm N_{tot}$\\
+type & $\rmfamily N_{ext}$ & $\rmfamily N_{Gal}$ & \% Ext & \% Gal & $\rmfamily N_{tot}$\\
 \midrule
 assoc & 466 & 31 & 94\% & 6\% & 497\\
 unas & 160.6 & 66.4 & 71\% & 29\% & 227\\
@@ -96,7 +96,7 @@ unas & 160.6 & 66.4 & 71\% & 29\% & 227\\
 For the associated sources (second row) the numbers are derived from the 4FGL-DR4 catalog. 
 For the unassociated sources (third row), the numbers correspond to the best-fit model with astrophysical components only (using $E_0 = 1$ GeV). 
 The percent of galactic (\% Gal) and extragalactic (\% Ext) sources are given by the best-fit parameters $\pi_k$ in eq.~(\ref{eq:mixture}) for the two astrophysical components.
-The expected number of Galactic and extragalactic sources among the unassociated ones is derived as $\pi_k \times N_{\rm tot}$, where $N_{\rm tot} = 227$ is the total number of unassociated sources in the ROI.
+The expected number of Galactic and extragalactic sources among the unassociated ones is derived as $\pi_k \times N_\textrm{tot}$, where $N_\textrm{tot} = 227$ is the total number of unassociated sources in the ROI.
 }
 \label{tab:class_prevalence_astro}
 \end{table}
@@ -105,8 +105,8 @@ The expected number of Galactic and extragalactic sources among the unassociated
 \subsection{Dark matter limits}
 \label{sec:dm-limits}
 
-The best-fit model including the DM component with DM mass of 100 GeV and $\sigmav=3.4 \cdot 10^{-25} {\rm cm}^3{\rm s}^{-1}$ is shown in figure~\ref{fig:mixture_DM_tot}.
-We simultaneously fit the parameters $\pi_k$, $\btheta_{\rm cov}$ and $\sigmav$.
+The best-fit model including the DM component with DM mass of 100 GeV and $\sigmav=3.4 \cdot 10^{-25} \textrm{cm}^3\textrm{s}^{-1}$ is shown in figure~\ref{fig:mixture_DM_tot}.
+We simultaneously fit the parameters $\pi_k$, $\btheta_\textrm{cov}$ and $\sigmav$.
 The corresponding components are presented in figure~\ref{fig:mixture_DM_components}.
 The DM component is shown by the green color.%
 \footnote{The class probabilities for unassociated sources in the astrophysical only model, as well as DM subhalo class probabilities for the different DM masses, are available online at \href{https://doi.org/10.5281/zenodo.17463823}{https://doi.org/10.5281/zenodo.17463823}.
@@ -128,9 +128,9 @@ Nevertheless, for larger $\sigmav$ values the expected contribution of DM subhal
     \includegraphics[width=0.49\linewidth]{img/predictions/best-fit_model_100GeV_posterior_prob.pdf}
     %}
     \caption{Mixture model for unassociated sources including the DM component with ${\mdm} = 100$ GeV, following the same conventions as in figure~\ref{fig:mixtures}.
-    The green component represents the best-fit DM distribution for $\sigmav=3.4 \cdot 10^{-25} {\rm cm}^3{\rm s}^{-1}$. The green lines represent the 68\% and 95\% containment levels for the DM distribution.
+    The green component represents the best-fit DM distribution for $\sigmav=3.4 \cdot 10^{-25} \textrm{cm}^3\textrm{s}^{-1}$. The green lines represent the 68\% and 95\% containment levels for the DM distribution.
     The background colors represent the class-conditional distributions weighted by their prior weight: $\pi_kp(x|k)$.
-    Sources are colored according to their posterior class probability following the formula ${\rm color}(x_i)={\rm red}\cdot p(C_k= {\rm gal}|x_i) + {\rm blue}\cdot p(C_k={\rm ext}|x_i) + {\rm green}\cdot p(C_k={\rm DM}|x_i)$.
+    Sources are colored according to their posterior class probability following the formula $\textrm{color}(x_i)=\textrm{red}\cdot p(C_k= \textrm{gal}|x_i) + \textrm{blue}\cdot p(C_k=\textrm{ext}|x_i) + \textrm{green}\cdot p(C_k=\textrm{DM}|x_i)$.
     }
 
 
@@ -157,11 +157,11 @@ Nevertheless, for larger $\sigmav$ values the expected contribution of DM subhal
 
 We present the details of the best-fit model for the DM subhalo component (including upper limits in the annihilation cross section)
 in table~\ref{tab:Nsub_values}.
-Columns 2 to 6 show the best-fit model, e.g., the best-fit DM subhalo prevalence, the expected number of subhalos within our region of interest ($N_{\rm subhalo}^{\rm ROI}$) and for the full range of parameters ($N_{\rm sub}^{\rm total}$), as well as the best-fit thermally-averaged annihilation cross-section ($\sigmav$). The value of $\Delta {\rm TS}_0 = -2(\log\mathcal{L}_0 - \log\mathcal{L}_{\rm max})$ quantifies the preference for the best-fit model over a baseline astrophysical-only scenario. 
+Columns 2 to 6 show the best-fit model, e.g., the best-fit DM subhalo prevalence, the expected number of subhalos within our region of interest ($N_\textrm{subhalo}^\textrm{ROI}$) and for the full range of parameters ($N_\textrm{sub}^\textrm{total}$), as well as the best-fit thermally-averaged annihilation cross-section ($\sigmav$). The value of $\Delta \textrm{TS}_0 = -2(\log\mathcal{L}_0 - \log\mathcal{L}_\textrm{max})$ quantifies the preference for the best-fit model over a baseline astrophysical-only scenario. 
 For all tested models, the significance is less than 2 sigma.
 We notice that the largest possible contribution from DM subhalos is for $\mdm = 30$ GeV (although still not significant). 
 \new{The expected number of DM subhalos of 15.4 for this DM mass  in our ROI is comparable, e.g., to 16 DM subhalo candidates reported in ref.~\cite{2019JCAP...07..020C}.
-This comparison should be taken with a grain of salt, as the calculation in ref.~\cite{2019JCAP...07..020C} was performed for the 3FGL catalog (8 years of data) compared to the 4FGL-DR4 catalog (14 years of data) in our work with the J-factors based on the mass estimate within the tidal radius (cf. $J_{\rm tidal}^{\Msub}$ in Section~\ref{sec:sim-jfactor}) compared to the J-factor integrated within $0.1^\circ$ from the center base on the maxima velocity used in table~\ref{tab:Nsub_values}.
+This comparison should be taken with a grain of salt, as the calculation in ref.~\cite{2019JCAP...07..020C} was performed for the 3FGL catalog (8 years of data) compared to the 4FGL-DR4 catalog (14 years of data) in our work with the J-factors based on the mass estimate within the tidal radius (cf. $J_\textrm{tidal}^{\Msub}$ in Section~\ref{sec:sim-jfactor}) compared to the J-factor integrated within $0.1^\circ$ from the center base on the maxima velocity used in table~\ref{tab:Nsub_values}.
 }
 \old{In this case} \new{We also notice that for $\mdm = 30$~GeV},  the expected contribution from Galactic sources (mostly millisecond pulsars) is the smallest.
 This is to be expected, since the spectrum of DM annihilation in the $b\bar{b}$ channel is similar to the spectra of pulsars at this DM mass.
@@ -185,8 +185,8 @@ We find that our method can recover the DM signal within statistical fluctuation
 %\begin{tabular}{l ccccc ccc}
 \toprule
  & \multicolumn{5}{c|}{\textbf{best-fit model}} & \multicolumn{3}{c|}{\textbf{upper bound}} \\ 
- $\mdm$ & \% DM & $N_{\rm subhalo}^{\rm ROI}$  & $N_{\rm subhalo}^{\rm total}$ & $\langle \sigma v \rangle$ & $\Delta {\rm TS}_0$ & $N_{\rm subhalo}^{\rm ROI}$ & $N_{\rm subhalo}^{\rm total}$ & $\langle \sigma v \rangle$ \\
-  $\rm [GeV]$ & & & & [$\rm cm^3 \, s^{-1}$] & & & & [$\rm cm^3 \, s^{-1}$] \\
+ $\mdm$ & \% DM & $N_\textrm{subhalo}^\textrm{ROI}$  & $N_\textrm{subhalo}^\textrm{total}$ & $\langle \sigma v \rangle$ & $\Delta \textrm{TS}_0$ & $N_\textrm{subhalo}^\textrm{ROI}$ & $N_\textrm{subhalo}^\textrm{total}$ & $\langle \sigma v \rangle$ \\
+  $\rmfamily [GeV]$ & & & & [$\rmfamily cm^3 \, s^{-1}$] & & & & [$\rmfamily cm^3 \, s^{-1}$] \\
 \midrule
 10 & 0.0 & 0.00 & 0.00 & 0.0 & 0.0 & 2.83& 6.56& $5.6 \times 10^{-26}$\\
 30 & 6.8 & 15.37 & 36.23 & $2.7 \times 10^{-25}$& 3.5 & 27.30 & 64.20 & $3.6 \times 10^{-25}$\\
@@ -197,7 +197,7 @@ We find that our method can recover the DM signal within statistical fluctuation
 \end{tabular}%
 }
 \caption{
-Expected number of DM subhalos ($N_{\rm sub}$) for the \textbf{best-fit model} and for the \textbf{95\% confidence upper bound} on the annihilation cross-section ($\sigmav$). In both cases, we report the subhalo count within our ROI and the total count. The test statistic difference quantifies the significance of the best-fit model over an astrophysical-only model, $\Delta {\rm TS}_0 = -2(\log\mathcal{L}_0 - \log\mathcal{L}_{\rm max})$. The number of subhalos, $N_{\rm sub}$, is constrained to be non-negative.
+Expected number of DM subhalos ($N_\textrm{sub}$) for the \textbf{best-fit model} and for the \textbf{95\% confidence upper bound} on the annihilation cross-section ($\sigmav$). In both cases, we report the subhalo count within our ROI and the total count. The test statistic difference quantifies the significance of the best-fit model over an astrophysical-only model, $\Delta \textrm{TS}_0 = -2(\log\mathcal{L}_0 - \log\mathcal{L}_\textrm{max})$. The number of subhalos, $N_\textrm{sub}$, is constrained to be non-negative.
 }
 \label{tab:Nsub_values}
 \end{table}
@@ -213,7 +213,7 @@ Expected number of DM subhalos ($N_{\rm sub}$) for the \textbf{best-fit model} a
     %\newline
     %{Upper panel:} Comparison of our baseline results with literature. 
     Solid black line: our baseline limits derived with the 
-    $V_{\rm max}$ determination of the J-factor integrated within the radius of $0.1^\circ$.
+    $V_\textrm{max}$ determination of the J-factor integrated within the radius of $0.1^\circ$.
     Gray band: 95\% containment of the upper limit due to statistical fluctuations of the distribution of sources.
     Solid and dashed purple lines: the limits derived by Calore et al. (figure 6 left panel%, turquoise and purple lines
     )~\cite{2019Galax...7...90C}. 
@@ -234,9 +234,9 @@ Expected number of DM subhalos ($N_{\rm sub}$) for the \textbf{best-fit model} a
     \caption{
     Comparison of the 95\% upper bounds on $\sigmav$ derived in this work for different choices of the J-factor.
     Solid (dashed) black line: the limit derived with the 
-    $V_{\rm max}$ ($M_{\rm sub}$) determination of the J-factor integrated within the radius of $0.1^\circ$.
+    $V_\textrm{max}$ ($M_\textrm{sub}$) determination of the J-factor integrated within the radius of $0.1^\circ$.
     Solid (dashed) red line: the limit derived with the 
-    $V_{\rm max}$ ($M_{\rm sub}$) determination of the J-factor integrated within the tidal radius. 
+    $V_\textrm{max}$ ($M_\textrm{sub}$) determination of the J-factor integrated within the tidal radius. 
     The uncertainty bands for the different J-factor models are proportional to the uncertainty band for our baseline model, $J_{0.1}^{Vmax}$ (figure~\ref{fig:bounds-bb}), with the same scaling factors as the ratios of the corresponding upper limits. These uncertainty bands are not plotted for clarity of presentation.
     }
     \label{fig:bounds-bb-J}
@@ -264,13 +264,13 @@ Our limits are also significantly better for most of DM masses than in ref.~\cit
 \old{In dashed gray, we plot}
 \new{Dashed gray line in figure~\ref{fig:bounds-bb} shows} a recent bound derived using dwarf spheroidal galaxies~\cite{2024PhRvD.109f3024M} with 68\% and 95\% confidence bands \new{shown by green and yellow areas respectively.}
 We note that the constraints derived in this work are an order of magnitude less stringent than the limits derived using dwarf spheroidal galaxies (even if we consider J-factors integrated to tidal radius for the subhalos).
-Provided that the values of J-factors $\lesssim 10^{20} {\rm GeV^2 cm^{-5}} $ for the brightest dwarf galaxies \citep{2024PhRvD.109f3024M} are comparable to the brightest subhalos (cf. figure~\ref{fig:Jfactors}), the main reason for the less stringent constraints is that the positions and J-factors of the dwarf galaxies are known (although with some uncertainties), while the subhalos can be at any position in the sky.
+Provided that the values of J-factors $\lesssim 10^{20} \mathrm{GeV^2 cm^{-5}} $ for the brightest dwarf galaxies \citep{2024PhRvD.109f3024M} are comparable to the brightest subhalos (cf. figure~\ref{fig:Jfactors}), the main reason for the less stringent constraints is that the positions and J-factors of the dwarf galaxies are known (although with some uncertainties), while the subhalos can be at any position in the sky.
 
 In figure~\ref{fig:bounds-bb-J}, we display a comparison of the upper bounds for different choices of the J-factor.
-In particular, the limits for the J-factor integrated within $0.1^\circ$ for the $V_{\rm max}$ and $M_{\rm sub}$ J-factor
+In particular, the limits for the J-factor integrated within $0.1^\circ$ for the $V_\textrm{max}$ and $M_\textrm{sub}$ J-factor
 determination methods are shown by the black solid and dashed lines respectively. 
 The limits corresponding to the J-factor integrated up to the tidal radius for 
-the $V_{\rm max}$ and $M_{\rm sub}$ J-factor determination methods are shown by the red solid and dashed lines, respectively.
+the $V_\textrm{max}$ and $M_\textrm{sub}$ J-factor determination methods are shown by the red solid and dashed lines, respectively.
 
 
 

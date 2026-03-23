@@ -10,10 +10,10 @@ In table~\ref{tab:settings}, we provide the reader with  a summary of the settin
 
 We employ the {\tt Fermi Science Tools} to compute photon counts map, exposure map and point spread function (PSF) of the LAT.
 %
-The maps are binned in $N_{\rm pix}$ pixels with equal area  relying on {\tt HEALPix}.~\footnote{\href{https://healpix.sourceforge.io}{https://healpix.sourceforge.io}} The chosen pixelization is expressed in terms of the ``resolution parameter'' $N_{\rm side}$ controlling the number of subdivisions of a great circle on the sphere, related to $N_{\rm pix}$ via $N_{\rm pix}=12 \, N_{\rm side}^2$. 
+The maps are binned in $N_\textrm{pix}$ pixels with equal area  relying on {\tt HEALPix}.~\footnote{\href{https://healpix.sourceforge.io}{https://healpix.sourceforge.io}} The chosen pixelization is expressed in terms of the ``resolution parameter'' $N_\textrm{side}$ controlling the number of subdivisions of a great circle on the sphere, related to $N_\textrm{pix}$ via $N_\textrm{pix}=12 \, N_\textrm{side}^2$. 
 %
 As we  motivate in section~\ref{sec:catalogue}, we simulate the sky
-with $N_{\rm side}$ = 1024, but run the pixel analysis with $N_{\rm side}$ = 512. 
+with $N_\textrm{side}$ = 1024, but run the pixel analysis with $N_\textrm{side}$ = 512. 
 %
 
 We perform an energy-integrated analysis in the $(1,10)$ GeV energy range, but our procedure can be  extended to multiple energy bins.
@@ -46,17 +46,17 @@ the alternative hypothesis model also contains point sources.
 % Bkg only
 We construct our background-only map $\mathcal{B}$ including two components:
 \begin{equation}
-    \mathcal{B} =  A_{\rm gal}\cdot\mathcal{G} + F_{0}\,,
+    \mathcal{B} =  A_\textrm{gal}\cdot\mathcal{G} + F_{0}\,,
     \label{eq:mapB}
 \end{equation}
 where 
 \begin{itemize}
     \item $F_{0}$ is an isotropic (usually assumed extragalactic) component accounting for the average flux of all the unresolved  sources as well as possible diffuse emission mechanisms. 
-    \item $\mathcal{G}$ is  the \verb|gll_iem_v07| template morphology of the diffuse $\gamma$-ray emission from the Milky Way provided by the \Fermi-LAT collaboration~\footnote{\href{https://fermi.gsfc.nasa.gov/ssc/data/access/lat/BackgroundModels.html}{https://fermi.gsfc.nasa.gov/ssc/data/access/lat/BackgroundModels.html}}, with normalization $A_{\rm gal}$.      
+    \item $\mathcal{G}$ is  the \verb|gll_iem_v07| template morphology of the diffuse $\gamma$-ray emission from the Milky Way provided by the \Fermi-LAT collaboration~\footnote{\href{https://fermi.gsfc.nasa.gov/ssc/data/access/lat/BackgroundModels.html}{https://fermi.gsfc.nasa.gov/ssc/data/access/lat/BackgroundModels.html}}, with normalization $A_\textrm{gal}$.      
 \end{itemize}
-The parameters $A_{\rm gal}$ and $F_0$ are determined via a fit to the \Fermi-LAT photon counts map, as explained in section~\ref{sec:procedure}. In order to obtain a background map in units of counts in each of the $N_{\rm pix}$ pixels, we multiply by the exposure map $\mathcal{E}$ and the steradian-to-pixel conversion factor $4\pi / N_{\rm pix}$:
+The parameters $A_\textrm{gal}$ and $F_0$ are determined via a fit to the \Fermi-LAT photon counts map, as explained in section~\ref{sec:procedure}. In order to obtain a background map in units of counts in each of the $N_\textrm{pix}$ pixels, we multiply by the exposure map $\mathcal{E}$ and the steradian-to-pixel conversion factor $4\pi / N_\textrm{pix}$:
 \begin{equation}
-    C_\mathcal{B} = \frac{4\pi}{N_{\rm pix}} \int_{1 \, \rm GeV}^{10 \, \rm GeV} \mathcal{B}(E)\, \mathcal{E}(E){\rm d}E \,.
+    C_\mathcal{B} = \frac{4\pi}{N_\textrm{pix}} \int_{1 \, \rmfamily GeV}^{10 \, \rmfamily GeV} \mathcal{B}(E)\, \mathcal{E}(E)\textrm{d}E \,.
 \end{equation}
 The exposure map is extracted using the {\tt Fermi Science Tools} for 10 logarithmic bins in the (1, 10) GeV range (and treated as the corresponding piecewise function when performing the integral), in order to be consistent with the binning of the Galactic foreground model.
 %
@@ -71,10 +71,10 @@ On the other hand, our first alternative hypothesis model is based on the 4FGL-D
 %
 We generate a new map 
 \begin{equation}
-    \mathcal{K} = {\cal C}+ A_{\rm gal}\cdot\mathcal{G} + F_{0}\,,
+    \mathcal{K} = {\cal C}+ A_\textrm{gal}\cdot\mathcal{G} + F_{0}\,,
     \label{eq:mapK}
 \end{equation}
-including the same background model as in eq.~\eqref{eq:mapB} (i.e.~same parameters for $A_{\rm gal}$ and $F_0$), and adding a synthetic map associated to the list of sources in the 4FGL-DR3 catalogue with $|b|\geq 30^\circ$, ${\cal C}$. The map is appropriately smoothed via the PSF and convoluted with the exposure map, and converted into a pixelized count map, as previously described. 
+including the same background model as in eq.~\eqref{eq:mapB} (i.e.~same parameters for $A_\textrm{gal}$ and $F_0$), and adding a synthetic map associated to the list of sources in the 4FGL-DR3 catalogue with $|b|\geq 30^\circ$, ${\cal C}$. The map is appropriately smoothed via the PSF and convoluted with the exposure map, and converted into a pixelized count map, as previously described. 
 
 \medskip
 % synthetic dNdS
@@ -83,14 +83,14 @@ derived in~\cite{Amerio:2023uet}.
 %
 Analogously to the catalogue, we include an additional source component, $\mathcal{S}$, on top of the background-only model:
 \begin{equation}
-    \mathcal{M} = \mathcal{S} + A_{\rm gal}\cdot\mathcal{G} + F_{\rm iso}
+    \mathcal{M} = \mathcal{S} + A_\textrm{gal}\cdot\mathcal{G} + F_\textrm{iso}
     \label{eq:map}
 \end{equation}
 The map $\mathcal{S}$ is constituted of point sources randomly placed  on the sphere, drawn according to the $\dNdS$ inferred in~\cite{Amerio:2023uet}. 
 We produced 5000 realisations of this source model, by considering variations of the 
 $\dNdS$ parameters inferred in~\cite{Amerio:2023uet}. In particular, we adopt the model related to the \verb|gll_iem_v07| foreground template \footnote{This is the latest foreground model provided by Fermi-LAT.} and $|b|<30^\circ$ Galactic plane cut, and we vary the $\dNdS$ within the estimated uncertainties by fitting a Gaussian Process (c.f.  \cite{Rasmussen2005}) to the $\dNdS$  output of the neural network \footnote{The reason for considering a Gaussian Process here is two-fold: to interpolate the $\dNdS$ to values of the flux not included in the neural net output, as well as to have an estimation of the uncertainty band of $\dNdS$ at such interpolated values. }. 
-For each parameter configuration of the $\dNdS$, the $F_{\rm iso}$ is consistently determined by the procedure proposed in~\cite{Amerio:2023uet}.
-Note that the residual Poisson-distributed isotropic component $F_{\rm iso}$  is now lower than  $F_0$ in eq.~\eqref{eq:mapB}, since part of the flux $F_0$ is accounted for by the discrete sources. 
+For each parameter configuration of the $\dNdS$, the $F_\textrm{iso}$ is consistently determined by the procedure proposed in~\cite{Amerio:2023uet}.
+Note that the residual Poisson-distributed isotropic component $F_\textrm{iso}$  is now lower than  $F_0$ in eq.~\eqref{eq:mapB}, since part of the flux $F_0$ is accounted for by the discrete sources. 
 
 We note that both the $\mathcal{K}$ and $\mathcal{M}$ maps are simulated, i.e.~are ``theoretical skies'', not the ``measured sky''. The map ${\cal K}$ is deterministic, meaning we  simulate it by accounting for the Fermi PSF for the point-like sources whose fluxes and positions are given by the 4FGL catalogue, on the top of the assumed smooth background (the remaining contributions to the $\mathcal{K}$ map in eq. 2.3). In the case of the map ${\cal M}$, we rely on statistical information, in which the d$N$/d$S$ does not describe the position of any gamma-ray source, nor does it tell us their exact number. Rather, the integral of d$N$/d$S$ in a flux bin tells us the expected number of sources in that bin, while the actual number of sources is only defined up to Poisson fluctuations. Once such a number of sources per flux bin has been determined, we place them at uniformly random positions in the sky, accounting for the ${\cal S}$ term in Eq.~\eqref{eq:map}. In summary, we run the simulator developed in~\cite{Amerio:2023uet} in order to build the maps ${\cal M}$.
 

@@ -24,7 +24,7 @@
 \newcommand{\Fermi}{\textit{Fermi}}
 \newcommand{\FC}[1]{\textcolor{magenta}{#1}}
 \newcommand{\gz}[1]{\textcolor{cyan}{#1}}
-\newcommand{\de}{{\rm d}}
+\newcommand{\de}{\textrm{d}}
 \newcommand{\dint}{\displaystyle\int}
 
 \newcommand{\be}{\begin{equation}}
@@ -71,7 +71,7 @@
 \let\Psi\varPsi
 \let\Omega\varOmega
 
-\def\refjnl#1{{\rm{#1}}}
+\def\refjnl#1{\textrm{{#1}}}
 \def\aj{\refjnl{AJ}}                   % Astronomical Journal
 \def\araa{\refjnl{ARA\&A}}             % Annual Review of Astron and Astrophys
 \def\apj{\refjnl{ApJ}}                 % Astrophysical Journal
@@ -176,7 +176,7 @@ Anisotropy auto-correlation studies specifically in the TeV band for Cherenkov t
 The cross-correlation technique, instead, offers the advantage of incorporating direct gravitational tracers of the matter distribution in the Universe, and can leverage differences in angular scale, energy spectrum, and redshift evolution between the cross-correlated fields \cite{camera2013novel,camera2015tomographic,fornengo2014particle}. This approach provides a multi-dimensional handle to disentangle signals with distinct features in their spatial distribution, energy spectra, and redshift dependence. Extragalactic astrophysical sources, for instance, typically appear as point-like emitters at $\gamma$-ray energies, whereas DM is expected to produce a diffuse signal that traces the large-scale structure of the Universe. Different classes of astrophysical sources exhibit diverse spectral energy distributions, which are generally distinct from those predicted for DM-induced emissions. Moreover, their redshift distributions differ: DM $\gamma$-ray emission is expected to peak at low redshift, unlike unresolved astrophysical populations {\cite{camera2013novel,camera2015tomographic,fornengo2014particle}}. As a result, DM signals are expected to correlate more strongly with low-redshift gravitational tracers.
 Beyond its application in the search for DM, the cross-correlation technique also holds broader potential for studying unresolved $\gamma$-ray source populations, offering insights into their redshift distribution and clustering properties.
 
-Cross-correlation analyses have been performed between {\it Fermi}-LAT $\gamma$-ray sky maps and various tracers of the large-scale structure. These include weak gravitational lensing  \cite{shirasaki2014cross,shirasaki2016cosmological,troster2017cross,DES:2019ucp}, the clustering of galaxies \cite{xia2015tomography,regis2015particle,cuoco2015dark,shirasaki2015cross,cuoco2017tomographic,Ammazzalorso:2018evf,paopiamsap2024constraints}, galaxy clusters \cite{branchini2017cross,shirasaki2018correlation,hashimoto2019measurement,colavincenzo2020searching,tan2020bounds}, and the lensing effect of the cosmic microwave background \cite{fornengo2015evidence}, which traces %is due to 
+Cross-correlation analyses have been performed between \textit{Fermi}-LAT $\gamma$-ray sky maps and various tracers of the large-scale structure. These include weak gravitational lensing  \cite{shirasaki2014cross,shirasaki2016cosmological,troster2017cross,DES:2019ucp}, the clustering of galaxies \cite{xia2015tomography,regis2015particle,cuoco2015dark,shirasaki2015cross,cuoco2017tomographic,Ammazzalorso:2018evf,paopiamsap2024constraints}, galaxy clusters \cite{branchini2017cross,shirasaki2018correlation,hashimoto2019measurement,colavincenzo2020searching,tan2020bounds}, and the lensing effect of the cosmic microwave background \cite{fornengo2015evidence}, which traces %is due to 
 the large-scale distribution of matter across cosmological distances. Additional studies are presented in Refs. \cite{ando2014mapping,fornengo2014particle,fornasa2016angular,feng2017planck,Tan:2020fbc}). 
 %
 Positive cross-correlation signals have been found with galaxies at the level of $3.5\sigma$ \cite{xia2015tomography,regis2015particle,cuoco2015dark} up to $8-10\sigma$ \cite{paopiamsap2024constraints}, galaxy clusters at $4.7\sigma$ \cite{branchini2017cross}, lensing of the cosmic microwave background at $3.2\sigma$ \cite{fornengo2015evidence} and weak gravitational lensing at $5.3\sigma$ \cite{DES:2019ucp} and more recently at signal-to-noise ratio of 8.9  \cite{DES:2025ulp}.
@@ -261,11 +261,11 @@ In the Limber approximation \citep{1953ApJ...117..134L,1992ApJ...388..272K,1998A
  where $\ell$ denotes the multipole, $k$ the wavenumber, $\chi(z)$ is the radial comoving distance, related to redshift $z$ in a flat cosmology through the relation $\de\chi=c\,\de z/H(z)$ with $H(z)$ being the expansion rate of the Universe. The term $P_{\gamma g}(k,z)$ represents the 3D cross-correlation power spectrum (PS), embedding the information on the fluctuations of the two correlated fields. The function $W_{i=\{\gamma,g\}}$ denotes the window functions of the gamma-ray intensity field, $\gamma$, and the galaxy number counts fluctuations, $g$, {respectively, and describes the redshift distribution of each field} (see {\cref{app:model}} for full details).
  
 As astrophysical $\gamma$-ray sources we consider only BL Lacs, subdivided into the two sub-categories of high-synchrotron-peaked (HSP) blazars and low and intermediate synchrotron-peaked (LISP) blazars \cite{DiMauro:2013zfa}.
-We model the spectral energy distribution (SED) of these sources as power-laws with index $\Gamma$ and exponential cutoffs $E_{\rm cut}$, whose specific parameter values are reported in \cref{table:BLLACS}, together with the minimum and maximum luminosities of the population.
+We model the spectral energy distribution (SED) of these sources as power-laws with index $\Gamma$ and exponential cutoffs $E_\textrm{cut}$, whose specific parameter values are reported in \cref{table:BLLACS}, together with the minimum and maximum luminosities of the population.
 Since we focus on CTAO and thus on energies above approximately {20} GeV, 
 other typical $\gamma$-ray emitters like misaligned AGN, star-forming galaxies, and flat-spectrum radio quasars can be neglected, since their contribution are dominant at lower energies \cite{Fornasa_2015}. Full details on the modeling of the astrophysical sources are provided in {\cref{app:model}}, together with the expressions for their window functions and 3D cross-correlation power spectra, obtained within the halo model formalism.
 
-Let us just recall here that the window function of the $\gamma$-ray emission of astrophysical sources depends on the $\gamma$-ray luminosity function (GLF) of each specific source-type and on their SED, and is integrated over the luminosity of the sources up to a threshold luminosity, which corresponds to the minimal luminosity that a source must posses in order to be resolved by the detector (in this way, the window function which is then obtained pertains to the {\it unresolved} sources, those contributing to the UGRB). The full expression and the detailed modeling can be found in Appendix \ref{app:Wastro}.
+Let us just recall here that the window function of the $\gamma$-ray emission of astrophysical sources depends on the $\gamma$-ray luminosity function (GLF) of each specific source-type and on their SED, and is integrated over the luminosity of the sources up to a threshold luminosity, which corresponds to the minimal luminosity that a source must posses in order to be resolved by the detector (in this way, the window function which is then obtained pertains to the \textit{unresolved} sources, those contributing to the UGRB). The full expression and the detailed modeling can be found in Appendix \ref{app:Wastro}.
 
 For the DM $\gamma$-ray emission, we consider both annihilating and decaying DM. In the case of annihilation, the relevant particle physics parameters are the DM mass $m_\chi$ and the thermally-averaged annihilation cross-section $\langle \sigma v\rangle$. For decaying DM, the key parameters are the mass and the lifetime $\tau$. These will be the parameters for which we provide the forecast sensitivity in the cross-correlation analysis. The {expressions for the} window functions and the 3D cross-correlation power spectra are reported in {\cref{app:model}}. 
 Here we recall that the window functions are proportional to $\langle \sigma v\rangle$ for annihilating DM and inversely proportional to $\tau$ in the case of decaying DM, and proportional to $m_\chi^{-2}$ and $m_\chi^{-1}$ for annihilating and decaying DM, respectively. The window function of the gamma-ray emission from DM annihilation or decay also depends on the average dark matter content of the Universe and on the energy spectrum produced by dark matter annihilation or decay, which in turn depends on the specific annihilation/decay channel, for which we will consider $b \bar b$ as the representative case and provide results also for the channels $e^+e^-$, $\tau^+\tau^-$ and $W^+W^-$. In the case of annihilating dark matter, the window function also contains a so-called flux-multiplier factor, which accounts for the enhancement of the flux due to the clumping of DM and the presence of sub-structures within the DM halos. The full expressions and the detailed modeling of the DM window functions can be found in Appendix \ref{app:WDM}. A few examples of the redshift behavior of the $\gamma$-ray window functions for DM annihilation are shown in Fig. \ref{fig:window_main}, for two photon energies and two DM masses. For comparison, we also show the window functions of unresolved LISP and HSP astrophysical source classes, assuming an observation time of 3 hours. The observation time affects the window functions of astrophysical sources, since it determines the minimum luminosity of the sources that can be resolved by the instrument (and therefore do not contribute to the unresolved component consider in our analysis). The case for 50 hours of observation is shown in Fig. \ref{fig:zWindows} in {\cref{app:model}}.
@@ -289,9 +289,9 @@ Let us note that in our analysis, the window function $W_g(z)$ of the galaxy cat
 
 The cross-correlation APS signal has a variance $\smash{(\Delta C^{\gamma g}_\ell)^2}$ given by~{\cite{camera2013novel,camera2015tomographic,fornengo2014particle}}
 \begin{multline}
-    (\Delta C^{\gamma g}_\ell)^2 \,(2\,\ell+1)\,f_{\rm sky} =  \\ (C_\ell^{\gamma g})^2 + \left[C_\ell^{\gamma \gamma} + \frac{C_N}{(B_\ell)^2}\right]\,\left(C_\ell^{gg} + C_{N_g} \right)\;, \label{eq:Delta}
+    (\Delta C^{\gamma g}_\ell)^2 \,(2\,\ell+1)\,f_\textrm{sky} =  \\ (C_\ell^{\gamma g})^2 + \left[C_\ell^{\gamma \gamma} + \frac{C_N}{(B_\ell)^2}\right]\,\left(C_\ell^{gg} + C_{N_g} \right)\;, \label{eq:Delta}
 \end{multline}
-where $C_\ell^{\gamma\gamma}$ and $C_\ell^{gg}$ are the $\gamma$-ray and galaxy auto-correlation APS, $C_N$ is the photon noise, $C_{N_g}$ the galaxy catalog noise, and $B_\ell$ denotes the beam correction {accounting for the finite angular resolution of the $\gamma$-ray instrument. No beam correction is applied to the galaxy term, since the angular resolution of galaxy catalogs (typically of the order of arcseconds) is negligible for the purposes of this analysis. The parameter} $f_{\rm{sky}}$ denotes the fraction of the sky covered by the analysis. All the relevant terms in \cref{eq:Delta} are outlined in {\cref{app:model}}.
+where $C_\ell^{\gamma\gamma}$ and $C_\ell^{gg}$ are the $\gamma$-ray and galaxy auto-correlation APS, $C_N$ is the photon noise, $C_{N_g}$ the galaxy catalog noise, and $B_\ell$ denotes the beam correction {accounting for the finite angular resolution of the $\gamma$-ray instrument. No beam correction is applied to the galaxy term, since the angular resolution of galaxy catalogs (typically of the order of arcseconds) is negligible for the purposes of this analysis. The parameter} $f_\textrm{{sky}}$ denotes the fraction of the sky covered by the analysis. All the relevant terms in \cref{eq:Delta} are outlined in {\cref{app:model}}.
 
 For completeness, in the following analysis, we will also use the $\gamma$-ray auto-correlation APS, which is a measure of the intrinsic anisotropy of the $\gamma$-ray emission. It reads~\cite{Ando:2013ff,camera2013novel,camera2015tomographic,fornengo2014particle}
 \begin{equation}
@@ -301,7 +301,7 @@ For completeness, in the following analysis, we will also use the $\gamma$-ray a
 \end{equation}
 where $P_{\gamma \gamma}$ is the 3D power spectrum of the $\gamma$-ray emission. The corresponding variance on $C_\ell^{\gamma \gamma}$ is~{\cite{camera2013novel,camera2015tomographic,fornengo2014particle}}
 \be
-(\Delta C_\ell^{\gamma \gamma})^2 = \frac{2}{(2\,\ell+1)\,f_{\rm sky}} \left[C_\ell^{\gamma \gamma} + \frac{C_N}{(B_\ell)^2} \right]^2\;.\label{eq:variance_gammagamma}
+(\Delta C_\ell^{\gamma \gamma})^2 = \frac{2}{(2\,\ell+1)\,f_\textrm{sky}} \left[C_\ell^{\gamma \gamma} + \frac{C_N}{(B_\ell)^2} \right]^2\;.\label{eq:variance_gammagamma}
 \ee
 
 
@@ -309,7 +309,7 @@ where $P_{\gamma \gamma}$ is the 3D power spectrum of the $\gamma$-ray emission.
 \centering
 \begin{tabular}{|m{0.07\textwidth} |m{0.06\textwidth} m{0.12\textwidth} m{0.10\textwidth} m{0.10\textwidth}|} 
 \hline
-  & $\Gamma$ & $E_{\text{cut}}$ [GeV] & $L_{\rm min}$ [erg/s] & $L_{\rm max}$ [erg/s]  \\ [0.5ex]
+  & $\Gamma$ & $E_{\text{cut}}$ [GeV] & $L_\textrm{min}$ [erg/s] & $L_\textrm{max}$ [erg/s]  \\ [0.5ex]
  \hline
  HSP & 1.86 & 910 $^{+1100}_{-450}$ & $10^{38}$ & $3\cdot 10^{45}$  \\ [0.5ex]
  LISP & 2.08 & 37 $^{+85}_{-20}$ & $10^{38}$ & $3\cdot 10^{46}$ \\ [1ex]
@@ -328,7 +328,7 @@ where $P_{\gamma \gamma}$ is the 3D power spectrum of the $\gamma$-ray emission.
 
 As a first step, we determine whether the anisotropy and the cross-correlation signals from unresolved astrophysical sources are detectable. As a statistical figure of merit, we adopt the signal-to-noise ratio (SNR), defined, for the cross-correlation, as
 \begin{equation}
-    {\rm SNR} = \sqrt{\sum_{\ell, i} \left(\frac{C_{\ell, i}^{\gamma g}}{\Delta C_{\ell, i}^{\gamma g}}\right)^2}\;,
+    \textrm{SNR} = \sqrt{\sum_{\ell, i} \left(\frac{C_{\ell, i}^{\gamma g}}{\Delta C_{\ell, i}^{\gamma g}}\right)^2}\;,
     \label{eq:SNR2}
 \end{equation}
 %
@@ -339,10 +339,10 @@ The sum over multipoles extends from $\ell = 10$ up to $\ell = 1000$. The lower 
 where the $\gamma$-ray Galactic foreground is the dominant emission, and, if not properly modeled and removed, can create some artifact in the reconstructed signal, especially in the auto-correlation. This issue is, however, mostly of concern for a real data analysis like the one in \cite{Fermi-LAT:2018udj}, where we refer the reader for further details. In our forecast, starting the sum from $\ell=10$ or $\ell=1$ has a negligible impact on the final results.
 At the same time, we do not consider very large multipoles, since the (energy-dependent) angular resolution of the $\gamma$-ray detector prevents us from accessing information on angular scales which are much smaller than its point-spread-function (PSF). The CTAO PSF has been determined through a Monte Carlo simulation of the detector and is shown in Fig. \ref{fig:PSF_Beam} in Appendix \ref{app:model}, together with its harmonic space transform $B_\ell$, which enters in the expression for the variance $\Delta C_{\ell, i}^{\gamma g}$ of Eq. (\ref{eq:Delta}). From Fig. \ref{fig:PSF_Beam} we can see that for multipoles above about 1000 the beam function $B_\ell$ sharply decreases, thus inflating the variance and making those large multipoles irrelevant for the SNR.
 
-The results for 3 hours and 50 hours of observation time are shown in \cref{table:SNR}, for both LISP and HSP source classes, and for both the auto-correlation and cross-correlation APS with the 2MASS galaxy catalog. We find that a purely astrophysical signal from unresolved sources can reach at most (for 50 hours of observation) only a marginal evidence of ${\rm SNR} \simeq 0.9$ in the autocorrelation, and about $0.16$ in the cross-correlation case.   
+The results for 3 hours and 50 hours of observation time are shown in \cref{table:SNR}, for both LISP and HSP source classes, and for both the auto-correlation and cross-correlation APS with the 2MASS galaxy catalog. We find that a purely astrophysical signal from unresolved sources can reach at most (for 50 hours of observation) only a marginal evidence of $\textrm{SNR} \simeq 0.9$ in the autocorrelation, and about $0.16$ in the cross-correlation case.   
 These values of SNR correspond to the HSP blazars, whose hard spectra are better suited to the CTAO energy range. The SNR is even smaller for LISPs, whose softer spectra result in a poorer overlap with the CTAO sensitivity. 
 
-As an aside comment, let us note that this is not necessarily a negative result: it simply reflects the fact that the expected sensitivity of CTAO to point-source detection would be good enough to resolve a large fraction of blazars, thereby reducing the auto- and cross-correlation APS of the {\sl unresolved} population. In this case, it would be actually convenient and sufficient to perform auto- and cross-correlation APS analyses directly on the catalog of resolved sources in order to study their anisotropy properties. 
+As an aside comment, let us note that this is not necessarily a negative result: it simply reflects the fact that the expected sensitivity of CTAO to point-source detection would be good enough to resolve a large fraction of blazars, thereby reducing the auto- and cross-correlation APS of the \textsl{unresolved} population. In this case, it would be actually convenient and sufficient to perform auto- and cross-correlation APS analyses directly on the catalog of resolved sources in order to study their anisotropy properties. 
 
 \begin{table}[t!]
 \centering
@@ -382,7 +382,7 @@ As an aside comment, let us note that this is not necessarily a negative result:
 However, we wish to stress that this result, i.e., the fact that CTAO sensitivity would be enough to resolve a significant fraction of blazars, 
 strongly depends on the assumed point-source sensitivity of the detector, which for CTAO {remains subject to considerable uncertainty}  (as discussed in \cref{sec:CTA}). This is because the {final configuration and specifications of CTAO have not yet been fully settled.}  For example, the point-source sensitivity {differs significantly between}  CTAO-North and CTAO-South \cite{CTAConsortium:2018tzg}, and at the moment the relative share of North and South array observations to the survey is still undecided. To assess the capabilities of CTAO for the study of anisotropies of point-sources even in the case that the point-source sensitivity is worse than the nominal case derived and adopted in this paper, we repeat the analysis for point-sources by assuming a degraded point-source detection capability. Table \ref{table:SNR-mix} shows the SNR obtained for 50 hrs of observations, assuming a source detection threshold approximately three times worse than in the nominal case of Table \ref{table:SNR}. This has been achieved by using the 50 hrs exposure with a point-source sensitivity corresponding to $3\,\mathrm{hrs}$ of observations, which is approximately a factor of 3 worse than the nominal $50\,\mathrm{hrs}$ sensitivity
 (Note that, since we are in a strongly background-dominated regime, the uncertainty $\Delta C_{\ell}$ does not depend on the $C_{\ell}$ itself, but only on the background and the noise, as discussed in \cref{app:model}).
-The result shows that the auto-correlation SNR for HSP indeed increases significantly, reaching ${\rm SNR} \simeq 5$.  The detectability of the cross-correlation APS signal also improves, but not so strongly as in the auto-correlation case. This is because the cross-correlation signal {is less sensitive to the point-source detection threshold. As detailed in the Appendices, the point-source sensitivity impacts the cross-correlation signal only through the window function, whereas it affects both the window function and the 3D power spectrum in the auto-correlation case.} 
+The result shows that the auto-correlation SNR for HSP indeed increases significantly, reaching $\textrm{SNR} \simeq 5$.  The detectability of the cross-correlation APS signal also improves, but not so strongly as in the auto-correlation case. This is because the cross-correlation signal {is less sensitive to the point-source detection threshold. As detailed in the Appendices, the point-source sensitivity impacts the cross-correlation signal only through the window function, whereas it affects both the window function and the 3D power spectrum in the auto-correlation case.} 
 
 Regarding LISPs, on the other hand, the SNR remains very low in both cases, reaching at most $0.7$ for the auto-correlation and $0.03$ for the cross-correlation. This is expected, because LISPs have a SED cut-off around $40\,\mathrm{GeV}$, resulting in minimal emission in the energy range where CTAO is most sensitive. 
 
@@ -416,10 +416,10 @@ We now turn to assessing the CTAO sensitivity to an auto- or cross-correlation A
 
 For cross-correlations, we adopt the following test statistics:
 \begin{equation}
-    \Delta \chi^2 = \sum_{\ell, i} \left(\frac{C_{\ell, i}^{\gamma_{\rm astro+DM}g}}{\Delta C_{\ell, i}^{\gamma_{\rm astro+DM}g}} \right)^2 - \sum_{\ell, i} \left(\frac{C_{\ell, i}^{\gamma_{\rm astro}g}}{\Delta C_{\ell, i}^{\gamma_{\rm astro}g}} \right)^2\;,
+    \Delta \chi^2 = \sum_{\ell, i} \left(\frac{C_{\ell, i}^{\gamma_\textrm{astro+DM}g}}{\Delta C_{\ell, i}^{\gamma_\textrm{astro+DM}g}} \right)^2 - \sum_{\ell, i} \left(\frac{C_{\ell, i}^{\gamma_\textrm{astro}g}}{\Delta C_{\ell, i}^{\gamma_\textrm{astro}g}} \right)^2\;,
 \end{equation}
 %
-where $\smash{C_{\ell, i}^{ \gamma_{\rm astro}g}}$ denotes the cross-correlation signal due to the presence of only astrophysical sources, while $\smash{C_{\ell, i}^{ \gamma_{\rm astro+DM}g}}$ refers to the case where a DM-induced $\gamma$-ray emission is present. The corresponding standard deviations are $\smash{\Delta C_{\ell, i}^{ \gamma_{\rm astro}g}}$ and $\smash{\Delta C_{\ell, i}^{ \gamma_{\rm astro+DM}g}}$, respectively. Since the DM signal depends on the DM mass $m_\chi$ and scales linearly with the annihilation rate $\langle \sigma v \rangle$ (or inversely with the lifetime $\tau$ in the case of decay), as outlined in {\cref{app:model}}, we derive bounds on the annihilation (or decay) rate by scanning over the DM mass $m_\chi$.
+where $\smash{C_{\ell, i}^{ \gamma_\textrm{astro}g}}$ denotes the cross-correlation signal due to the presence of only astrophysical sources, while $\smash{C_{\ell, i}^{ \gamma_\textrm{astro+DM}g}}$ refers to the case where a DM-induced $\gamma$-ray emission is present. The corresponding standard deviations are $\smash{\Delta C_{\ell, i}^{ \gamma_\textrm{astro}g}}$ and $\smash{\Delta C_{\ell, i}^{ \gamma_\textrm{astro+DM}g}}$, respectively. Since the DM signal depends on the DM mass $m_\chi$ and scales linearly with the annihilation rate $\langle \sigma v \rangle$ (or inversely with the lifetime $\tau$ in the case of decay), as outlined in {\cref{app:model}}, we derive bounds on the annihilation (or decay) rate by scanning over the DM mass $m_\chi$.
 We then derive the $2\,\sigma$ bounds on the annihilation (or decay)
 rate by requiring $\Delta \chi^2 = 4$. A similar test statistic and procedure is employed for the auto-correlation case.
 We stress that the DM results are derived assuming the nominal case for the astrophysical sources scenario (i.e., HSP+LISP) and point-source sensitivity.
@@ -521,7 +521,7 @@ The angular power spectra for the $\gamma$-ray autocorrelation and for the cross
 \centering
 \begin{tabular}{|c|cc|}
 \hline
-Bin & $E_{\rm{min}}$ & $E_{\rm{max}}$ \\
+Bin & $E_\textrm{{min}}$ & $E_\textrm{{max}}$ \\
 \hline
  Low & 8 GeV & 126 GeV \\  
  Mid & 126 GeV & 1.3 Tev \\
@@ -547,10 +547,10 @@ $C_\ell^{\gamma \gamma}$ and $C_\ell^{\gamma g}$ are both energy-dependent. In o
 
 The variance of the auto-correlation APS, in the Gaussian approximation, is given by \cref{eq:variance_gammagamma}.
 
-The sky fraction observed by CTAO is $f_{\rm{sky}} \sim 0.25$ and it is considered energy-independent in our analysis. The beam window functions $B_\ell$ account for the smearing of the angular signal due to the finite angular resolution of the instrument and can be defined in terms of the point spread function (PSF) as 
+The sky fraction observed by CTAO is $f_\textrm{{sky}} \sim 0.25$ and it is considered energy-independent in our analysis. The beam window functions $B_\ell$ account for the smearing of the angular signal due to the finite angular resolution of the instrument and can be defined in terms of the point spread function (PSF) as 
 %
 \be
-B_\ell(E) = \int \de\theta \, {\rm{PSF}} (\theta,E) \, \sin \theta \, P_\ell (\cos \theta)\;,
+B_\ell(E) = \int \de\theta \, \textrm{{PSF}} (\theta,E) \, \sin \theta \, P_\ell (\cos \theta)\;,
 \ee
 %
 where $P_\ell (\cos \theta)$ are the Legendre Polynomials of order $\ell$. The point-spread function PSF($\theta, E $) has been obtained through a Monte Carlo simulation of the CTAO detector, and is energy-dependent.  \cref{fig:PSF_Beam} shows the PSF($\theta, E$) as a function of the angle $\theta$ (left panel) and the corresponding beam window function as a function of the multipole $\ell$ (right panel) for different energies.
@@ -559,16 +559,16 @@ where $P_\ell (\cos \theta)$ are the Legendre Polynomials of order $\ell$. The p
 The beam window function in a specific energy bin is then obtained by averaging over the energy-dependent intensity flux $\de I/\de E$, namely
 %
 \be
-\langle B_\ell \rangle = \frac{1}{N}\,\int_{\rm bin} \de E \, B_\ell(E) \, \frac{\de I}{\de E}\;,
+\langle B_\ell \rangle = \frac{1}{N}\,\int_\textrm{bin} \de E \, B_\ell(E) \, \frac{\de I}{\de E}\;,
 \ee
-where $N = \int_{\rm bin} \de E \, {\de I/\de E}$ For definiteness, we use ${\de I/\de E} \propto E^{-2.3}$, which appropriately matches the observed behavior of the unresolved $\gamma$-ray intensity as measured by {\it Fermi}-LAT.
+where $N = \int_\textrm{bin} \de E \, {\de I/\de E}$ For definiteness, we use ${\de I/\de E} \propto E^{-2.3}$, which appropriately matches the observed behavior of the unresolved $\gamma$-ray intensity as measured by \textit{Fermi}-LAT.
 
 %
 \bff
 \centering
 \includegraphics[width=0.49\textwidth]{figures/new_analysis/N_CR.pdf}
 \includegraphics[width=0.49\textwidth]{figures/new_analysis/exposure_CTA.pdf}
-\caption{Left: Cosmic-ray background $N_{\rm{CR}}$ as a function of energy. Right: CTAO exposure as a function of energy.}
+\caption{Left: Cosmic-ray background $N_\textrm{{CR}}$ as a function of energy. Right: CTAO exposure as a function of energy.}
 \label{noise}
 \eff
 %
@@ -577,34 +577,34 @@ where $N = \int_{\rm bin} \de E \, {\de I/\de E}$ For definiteness, we use ${\de
     \centering
     \includegraphics[width=0.45\textwidth]{figures/new_analysis/N_gamma.pdf}
     \includegraphics[width=0.45\textwidth]{figures/new_analysis/N_CR_over_N_gamma.pdf}
-    \caption{Left: Number of expected $\gamma$-ray events $N_{\gamma}$ in the CTAO survey as a function of energy. Right: Ratio {of cosmic-ray events to expected $\gamma$-ray events ($N_{\rm CR} / N_{\gamma}$)} after quality cuts in the CTAO survey. The ratio worsens above 1 TeV due to significant $\gamma$-ray suppression from EBL attenuation. $N_\gamma$ is determined for the HSP plus LISP source classes.}
+    \caption{Left: Number of expected $\gamma$-ray events $N_{\gamma}$ in the CTAO survey as a function of energy. Right: Ratio {of cosmic-ray events to expected $\gamma$-ray events ($N_\textrm{CR} / N_{\gamma}$)} after quality cuts in the CTAO survey. The ratio worsens above 1 TeV due to significant $\gamma$-ray suppression from EBL attenuation. $N_\gamma$ is determined for the HSP plus LISP source classes.}
     \label{fig:N_CR_over_N_gamma}
 \end{figure}
 
 The photon noise $C_N$ is also energy-dependent and is determined as
 \be
-C_N = \frac{4\,\pi\,f_{\rm sky}}{N_\gamma} \left(1 + \frac{N_{\rm{CR}}}{N_\gamma} \right)\,\langle I \rangle^2\;,
+C_N = \frac{4\,\pi\,f_\textrm{sky}}{N_\gamma} \left(1 + \frac{N_\textrm{{CR}}}{N_\gamma} \right)\,\langle I \rangle^2\;,
 \ee
 %
-where $N_{\rm{CR}}$ represents the cosmic-ray irreducible background, $N_\gamma$ is the number of $\gamma$-ray events, and $\langle I \rangle$ denotes the mean $\gamma$-ray intensity in the specific energy bin, which is determined from the window functions as: 
+where $N_\textrm{{CR}}$ represents the cosmic-ray irreducible background, $N_\gamma$ is the number of $\gamma$-ray events, and $\langle I \rangle$ denotes the mean $\gamma$-ray intensity in the specific energy bin, which is determined from the window functions as: 
 $\langle I \rangle = \int \de\chi \,  W(\chi)$. $N_\gamma$ is therefore related to $\langle I \rangle$ via
 \be
-N_\gamma = 4\,\pi\,f_{\rm sky}\,\cal{E}\,\langle I \rangle\;,
+N_\gamma = 4\,\pi\,f_\textrm{sky}\,\cal{E}\,\langle I \rangle\;,
 \ee
 where $\cal{E}$ represents the CTAO exposure in the given energy bin.
-The exposure and the counts associated with the cosmic-ray background are derived via Monte Carlo simulations of the CTAO array. The simulation has been performed for 1.62h of observation time, and the results were then rescaled to obtain the exposure for $3\,\mathrm{hrs}$ and 50h. \cref{noise} displays the estimated cosmic-ray backgrounds $N_{\rm{CR}}$ (left panel) and exposures $\cal{E}$ (right panel) as a function of the energy.
+The exposure and the counts associated with the cosmic-ray background are derived via Monte Carlo simulations of the CTAO array. The simulation has been performed for 1.62h of observation time, and the results were then rescaled to obtain the exposure for $3\,\mathrm{hrs}$ and 50h. \cref{noise} displays the estimated cosmic-ray backgrounds $N_\textrm{{CR}}$ (left panel) and exposures $\cal{E}$ (right panel) as a function of the energy.
 
- \cref{fig:N_CR_over_N_gamma}  shows the the number of $\gamma$-ray events $N_{\gamma}$ and the  ratio $N_{\rm{CR}}/N_{\gamma}$ as a function of energy. Since $N_{\rm{CR}}/N_{\gamma} \gg 1$  in all the energy bins considered in our analysis, the noise can be approximated as
+ \cref{fig:N_CR_over_N_gamma}  shows the the number of $\gamma$-ray events $N_{\gamma}$ and the  ratio $N_\textrm{{CR}}/N_{\gamma}$ as a function of energy. Since $N_\textrm{{CR}}/N_{\gamma} \gg 1$  in all the energy bins considered in our analysis, the noise can be approximated as
 %
 \be
-C_N \simeq 4\,\pi\,f_{\rm sky}\,\frac{ N_{\rm{CR}}}{N_\gamma^2}\,\langle I \rangle^2
+C_N \simeq 4\,\pi\,f_\textrm{sky}\,\frac{ N_\textrm{{CR}}}{N_\gamma^2}\,\langle I \rangle^2
 \label{CN}
 \ee
 %
 By substituting the expression of $N_\gamma$ in \cref{CN}, it becomes evident that $C_N$ can be expressed only in terms of detector properties and configuration,
 %
 \be
-C_N \simeq \frac{ N_{\rm{CR}}}{4\,\pi\,f_{\rm sky} \, {\cal E}^2} 
+C_N \simeq \frac{ N_\textrm{{CR}}}{4\,\pi\,f_\textrm{sky} \, {\cal E}^2} 
 \ee
 %
 The noise $C_N$ is shown explicitly in \cref{fig:Cl_vs_E}, together with a selection of auto- and cross-correlation energy spectra.
@@ -619,14 +619,14 @@ The noise $C_N$ is shown explicitly in \cref{fig:Cl_vs_E}, together with a selec
 
 In the case of cross-correlations, the variance is instead given by \cite{camera2013novel,camera2015tomographic,fornengo2014particle}
 \begin{equation}
-    (\Delta C^{\gamma g}_\ell)^2 = \frac{1}{\left(2\ell+1 \right) f_{\rm{sky}}} \left[(C_\ell^{\gamma g})^2 + \left(C_\ell^{\gamma \gamma} + \frac{C_N}{B_\ell^2}\right)\left(C_\ell^{gg} + C_{N_g} \right) \right].
+    (\Delta C^{\gamma g}_\ell)^2 = \frac{1}{\left(2\ell+1 \right) f_\textrm{{sky}}} \left[(C_\ell^{\gamma g})^2 + \left(C_\ell^{\gamma \gamma} + \frac{C_N}{B_\ell^2}\right)\left(C_\ell^{gg} + C_{N_g} \right) \right].
     \label{eq:deltagamma g}
 \end{equation}
 where $C_\ell^{gg}$ is the galaxy auto-correlation, $C_N$ is the same as in the auto-correlation case, $C_{N_g}$ is the galaxy catalog noise. There is no beam correction in the galaxy term, as the angular resolution on the galaxy catalog is on the order of arcseconds,  making it negligible in this analysis. The galaxy noise is given by
 \be
-C_{N_g}= \frac{4\,\pi\,f_{{\rm sky},g}}{N_g}
+C_{N_g}= \frac{4\,\pi\,f_{\textrm{sky},g}}{N_g}
 \ee
-where $f_{{\rm sky},g}$ represents the fraction of the sky covered by the catalog, and $N_g$ is the number of galaxies in the catalog. \cref{fig:Cl_vs_E} shows the quantity $\sqrt{C_N\,C_{N_g}}$ as a representative level for the cross-correlation noise, which approximately corresponds to the noise expected in a noise-dominated regime. 
+where $f_{\textrm{sky},g}$ represents the fraction of the sky covered by the catalog, and $N_g$ is the number of galaxies in the catalog. \cref{fig:Cl_vs_E} shows the quantity $\sqrt{C_N\,C_{N_g}}$ as a representative level for the cross-correlation noise, which approximately corresponds to the noise expected in a noise-dominated regime. 
 
 \subsection{Window functions}
 \label{app:window}
@@ -636,57 +636,57 @@ where $f_{{\rm sky},g}$ represents the fraction of the sky covered by the catalo
 
 The window function for the $\gamma$-ray emission of unresolved astrophysical sources can be written as
 \begin{equation}
-    W(E, \chi) =  \frac{\de W}{\de E\,\de\chi} = \frac{d_L^2(z)}{\left(1+z \right)^2} \; \int_{L_{\rm min}}^{L_{\rm th}(z)} \;  \de L \; \Phi(L,z) \, \frac{d F}{d E}(E,L,z) \, \exp[-\tau(E,z)] 
+    W(E, \chi) =  \frac{\de W}{\de E\,\de\chi} = \frac{d_L^2(z)}{\left(1+z \right)^2} \; \int_{L_\textrm{min}}^{L_\textrm{th}(z)} \;  \de L \; \Phi(L,z) \, \frac{d F}{d E}(E,L,z) \, \exp[-\tau(E,z)] 
     \label{eq:window_astro}
 \end{equation}
 where $d_L(z)$ is the luminosity distance, $\Phi(L,z)$ is the $\gamma$-ray luminosity function of the source population. In the present analysis, we use the luminosity functions of HSP and LISP as reported in \cite{DiMauro:2013zfa}.
 Note that the above window function, which is used in Eq.\ref{eq:auto}-\ref{eq:cross} is differential in comoving distance, $\chi$. The analogous quantity differential, differential in $z$, would be $W(E,z)=\frac{\de W}{\de E\,\de z} = \frac{\de W}{\de E\,\de\chi} \frac{\de\chi}{\de z} = W(E,\chi) \frac{\de\chi}{\de z}$ where $\frac{\de\chi}{\de z} = \frac{c}{H(z)}$. Also note that the above window is differential in energy. In Eq. \ref{eq:auto}-\ref{eq:cross}, however, the corresponding quantity must be integrated over the energy bin considered. $L$ is the $\gamma$-ray luminosity of the source, conventionally integrated over the interval (0.1, 100) GeV, that is
 \be
-L = \int_{0.1\, {\rm GeV}}^{100\, {\rm GeV}} \de E_r \, \frac{\de L}{\de E_r}
+L = \int_{0.1\, \textrm{GeV}}^{100\, \textrm{GeV}} \de E_r \, \frac{\de L}{\de E_r}
 \ee
 where $E_r$ is the source rest-frame energy, related to the observed energy by $E_r = (1+z) E$, and $\de F/\de E$ is the spectral energy distribution (SED) of the sources, which we model as a power law with index $\Gamma$ and an exponential cutoff,
 \begin{equation}
-\frac{\de F}{\de E} = A(L,z) \; E^{-\Gamma} \, \exp(-E/E_{\rm cut})
+\frac{\de F}{\de E} = A(L,z) \; E^{-\Gamma} \, \exp(-E/E_\textrm{cut})
 \label{eq:SED}
 \end{equation}
-The values of $\Gamma$ and $E_{\rm cut}$ for the two classes of astrophysical sources adopted in our models are reported in \cref{table:BLLACS}, together with the minimum luminosity of the source classes $L_{\rm min}$. The parameter $A$, on the other hand, can be related to the luminosity $L$, by observing that (see Eq.\ 22 in \cite{Hogg:1999ad})
+The values of $\Gamma$ and $E_\textrm{cut}$ for the two classes of astrophysical sources adopted in our models are reported in \cref{table:BLLACS}, together with the minimum luminosity of the source classes $L_\textrm{min}$. The parameter $A$, on the other hand, can be related to the luminosity $L$, by observing that (see Eq.\ 22 in \cite{Hogg:1999ad})
 \be
-L = \frac{4\,\pi\,d_L^2(z)}{(1+z)} \int_{0.1\, {\rm GeV}}^{100\, {\rm GeV}} \de E_r \, E_r \, \frac{\de F}{\de E_r} = 4\,\pi\,d_L^2(z) \int_{0.1\, {\rm GeV}/(1+z)}^{100\, {\rm GeV}/(1+z)} \de E \, E \, \frac{\de F}{\de E}
+L = \frac{4\,\pi\,d_L^2(z)}{(1+z)} \int_{0.1\, \textrm{GeV}}^{100\, \textrm{GeV}} \de E_r \, E_r \, \frac{\de F}{\de E_r} = 4\,\pi\,d_L^2(z) \int_{0.1\, \textrm{GeV}/(1+z)}^{100\, \textrm{GeV}/(1+z)} \de E \, E \, \frac{\de F}{\de E}
 \label{eq:luminosity}
 \ee
 and therefore:
 \be
 A(L,z) = \frac{L}{4\,\pi\,d_L(z)^2} 
 \left[ 
-\int_{0.1\, {\rm GeV}/(1+z)}^{100\, {\rm GeV}/(1+z)} 
-\de E \,  E^{(-\Gamma + 1)} \, \exp(-E/E_{\rm cut}) \right]^{-1}
+\int_{0.1\, \textrm{GeV}/(1+z)}^{100\, \textrm{GeV}/(1+z)} 
+\de E \,  E^{(-\Gamma + 1)} \, \exp(-E/E_\textrm{cut}) \right]^{-1}
 \ee
 
 
-The last term in \cref{eq:window_astro} models the $\gamma$-ray absorption on extragalactic background light (EBL). For the optical depth $\tau(E,z)$, we adopt the results from Ref. \cite{Finke:2009xi}. The maximal luminosity $L_{\rm th}(z)$ in \cref{eq:window_astro}, which refers to the threshold of detectability of resolved sources by the detector, depends on the CTAO sensitivity $F_{\rm sens}^{\rm CTA}(z)$ to point sources in the energy range of operation, which in our analysis is defined as (30 GeV, 30 TeV) 
+The last term in \cref{eq:window_astro} models the $\gamma$-ray absorption on extragalactic background light (EBL). For the optical depth $\tau(E,z)$, we adopt the results from Ref. \cite{Finke:2009xi}. The maximal luminosity $L_\textrm{th}(z)$ in \cref{eq:window_astro}, which refers to the threshold of detectability of resolved sources by the detector, depends on the CTAO sensitivity $F_\textrm{sens}^\textrm{CTA}(z)$ to point sources in the energy range of operation, which in our analysis is defined as (30 GeV, 30 TeV) 
 \be
-F_{\rm sens}^{\rm CTA}(z) = \int_{30\, {\rm GeV}}^{30\, {\rm TeV}} \de E \, \frac{\de F}{\de E} \, \exp[-\tau(E,z)] = 
-A_{\rm th}(z)\; \int_{30\, {\rm GeV}}^{30\, {\rm TeV}} \, \de E \, E^{-\Gamma} \, \exp(-E/E_{\rm cut}) \exp[-\tau(E,z)]
+F_\textrm{sens}^\textrm{CTA}(z) = \int_{30\, \textrm{GeV}}^{30\, \textrm{TeV}} \de E \, \frac{\de F}{\de E} \, \exp[-\tau(E,z)] = 
+A_\textrm{th}(z)\; \int_{30\, \textrm{GeV}}^{30\, \textrm{TeV}} \, \de E \, E^{-\Gamma} \, \exp(-E/E_\textrm{cut}) \exp[-\tau(E,z)]
 \label{FsensCTA}
 \ee
-From $F_{\rm sens}^{\rm CTA}(z)$, it is therefore possible to determine the value of $A_{\rm th}(z)$, which allows us to determine the threshold luminosity by means of \cref{eq:luminosity} as
+From $F_\textrm{sens}^\textrm{CTA}(z)$, it is therefore possible to determine the value of $A_\textrm{th}(z)$, which allows us to determine the threshold luminosity by means of \cref{eq:luminosity} as
 %
 \be
-L_{\rm th}(z) = 4\,\pi\,d_L^2(z) \; F_{\rm sens}^{\rm CTA}(z) \; 
+L_\textrm{th}(z) = 4\,\pi\,d_L^2(z) \; F_\textrm{sens}^\textrm{CTA}(z) \; 
 \frac{
-\int_{0.1\, {\rm GeV}/(1+z)}^{100\, {\rm GeV}/(1+z)} \de E \, E^{-\Gamma+1} \, \exp(-E/E_{\rm cut})}
-{\int_{30\, {\rm GeV}}^{30\, {\rm TeV}} \, \de E \, E^{-\Gamma} \, \exp(-E/E_{\rm cut}) \exp[-\tau(E,z)]}
+\int_{0.1\, \textrm{GeV}/(1+z)}^{100\, \textrm{GeV}/(1+z)} \de E \, E^{-\Gamma+1} \, \exp(-E/E_\textrm{cut})}
+{\int_{30\, \textrm{GeV}}^{30\, \textrm{TeV}} \, \de E \, E^{-\Gamma} \, \exp(-E/E_\textrm{cut}) \exp[-\tau(E,z)]}
 \label{eq:threshold}
 \ee
 %
 
-The HSP and LISP point source sensitivity has been obtained through extensive Monte Carlo simulations \cite{CTAConsortium:2018tzg,VeronikaThesis} and is shown in \cref{fig:diffsens} for $3\,\mathrm{hrs}$ of observation across different energy bins. The same plot compares the differential sensitivity with the $\gamma$-ray spectra of LISP and HSP blazars normalized to the minimum detectable intensity. As shown, the spectra observed at Earth are redshift-dependent, as sources at different redshifts experience different levels of EBL absorption. \cref{fig:Fsens} instead shows the integrated HSP and LISP point source sensitivity in the energy range 30 GeV to 30 TeV as a function of $z$, where the normalization of the SED in \cref{eq:SED} has been fixed to its threshold value $A_{\rm th}(z)$, obtained from \cref{FsensCTA} by employing the Monte Carlo modeling of $F_{\rm sens}^{\rm CTA}(z)$.
+The HSP and LISP point source sensitivity has been obtained through extensive Monte Carlo simulations \cite{CTAConsortium:2018tzg,VeronikaThesis} and is shown in \cref{fig:diffsens} for $3\,\mathrm{hrs}$ of observation across different energy bins. The same plot compares the differential sensitivity with the $\gamma$-ray spectra of LISP and HSP blazars normalized to the minimum detectable intensity. As shown, the spectra observed at Earth are redshift-dependent, as sources at different redshifts experience different levels of EBL absorption. \cref{fig:Fsens} instead shows the integrated HSP and LISP point source sensitivity in the energy range 30 GeV to 30 TeV as a function of $z$, where the normalization of the SED in \cref{eq:SED} has been fixed to its threshold value $A_\textrm{th}(z)$, obtained from \cref{FsensCTA} by employing the Monte Carlo modeling of $F_\textrm{sens}^\textrm{CTA}(z)$.
 
 
 \begin{figure}[t!]
     \centering
     \includegraphics[width=0.45\textwidth]{figures/new_analysis/Fsens.pdf}
-    \caption{CTA sensitivity $F_{\rm sens}^{\rm CTA}(z)$ for $3\,\mathrm{hrs}$ and $5\,\mathrm{hrs}$ of observation as a function of redshift, for the HSP and LISP $\gamma$-ray source classes.}
+    \caption{CTA sensitivity $F_\textrm{sens}^\textrm{CTA}(z)$ for $3\,\mathrm{hrs}$ and $5\,\mathrm{hrs}$ of observation as a function of redshift, for the HSP and LISP $\gamma$-ray source classes.}
     \label{fig:Fsens}
 \end{figure}
 
@@ -697,18 +697,18 @@ The HSP and LISP point source sensitivity has been obtained through extensive Mo
 Window functions for dark matter are modeled as in Refs. \cite{camera2015tomographic,fornengo2014particle,Cuoco:2015rfa}, to which we refer for additional details. For decaying dark matter, we have
 %
  \be
-     W(E, \chi) = \frac{\de W}{\de E\,\de\chi} = \, \left (\frac{\Omega_{\rm DM} \,\rho_{\rm c} }{m_{\chi}} \right) \, \frac{\Gamma_{\rm d}}{4 \pi}  \frac{\de N}{\de E}[(1+z)/E] \, \exp[-\tau(E,z)]
+     W(E, \chi) = \frac{\de W}{\de E\,\de\chi} = \, \left (\frac{\Omega_\textrm{DM} \,\rho_\textrm{c} }{m_{\chi}} \right) \, \frac{\Gamma_\textrm{d}}{4 \pi}  \frac{\de N}{\de E}[(1+z)/E] \, \exp[-\tau(E,z)]
      \label{eqn:Wann}
  \ee
 %
-where $\Omega_{\rm DM}$ is the dark matter density parameter, $\rho_{\rm c}$ is the critical density of the Universe,
-$m_{\chi}$ the DM particle mass, $\Gamma_{\rm d}$ the DM decay rate, $dN/\de E$ the $\gamma$-ray energy spectrum per decay event, which we take from \cite{Arina:2023eic} for decay into $b\bar{b}$, $\tau^+ \tau^-$, $W^+ W^-$. The last term in the equation refers again to $\gamma$-ray absorption, as discussed for the astrophysical sources.
+where $\Omega_\textrm{DM}$ is the dark matter density parameter, $\rho_\textrm{c}$ is the critical density of the Universe,
+$m_{\chi}$ the DM particle mass, $\Gamma_\textrm{d}$ the DM decay rate, $dN/\de E$ the $\gamma$-ray energy spectrum per decay event, which we take from \cite{Arina:2023eic} for decay into $b\bar{b}$, $\tau^+ \tau^-$, $W^+ W^-$. The last term in the equation refers again to $\gamma$-ray absorption, as discussed for the astrophysical sources.
 
 
 For annihilating DM, the window function reads
 %
  \be
-     W(E, \chi) = \frac{\de W}{\de E\de\chi} = \frac{1}{4 \pi} \, \frac{\langle \sigma v \rangle}{2} \Delta^2(z) \, \left (\frac{\Omega_{\rm DM} \,\rho_{\rm c} }{m_{\chi}} \right)^2 (1+z)^3  \frac{d N}{d E}[(1+z)E]  \exp[-\tau(E,z)]\;,
+     W(E, \chi) = \frac{\de W}{\de E\de\chi} = \frac{1}{4 \pi} \, \frac{\langle \sigma v \rangle}{2} \Delta^2(z) \, \left (\frac{\Omega_\textrm{DM} \,\rho_\textrm{c} }{m_{\chi}} \right)^2 (1+z)^3  \frac{d N}{d E}[(1+z)E]  \exp[-\tau(E,z)]\;,
      \label{eqn:Wann}
  \ee
 %
@@ -755,11 +755,11 @@ To model the clustering of galaxies within the catalog, we use the Halo Occupati
 
 The number of galaxies residing within a DM halo of mass $M$ is parameterized as
 \begin{eqnarray}
-\langle N_{\rm cen}(M)\rangle &=& \frac{1}{2}\left[1+{\rm erf}\left(\frac{\log M-\log M_{\rm th}}{\sigma_{\rm logM}}\right)\right]\;, \label{eq:HOD1}\\
-\langle N_{\rm sat}(M)\rangle &=& \left( \frac{M}{M_1} \right)^\alpha \exp{\left(-\frac{M_{\rm cut}}{M}\right)}\;,\label{eq:HOD2}
+\langle N_\textrm{cen}(M)\rangle &=& \frac{1}{2}\left[1+\textrm{erf}\left(\frac{\log M-\log M_\textrm{th}}{\sigma_\textrm{logM}}\right)\right]\;, \label{eq:HOD1}\\
+\langle N_\textrm{sat}(M)\rangle &=& \left( \frac{M}{M_1} \right)^\alpha \exp{\left(-\frac{M_\textrm{cut}}{M}\right)}\;,\label{eq:HOD2}
 \end{eqnarray}
-where, for a halo of mass $M$, $\langle N_{\rm cen}(M) \rangle$ is the average number of galaxies at the center of the halo and $\langle N_{\rm sat}(M)\rangle$ represents the average number of satellite galaxies.
-The parameters $M_{\rm th}, \ \sigma_{\rm logM}, \ \alpha, \ M_1, \ M_{\rm cut}$ characterize the HOD and we chose them according to 
+where, for a halo of mass $M$, $\langle N_\textrm{cen}(M) \rangle$ is the average number of galaxies at the center of the halo and $\langle N_\textrm{sat}(M)\rangle$ represents the average number of satellite galaxies.
+The parameters $M_\textrm{th}, \ \sigma_\textrm{logM}, \ \alpha, \ M_1, \ M_\textrm{cut}$ characterize the HOD and we chose them according to 
 \cite{Ando:2017wff} for 2MRS and \cite{Cuoco:2015rfa} for 2MASS.
 
 
@@ -827,7 +827,7 @@ The same figure also shows the CTA sensitivity to the Poisson anisotropy in thre
     \centering
     \includegraphics[width=0.45\textwidth]{figures/new_analysis/CTA_sensitivity_3h.pdf}
     \includegraphics[width=0.45\textwidth]{figures/new_analysis/CTA_sensitivity_50h.pdf}
-    \caption{CTA sensitivity to the Poisson anisotropy $C_p$ (normalized to the square of the mean $\gamma$-ray intensity) in the low, mid and high energy bins, for 3 hours (left panel) and 50 hours (right panel) of observation. The predicted sensitivity is to the expected $C_p$ from {\sl unresolved} blazars (solid black lines). The reduced sensitivity at high energies is driven by the limited number of $\gamma$-ray events in this energy range.}
+    \caption{CTA sensitivity to the Poisson anisotropy $C_p$ (normalized to the square of the mean $\gamma$-ray intensity) in the low, mid and high energy bins, for 3 hours (left panel) and 50 hours (right panel) of observation. The predicted sensitivity is to the expected $C_p$ from \textsl{unresolved} blazars (solid black lines). The reduced sensitivity at high energies is driven by the limited number of $\gamma$-ray events in this energy range.}
     \label{fig:Cp_I2}
 \end{figure}
 

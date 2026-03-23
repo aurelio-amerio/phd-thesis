@@ -5,12 +5,12 @@
 We comment here on some summary statistics and synthetic analysis of our main results.
 %
 In table~\ref{tab:tsstar} we report, for different values of $\alpha$, the 
-$TS_*$ above which the 4FGL-DR3 catalogue source model and real data pass the KS test (second column, $TS_*^{\rm cat}$), and the corresponding $TS_*$ where the $\dNdS$~simulated sky maps do the same ($TS_*^{\rm sim}$), at different values of $QF$.
+$TS_*$ above which the 4FGL-DR3 catalogue source model and real data pass the KS test (second column, $TS_*^\textrm{cat}$), and the corresponding $TS_*$ where the $\dNdS$~simulated sky maps do the same ($TS_*^\textrm{sim}$), at different values of $QF$.
 \begin{table}[!h]
     \renewcommand{\arraystretch}{1.2}
     \centering
     \begin{tabular}{c|c|c|c|c}   
-        $\alpha$ & $TS_*^{\rm cat}$ & $TS_*^{\rm sim}(QF=0.9)$& $TS_*^{\rm sim}(QF=0.8)$&  $TS_*^{\rm sim}(QF=0.5)$\\
+        $\alpha$ & $TS_*^\textrm{cat}$ & $TS_*^\textrm{sim}(QF=0.9)$& $TS_*^\textrm{sim}(QF=0.8)$&  $TS_*^\textrm{sim}(QF=0.5)$\\
         \hline 
        0.01 & 53 & 57 & 42 & 33\\ 
         \hline 
@@ -18,7 +18,7 @@ $TS_*$ above which the 4FGL-DR3 catalogue source model and real data pass the KS
         \hline 
        0.10 & 63 & 307 & 74 & 37\\
     \end{tabular}
-\caption{Required $TS_*$ for three values of $\alpha$ (KS test confidence level) for the matching between 4FGL-DR3 catalogue source model and real data (second column, $TS_*^{\rm cat}$), and the corresponding $TS_*$ for the $\dNdS$~simulated sky maps vs real data (rest of columns, $TS_*^{\rm sim}$), at different values of $QF$.}  
+\caption{Required $TS_*$ for three values of $\alpha$ (KS test confidence level) for the matching between 4FGL-DR3 catalogue source model and real data (second column, $TS_*^\textrm{cat}$), and the corresponding $TS_*$ for the $\dNdS$~simulated sky maps vs real data (rest of columns, $TS_*^\textrm{sim}$), at different values of $QF$.}  
 \label{tab:tsstar}
 \end{table}
 
@@ -26,7 +26,7 @@ $TS_*$ above which the 4FGL-DR3 catalogue source model and real data pass the KS
     \renewcommand{\arraystretch}{1.2}
     \centering
     \begin{tabular}{c|c|c|c}   
-        $\alpha$ & $\widetilde{TS}_*^{\rm sim}(QF=0.9)$& $\widetilde{TS}_*^{\rm sim}(QF=0.8)$& $\widetilde{TS}_*^{\rm sim}(QF=0.5)$\\
+        $\alpha$ & $\widetilde{TS}_*^\textrm{sim}(QF=0.9)$& $\widetilde{TS}_*^\textrm{sim}(QF=0.8)$& $\widetilde{TS}_*^\textrm{sim}(QF=0.5)$\\
         \hline 
        0.01  & 181 & 161 & 104 \\ 
         \hline 
@@ -44,13 +44,13 @@ The first conclusion is that, provided that the choice of $QF$ (and/or  of $\alp
 A second sanity check is that  the $\dNdS$~model is better in agreement with the data than with the catalogue: This manifests in the values of $\widetilde{TS}_*$ (see table \ref{tab:ts4FGL}) for which the $\dNdS$~model yields maps in agreement  with the catalogue map $\mathcal{K}$, hence indicated with a tilde. As we can see from the table, the $\widetilde{TS}_*$ values are significantly higher than the corresponding $TS_*$ reported in table~\ref{tab:tsstar}.
 
 
-A further natural question to ask oneself is if the statistical procedure leads to a competitive sample of candidate source positions in the sky, when compared to the \Fermi-LAT catalogue analysis. After all, requiring an agreement of the $TS$ histograms in the KS-sense is a {\it qualitatively} different procedure than the one used by the collaboration to infer their catalogue. 
+A further natural question to ask oneself is if the statistical procedure leads to a competitive sample of candidate source positions in the sky, when compared to the \Fermi-LAT catalogue analysis. After all, requiring an agreement of the $TS$ histograms in the KS-sense is a \textit{qualitatively} different procedure than the one used by the collaboration to infer their catalogue. 
 A direct comparison is impossible, if anything since our discretisation of the sky only allows us to identify firing pixels, which are not in a one-to-one correspondence with sources, as discussed in the previous section. However, for a reasonable choice of the pixel size as the one adopted here (see discussion at the end of section~\ref{sec:procedure}) we expect the number of  firing pixels to be a reasonable proxy of the number of underlying candidate sources. Our results are reported in table~\ref{tab:number_firing}.
 \begin{table}[!h]
     \renewcommand{\arraystretch}{1.2}
     \centering
     \begin{tabular}{c|c|c|c|c}   
-        $\alpha$ & $N^{\rm cat}$ & $N^{\rm sim}(QF=0.9)$& $N^{\rm sim}(QF=0.8)$& $N^{\rm sim}(QF=0.5)$\\
+        $\alpha$ & $N^\textrm{cat}$ & $N^\textrm{sim}(QF=0.9)$& $N^\textrm{sim}(QF=0.8)$& $N^\textrm{sim}(QF=0.5)$\\
         \hline 
        0.01 & 7412 & 7050 & 8543  & 10068\\
         \hline 
@@ -83,12 +83,12 @@ In figure~\ref{fig:2} we compute the fraction of all the pixels in the catalogue
 \label{fig:2b}
 \end{figure}
 
-Roughly~\footnote{More quantitative considerations require energy- and position-dependent assessments.}, \Fermi-LAT starts to loose sensitivity to sources below $2\times 10^{-10}\, {\rm cm}^{-2}{\rm s}^{-1}$~\cite{Zechlin:2015wdz,DiMauro:2017ing,Marcotulli:2020fpm,Amerio:2023uet}, above the rising region of the sigmoid-like curves of figure~\ref{fig:2}. As expected, modulo fluctuations, the fraction tends towards unity at high fluxes. Note that we do not expect perfect recovering of the sources in the \Fermi-LAT catalogue, anyway, either due to some simplifications (e.g.~we use energy-integrated quantities for our analysis, as opposed to the differential energy analysis by the LAT collaboration) or methodological differences, such as the pixelisation procedure or the iterative background estimate procedure in \Fermi. But it is clearly the case that we do recover the largest majority of the ``bona fide'' sources that we should. 
+Roughly~\footnote{More quantitative considerations require energy- and position-dependent assessments.}, \Fermi-LAT starts to loose sensitivity to sources below $2\times 10^{-10}\, \textrm{cm}^{-2}\textrm{s}^{-1}$~\cite{Zechlin:2015wdz,DiMauro:2017ing,Marcotulli:2020fpm,Amerio:2023uet}, above the rising region of the sigmoid-like curves of figure~\ref{fig:2}. As expected, modulo fluctuations, the fraction tends towards unity at high fluxes. Note that we do not expect perfect recovering of the sources in the \Fermi-LAT catalogue, anyway, either due to some simplifications (e.g.~we use energy-integrated quantities for our analysis, as opposed to the differential energy analysis by the LAT collaboration) or methodological differences, such as the pixelisation procedure or the iterative background estimate procedure in \Fermi. But it is clearly the case that we do recover the largest majority of the ``bona fide'' sources that we should. 
 
 %
 Figure~\ref{fig:2b} gives us a more detailed look at the information contained in figure~\ref{fig:2}. In this case we do not consider the ``cumulative'' number of pixels, but only those lying in a certain flux bin. The colored histograms correspond to the pixels in map ${\cal K}$ matching with the firing pixels of our \dNdS~model map (related to the numerator of the fraction computed in figure~\ref{fig:2}). The white histogram instead correspond to all the pixels in map ${\cal K}$ (related to the denominator of the aforementioned fraction). The sigmoid curve in figure~\ref{fig:2} grows close to unity at large $S$ since---barring fluctuations---the quasi-totality of sources in the catalogue are found within the adopted cuts. When lowering the cut $TS$, the peak of the colored histogram shifts to lower $S$, while still preferentially populating the high-$S$ tail (compare case $TS=36$ with case $TS=78$). If the $TS$ is lowered too much, as illustrated by the case $TS=10$, the matching starts developing a ``flat tail'' at lower $S$, hinting at a growing  random match component. Eventually, the curves in figure~\ref{fig:2} drop to zero at low $S$ not because of the scarcity of matchings (i.e., the numerator), but due to the faster growing number of pixels having flux above the indicated value (i.e. the denominator).
 
-As a further check, we assess how  robust the selected catalogue is to variations of the background model. We compare the results obtained with the \verb|gll_iem_v07| template with the previous incarnation of the galactic foreground model developed by the Fermi collaboration: \verb|gll_iem_v05_rev1|. Since the $TS^*$ scale and related $QF$ are quantitatively different if the different backgrounds are used, we proceed by comparing the two results {\it at equal number of selected sources}.  We select $TS^*$ cuts delivering the same number of selected sources for the two cases and evaluate the exact overlap of pixel candidates. The results are reported in Tab.~\ref{tab:bck_comp}. As can be seen, within a few percent, the catalogues obtained agree.
+As a further check, we assess how  robust the selected catalogue is to variations of the background model. We compare the results obtained with the \verb|gll_iem_v07| template with the previous incarnation of the galactic foreground model developed by the Fermi collaboration: \verb|gll_iem_v05_rev1|. Since the $TS^*$ scale and related $QF$ are quantitatively different if the different backgrounds are used, we proceed by comparing the two results \textit{at equal number of selected sources}.  We select $TS^*$ cuts delivering the same number of selected sources for the two cases and evaluate the exact overlap of pixel candidates. The results are reported in Tab.~\ref{tab:bck_comp}. As can be seen, within a few percent, the catalogues obtained agree.
 
 
 \begin{table}[t]
@@ -114,12 +114,12 @@ The main output of our work consists of sky maps of ``firing'' pixels (i.e.~sour
 We provide our results electronically in the form of a Python package called \verb|gPCS|  (for gamma-ray Photon Count Statistics), as well as a summary \verb|FITS|, both available on Zenodo: \href{https://doi.org/10.5281/zenodo.8070852}{https://doi.org/10.5281/zenodo.8070852}. The Python package can be used to determine the firing pixels given either a $TS_*$ or a quality factor and $\alpha$ parameter. The Python package also includes a convenience function to export the firing pixels in the form of a \verb|FITS| file, and we provide an example on how to compute the summary table provided with the package.
 \\
 The \verb|gPCS| Python package can be easily installed using \verb|pip|, with the command:
-\begin{lstlisting}[language=iPython]
+\begin{lstlisting}[language=Python]
 pip install gPCS
 \end{lstlisting}
 In order to get the firing pixels, given either $TS_*$ or a quality factor and $\alpha$, we can use the following snippet of code:
 
-\begin{lstlisting}[language=iPython]
+\begin{lstlisting}[language=Python]
 import numpy as np
 from gPCS import gPCS
 
@@ -138,7 +138,7 @@ print(len(pixel_firing))
 \end{lstlisting}
 It is possible to export a \verb|FITS| table using the \verb|export_fits_table| function. For example to reproduce the table provided with the library we can use:
 
-\begin{lstlisting}[language=iPython]
+\begin{lstlisting}[language=Python]
 gPCS.export_fits_table(filename="firing_pixels.fits", QF=0.50, alpha=[0.01, 0.05, 0.1])
 \end{lstlisting}
 The \verb|FITS| table has the following fields:

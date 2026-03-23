@@ -4,62 +4,62 @@
 Maximum likelihood estimation of the parameters of a mixture model is a challenging task due to the interplay between the mixture weights and the distribution parameters. 
 A standard iterative algorithm for this task is the  Expectation Maximization (EM) algorithm \cite{bishop, hastie2009elements}. 
 
-We introduce latent binary vectors ${\bf z}_i$, corresponding to each data point $\bx_i$, where dim(${\bf z}_i)=K$, where $K$ is the number of mixture components. These latent variables encode the membership of point $\bx_i$ in the $k$-th component of the mixture, such that all elements of ${\bf z}_i$ are zero, except for $z_{ik}=1$. In other words, ${\bf z}_i$ is a categorical random variable represented with the one-hot-encoding scheme. The coefficients $\pi_k$ of the likelihood in eq.~(\ref{eq:mixture}) are interpreted as the parameters determining the corresponding categorical {\it prior} distribution of ${\bf z}_i$, i.e. $p(z_{ik}=1)=\pi_k~\forall i$, such that  
+We introduce latent binary vectors $\textbf{z}_i$, corresponding to each data point $\bx_i$, where dim($\textbf{z}_i)=K$, where $K$ is the number of mixture components. These latent variables encode the membership of point $\bx_i$ in the $k$-th component of the mixture, such that all elements of $\textbf{z}_i$ are zero, except for $z_{ik}=1$. In other words, $\textbf{z}_i$ is a categorical random variable represented with the one-hot-encoding scheme. The coefficients $\pi_k$ of the likelihood in eq.~(\ref{eq:mixture}) are interpreted as the parameters determining the corresponding categorical \textit{prior} distribution of $\textbf{z}_i$, i.e. $p(z_{ik}=1)=\pi_k~\forall i$, such that  
 \begin{equation}
- p({\bf z}_i) = \prod_k^K \pi_k^{z_{ik}} ~.  
+ p(\textbf{z}_i) = \prod_k^K \pi_k^{z_{ik}} ~.  
 \end{equation}
-With this interpretation for ${\bf z}_i$, we can identify $ p(\bx_i | z_{ik}=1) = p_k(\bx_i|\btheta_k)$, such that
+With this interpretation for $\textbf{z}_i$, we can identify $ p(\bx_i | z_{ik}=1) = p_k(\bx_i|\btheta_k)$, such that
 \begin{equation}
-p(\bx_i|{\bf z}_i) = \prod_k^K p_k(\bx_i|\btheta_k)^{z_{ik}}~.
+p(\bx_i|\textbf{z}_i) = \prod_k^K p_k(\bx_i|\btheta_k)^{z_{ik}}~.
 \end{equation}
-We then have all the elements to compute the {\it posterior} distribution of ${\bf z}_i$ as:
+We then have all the elements to compute the \textit{posterior} distribution of $\textbf{z}_i$ as:
 \begin{equation}
 p(z_{ik}=1 | \bx_i) = \frac{p_k(\bx_i|\btheta_k) \pi_k}
 {\sum_j^K p_j(\bx_i|\btheta_j) \pi_j} \equiv \gamma(z_{ik})~.
 \label{gamma}
 \end{equation}
 
-In order to find the optimum parameters $\{\btheta_k\}$ and weights $\boldsymbol{\pi}$, the idea is to consider the joint likelihood $p(\bx_i, {\bf z}_i)$ 
-for the whole dataset of points $\bx_i$ with associated latent variables ${\bf z}_i$:
+In order to find the optimum parameters $\{\btheta_k\}$ and weights $\boldsymbol{\pi}$, the idea is to consider the joint likelihood $p(\bx_i, \textbf{z}_i)$ 
+for the whole dataset of points $\bx_i$ with associated latent variables $\textbf{z}_i$:
 \begin{equation}
 \label{p(X,Z)}
-p({\bf X,Z}|\{\btheta_k\},\boldsymbol{\pi})
+p(\textbf{X,Z}|\{\btheta_k\},\boldsymbol{\pi})
 =\prod_i^N \prod_k^K [\pi_k p_k(\bx_i|\btheta_k)]^{z_{ik}}~.
 \end{equation}
-In spite of this apparent complication of introducing extra variables in the problem, i.e., the latent variables, the likelihood in eq.~(\ref{p(X,Z)}) is arguably easier to optimize than the original likelihood $p(\bx|\{\btheta_k\},\boldsymbol{\pi}) = \prod_i p(\bx_i)$, where each term in the product is built as in eq.~(\ref{eq:mixture}). One of the reasons for this is that, the log-likelihood of eq.~(\ref{eq:mixture}) is a log of a sum, which is computationally challenging to optimize, especially in the large $K$ regime, while the log of the likelihood in eq.~\ref{p(X,Z)} is the sum of logs, i.e., $\log p({\bf X,Z}|\{\btheta_k\},\boldsymbol{\pi})$ is very similar to the cross-entropy cost function, which is easily optimizable.  
+In spite of this apparent complication of introducing extra variables in the problem, i.e., the latent variables, the likelihood in eq.~(\ref{p(X,Z)}) is arguably easier to optimize than the original likelihood $p(\bx|\{\btheta_k\},\boldsymbol{\pi}) = \prod_i p(\bx_i)$, where each term in the product is built as in eq.~(\ref{eq:mixture}). One of the reasons for this is that, the log-likelihood of eq.~(\ref{eq:mixture}) is a log of a sum, which is computationally challenging to optimize, especially in the large $K$ regime, while the log of the likelihood in eq.~\ref{p(X,Z)} is the sum of logs, i.e., $\log p(\textbf{X,Z}|\{\btheta_k\},\boldsymbol{\pi})$ is very similar to the cross-entropy cost function, which is easily optimizable.  
 
-An obvious problem is that in eq.~(\ref{p(X,Z)}) we do not know the $z_{ik}$ variables. The EM algorithm considers instead the expectation value of this likelihood (or more concretely, of the log-likelihood), under the posterior distribution of ${\bf Z}$, i.e.
+An obvious problem is that in eq.~(\ref{p(X,Z)}) we do not know the $z_{ik}$ variables. The EM algorithm considers instead the expectation value of this likelihood (or more concretely, of the log-likelihood), under the posterior distribution of $\textbf{Z}$, i.e.
 \begin{equation}
 \label{E_log}
-\mathbb{E}_{\bf Z} 
-[\log p({\bf X,Z}|\{\btheta_k\},\boldsymbol{\pi}) ] =
-\sum_{\bf Z} 
-p({\bf Z}|{\bf X},\{\btheta_k\},\boldsymbol{\pi})~
-\ln p({\bf X,Z}|\{\btheta_k\},\boldsymbol{\pi})~.
+\mathbb{E}_\textbf{Z} 
+[\log p(\textbf{X,Z}|\{\btheta_k\},\boldsymbol{\pi}) ] =
+\sum_\textbf{Z} 
+p(\textbf{Z}|\textbf{X},\{\btheta_k\},\boldsymbol{\pi})~
+\ln p(\textbf{X,Z}|\{\btheta_k\},\boldsymbol{\pi})~.
 \end{equation}
 
 Eq.~(\ref{E_log}) is maximized according to the following iterative procedure:
 \begin{enumerate}
-    \item Initialize $\{\btheta_k\}=\{\btheta_k\}_{\rm old}$, and $\boldsymbol{\pi} = \boldsymbol{\pi}_{\rm old}$;
-    \item Evaluate $p({\bf Z}|{\bf X},\{\btheta_k\}_{\rm old},\boldsymbol{\pi}_{\rm old})$;
+    \item Initialize $\{\btheta_k\}=\{\btheta_k\}_\textrm{old}$, and $\boldsymbol{\pi} = \boldsymbol{\pi}_\textrm{old}$;
+    \item Evaluate $p(\textbf{Z}|\textbf{X},\{\btheta_k\}_\textrm{old},\boldsymbol{\pi}_\textrm{old})$;
     \item Plug the posterior obtained in step 2 into expr.(\ref{E_log}), such that now the only term containing the optimizable parameters $\{\btheta_k\},\boldsymbol{\pi}$ is the log-likelihood. So we get the expression:
     \begin{equation}
       Q(\{\btheta_k\},\boldsymbol{\pi}) \equiv
-     \sum_{\bf Z} 
-    p({\bf Z}|\bx,\{\btheta_k\}_{\rm old},\boldsymbol{\pi}_{\rm old})~
-\ln p({\bf X,Z}|\{\btheta_k\},\boldsymbol{\pi})~.  
+     \sum_\textbf{Z} 
+    p(\textbf{Z}|\bx,\{\btheta_k\}_\textrm{old},\boldsymbol{\pi}_\textrm{old})~
+\ln p(\textbf{X,Z}|\{\btheta_k\},\boldsymbol{\pi})~.  
     \end{equation}
     \item Update the parameters as:
     \begin{equation}
-      \{\btheta_k\}_{\rm new},\boldsymbol{\pi}_{\rm new} =
+      \{\btheta_k\}_\textrm{new},\boldsymbol{\pi}_\textrm{new} =
       \underset{\{\btheta_k\},\boldsymbol{\pi}}
-      {\rm argmax}~Q(\{\btheta_k\},\boldsymbol{\pi})
+      \textrm{argmax}~Q(\{\btheta_k\},\boldsymbol{\pi})
     \end{equation}
     \item Repeat above steps until convergence
 \end{enumerate}
 Note that in step 4 above, the optimization of $\boldsymbol{\pi}$ is analytical, i.e., using a Lagrange-multiplier optimization with the condition $\sum_j \pi_j = 1$, we obtain:
 \begin{equation}
-    (\pi_k)_{\rm new} = \frac{1}{N}\sum_i^N \gamma(z_{ik})~,
+    (\pi_k)_\textrm{new} = \frac{1}{N}\sum_i^N \gamma(z_{ik})~,
 \end{equation}
 where $\gamma(z_{ik})$ is given by eq.~(\ref{gamma}). The optimization of $\{\btheta_k\}$ is in general not analytical.
 

@@ -71,10 +71,10 @@ In our analysis, we consider only sources with Galactic latitudes $|b| > 10^\cir
 The basic assumption behind a supervised classification task is that the joint distribution of the input features $\bx$
 and output classes (type of sources) $k$  are the same for the training and target datasets:
 \be
-p_{\rm train} (\bx, k) = p_{\rm target} (\bx, k),
+p_\textrm{train} (\bx, k) = p_\textrm{target} (\bx, k),
 \ee
 while, in general, a dataset shift represents a situation where the training and target distributions are different
-$p_{\rm train} (\bx, k) \neq p_{\rm target} (\bx, k)$.
+$p_\textrm{train} (\bx, k) \neq p_\textrm{target} (\bx, k)$.
 In our case, the training dataset is the associated sources, while the target dataset is the unassociated sources.
 Consequently, we will use associated (assoc) and unassociated (unas) subscripts for the training and target datasets, respectively.
 \\
@@ -86,9 +86,9 @@ This decomposition gives rise to two distinct types of dataset shift~\citep{More
 \ben
 \item
 { Covariate shift}: the conditional class probabilities remain unchanged,\\
-{$p_{\rm assoc}(k|\bx) = p_{\rm unas}(k|\bx)$}, but the feature distributions differ, $p_{\rm assoc}(\bx) \neq p_{\rm unas}(\bx)$.
+{$p_\textrm{assoc}(k|\bx) = p_\textrm{unas}(k|\bx)$}, but the feature distributions differ, $p_\textrm{assoc}(\bx) \neq p_\textrm{unas}(\bx)$.
 \item
-{ Prior shift}: the feature distributions conditioned on the class are invariant, $p_{\rm assoc}(\bx|k) = p_{\rm unas}(\bx|k)$, but the class prevalence changes, $p_{\rm assoc}(k) \neq p_{\rm unas}(k)$.
+{ Prior shift}: the feature distributions conditioned on the class are invariant, $p_\textrm{assoc}(\bx|k) = p_\textrm{unas}(\bx|k)$, but the class prevalence changes, $p_\textrm{assoc}(k) \neq p_\textrm{unas}(k)$.
 \een
 Note that for the covariate shift, differences in the marginal distribution of the features $p(\bx)$ generally lead to differences in the marginal class probabilities $p(k)$.
 Analogously, for prior shift, changes in the marginal class distributions $p(k)$ in general result in changes in the marginal feature distributions $p(\bx)$. We show the distributions of the $\alpha$ and $\beta$ parameters in figure~\ref{fig:alpha_beta_hist_E01000MeV}. Notice that the distributions are different for associated and unassociated sources.
@@ -100,28 +100,28 @@ then this effect can be addressed by a covariate shift.
 \subsection{Statistical model}
 \label{sec:stat-model}
 
-In general, our goal is to construct a probabilistic model for the distribution of unassociated sources $\tilde{p}_{\rm unas}(\bx)$ under the assumption that it is a mixture of classes of associated sources plus a possible new class of sources.
+In general, our goal is to construct a probabilistic model for the distribution of unassociated sources $\tilde{p}_\textrm{unas}(\bx)$ under the assumption that it is a mixture of classes of associated sources plus a possible new class of sources.
 
 In the covariate shift assumption (in absence of a prior shift) this task is actually trivial as
 \be
 \label{eq:cov0}
-p_{\rm unas}(\bx) 
-= \sum_k p_{\rm unas}(k|\bx) p_{\rm unas}(\bx) 
-= \sum_k p_{\rm assoc}(k|\bx) p_{\rm assoc}(\bx) C(\bx),
+p_\textrm{unas}(\bx) 
+= \sum_k p_\textrm{unas}(k|\bx) p_\textrm{unas}(\bx) 
+= \sum_k p_\textrm{assoc}(k|\bx) p_\textrm{assoc}(\bx) C(\bx),
 \ee
-where in the second equality we use the covariate shift assumption $p_{\rm assoc}(k|\bx) = p_{\rm unas}(k|\bx)$ and define $C(\bx) = p_{\rm unas}(\bx) / p_{\rm assoc}(\bx)$.
+where in the second equality we use the covariate shift assumption $p_\textrm{assoc}(k|\bx) = p_\textrm{unas}(k|\bx)$ and define $C(\bx) = p_\textrm{unas}(\bx) / p_\textrm{assoc}(\bx)$.
 The function $C(\bx)$ describes the covariate shift, i.e., the difference in the distribution of training and target datasets.
 
 Moreover, we can add a new class of sources with a PDF 
-$p_{\rm new}(\bx)$ and define a model for the unassociated sources as:
+$p_\textrm{new}(\bx)$ and define a model for the unassociated sources as:
 \be
 \label{eq:cov1}
-\tilde{p}_{\rm unas}(\bx) 
-= \sum_k p_{\rm assoc}(k|\bx) p_{\rm assoc}(\bx) \tilde{C}(\bx) + \pi_{\rm new} p_{\rm new}(\bx),
+\tilde{p}_\textrm{unas}(\bx) 
+= \sum_k p_\textrm{assoc}(k|\bx) p_\textrm{assoc}(\bx) \tilde{C}(\bx) + \pi_\textrm{new} p_\textrm{new}(\bx),
 \ee
 where 
-$\tilde{C}(\bx) = {\rm max}(p_{\rm unas}(\bx) - \pi_{\rm new}p_{\rm new}(\bx), 0) / p_{\rm assoc}(\bx)$ can be viewed as a generalized covariate shift that describes the difference in the distribution of training dataset and a part of the target dataset that corresponds to the same classes as in the training dataset.
-If $p_{\rm unas}(\bx) \geq \pi_{\rm new}p_{\rm new}(\bx)$ for $\forall \bx$, then the model in eq.~(\ref{eq:cov0}) is equal to the model in eq.~(\ref{eq:cov1}), i.e., the two models are indistinguishable until the new class predicts more sources in some region of space than there are unassociated sources.
+$\tilde{C}(\bx) = \textrm{max}(p_\textrm{unas}(\bx) - \pi_\textrm{new}p_\textrm{new}(\bx), 0) / p_\textrm{assoc}(\bx)$ can be viewed as a generalized covariate shift that describes the difference in the distribution of training dataset and a part of the target dataset that corresponds to the same classes as in the training dataset.
+If $p_\textrm{unas}(\bx) \geq \pi_\textrm{new}p_\textrm{new}(\bx)$ for $\forall \bx$, then the model in eq.~(\ref{eq:cov0}) is equal to the model in eq.~(\ref{eq:cov1}), i.e., the two models are indistinguishable until the new class predicts more sources in some region of space than there are unassociated sources.
 Although mathematically we cannot exclude a situation when all unassociated sources in some region of space belong to a new class, this is not very likely from the physical point of view.
 In order for the model to be more constraining we put additional physical conditions on the generalized covariate shift function $\tilde{C}(\bx)$.
 In particular, we model $\tilde{C}(\bx)$ as a product of 1-dimentional functions
@@ -140,7 +140,7 @@ f(x_d;b_d,c_d) = \frac{1}
 \ee
 where each function has two parameters $(b_d,c_d)$ determined from maximizing the likelihood of the model. 
 Our region of interest (ROI) in feature space will be restricted to a window in every dimension where the ratio 
-$p_{\rm unas}/p_{\rm assoc}$ 
+$p_\textrm{unas}/p_\textrm{assoc}$ 
 of the empirical distributions are monotonous. 
 We approximate the empirical distributions of associated and unassociated gamma-ray sources using kernel density estimation (KDE) with a Gaussian kernel \cite{bishop}. 
 In order to find the optimal bandwidth for the kernels, we perform 5-fold cross-validation repeated 20 times. 
@@ -155,8 +155,8 @@ The right panels of figure~\ref{fig:dist_ratio} show the ratios of the KDE model
 \begin{figure}
     \centering
     \includegraphics[width=0.95\textwidth]{img/source_distribution/marginal_grid_E01000MeV.png}
-    \caption{{\it Left column:} full distributions of associated and unassociated sources modeled with KDE for the case of $E_0$ = 1 GeV before truncation and normalization to the ROI. 
-    {\it Right column:} the ratio of the distributions $p_{\rm unas}/p_{\rm assoc}$. The red vertical lines show the range of parameters that we use in the analysis (ROI). We estimate the error (purple bands) as the Poisson error in the histograms and compute the relative errors for the associated and unassociated distributions, which we sum in quadrature. 
+    \caption{\textit{Left column:} full distributions of associated and unassociated sources modeled with KDE for the case of $E_0$ = 1 GeV before truncation and normalization to the ROI. 
+    \textit{Right column:} the ratio of the distributions $p_\textrm{unas}/p_\textrm{assoc}$. The red vertical lines show the range of parameters that we use in the analysis (ROI). We estimate the error (purple bands) as the Poisson error in the histograms and compute the relative errors for the associated and unassociated distributions, which we sum in quadrature. 
     }
     \label{fig:dist_ratio}
 \end{figure}
@@ -166,28 +166,28 @@ In the $E_0 = 1$ GeV case, we restrict our analysis to $\alpha \in [0.8,\, 1.7]$
 Analogously, in the $E_0 = 100$ MeV case, $\alpha \in [0.2,\, 0.8]$.
 The range of the $\beta$ parameter is the same in both cases, $[0.1, \, 0.55]$.
 Finally, we restrict the $\log_{10}\phi$ parameter to the interval $[-10.3, \, -8.2]$.
-In addition, we compute the 3D KDE models and identify the optimal bandwidth parameters independently for Galactic and extragalactic classes of sources, which yields the $p_{\rm assoc}(\bx|k)$ used in the analysis.
+In addition, we compute the 3D KDE models and identify the optimal bandwidth parameters independently for Galactic and extragalactic classes of sources, which yields the $p_\textrm{assoc}(\bx|k)$ used in the analysis.
 
 In general, the weight (prevalence) of classes of sources does not need to be the same for associated and unassociated sources, i.e., there can be a prior probability shift in addition to the covariate shift.
 In order to allow a change in the prevalence of the classes of sources, we express the terms in the sum in eq.~(\ref{eq:cov1}) in the form suitable for the prior shift:
 \be
 \label{eq:p_assoc}
-p_{\rm assoc}(k|\bx) p_{\rm assoc}(\bx) \equiv
-p_{\rm assoc}(\bx, k) = \pi_k p_{\rm assoc}(\bx|k),
+p_\textrm{assoc}(k|\bx) p_\textrm{assoc}(\bx) \equiv
+p_\textrm{assoc}(\bx, k) = \pi_k p_\textrm{assoc}(\bx|k),
 \ee
-where for associated sources $\pi_k = \pi_k^{\rm assoc}$ is the prevalence of class $k$, while for unassociated sources, $\pi_k$ are in general unknown and will be determined from the fit of the model to the data.
+where for associated sources $\pi_k = \pi_k^\textrm{assoc}$ is the prevalence of class $k$, while for unassociated sources, $\pi_k$ are in general unknown and will be determined from the fit of the model to the data.
 Overall, our model of the unassociated source takes the form:
 \be
 \label{eq:mixture}
-\tilde{p}_{\rm unas}(\bx) 
-= \left(\sum_{k=1}^K \pi_k p_{\rm assoc}(\bx|k)\right) \tilde{C}(\bx; \btheta_{\rm cov}) + \pi_{\rm DM}(\btheta_{\rm DM}) p_{\rm DM}(\bx; \btheta_{\rm DM}),
+\tilde{p}_\textrm{unas}(\bx) 
+= \left(\sum_{k=1}^K \pi_k p_\textrm{assoc}(\bx|k)\right) \tilde{C}(\bx; \btheta_\textrm{cov}) + \pi_\textrm{DM}(\btheta_\textrm{DM}) p_\textrm{DM}(\bx; \btheta_\textrm{DM}),
 \ee
 where $K = 2$ is the number of classes of associated sources (Galactic and extragalactic, cf. section~\ref{sec:data}). 
-The DM distribution $p_{\rm DM}(\bx; \btheta_{\rm DM})$ is determined below in section~\ref{sec:DM_model}. 
+The DM distribution $p_\textrm{DM}(\bx; \btheta_\textrm{DM})$ is determined below in section~\ref{sec:DM_model}. 
 
-The optimizable parameters in this model are: $\pi_k$, describing the prevalence of the classes of associated sources; $\btheta_{\rm cov}\equiv\{b_d,c_d\}$ for $d = 1,\,2,\,3$, parametrizing the covariate shift in eq.~(\ref{eq:sigmoid}), and $\sigmav$, the annihilation cross section, which we have included in the definition of $\btheta_{\rm DM}=\{\sigmav,\mdm,{\rm ch.}\}$. The other parameters, namely the DM mass $\mdm$ as well as the annihilation channel `ch.', are kept fixed during the optimization procedure.
+The optimizable parameters in this model are: $\pi_k$, describing the prevalence of the classes of associated sources; $\btheta_\textrm{cov}\equiv\{b_d,c_d\}$ for $d = 1,\,2,\,3$, parametrizing the covariate shift in eq.~(\ref{eq:sigmoid}), and $\sigmav$, the annihilation cross section, which we have included in the definition of $\btheta_\textrm{DM}=\{\sigmav,\mdm,\textrm{ch.}\}$. The other parameters, namely the DM mass $\mdm$ as well as the annihilation channel `ch.', are kept fixed during the optimization procedure.
 
-Note that for $\tilde{C}(\bx; \btheta_{\rm cov}) = 1$, the model reduces to a prior shift model, while for $\pi_k = \pi_k^{\rm assoc}$ and $\pi_{\rm DM} = 0$ the model reduces to a covariate shift model.
+Note that for $\tilde{C}(\bx; \btheta_\textrm{cov}) = 1$, the model reduces to a prior shift model, while for $\pi_k = \pi_k^\textrm{assoc}$ and $\pi_\textrm{DM} = 0$ the model reduces to a covariate shift model.
 Thus, in general, the model in eq.~(\ref{eq:mixture}) is a combination of covariate and prior shift models. We point out that the model in eq.~(\ref{eq:mixture}), identified as the likelihood of a given unassociated source, allows us to:
 \ben
 \item
@@ -198,9 +198,9 @@ detect or put an upper bound at a given level of confidence for a possible new c
 generate new data (for Monte Carlo tests);
 \item
 determine the conditional class probabilities of individual sources using the probability rule
-$p(k|\bx) = p(\bx, k)/\tilde{p}_{\rm unas}(\bx)$. In the case of astrophysical classes 
-$p(\bx, k) = \pi_k p_{\rm assoc}(\bx|k) \tilde{C}(\bx; \btheta_{\rm cov})$, while
-for the DM class: $p(\bx, {\rm DM}) = \pi_{\rm DM} p_{\rm DM}(\bx; \btheta_{\rm DM})$.
+$p(k|\bx) = p(\bx, k)/\tilde{p}_\textrm{unas}(\bx)$. In the case of astrophysical classes 
+$p(\bx, k) = \pi_k p_\textrm{assoc}(\bx|k) \tilde{C}(\bx; \btheta_\textrm{cov})$, while
+for the DM class: $p(\bx, \textrm{DM}) = \pi_\textrm{DM} p_\textrm{DM}(\bx; \btheta_\textrm{DM})$.
 \een
 
 We stress that, as far as we are aware of, this is the first time a generative probabilistic model for the unassociated sources has been proposed. Previous studies have focused on modeling directly the conditional probabilities $p(k|\bx)$, which does not give access to the data likelihood. In this respect, our approach is more informative.

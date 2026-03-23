@@ -26,13 +26,13 @@ We consider the first 14 years of data collected by the \fermi (specifically, fr
 The atmospheric gamma rays from the Earth limb emission is removed by adopting a cut
 on the maximum zenith angle ZMAX of 90 degrees.
 \verb|FRONT| events refer to gamma-rays detected by the first layers of the tracking module of the \fermi detector, and are optimised in order to have a better angular resolution, which is a crucial requirement for our analysis. 
-The {\tt SOURCEVETO} class of events achieves good suppression of the charged cosmic-ray (CR) background while still retaining a large event statistics. All those settings are summarised in Table \ref{tab:settings}. Finally, the maps are constructed with equal-area pixels by adopting the Healpix \cite{healpix} pixelisation scheme of order $n=6$ ($N_{\rm side} = 64$ resolution, which corresponds to $0.92^\circ$ pixel side) although for testing we will also use maps with order $n=7$ ($N_{\rm side} = 128$).  
+The {\tt SOURCEVETO} class of events achieves good suppression of the charged cosmic-ray (CR) background while still retaining a large event statistics. All those settings are summarised in Table \ref{tab:settings}. Finally, the maps are constructed with equal-area pixels by adopting the Healpix \cite{healpix} pixelisation scheme of order $n=6$ ($N_\textrm{side} = 64$ resolution, which corresponds to $0.92^\circ$ pixel side) although for testing we will also use maps with order $n=7$ ($N_\textrm{side} = 128$).  
 The photon count map, in counts per pixel, for the 14 year data set is shown in Fig. \ref{fig:FermiMap}. This is the map to which we will apply the CNN to extract the source-count distribution of gamma-ray sources. 
 
 \begin{figure}[t]
 \centering
 \includegraphics[scale=0.6]{img/data_selection/mappa_fermi.pdf}
-\caption{\fermi photon-counts map in units of counts per pixel in the 1-10 GeV energy range}  for the 14-years dataset,  at the Healpix resolution $N_{\rm side} = 128$ ($n=7$). 
+\caption{\fermi photon-counts map in units of counts per pixel in the 1-10 GeV energy range}  for the 14-years dataset,  at the Healpix resolution $N_\textrm{side} = 128$ ($n=7$). 
 \label{fig:FermiMap}
 \end{figure}
 
@@ -49,14 +49,14 @@ In particular, we will employ the recently released  Data Release 3 of the fourt
 The detailed procedure with which we obtain the $\dnds$ from the list of sources is described in Appendix B of \cite{Cuoco-1pdf}.
 Here and through the rest of the manuscript $S$ will always refer to an integral flux in the range 1-10 GeV.
 The blue points refer to the regime in which the catalog is fully efficient in detecting sources, while the gray points denote sources for which the \fermi sensitivity to point sources starts degrading. 
-Our aim is to infer the behaviour of the source count in the unresolved regime, i.e., for source fluxes below $S_{\rm th} \sim 2 \cdot 10^{-10}$ cm$^{-2}$ s$^{-1}$ by adopting a CNN technique.
+Our aim is to infer the behaviour of the source count in the unresolved regime, i.e., for source fluxes below $S_\textrm{th} \sim 2 \cdot 10^{-10}$ cm$^{-2}$ s$^{-1}$ by adopting a CNN technique.
 We stress that in the following the $\dnds$ of resolved sources will be used only for comparison with the result of the CNN analysis, which are completely independent from it.
 Thus, the fact that we use 14 years of data while the catalog is based on 12 years does not have an impact on the analysis.
 
 \begin{figure}[t]
 \centering
 \includegraphics[scale=0.6]{img/data_selection/exposure.pdf}
-\caption{\fermi mean exposure map in the 1-10 GeV energy range for the 14-years data set, in units of cm$^2$ s,  at the Healpix resolution $N_{\rm side} = 128$ ($n=7$).} 
+\caption{\fermi mean exposure map in the 1-10 GeV energy range for the 14-years data set, in units of cm$^2$ s,  at the Healpix resolution $N_\textrm{side} = 128$ ($n=7$).} 
 \label{fig:exposure}
 \end{figure}
 

@@ -15,9 +15,9 @@ In Fig. \ref{fig:prediction-fermi-12y-bayesian} we show the measurement for the 
 
 
 The CNN provides also the value $\fiso=4.90 \pm 0.43 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$, 
-which can be compared with the value $F'_{\rm iso}=4.91 \pm 0.04 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$ reported in Table \ref{tab:fore-parameters}.
-We remind that $F'_{\rm iso}$ is the sum of $\fiso$ and of the contribution of sources below the 4FGL catalog threshold. Indeed, if we  calculate the contribution of sources using our best fit $\dnds$ integrated in the range $[5 \cdot 10^{-12}, 1 \cdot 10^{-10}]$ cm$^{-2}$ s$^{-1}$, the upper limit being an approximate value for the catalog threshold, and we add $\fiso$  we obtain a value of {$(6.41 \pm 0.61)\cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$} sr$^{-1}$.
-This is in slight tension with $F'_{\rm iso}$, although the two agree at the $\sim 2\sigma$ level.
+which can be compared with the value $F'_\textrm{iso}=4.91 \pm 0.04 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$ reported in Table \ref{tab:fore-parameters}.
+We remind that $F'_\textrm{iso}$ is the sum of $\fiso$ and of the contribution of sources below the 4FGL catalog threshold. Indeed, if we  calculate the contribution of sources using our best fit $\dnds$ integrated in the range $[5 \cdot 10^{-12}, 1 \cdot 10^{-10}]$ cm$^{-2}$ s$^{-1}$, the upper limit being an approximate value for the catalog threshold, and we add $\fiso$  we obtain a value of {$(6.41 \pm 0.61)\cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$} sr$^{-1}$.
+This is in slight tension with $F'_\textrm{iso}$, although the two agree at the $\sim 2\sigma$ level.
 
 
 In order to test the stability of the results, we repeated the analysis by using the same \verb|gll_iem_v07| galactic foreground but with two different latitude cuts: $|b|<40^\circ$ and $|b|<50^\circ$. The positive consequence of a higher latitude cut is a lower residual foreground contamination. However, the amount of available data is reduced. The CNN has been fully re-trained for both of these situations, and the ensuing results when applied to the \fermi data are shown in Fig. \ref{fig:prediction-fermi-12y-b4050}. We notice that the results, both in terms of behaviour and uncertainty estimate, are fully compatible with the results of the baseline analysis. The $\dnds$ exhibits a slight decrease toward lower fluxes as compared to the baseline case, although the size of this effect is not statistically significant. The values of $\fiso$ are also fully compatible among them.
@@ -25,8 +25,8 @@ In order to test the stability of the results, we repeated the analysis by using
 A second test of stability has been performed in order to check the impact of galactic foreground modeling. We have performed a new training of the CNN with the alternative template \verb|gll_iem_v05|, and with the $|b|<30^\circ$ latitude cut. The result is shown in Fig. \ref{fig:prediction-fermi-12y-fg-v5}. The reconstructed $\dnds$ matches to a large degree the source-count distributions obtained with \verb|gll_iem_v07|. This reassures us that, even though the galactic foreground modeling introduces a degree of uncertainty, nevertheless the results of the CNN for $\dnds$ are remarkably stable.
 The value of $\fiso$ is smaller in this case, equal to
 $\fiso=1.82 \pm 0.15 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$, 
-which can be compared with the value $F'_{\rm iso}=2.57 \pm 0.06 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$ reported in table \ref{tab:fore-parameters}.
-Adding to $\fiso$ the integral of the contribution of sources in the interval in the range $[5 \cdot 10^{-12}, 1 \cdot 10^{-10}]$ cm$^{-2}$ s$^{-1}$ using the obtained $\dnds$, we obtain a total flux of { $(2.92 \pm 0.54)\cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$} sr$^{-1}$, which is in very good agreement with $F'_{\rm iso}$. 
+which can be compared with the value $F'_\textrm{iso}=2.57 \pm 0.06 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$ reported in table \ref{tab:fore-parameters}.
+Adding to $\fiso$ the integral of the contribution of sources in the interval in the range $[5 \cdot 10^{-12}, 1 \cdot 10^{-10}]$ cm$^{-2}$ s$^{-1}$ using the obtained $\dnds$, we obtain a total flux of { $(2.92 \pm 0.54)\cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$} sr$^{-1}$, which is in very good agreement with $F'_\textrm{iso}$. 
 
 
 

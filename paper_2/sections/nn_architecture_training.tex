@@ -21,13 +21,13 @@ i) the algorithm needs to properly deal with the topology of the sphere without 
 ii) the algorithm has to be computationally efficient;
 iii) it would be desirable to be able to use the same neural network architectures which already work for flat images, which have been proven to be very efficient and effective.
 
-In fact, a full spherical architecture is usually slower than a flat architecture when applied to images of the same size, and it often happens that it is not possible to adopt pre-existing models without re-implementing them {\it ad-hoc}. 
+In fact, a full spherical architecture is usually slower than a flat architecture when applied to images of the same size, and it often happens that it is not possible to adopt pre-existing models without re-implementing them \textit{ad-hoc}. 
 On the other hand, the adoption of a flat-image architecture either introduces spherical distortions, due to the mapping of a spherical image on a plane, or may loose some of the large scale information contained in the image.
 
 In this work, we  implemented a fast and reliable spherical architecture on the Healpix pixelisation of the sphere, taking inspiration from the idea proposed in \cite{mapped-convolutions} for the icosahedron. This method proved to be reliable when the information we need to retrieve from the maps is a small-scale effect, like in our case the distribution of sources, which are point-like (although smeared by the PSF) and isotropically distributed.
 
 
-The method is based on the fact that, in the Healpix pixelisation scheme, each pixel has equal area and contains the information of the underlying field (in our case, the photon counts) averaged over that pixel. As discussed above, we train our neural network on maps of order $n=6$ ($N_{\rm side}=64$), which contain 49152 pixels. Considering instead the Healpix sphere with base pixelisation  of order $n=0$ ($N_{\rm side}=1$), we can subdivide the map into 12 equal-area patches, each of which containing 4096 pixels. Each patch is an independent realisation of the underlying isotropic field and can be mapped into a 2D flat image. We call this parsing algorithm \verb|map2patch|. Notice that this is not a re-sampling of the map: it's just a subdivision of the spherical image into 12 patches, in a way that preserves the area and content of each pixel. This allows us to use standard convolutional network techniques that work efficiently on flat images, while preserving the whole available statistics of the full map.  
+The method is based on the fact that, in the Healpix pixelisation scheme, each pixel has equal area and contains the information of the underlying field (in our case, the photon counts) averaged over that pixel. As discussed above, we train our neural network on maps of order $n=6$ ($N_\textrm{side}=64$), which contain 49152 pixels. Considering instead the Healpix sphere with base pixelisation  of order $n=0$ ($N_\textrm{side}=1$), we can subdivide the map into 12 equal-area patches, each of which containing 4096 pixels. Each patch is an independent realisation of the underlying isotropic field and can be mapped into a 2D flat image. We call this parsing algorithm \verb|map2patch|. Notice that this is not a re-sampling of the map: it's just a subdivision of the spherical image into 12 patches, in a way that preserves the area and content of each pixel. This allows us to use standard convolutional network techniques that work efficiently on flat images, while preserving the whole available statistics of the full map.  
 
 
 Convolution is performed on each patch separately. In order to be able to extract information from each patch in parallel, we define 3D convolutions, where the first two dimensions are the spatial dimensions, and the third dimension specifies the patch. In order to force the neural network to learn from each individual sky patch, we employ convolution filters of size $(N,N,1)$, where $N$ is the dimension of the filter. By doing so, we effectively apply 2D filters to the whole sky. Note that by employing such filter size, the output of each convolution will still have 12 separate images on the third axis, associated to each sky patch, while the number of channels will vary according to the number of filters employed. This technique will thus naturally scale for images with different color channels, such as RGB images, or spherical images for which several channels are available, as is the case where multiple energy bands are considered at once.
@@ -46,7 +46,7 @@ In order to cross-check our method, we also implemented the full-sky truly-spher
 \subsection{Data pre-processing}
 \label{sec:preprocessing}
 
-The maps are constructed with the procedure outlined in Section \ref{sec:generation}. As explained more in detail there, even though we apply a latitude cut to the maps, in order to further reduce the impact of the galactic foreground (and as it is customary in analyses of the extragalactic gamma-ray background), we subtract the galactic foreground (normalized by the $A_{\rm gal}$ constant) from the input maps. This will also facilitate to some extent the training of the CNN, whose goal is to reconstruct the source-count distribution. Photon-counts maps are converted in units of flux, by using the exposure map. In order to reduce the variability of the inputs seen by the CNN and stabilize its behaviour, we take the logarithm of the flux values in the pixels and then map them in $[-1,1]$ range. 
+The maps are constructed with the procedure outlined in Section \ref{sec:generation}. As explained more in detail there, even though we apply a latitude cut to the maps, in order to further reduce the impact of the galactic foreground (and as it is customary in analyses of the extragalactic gamma-ray background), we subtract the galactic foreground (normalized by the $A_\textrm{gal}$ constant) from the input maps. This will also facilitate to some extent the training of the CNN, whose goal is to reconstruct the source-count distribution. Photon-counts maps are converted in units of flux, by using the exposure map. In order to reduce the variability of the inputs seen by the CNN and stabilize its behaviour, we take the logarithm of the flux values in the pixels and then map them in $[-1,1]$ range. 
 Finally, each map is parsed into 12 patches using the \verb|map2patch| algorithm discussed in the previous Sections.
 
 Given the approximate $S^{-2}$ behavior of the $\dnds$, for the output vector, we reconstruct $y_i = S^2 \dnds|_i \times 10^{11}$ cm$^{2}$ s deg$^{2}$ ($i=1,20$) and $y_{21}=\fiso \cdot  10^{7}$ cm$^{2}$ s sr, in order to work with (pure) numbers of order unity. We adopt this strategy in order to avoid that the mean square error could favour the optimisation of any flux bin over another, making the deviations more even across the range of $S$.
@@ -81,7 +81,7 @@ In our case, training a neural network with such an approach is advantageous, as
 
 Following \cite{heteroscedastic-error} we define the heteroscedastic Gaussian negative log-likelihood:
 \begin{equation}
-    {\sl NLL} = \sum_{i=1}^N  \left[\frac{(y_i^{\rm true}-y_i^{\rm pred})^2}{2\sigma_i^2} + \frac{1}{2} \log(\sigma_i^2)  +  \frac{1}{2} \log(2\pi)  \right]
+    \textsl{NLL} = \sum_{i=1}^N  \left[\frac{(y_i^\textrm{true}-y_i^\textrm{pred})^2}{2\sigma_i^2} + \frac{1}{2} \log(\sigma_i^2)  +  \frac{1}{2} \log(2\pi)  \right]
 \label{costfunc}    
 \end{equation}
 where we compare the true $\dnds$ and $\fiso$ (transformed as discussed in Section \ref{sec:preprocessing}) used to generate the simulated map with the prediction of the neural network, and thus $N=20+1$.
@@ -89,7 +89,7 @@ For the training of the neural network, we omit the last term of Eq. (\ref{costf
 %
 Regarding the errors, since the first term in Eq. (\ref{costfunc}) is a decreasing function of the $\sigma_i$ while the second is increasing, this ensures that there will be a minimum which will provide the  optimal estimate for the $\sigma_i$ themselves.
 
-In principle, the above cost function can easily be generalized to account for the covariance among the different bins and $F_{\rm iso}$. 
+In principle, the above cost function can easily be generalized to account for the covariance among the different bins and $F_\textrm{iso}$. 
  In practice, however, this implies estimating also the off-diagonal terms of a $21 \times 21$ symmetric matrix. Such matrix has to be inferred autonomously from data without any supervision, making the problem very challenging to optimise in this form. We thus refrain from attempting estimating the covariance. For CNN applications where the covariance between a set of parameters has been estimated, see e.g. Ref. \cite{Mishra-Sharma:2021oxe, List:2020mzd}.
 
 
@@ -116,10 +116,10 @@ In principle, the above cost function can easily be generalized to account for t
 \label{fig:random-maps}
 \end{figure}
 
-We train our model using a Tensor Processing Unit (TPU) v3, kindly provided by the Google$^{\rm TM}$ TPU Research Cloud. We adopt the Adam optimizer. We employ a cyclical triangular learning rate \cite{triangular} to avoid falling into local minima of the parameter space. We adopt a batch size equal to $128\times 8=1024$ to fully exploit the computational capabilities of the TPU. We train the model for 72 epochs, for a total of 9 triangular learning rate cycles, with learning rate ranging from $10^{-6}$ to $10^{-3}$. 
+We train our model using a Tensor Processing Unit (TPU) v3, kindly provided by the Google$^\textrm{TM}$ TPU Research Cloud. We adopt the Adam optimizer. We employ a cyclical triangular learning rate \cite{triangular} to avoid falling into local minima of the parameter space. We adopt a batch size equal to $128\times 8=1024$ to fully exploit the computational capabilities of the TPU. We train the model for 72 epochs, for a total of 9 triangular learning rate cycles, with learning rate ranging from $10^{-6}$ to $10^{-3}$. 
 As already anticipated, we have generated 1 million maps, 90\% of which have been employed in the training and 10\% for validation.
 
-To test the convergence of the model we evaluate the mean square error (MSE)  defined as $MSE=\sum_{i=1}^N (y_i^{\rm true}-y_i^{\rm pred})^2$. 
+To test the convergence of the model we evaluate the mean square error (MSE)  defined as $MSE=\sum_{i=1}^N (y_i^\textrm{true}-y_i^\textrm{pred})^2$. 
 In Fig. \ref{fig:mse-training} we plot the MSE as a function of the training epoch for the training and validation dataset. We can see that, starting from epoch 10, the validation and training lines are close to each other, which means that our model is not overfitting the training dataset. We observe that the MSE reaches a plateau at around epoch 60, meaning that further training of our model would not lead to  improvement in performance.
 
 Once the CNN is fully trained, we extensively check the convergence of the reconstructed $\dnds$ and $\fiso$ against their inputs, by using the maps of the validation set. 

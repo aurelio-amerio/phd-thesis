@@ -34,8 +34,8 @@
 \newcommand{\red}{\color{red}}
 \newcommand{\green}{\color{green}}
 \newcommand{\blue}{\color{blue}}
-\newcommand{\fermi}{{\sl Fermi}-LAT\ }
-\newcommand{\fiso}{{F_{\rm iso}}}
+\newcommand{\fermi}{\textsl{Fermi}-LAT\ }
+\newcommand{\fiso}{{F_\textrm{iso}}}
 
 \newcommand{\dnds}{dN/dS }
 
@@ -114,13 +114,13 @@ We consider the first 14 years of data collected by the \fermi (specifically, fr
 The atmospheric gamma rays from the Earth limb emission is removed by adopting a cut
 on the maximum zenith angle ZMAX of 90 degrees.
 \verb|FRONT| events refer to gamma-rays detected by the first layers of the tracking module of the \fermi detector, and are optimised in order to have a better angular resolution, which is a crucial requirement for our analysis. 
-The \texttt{SOURCEVETO} class of events achieves good suppression of the charged cosmic-ray (CR) background while still retaining a large event statistics. All those settings are summarised in Table \ref{tab:settings}. Finally, the maps are constructed with equal-area pixels by adopting the Healpix \cite{healpix} pixelisation scheme of order $n=6$ ($N_{\rm side} = 64$ resolution, which corresponds to $0.92^\circ$ pixel side) although for testing we will also use maps with order $n=7$ ($N_{\rm side} = 128$).  
+The \texttt{SOURCEVETO} class of events achieves good suppression of the charged cosmic-ray (CR) background while still retaining a large event statistics. All those settings are summarised in Table \ref{tab:settings}. Finally, the maps are constructed with equal-area pixels by adopting the Healpix \cite{healpix} pixelisation scheme of order $n=6$ ($N_\textrm{side} = 64$ resolution, which corresponds to $0.92^\circ$ pixel side) although for testing we will also use maps with order $n=7$ ($N_\textrm{side} = 128$).  
 The photon count map, in counts per pixel, for the 14 year data set is shown in Fig. \ref{fig:FermiMap}. This is the map to which we will apply the CNN to extract the source-count distribution of gamma-ray sources. 
 
 \begin{figure}[t]
 \centering
 \includegraphics[scale=0.6]{img/data_selection/mappa_fermi.pdf}
-\caption{\fermi photon-counts map in units of counts per pixel in the 1-10 GeV energy range}  for the 14-years dataset,  at the Healpix resolution $N_{\rm side} = 128$ ($n=7$). 
+\caption{\fermi photon-counts map in units of counts per pixel in the 1-10 GeV energy range}  for the 14-years dataset,  at the Healpix resolution $N_\textrm{side} = 128$ ($n=7$). 
 \label{fig:FermiMap}
 \end{figure}
 
@@ -137,14 +137,14 @@ In particular, we will employ the recently released  Data Release 3 of the fourt
 The detailed procedure with which we obtain the $\dnds$ from the list of sources is described in Appendix B of \cite{Cuoco-1pdf}.
 Here and through the rest of the manuscript $S$ will always refer to an integral flux in the range 1-10 GeV.
 The blue points refer to the regime in which the catalog is fully efficient in detecting sources, while the gray points denote sources for which the \fermi sensitivity to point sources starts degrading. 
-Our aim is to infer the behaviour of the source count in the unresolved regime, i.e., for source fluxes below $S_{\rm th} \sim 2 \cdot 10^{-10}$ cm$^{-2}$ s$^{-1}$ by adopting a CNN technique.
+Our aim is to infer the behaviour of the source count in the unresolved regime, i.e., for source fluxes below $S_\textrm{th} \sim 2 \cdot 10^{-10}$ cm$^{-2}$ s$^{-1}$ by adopting a CNN technique.
 We stress that in the following the $\dnds$ of resolved sources will be used only for comparison with the result of the CNN analysis, which are completely independent from it.
 Thus, the fact that we use 14 years of data while the catalog is based on 12 years does not have an impact on the analysis.
 
 \begin{figure}[t]
 \centering
 \includegraphics[scale=0.6]{img/data_selection/exposure.pdf}
-\caption{\fermi mean exposure map in the 1-10 GeV energy range for the 14-years data set, in units of cm$^2$ s,  at the Healpix resolution $N_{\rm side} = 128$ ($n=7$).} 
+\caption{\fermi mean exposure map in the 1-10 GeV energy range for the 14-years data set, in units of cm$^2$ s,  at the Healpix resolution $N_\textrm{side} = 128$ ($n=7$).} 
 \label{fig:exposure}
 \end{figure}
 
@@ -179,18 +179,18 @@ Stability of the results against foreground modeling will be tested through the 
 %
 A flux map ${\cal M}$ will therefore be obtained as the sum of three contributions:
 \begin{equation}
-    {\cal M} = {\cal S} + A_{\rm gal} \cdot {\cal G} + \fiso
+    {\cal M} = {\cal S} + A_\textrm{gal} \cdot {\cal G} + \fiso
     \label{eq:map}
 \end{equation}
-where $\cal S$ is the map due to the underlying distribution of sources (obtained from a $\dnds$ model as described in the next subsection), ${\cal G}$ is a template map for the foreground emission and $\fiso$ is a constant that denotes the isotropic component discussed above. The constant $A_{\rm gal}$ is a normalization constant for the galactic foreground template. 
+where $\cal S$ is the map due to the underlying distribution of sources (obtained from a $\dnds$ model as described in the next subsection), ${\cal G}$ is a template map for the foreground emission and $\fiso$ is a constant that denotes the isotropic component discussed above. The constant $A_\textrm{gal}$ is a normalization constant for the galactic foreground template. 
 
 The count map {$\cal N$} is then obtained by multiplying the flux map by the \fermi exposure map {$\cal E$}, depicted in Fig. \ref{fig:exposure}, and by taking into account the steradian-to-pixel conversion factor. Specifically, the counts in pixel $a$ are obtained as:
 \begin{equation}
-    {\cal N}_a = {\cal M}_a \cdot {\cal E}_a \cdot \frac{4\pi}{N_{\rm pix}}
+    {\cal N}_a = {\cal M}_a \cdot {\cal E}_a \cdot \frac{4\pi}{N_\textrm{pix}}
     \label{eq:count}
 \end{equation}
 %
-where the number of pixels in the Healpix scheme is $N_{\rm pix} = 12\cdot N^2_{\rm side}$ with $N_{\rm side} = 2^{n}$ with $n$ the pixeling order.
+where the number of pixels in the Healpix scheme is $N_\textrm{pix} = 12\cdot N^2_\textrm{side}$ with $N_\textrm{side} = 2^{n}$ with $n$ the pixeling order.
 
 Since the exposure slightly changes with energy, the above procedure could be improved by performing a convolution in energy of the photon flux with the exposure, instead of directly multiplying the two quantities as performed in Eq. (\ref{eq:count}). However, the gradient in energy of the exposure in the $(1,10)$ GeV energy range is small, and the two procedures would provide very similar results.  We, thus, use the simpler procedure outlined above. 
 Eq. \ref{eq:count} also implies that we do not adopt energy dispersion. In the energy range 1-10 GeV the energy dispersion is about 10\% \cite{Fermi-LAT:2013jgq} and may induce normalization changes of similar size.
@@ -219,7 +219,7 @@ In the next Sections we discuss in more detail how the components of Eq. \ref{eq
 \hline
  & Parameter & Prior & Range \\
 \hline & $A_{S}$ & log-flat & {$[1,\, 15]$} \\
-& $F_{\rm iso}$ & log-flat & {$[0.5 \cdot 10^{-7},\, 7.0 \cdot 10^{-7}]$} \\
+& $F_\textrm{iso}$ & log-flat & {$[0.5 \cdot 10^{-7},\, 7.0 \cdot 10^{-7}]$} \\
 \hline &
 $S_{1}$ & log-flat & {$[3 \cdot 10^{-9}, 5.0 \cdot 10^{-8}]$ } \\
 & $S_{2}$ & log-flat & {$[5 \cdot 10^{-11}, 3.0 \cdot 10^{-9}]$} \\ 
@@ -230,7 +230,7 @@ $S_{1}$ & log-flat & {$[3 \cdot 10^{-9}, 5.0 \cdot 10^{-8}]$ } \\
 & $n_{4}$ & flat & {$[1.0,\, 3.0]$} & \\
 \hline 
 \end{tabular}
-\caption{Ranges of the parameters and their sampling priors adopted in the map generation with $N_b = 3$ breaks. The normalization $A_S$ is in units of $10^7$ cm$^2$ s sr$^{-1}$. $F_{\rm iso}$ is in units of cm$^{-2}$ s$^{-1}$ sr$^{-1}$. The breaks $S_{1}$ $S_{2}$ and $S_{3}$ are given in units of cm$^{-1}$s$^{-1}$. All other quantities are dimensionless.}
+\caption{Ranges of the parameters and their sampling priors adopted in the map generation with $N_b = 3$ breaks. The normalization $A_S$ is in units of $10^7$ cm$^2$ s sr$^{-1}$. $F_\textrm{iso}$ is in units of cm$^{-2}$ s$^{-1}$ sr$^{-1}$. The breaks $S_{1}$ $S_{2}$ and $S_{3}$ are given in units of cm$^{-1}$s$^{-1}$. All other quantities are dimensionless.}
 \label{tab:prior-dNdS}
 \end{table}
 
@@ -250,17 +250,17 @@ Following \cite{Cuoco-1pdf}, the differential source-count distribution $\dnds$ 
 \centering
 \includegraphics[scale=0.60]{img/data_selection/point_sources.pdf}
 \includegraphics[scale=0.60]{img/data_selection/smoothed_PS.pdf}
-\caption{Simulated flux map of point sources extracted from a specific source-count distribution, before (upper panel) and after (lower panel) the PSF is applied, in units of photons/(cm$^2$ s sr). The maps are shown at Healpix resolution $N_{\rm side} = 128$ ($n=7$). 
+\caption{Simulated flux map of point sources extracted from a specific source-count distribution, before (upper panel) and after (lower panel) the PSF is applied, in units of photons/(cm$^2$ s sr). The maps are shown at Healpix resolution $N_\textrm{side} = 128$ ($n=7$). 
 }
 \label{fig:point-sources}
 \end{figure}
 
 
 \noindent
-where $S_0$ is a reference flux value which we choose to be $S_0 = 3 \cdot 10^{-8} {\rm cm}^{-2} {\rm s}^{-1}$,  and $n_j$ are the power-law indices. $S$ denotes the source flux in the energy interval $(1,10)$ GeV. The $dN/dS$ distribution is normalized with an overall factor $A_S$. 
+where $S_0$ is a reference flux value which we choose to be $S_0 = 3 \cdot 10^{-8} \textrm{cm}^{-2} \textrm{s}^{-1}$,  and $n_j$ are the power-law indices. $S$ denotes the source flux in the energy interval $(1,10)$ GeV. The $dN/dS$ distribution is normalized with an overall factor $A_S$. 
 
-For definiteness, in this work we adopt 3 breaks and 4 slopes. The ranges in which the parameters are varied to produce different source-count distributions is reported in Table \ref{tab:prior-dNdS}. The ranges have been chosen in order to intercept the expected features of the $\dnds$ and are broad enough to allow for a good variability in the modeling of the source counts, in order to expose the CNN to a wide set of options. In fact, the prior ranges of the three break positions are chosen relative to the \fermi threshold for resolving point sources, $S_{\rm th} \sim 2 \cdot 10^{-10}$ cm$^{-2}$ s$^{-1}$, such that $S_1$, $S_2$, $S_3$ are respectively larger, across and below $S_{\rm th}$. The flux interval over which we will try to reconstruct the $\dnds$ is set as $[5 \cdot 10^{-12}, 1 \cdot 10^{-7}]$ cm$^{-2}$ s$^{-1}$. The upper limit of this interval is set by the brightest sources in the catalog, while the lower limit is set at about 1.6 orders of magnitude below the \fermi threshold for resolving sources. Sources fainter than the lower limit of this interval are assumed to just contribute to the isotropic component.
-{  This lower limit, indeed, is also close to the theoretical sensitivity given by the flux of a point source contributing exactly one photon, which we calculate as $F_{\rm sens}= 1/{\cal E}_{av}=3.74 \cdot 10^{-12}$ cm$^{-2}$ s$^{-1}$  where ${\cal E}_{av}$ is the average exposure in the region $|b|>30^\circ$ where we perform the analysis.}
+For definiteness, in this work we adopt 3 breaks and 4 slopes. The ranges in which the parameters are varied to produce different source-count distributions is reported in Table \ref{tab:prior-dNdS}. The ranges have been chosen in order to intercept the expected features of the $\dnds$ and are broad enough to allow for a good variability in the modeling of the source counts, in order to expose the CNN to a wide set of options. In fact, the prior ranges of the three break positions are chosen relative to the \fermi threshold for resolving point sources, $S_\textrm{th} \sim 2 \cdot 10^{-10}$ cm$^{-2}$ s$^{-1}$, such that $S_1$, $S_2$, $S_3$ are respectively larger, across and below $S_\textrm{th}$. The flux interval over which we will try to reconstruct the $\dnds$ is set as $[5 \cdot 10^{-12}, 1 \cdot 10^{-7}]$ cm$^{-2}$ s$^{-1}$. The upper limit of this interval is set by the brightest sources in the catalog, while the lower limit is set at about 1.6 orders of magnitude below the \fermi threshold for resolving sources. Sources fainter than the lower limit of this interval are assumed to just contribute to the isotropic component.
+{  This lower limit, indeed, is also close to the theoretical sensitivity given by the flux of a point source contributing exactly one photon, which we calculate as $F_\textrm{sens}= 1/{\cal E}_{av}=3.74 \cdot 10^{-12}$ cm$^{-2}$ s$^{-1}$  where ${\cal E}_{av}$ is the average exposure in the region $|b|>30^\circ$ where we perform the analysis.}
 
 
 
@@ -272,7 +272,7 @@ The maps {$\cal S$} are generated according to the following procedure:
 \begin{enumerate}
 \item A $\dnds$ is selected by random sampling of its parameters in the intervals and with the priors defined in Table \ref{tab:prior-dNdS};
 
-\item The number $N_i$ of sources in the $i$th flux bin is calculated as $N_i = 4\pi \, (S_{i, \rm max} - S_{i, \rm min}) \, \dnds|_i$ where $\dnds|_i$ is the value at the center of the $i$th bin. The flux bins are determined by subdividing the interval of interest {$[5 \cdot 10^{-12}, 1 \cdot 10^{-7}]$ } cm$^{-2}$ s$^{-1}$ in $10^3$ log-intervals per decade;
+\item The number $N_i$ of sources in the $i$th flux bin is calculated as $N_i = 4\pi \, (S_{i, \rmfamily max} - S_{i, \rmfamily min}) \, \dnds|_i$ where $\dnds|_i$ is the value at the center of the $i$th bin. The flux bins are determined by subdividing the interval of interest {$[5 \cdot 10^{-12}, 1 \cdot 10^{-7}]$ } cm$^{-2}$ s$^{-1}$ in $10^3$ log-intervals per decade;
 
 \item A Poisson extraction on $N_i$ determines the number of sources $N_{P,i}$ in each flux interval;
 
@@ -281,7 +281,7 @@ The maps {$\cal S$} are generated according to the following procedure:
 \item Finally, convolution with the \fermi PSF shown in Fig. \ref{fig:PSF} is applied to each point source. Since sources are assumed to be point-like, we simply replace each point source with an extended circular object with a radial profile equal to the PSF, and whose total flux is equal to the one of the original source. Since the image formation process is linear in the intensity, in case of overlapping sources (either because of their spatial position, or because of the PSF smearing) the resulting flux is additive. An example of flux map with the PSF applied is shown in the lower panel of Fig. \ref{fig:point-sources}.
 \end{enumerate}
 
-In order to avoid possible biases in the generated maps, due to the resolution of the angular binning, the maps generated with the procedure described above have been produced at a resolution higher than the one adopted for the analysis. We have therefore built our maps with $N_{\rm side} = 128$. These maps have then been downgraded to $N_{\rm side} = 64$ for the analysis.
+In order to avoid possible biases in the generated maps, due to the resolution of the angular binning, the maps generated with the procedure described above have been produced at a resolution higher than the one adopted for the analysis. We have therefore built our maps with $N_\textrm{side} = 128$. These maps have then been downgraded to $N_\textrm{side} = 64$ for the analysis.
 
 \subsection{Galactic foreground and isotropic background}
 \label{sec:galactic}
@@ -289,7 +289,7 @@ In order to avoid possible biases in the generated maps, due to the resolution o
 \begin{figure}[t]
 \centering
 \includegraphics[scale=0.6]{img/data_selection/gf7.pdf}
-\caption{$\tt {gll\_iem\_v07}$ galactic foreground model \cite{4FGL}, integrated in the $(1,10)$ GeV energy bin, in units of photons/(cm$^2$ s sr), at the Healpix resolution $N_{\rm side} = 128$ ($n=7$).}
+\caption{$\tt {gll\_iem\_v07}$ galactic foreground model \cite{4FGL}, integrated in the $(1,10)$ GeV energy bin, in units of photons/(cm$^2$ s sr), at the Healpix resolution $N_\textrm{side} = 128$ ($n=7$).}
 \label{fig:galactic-foreground}
 \end{figure}
 
@@ -302,19 +302,19 @@ Given the various approximations we use, instead of using the nominal normalizat
 the galactic templates \verb|gll_iem_v07| and \verb|gll_iem_v05| directly to the observed \fermi map. This is realized by performing a maximum-likelihood Poisson fit, using as likelihood:
 %
 \begin{equation}
-\mathcal{L}=\prod_{a=1}^{N_{\rm pix}} \frac{\lambda_{a}^{k_{a}} e^{-\lambda_{a}}}{k_{a} !}
+\mathcal{L}=\prod_{a=1}^{N_\textrm{pix}} \frac{\lambda_{a}^{k_{a}} e^{-\lambda_{a}}}{k_{a} !}
 \end{equation}
 %
-where $k_a$ is the number of photons in pixel $a$ of the \fermi count map and $\lambda_a$ the corresponding quantity from the model count-map, given by $\lambda_a = (A_{\rm gal}\ {\cal G}_a + F'_{\rm iso}) \cdot {\cal E}_a \cdot \frac{4\pi}{N_{\rm pix}} $, where $A_{\rm gal}$ and $F'_{\rm iso}$ are the two fit parameters. In performing the fit we mask the sky with the low-latitude cut and with a $2^\circ$ circular mask around each of the sources in the 4FGL catalog. 
-We added a prime on the $F'_{\rm iso}$ derived from the maximum-likelihood fit above to explicitly distinguish it from the $F_{\rm iso}$ introduced earlier.
-Confronting with Eq. (\ref{eq:map}), the $F'_{\rm iso}$ term denotes the sum of the purely isotropic contribution $F_{\rm iso}$  and the contribution of sources, ${\cal S}$ term, below the 4FGL detection threshold.
+where $k_a$ is the number of photons in pixel $a$ of the \fermi count map and $\lambda_a$ the corresponding quantity from the model count-map, given by $\lambda_a = (A_\textrm{gal}\ {\cal G}_a + F'_\textrm{iso}) \cdot {\cal E}_a \cdot \frac{4\pi}{N_\textrm{pix}} $, where $A_\textrm{gal}$ and $F'_\textrm{iso}$ are the two fit parameters. In performing the fit we mask the sky with the low-latitude cut and with a $2^\circ$ circular mask around each of the sources in the 4FGL catalog. 
+We added a prime on the $F'_\textrm{iso}$ derived from the maximum-likelihood fit above to explicitly distinguish it from the $F_\textrm{iso}$ introduced earlier.
+Confronting with Eq. (\ref{eq:map}), the $F'_\textrm{iso}$ term denotes the sum of the purely isotropic contribution $F_\textrm{iso}$  and the contribution of sources, ${\cal S}$ term, below the 4FGL detection threshold.
 
 
 \begin{table}[t]
 \centering
 \begin{tabular}{|l|c|c|c|}
 \hline
-Foreground template & Latitude cut & $A_{\rm gal}$ & $F'_{\rm iso}$ \\
+Foreground template & Latitude cut & $A_\textrm{gal}$ & $F'_\textrm{iso}$ \\
 \hline
 \verb|gll_iem_v07| & $|b|<30^\circ$ & $0.888 \pm 0.005$ & $(4.91  \pm 0.04 ) \cdot 10^{-7}$ \\
 \verb|gll_iem_v07| & $|b|<40^\circ$ & $0.874 \pm 0.008$ & $(4.90  \pm 0.06 ) \cdot 10^{-7}$ \\
@@ -323,23 +323,23 @@ Foreground template & Latitude cut & $A_{\rm gal}$ & $F'_{\rm iso}$ \\
 \verb|gll_iem_v05| & $|b|<30^\circ$ & $1.030 \pm 0.006$ & $(2.57  \pm 0.06 ) \cdot 10^{-7}$ \\
 \hline 
 \end{tabular}
-\caption{Values of the $A_{\rm gal}$ and $F'_{\rm iso}$ parameters obtained from a fit to the \fermi map, for different galactic foreground template models and latitude cuts. $F'_{\rm iso}$ is in units of cm$^{-2}$ s$^{-1}$ sr$^{-1}$.}
+\caption{Values of the $A_\textrm{gal}$ and $F'_\textrm{iso}$ parameters obtained from a fit to the \fermi map, for different galactic foreground template models and latitude cuts. $F'_\textrm{iso}$ is in units of cm$^{-2}$ s$^{-1}$ sr$^{-1}$.}
 \label{tab:fore-parameters}
 \end{table}
 
-The results of the fit are shown in Table \ref{tab:fore-parameters}, for three latitude cuts for the \verb|gll_iem_v07| template and for $|b|<30^\circ$ for the alternative \verb|gll_iem_v05| model. We see that both the normalisation parameter $A_{\rm gal}$ and $F'_{\rm iso}$ are consistent among themselves for a fixed galactic foreground model, implying consistency with respect to the latitude cut. The model \verb|gll_iem_v05| instead requires a larger normalization, with an ensuing reduced value for $F'_{\rm iso}$ by a factor of 2.
+The results of the fit are shown in Table \ref{tab:fore-parameters}, for three latitude cuts for the \verb|gll_iem_v07| template and for $|b|<30^\circ$ for the alternative \verb|gll_iem_v05| model. We see that both the normalisation parameter $A_\textrm{gal}$ and $F'_\textrm{iso}$ are consistent among themselves for a fixed galactic foreground model, implying consistency with respect to the latitude cut. The model \verb|gll_iem_v05| instead requires a larger normalization, with an ensuing reduced value for $F'_\textrm{iso}$ by a factor of 2.
 This reflects a certain amount of degeneracy which is present at high galactic latitude between the foreground emission and the isotropic emission, allowed by the uncertainties in the foreground model.
 The normalization of the \verb|v07| model different from 1 is related to the fact that we do not include energy dispersion. The \verb|v05| model, instead, has been created originally without including the effect of energy dispersion\footnote{\verb|https://fermi.gsfc.nasa.gov/ssc/data/access/lat/BackgroundModels.html|}, and indeed we obtain a normalization compatible with 1.
 
 
-Throughout the rest of the analysis we will fix the normalization parameter $A_{\rm gal}$ to the value determined from the above fit. The values of $F'_{\rm iso}$ are, instead, used to define the range of the prior for $F_{\rm iso}$ in Table \ref{tab:prior-dNdS} and {\sl a posteriori} to check consistency of the results.
+Throughout the rest of the analysis we will fix the normalization parameter $A_\textrm{gal}$ to the value determined from the above fit. The values of $F'_\textrm{iso}$ are, instead, used to define the range of the prior for $F_\textrm{iso}$ in Table \ref{tab:prior-dNdS} and \textsl{a posteriori} to check consistency of the results.
 %
 One illustration of a flux map obtained as the sum of all components is shown in Fig. \ref{fig:map_with_gf}.
-Instead of fixing $A_{\rm gal}$, in principle, we could also leave it as a free parameter and instruct the network to predict its value. We found, however, that the above procedure constrains $A_{\rm gal}$ very precisely and it is thus preferable. Furthermore, we also found that fixing $A_{\rm gal}$ provides a better stability of the neural network.  
+Instead of fixing $A_\textrm{gal}$, in principle, we could also leave it as a free parameter and instruct the network to predict its value. We found, however, that the above procedure constrains $A_\textrm{gal}$ very precisely and it is thus preferable. Furthermore, we also found that fixing $A_\textrm{gal}$ provides a better stability of the neural network.  
 
-{  Nonetheless, to better asses the impact of fixing the $A_{\rm gal}$ value, we also performed a further test using different values in the range $(0.78, 1.0)$ (i.e., a range centered on our fiducial value $0.888 \pm 0.005$, thus encompassing many standard deviations away from its central value.)
-We found that the $\dnds$ reconstructed by the CNN is largely unaffected by the employed value of $A_{\rm gal}$, while 
-the specific $A_{\rm gal}$ choice mostly affect $F_{\rm iso}$,
+{  Nonetheless, to better asses the impact of fixing the $A_\textrm{gal}$ value, we also performed a further test using different values in the range $(0.78, 1.0)$ (i.e., a range centered on our fiducial value $0.888 \pm 0.005$, thus encompassing many standard deviations away from its central value.)
+We found that the $\dnds$ reconstructed by the CNN is largely unaffected by the employed value of $A_\textrm{gal}$, while 
+the specific $A_\textrm{gal}$ choice mostly affect $F_\textrm{iso}$,
 as expected because of the  high galactic latitude degeneracy between the foreground emission and the isotropic emission. 
 Example plots are shown in the Appendix \ref{sec:agal-var}.}
 
@@ -351,7 +351,7 @@ Example plots are shown in the Appendix \ref{sec:agal-var}.}
 
 With a flux map ${\cal M}$ available, we can now produce a synthetic photon-count map ${\cal N}$ as described in Eq. \ref{eq:count}. 
 One example is shown in Fig. \ref{fig:map-total-counts}. 
-In order to generate maps compatible with a counting experiment like \fermi, we then add Poisson noise to the map performing a Poisson realization of the number of photons in each pixel of the map ${\cal N}$, and we dub this final map as ${\cal N}_{\cal P}$ count map. One example is shown in Fig. \ref{fig:map-effective}, which also shows the same map with the latitude cut applied: these are the type of maps that we use to train and validate the neural network. We have generated in total 1 million maps, 90\% of which have been used for training and 10\% for validation. The maps have been stored as a \verb|TFRecord| dataset\footnote{\verb|https://www.tensorflow.org/tutorials/load_data/tfrecord|} for use with Tensorflow \cite{tensorflow2015-whitepaper}. The maps have been generated in Healpix format with $N_{\rm side} = 128$ resolution (order $n=7$) and then downsampled to $N_{\rm side} = 64$ (order $n=6$) for the training and validation (this resolution corresponds to 49152 pixels). 
+In order to generate maps compatible with a counting experiment like \fermi, we then add Poisson noise to the map performing a Poisson realization of the number of photons in each pixel of the map ${\cal N}$, and we dub this final map as ${\cal N}_{\cal P}$ count map. One example is shown in Fig. \ref{fig:map-effective}, which also shows the same map with the latitude cut applied: these are the type of maps that we use to train and validate the neural network. We have generated in total 1 million maps, 90\% of which have been used for training and 10\% for validation. The maps have been stored as a \verb|TFRecord| dataset\footnote{\verb|https://www.tensorflow.org/tutorials/load_data/tfrecord|} for use with Tensorflow \cite{tensorflow2015-whitepaper}. The maps have been generated in Healpix format with $N_\textrm{side} = 128$ resolution (order $n=7$) and then downsampled to $N_\textrm{side} = 64$ (order $n=6$) for the training and validation (this resolution corresponds to 49152 pixels). 
 
 The training of the CNN and the subsequent analysis of the \fermi data can be performed equivalently with maps in units of photon-count or in units of flux. Nonetheless, we will work with maps in units of flux, which are easily obtained from the ${\cal N}_{\cal P}$ count maps by using the exposure map and by inverting Eq. (\ref{eq:count}).  The reason to convert the ${\cal N}_{\cal P}$ count maps in units of flux is motivated by the fact that 
 count maps contain a spurious large-scale angular dependence
@@ -367,14 +367,14 @@ In this way the CNN can focus on learning the $\dnds$, seeing the exposure and g
 \begin{figure}[t]
 \centering
 \includegraphics[scale=0.6]{img/data_selection/point_sources_fg.pdf}
-\caption{The same as in Fig. \ref{fig:point-sources}, with the galactic foreground model normalized with $A_{\rm gal} = 0.886$ and an isotropic background component $F_{\rm iso} = 4 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$. Units are photons/(cm$^2$ s sr).}
+\caption{The same as in Fig. \ref{fig:point-sources}, with the galactic foreground model normalized with $A_\textrm{gal} = 0.886$ and an isotropic background component $F_\textrm{iso} = 4 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$. Units are photons/(cm$^2$ s sr).}
 \label{fig:map_with_gf}
 \end{figure}
 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.6]{img/data_selection/counts_map.pdf}
-\caption{Simulated count map in units of counts per pixel,  at the Healpix resolution $N_{\rm side} = 128$ ($n=7$). }
+\caption{Simulated count map in units of counts per pixel,  at the Healpix resolution $N_\textrm{side} = 128$ ($n=7$). }
 \label{fig:map-total-counts}
 \end{figure}
 
@@ -382,7 +382,7 @@ In this way the CNN can focus on learning the $\dnds$, seeing the exposure and g
 \centering
 \includegraphics[scale=0.6]{img/data_selection/counts_map_effective.pdf}
 \includegraphics[scale=0.6]{img/data_selection/counts_map_effective_masked.pdf}
-\caption{Simulated map in units of counts per pixel after  adding Poisson noise from the synthetic model map of Fig. \ref{fig:map-total-counts}, at the same Healpix resolution $N_{\rm side} = 128$ ($n=7$). The lower panel shows the map with a $|b| < 30^\circ$ latitude cut.}
+\caption{Simulated map in units of counts per pixel after  adding Poisson noise from the synthetic model map of Fig. \ref{fig:map-total-counts}, at the same Healpix resolution $N_\textrm{side} = 128$ ($n=7$). The lower panel shows the map with a $|b| < 30^\circ$ latitude cut.}
 \label{fig:map-effective}
 \end{figure}
 
@@ -411,13 +411,13 @@ i) the algorithm needs to properly deal with the topology of the sphere without 
 ii) the algorithm has to be computationally efficient;
 iii) it would be desirable to be able to use the same neural network architectures which already work for flat images, which have been proven to be very efficient and effective.
 
-In fact, a full spherical architecture is usually slower than a flat architecture when applied to images of the same size, and it often happens that it is not possible to adopt pre-existing models without re-implementing them {\it ad-hoc}. 
+In fact, a full spherical architecture is usually slower than a flat architecture when applied to images of the same size, and it often happens that it is not possible to adopt pre-existing models without re-implementing them \textit{ad-hoc}. 
 On the other hand, the adoption of a flat-image architecture either introduces spherical distortions, due to the mapping of a spherical image on a plane, or may loose some of the large scale information contained in the image.
 
 In this work, we  implemented a fast and reliable spherical architecture on the Healpix pixelisation of the sphere, taking inspiration from the idea proposed in \cite{mapped-convolutions} for the icosahedron. This method proved to be reliable when the information we need to retrieve from the maps is a small-scale effect, like in our case the distribution of sources, which are point-like (although smeared by the PSF) and isotropically distributed.
 
 
-The method is based on the fact that, in the Healpix pixelisation scheme, each pixel has equal area and contains the information of the underlying field (in our case, the photon counts) averaged over that pixel. As discussed above, we train our neural network on maps of order $n=6$ ($N_{\rm side}=64$), which contain 49152 pixels. Considering instead the Healpix sphere with base pixelisation  of order $n=0$ ($N_{\rm side}=1$), we can subdivide the map into 12 equal-area patches, each of which containing 4096 pixels. Each patch is an independent realisation of the underlying isotropic field and can be mapped into a 2D flat image. We call this parsing algorithm \verb|map2patch|. Notice that this is not a re-sampling of the map: it's just a subdivision of the spherical image into 12 patches, in a way that preserves the area and content of each pixel. This allows us to use standard convolutional network techniques that work efficiently on flat images, while preserving the whole available statistics of the full map.  
+The method is based on the fact that, in the Healpix pixelisation scheme, each pixel has equal area and contains the information of the underlying field (in our case, the photon counts) averaged over that pixel. As discussed above, we train our neural network on maps of order $n=6$ ($N_\textrm{side}=64$), which contain 49152 pixels. Considering instead the Healpix sphere with base pixelisation  of order $n=0$ ($N_\textrm{side}=1$), we can subdivide the map into 12 equal-area patches, each of which containing 4096 pixels. Each patch is an independent realisation of the underlying isotropic field and can be mapped into a 2D flat image. We call this parsing algorithm \verb|map2patch|. Notice that this is not a re-sampling of the map: it's just a subdivision of the spherical image into 12 patches, in a way that preserves the area and content of each pixel. This allows us to use standard convolutional network techniques that work efficiently on flat images, while preserving the whole available statistics of the full map.  
 
 
 Convolution is performed on each patch separately. In order to be able to extract information from each patch in parallel, we define 3D convolutions, where the first two dimensions are the spatial dimensions, and the third dimension specifies the patch. In order to force the neural network to learn from each individual sky patch, we employ convolution filters of size $(N,N,1)$, where $N$ is the dimension of the filter. By doing so, we effectively apply 2D filters to the whole sky. Note that by employing such filter size, the output of each convolution will still have 12 separate images on the third axis, associated to each sky patch, while the number of channels will vary according to the number of filters employed. This technique will thus naturally scale for images with different color channels, such as RGB images, or spherical images for which several channels are available, as is the case where multiple energy bands are considered at once.
@@ -436,7 +436,7 @@ In order to cross-check our method, we also implemented the full-sky truly-spher
 \subsection{Data pre-processing}
 \label{sec:preprocessing}
 
-The maps are constructed with the procedure outlined in Section \ref{sec:generation}. As explained more in detail there, even though we apply a latitude cut to the maps, in order to further reduce the impact of the galactic foreground (and as it is customary in analyses of the extragalactic gamma-ray background), we subtract the galactic foreground (normalized by the $A_{\rm gal}$ constant) from the input maps. This will also facilitate to some extent the training of the CNN, whose goal is to reconstruct the source-count distribution. Photon-counts maps are converted in units of flux, by using the exposure map. In order to reduce the variability of the inputs seen by the CNN and stabilize its behaviour, we take the logarithm of the flux values in the pixels and then map them in $[-1,1]$ range. 
+The maps are constructed with the procedure outlined in Section \ref{sec:generation}. As explained more in detail there, even though we apply a latitude cut to the maps, in order to further reduce the impact of the galactic foreground (and as it is customary in analyses of the extragalactic gamma-ray background), we subtract the galactic foreground (normalized by the $A_\textrm{gal}$ constant) from the input maps. This will also facilitate to some extent the training of the CNN, whose goal is to reconstruct the source-count distribution. Photon-counts maps are converted in units of flux, by using the exposure map. In order to reduce the variability of the inputs seen by the CNN and stabilize its behaviour, we take the logarithm of the flux values in the pixels and then map them in $[-1,1]$ range. 
 Finally, each map is parsed into 12 patches using the \verb|map2patch| algorithm discussed in the previous Sections.
 
 Given the approximate $S^{-2}$ behavior of the $\dnds$, for the output vector, we reconstruct $y_i = S^2 \dnds|_i \times 10^{11}$ cm$^{2}$ s deg$^{2}$ ($i=1,20$) and $y_{21}=\fiso \cdot  10^{7}$ cm$^{2}$ s sr, in order to work with (pure) numbers of order unity. We adopt this strategy in order to avoid that the mean square error could favour the optimisation of any flux bin over another, making the deviations more even across the range of $S$.
@@ -471,7 +471,7 @@ In our case, training a neural network with such an approach is advantageous, as
 
 Following \cite{heteroscedastic-error} we define the heteroscedastic Gaussian negative log-likelihood:
 \begin{equation}
-    {\sl NLL} = \sum_{i=1}^N  \left[\frac{(y_i^{\rm true}-y_i^{\rm pred})^2}{2\sigma_i^2} + \frac{1}{2} \log(\sigma_i^2)  +  \frac{1}{2} \log(2\pi)  \right]
+    \textsl{NLL} = \sum_{i=1}^N  \left[\frac{(y_i^\textrm{true}-y_i^\textrm{pred})^2}{2\sigma_i^2} + \frac{1}{2} \log(\sigma_i^2)  +  \frac{1}{2} \log(2\pi)  \right]
 \label{costfunc}    
 \end{equation}
 where we compare the true $\dnds$ and $\fiso$ (transformed as discussed in Section \ref{sec:preprocessing}) used to generate the simulated map with the prediction of the neural network, and thus $N=20+1$.
@@ -479,7 +479,7 @@ For the training of the neural network, we omit the last term of Eq. (\ref{costf
 %
 Regarding the errors, since the first term in Eq. (\ref{costfunc}) is a decreasing function of the $\sigma_i$ while the second is increasing, this ensures that there will be a minimum which will provide the  optimal estimate for the $\sigma_i$ themselves.
 
-In principle, the above cost function can easily be generalized to account for the covariance among the different bins and $F_{\rm iso}$. 
+In principle, the above cost function can easily be generalized to account for the covariance among the different bins and $F_\textrm{iso}$. 
  In practice, however, this implies estimating also the off-diagonal terms of a $21 \times 21$ symmetric matrix. Such matrix has to be inferred autonomously from data without any supervision, making the problem very challenging to optimise in this form. We thus refrain from attempting estimating the covariance. For CNN applications where the covariance between a set of parameters has been estimated, see e.g. Ref. \cite{Mishra-Sharma:2021oxe, List:2020mzd}.
 
 
@@ -506,10 +506,10 @@ In principle, the above cost function can easily be generalized to account for t
 \label{fig:random-maps}
 \end{figure}
 
-We train our model using a Tensor Processing Unit (TPU) v3, kindly provided by the Google$^{\rm TM}$ TPU Research Cloud. We adopt the Adam optimizer. We employ a cyclical triangular learning rate \cite{triangular} to avoid falling into local minima of the parameter space. We adopt a batch size equal to $128\times 8=1024$ to fully exploit the computational capabilities of the TPU. We train the model for 72 epochs, for a total of 9 triangular learning rate cycles, with learning rate ranging from $10^{-6}$ to $10^{-3}$. 
+We train our model using a Tensor Processing Unit (TPU) v3, kindly provided by the Google$^\textrm{TM}$ TPU Research Cloud. We adopt the Adam optimizer. We employ a cyclical triangular learning rate \cite{triangular} to avoid falling into local minima of the parameter space. We adopt a batch size equal to $128\times 8=1024$ to fully exploit the computational capabilities of the TPU. We train the model for 72 epochs, for a total of 9 triangular learning rate cycles, with learning rate ranging from $10^{-6}$ to $10^{-3}$. 
 As already anticipated, we have generated 1 million maps, 90\% of which have been employed in the training and 10\% for validation.
 
-To test the convergence of the model we evaluate the mean square error (MSE)  defined as $MSE=\sum_{i=1}^N (y_i^{\rm true}-y_i^{\rm pred})^2$. 
+To test the convergence of the model we evaluate the mean square error (MSE)  defined as $MSE=\sum_{i=1}^N (y_i^\textrm{true}-y_i^\textrm{pred})^2$. 
 In Fig. \ref{fig:mse-training} we plot the MSE as a function of the training epoch for the training and validation dataset. We can see that, starting from epoch 10, the validation and training lines are close to each other, which means that our model is not overfitting the training dataset. We observe that the MSE reaches a plateau at around epoch 60, meaning that further training of our model would not lead to  improvement in performance.
 
 Once the CNN is fully trained, we extensively check the convergence of the reconstructed $\dnds$ and $\fiso$ against their inputs, by using the maps of the validation set. 
@@ -564,9 +564,9 @@ In Fig. \ref{fig:prediction-fermi-12y-bayesian} we show the measurement for the 
 
 
 The CNN provides also the value $\fiso=4.90 \pm 0.43 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$, 
-which can be compared with the value $F'_{\rm iso}=4.91 \pm 0.04 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$ reported in Table \ref{tab:fore-parameters}.
-We remind that $F'_{\rm iso}$ is the sum of $\fiso$ and of the contribution of sources below the 4FGL catalog threshold. Indeed, if we  calculate the contribution of sources using our best fit $\dnds$ integrated in the range $[5 \cdot 10^{-12}, 1 \cdot 10^{-10}]$ cm$^{-2}$ s$^{-1}$, the upper limit being an approximate value for the catalog threshold, and we add $\fiso$  we obtain a value of {$(6.41 \pm 0.61)\cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$} sr$^{-1}$.
-This is in slight tension with $F'_{\rm iso}$, although the two agree at the $\sim 2\sigma$ level.
+which can be compared with the value $F'_\textrm{iso}=4.91 \pm 0.04 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$ reported in Table \ref{tab:fore-parameters}.
+We remind that $F'_\textrm{iso}$ is the sum of $\fiso$ and of the contribution of sources below the 4FGL catalog threshold. Indeed, if we  calculate the contribution of sources using our best fit $\dnds$ integrated in the range $[5 \cdot 10^{-12}, 1 \cdot 10^{-10}]$ cm$^{-2}$ s$^{-1}$, the upper limit being an approximate value for the catalog threshold, and we add $\fiso$  we obtain a value of {$(6.41 \pm 0.61)\cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$} sr$^{-1}$.
+This is in slight tension with $F'_\textrm{iso}$, although the two agree at the $\sim 2\sigma$ level.
 
 
 In order to test the stability of the results, we repeated the analysis by using the same \verb|gll_iem_v07| galactic foreground but with two different latitude cuts: $|b|<40^\circ$ and $|b|<50^\circ$. The positive consequence of a higher latitude cut is a lower residual foreground contamination. However, the amount of available data is reduced. The CNN has been fully re-trained for both of these situations, and the ensuing results when applied to the \fermi data are shown in Fig. \ref{fig:prediction-fermi-12y-b4050}. We notice that the results, both in terms of behaviour and uncertainty estimate, are fully compatible with the results of the baseline analysis. The $\dnds$ exhibits a slight decrease toward lower fluxes as compared to the baseline case, although the size of this effect is not statistically significant. The values of $\fiso$ are also fully compatible among them.
@@ -574,8 +574,8 @@ In order to test the stability of the results, we repeated the analysis by using
 A second test of stability has been performed in order to check the impact of galactic foreground modeling. We have performed a new training of the CNN with the alternative template \verb|gll_iem_v05|, and with the $|b|<30^\circ$ latitude cut. The result is shown in Fig. \ref{fig:prediction-fermi-12y-fg-v5}. The reconstructed $\dnds$ matches to a large degree the source-count distributions obtained with \verb|gll_iem_v07|. This reassures us that, even though the galactic foreground modeling introduces a degree of uncertainty, nevertheless the results of the CNN for $\dnds$ are remarkably stable.
 The value of $\fiso$ is smaller in this case, equal to
 $\fiso=1.82 \pm 0.15 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$, 
-which can be compared with the value $F'_{\rm iso}=2.57 \pm 0.06 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$ reported in table \ref{tab:fore-parameters}.
-Adding to $\fiso$ the integral of the contribution of sources in the interval in the range $[5 \cdot 10^{-12}, 1 \cdot 10^{-10}]$ cm$^{-2}$ s$^{-1}$ using the obtained $\dnds$, we obtain a total flux of { $(2.92 \pm 0.54)\cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$} sr$^{-1}$, which is in very good agreement with $F'_{\rm iso}$. 
+which can be compared with the value $F'_\textrm{iso}=2.57 \pm 0.06 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$ reported in table \ref{tab:fore-parameters}.
+Adding to $\fiso$ the integral of the contribution of sources in the interval in the range $[5 \cdot 10^{-12}, 1 \cdot 10^{-10}]$ cm$^{-2}$ s$^{-1}$ using the obtained $\dnds$, we obtain a total flux of { $(2.92 \pm 0.54)\cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$} sr$^{-1}$, which is in very good agreement with $F'_\textrm{iso}$. 
 
 
 
@@ -656,7 +656,7 @@ Finally, recent developments in the field of simulation based inference, such as
 \acknowledgments
  We thank B. Zaldivar for valuable discussions on aspects related to convolutional neural network applications and Bayesian error estimation. We thank M. Negro for valuable insight on \fermi data analysis and data reduction and for the numerical tool Xgam\footnote{\verb|https://github.com/nmik/Xgam|}. 
  We thank G. Zaharijas for serving as LAT internal referee and providing useful comments on the manuscript.  
-We acknowledge support from: {\sl Departments of Excellence} grant awarded by the Italian Ministry of Education, University and Research (MIUR); Research grant {\sl The Dark Universe: A Synergic Multimessenger Approach}, Grant No. 2017X7X85K funded by the Italian Ministry of Education, University and Research (MIUR); {\sl Research grant The Anisotropic Dark Universe}, Grant No. CSTO161409, funded by Compagnia di Sanpaolo and University of Torino; Research grant {\sl TAsP (Theoretical Astroparticle Physics)} funded by Istituto Nazionale di Fisica Nucleare (INFN). 
+We acknowledge support from: \textsl{Departments of Excellence} grant awarded by the Italian Ministry of Education, University and Research (MIUR); Research grant \textsl{The Dark Universe: A Synergic Multimessenger Approach}, Grant No. 2017X7X85K funded by the Italian Ministry of Education, University and Research (MIUR); \textsl{Research grant The Anisotropic Dark Universe}, Grant No. CSTO161409, funded by Compagnia di Sanpaolo and University of Torino; Research grant \textsl{TAsP (Theoretical Astroparticle Physics)} funded by Istituto Nazionale di Fisica Nucleare (INFN). 
 This research was supported with Cloud TPUs from Google's TPU Research Cloud (TRC).
 
 The \textit{Fermi} LAT Collaboration acknowledges generous ongoing support
@@ -695,7 +695,7 @@ In this appendix we describe further tests that we have performed to cross-check
 \begin{figure}[t]
 \centering
 \includegraphics[width=1.0\textwidth]{img/model_plots/model_42/baseline/pendenza2.pdf}
-\caption{  Same as Fig. \ref{fig:random-maps}  but for 6 different random realization of the same flat $S^2\dnds$ and same $F_{\rm iso,true}=4.84 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$.  }
+\caption{  Same as Fig. \ref{fig:random-maps}  but for 6 different random realization of the same flat $S^2\dnds$ and same $F_\textrm{iso,true}=4.84 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$.  }
 \label{fig:flat-maps}
 \end{figure}
 
@@ -739,26 +739,26 @@ We first determine and remove the monopole ($l=0$) and dipole ($l=1$) components
 
 \item  This map is then subject to harmonic space decomposition:
 \begin{equation}
-{\cal M}_{\rm masked}(\theta,\phi) = \sum_{l=0}^{\infty} \sum_{m=-l}^{l} a_{lm} Y_{lm}(\theta,\phi)
+{\cal M}_\textrm{masked}(\theta,\phi) = \sum_{l=0}^{\infty} \sum_{m=-l}^{l} a_{lm} Y_{lm}(\theta,\phi)
 \label{eq:multipole}
 \end{equation}
-where $\theta$ and $\phi$ are angles on the sphere, $Y_{lm}(\theta,\phi)$ the spherical harmonics and the harmonic coefficients $a_{lm}$ completely encode the same information present in the map ${\cal M}_{\rm masked}$  (notice that, even though in Eq. (\ref{eq:multipole}) we formally decompose over all multipoles, the monopole and dipole amplitude are vanishing, since they have been removed from  ${\cal M}_{\rm masked}$);
+where $\theta$ and $\phi$ are angles on the sphere, $Y_{lm}(\theta,\phi)$ the spherical harmonics and the harmonic coefficients $a_{lm}$ completely encode the same information present in the map ${\cal M}_\textrm{masked}$  (notice that, even though in Eq. (\ref{eq:multipole}) we formally decompose over all multipoles, the monopole and dipole amplitude are vanishing, since they have been removed from  ${\cal M}_\textrm{masked}$);
 
-\item The harmonic coefficients $a_{lm}$ are determined with the \verb|map2alm| Healpy function. The ones that are retained for the foreground cleaning are those referring to multipole values $l < l_{\rm max}$, where $l_{\rm max}$ will be varied and the dependence of the results with $l_{\rm max}$ will be studied (at this level, the monopole and dipole are not present, because of the above point);
+\item The harmonic coefficients $a_{lm}$ are determined with the \verb|map2alm| Healpy function. The ones that are retained for the foreground cleaning are those referring to multipole values $l < l_\textrm{max}$, where $l_\textrm{max}$ will be varied and the dependence of the results with $l_\textrm{max}$ will be studied (at this level, the monopole and dipole are not present, because of the above point);
 
-\item By using the $a_{lm}$ corresponding to multipoles $l < l_{\rm max}$, we use Eq. (\ref{eq:multipole}) to construct a map ${\cal M}_{\rm residual}$ which contains only the large-scale component. This is performed with \verb|alm2map| Healpy function.
+\item By using the $a_{lm}$ corresponding to multipoles $l < l_\textrm{max}$, we use Eq. (\ref{eq:multipole}) to construct a map ${\cal M}_\textrm{residual}$ which contains only the large-scale component. This is performed with \verb|alm2map| Healpy function.
 
-\item We subtract the residual map from the original map, thus obtaining a map where the large scale residual components have been removed. The size of the scale is determined by $l < l_{\rm max}$.
+\item We subtract the residual map from the original map, thus obtaining a map where the large scale residual components have been removed. The size of the scale is determined by $l < l_\textrm{max}$.
 
 \end{itemize}
 
-With this algorithm we obtain maps where the large scale residual features associated to imperfect  galactic foreground subtraction are further removed. The results we obtain on the reconstructed $\dnds$ for the \fermi data (after this ``multipole cleaning") are shown in Fig. \ref{fig:multipole-cleaningv7}, for different values of $l_{\rm max}$ and for the \verb|gll_iem_v07| template. By comparing Fig. \ref{fig:multipole-cleaningv7} with Fig. \ref{fig:prediction-fermi-12y}, which refers to the same foreground template and latitude cut, we can see that the results are extremely stable up to $l_{\rm max} \sim 100$. This means that our baseline analysis is not affected by incomplete foreground subtraction, and can be considered reliable.
-The fall-off of the $\dnds$ when $l_{\rm max} > 100$ is expected 
-since $l_{\rm max} = 100$
+With this algorithm we obtain maps where the large scale residual features associated to imperfect  galactic foreground subtraction are further removed. The results we obtain on the reconstructed $\dnds$ for the \fermi data (after this ``multipole cleaning") are shown in Fig. \ref{fig:multipole-cleaningv7}, for different values of $l_\textrm{max}$ and for the \verb|gll_iem_v07| template. By comparing Fig. \ref{fig:multipole-cleaningv7} with Fig. \ref{fig:prediction-fermi-12y}, which refers to the same foreground template and latitude cut, we can see that the results are extremely stable up to $l_\textrm{max} \sim 100$. This means that our baseline analysis is not affected by incomplete foreground subtraction, and can be considered reliable.
+The fall-off of the $\dnds$ when $l_\textrm{max} > 100$ is expected 
+since $l_\textrm{max} = 100$
 corresponds to an angular scale of the order of $2^\circ$, 
-which starts to be compatible with the size of (PSF-smeared) point sources. Therefore, a cleaning with $l_{\rm max} > 100$ starts to remove point sources instead of galactic foregrounds.
+which starts to be compatible with the size of (PSF-smeared) point sources. Therefore, a cleaning with $l_\textrm{max} > 100$ starts to remove point sources instead of galactic foregrounds.
 
-The same analysis has been performed on a pipeline fully based on  \verb|gll_iem_v05|: the result is shown in Fig. \ref{fig:multipole-cleaningv5}, to be compared with Fig. \ref{fig:prediction-fermi-12y-fg-v5}. Also in this case, the results are extremely stable up to $l_{\rm max} \sim 100$, and the same above considerations apply.
+The same analysis has been performed on a pipeline fully based on  \verb|gll_iem_v05|: the result is shown in Fig. \ref{fig:multipole-cleaningv5}, to be compared with Fig. \ref{fig:prediction-fermi-12y-fg-v5}. Also in this case, the results are extremely stable up to $l_\textrm{max} \sim 100$, and the same above considerations apply.
 
 Finally, to check the strength of the method against the imperfect knowledge of the background, we performed the same analysis of multipole cleaning by adopting our baseline pipeline (based on \verb|gll_iem_v07|) on maps generated with \verb|gll_iem_v05| (similarly to what has been done for  Fig. \ref{fig:flat-maps-v5}). The results are shown in Fig. \ref{fig:multipole-cleaning-v5-and-v7} , where again we see that the results are pretty consistent, up to $l\sim 100$.
  It can be seen, moreover, that the procedure of multipole cleaning helps in removing the, nonetheless small, positive bias which is present toward low fluxes in this case.  
@@ -802,10 +802,10 @@ In conclusion, these tests give confidence on the reliability of the method and 
 
 
 
-\subsection{Changing $A_{\rm gal}$}
+\subsection{Changing $A_\textrm{gal}$}
 \label{sec:agal-var}
 
-In order to test the stability of the results against changes in the values of $A_{\rm gal}$, we have provided, as input to our trained CNN, \fermi maps cleaned with different values of $A_{\rm gal}$, ranging from 0.78 to 1.0 (our fiducial value is $0.888 \pm 0.005$, thus the chosen range encompass many standard deviations around its central value). The results are shown in Fig. \ref{fig:Agal_change} below. It can be seen that the $dN/dS$ is considerably robust and stable to different values of $A_{\rm gal}$, despite the large range explored. Instead, different values of $A_{\rm gal}$ seem to imply a significant variation in the reconstructed value of $F_{\rm iso}$, as expected since at the large Galactic latitudes explored in our analysis ($|b| > 30^\circ$) there is a certain amount of degeneracy between a purely isotropic emission and the Galactic foreground emission itself. However, this does not affect the reconstructed $dN/dS$.
+In order to test the stability of the results against changes in the values of $A_\textrm{gal}$, we have provided, as input to our trained CNN, \fermi maps cleaned with different values of $A_\textrm{gal}$, ranging from 0.78 to 1.0 (our fiducial value is $0.888 \pm 0.005$, thus the chosen range encompass many standard deviations around its central value). The results are shown in Fig. \ref{fig:Agal_change} below. It can be seen that the $dN/dS$ is considerably robust and stable to different values of $A_\textrm{gal}$, despite the large range explored. Instead, different values of $A_\textrm{gal}$ seem to imply a significant variation in the reconstructed value of $F_\textrm{iso}$, as expected since at the large Galactic latitudes explored in our analysis ($|b| > 30^\circ$) there is a certain amount of degeneracy between a purely isotropic emission and the Galactic foreground emission itself. However, this does not affect the reconstructed $dN/dS$.
 
 
 
@@ -837,7 +837,7 @@ The spherical CNN has similar performances as the  CNN that uses \verb|map2patch
 \includegraphics[width=0.45\textwidth]{img/model_plots/model_42/baseline/Agal/fermi_prediction_Agal_0.980000.pdf}
 \includegraphics[width=0.45\textwidth]{img/model_plots/model_42/baseline/Agal/fermi_prediction_Agal_1.000000.pdf}
 \caption{%Same as Fig. \ref{fig:prediction-fermi-12y} 
-Reconstructed $\dnds$ and $\fiso$  and their Bayesian errors, when the trained CNN is applied to the \fermi map  using  different values of $A_{\rm gal}$ as indicated in the panel labels.}
+Reconstructed $\dnds$ and $\fiso$  and their Bayesian errors, when the trained CNN is applied to the \fermi map  using  different values of $A_\textrm{gal}$ as indicated in the panel labels.}
 \label{fig:Agal_change}
 \end{figure}
 
@@ -869,8 +869,8 @@ Reconstructed $\dnds$ and $\fiso$  and their Bayesian errors, when the trained C
 \centering
 \includegraphics[width=1.0\textwidth]{img/model_plots/model_42/spherical/pendenza2.pdf}
 \caption{Same as Fig. \ref{fig:SphericalNN-test-random}  but for 6 different random realization of a flat $S^2\dnds$ and same 
-$F_{\rm iso}$.}
-%$F_{\rm iso,true}=4.84 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$.   }
+$F_\textrm{iso}$.}
+%$F_\textrm{iso,true}=4.84 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$.   }
 \label{fig:SphericalNN-test-flat}
 \end{figure}
 
