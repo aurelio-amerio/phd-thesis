@@ -22,13 +22,13 @@ In order to characterise the sources, we focus on their energy spectra modeled w
 \ln \frac{F(E)}{K} = - \alpha \ln \frac{E}{E_0} - \beta \left(\ln \frac{E}{E_0} \right)^2,
 \ee
 where the parameters correspond to the following columns in the 4FGL-DR4 catalog:
-$K$ -- {\tt LP\_ Flux\_Density},
-$\alpha$ -- {\tt LP\_Index},
-$\beta$ -- {\tt LP\_beta},
-and $E_0$ -- {\tt Pivot\_Energy}.
+$K$ -- \texttt{LP\_ Flux\_Density},
+$\alpha$ -- \texttt{LP\_Index},
+$\beta$ -- \texttt{LP\_beta},
+and $E_0$ -- \texttt{Pivot\_Energy}.
 %
 \\
-\new{The LP model provides a well-motivated spectral choice; it offers a significant improvement over a simple power law, as evidenced in the {\tt LP\_SigCurv} column in the 4FGL-DR4 catalog, and performs at least as well as a power law with exponential cut off both for the unassociated and for the associated Galactic and extragalactic sources (figure~\ref{fig:LP_vs_PLEC}).} \old{At the same time, it avoids the complexity and statistical weaknesses of using high-dimensional binned fluxes.} 
+\new{The LP model provides a well-motivated spectral choice; it offers a significant improvement over a simple power law, as evidenced in the \texttt{LP\_SigCurv} column in the 4FGL-DR4 catalog, and performs at least as well as a power law with exponential cut off both for the unassociated and for the associated Galactic and extragalactic sources (figure~\ref{fig:LP_vs_PLEC}).} \old{At the same time, it avoids the complexity and statistical weaknesses of using high-dimensional binned fluxes.} 
 
 
 \begin{figure}
@@ -47,9 +47,9 @@ We use the following three parameters as input features:
 $\log_{10}\phi$ -- the logarithm of the
  flux integrated between 100 MeV and 1 TeV (obtained by summing fluxes in energy bins provided in the catalog);
 \item 
-$\alpha$ -- {\tt LP\_Index} rescaled to $E_0 = 1$ GeV or $E_0 = 100$ MeV depending on the choice of DM mass, i.e., above or below 20 GeV respectively;
+$\alpha$ -- \texttt{LP\_Index} rescaled to $E_0 = 1$ GeV or $E_0 = 100$ MeV depending on the choice of DM mass, i.e., above or below 20 GeV respectively;
 \item
-$\beta$ -- {\tt LP\_beta}.
+$\beta$ -- \texttt{LP\_beta}.
 \een
 We collect these variables for each source $i$ inside a vector ${\bx}_i\equiv \{\log_{10}(\phi_i), \alpha_i, \beta_i\}$.
 %

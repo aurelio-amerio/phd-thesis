@@ -35,7 +35,7 @@ As a further test, we show in Fig. \ref{fig:flat-maps-v5} the case where we appl
 \subsection{UltraCleanVeto Selection} 
 
 
-In this section we further test the robustness of the results to the \fermi data selection. In particular, while for the main results we used the {\tt SOURCEVETO} event class selection, here we test the {\tt ULTRACLEANVETO} selection. This event class has more stringent cuts with respct to the {\tt SOURCEVETO} class, and it thus contains a lower residual charged  cosmic-ray background, at the prize of a lower effective area (by about 15\%). Except for the different data selection all the rest of the analysis is performed in the same identical way as for the {\tt SOURCEVETO} case. The resulting $\dnds$ is shown in Fig. \ref{fig:prediction-fermi-12y-ucv} and it can be seen that it is compatible with the main results, while, as expected, the value of $\fiso$ is a bit lower. 
+In this section we further test the robustness of the results to the \fermi data selection. In particular, while for the main results we used the \texttt{SOURCEVETO} event class selection, here we test the \texttt{ULTRACLEANVETO} selection. This event class has more stringent cuts with respct to the \texttt{SOURCEVETO} class, and it thus contains a lower residual charged  cosmic-ray background, at the prize of a lower effective area (by about 15\%). Except for the different data selection all the rest of the analysis is performed in the same identical way as for the \texttt{SOURCEVETO} case. The resulting $\dnds$ is shown in Fig. \ref{fig:prediction-fermi-12y-ucv} and it can be seen that it is compatible with the main results, while, as expected, the value of $\fiso$ is a bit lower. 
 
 
 
@@ -55,14 +55,14 @@ We first determine and remove the monopole ($l=0$) and dipole ($l=1$) components
 
 \item  This map is then subject to harmonic space decomposition:
 \begin{equation}
-{\cal M}_\textrm{masked}(\theta,\phi) = \sum_{l=0}^{\infty} \sum_{m=-l}^{l} a_{lm} Y_{lm}(\theta,\phi)
+\mathcal{M}_\textrm{masked}(\theta,\phi) = \sum_{l=0}^{\infty} \sum_{m=-l}^{l} a_{lm} Y_{lm}(\theta,\phi)
 \label{eq:multipole}
 \end{equation}
-where $\theta$ and $\phi$ are angles on the sphere, $Y_{lm}(\theta,\phi)$ the spherical harmonics and the harmonic coefficients $a_{lm}$ completely encode the same information present in the map ${\cal M}_\textrm{masked}$  (notice that, even though in Eq. (\ref{eq:multipole}) we formally decompose over all multipoles, the monopole and dipole amplitude are vanishing, since they have been removed from  ${\cal M}_\textrm{masked}$);
+where $\theta$ and $\phi$ are angles on the sphere, $Y_{lm}(\theta,\phi)$ the spherical harmonics and the harmonic coefficients $a_{lm}$ completely encode the same information present in the map $\mathcal{M}_\textrm{masked}$  (notice that, even though in Eq. (\ref{eq:multipole}) we formally decompose over all multipoles, the monopole and dipole amplitude are vanishing, since they have been removed from  $\mathcal{M}_\textrm{masked}$);
 
 \item The harmonic coefficients $a_{lm}$ are determined with the \verb|map2alm| Healpy function. The ones that are retained for the foreground cleaning are those referring to multipole values $l < l_\textrm{max}$, where $l_\textrm{max}$ will be varied and the dependence of the results with $l_\textrm{max}$ will be studied (at this level, the monopole and dipole are not present, because of the above point);
 
-\item By using the $a_{lm}$ corresponding to multipoles $l < l_\textrm{max}$, we use Eq. (\ref{eq:multipole}) to construct a map ${\cal M}_\textrm{residual}$ which contains only the large-scale component. This is performed with \verb|alm2map| Healpy function.
+\item By using the $a_{lm}$ corresponding to multipoles $l < l_\textrm{max}$, we use Eq. (\ref{eq:multipole}) to construct a map $\mathcal{M}_\textrm{residual}$ which contains only the large-scale component. This is performed with \verb|alm2map| Healpy function.
 
 \item We subtract the residual map from the original map, thus obtaining a map where the large scale residual components have been removed. The size of the scale is determined by $l < l_\textrm{max}$.
 
@@ -86,7 +86,7 @@ In conclusion, these tests give confidence on the reliability of the method and 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.9\textwidth]{img/model_plots/model_42/UCV/fermi_prediction_hs.pdf}
-\caption{Same as Fig. \ref{fig:prediction-fermi-12y} but  for the {\tt ULTRACLEANVETO}  \fermi data selection. }
+\caption{Same as Fig. \ref{fig:prediction-fermi-12y} but  for the \texttt{ULTRACLEANVETO}  \fermi data selection. }
 \label{fig:prediction-fermi-12y-ucv}
 \end{figure}
 
