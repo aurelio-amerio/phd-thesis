@@ -35,7 +35,6 @@
 \newcommand{\green}{\color{green}}
 \newcommand{\blue}{\color{blue}}
 \newcommand{\fermi}{{\sl Fermi}-LAT\ }
-\newcommand{\fermip}{{\sl Fermi}-LAT}
 \newcommand{\fiso}{{F_{\rm iso}}}
 
 \newcommand{\dnds}{dN/dS }
@@ -352,7 +351,7 @@ Example plots are shown in the Appendix \ref{sec:agal-var}.}
 
 With a flux map ${\cal M}$ available, we can now produce a synthetic photon-count map ${\cal N}$ as described in Eq. \ref{eq:count}. 
 One example is shown in Fig. \ref{fig:map-total-counts}. 
-In order to generate maps compatible with a counting experiment like \fermip, we then add Poisson noise to the map performing a Poisson realization of the number of photons in each pixel of the map ${\cal N}$, and we dub this final map as ${\cal N}_{\cal P}$ count map. One example is shown in Fig. \ref{fig:map-effective}, which also shows the same map with the latitude cut applied: these are the type of maps that we use to train and validate the neural network. We have generated in total 1 million maps, 90\% of which have been used for training and 10\% for validation. The maps have been stored as a \verb|TFRecord| dataset\footnote{\verb|https://www.tensorflow.org/tutorials/load_data/tfrecord|} for use with Tensorflow \cite{tensorflow2015-whitepaper}. The maps have been generated in Healpix format with $N_{\rm side} = 128$ resolution (order $n=7$) and then downsampled to $N_{\rm side} = 64$ (order $n=6$) for the training and validation (this resolution corresponds to 49152 pixels). 
+In order to generate maps compatible with a counting experiment like \fermi, we then add Poisson noise to the map performing a Poisson realization of the number of photons in each pixel of the map ${\cal N}$, and we dub this final map as ${\cal N}_{\cal P}$ count map. One example is shown in Fig. \ref{fig:map-effective}, which also shows the same map with the latitude cut applied: these are the type of maps that we use to train and validate the neural network. We have generated in total 1 million maps, 90\% of which have been used for training and 10\% for validation. The maps have been stored as a \verb|TFRecord| dataset\footnote{\verb|https://www.tensorflow.org/tutorials/load_data/tfrecord|} for use with Tensorflow \cite{tensorflow2015-whitepaper}. The maps have been generated in Healpix format with $N_{\rm side} = 128$ resolution (order $n=7$) and then downsampled to $N_{\rm side} = 64$ (order $n=6$) for the training and validation (this resolution corresponds to 49152 pixels). 
 
 The training of the CNN and the subsequent analysis of the \fermi data can be performed equivalently with maps in units of photon-count or in units of flux. Nonetheless, we will work with maps in units of flux, which are easily obtained from the ${\cal N}_{\cal P}$ count maps by using the exposure map and by inverting Eq. (\ref{eq:count}).  The reason to convert the ${\cal N}_{\cal P}$ count maps in units of flux is motivated by the fact that 
 count maps contain a spurious large-scale angular dependence
