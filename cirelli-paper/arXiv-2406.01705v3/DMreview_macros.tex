@@ -1,0 +1,328 @@
+\def\baselinestretch{1}
+\usepackage{graphicx,multicol,color,xcolor,colortbl,slashed,marvosym,epigraph,
+amsfonts,expdlist,wrapfig,enumerate,amsmath,amssymb,cite,bm,multirow,arydshln,pdflscape,imakeidx,setspace}
+\usepackage[counterclockwise]{rotating}
+\usepackage{mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage[normalem]{ulem}
+\usepackage[font={small}]{caption} % make captions small
+\usepackage{datenumber}
+\usepackage{calc}
+\usepackage{upgreek}
+\usepackage{tikz}
+%\usepackage{arydshln} % dotted lines in tables
+\usetikzlibrary{decorations.pathreplacing,calligraphy}
+
+\makeindex
+% \usepackage{myshowkeys2}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{2}
+\usepackage{tocloft} 
+\setlength\cftsecnumwidth{2.4em} % increase space in \tableofcontents
+\renewcommand\cftsubsecfont{\small} % write sub-sections smaller...
+\renewcommand\cftsubsecpagefont{\color{gray}} % and their page numbers in gray
+
+
+
+
+\oddsidemargin -5mm  \evensidemargin -5mm
+\topmargin -1.6cm  \textwidth 17.4cm  \textheight 23.7cm
+\setlength{\columnsep}{1cm}
+
+\newcommand{\dder}[2]{\frac{\partial #1}{\partial #2}}
+\renewcommand{\cleardoublepage}{\newpage}
+\renewcommand{\vec}{\mb}
+
+
+
+\usepackage{ifpdf}
+\ifpdf
+\usepackage{hyperref, pdfsync, epstopdf}	% This is for pdftex
+\pdfoutput=1
+\else
+\usepackage[dvips,bookmarks]{hyperref}	% This is for arXiv.org
+\fi
+\hypersetup{colorlinks,bookmarksopen,bookmarksnumbered,citecolor=verdes,
+linkcolor=blus,pdfstartview=FitH,urlcolor=rossos}
+
+\newcommand{\arxivref}[2]{\href{http://arxiv.org/abs/#1}{\color{verdes}#2}}
+
+\def\hhref#1{\href{http://arxiv.org/abs/#1}{arXiv:#1}} % in bibliography
+\def\mhref#1{\href{mailto:#1}{#1}}		% email on title page
+
+\usepackage[figure]{hypcap}  
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+
+\newcommand{\kmwe}{\,{\rm kmwe}}
+
+%\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\newcommand{\Mcal}{{\mathcal{M}}}
+\def\Lag{\mathscr{L}}
+\def\mathW{\mathcal{W}}
+\newcommand{\mT}{\mb{m}_T}
+
+\newcommand{\mio}[1]{}
+\newcommand{\drop}[1]{}
+
+\newcommand{\MPl}{M_{\rm Pl}}
+\newcommand{\sfrac}[2]{#1/#2}
+\newcommand{\sfracb}[2]{#1/(#2)}
+\newcommand{\GF}{G_{\rm F}}
+\newcommand{\sW}{s_{\rm W}}
+\newcommand{\cW}{c_{\rm W}}
+\renewcommand{\[}{\left[}
+\renewcommand{\]}{\right]}
+\renewcommand{\(}{\left(}
+\renewcommand{\)}{\right)}
+
+\definecolor{Gray}{gray}{0.95}
+\newcommand{\bbox}[1]{\fcolorbox{gray}{Gray}{~$\displaystyle #1$~}}
+\def\bea{\begin{eqnarray}}
+\def\eea{\end{eqnarray}}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\ba{\begin{array}}
+\def\ea{\end{array}}
+\def\nn{\nonumber}
+
+\newcommand{\overbar}[1]{\mkern 2mu\overline{\mkern-2mu#1\mkern-2mu}\mkern 2mu}
+
+\newcommand{\nubarnu}{\raisebox{1ex}{\hbox{\tiny(}}\overline\nu\raisebox{1ex}{\hbox{\tiny)}}}
+
+\definecolor{rosso}{cmyk}{0,1,1,0.4}
+\definecolor{rossos}{cmyk}{0,1,1,0.55}
+\definecolor{rossoc}{cmyk}{0,1,1,0.2}
+\definecolor{blu}{cmyk}{1,1,0,0.3}
+\definecolor{blus}{cmyk}{1,1,0,0.6}
+\definecolor{bluc}{cmyk}{1,1,0,0.1}
+\definecolor{verde}{cmyk}{0.92,0,0.59,0.25}
+\definecolor{verdec}{cmyk}{0.92,0,0.59,0.15}
+\definecolor{verdes}{cmyk}{0.92,0,0.59,0.6}
+\definecolor{giallo}{cmyk}{0,0,1,0}
+\definecolor{gialloverde}{cmyk}{0.44,0,0.74,0}
+\newcommand{\ecm}{e\,\mathrm{cm}}
+\newcommand{\bAk}[3]{\langle #1|#2|#3\rangle}
+
+\newcommand{\Q}{{\cal Q}} 
+
+\def\permille{\ensuremath{{}^\text{o}\mkern-5mu/\mkern-3mu_\text{oo}}}
+
+\newwrite\fileforchanges
+ 
+\newcounter{datetoday}
+\newcounter{diffyears}
+\newcounter{diffmonths}
+\newcounter{diffdays}
+\newcounter{countchanges}
+\setcounter{countchanges}{0}
+\newcommand{\added}[4]{{\color{magenta}
+  \setmydatenumber{datetoday}{\the\year}{\the\month}{\the\day}%
+      \setmydatenumber{diffdays}{#1}{#2}{#3}%
+      \addtocounter{diffdays}{-\thedatetoday}%
+      \stepcounter{countchanges}
+       \setcounter{diffdays}{-\value{diffdays}}%
+        \setcounter{diffmonths}{\value{diffdays}/30}%
+      \ifnum\value{diffmonths}<6
+      \ifnum\value{diffmonths}=0
+      [\thediffdays\space day
+      \label{change\thecountchanges}%
+      \immediate\write\fileforchanges{{[\ifnum\value{diffdays}<7 \noexpand\color{red} \else \noexpand\color{black}\fi
+      \thediffdays{} days ago by #4 at page \noexpand\pageref{change\thecountchanges}}]}%
+      \else
+        [\thediffmonths\space month
+     \fi
+      ago by #4]
+      \fi
+}}
+
+\let\cleardoublepage\clearpage
+
+\newcommand{\bnn}{\begin{newtext}}
+\newcommand{\enn}{\end{newtext}}
+
+
+\newcommand{\xxx}[1]{{\color{red}{#1}}}
+\newcommand{\xxxx}[1]{{\color{rossoc}{#1}}}
+\newcommand{\nnn}[1]{{\color{verde}{#1}\marginpar{$\bullet$}}}
+\newenvironment{newtext}{\color{verde}}{\color{black}}
+
+
+\newcommand{\Dsl}{D\!\!\!\raisebox{2pt}[0pt][0pt]{$\scriptstyle/$}}
+\newcommand{\Tr}{\hbox{Tr}\,}
+
+\def\CPTV{{\begin{picture}(18,0)(0,0)\put(0,0){CPT}\put(0,0){\line(3,1){24}}\end{picture}}}
+
+\newcommand{\One}{1}
+\newcommand{\Op}{{\cal O}}
+\newcommand{\bk}[2]{\langle#1|#2\rangle}
+\newcommand{\kk}[1]{|#1\rangle}
+\newcommand\red[1]{{\Red #1\Black}}
+\newcommand\blu[1]{{\Blue #1\Black}}
+\newcommand{\scatola}[1]{\Blue\fbox{$\displaystyle #1$}\Black}
+
+\newcommand{\med}[1]{\langle #1\rangle}
+\newcommand\degree{{}^{\circ}}
+\newcommand\diag{\hbox{diag}\,}
+\newcommand{\BR}{\hbox{BR}\,}
+\newcommand{\MGUT}{M_{\rm GUT}}
+\newcommand{\SU}{\,{\rm SU}}
+\newcommand{\SO}{\,{\rm SO}}
+\newcommand{\Sp}{\,{\rm Sp}}
+\newcommand{\U}{\,{\rm U}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\HI}{H_{\rm infl}}
+%\newcommand{\bea}{\begin{eqnarray}}
+%\newcommand{\eea}{\end{eqnarray}}
+\font\tenrsfs=rsfs10 at 12pt
+\font\sevenrsfs=rsfs7
+\font\fiversfs=rsfs5
+\newfam\rsfsfam
+\textfont\rsfsfam=\tenrsfs
+\scriptfont\rsfsfam=\sevenrsfs
+\scriptscriptfont\rsfsfam=\fiversfs
+\def\mathscr#1{{\fam\rsfsfam\relax#1}}
+
+\newcommand{\mb}[1]{\mbox{\normalsize\boldmath $#1$}}
+\renewcommand{\mb}[1]{\bm{#1}}
+
+\newcommand{\fig}[1]{~{\rm \ref{fig:#1}}}
+\newcommand{\tab}[1]{~{\ref{tab:#1}}}
+\def\circa#1{\,\raise.3ex\hbox{$#1$\kern-.75em\lower1ex\hbox{$\sim$}}\,}
+
+%unit measure
+\newcommand{\eV}{\,{\rm eV}}
+\newcommand{\meV}{\,{\rm meV}}
+\newcommand{\keV}{\,{\rm keV}}
+\newcommand{\MeV}{\,{\rm MeV}}
+\newcommand{\GeV}{\,{\rm GeV}}
+\newcommand{\TeV}{\,{\rm TeV}}
+\newcommand{\PeV}{\,{\rm PeV}}
+\newcommand{\km}{\,{\rm km}}
+\newcommand{\cm}{\,{\rm cm}}
+\newcommand{\m}{\,{\rm m}}
+\newcommand{\s}{\,{\rm s}}
+\newcommand{\gram}{\,{\rm g}}
+\newcommand{\yr}{\,{\rm yr}}
+\newcommand{\Gyr}{\,{\rm Gyr}}
+\newcommand{\kg}{\,{\rm kg}}
+\newcommand{\K}{{}^\circ {\rm K}}
+\newcommand{\kpc}{\,{\rm kpc}}
+\newcommand{\pc}{\,{\rm pc}}
+\newcommand{\pb}{\,{\rm pb}}
+
+\newcommand{\mond}{\theta}
+
+\newcommand{\sSI}{\sigma_{\rm SI}}
+\newcommand{\sSD}{\sigma_{\rm SD}}
+\newcommand{\eq}[1]{~(\ref{eq:#1})} 
+
+\renewcommand{\Re}{\hbox{Re}\,}
+\renewcommand{\Im}{\hbox{Im}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bc{\begin{center}}
+\def\ec{\end{center}}
+\def\bea{\begin{eqnarray}}
+\def\eea{\end{eqnarray}}
+\def\dd{\displaystyle}
+\def\nn{\nonumber}
+%
+\def\ad{\dot{\alpha}}
+\def\ov{\overline}
+\def\cP{{\cal P}}
+\newcommand{\C}{{\cal C}}
+
+\newcommand{\riga}[1]{\noalign{\hbox{\parbox{\textwidth}{#1}}}\nonumber}
+\newcommand{\sys}[1]{~{\rm (\ref{sys:#1})}}
+\newcommand{\md}[1]{\langle #1 \rangle}
+\makeatletter
+
+\newcounter{totcits}
+%\newcounter{subcits}[enumi]
+%\setcounter{subcits}{0}
+\setcounter{totcits}{0}
+
+\font\ital=cmu8
+
+\def\hhref#1{\href{http://arxiv.org/abs/#1}{arXiv:#1}}
+\usepackage{xstring} 
+\newcommand{\hhrefq}[1]{\IfSubStr{#1}{:}{\href{http://inspirehep.net/search?ln=en&ln=en&p=#1&of=hb&action_search=Search&sf=&so=d&rm=&rg=25&sc=0}{InSpire:#1}}{\hhref{#1}}}
+\def\ga#1{\href{http://arxiv.org/abs/#1}{arXiv:#1}} 
+\def\gi#1{\href{http://inspirehep.net/search?ln=en&ln=en&p=#1&of=hb&action_search=Search&sf=&so=d&rm=&rg=25&sc=0}{InSpire:#1}}
+\def\art{\@ifnextchar[{\eart}{\oart}}
+\def\eart[#1]#2#3#4#5#6{{\rm #2}, {\em #3 \bf #4} {\rm (#6) #5} ({\em #1})}
+\def\article{\@ifnextchar[{\earticle}{\oarticle}}
+\def\oarticle#1#2#3#4#5#6{{\rm #1}, {\ital ``#6''}, {\rm #2 #3 (#5) #4}}
+\def\earticle[#1]#2#3#4#5#6#7{{\rm #2}, {\ital ``#7''}, {\rm #3 #4 (#6) #5}  [\hhrefq{#1}]}
+\def\hepart[#1]#2{{\rm #2, \sl#1}}
+\def\heparticle[#1]#2#3{#2, {\ital ``#3''} [\hhrefq{#1}]}
+\def\hepnote[#1][#2]#3#4{#3, {\ital ``#4''} [\href{#2}{#1}]}
+\newcommand{\doi}[1]{\href{http://dx.doi.org/#1}{[link]}}
+
+
+
+\def\sottonumero{\stepcounter{totcits}}
+\def\art{\@ifnextchar[{\eart}{\oart}}
+\def\arti{\@ifnextchar[{\earti}{\oarti}}
+\def\eart[#1]#2#3#4#5#6{{\rm #2}, {\em #3 \rm #4} {\rm (#6) #5 ({\em\hhref{#1}})}\sottonumero}
+\def\earti[#1]#2#3#4#5#6{{\rm #2}, {\em #3 \rm #4} {\rm (#5) #6 ({\em\hhref{#1}})}\sottonumero}
+\def\hepart[#1]#2{{\rm #2, \em\hhref{#1}}\sottonumero}
+\newcommand{\oart}[5]{{\rm #1}, {\em #2 \rm #3} {\rm (#5) #4}\sottonumero}
+\newcommand{\oarti}[5]{{\rm #1}, {\em #2 \rm #3} {\rm (#4) #5}\sottonumero}
+\newcommand{\aart}[5]{{\em #2 \rm #3} {\rm (#5) #4}\sottonumero}
+\newcommand{\rep}[2]{#1, #2\sottonumero}
+\newcommand{\y}{{\rm and} }
+\newcommand{\NP}{Nucl. Phys.}
+\newcommand{\Jhep}{{\rm J.HEP}}
+\newcommand{\PRL}{Phys. Rev. Lett.}
+\newcommand{\PL}{Phys. Lett.}
+\newcommand{\PR}{Phys. Rev.}
+\newcommand{\book}[5]{{\rm #1}, {\em #2} (#5) {\rm #4, #3}\sottonumero}
+
+\newcounter{alphaequation}[equation]
+\def\thealphaequation{\theequation\hbox to
+0.6em{\hfil\alph{alphaequation}\hfil}}
+\def\eqnsystem#1{
+\def\@eqnnum{{\rm (\thealphaequation)}}
+\def\@@eqncr{\let\@tempa\relax \ifcase\@eqcnt \def\@tempa{& & &} \or
+  \def\@tempa{& &}\or \def\@tempa{&}\fi\@tempa
+  \if@eqnsw\@eqnnum\refstepcounter{alphaequation}\fi
+\global\@eqnswtrue\global\@eqcnt=0\cr}
+\refstepcounter{equation} \let\@currentlabel\theequation \def\@tempb{#1}
+\ifx\@tempb\empty\else\label{#1}\fi
+\refstepcounter{alphaequation}
+\let\@currentlabel\thealphaequation
+\global\@eqnswtrue\global\@eqcnt=0 \tabskip\@centering\let\\=\@eqncr
+$$\halign to \displaywidth\bgroup \@eqnsel\hskip\@centering
+$\displaystyle\tabskip\z@{##}$&\global\@eqcnt\@ne
+\hskip2\arraycolsep\hfil${##}$\hfil& \global\@eqcnt\tw@\hskip2\arraycolsep
+$\displaystyle\tabskip\z@{##}$\hfil
+\tabskip\@centering&\llap{##}\tabskip\z@\cr}
+
+\def\endeqnsystem{\@@eqncr\egroup$$\global\@ignoretrue} \makeatother
+
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}} 
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+
+\def\app#1#2{% 
+  \mathrel{%
+    \setbox0=\hbox{$#1\sim$}%
+    \setbox2=\hbox{%
+      \rlap{\hbox{$#1\propto$}}%
+      \lower1.1\ht0\box0%
+    }%
+    \raise0.25\ht2\box2%
+  }%
+}
+\def\approxprop{\mathpalette\app\relax}
+
+
+\newcommand{\MC}[1]{{\color{purple} {\bf[MC: #1]}}}
+\newcommand{\AS}[1]{{\color{red}{\bf[AS: #1]}}}
+\newcommand{\JZ}[1]{{\color{magenta}{\bf[JZ: #1]}}}
+
+\def\Cincy{Department of Physics, University of Cincinnati, Cincinnati, Ohio 45221,USA} 
+
+\usepackage[Lenny]{fncychap}\ChNameVar{\Large\bf}\ChTitleVar{\Huge\bf\color{black}}

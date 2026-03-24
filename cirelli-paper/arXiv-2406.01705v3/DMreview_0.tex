@@ -1,0 +1,115 @@
+%pppp!TEX TS-program = pdflatex
+\documentclass[twoside,12pt,openany]{book}
+\usepackage[Lenny]{fncychap}\ChNameVar{\Large\bf}\ChTitleVar{\Huge\bf\color{black}}
+\pdfoutput=1
+\input{DMreview_macros.tex}
+% VALUES OF PARAMETERS
+\newcommand{\OmegaDMexp}{0.1200\pm0.0012}  % from PDG 2023, Table 2. ASTROPHYSICAL CONSTANTS AND PARAMETERS
+\newcommand{\hexp}{0.674\pm0.005}  % from PDG 2023, Table 2. ASTROPHYSICAL CONSTANTS AND PARAMETERS
+
+\DeclareRobustCommand{\hsout}[1]{\texorpdfstring{\sout{#1}}{#1}}
+
+\begin{document}\color{black}\thispagestyle{empty}
+\phantom{X}\vspace{0.1\textheight}
+\begin{center}
+{\Huge\color{rossos}\bfseries\bf Dark Matter}\\[0.1\textheight]
+{\large\bf Marco Cirelli}\\[1ex]
+{\em Laboratoire de Physique Th\'eorique et Hautes \'Energies (LPTHE),}\\
+{\em CNRS \& Sorbonne Universit\'e, 4 Place Jussieu, Paris, France}\\[2ex]
+{\large\bf Alessandro Strumia}\\[1ex]
+{\em Dipartimento di Fisica dell'Universit\`a di Pisa, Italia}\\[2ex]
+{\large\bf Jure Zupan}\\[1ex]
+{\em Department of Physics, University of Cincinnati, Cincinnati, Ohio 45221,USA}\\[8ex]
+{\large\bf\color{blue!50!black} Abstract}\\[1ex]
+\begin{quote}\color{blue!50!black} 
+We review observational, experimental and theoretical results related to Dark Matter.
+\end{quote}
+\color{black}
+
+
+
+\vfill
+\centerline{\footnotesize \hfill Version 0, November 11, 2011 -- Version 1, June 3, 2024 -- Version 2, July 31, 2024 -- Version 3, October 31, 2025 \hfill}
+\end{center}
+
+\newpage
+
+
+\setcounter{tocdepth}{2}
+ {\setstretch{0.97}\tableofcontents}
+
+\input{DMreview_1_introduction.tex}
+\label{part:intriduction}
+
+
+
+\part{Dark Matter basics}\label{part:basic}
+\input{DMreview_2_evidence.tex}
+\input{DMreview_3_distribution.tex}
+\input{DMreview_4_paradigms.tex}
+\input{DMreview_5_production.tex}
+
+
+\part{Dark Matter detection}
+\label{part:detection}
+
+\noindent
+Currently, the existence of Dark Matter is based on observations that only probe its gravitational coupling, see section \ref{sec:evidences}. This gives us information about the total mass of DM in the Universe, as well as the amount of DM in a particular astrophysical region, including, to some extent, its spatial  distribution. However, in order to really understand {\em what} Dark Matter is, we also need to observe its other interactions with ordinary matter.
+\smallskip
+
+The next question is: how?
+
+There are three {\bf main avenues of investigation} 
+(traditionally schematized as in figure~\ref{fig:dirindcol}): 
+\begin{itemize} 
+\item[$\circ$] {\bf Direct Detection} (Chapter \ref{chapter:direct}) aims at detecting the recoil event produced by a passing DM particle hitting one of the nuclei or electrons in a highly shielded and closely monitored underground detector, made of ultrapure semiconductors, noble gasses, pristine crystals, etc.
+\item[$\circ$] {\bf Indirect Detection} (Chapter \ref{chapter:indirect}) aims at detecting DM annihilations or DM decays, in our Galaxy or in other astrophysical environments, by searching for signatures in cosmic rays (in a broad sense: charged particles, photons or neutrinos arriving at Earth).
+\item[$\circ$] {\bf Accelerator-based Detection} (Chapter \ref{chapter:collider}) aim at producing DM particles in a controlled environment: e.g., in~$pp$ collisions at the Large Hadron Collider at CERN, in $e^+e^-$ collisions at lower energy machines or in beam dump experiments\footnote{The same SM SM $\to$ DM DM processes also occur in astrophysical systems featuring energetic SM particles. However, the rates are expected to be too low to be phenomenologically relevant.}, and then detecting the presence of DM via missing energy or other signatures. 
+\end{itemize}
+\noindent
+In each of the above approaches there are many ongoing experimental efforts, with a good fraction of them represented in figure~\ref{fig:worldplot}.  They are distributed over many continents and are performed in very different environments. Most, if not all, of the experiments are run by international collaborations of varying sizes, from merely tens up to several thousands of scientists, from many institutions. The search for DM is a truly global effort of the international scientific community. 
+
+\smallskip
+
+Chapters \ref{chapter:direct}, \ref{chapter:indirect} and \ref{chapter:collider} introduce the phenomenology of different search strategies as well as the computations relevant for predicting the expected signals,
+and discuss the current status.
+Chapter~\ref{chapter:anomalies} discusses some of the recent observational anomalies.
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{figs/DMdetections}
+\end{center}
+\vspace{-0.7cm}
+\caption[The three main DM searches]{\em The three main {\bfseries DM search strategies}, from left to right:
+direct detection (the plot specifies the DM/nucleus kinematics used in chapter~\ref{chapter:direct});
+indirect detection (chapter~\ref{chapter:indirect}; one of the DM lines is dashed, indicating that both DM decays and DM annihilations are relevant);
+production at particle accelerators (chapter~\ref{chapter:collider}). 
+The ``SM'' label stands for the Standard Model particle, or it can be viewed to stand for the ``Standard Matter''.
+\label{fig:dirindcol}}
+\end{figure}
+
+\begin{sidewaysfigure}
+\includegraphics[width=\textwidth]{figs/worldplot.pdf}
+\caption[Experimental efforts]{\em  \label{fig:worldplot} 
+The {\bfseries experiments} trying to detect particle DM are performed all over the Earth (on surface as well as below ground and in orbit).}
+\end{sidewaysfigure}
+
+\input{DMreview_6_direct.tex}
+\input{DMreview_7_indirect.tex}
+\input{DMreview_8_collider.tex}
+\input{DMreview_9_hints.tex}
+
+\part{Dark Matter theories}\label{part:theories}
+\input{DMreview_10_models.tex}
+\input{DMreview_11_axions.tex}
+\input{DMreview_12_other.tex}
+
+\appendix
+\input{DMreview_appendices.tex}
+
+\footnotesize\newpage\setstretch{0.92}
+\input{DMreview_references.tex}
+\setstretch{1}
+\printindex
+
+\end{document}
