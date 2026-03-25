@@ -81,7 +81,7 @@
 
 - **Diggle & Gratton (1984)** — "Monte Carlo Methods of Inference for Implicit Statistical Models"
   - **Source**: JRSS-B 46(2)
-  - **Bib Key**: *needs adding*
+  - **Bib Key**: `Diggle:1984`
   - **Relevance**: Historical foundation for likelihood-free inference.
 
 - **Lueckmann et al. (2021)** — "Benchmarking Simulation-Based Inference"
@@ -112,6 +112,11 @@
   - **Source**: arXiv:1705.07832
   - **Bib Key**: `Gal:2017`
   - **Relevance**: Self-learning optimal dropout probability. Used in Paper 1.
+
+- **Dempster, Laird & Rubin (1977)** — "Maximum Likelihood from Incomplete Data via the EM Algorithm"
+  - **Source**: JRSS-B 39(1), 1
+  - **Bib Key**: `Dempster:1977`
+  - **Relevance**: Seminal paper defining the EM algorithm. Used in Paper 4.
 
 - **Saerens, Latinne & Decaestecker (2002)** — "Adjusting the Outputs of a Classifier to New A Priori Probabilities"
   - **Source**: Neural Computation 14(1), 21
@@ -202,7 +207,7 @@
 | Cranmer et al. (2020) — SBI Frontier | `Cranmer:2020` | ❌ | 3.2.1 |
 | Greenberg et al. (2019) — NPE | `Greenberg:2019` | ❌ | 3.2.2 |
 | Papamakarios et al. (2021) — Normalizing Flows | `Papamakarios:2021` | ❌ | 3.2.2 |
-| Diggle & Gratton (1984) — Implicit models | *needs adding* | ❌ | 3.2.1 |
+| Diggle & Gratton (1984) — Implicit models | `Diggle:1984` | ❌ | 3.2.1 |
 | Lueckmann et al. (2021) — Benchmarking SBI | `Lueckmann:2021` | ❌ | 3.2.2 |
 | Talts et al. (2018) — SBC | `Talts:2018` | ❌ | 3.2.3 |
 | **Sec 3.3: Machine Learning in Astrophysics** | | | |
