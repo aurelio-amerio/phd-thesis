@@ -152,15 +152,19 @@
 
 ### **Chapter 6: From Individual Sources to Populations**
 
-- **6.1 The Limits of Detection:**
-  - *Transitional Argument:* Individual identification is limited by sensitivity and the look-elsewhere effect (decide if I wanna talk about LEE or not). Population methods are needed to probe below threshold.
-- **6.2 The Source Count Distribution (**$dN/dS$**):**
+- **6.1 The Limits of Individual Detection:**
+  - *Transitional Argument:* Conceptual pivot from Part II to Part III. GCE: strongest signal but mired in systematics. Subhalos: many unassociated sources but no clear DM identification. The natural next step: study the unresolved gamma-ray sky for statistical population signatures.
+- **6.2 The Source-Count Distribution (**$dN/dS$**):**
   - Definition and relationship to the Luminosity Function.
-  - How $dN/dS$ connects the resolved (catalogs) to the unresolved (background).
-  - Using the $dN/dS$ to probe non-Poissonian populations.
+  - How $dN/dS$ bridges the resolved catalog (bright end) to the unresolved background (faint end).
+  - The 1-point photon-count distribution (1pPDF): Malyshev & Hogg (2011), pixel-dependent improvement by Cuoco et al. (2015), energy-dependent extensions.
+  - Passing remark on NPTF connection to Ch. 4.
 - **6.3 Simulation-Based Inference for** $dN/dS$**:**
-  - Neural Posterior Estimation (NPE): architecture, training, validation.
-  - Machine Learning on the sphere: `map2patches`, mapped convolutions.
+  - Limitations of the analytical 1pPDF likelihood (PSF correlations, energy information, parametric assumptions, computational cost).
+  - CNN trained on ~10⁶ synthetic Fermi-LAT maps; non-parametric dN/dS recovery in 20 flux bins. Cross-ref Ch. 3 §3.2.
+  - Inference on spherical data: `map2patches` strategy for HEALPix maps, EfficientNet V2M architecture, >10× speedup over fully spherical convolutions.
+- **6.4 Transition:**
+  - dN/dS recovery enables: (a) constraining faint astrophysical populations, (b) providing priors for probabilistic cataloging (Ch. 7), (c) statistical DM subhalo searches.
 
 ### **[INSERT PAPER 1]**
 
