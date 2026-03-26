@@ -20,6 +20,7 @@ This chapter opens **Part III: The Unresolved Sky** and contains Paper 1 (`dNdS`
 
 - **Previous Chapter (Ch. 5):** Part II concluded with the search for individual DM subhalos among unassociated sources. The analysis yielded upper limits on ⟨σv⟩ but found no statistically significant DM contribution — illustrating the fundamental limits of source-by-source identification. This chapter picks up that thread: if individual identification is inherently limited, the solution is to study the *population* collectively.
 - **Next Chapter (Ch. 7):** The dN/dS recovered in this chapter feeds directly into Chapter 7, where it is used as a prior for probabilistic source cataloging — deepening the Fermi catalog below the standard detection threshold.
+- **Ch. 8 (Cross-Correlations):** While Chapters 6–7 characterize the *astrophysical* unresolved source population, the search for a collective DM signal in the unresolved sky is deferred to Ch. 8, where cross-correlations with galaxy catalogs provide sensitivity to DM annihilation in unresolved large-scale structure.
 - **Inserted Paper:** Paper 1 (arXiv:2302.01947), "Extracting the gamma-ray source-count distribution below the Fermi-LAT detection limit with deep learning." Key contribution: proof-of-principle CNN-based recovery of the extragalactic dN/dS down to fluxes 50× below the Fermi-LAT threshold.
 
 ---
@@ -32,7 +33,7 @@ This chapter opens **Part III: The Unresolved Sky** and contains Paper 1 (`dNdS`
 - Opening context: Part II examined DM in specific, resolved targets — the Galactic Center and individual subhalo candidates. Both approaches encountered fundamental limitations, motivating a shift in strategy.
 - Central question: can the statistical properties of the *entire* faint source population — including sources below the detection threshold — be recovered from the collective photon-count distribution?
 - Chapter roadmap: §6.1 builds the conceptual argument for population studies; §6.2 introduces the source-count distribution as the key observable; §6.3 presents the SBI methodology for recovering it; §6.4 provides the transition to the paper.
-- Bridge to the thesis: this chapter's results provide the foundation for probabilistic cataloging (Ch. 7) and open the door to statistical DM searches.
+- Bridge to the thesis: this chapter's results provide the foundation for probabilistic cataloging (Ch. 7). While characterizing the astrophysical source population is the primary goal of Part III, the methodology also lays groundwork for future DM-sensitive extensions.
 
 **Cross-references:** Ch. 4 (GCE); Ch. 5 (subhalo searches); Ch. 3 §3.2 (SBI paradigm); Ch. 2 §2.2 (astrophysical source populations).
 
@@ -60,6 +61,7 @@ This chapter opens **Part III: The Unresolved Sky** and contains Paper 1 (`dNdS`
 - The conceptual shift: rather than asking "is *this* source DM?", we ask "what is the statistical distribution of all sources — including those too faint to detect individually?"
 - Below the Fermi-LAT detection threshold lies a vast population of unresolved sources whose cumulative emission forms the unresolved gamma-ray background (UGRB). These sources are invisible individually, but their collective photon statistics encode recoverable information about the population.
 - This approach is complementary to Part II: resolved-source methods probe the bright end of the population; population methods probe the faint end. Together, they provide a complete picture.
+- **Scope of Part III:** Chapters 6–7 focus on characterizing the *general* unresolved source population (primarily astrophysical: blazars, MSPs, star-forming galaxies). The search for a collective DM signal in the unresolved gamma-ray sky — via cross-correlations with tracers of large-scale structure — is the subject of Part V (Ch. 8).
 - **Transition:** The key observable that bridges resolved catalogs to the unresolved background is the source-count distribution, dN/dS, which we define in the next section.
 
 ---
@@ -144,9 +146,9 @@ This chapter opens **Part III: The Unresolved Sky** and contains Paper 1 (`dNdS`
 
 **Key points:**
 - Recovering the sub-threshold dN/dS with deep learning is not merely a methodological exercise — it opens several scientific doors:
-  - **(a) Constraining faint astrophysical populations:** the sub-threshold dN/dS reveals the composition and abundance of sources too faint to be individually cataloged (blazars, star-forming galaxies, misaligned AGNs).
+  - **(a) Constraining faint astrophysical populations:** the sub-threshold dN/dS reveals the composition and abundance of sources too faint to be individually cataloged (blazars, star-forming galaxies, misaligned AGNs). This is the primary science goal of Part III.
   - **(b) Providing priors for probabilistic cataloging:** the dN/dS measured in this chapter is used in Chapter 7 as a prior for the source detection step, enabling the construction of probabilistic catalogs that extend below the standard detection threshold.
-  - **(c) Probing DM statistically:** a future extension of this methodology could include a DM component in the dN/dS model, enabling a statistical search for DM subhalos as a faint population rather than through one-by-one identification (as in Ch. 5). Energy-dependent dN/dS decomposition would further sharpen this capability.
+  - **(c) Future prospects — DM in the dN/dS:** a natural extension of this methodology would include a DM component in the dN/dS model, enabling a statistical search for DM subhalos as a faint population. Energy-dependent dN/dS decomposition would further sharpen this capability. This remains a future goal — the present analysis characterizes the total source population without attempting DM decomposition. A complementary approach to searching for unresolved DM is provided by the cross-correlation analysis of Ch. 8, which exploits the spatial correlation between the UGRB and tracers of DM large-scale structure.
 - The methodology presented here serves as a proof of principle: it validates the CNN approach by recovering a dN/dS fully consistent with catalog measurements in the resolved regime and with the independent 1pPDF results in the unresolved regime.
 - **Transition:** "The remainder of this chapter presents the analysis in full."
 
@@ -184,8 +186,8 @@ Paper appendices included as thesis chapter appendices:
 - In the resolved regime, the CNN result agrees with catalog-derived source counts (4FGL-DR3); in the unresolved regime, it is consistent with the independent analytical 1pPDF measurement of Cuoco et al. (2015).
 - The methodology is robust against systematics: stable across latitude cuts (30°, 40°, 50°), foreground models (v05, v07), and event selections (SOURCEVETO, ULTRACLEANVETO).
 - The map2patches approach enables efficient CNN training on spherical data, with >10× speedup over fully spherical architectures and equivalent accuracy.
-- **Outlook:** the framework naturally extends to multiple energy bins, enabling energy-dependent dN/dS decomposition — a prerequisite for identifying the contribution of specific source classes and searching for spectral signatures of DM annihilation.
-- **Connection forward:** the recovered dN/dS serves as the empirical prior for the probabilistic cataloging framework developed in Chapter 7, where sub-threshold source information is extracted source-by-source.
+- **Outlook:** the framework naturally extends to multiple energy bins, enabling energy-dependent dN/dS decomposition — a prerequisite for identifying the contributions of specific source classes. In the future, this could be extended to search for spectral signatures of a DM annihilation component, although the present analysis focuses on characterizing the total source population.
+- **Connection forward:** the recovered dN/dS serves as the empirical prior for the probabilistic cataloging framework developed in Chapter 7, where sub-threshold source information is extracted source-by-source. The complementary search for collective DM emission in the unresolved sky is addressed through cross-correlations in Ch. 8.
 
 ---
 

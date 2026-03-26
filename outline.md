@@ -30,10 +30,9 @@
 - **Part III: The Unresolved Sky** — the shift to population studies below the detection threshold.
   - *Paper 1:* Recovering the source-count distribution ($dN/dS$) of faint sources using SBI.
   - *Paper 2:* Constructing probabilistic catalogs to utilize sub-threshold information.
-- **Part IV: Advancing Simulation-Based Inference** *(provisional)* — improving the inference tools themselves.
-  - *Paper 6:* GenSBI — a library for SBI using flow matching and diffusion models.
-- **Part V: Large Scale Anisotropies** — studying DM at cosmological scales.
+- **Part IV: Large-Scale Anisotropies** — studying DM at cosmological scales.
   - *Paper 5:* Forecasting the sensitivity of CTA to DM via cross-correlations with galaxy catalogs.
+- *Chapter 9 (optional):* GenSBI — a library for SBI using flow matching and diffusion models (Paper 6).
 
 ---
 
@@ -87,13 +86,13 @@
 - **3.3 Machine Learning in Astrophysics:**
   - ML approaches (classification, regression, density estimation).
   - Why ML is suited to noise-dominated gamma-ray data.
-  - *(Technical details of NPE → Chapter 6; flow matching/diffusion → Chapter 9)*
+  - *(Technical details of NPE → Chapter 6; flow matching/diffusion → Chapter 9, if included)*
 - **3.4 The Domain Shift Challenge:**
   - Problem statement: training on simulations vs. testing on real data.
   - *(Domain adaptation techniques → Chapter 5)*
 - **3.5 Cross-Correlations as a Complementary Probe:**
   - At cosmological scales, the angular cross-power spectrum ($C_\ell$) between gamma-ray maps and galaxy/lensing catalogs provides sensitivity to the collective DM signal from unresolved structure.
-  - *More details on the formalism in Chapter 10; introduced here to complete the methodological landscape.*
+  - *More details on the formalism in Chapter 8; introduced here to complete the methodological landscape.*
 
 
 ---
@@ -148,7 +147,7 @@
 
 ## **Part III: The Unresolved Sky**
 
-> *Modular: can be read after Part I without requiring Part II. Shifts from individual source identification to population-level statistics. Motivated by the fact that individual identification of subhalos hits sensitivity limits — if DM subhalos exist below the detection threshold, they must be searched for statistically.*
+> *Modular: can be read after Part I without requiring Part II. Shifts from individual source identification to population-level statistics. Chapters 6–7 focus on characterizing the general astrophysical source population below the detection threshold. The search for a collective DM signal in the unresolved sky is deferred to Part IV (Ch. 8, cross-correlations).*
 
 ### **Chapter 6: From Individual Sources to Populations**
 
@@ -164,7 +163,7 @@
   - CNN trained on ~10⁶ synthetic Fermi-LAT maps; non-parametric dN/dS recovery in 20 flux bins. Cross-ref Ch. 3 §3.2.
   - Inference on spherical data: `map2patches` strategy for HEALPix maps, EfficientNet V2M architecture, >10× speedup over fully spherical convolutions.
 - **6.4 Transition:**
-  - dN/dS recovery enables: (a) constraining faint astrophysical populations, (b) providing priors for probabilistic cataloging (Ch. 7), (c) statistical DM subhalo searches.
+  - dN/dS recovery enables: (a) constraining faint astrophysical populations, (b) providing priors for probabilistic cataloging (Ch. 7). Future DM-sensitive extensions discussed; complementary DM search via cross-correlations in Ch. 8.
 
 ### **[INSERT PAPER 1]**
 
@@ -189,12 +188,34 @@
 
 ---
 
-## **Part IV: Advancing Simulation-Based Inference** *(maybe)*
+## **Part IV: Large-Scale Anisotropies**
 
-> *Modular and self-contained. This Part may be included depending on the completion of the associated paper. It is motivated by the SBI methodology introduced in Chapter 6: the NPE approach works, but modern generative models (flow matching, diffusion) can improve flexibility and performance.*
+> *Modular: can be read after Part I without requiring Parts II–III. Connects gamma-ray observations to the cosmic web at cosmological scales, providing a complementary approach to DM searches through the unresolved sky.*
 
-### **Chapter 9: Generative Models for Simulation-Based Inference**
-*(the structure of this section may change)*
+### **Chapter 8: Cross-Correlations and Future Prospects**
+
+- **8.1 The Cosmic Web:**
+  - Dark Matter traces Large Scale Structure (LSS).
+- **8.2 Cross-Correlation Formalism:**
+  - Angular Power Spectra ($C_\ell$).
+  - Correlating Gamma-rays (Fermi/CTA) with Galaxy Catalogs/Lensing.
+  - *Theoretical Basis:* Drawing on the formalism from Camera et al. (2013) `'1212.5018'` and Fornengo et al. (2014) `'1312.4835'`, and the framework detailed in the thesis of Pinetti (2022) `'2212.00125'`.
+- **8.3 Looking Forward (CTA):**
+  - Moving from Fermi-LAT to the Cherenkov Telescope Array Observatory (CTAO).
+  - Sensitivity forecasts for cross-correlation studies.
+
+### **[INSERT PAPER 5]**
+
+- **Title:** Cherenkov Telescope Array Observatory sensitivity to dark matter and galaxy cross-correlations
+- **File:** `001) paper 5 - 2505.20383.pdf`
+- **Key Contribution:** Forecasting the power of cross-correlations with next-gen instruments.
+
+---
+
+### **Chapter 9: Generative Models for Simulation-Based Inference** *(optional)*
+
+> *May be included depending on the completion of Paper 6. Motivated by the SBI methodology introduced in Chapter 6: the NPE approach works, but modern generative models (flow matching, diffusion) can improve flexibility and performance.*
+
 - **9.1 Beyond Normalizing Flows:**
   - Limitations of standard NPE with normalizing flows.
   - The shift toward flow matching and diffusion models for density estimation.
@@ -210,7 +231,7 @@
   - Benchmark results.
   - *Looking back:* How GenSBI could be applied to improve the dN/dS inference from Paper 1.
 
-### **[INSERT PAPER 6]** *(maybe)*
+### **[INSERT PAPER 6]** *(optional)*
 
 - **Title:** TBD (GenSBI paper)
 - **Repository:** [`github.com/aurelio-amerio/GenSBI`](https://github.com/aurelio-amerio/GenSBI)
@@ -218,35 +239,11 @@
 
 ---
 
-## **Part V: Large Scale Anisotropies**
+## **Conclusions**
 
-> *Modular: can be read after Part I without requiring Parts II–IV. Connects gamma-ray observations to the cosmic web at cosmological scales, providing a complementary approach to DM searches.*
+### **Chapter 10: Summary and Outlook**
 
-### **Chapter 10: Cross-Correlations and Future Prospects**
-
-- **10.1 The Cosmic Web:**
-  - Dark Matter traces Large Scale Structure (LSS).
-- **10.2 Cross-Correlation Formalism:**
-  - Angular Power Spectra ($C_\ell$).
-  - Correlating Gamma-rays (Fermi/CTA) with Galaxy Catalogs/Lensing.
-  - *Theoretical Basis:* Drawing on the formalism from Camera et al. (2013) `'1212.5018'` and Fornengo et al. (2014) `'1312.4835'`, and the framework detailed in the thesis of Pinetti (2022) `'2212.00125'`.
-- **10.3 Looking Forward (CTA):**
-  - Moving from Fermi-LAT to the Cherenkov Telescope Array Observatory (CTAO).
-  - Sensitivity forecasts for cross-correlation studies.
-
-### **[INSERT PAPER 5]**
-
-- **Title:** Cherenkov Telescope Array Observatory sensitivity to dark matter and galaxy cross-correlations
-- **File:** `001) paper 5 - 2505.20383.pdf`
-- **Key Contribution:** Forecasting the power of cross-correlations with next-gen instruments.
-
----
-
-## **Part VI: Conclusions**
-
-### **Chapter 11: Summary and Outlook**
-
-- **11.1 Synthesis:**
-  - Combining individual source classification (Papers 3, 4) with population statistics (Papers 1, 2), advanced inference tools (Paper 6), and large-scale correlations (Paper 5) provides the most robust constraints on DM.
-- **11.2 Final Remarks:**
+- **10.1 Synthesis:**
+  - Combining individual source classification (Papers 3, 4) with population statistics (Papers 1, 2), large-scale correlations (Paper 5), and advanced inference tools (Paper 6, if included) provides the most robust constraints on DM.
+- **10.2 Final Remarks:**
   - The role of ML in the future of astroparticle physics.
