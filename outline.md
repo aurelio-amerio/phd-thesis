@@ -121,21 +121,28 @@
 
 ### **Chapter 5: Searching for Dark Matter Substructures**
 
-- **5.1 Halo Substructure in** $\Lambda$**CDM:**
-  - Hierarchical clustering and the subhalo mass function.
-  - Dark satellites vs. Dwarf Spheroidal Galaxies (dSphs).
-- **5.2 The Unassociated Source Problem:**
-  - Criteria for associating gamma-ray sources.
-  - Classifying unassociated sources as potential dark subhalos.
-- **5.3 Machine Learning Classification & Domain Adaptation:**
-  - Mixture models, density estimation, and classification.
-  - Domain adaptation: prior and covariate shift formalisms.
+- **5.1 Introduction:**
+  - Frame subhalo searches as the second prong of Part II; complementary to the GCE (Ch. 4).
+- **5.2 Dark Matter Substructure in** $\Lambda$**CDM:**
+  - Hierarchical structure formation and the subhalo mass function ($dN/dM \propto M^{-1.9}$).
+  - Luminous satellites (dSphs) vs. truly dark subhalos ($M \lesssim 10^8\,M_\odot$).
+- **5.3 DM Subhalos as Gamma-Ray Targets:**
+  - Expected gamma-ray properties (spectral shape, angular extent, isotropic distribution).
+  - Detection prospects: J-factor distributions, expected counts as $f(m_\mathrm{DM}, \langle\sigma v\rangle)$.
+- **5.4 The Unassociated Source Problem:**
+  - The 4FGL-DR4 catalog: 2428 unassociated sources ($\sim$33%), 1282 at $|b|>10°$.
+  - Previous DM subhalo searches: hand-crafted and ML classify-and-count approaches.
+- **5.5 From Classification to Quantification: The Dataset Shift Challenge ($\sim$5–6 pp.):**
+  - Why standard classification fails for DM subhalo searches (balanced class fallacy, threshold arbitrariness).
+  - Dataset shift in the Fermi-LAT context: prior shift (class prevalence), covariate shift (selection bias). Cross-ref Ch. 3 §3.4.
+  - Quantification learning: from $p(k|\mathbf{x})$ to $p(\mathbf{x}|k)$ — generative mixture models.
+  - The mixture model concept: astrophysical components + DM subhalo component with simultaneous prior and covariate shift correction.
 
 ### **[INSERT PAPER 4]**
 
 - **Title:** Search for dark matter subhalos among unassociated Fermi-LAT sources in presence of dataset shift
-- **File:** `001) paper 4 - 2503.14584v1.pdf`
-- **Key Contribution:** Constraints on the subhalo population using a ML probabilistic approach.
+- **File:** `papers/dm_halos/main.tex`
+- **Key Contribution:** First maximum-likelihood generative model for Fermi-LAT unassociated sources; constraints on the subhalo population using quantification learning with dataset shift correction.
 
 ---
 
