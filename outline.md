@@ -173,18 +173,21 @@
 
 ### **Chapter 7: Probabilistic Cataloging**
 
-- **7.1 The Problem with Thresholding:**
-  - Inconsistencies in standard Test Statistic (TS) cuts due to varying background levels.
-  - The "Quality Factor" alternative.
-- **7.2 Priors from Populations:**
-  - Using the $dN/dS$ (derived in Chapter 6) as a prior for source detection.
-  - Recovering sub-threshold information.
+> *Compact extension of Chapter 6. Introduction ~6 pages; paper included in near-entirety. The dN/dS recovered in Ch. 6 provided the flux distribution of sub-threshold sources but zero spatial information. This chapter complements it with positional information via simulated-sky comparison.*
+
+- **7.1 The Limits of Fixed-Threshold Cataloging:**
+  - The standard TS > 25 paradigm: locally computed, spatially inconsistent, discards all sub-threshold information.
+  - The information content below threshold: the dN/dS implies a substantial population of sources just below TS = 25.
+- **7.2 From Population Statistics to Spatial Information:**
+  - The core idea: generate synthetic skies from the dN/dS, compare pixel-wise TS distributions against the real sky via a KS two-sample test.
+  - The frequentist framework: Pearson-like TS as a "signal interest label," Quality Factor (QF) as the fraction of compatible simulations, the (α, QF) depth/purity trade-off.
+  - A globally homogeneous TS scale, advantageous for cross-correlation studies (Ch. 8).
 
 ### **[INSERT PAPER 2]**
 
 - **Title:** Deepening gamma-ray point-source catalogues with sub-threshold information
-- **File:** `001) paper 2 - 2306.16483.pdf`
-- **Key Contribution:** Creating probabilistic catalogs to dig into the noise.
+- **File:** `papers_dnds_catalog/paper_3.tex`
+- **Key Contribution:** Frequentist framework for probabilistic cataloging via simulated-sky comparison. Identifies ~50% more candidate source directions than 4FGL-DR3. Delivers the publicly available gPCS catalog.
 
 ---
 
