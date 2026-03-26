@@ -9,184 +9,185 @@ tags: [dm-subhalos, fermi-lat, unassociated-sources, dataset-shift, quantificati
 
 # Chapter 5 — Searching for Dark Matter Substructures
 
-**Estimated length:** ~13 pages (introduction, Sections 5.1–5.6) + paper body (dm_halos)
+**Estimated length:** ~12 pages (introduction, §5.1–5.5) + paper body + appendices
+**Page ceiling:** 15 pages for introduction
 
-This chapter opens with a pedagogical introduction to dark matter subhalo searches among Fermi-LAT unassociated sources, then transitions into the author's published analysis (Paper 4 = `dm_halos`, arXiv:2503.14584). The introduction replaces the paper's abstract and Section 1.
+This chapter opens with a pedagogical introduction, then transitions into Paper 4 (`dm_halos`, arXiv:2503.14584). The introduction replaces the paper's abstract and Section 1.
 
 ---
 
 ## 5.1 Introduction (~0.5 page)
 
-**Purpose:** Frame subhalo searches as the second prong of Part II. After Chapter 4's resolved GCE analysis, this chapter seeks individual DM objects among cataloged sources — a fundamentally different strategy.
+**Purpose:** Frame subhalo searches as the second prong of Part II.
 
 **Key points:**
-- Chapter 4 examined the brightest expected DM signal; the Galactic Center Excess remains unresolved. This chapter shifts to a complementary approach: searching for individual dark matter subhalos among Fermi-LAT point sources.
+- Chapter 4 examined the brightest expected DM signal (GCE); this chapter shifts to a complementary approach: searching for individual dark matter subhalos among Fermi-LAT point sources.
 - The conceptual leap: rather than analyzing a known excess, we ask whether *any* cataloged gamma-ray sources could be dark matter subhalos.
-- Preview: ΛCDM predicts an enormous population of dark subhalos → a fraction may be detectable in gamma rays → they would appear as unassociated Fermi-LAT sources → identifying them requires a statistical framework that accounts for the mismatch between training and target data.
+- Preview the narrative arc: ΛCDM predicts an enormous dark subhalo population → a fraction may produce detectable gamma rays → they would appear as unassociated sources → identifying them requires handling the mismatch between labeled and unlabeled data.
 
-**Cross-references:** Ch. 4 (GCE debate); Ch. 1 §1.4.3 (density profiles, J-factors); Ch. 2 (Fermi-LAT source classes).
+**Cross-references:** Ch. 4 (GCE); Ch. 1 §1.4.3 (density profiles, J-factors); Ch. 2 (Fermi-LAT source classes).
 
 ---
 
 ## 5.2 Dark Matter Substructure in ΛCDM (~2 pages)
 
-**Purpose:** Establish the theoretical foundation — why dark subhalos exist and what ΛCDM predicts for the Milky Way's subhalo population.
+**Purpose:** Establish why dark subhalos exist and what ΛCDM predicts for the Milky Way's subhalo population. Covers the mass function and its slope, the simulation resolution floor, and the impact of baryonic effects on subhalo survival.
 
 ### 5.2.1 Hierarchical Structure Formation
 
 **Key points:**
-- ΛCDM predicts bottom-up hierarchical assembly: small halos merge to form larger ones, retaining a population of gravitationally bound subhalos (substructure).
-- N-body cosmological simulations (Millennium, Via Lactea II [`2007ApJ...667..859D`], Aquarius [`2008Natur.454..735D`], FIRE) resolve subhalos down to ~10⁴ M☉; extrapolation below the resolution limit extends to ~10⁻¹ M☉.
+- ΛCDM predicts bottom-up hierarchical assembly; smaller halos merge to form larger ones, retaining gravitationally bound subhalos.
+- N-body simulations (Via Lactea II, Aquarius) resolve subhalos down to ~10⁴ M☉; extrapolation extends to ~10⁻¹ M☉ via repopulation techniques.
 - The subhalo mass function dN/dM ∝ M^{−α} with α ≈ 1.9 — the MW should host O(10¹⁵–10¹⁶) total subhalos.
 
 ### 5.2.2 Luminous Satellites vs. Dark Subhalos
 
 **Key points:**
-- Subhalos above ~10⁸ M☉ can retain baryons → observed as dwarf spheroidal galaxies (dSphs). ~60 known MW satellites.
-- The vast majority of subhalos (below ~10⁸ M☉) are "dark": no stars, no gas, no electromagnetic counterpart except potentially from DM annihilation.
-- The "missing satellite problem" and its resolution through baryonic physics and detection limits — but the dark subhalo population remains largely unconstrained observationally.
-- Cross-ref Ch. 1 §1.4.3 for density profiles (NFW, concentration-mass relation) and the J-factor formalism that determines gamma-ray visibility.
+- Subhalos above ~10⁸ M☉ can retain baryons → observed as dwarf spheroidal galaxies. ~60 known MW satellites.
+- The vast majority (below ~10⁸ M☉) are "dark": no stars, no gas, no EM counterpart except potentially from DM annihilation.
+- The "missing satellite problem" and its resolution through baryonic physics and detection limits.
+- Paragraph on baryonic effects: tidal stripping, disk shocking modify the subhalo population, especially in the inner Galaxy. Hydrodynamical simulations (FIRE, Auriga) don't resolve below ~10⁶ M☉ — low-mass survival remains uncertain.
+- Cross-ref Ch. 1 §1.4.3 for density profiles (NFW, concentration-mass) and the J-factor formalism.
+
+**Figures:**
+- **Fig. 5.1:** N-body simulation visualization (VL-II or Aquarius subhalo distribution) — establishes the "sea of subhalos" visually. Source from the literature; find a suitable published figure during drafting.
 
 ---
 
-## 5.3 Dark Matter Subhalos as Gamma-Ray Targets (~2 pages)
+## 5.3 Dark Matter Subhalos as Gamma-Ray Targets (~1.5 pages)
 
-**Purpose:** Connect the theoretical subhalo population to observable gamma-ray signatures and explain why dark subhalos are uniquely compelling DM targets.
+**Purpose:** Connect the subhalo population to observable gamma-ray signatures. Present the wide range of detectability predictions across the parameter space, motivating the search as a genuine investigation: the analysis will determine whether any DM subhalo contribution is present and, if not, translate the null result into constraints on ⟨σv⟩.
 
 ### 5.3.1 Expected Gamma-Ray Properties
 
 **Key points:**
-- Gamma-ray flux from DM annihilation: Φ_DM ∝ (⟨σv⟩ / 2m²_DM) × J × (dN_γ/dE). The J-factor is the line-of-sight integral of ρ² (cross-ref Ch. 1 §1.4.4).
-- For thermal relic cross-sections (⟨σv⟩ ~ 3×10⁻²⁶ cm³/s), only the brightest (most massive, nearest) subhalos produce detectable gamma-ray fluxes.
-- Spectral shape: determined by the annihilation channel (bb̄ → peaked at ~m_DM/20; τ⁺τ⁻ → harder spectrum). All subhalos with the same DM mass share the same spectral shape → distinctive population signature.
-- Angular extent: the brightest subhalos may subtend 0.2°–0.3° (Coronado-Blázquez et al. 2022), marginally resolvable by Fermi-LAT; fainter ones are point-like.
-- Spatial distribution: approximately isotropic for subhalos at |b| > 10°, in contrast to Galactic source populations concentrated near the plane.
+- Gamma-ray flux from DM annihilation: Φ_DM ∝ (⟨σv⟩ / 2m²_DM) × J × (dN_γ/dE). Cross-ref Ch. 1 §1.4.4.
+- Spectral shape determined by annihilation channel (bb̄ peaked at ~m_DM/20; τ⁺τ⁻ harder). All subhalos with same DM mass share the same spectral template → distinctive population signature.
+- Angular extent: brightest subhalos may subtend 0.2°–0.3° (Coronado-Blázquez et al. 2022), marginally resolvable; fainter ones are point-like.
+- Spatial distribution: approximately isotropic at |b| > 10°, contrasting Galactic source populations.
 
-### 5.3.2 Detection Prospects
+### 5.3.2 Detection Predictions and Search Strategy
 
 **Key points:**
-- J-factor distributions from N-body simulations (Aguirre-Santaella et al. 2024 [`2024MNRAS.530.2496A`]): two prescriptions based on M_sub and V_max, spanning current uncertainties in subhalo structural modeling.
-- Expected number of detectable subhalos as a function of (m_DM, ⟨σv⟩): at thermal relic cross-section, O(0–30) subhalos could exceed the Fermi-LAT detection threshold (TS > 25) depending on J-factor model.
-- Why dark subhalos are uniquely clean: no astrophysical emission to confuse the DM signal (unlike the GCE, which is contaminated by MSPs, diffuse emission, cosmic-ray interactions). A dark subhalo is a "pure" DM laboratory.
-- However, distinguishing a DM subhalo from an unidentified astrophysical source based on gamma-ray properties alone is the central challenge.
+- **Wide prediction landscape:** The expected number of detectable subhalos spans orders of magnitude — from zero to several tens — depending on the assumed ⟨σv⟩, J-factor model (V_max vs. M_sub, tidal vs. point-like integration), and subhalo survival assumptions. No single prediction is privileged; these uncertainties are exactly what makes a data-driven search necessary.
+- The precise count depends critically on: (1) the true ⟨σv⟩, (2) the J-factor prescription, (3) baryonic survival of low-mass subhalos.
+- **Search strategy:** The analysis proceeds in two stages: first, determine whether the data favor a model with a DM subhalo component over a purely astrophysical one; second, if no statistically significant excess is found, translate the result into upper limits on ⟨σv⟩ — further characterizing the sensitivity of the technique.
+- **Why both outcomes are informative:** A detection would constitute direct evidence for the ΛCDM subhalo population through particle annihilation. Dark subhalos are uniquely clean targets: unlike the GCE, there is no astrophysical emission to confuse the DM signal — a dark subhalo is a "pure" DM laboratory, making any detection particularly informative. A null result constrains ⟨σv⟩ and benchmarks the reach of current instruments, directly informing forecasts for CTA/SWGO.
+- Defer quantitative J-factor distributions and detection threshold calculations to the paper body (Section 3).
+
+> [!NOTE]
+> **Action item:** Search the literature further for context on DM subhalo detectability predictions (e.g., Coronado-Blázquez et al. 2022, Calore et al. 2019, Arina et al. 2024 CosmiXs predictions, sensitivity forecasts for CTA/SWGO). Incorporate key quantitative statements about detection horizons.
 
 ---
 
-## 5.4 The Unassociated Source Problem (~2 pages)
+## 5.4 The Unassociated Source Problem (~1.5 pages)
 
-**Purpose:** Introduce the observational landscape — the Fermi-LAT catalog, the nature of unassociated sources, and prior efforts to identify DM candidates among them.
+**Purpose:** Introduce unassociated sources and prior DM subhalo search efforts. Provides a brief survey with 2–3 representative works per approach; the detailed comparison with prior results is deferred to the paper body.
 
-### 5.4.1 The Fermi-LAT Source Catalogs
-
-**Key points:**
-- The 4FGL-DR4 catalog contains ~7200 sources; 2428 (~33%) are unassociated — no identified counterpart at other wavelengths.
-- "Association" requires positional coincidence with a known source in radio, optical, or X-ray catalogs; association completeness depends on source brightness, localization, and Galactic latitude.
-- Cross-ref Ch. 2 §2.2 and §2.3 for source classes (blazars, pulsars) and the Fermi-LAT instrument.
-
-### 5.4.2 What Are the Unassociated Sources?
+### 5.4.1 Unassociated Sources in Fermi-LAT Catalogs
 
 **Key points:**
-- Majority are expected to be astrophysical: faint AGNs lacking counterparts (below the sensitivity of radio/optical surveys), pulsars with unfavorable beaming geometry, or sources in confused regions near the Galactic plane.
-- At |b| > 10° (the region relevant for subhalo searches): 1282 unassociated sources. The composition is not directly measurable.
+- 4FGL-DR4: ~7200 sources, 2428 (~33%) unassociated. At |b| > 10°: 1282 unassociated.
+- "Association" requires multi-wavelength counterpart; completeness depends on brightness, localization, latitude.
+- Majority expected to be astrophysical: faint AGNs, pulsars with unfavorable beaming, confused regions.
 - No unassociated source has been confirmed as a DM subhalo.
+- Cross-ref Ch. 2 §2.2–2.3.
 
-### 5.4.3 Previous DM Subhalo Searches
+### 5.4.2 Previous DM Subhalo Searches
 
-**Key points:**
-- **Hand-crafted approaches** [`2010PhRvD..82f3501B`, `2012A&A...538A..93Z`, `2015JCAP...12..035B`, `2017PhRvD..96f3009C`, `2019JCAP...07..020C`, `2019JCAP...11..045C`]: select candidates based on spectral/spatial properties consistent with DM (no variability, no association, spectral curvature consistent with annihilation). Coronado-Blázquez et al. (2019) identified 16 candidates in 3FGL.
-- **ML classification approaches** [`2016ApJ...825...69M`, `2023JCAP...07..033B`, `2023MNRAS.520.1348G`]: train classifiers on labeled sources (AGN/pulsar/DM) and apply to unassociated sources. Butter et al. (2023) reported 281 candidates in most conservative scenario.
-- **Common strategy:** "classify-and-count" — identify N candidates, then assume N_DM ≤ N candidates to derive upper bounds on ⟨σv⟩.
-- **Fundamental limitation:** the classify-and-count approach relies on ad hoc probability thresholds, balanced training sets that do not reflect actual class prevalences, and the assumption that training and target distributions are identical. These limitations motivate the methodological development in §5.5.
+**Key points (brief survey):**
+- **Hand-crafted approaches:** Coronado-Blázquez et al. (2019) identified 16 candidates in 3FGL using spectral, spatial, and variability criteria.
+- **ML classification:** Butter et al. (2023) found 281 candidates in the most conservative scenario using supervised classifiers.
+- **Common strategy:** "classify-and-count" — identify N candidates, assume N_DM ≤ N, derive ⟨σv⟩ bounds.
+- **Fundamental limitation:** relies on ad hoc probability thresholds, balanced training sets that don't reflect real prevalences, and the assumption that training and target distributions are identical. These failures motivate §5.5.
 
 ---
 
 ## 5.5 From Classification to Quantification: The Dataset Shift Challenge (~5–6 pages)
 
-**Purpose:** Present the key methodological innovation as a pedagogical narrative. This section builds on the general formalism introduced in Ch. 3 §3.4 and develops the specific application to DM subhalo searches in depth.
-
-> **Scope note:** Ch. 3 §3.4 introduces the mathematical framework of dataset shift (covariate shift, prior shift, combined shift) in ~2.5 pages. This section focuses on *why* these shifts matter specifically for subhalo searches, *how* standard approaches fail, *what* quantification learning is and why it resolves the problem, and *how* the mixture model connects these ideas. The mathematical equations from Ch. 3 §3.4 are cross-referenced rather than re-derived.
+**Purpose:** Present the methodological innovation that motivates the paper. Builds on the formal dataset shift framework introduced in Ch. 3 §3.4; this section focuses on *why* these shifts matter for subhalo searches, *how* classify-and-count fails, and *what* quantification learning offers as a solution. Equations are cross-referenced from Ch. 3 §3.4 rather than re-derived.
 
 ### 5.5.1 Why Standard Classification Fails for DM Subhalo Searches (~1.5 pages)
 
 **Key points:**
-- Recap the setup (cross-ref Ch. 3 §3.4): classifiers are trained on associated sources (known labels) and applied to unassociated sources (unknown labels). The fundamental assumption p_train(x,k) = p_target(x,k) is violated.
-- **The training set problem:** There are zero confirmed DM subhalos → the "DM" class has no real training data. Simulated DM spectra are used as surrogates, but the simulation-to-reality gap is uncontrolled.
-- **The balanced class fallacy:** standard ML practice balances classes (50/50 AGN/pulsar, or 33/33/33 AGN/pulsar/DM). This has nothing to do with the actual prevalences. Among associated sources at |b| > 10°, AGNs outnumber pulsars ~10:1. Using balanced classes artificially inflates the predicted fraction of rare classes.
-- **The threshold arbitrariness:** the number of DM candidates depends entirely on the probability threshold chosen (e.g., p_DM > 0.5 vs. p_DM > 0.9). The threshold is not derived from any statistical principle; it is a free parameter that directly determines the final constraint.
-- **Concrete example:** Butter et al. (2023) find 281 candidates (conservative) — a number so large that the resulting ⟨σv⟩ bounds are extremely weak. A different threshold would give a different number and different bounds. Neither threshold is "correct."
+- Recap setup (cross-ref Ch. 3 §3.4): classifiers trained on associated sources, applied to unassociated. The assumption p_train(x,k) = p_target(x,k) is violated.
+- **The training set problem:** Zero confirmed DM subhalos → the "DM" class has no real training data. Simulated spectra are surrogates with uncontrolled simulation-to-reality gap.
+- **The balanced class fallacy:** Standard ML balances classes (33/33/33 AGN/pulsar/DM), but real prevalences are ~90/10/? at |b| > 10°. Balanced training artificially inflates rare-class predictions.
+- **The threshold arbitrariness:** Number of DM candidates depends entirely on chosen probability threshold (p_DM > 0.5 vs. > 0.9). No statistical principle determines the threshold.
+- **Concrete example:** Butter et al. (2023) find 281 candidates → extremely weak ⟨σv⟩ bounds. Different threshold → different number → different bounds.
 
 ### 5.5.2 Dataset Shift in the Fermi-LAT Context (~1.5 pages)
 
 **Key points:**
-- The distributions of associated and unassociated sources *are* measurably different (Figure from paper: α and β histograms). Cross-ref Ch. 3 §3.4, Figure 3.X for the visual evidence.
-- **Prior shift manifestation:** the fraction of Galactic sources (mostly pulsars) among unassociated sources (~29%) is much higher than among associated sources (~6%) at |b| > 10°. This is expected: pulsars in unfavorable beaming geometry remain unassociated, while bright blazars are easily associated.
-- **Covariate shift manifestation:** even within a single source class, the feature distributions differ between associated and unassociated populations. Unassociated sources are systematically fainter (harder to associate) and have larger spectral uncertainties.
-- **The degeneracy:** the same observed mismatch can be explained by prior shift, covariate shift, or the presence of a genuinely new source class (DM subhalos). This degeneracy is the central statistical challenge (cross-ref Ch. 3 §3.4, "Combined shift").
-- **Why ignoring the shift is dangerous:** a classifier that assumes p_train = p_target will misattribute the excess of pulsar-like unassociated sources either to pulsars (underestimating DM) or, worse, to DM (overestimating DM) depending on the training choices.
+- Associated and unassociated source distributions *are* measurably different. Cross-ref Ch. 3 §3.4 for the visual evidence and formal definitions.
+- **Prior shift:** Galactic sources (pulsars) constitute ~29% of unassociated vs. ~6% of associated at |b| > 10°. Pulsars with unfavorable beaming remain unassociated; bright blazars are easily associated.
+- **Covariate shift:** Within a single class, feature distributions differ. Unassociated sources are systematically fainter and have larger spectral uncertainties.
+- **The degeneracy:** The same mismatch can be explained by prior shift, covariate shift, or a genuinely new source class (DM subhalos). This is the central statistical challenge (cross-ref Ch. 3 §3.4, "Combined shift").
+- **Why ignoring the shift is dangerous:** A classifier assuming p_train = p_target misattributes the excess of pulsar-like unassociated sources either to pulsars (underestimating DM) or to DM (overestimating DM).
 
-### 5.5.3 Quantification Learning: From p(k|x) to p(x|k) (~1.5 pages)
+### 5.5.3 Quantification Learning: From p(k|x) to p(x|k) (~1 page)
 
 **Key points:**
-- **The classification paradigm:** standard ML estimates p(k|x) — "what is the probability that source x is class k?" This is useful for individual classification but does not give a coherent model of the population.
-- **The quantification paradigm:** instead, estimate p(x|k) — "what is the distribution of features x for class k?" — and then determine the class prevalences p(k) by fitting the mixture model to the target data. This is called *quantification learning* (González et al. 2017, Esuli et al. 2023, Moreo et al. 2024).
-- **Key advantage:** quantification learning directly estimates class prevalences without assuming they match the training set. The prevalences (including a potential new DM class) are free parameters fit to the data.
-- **Connection to template fitting in astrophysics:** the approach is analogous to fitting photon count maps as linear combinations of spatial templates (e.g., gas maps, IC maps, isotropic background) — a standard technique in Fermi-LAT analyses. Here, the "templates" are the spectral parameter distributions of each source class.
-- **Generative vs. discriminative:** this is a generative model (estimates p(x,k) = p(x|k)p(k)) rather than a discriminative model (estimates p(k|x) directly). Generative models can be sampled to produce mock data for validation, and they yield a well-defined likelihood function — essential for statistical hypothesis testing.
+- **Classification paradigm:** Standard ML estimates p(k|x). Useful for individual sources but doesn't model the population coherently.
+- **Quantification paradigm:** Estimate p(x|k) and fit class prevalences p(k) to the target data. This is *quantification learning* (González et al. 2017, Moreo et al. 2024).
+- **Key advantage:** Prevalences (including a potential DM class) are free parameters fit to data, not assumed from training.
+- **Astrophysics analogy:** Analogous to template fitting in Fermi-LAT spatial analyses — here the "templates" are spectral parameter distributions of each source class.
+- **Generative vs. discriminative:** This is a generative model yielding a well-defined likelihood → essential for statistical hypothesis testing and mock data generation.
+- Cross-ref Ch. 3 §3.4 for the formal framework (Eqs. 3.XX–3.XX).
 
 ### 5.5.4 The Mixture Model Concept (~1 page)
 
 **Key points:**
-- The unassociated source distribution is modeled as a mixture:
-  p_unas(x) = [Σ_k π_k p_assoc(x|k)] C̃(x; θ_cov) + π_DM p_DM(x; θ_DM)
-  (reference equation from Ch. 3 §3.4; the full derivation appears in the paper's Section 2.3).
-- **Three components:** Galactic astrophysical, extragalactic astrophysical, and (hypothetical) DM subhalos.
-- **Prior shift:** handled by fitting the class prevalences π_k — they need not match the training set.
-- **Covariate shift:** handled by the modulation function C̃(x), modeled as a product of sigmoid functions (cross-ref Ch. 3 §3.4, Eq. 3.XX) — one monotonic function per feature dimension.
-- **DM component:** derived from Monte Carlo simulations using J-factor distributions from N-body simulations and Fermi-LAT instrument response functions. Not a free-form template; fully determined by DM physics parameters (m_DM, ⟨σv⟩, channel).
-- **Likelihood:** the product of p_unas(x_i) over all unassociated sources yields a well-defined likelihood → can maximize to find best-fit parameters → can profile to set upper bounds on ⟨σv⟩.
-- **Why this is better than classify-and-count:**
-  1. No ad hoc probability threshold.
-  2. Natural handling of both prior and covariate shifts.
-  3. The DM contribution is determined by maximum likelihood, not by counting candidates.
-  4. Statistical significance and upper bounds are derived from the likelihood ratio (Wilks' theorem), giving them a rigorous statistical interpretation.
-- **Transition:** "The remainder of this chapter presents the full analysis, beginning with the data selection and the detailed construction of the mixture model."
+- The unassociated source distribution is modeled as a three-component mixture: Galactic + extragalactic astrophysical + (hypothetical) DM subhalos.
+- Prior shift: handled by fitting π_k. Covariate shift: handled by sigmoid modulation C̃(x). (Cross-ref Ch. 3 §3.4 for equations.)
+- DM component: fully determined by physics parameters (m_DM, ⟨σv⟩, channel) via Monte Carlo simulation with J-factor distributions. Not a free-form template.
+- Likelihood: product over unassociated sources → maximize → profile for ⟨σv⟩ upper bounds.
+- **Why this is better than classify-and-count:** (i) no threshold, (ii) handles both shifts, (iii) DM contribution by maximum likelihood, (iv) rigorous statistical interpretation via likelihood ratio.
+- **Transition:** "The remainder of this chapter presents the full analysis."
 
 ---
 
-## 5.6 The Search for Dark Matter Subhalos Among Fermi-LAT Unassociated Sources
+## Paper Body — §5.6 onward
 
-**Source:** Paper 4 (`dm_halos`, arXiv:2503.14584) — included in near-entirety.
+**Source:** Paper 4 (`dm_halos`, arXiv:2503.14584) — included from Section 2 onward.
 
-The paper's abstract and introduction (Section 1) are replaced by the material above (§5.1–5.5). The paper body begins from its Section 2 (Statistical Analysis / Data Selection).
+| Thesis Section | Paper Section | Content |
+|---|---|---|
+| §5.6 | Section 2 | Statistical analysis: data selection, covariate/prior shifts, statistical model |
+| §5.7 | Section 3 | DM subhalos model: J-factors, gamma-ray emission simulation |
+| §5.8 | Section 4 | Mixture model results and DM annihilation limits |
+| §5.9 | Section 5 | Discussion and conclusions |
 
-**Paper sections as thesis sections:**
-- 5.6 → Paper Section 2 (Statistical analysis: data selection, covariate/prior shifts, statistical model)
-- 5.7 → Paper Section 3 (DM subhalos model: J-factors, gamma-ray emission simulation)
-- 5.8 → Paper Section 4 (Mixture model results and DM annihilation limits)
-- 5.9 → Paper Section 5 (Discussion and conclusions)
-- Appendices A–E → included as thesis appendices or inline
+## Appendices (at end of chapter)
 
----
+Paper appendices included as thesis chapter appendices for self-consistency:
 
-## 5.10 Summary
+| Appendix | Content |
+|---|---|
+| 5.A | Simulation of gamma-ray signals from DM subhalos |
+| 5.B | Details of model optimization with the EM algorithm |
+| 5.C | Consistency checks of the model |
+| 5.D | DM signal injection tests |
+| 5.E | Performance measures |
 
-**Key points:**
-- No significant excess of DM subhalos is found among Fermi-LAT unassociated sources.
-- 95% CL upper bounds on ⟨σv⟩ are derived for the bb̄ channel across m_DM = 10 GeV – 1 TeV.
-- The quantification learning approach provides the first maximum-likelihood upper bounds on DM from subhalo searches — a well-defined statistical framework compared to classify-and-count.
-- The bounds are competitive with but ~1 order of magnitude weaker than dSph limits, primarily because subhalo positions/J-factors are unknown (unlike dSphs).
-- Outlook: velocity-dependent cross-sections (Sommerfeld enhancement) could make nearby low-mass subhalos more visible; future surveys (LSST, SKA) may enable multiwavelength confirmation of DM subhalo candidates.
-- Connection forward: the limitations of individual source identification motivate the population-level approach of Part III (Chapters 6–7), where sub-threshold sources are probed statistically rather than individually.
+## Summary (~0.5 page)
+
+- No significant excess of DM subhalos found among Fermi-LAT unassociated sources.
+- 95% CL upper bounds on ⟨σv⟩ for bb̄ across m_DM = 10 GeV – 1 TeV.
+- First maximum-likelihood upper bounds from subhalo searches.
+- Bounds competitive with but ~1 order of magnitude weaker than dSph limits (subhalo positions/J-factors unknown).
+- Outlook: Sommerfeld enhancement, future instruments (CTA, SWGO).
+- Connection forward: limitations of individual source ID motivate population-level approaches (Part III).
 
 ---
 
 ## Structural Notes
 
-- **Figures for introduction:** Consider including:
-  - Subhalo mass function and/or N-body simulation visualization (from VL-II or Aquarius)
-  - α–β distributions for associated vs. unassociated sources (Fig. 1 from Paper 4, already used in Ch. 3 §3.4 — check if same figure can be reused or a variant is needed)
-  - Conceptual schematic: O(10^16) subhalos → O(10²–10³) above Fermi-LAT threshold → subhalo candidates among ~1300 unassociated sources at |b| > 10°
-  - Classify-and-count vs. quantification learning comparison diagram
-- **Tone:** Scholarly and neutral. Frame the methodological contribution as a natural evolution of the field, not a revolution. The dataset shift problem is presented as a known issue in ML (not discovered by the author) that had not been addressed in this astrophysical context.
-- **Length budget:** §5.1 (0.5p) + §5.2 (2p) + §5.3 (2p) + §5.4 (2p) + §5.5 (5.5p) + §5.6 transition (0.5p) = **~12.5 pages**, within the 15-page ceiling.
-- **Relationship to Ch. 3 §3.4:** The introduction references Ch. 3 §3.4 for the mathematical definitions (Eqs. 3.XX–3.XX) and uses the same notation. Chapter 5's treatment is primarily *contextual* and *applied* — why these shifts matter for this specific physics problem — while Ch. 3 provides the *formal* framework.
+- **Figures in introduction:** Only Fig. 5.1 (N-body simulation visualization). Paper figures stay in the paper body where they are.
+- **No repeated figures:** Do not duplicate Paper 4's figures in the introduction.
+- **Tone:** Scholarly, neutral. The search is a genuine investigation of whether DM subhalos contribute to the unassociated source population; both detection and null outcomes are scientifically valuable. Frame quantification learning as a natural evolution, not a revolution.
+- **Length budget:** §5.1 (0.5p) + §5.2 (2p) + §5.3 (1.5p) + §5.4 (1.5p) + §5.5 (5.5p) + transition (0.5p) = **~11.5 pages**.
+- **Relationship to Ch. 3 §3.4:** Cross-reference for formal definitions and equations. Ch. 5 is *contextual* and *applied*.
+
+> [!NOTE]
+> **Ch. 3 §3.4 action item:** Rethink the α–β distribution figure currently in §3.4. Consider replacing with a different graphic that illustrates the dataset shift concept generically, since the paper-specific figure should remain in the paper body (Ch. 5).
