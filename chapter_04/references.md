@@ -49,7 +49,7 @@ References required for the pedagogical introduction (Sections 4.1–4.5). The p
 | Leane & Slatyer (2020a) | 2002.12370 | `Leane:2020nmi` | N–S asymmetry → spurious PS |
 | Leane & Slatyer (2020b) | 2002.12371 | `Leane:2020pfc` | Companion paper (generality) |
 | Buschmann et al. (2020) | 2002.12373 | `Buschmann:2020adf` | Rebuttal: MSPs preferred |
-| Calore et al. (2021) | — | — | Rebuttal: MSPs still preferred [check bib] |
+| Calore et al. (2021) | 2102.12497 | `Calore:2021jvg` | Pixel-count statistics rebuttal |
 | Chang et al. (2019) | 1908.10874 | `Chang:2019ars` | NPTF validation defense |
 | List et al. (2020) | 2006.12504 | `List:2020mzd` | CNN approach, DM revival |
 | Cholis et al. (2022) | 2112.09706 | `Cholis:2021rpp` | High-energy tail → anti-MSP |
@@ -60,7 +60,7 @@ References required for the pedagogical introduction (Sections 4.1–4.5). The p
 |---|---|---|---|
 | List et al. (2025) | 2507.17804 | `List:2025qbx` | CNN+energy → ultra-faint SCD, DM revival |
 | Holst & Hooper (2024) | 2410.02217 | `Holst:2024fvb` | Missing bright pulsars (updated) |
-| Amerio, Hooper & Linden (2025) | 2412.05220 | `Amerio:2025fhz` | GC luminosity function → Paper 3 |
+| Amerio, Hooper & Linden (2025) | 2412.05220 | `Amerio:2024qor` | GC luminosity function → Paper 3 |
 | List et al. (2021) | 2006.12504 | `List:2021aer` | Earlier CNN analysis |
 
 ## Cross-References to Other Thesis Chapters
