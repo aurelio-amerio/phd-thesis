@@ -7,6 +7,7 @@ status: outline
 tags: [dm-subhalos, fermi-lat, unassociated-sources, dataset-shift, quantification-learning, domain-adaptation]
 ---
 
+
 # Chapter 5 — Searching for Dark Matter Substructures
 
 **Estimated length:** ~12 pages (introduction, §5.1–5.5) + paper body + appendices

@@ -7,6 +7,8 @@ status: outline
 tags: [dnds, source-count-distribution, 1ppdf, sbi, cnn, healpix, fermi-lat, unresolved-background]
 ---
 
+% TODO: need to review this outline, it's very rough
+
 # Chapter 6 — From Individual Sources to Populations
 
 **Estimated length:** 5–15 pages (introduction, §6.1–6.5) + paper body
