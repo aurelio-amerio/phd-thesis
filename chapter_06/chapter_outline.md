@@ -63,8 +63,8 @@ This chapter opens **Part III: The Unresolved Sky** and contains Paper 1 (`dNdS`
 - The conceptual shift: rather than asking "is *this* source DM?", we ask "what is the statistical distribution of all sources — including those too faint to detect individually?"
 - Below the Fermi-LAT detection threshold lies a vast population of unresolved sources whose cumulative emission forms the unresolved gamma-ray background (UGRB). These sources are invisible individually, but their collective photon statistics encode recoverable information about the population.
 - This approach is complementary to Part II: resolved-source methods probe the bright end of the population; population methods probe the faint end. Together, they provide a complete picture.
-- **Scope of Part III:** Chapters 6–7 focus on characterizing the *general* unresolved source population (primarily astrophysical: blazars, MSPs, star-forming galaxies). The search for a collective DM signal in the unresolved gamma-ray sky — via cross-correlations with tracers of large-scale structure — is the subject of Part V (Ch. 8).
-- **Transition:** The key observable that bridges resolved catalogs to the unresolved background is the source-count distribution, dN/dS, which we define in the next section.
+- **Scope of Part III:** Chapters 6–7 focus on characterizing the *general* unresolved source population (primarily astrophysical: blazars, MSPs, star-forming galaxies). The search for a collective DM signal in the unresolved gamma-ray sky — via cross-correlations with tracers of large-scale structure — is the subject of Ch. 8, which uses a complementary approach (angular cross-correlations) rather than the dN/dS framework developed here.
+- **Transition:** The key observable for characterizing the sub-threshold source population is the source-count distribution, dN/dS, which we define in the next section.
 
 ---
 
@@ -83,15 +83,15 @@ This chapter opens **Part III: The Unresolved Sky** and contains Paper 1 (`dNdS`
 
 ### 6.2.2 The 1-Point Photon-Count Distribution
 
+**Scope note:** This subsection provides a *conceptual* overview of the 1pPDF — enough to understand the approach and its role as a benchmark — without going into derivation details.
+
 **Key points:**
-- The photon-count distribution (1pPDF, or pixel-count distribution) is the histogram of the number of pixels containing exactly k photons. Different source populations leave distinct imprints on this distribution:
-  - **Bright but rare sources** produce localized clusters of photons → non-Poissonian tail at large k.
-  - **Faint but numerous sources** (and truly diffuse emission) distribute photons uniformly → Poissonian distribution.
-- By analyzing the non-Poissonian tails of the 1pPDF, one can reconstruct the properties of source populations extending below the detector threshold. Cite [`Malyshev:2011zi`] (pioneering work), [`Cuoco-1pdf`] (pixel-dependent improvement), [`Zechlin:2015wdz`, `Lisanti:2016jub`] (energy-dependent extension).
-- **Malyshev & Hogg (2011)** [`Malyshev:2011zi`]: pioneered the 1pPDF for gamma rays using a generating-function formalism. Decomposed the sky into three components (point sources with a broken power-law dN/dS, Galactic foreground, isotropic background) and fit the theoretical 1pPDF to Fermi-LAT pixel counts.
-- **Cuoco et al. (2015)** [`Cuoco-1pdf`]: improved the method with a pixel-dependent approach that incorporates the spatial variation of Galactic foreground and exposure across the sky, exploiting all available spatial information. Measured dN/dS for 1–10 GeV photons down to ~1 order of magnitude below the Fermi-LAT threshold.
-- **Energy-dependent extensions** [`Zechlin:2015wdz`, `Lisanti:2016jub`]: extended the measurement to multiple energy bands (1–171 GeV), providing information on the energy dependence of the source-count distribution.
-- **Passing remark on NPTF:** The same pixel-statistics formalism was adapted for the Non-Poissonian Template Fitting (NPTF) framework applied to the GCE (cross-ref Ch. 4 §4.4.1), demonstrating the versatility of photon-count methods across different science cases.
+- The photon-count distribution (1pPDF, or pixel-count distribution) is the histogram of the number of pixels containing exactly k photons. The core idea: different source populations leave distinct imprints on this distribution — bright, rare sources produce non-Poissonian tails, while faint, numerous sources (and diffuse emission) produce a Poissonian distribution. Analyzing these tails reconstructs the properties of sub-threshold populations.
+- **Key literature** (brief summary of the development, not detailed methodology):
+  - **Malyshev & Hogg (2011)** [`Malyshev:2011zi`]: pioneered the 1pPDF for gamma rays; decomposed the sky into point sources, Galactic foreground, and isotropic background.
+  - **Cuoco et al. (2015)** [`Cuoco-1pdf`]: pixel-dependent improvement incorporating spatial variation of foreground and exposure; measured dN/dS down to ~1 order of magnitude below threshold.
+  - **Zechlin et al. (2016), Lisanti et al. (2016)** [`Zechlin:2015wdz`, `Lisanti:2016jub`]: energy-dependent extensions to multiple bands (1–171 GeV).
+- **Passing remark on NPTF:** The same pixel-statistics formalism was adapted for the NPTF framework applied to the GCE (cross-ref Ch. 4 §4.4.1), demonstrating the versatility of photon-count methods across different science cases.
 
 ### 6.2.3 Why dN/dS Is a Powerful Observable
 
@@ -105,16 +105,17 @@ This chapter opens **Part III: The Unresolved Sky** and contains Paper 1 (`dNdS`
 
 ## 6.3 Simulation-Based Inference for dN/dS (~2.5 pages)
 
-**Purpose:** Motivate *why* the analytical 1pPDF method has limitations, present the SBI/CNN approach as the solution, and address the specific technical challenge of ML on spherical data. This section merges the methodological motivation with the spherical geometry discussion.
+**Purpose:** Motivate *why* the analytical 1pPDF method has limitations, present the SBI/CNN approach as the solution, and address the specific technical challenge of ML on spherical data. This section merges the methodological motivation with the spherical geometry discussion. A key motivation is that the 1pPDF is *not amortized* — each new dataset or parameter configuration requires a full re-convergence of the likelihood, which is computationally expensive.
 
 ### 6.3.1 Limitations of the Analytical Approach
 
 **Key points:**
 - The analytical 1pPDF likelihood requires:
-  1. **Neglecting PSF spatial correlations:** the generating-function formalism treats each pixel independently, but the PSF spreads photons from a single source across multiple pixels, introducing inter-pixel correlations that are not captured.
-  2. **Discarding energy information:** the standard 1pPDF operates in a single broad energy band (e.g., 1–10 GeV). While energy-dependent extensions exist [`Zechlin:2015wdz`, `Lisanti:2016jub`], they treat each band independently rather than exploiting energy correlations.
-  3. **Assuming a parametric dN/dS form:** the analytical approach models dN/dS as a broken power-law with a fixed number of breaks, limiting the flexibility to capture unexpected features or population substructure.
-  4. **Computationally demanding likelihoods:** the generating-function formalism, especially in its pixel-dependent version, requires numerically intensive calculations. Extending to multiple energy bins or full covariance estimation becomes prohibitively expensive.
+  1. **Neglecting PSF spatial correlations:** the generating-function formalism treats each pixel independently, but the PSF spreads photons across multiple pixels, introducing inter-pixel correlations that are not captured.
+  2. **Discarding energy information:** the standard 1pPDF operates in a single broad energy band (e.g., 1–10 GeV). Energy-dependent extensions exist [`Zechlin:2015wdz`, `Lisanti:2016jub`], but they treat each band independently rather than exploiting energy correlations.
+  3. **Assuming a parametric dN/dS form:** the analytical approach models dN/dS as a broken power-law with a fixed number of breaks, limiting flexibility.
+  4. **Slow convergence and no amortization:** the generating-function formalism is computationally demanding, especially in its pixel-dependent version. Crucially, the method is *not amortized*: each new dataset or parameter configuration requires a full re-convergence of the likelihood from scratch.
+- **Note on our work:** The present analysis uses a single energy bin (1–10 GeV) to enable direct comparison with the 1pPDF benchmark of Zechlin et al. However, the CNN-based approach naturally extends to multiple energy bins simultaneously — a key advantage for future work.
 - These limitations motivate an alternative approach: rather than writing down and evaluating the likelihood analytically, one can *simulate* the forward model and let a neural network learn the mapping from photon-count maps to dN/dS parameters.
 
 ### 6.3.2 The SBI Approach: Learning from Simulated Maps
@@ -132,13 +133,12 @@ This chapter opens **Part III: The Unresolved Sky** and contains Paper 1 (`dNdS`
 
 ### 6.3.3 Inference on Spherical Data
 
+**Scope note:** Keep this subsection *compact* — the full algorithm is described in the paper body (§6.7). The introduction should only convey the key idea and motivation.
+
 **Key points:**
-- A specific technical challenge: Fermi-LAT data are naturally represented as HEALPix maps on the sphere. Standard planar CNNs applied to flattened projections of the sphere introduce geometric distortions.
-- Several approaches exist for spherical neural networks [`Cohen:2018`, `Perraudin:2019`, `Krachmalnicoff:2019`], but truly spherical architectures are typically slower than standard planar CNNs and often require reimplementing existing efficient architectures from scratch.
-- This work introduces the **map2patches** strategy: the HEALPix sphere (order n=0, 12 base pixels) is subdivided into 12 equal-area patches. Each patch is an independent realization of the underlying isotropic field and can be mapped to a flat 2D image without resampling or distortion. Standard 3D convolutions with filters of size (N, N, 1) are applied, treating the patch index as the third dimension.
-- This approach preserves small-scale pixel information (critical for point-source statistics), leverages highly optimized standard CNN architectures (EfficientNet V2M), and achieves a >10× speedup over fully spherical convolutions — validated by cross-checking against the DeepSphere [`Perraudin:2019`] spherical architecture, which yields equivalent results.
-- **Caveat:** map2patches partially loses large-scale inter-patch correlations. This is acceptable because the signal of interest (point-source photon statistics) is isotropic and operates at scales much smaller than a single patch.
-- Detailed architecture, training, and validation are described in the paper body (§6.6).
+- Fermi-LAT data are naturally represented as HEALPix maps on the sphere. Standard planar CNNs applied to flattened projections introduce geometric distortions. Fully spherical architectures [`Cohen:2018`, `Perraudin:2019`, `Krachmalnicoff:2019`] exist but are slower and less mature.
+- This work introduces the **map2patches** strategy: the HEALPix sphere is subdivided into 12 equal-area base patches, each mapped to a flat 2D image without resampling. Patches are padded with pixels from neighbouring patches to preserve boundary information during convolutions. Standard 3D convolutions then treat the patch index as the third dimension, enabling the use of highly optimized architectures (EfficientNet V2M) with >10× speedup over fully spherical convolutions.
+- Full details (architecture, training, validation, cross-check against DeepSphere) are in the paper body (§6.7).
 
 ---
 
