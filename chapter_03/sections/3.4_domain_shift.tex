@@ -1,4 +1,4 @@
-\subsection{The Domain Shift Challenge}
+\section{The Domain Shift Challenge}
 \label{sec:3.4}
 
 The machine learning classification methods introduced in Section~\ref{sec:3.3} are built on the implicit assumption that the training data faithfully represent the conditions under which the model will be deployed.
@@ -6,7 +6,7 @@ When this assumption breaks down---as it does for several astrophysical classifi
 We now turn to the problem of \textit{dataset shift}, a systematic mismatch between training and target distributions that, if left unaddressed, can bias inference results.
 We first formalize the problem (Section~\ref{sec:3.4.1}) and then describe its principal types and the strategies used to correct them (Section~\ref{sec:3.4.2}).
 
-\subsubsection{The Problem Statement}
+\subsection{The Problem Statement}
 \label{sec:3.4.1}
 
 Supervised classification algorithms rely on the assumption that the training data and the target data share the same joint probability distribution of input features $\mathbf{x}$ and output classes $k$:
@@ -44,7 +44,7 @@ Any analysis that ignores this mismatch risks producing biased class prevalence 
 	\label{fig:assoc_unas_distributions}
 \end{figure}
 
-\subsubsection{Types of Dataset Shift}
+\subsection{Types of Dataset Shift}
 \label{sec:3.4.2}
 
 The two factorizations of the joint distribution introduced in Section~\ref{sec:3.4.1} lead to two complementary types of dataset shift, each with distinct statistical consequences and correction strategies.

@@ -1,8 +1,8 @@
-\subsection{Machine Learning in Astrophysics}
+\section{Machine Learning in Astrophysics}
 \label{sec:3.3}
 
-\subsubsection{Learning Tasks}
-\label{sec:3.3.1}
+% \subsection{Learning Tasks}
+% \label{sec:3.3.1}
 
 Machine learning provides a flexible framework for extracting information from data when explicit physical models are either unavailable or computationally intractable \cite{Bishop:2006, Hastie:2009}.
 The problems addressed in this thesis can be organized into three canonical learning tasks, each motivated by a distinct physical question.
@@ -24,7 +24,7 @@ While classification asks ``what class is this source?
 The resulting class-conditional densities $p(\mathbf{x}|k)$ are then combined into a generative mixture model whose parameters---including the prevalence of a potential dark matter component---are determined by maximizing the likelihood over the unassociated source data.
 The mathematical framework for density estimation and mixture models is developed in Section~\ref{sec:3.3.3}.
 
-\subsubsection{Neural Networks and Deep Learning}
+\subsection{Neural Networks and Deep Learning}
 \label{sec:3.3.2}
 
 A neural network is a parametric function $f_{\boldsymbol{w}}: \mathbb{R}^n \to \mathbb{R}^m$ composed of a sequence of affine transformations, each followed by a non-linear activation function.
@@ -78,7 +78,7 @@ Concrete dropout is applied before each convolutional layer, providing self-lear
 As discussed in Section~\ref{sec:3.1.4}, the Bayesian uncertainties produced by this architecture are cross-validated against an independent frequentist bias estimation, with both approaches yielding compatible results.
 The full architectural details and training procedure are deferred to Chapter~6.
 
-\subsubsection{Density Estimation}
+\subsection{Density Estimation}
 \label{sec:3.3.3}
 
 The density estimation task introduced in Section~\ref{sec:3.3.1} addresses a complementary problem to classification.

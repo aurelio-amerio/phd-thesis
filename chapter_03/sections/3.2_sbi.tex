@@ -1,4 +1,4 @@
-\subsection{The Simulation-Based Inference Paradigm}
+\section{The Simulation-Based Inference Paradigm}
 \label{sec:3.2}
 
 The inference framework presented in Section~\ref{sec:3.1} assumes that the likelihood function can be evaluated explicitly.
@@ -8,7 +8,7 @@ This section introduces the SBI paradigm, the neural estimation strategies that 
 
 %% --- 3.2.1 ---
 
-\subsubsection{The Intractable Likelihood Problem}
+\subsection{The Intractable Likelihood Problem}
 \label{sec:3.2.1}
 
 The inference methods presented in Section~\ref{sec:3.1} share a common requirement: the ability to evaluate the likelihood function $p(\mathbf{x}|\boldsymbol{\theta})$ for a given set of parameters.
@@ -41,7 +41,7 @@ SBI addresses exactly this kind of problem, and the following subsections descri
 
 %% --- 3.2.2 ---
 
-\subsubsection{Likelihood-Free Approaches}
+\subsection{Likelihood-Free Approaches}
 \label{sec:3.2.2}
 
 Given the impossibility of evaluating the likelihood directly, SBI replaces explicit likelihood computation with learned surrogates trained on simulated data.
@@ -78,7 +78,7 @@ The full details of the architecture and training procedure are deferred to Chap
 
 %% --- 3.2.3 ---
 
-\subsubsection{Validation of Simulation-Based Inference}
+\subsection{Validation of Simulation-Based Inference}
 \label{sec:3.2.3}
 
 A neural density estimator trained on finite simulations can, in principle, produce posteriors that are poorly calibrated: the reported credible intervals may be systematically too narrow or too wide.
