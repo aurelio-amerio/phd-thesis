@@ -59,7 +59,7 @@ References required for the pedagogical introduction (Sections 4.1–4.5). The p
 | Reference | arXiv | Bib Key | Role |
 |---|---|---|---|
 | List et al. (2025) | 2507.17804 | `List:2025qbx` | CNN+energy → ultra-faint SCD, DM revival |
-| Holst & Hooper (2024) | 2410.02217 | `Holst:2024fvb` | Missing bright pulsars (updated) |
+| Holst & Hooper (2024) | 2403.00978 | `Holst:2024fvb` | Missing bright pulsars (updated) |
 | Amerio, Hooper & Linden (2025) | 2412.05220 | `Amerio:2024qor` | GC luminosity function → Paper 3 |
 | List et al. (2021) | 2006.12504 | `List:2021aer` | Earlier CNN analysis |
 
