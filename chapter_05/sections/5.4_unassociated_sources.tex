@@ -1,70 +1,52 @@
 % Section 5.4 — The Unassociated Source Problem
-% Auto-generated from markdown drafts, reviewed and assembled
+% Trimmed: condensed association completeness, compressed previous search chronology.
+% Absorbed 5.5 concepts: quantification learning motivation as closing paragraphs.
 
-\subsection{The Unassociated Source Problem}
+\section{The Unassociated Source Problem}
 \label{sec:5.4}
 
 Having established the theoretical grounds for dark matter subhalo searches in the previous sections, we now turn to the observational reality.
 The Fermi-LAT catalogs contain a large population of gamma-ray sources with no identified counterpart at other wavelengths, and these unassociated sources have long been recognized as the natural testing ground for DM subhalo searches.
-We begin by quantifying the unassociated population and the factors that govern association completeness, then survey the prior search efforts that have targeted this population.
 
-\subsubsection{Unassociated Sources in Fermi-LAT Catalogs}
+\subsection{Unassociated Sources in Fermi-LAT Catalogs}
 \label{sec:5.4.1}
 
-The Fermi-LAT source catalogs provide the observational foundation for any search for dark matter subhalos among gamma-ray point sources.
-As discussed in Section~\ref{sec:2.3}, the latest incremental release, the 4FGL-DR4 catalog~\cite{2022ApJS..260...53A, 2023arXiv230712546B}, contains approximately 7,200 sources detected above a significance threshold of $4\sigma$.
+The latest incremental release, the 4FGL-DR4 catalog~\cite{2022ApJS..260...53A, 2023arXiv230712546B}, contains approximately 7,200 sources detected above a significance threshold of $4\sigma$.
 Of these, 2,428 sources---roughly one third---remain unassociated, meaning that no plausible counterpart has been identified at other wavelengths~\cite{2023arXiv230712546B}.
 Among the unassociated population, 1,282 sources lie at Galactic latitudes $|b| > 10{{}^\circ}$, where contamination from diffuse Galactic emission is reduced and the search for exotic source populations becomes more tractable.
 
-The distinction between \textit{association} and \textit{identification} carries specific meanings in the Fermi-LAT context.
-An association is a statistical link between a gamma-ray detection and a candidate counterpart, established primarily through spatial coincidence using Bayesian or likelihood-ratio methods~\cite{2020ApJS..247...33A}.
-Because associations rely on statistical inference, they carry a known rate of false matches---typically around 2\% for the Bayesian method and up to 10\% for likelihood-ratio associations~\cite{2020ApJS..247...33A}.
-Firm identification, by contrast, requires direct observational evidence: periodic variability such as pulsations, correlated variability at other wavelengths, or spatial morphology matching an extended source in another band~\cite{2020ApJS..247...33A}.
-Only 358 sources in the 4FGL catalog satisfy these stricter criteria.
-
-The completeness of the association procedure depends on several observational factors.
-Brighter sources are far easier to associate: essentially all sources with a test statistic $\mathrm{TS} > 500$ have known counterparts~\cite{2020ApJS..247...33A}.
-Fainter sources, on the other hand, suffer from larger positional uncertainties that expand the sky region to be searched and dilute the statistical significance of any spatial coincidence.
-Galactic latitude also plays a strong role.
-The association fraction drops from approximately 85\% at high latitudes to around 40\% near the Galactic plane~\cite{2020ApJS..247...33A}, both because dense Galactic source fields make confident associations difficult and because X-ray absorption through the disk impedes the detection of background extragalactic counterparts.
-
-The majority of unassociated sources are expected to be ordinary astrophysical objects whose association has failed for instrumental or geometric reasons.
-Their spectral properties offer direct clues to their nature.
-At high latitudes, the average photon index of unassociated sources ($\Gamma \approx 2.24$) matches that of blazars of unknown type, suggesting that faint active galactic nuclei (AGNs) dominate this population~\cite{2020ApJS..247...33A}.
-Closer to the Galactic plane, the spectra soften ($\Gamma \approx 2.42$), consistent with the expected emission of young pulsars~\cite{2020ApJS..247...33A}.
-Pulsars with unfavorable beaming geometry, which prevents detection of their pulsed emission, and blazars too faint for multi-wavelength follow-up are the most commonly cited explanations for the unassociated population (see also Section~\ref{sec:2.2}).
+Association completeness depends on both source brightness and Galactic latitude: brighter sources are far easier to link to multi-wavelength counterparts, while the association fraction drops from approximately 85\% at high latitudes to around 40\% near the Galactic plane, where dense source fields and X-ray absorption impede counterpart identification~\cite{2020ApJS..247...33A}.
+The majority of unassociated sources are therefore expected to be ordinary astrophysical objects whose association has failed for instrumental or geometric reasons.
+Their spectral properties offer direct clues to their nature: at high latitudes, the average photon index ($\Gamma \approx 2.24$) matches that of blazars of unknown type, while closer to the Galactic plane the spectra soften ($\Gamma \approx 2.42$), consistent with pulsars~\cite{2020ApJS..247...33A}.
+Further discussion of the Fermi-LAT association procedure and its completeness can be found in Section~\ref{sec:2.3}.
 
 To date, no unassociated Fermi-LAT source has been confirmed as a dark matter subhalo~\cite{2020ApJS..247...33A, 2022ApJS..260...53A}.
-This outcome is not unexpected.
-As discussed in Section~\ref{sec:5.3}, even under optimistic assumptions about the annihilation cross section and J-factor distributions, the most detectable subhalos would produce gamma-ray spectra similar to those of pulsars or soft-spectrum blazars, making individual identification on spectral grounds alone extremely difficult.
+As discussed in Section~\ref{sec:5.3}, even under optimistic assumptions the most detectable subhalos would produce gamma-ray spectra similar to those of pulsars or soft-spectrum blazars, making individual identification on spectral grounds alone extremely difficult.
 Nevertheless, the large unassociated population has motivated a sustained effort to search for DM subhalo candidates within it.
 
-\subsubsection{Previous DM Subhalo Searches}
+\subsection{Previous DM Subhalo Searches and the Failure of Classify-and-Count}
 \label{sec:5.4.2}
 
-The search for dark matter subhalos among Fermi-LAT unassociated sources has a decade-long history, progressing through the successive data releases of the telescope.
-All prior efforts share a common strategy, referred to as \textit{classify-and-count}: a set of DM subhalo candidates is selected from the unassociated population based on their gamma-ray properties, and upper limits on the annihilation cross section $\langle\sigma v\rangle$ are derived under the assumption that the number of true DM subhalos cannot exceed the number of identified candidates~\cite{2010PhRvD..82f3501B, 2012A&A...538A..93Z, 2012ApJ...747..121A, 2019JCAP...07..020C}.
+All prior searches for dark matter subhalos among Fermi-LAT unassociated sources share a common strategy, referred to as \textit{classify-and-count}: a set of DM subhalo candidates is selected from the unassociated population based on their gamma-ray properties, and upper limits on $\langle\sigma v\rangle$ are derived under the assumption that the number of true subhalos cannot exceed the candidate count~\DMsubhaloUnas.
+Early analyses relied on hand-crafted spectral and spatial cuts applied to successive catalog releases~\cite{2010PhRvD..82f3501B, 2012A&A...538A..93Z, 2012ApJ...747..121A, 2014PhRvD..89a6014B, 2015JCAP...12..035B, 2016JCAP...05..028S, 2017JCAP...04..018H}, with some studies emphasizing spatial extension as a potential discriminant~\cite{2014PhRvD..89a6014B, 2015JCAP...12..035B, 2022PhRvD.105h3006C}.
+More recently, machine learning classifiers have automated and extended the candidate selection~\DMsubhaloML.
+In all cases, none of the identified candidates could be unambiguously distinguished from standard astrophysical sources.
 
-The earliest searches relied on hand-crafted selection criteria applied directly to catalog parameters.
-Buckley \& Hooper~\cite{2010PhRvD..82f3501B} pioneered this approach by filtering unassociated sources in the 1FGL catalog according to spectral and spatial properties expected from annihilating WIMPs.
-Subsequent analyses by Zechlin et al.~\cite{2012A&A...538A..93Z} and the Fermi-LAT Collaboration~\cite{2012ApJ...747..121A} refined these criteria and extended the search to the 2FGL catalog.
-Berlin \& Hooper~\cite{2014PhRvD..89a6014B} and Bertoni et al.~\cite{2015JCAP...12..035B} placed particular emphasis on spatial extension as a potential discriminant, since nearby subhalos may subtend a measurable angular size whose radial profile would follow the DM density distribution rather than the telescope's point-spread function.
-Schoonenberg et al.~\cite{2016JCAP...05..028S} and Hooper \& Witte~\cite{2017JCAP...04..018H} applied updated theoretical predictions for DM gamma-ray emission to the 3FGL catalog.
-Calore et al.~\cite{2017PhRvD..96f3009C} provided realistic detectability estimates, while Coronado-Bl\'azquez et al.~\cite{2019JCAP...07..020C} performed a comprehensive spectral and spatial analysis identifying 16 candidate sources, and in a companion paper~\cite{2019JCAP...11..045C} derived the best achievable sensitivity of the 3FGL catalog under the assumption that zero unassociated sources are subhalos.
-A common thread across these analyses is that none of the identified candidates could be unambiguously distinguished from standard astrophysical sources: the gamma-ray spectrum of a DM subhalo can be equally well fit by a faint AGN or pulsar template, and the extension searches returned null results for all candidates.
+The classify-and-count approach, whether implemented with hand-crafted cuts or ML classifiers, suffers from three interrelated problems that compromise the statistical rigor of the resulting constraints.
+First, no dark matter subhalo has ever been identified, so the ``DM'' class used in supervised classification has no empirical anchor and the resulting classification probabilities cannot be calibrated against reality~\cite{Amerio:2025fhz}.
+Second, classifiers trained on balanced datasets with comparable fractions of AGNs, pulsars, and simulated DM sources bear no relation to the actual class composition of the gamma-ray sky, where the DM prevalence may well be zero; this constitutes a prior shift (Section~\ref{sec:3.4}) that systematically inflates the predicted DM probabilities~\cite{Amerio:2025fhz}.
+Third, the number of DM candidates depends on an ad hoc probability threshold $p_\mathrm{DM} > p_\mathrm{threshold}$ whose value carries no statistical justification: different thresholds yield candidate counts that can differ by an order of magnitude and, consequently, different physical bounds on $\langle\sigma v\rangle$~\cite{Amerio:2025fhz}.
+The resulting upper limits lack a well-defined confidence level---they represent an assumption ($N_\mathrm{DM} \leq N_\mathrm{candidates}$) rather than a statistical inference.
 
-More recently, machine learning classifiers have been applied to automate and extend the candidate selection.
-Mirabal et al.~\cite{2016ApJ...825...69M} used supervised classification on the 3FGL catalog to evaluate pulsar and DM subhalo interpretations of the high-latitude unassociated population.
-Germ\'an et al.~\cite{2023MNRAS.520.1348G} constructed a generative model for Fermi-LAT sources incorporating systematic features, while Butter et al.~\cite{2023JCAP...07..033B} applied Bayesian neural networks to the 4FGL catalog.
-In their most conservative classification scenario, Butter et al.
-\ identified 281 DM subhalo candidates.
-The resulting upper limits on $\langle\sigma v\rangle$ are correspondingly weak: the analysis assumes that the true number of subhalos cannot exceed this candidate count, and a different probability threshold would yield a different number and therefore different physical bounds.
+\subsection{The Quantification Learning Alternative}
+\label{sec:5.4.3}
 
-A general weakness of the classify-and-count approach, whether carried out with hand-crafted cuts or ML classifiers, is that the final physical constraints depend on choices that lack a rigorous statistical foundation.
-Three problems are particularly severe.
-First, in ML-based analyses the number of DM candidates depends on an ad hoc probability threshold: setting $p_{\mathrm{DM}} > 0.5$ versus $p_{\mathrm{DM}} > 0.9$ can change the candidate count by an order of magnitude, with no statistical principle to prefer one threshold over another.
-Second, the classification probabilities themselves are calibrated on balanced training sets that use an artificial 50/50 split of astrophysical and DM-like sources.
-Since the true prevalence of DM subhalos is unknown and likely very small, this balanced training inflates the predicted DM probabilities relative to reality.
-Correcting this bias requires a realistic testing dataset of confirmed DM subhalos---which does not exist.
-Third, all classify-and-count methods implicitly assume that the feature distribution of unassociated sources matches that of the associated training set, an assumption violated by the systematic differences documented in Section~\ref{sec:5.4.1} and analyzed formally in Section~\ref{sec:3.4}.
-These failures of classical classification motivate the shift toward quantification learning developed in the next section.
+The failure of classify-and-count is conceptual, not technical: the approach attempts to answer a population-level question---how many DM subhalos contribute to the unassociated catalog?---using a tool designed for individual-level decisions.
+A different framework is needed, one that models the composition of the unassociated population as a whole and fits the DM contribution directly to the data.
+
+The formal machinery for this problem was introduced in Section~\ref{sec:3.4}: \textit{quantification learning} replaces the discriminative question ``what class does this source belong to?'' with the generative question ``what is the probability of observing features $\mathbf{x}$ given that the source belongs to class $k$?''
+By estimating the class-conditional densities $p(\mathbf{x}|k)$ from the associated catalog and modeling the unassociated population as a mixture $p_\mathrm{target}(\mathbf{x}) = \sum_k \pi_k\, p(\mathbf{x}|k)$, the class prevalences $\pi_k$ become free parameters determined by the data rather than imposed during training~\cite{10.1145/3117807_Gonzalez_quantification, 2024arXiv240100490M}.
+This generative formulation yields a well-defined product likelihood over all unassociated sources, provides a natural mechanism for including a new class (dark matter subhalos) whose prevalence was zero in the training set, and supports statistically rigorous confidence intervals through the profile likelihood~\cite{Amerio:2025fhz}.
+
+The entanglement of prior and covariate shift between Fermi-LAT associated and unassociated populations---documented in Section~\ref{sec:3.4} and arising from the brightness-dependent association completeness---is handled simultaneously within this framework through sigmoid modulation functions that adapt the astrophysical templates to the unassociated feature space.
+The full construction of this mixture model, including the kernel density estimation of astrophysical templates, the Monte Carlo simulation of the DM component, and the optimization via the Expectation-Maximization algorithm, is presented in the paper body that follows.

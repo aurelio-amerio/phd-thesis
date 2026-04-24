@@ -1,74 +1,33 @@
 % Section 5.3: Dark Matter Subhalos as Gamma-Ray Targets
-% Structure: Introduction -> Expected Gamma-Ray Properties -> Detection Predictions and Search Strategy
+% Heavy trim: removed flux equation (Ch. 1 §1.4.4), spectral shapes (Ch. 1 §1.4.1),
+% J-factor details (paper §sim-jfactor), extension discussion (paper).
+% Kept: population-level spectral coherence, spatial isotropy, detection predictions, search strategy.
 
 \section{Dark Matter Subhalos as Gamma-Ray Targets}
 \label{sec:5.3}
 
 Having established that $\Lambda$CDM predicts a vast population of dark subhalos orbiting the Milky Way, we now turn to the question of whether any of these objects could be observed in gamma rays.
-The connection between the subhalo population of Section~\ref{sec:5.2} and actual observability depends on both the particle-physics properties of dark matter---the mass $m_\mathrm{DM}$, the annihilation cross section $\langle\sigma v\rangle$, and the final-state channel---and the astrophysical properties of each subhalo, encoded in its J-factor.
-We first review the expected gamma-ray signatures of individual subhalos, then discuss the range of detection predictions and the search strategy adopted in this work.
+The gamma-ray flux from an annihilating subhalo depends on both the particle-physics parameters---$m_\mathrm{DM}$, $\langle\sigma v\rangle$, and the annihilation channel---and on the astrophysical properties of the subhalo, encoded in its J-factor.
+The general formalism for the annihilation flux and J-factor was developed in Section~\ref{sec:jfactor}; here we highlight those features of the expected signal that are specific to the subhalo population and that underpin the search strategy of this chapter.
 
-\subsection{Expected Gamma-Ray Properties}
-\label{sec:5.3.1}
-
-The gamma-ray flux produced by dark matter annihilation in a subhalo is determined by the product of a particle-physics factor and an astrophysical factor.
-For a subhalo with J-factor $J$, the differential photon flux takes the form
-\begin{equation}
-	\Phi_\mathrm{DM}(E) = \frac{J}{4\pi}\,\frac{\langle\sigma v\rangle}{2\,m_\mathrm{DM}^2}\,\frac{\mathrm{d}
-		N_\gamma}{\mathrm{d}E}\bigg|_\mathrm{ch.
-	}\,,
-	\label{eq:dm_flux}
-\end{equation}
-where $\langle\sigma v\rangle$ is the thermally averaged annihilation cross section, $m_\mathrm{DM}$ is the dark matter particle mass, and $\mathrm{d}
-	N_\gamma/\mathrm{d}E$ is the gamma-ray energy spectrum per annihilation event in a given final-state channel~\cite{Cirelli:2024ssz}.
-The J-factor encodes the line-of-sight integral of the squared dark matter density $\rho^2$ over the solid angle subtended by the source (see Section~\ref{sec:1.4.4} for the full derivation).
-Since $\Phi_\mathrm{DM}$ factorizes cleanly into a term that depends only on the particle model and one that depends only on the dark matter distribution, the two sources of uncertainty can be studied independently.
-
-The spectral shape $\mathrm{d}N_\gamma/\mathrm{d}E$ depends on the annihilation channel.
-Hadronic channels such as $b\bar{b}$ produce soft spectra peaked well below the dark matter mass: the energetic quarks shower, fragment, and hadronize into a cascade of lighter mesons, and the subsequent decay $\pi^0 \to \gamma\gamma$ generates a broad bump at $E \sim m_\mathrm{DM}/20$~\cite{Cirelli:2024ssz}.
-Leptonic channels yield harder spectra that extend closer to $m_\mathrm{DM}$.
-The $\tau^+\tau^-$ channel, in particular, retains the characteristic hard profile of a leptonic final state while also producing a secondary hadronic component from the $\tau$ decay modes~\cite{Cirelli:2024ssz}.
-In the analysis presented later in this chapter, the spectral energy distributions for each channel are computed with \textsc{CosmiXs}~\cite{2024JCAP...03..035A}.
-For a fixed dark matter mass and annihilation channel, all subhalos share the same intrinsic spectrum; only the overall normalization differs, set by the J-factor of each individual object.
-
-This spectral uniformity across the population is one of the defining features of a dark matter subhalo signal.
-Astrophysical source classes exhibit broad, heterogeneous spectral distributions driven by diverse physical conditions: extragalactic sources, dominated by AGNs, display a wide range of nearly power-law spectra, while Galactic sources such as pulsars present highly curved spectra spanning a similarly broad parameter range~\cite{2022ApJS..260...53A}.
-A population of dark matter subhalos, by contrast, would occupy a tightly localized region in spectral parameter space, with the observed scatter arising purely from statistical measurement uncertainties rather than intrinsic physical differences (see Section~\ref{sec:5.6}).
+The most important such feature is \emph{spectral uniformity}.
+For a fixed dark matter mass and annihilation channel, all subhalos share the same intrinsic energy spectrum; only the overall normalization differs, set by the J-factor of each individual object.
+Astrophysical source classes, by contrast, exhibit broad, heterogeneous spectral distributions driven by diverse physical conditions: extragalactic sources display a wide range of nearly power-law spectra, while Galactic sources such as pulsars present highly curved spectra spanning a similarly broad parameter range~\cite{2022ApJS..260...53A}.
+A population of dark matter subhalos would therefore occupy a tightly localized region in spectral parameter space, with the observed scatter arising purely from statistical measurement uncertainties rather than intrinsic physical differences.
 This population-level coherence is what enables the statistical approach developed later in this chapter.
 
-The brightest subhalos may also be marginally resolvable by Fermi-LAT.
-Coronado-Bl\'azquez et al.~\cite{2022PhRvD.105h3006C} showed that the most luminous Galactic subhalos, if detected, would appear as spatially extended sources with angular sizes of approximately $0.2^\circ$--$0.3^\circ$.
-Such an extension would provide a near-unambiguous identification, since astrophysical point sources rarely exhibit comparable spatial profiles at these angular scales.
-The vast majority of detectable subhalos, however, would appear point-like, with their emission falling within the Fermi-LAT angular resolution of roughly $0.1^\circ$ in the GeV range~\cite{2020ApJS..247...33A}.
-
-The expected sky distribution of dark matter subhalos provides a further handle for separating them from astrophysical populations.
+The expected sky distribution of dark matter subhalos provides a complementary handle.
 Because subhalos trace the roughly spherical dark matter halo of the Milky Way, their projected distribution at high Galactic latitudes ($|b| > 10^\circ$) is approximately isotropic~\cite{2019JCAP...07..020C, 2019JCAP...11..045C}.
-This contrasts with Galactic source populations such as pulsars and supernova remnants, which concentrate along the Galactic plane and toward the inner Galaxy~\cite{2022ApJS..260...53A}.
-The isotropic distribution does, however, resemble that of extragalactic sources, primarily blazars, which dominate the high-latitude gamma-ray sky.
-Here the spectral properties introduced above become the primary discriminant: the combination of isotropic spatial distribution and spectral homogeneity provides the statistical foundation on which the population-level search presented in this chapter is built.
+This contrasts with Galactic source populations, which concentrate along the Galactic plane, but resembles the distribution of extragalactic sources.
+The spectral properties introduced above therefore become the primary discriminant: the combination of isotropic spatial distribution and spectral homogeneity provides the statistical foundation for the population-level search.
 
-\subsection{Detection Predictions and Search Strategy}
-\label{sec:5.3.2}
+The expected number of Fermi-LAT--detectable subhalos spans several orders of magnitude, depending on the assumed annihilation cross section, the J-factor model, and the survival rate of low-mass subhalos in the presence of baryonic tidal effects~\cite{2019JCAP...07..020C, 2019JCAP...11..045C, 2019Galax...7...90C}.
+Published predictions range from zero to several tens of detectable objects.
+This wide spread is not a weakness but a motivation: it defines the parameter space that a data-driven search must explore.
+The quantitative J-factor distributions and the detection pipeline are presented in the paper body (Section~\ref{sec:sim-jfactor} and Section~\ref{sec:DM_model}).
 
-The expected number of dark matter subhalos detectable by Fermi-LAT spans several orders of magnitude, depending on the assumed particle-physics and astrophysical parameters.
-Three factors dominate this uncertainty.
-First, the gamma-ray flux scales linearly with $\langle\sigma v\rangle$: larger annihilation cross sections push more subhalos above the Fermi-LAT detection threshold ($\mathrm{TS} > 25$), so the predicted count rises steeply with $\langle\sigma v\rangle$.
-Second, the J-factor prescription matters.
-J-factors can be computed from the enclosed mass ($M_\mathrm{sub}$) or from the maximum circular velocity ($V_\mathrm{max}$) of each subhalo; the latter is generally more reliable because it does not require assuming a specific density profile~\cite{2024MNRAS.530.2496A}.
-A further choice arises from the integration radius: integrating the density-squared profile out to the full tidal radius ($J_\mathrm{tidal}$) captures all emission but implicitly assumes the subhalo is resolved, whereas integrating only to the $0.1^\circ$ angular radius ($J_{0.1}$) better represents how faint subhalos would appear as point sources in the catalog~\cite{2022PhRvD.105h3006C, 2024MNRAS.530.2496A}.
-Third, the survival of low-mass subhalos remains uncertain: the N-body simulations on which J-factor distributions are based lack baryonic physics, and hydrodynamical simulations do not yet resolve subhalos below $\sim 10^6\,M_\odot$ (Section~\ref{sec:5.2.2}).
-All three factors compound, so published predictions for the number of Fermi-LAT--detectable subhalos range from zero to several tens, depending on which combination of parameters is adopted~\cite{2019JCAP...07..020C, 2019JCAP...11..045C, 2019Galax...7...90C}.
-
-This wide spread in predictions is not a weakness but a motivation: it defines the parameter space that a data-driven search must explore.
 The analysis proceeds in two stages.
 First, we ask whether the observed population of unassociated Fermi-LAT sources is better described by a model that includes a dark matter subhalo component or by one containing only known astrophysical source classes.
-The dark matter component is not arbitrary: its spectral distribution is fully determined by the assumed $m_\mathrm{DM}$ and annihilation channel via Monte Carlo simulations that draw J-factors from the N-body--derived distribution, compute the corresponding fluxes, and apply realistic detection efficiencies (see Section~\ref{sec:5.7}).
-If no statistically significant subhalo contribution is found, the profile likelihood is then used to set 95\% confidence upper bounds on $\langle\sigma v\rangle$ as a function of $m_\mathrm{DM}$.
-Because the subhalo flux scales directly with $\langle\sigma v\rangle$, the absence of an excess translates directly into a constraint on the fundamental annihilation rate.
-
-Both possible outcomes are scientifically informative.
-A positive detection would provide direct evidence that the $\Lambda$CDM-predicted subhalo population contains dark matter that annihilates into Standard Model particles.
-Dark subhalos are, in this respect, exceptionally clean targets: unlike the Galactic Center, where any potential dark matter signal is entangled with complex astrophysical foregrounds (Chapter~\ref{ch:4}), a subhalo below $\sim 10^8\,M_\odot$ contains no stars or gas and produces no conventional electromagnetic emission at gamma-ray energies.
-Any such signal would originate entirely from dark matter annihilation.
-A null result, on the other hand, constrains $\langle\sigma v\rangle$ and provides an independent cross-check of the limits obtained from dwarf spheroidal galaxies~\cite{2024PhRvD.109f3024M}, while also benchmarking the sensitivity of the current instrument and informing forecasts for next-generation telescopes such as CTA and SWGO.
-The quantitative J-factor distributions, detection threshold calculations, and the full Monte Carlo pipeline that implements this search strategy are presented in the paper body (Section~\ref{sec:5.7}).
+If no statistically significant subhalo contribution is found, the profile likelihood is used to set 95\% confidence upper bounds on $\langle\sigma v\rangle$ as a function of $m_\mathrm{DM}$.
+Both possible outcomes are scientifically informative: a positive detection would provide direct evidence for annihilating dark matter in the $\Lambda$CDM substructure, while a null result constrains $\langle\sigma v\rangle$ and provides an independent cross-check of the limits obtained from dwarf spheroidal galaxies~\cite{2024PhRvD.109f3024M}.
+Dark subhalos are, in this respect, exceptionally clean targets: unlike the Galactic Center (Chapter~\ref{ch:4}), a subhalo below $\sim 10^8\,M_\odot$ contains no stars or gas, and any detected gamma-ray emission would originate entirely from dark matter annihilation.

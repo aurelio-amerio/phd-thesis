@@ -24,15 +24,9 @@ Shortly before the turn of the century, numerical resolution reached the level n
 Since then, dedicated high-resolution simulations have mapped the substructure of Milky Way-like galaxies in detail.
 Two benchmark projects are the Via Lactea II (VL-II) simulation~\cite{Diemand:2008in}, which resolves subhalos down to approximately $10^4\,M_\odot$, and the Aquarius project~\cite{Springel:2008cc}, which achieves comparable resolution and has been widely used to calibrate subhalo abundance predictions.
 
-These simulations reveal a subhalo mass function that rises steeply toward lower masses, well described by a power law $dN/dM \propto M^{\alpha}$ with $\alpha \simeq -1.9$~\cite{2017ARA&A..55..343B}.
-A consequence of this steep slope is that the total dark matter mass per logarithmic mass decade, $M \cdot dN / d\ln M$, is approximately independent of mass~\cite{Cirelli:2024ssz}: comparable amounts of mass reside in subhalos at each decade of the mass scale.
-The theoretical mass function extends far below the resolution floor of current galactic-scale simulations.
-For a canonical WIMP, the smallest gravitationally bound structures---the so-called microhalos---could have masses comparable to that of the Earth, $\sim 10^{-6}\,M_\odot$~\cite{Cirelli:2024ssz}.
-To bridge this gap, repopulation techniques have been employed: Aguirre-Santaella et al.~\cite{2024MNRAS.530.2496A} extended the VL-II catalog by nearly five orders of magnitude down to $\sim 10^{-1}\,M_\odot$ using Monte Carlo realizations of Milky Way-like subhalo populations.
-The total number of subhalos predicted by such extrapolations is vast, potentially exceeding $10^{15}$ across all mass scales.
-
-It is worth emphasizing that these predictions are based on dark-matter-only simulations, which do not account for the gravitational influence of baryonic structures such as the Galactic disk.
-The impact of baryons on subhalo survival, and the observational distinction between subhalos that host visible galaxies and those that remain truly dark, are addressed in the following section.
+These simulations reveal a subhalo mass function that rises steeply toward lower masses, implying that the total number of subhalos in a Milky Way-like galaxy is vast~\cite{2017ARA&A..55..343B, Cirelli:2024ssz}.
+The theoretical mass function extends far below the resolution floor of current simulations; for a canonical WIMP, the smallest bound structures could have masses as low as $\sim 10^{-6}\,M_\odot$~\cite{Cirelli:2024ssz}.
+The quantitative predictions for the subhalo population, including the J-factor distributions used in this chapter, are derived from the VL-II simulation extended through repopulation techniques~\cite{2024MNRAS.530.2496A} and are discussed in detail in Section~\ref{sec:sim-jfactor}.
 
 \subsection{Luminous Satellites vs.\ Dark Subhalos}
 \label{sec:5.2.2}
@@ -55,11 +49,8 @@ Observationally, improved surveys have steadily increased the census of ultra-fa
 Theoretically, hydrodynamical simulations including baryonic physics---UV feedback, supernova-driven outflows, reionization---naturally suppress galaxy formation in low-mass halos, bringing predictions into broad agreement with observations once detection efficiencies are accounted for~\cite{Cirelli:2024ssz}.
 
 Baryonic processes also modify the survival of the subhalos themselves.
-Tidal stripping by the host halo's gravitational field removes dark matter from the outer layers of orbiting subhalos, progressively reducing their masses and sometimes leading to complete disruption~\cite{2020MNRAS.491.4591E, 2018MNRAS.474.3043V}.
-Subhalos on orbits that cross the Galactic disk experience additional gravitational shocks---disk shocking---that can further loosen or destroy their structure~\cite{Cirelli:2024ssz}.
-These environmental effects are most pronounced in the inner Galaxy, which is consequently more depleted of subhalos than the outskirts~\cite{Cirelli:2024ssz}.
-Hydrodynamical simulations such as the FIRE project~\cite{2017MNRAS.471.1709G} and the Auriga suite~\cite{2021MNRAS.501.3558G} have confirmed and quantified these effects for subhalos above their resolution limit of $\sim 10^6\,M_\odot$.
-Below this threshold, the survival rate of low-mass subhalos, particularly in the inner Milky Way, remains uncertain~\cite{2023MNRAS.518...93A}, and this represents one of the principal sources of theoretical uncertainty in predicting the number of gamma-ray-detectable dark matter subhalos (cf.\ Section~\ref{sec:5.3}).
+Tidal stripping and gravitational shocks from the Galactic disk preferentially deplete the inner Galaxy of substructure~\cite{2020MNRAS.491.4591E, 2018MNRAS.474.3043V, Cirelli:2024ssz}, and the survival rate of low-mass subhalos below $\sim 10^6\,M_\odot$ remains uncertain~\cite{2023MNRAS.518...93A}.
+This uncertainty propagates directly into predictions for the number of gamma-ray-detectable subhalos and is discussed further in Section~\ref{sec:sim-jfactor}.
 
 \begin{figure}[t]
 	\centering
