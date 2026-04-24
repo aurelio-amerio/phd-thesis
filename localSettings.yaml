@@ -1,0 +1,6 @@
+modifyLineBreaks:
+  oneSentencePerLine:
+    manipulateSentences: 1
+    removeSentenceLineBreaks: 1
+    sentencesDoNOTcontain:
+      other: \\begin|\\end|\\cite|\\ref|\\cref|\\Cref|\\eqref

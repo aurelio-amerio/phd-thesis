@@ -1,70 +1,94 @@
 \subsection{Frequentist and Bayesian Inference}
 \label{sec:3.1}
 
-Extracting physical information from noisy gamma-ray data requires a well-defined statistical language. The analyses presented in this thesis draw on two complementary paradigms---frequentist and Bayesian inference---each providing distinct tools for parameter estimation, uncertainty quantification, and hypothesis testing. This section introduces both frameworks from the shared foundation of the likelihood function, develops the key concepts used in the research papers, and discusses when each paradigm is most appropriate. Readers familiar with statistical inference may proceed directly to the application previews, which connect the general formalism to its specific use in Papers~1--5.
+Extracting physical information from noisy gamma-ray data requires a well-defined statistical language.
+The analyses presented in this thesis draw on two complementary paradigms---frequentist and Bayesian inference---each providing distinct tools for parameter estimation, uncertainty quantification, and hypothesis testing.
+This section introduces both frameworks from the shared foundation of the likelihood function, develops the key concepts used in the research papers, and discusses when each paradigm is most appropriate.
+Readers familiar with statistical inference may proceed directly to the application previews, which connect the general formalism to its specific use in Papers~1--5.
 
 %% --- 3.1.1 ---
 
 \subsubsection{The Inference Problem}
 \label{sec:3.1.1}
 
-The starting point for any quantitative analysis in physics is the problem of inference: given a set of observed data $\mathbf{d}$, a theoretical model $\mathcal{M}$ governed by parameters $\boldsymbol{\theta}$, what can we learn about $\boldsymbol{\theta}$ from $\mathbf{d}$? In gamma-ray astrophysics, $\mathbf{d}$ might be a photon-count map recorded by the Fermi LAT, while $\boldsymbol{\theta}$ encodes the physical quantities of interest: source fluxes, spectral indices, or the dark matter annihilation cross-section $\langle \sigma v \rangle$. The model $\mathcal{M}$ connects these parameters to the expected data through a forward process that may include astrophysical emission templates, instrumental response functions, and Poisson sampling of photon counts.
+The starting point for any quantitative analysis in physics is the problem of inference: given a set of observed data $\mathbf{d}$, a theoretical model $\mathcal{M}$ governed by parameters $\boldsymbol{\theta}$, what can we learn about $\boldsymbol{\theta}$ from $\mathbf{d}$?
+In gamma-ray astrophysics, $\mathbf{d}$ might be a photon-count map recorded by the Fermi LAT, while $\boldsymbol{\theta}$ encodes the physical quantities of interest: source fluxes, spectral indices, or the dark matter annihilation cross-section $\langle \sigma v \rangle$.
+The model $\mathcal{M}$ connects these parameters to the expected data through a forward process that may include astrophysical emission templates, instrumental response functions, and Poisson sampling of photon counts.
 
-The connection between parameters and data is formalized by the likelihood function $\mathcal{L}(\boldsymbol{\theta}) = p(\mathbf{d} \,|\, \boldsymbol{\theta})$, which quantifies how well a given parameter choice explains the observed data \cite{Cranmer:2020}. This function is the shared foundation of both major inference paradigms. In the frequentist approach, the parameters $\boldsymbol{\theta}$ are treated as fixed but unknown quantities, and inference proceeds by identifying the parameter values that maximize $\mathcal{L}$. In the Bayesian approach, $\boldsymbol{\theta}$ are themselves treated as random variables with a prior distribution $p(\boldsymbol{\theta})$, and the goal is to compute the posterior $p(\boldsymbol{\theta} \,|\, \mathbf{d})$ via Bayes' theorem \cite{Bishop:2006, Hastie:2009}.
+The connection between parameters and data is formalized by the likelihood function $\mathcal{L}(\boldsymbol{\theta}) = p(\mathbf{d} \,|\, \boldsymbol{\theta})$, which quantifies how well a given parameter choice explains the observed data \cite{Cranmer:2020}.
+This function is the shared foundation of both major inference paradigms.
+In the frequentist approach, the parameters $\boldsymbol{\theta}$ are treated as fixed but unknown quantities, and inference proceeds by identifying the parameter values that maximize $\mathcal{L}$.
+In the Bayesian approach, $\boldsymbol{\theta}$ are themselves treated as random variables with a prior distribution $p(\boldsymbol{\theta})$, and the goal is to compute the posterior $p(\boldsymbol{\theta} \,|\, \mathbf{d})$ via Bayes' theorem \cite{Bishop:2006, Hastie:2009}.
 
-These two philosophies are not in competition; they are complementary tools, each with distinct strengths suited to different aspects of the inference problem. In the analyses presented in this thesis, both are used---sometimes on the same dataset---to extract physical information and quantify uncertainty. The following two subsections develop each approach, starting from a common notation and building toward the specific formulations employed in the research papers.
+These two philosophies are not in competition; they are complementary tools, each with distinct strengths suited to different aspects of the inference problem.
+In the analyses presented in this thesis, both are used---sometimes on the same dataset---to extract physical information and quantify uncertainty.
+The following two subsections develop each approach, starting from a common notation and building toward the specific formulations employed in the research papers.
 
 %% --- 3.1.2 ---
 
 \subsubsection{Frequentist Inference}
 \label{sec:3.1.2}
 
-In the frequentist framework, the model parameters $\boldsymbol{\theta}$ are fixed but unknown constants of nature. The data $\mathbf{d}$ are treated as one realization of a random process, and all statistical statements are made in terms of the long-run frequency properties of that process. The central object is the likelihood function, $\mathcal{L}(\boldsymbol{\theta}) = p(\mathbf{d} \,|\, \boldsymbol{\theta})$, which quantifies the probability of the observed data as a function of the model parameters \cite{Hastie:2009}.
+In the frequentist framework, the model parameters $\boldsymbol{\theta}$ are fixed but unknown constants of nature.
+The data $\mathbf{d}$ are treated as one realization of a random process, and all statistical statements are made in terms of the long-run frequency properties of that process.
+The central object is the likelihood function, $\mathcal{L}(\boldsymbol{\theta}) = p(\mathbf{d} \,|\, \boldsymbol{\theta})$, which quantifies the probability of the observed data as a function of the model parameters \cite{Hastie:2009}.
 
 \paragraph{Maximum Likelihood Estimation.}
 
 The most common frequentist estimator is the maximum likelihood estimator (MLE), which identifies the parameter values that maximize the likelihood:
 \begin{equation}
-\hat{\boldsymbol{\theta}}_{\mathrm{MLE}} = \arg\max_{\boldsymbol{\theta}} \, \mathcal{L}(\boldsymbol{\theta}).
-\label{eq:mle}
+	\hat{\boldsymbol{\theta}}_{\mathrm{MLE}} = \arg\max_{\boldsymbol{\theta}} \, \mathcal{L}(\boldsymbol{\theta}).
+	\label{eq:mle}
 \end{equation}
-Under mild regularity conditions, the MLE is asymptotically unbiased and efficient. As a concrete example, consider counting $N$ photons from a gamma-ray source. If the counts follow a Poisson distribution with expected rate $\mu$, the likelihood is $\mathcal{L}(\mu) = e^{-\mu} \mu^N / N!$, and the MLE is simply $\hat{\mu} = N$. While this example is trivial, the Poisson likelihood extends naturally to the pixel-by-pixel analysis of gamma-ray sky maps, where the joint likelihood is the product of Poisson terms over all pixels:
+Under mild regularity conditions, the MLE is asymptotically unbiased and efficient.
+As a concrete example, consider counting $N$ photons from a gamma-ray source.
+If the counts follow a Poisson distribution with expected rate $\mu$, the likelihood is $\mathcal{L}(\mu) = e^{-\mu} \mu^N / N!
+$, and the MLE is simply $\hat{\mu} = N$. While this example is trivial, the Poisson likelihood extends naturally to the pixel-by-pixel analysis of gamma-ray sky maps, where the joint likelihood is the product of Poisson terms over all pixels:
 \begin{equation}
-\mathcal{L}(\boldsymbol{\theta}) = \prod_{a=1}^{N_{\mathrm{pix}}} \frac{\lambda_a(\boldsymbol{\theta})^{k_a} \, e^{-\lambda_a(\boldsymbol{\theta})}}{k_a!},
-\label{eq:poisson_likelihood}
+	\mathcal{L}(\boldsymbol{\theta}) = \prod_{a=1}^{N_{\mathrm{pix}}} \frac{\lambda_a(\boldsymbol{\theta})^{k_a} \, e^{-\lambda_a(\boldsymbol{\theta})}}{k_a!},
+	\label{eq:poisson_likelihood}
 \end{equation}
-with $k_a$ the observed counts and $\lambda_a(\boldsymbol{\theta})$ the model prediction in pixel $a$ \cite{Amerio:2023dns}. This product-of-Poisson construction is the standard likelihood used in Fermi-LAT analyses \cite{Mattox:1996}.
+with $k_a$ the observed counts and $\lambda_a(\boldsymbol{\theta})$ the model prediction in pixel $a$ \cite{Amerio:2023dns}.
+This product-of-Poisson construction is the standard likelihood used in Fermi-LAT analyses \cite{Mattox:1996}.
 
 \paragraph{Nuisance parameters and the profile likelihood.}
 
-In realistic analyses, the parameter vector $\boldsymbol{\theta}$ contains both the physical parameters of interest $\boldsymbol{\psi}$ and a potentially large set of nuisance parameters $\boldsymbol{\eta}$ (background normalizations, instrumental systematics, source model parameters). The profile likelihood isolates the dependence on $\boldsymbol{\psi}$ by maximizing over the nuisance parameters at each fixed value of $\boldsymbol{\psi}$:
+In realistic analyses, the parameter vector $\boldsymbol{\theta}$ contains both the physical parameters of interest $\boldsymbol{\psi}$ and a potentially large set of nuisance parameters $\boldsymbol{\eta}$ (background normalizations, instrumental systematics, source model parameters).
+The profile likelihood isolates the dependence on $\boldsymbol{\psi}$ by maximizing over the nuisance parameters at each fixed value of $\boldsymbol{\psi}$:
 \begin{equation}
-\mathcal{L}_{\mathrm{prof}}(\boldsymbol{\psi}) = \max_{\boldsymbol{\eta}} \, \mathcal{L}(\boldsymbol{\psi}, \boldsymbol{\eta}).
-\label{eq:profile_likelihood}
+	\mathcal{L}_{\mathrm{prof}}(\boldsymbol{\psi}) = \max_{\boldsymbol{\eta}} \, \mathcal{L}(\boldsymbol{\psi}, \boldsymbol{\eta}).
+	\label{eq:profile_likelihood}
 \end{equation}
-This construction preserves the frequentist interpretation of the likelihood without requiring any prior distribution on $\boldsymbol{\eta}$. An alternative approach is to integrate over the nuisance parameters within the likelihood framework itself, producing an integrated (or marginal) likelihood:
+This construction preserves the frequentist interpretation of the likelihood without requiring any prior distribution on $\boldsymbol{\eta}$.
+An alternative approach is to integrate over the nuisance parameters within the likelihood framework itself, producing an integrated (or marginal) likelihood:
 \begin{equation}
-\mathcal{L}_{\mathrm{int}}(\boldsymbol{\psi}) = \int \mathcal{L}(\boldsymbol{\psi}, \boldsymbol{\eta}) \, g(\boldsymbol{\eta}) \, d\boldsymbol{\eta},
-\label{eq:integrated_likelihood}
+	\mathcal{L}_{\mathrm{int}}(\boldsymbol{\psi}) = \int \mathcal{L}(\boldsymbol{\psi}, \boldsymbol{\eta}) \, g(\boldsymbol{\eta}) \, d\boldsymbol{\eta},
+	\label{eq:integrated_likelihood}
 \end{equation}
-where $g(\boldsymbol{\eta})$ is a weight function derived from independent auxiliary measurements or physical constraints on the nuisance parameters. Although this resembles Bayesian marginalization in form, the integrated likelihood is interpreted differently: it is a tool for removing $\boldsymbol{\eta}$ from the likelihood rather than a posterior probability statement about $\boldsymbol{\psi}$.
+where $g(\boldsymbol{\eta})$ is a weight function derived from independent auxiliary measurements or physical constraints on the nuisance parameters.
+Although this resembles Bayesian marginalization in form, the integrated likelihood is interpreted differently: it is a tool for removing $\boldsymbol{\eta}$ from the likelihood rather than a posterior probability statement about $\boldsymbol{\psi}$.
 
 \paragraph{Hypothesis testing and the Test Statistic.}
 
 To compare competing hypotheses---for instance, whether a gamma-ray source exists at a given position---one constructs a likelihood-ratio test statistic (TS):
 \begin{equation}
-\mathrm{TS} = -2 \ln \frac{\mathcal{L}_0}{\mathcal{L}_1},
-\label{eq:ts}
+	\mathrm{TS} = -2 \ln \frac{\mathcal{L}_0}{\mathcal{L}_1},
+	\label{eq:ts}
 \end{equation}
-where $\mathcal{L}_0$ is the likelihood under the null hypothesis and $\mathcal{L}_1$ the likelihood under the alternative (or, more commonly, the globally maximized likelihood) \cite{Mattox:1996}. By Wilks' theorem, under certain regularity conditions the TS is asymptotically distributed as a $\chi^2$ random variable with degrees of freedom equal to the difference in free parameters between the two hypotheses \cite{Wilks:1938}. This result allows direct conversion of TS values to statistical significance without explicit Monte Carlo simulations. For example, to establish a one-sided 95\% confidence-level upper bound on a single parameter, one identifies the parameter value at which $\mathrm{TS} = 3.84$.
+where $\mathcal{L}_0$ is the likelihood under the null hypothesis and $\mathcal{L}_1$ the likelihood under the alternative (or, more commonly, the globally maximized likelihood) \cite{Mattox:1996}.
+By Wilks' theorem, under certain regularity conditions the TS is asymptotically distributed as a $\chi^2$ random variable with degrees of freedom equal to the difference in free parameters between the two hypotheses \cite{Wilks:1938}.
+This result allows direct conversion of TS values to statistical significance without explicit Monte Carlo simulations.
+For example, to establish a one-sided 95\% confidence-level upper bound on a single parameter, one identifies the parameter value at which $\mathrm{TS} = 3.84$.
 
 \paragraph{Application preview.}
 
 The frequentist framework developed above is used extensively in this thesis:
 \begin{itemize}
-    \item In Paper~3 \cite{Amerio:2024msp}, the MSP luminosity function parameters $(\langle L_\gamma \rangle, \sigma_L)$ are constrained via MLE applied to an integrated likelihood. The observational likelihood profile of each globular cluster's gamma-ray flux is combined with the theoretical luminosity function and marginalized over the true flux, yielding a joint integrated likelihood across all clusters. Model comparison among five scaling hypotheses is performed through $-2\Delta\ln\mathcal{L}$ values.
-    \item In Paper~4 \cite{Amerio:2025sub}, a profile likelihood $\mathrm{TS}(\langle\sigma v\rangle) = -2\ln[\mathcal{L}(\langle\sigma v\rangle)/\mathcal{L}_{\mathrm{max}}]$ is used to set 95\% CL upper bounds on the dark matter annihilation cross-section, relying on Wilks' theorem with one degree of freedom ($\mathrm{TS} = 3.84$).
-    \item In Paper~5 \cite{Pinetti:2025}, a $\Delta\chi^2$ test statistic compares the astrophysical-only and astrophysical-plus-DM hypotheses for the cross-correlation angular power spectrum, with $2\sigma$ sensitivity bounds drawn at $\Delta\chi^2 = 4$.
+	\item In Paper~3 \cite{Amerio:2024msp}, the MSP luminosity function parameters $(\langle L_\gamma \rangle, \sigma_L)$ are constrained via MLE applied to an integrated likelihood.
+	      The observational likelihood profile of each globular cluster's gamma-ray flux is combined with the theoretical luminosity function and marginalized over the true flux, yielding a joint integrated likelihood across all clusters.
+	      Model comparison among five scaling hypotheses is performed through $-2\Delta\ln\mathcal{L}$ values.
+	\item In Paper~4 \cite{Amerio:2025sub}, a profile likelihood $\mathrm{TS}(\langle\sigma v\rangle) = -2\ln[\mathcal{L}(\langle\sigma v\rangle)/\mathcal{L}_{\mathrm{max}}]$ is used to set 95\% CL upper bounds on the dark matter annihilation cross-section, relying on Wilks' theorem with one degree of freedom ($\mathrm{TS} = 3.84$).
+	\item In Paper~5 \cite{Pinetti:2025}, a $\Delta\chi^2$ test statistic compares the astrophysical-only and astrophysical-plus-DM hypotheses for the cross-correlation angular power spectrum, with $2\sigma$ sensitivity bounds drawn at $\Delta\chi^2 = 4$.
 \end{itemize}
 
 %% --- 3.1.3 ---
@@ -72,44 +96,62 @@ The frequentist framework developed above is used extensively in this thesis:
 \subsubsection{Bayesian Inference}
 \label{sec:3.1.3}
 
-The Bayesian framework treats the model parameters $\boldsymbol{\theta}$ not as fixed unknowns but as random variables endowed with a probability distribution. Before observing any data, our state of knowledge about $\boldsymbol{\theta}$ is encoded in a prior distribution $p(\boldsymbol{\theta})$. After observing data $\mathbf{d}$, this knowledge is updated through Bayes' theorem:
+The Bayesian framework treats the model parameters $\boldsymbol{\theta}$ not as fixed unknowns but as random variables endowed with a probability distribution.
+Before observing any data, our state of knowledge about $\boldsymbol{\theta}$ is encoded in a prior distribution $p(\boldsymbol{\theta})$.
+After observing data $\mathbf{d}$, this knowledge is updated through Bayes' theorem:
 \begin{equation}
-p(\boldsymbol{\theta} \,|\, \mathbf{d}) = \frac{p(\mathbf{d} \,|\, \boldsymbol{\theta}) \, p(\boldsymbol{\theta})}{p(\mathbf{d})},
-\label{eq:bayes}
+	p(\boldsymbol{\theta} \,|\, \mathbf{d}) = \frac{p(\mathbf{d} \,|\, \boldsymbol{\theta}) \, p(\boldsymbol{\theta})}{p(\mathbf{d})},
+	\label{eq:bayes}
 \end{equation}
-where $p(\mathbf{d} \,|\, \boldsymbol{\theta}) = \mathcal{L}(\boldsymbol{\theta})$ is the same likelihood function used in the frequentist approach, and $p(\mathbf{d}) = \int p(\mathbf{d} \,|\, \boldsymbol{\theta}') \, p(\boldsymbol{\theta}') \, d\boldsymbol{\theta}'$ is the evidence, a normalization constant that integrates the likelihood weighted by the prior over the full parameter space \cite{Bishop:2006}. Within the assumed model, the posterior $p(\boldsymbol{\theta} \,|\, \mathbf{d})$ is the complete answer to the inference problem: it encodes not only the best-fit values but also the full uncertainty structure, including correlations between parameters.
+where $p(\mathbf{d} \,|\, \boldsymbol{\theta}) = \mathcal{L}(\boldsymbol{\theta})$ is the same likelihood function used in the frequentist approach, and $p(\mathbf{d}) = \int p(\mathbf{d} \,|\, \boldsymbol{\theta}') \, p(\boldsymbol{\theta}') \, d\boldsymbol{\theta}'$ is the evidence, a normalization constant that integrates the likelihood weighted by the prior over the full parameter space \cite{Bishop:2006}.
+Within the assumed model, the posterior $p(\boldsymbol{\theta} \,|\, \mathbf{d})$ is the complete answer to the inference problem: it encodes not only the best-fit values but also the full uncertainty structure, including correlations between parameters.
 
 \paragraph{Prior, posterior, and evidence.}
 
-The choice of prior $p(\boldsymbol{\theta})$ is the defining feature of the Bayesian approach, and the source of much of its flexibility. Informative priors can incorporate physical constraints---for example, requiring fluxes to be non-negative or restricting spectral indices to physically motivated ranges---and can improve inference when data are sparse. Uninformative or weakly informative priors are used when prior knowledge is limited, though the choice is never fully objective \cite{Hastie:2009}. The evidence $p(\mathbf{d})$ is typically intractable to compute, as it requires integration over the full parameter space, but it plays an important role in Bayesian model comparison, where the ratio of evidences between competing models (the Bayes factor) provides a natural criterion for model selection \cite{Kass:1995}.
+The choice of prior $p(\boldsymbol{\theta})$ is the defining feature of the Bayesian approach, and the source of much of its flexibility.
+Informative priors can incorporate physical constraints---for example, requiring fluxes to be non-negative or restricting spectral indices to physically motivated ranges---and can improve inference when data are sparse.
+Uninformative or weakly informative priors are used when prior knowledge is limited, though the choice is never fully objective \cite{Hastie:2009}.
+The evidence $p(\mathbf{d})$ is typically intractable to compute, as it requires integration over the full parameter space, but it plays an important role in Bayesian model comparison, where the ratio of evidences between competing models (the Bayes factor) provides a natural criterion for model selection \cite{Kass:1995}.
 
 \paragraph{Credible intervals versus confidence intervals.}
 
-In the Bayesian framework, uncertainty is quantified through credible intervals: a 95\% credible interval is a region of parameter space containing 95\% of the posterior probability. This contrasts with the frequentist confidence interval, which guarantees that 95\% of intervals constructed from repeated experiments will contain the true parameter value. The distinction is subtle in practice---for well-constrained problems, the two often agree numerically---but the conceptual difference matters: a credible interval makes a direct probability statement about the parameter given the data, while a confidence interval makes a statement about the procedure.
+In the Bayesian framework, uncertainty is quantified through credible intervals: a 95\% credible interval is a region of parameter space containing 95\% of the posterior probability.
+This contrasts with the frequentist confidence interval, which guarantees that 95\% of intervals constructed from repeated experiments will contain the true parameter value.
+The distinction is subtle in practice---for well-constrained problems, the two often agree numerically---but the conceptual difference matters: a credible interval makes a direct probability statement about the parameter given the data, while a confidence interval makes a statement about the procedure.
 
 \paragraph{Marginalization over nuisance parameters.}
 
-As in the frequentist case, realistic Bayesian analyses involve nuisance parameters. The Bayesian approach handles them by marginalizing the joint posterior:
+As in the frequentist case, realistic Bayesian analyses involve nuisance parameters.
+The Bayesian approach handles them by marginalizing the joint posterior:
 \begin{equation}
-p(\boldsymbol{\psi} \,|\, \mathbf{d}) = \int p(\boldsymbol{\psi}, \boldsymbol{\eta} \,|\, \mathbf{d}) \, d\boldsymbol{\eta},
-\label{eq:bayesian_marginalization}
+	p(\boldsymbol{\psi} \,|\, \mathbf{d}) = \int p(\boldsymbol{\psi}, \boldsymbol{\eta} \,|\, \mathbf{d}) \, d\boldsymbol{\eta},
+	\label{eq:bayesian_marginalization}
 \end{equation}
-which integrates out the nuisance parameters $\boldsymbol{\eta}$ to yield the marginal posterior for the parameters of interest $\boldsymbol{\psi}$. This is conceptually analogous to the frequentist integrated likelihood (see Section~\ref{sec:3.1.2}), but the probabilistic interpretation differs: the Bayesian marginal posterior is a fully coherent probability distribution over $\boldsymbol{\psi}$, conditioned on both the data and the prior.
+which integrates out the nuisance parameters $\boldsymbol{\eta}$ to yield the marginal posterior for the parameters of interest $\boldsymbol{\psi}$.
+This is conceptually analogous to the frequentist integrated likelihood (see Section~\ref{sec:3.1.2}), but the probabilistic interpretation differs: the Bayesian marginal posterior is a fully coherent probability distribution over $\boldsymbol{\psi}$, conditioned on both the data and the prior.
 
 \paragraph{Bayesian error estimation in neural networks.}
 
-A particularly relevant application arises when the inference is performed by a neural network rather than an explicit likelihood calculation. Consider a regression task in which the network predicts both the mean $\hat{y}$ and the variance $\hat{\sigma}^2$ of the output. Training with the heteroscedastic Gaussian negative log-likelihood loss of Eq.~\eqref{eq:heteroscedastic_nll} teaches the network to estimate its own aleatoric uncertainty---the irreducible noise inherent in each observation \cite{Kendall:2017}. Data points with high noise are automatically down-weighted by the large $\sigma_i^2$ in the denominator, while the logarithmic regularization term prevents the network from predicting infinite variance to trivially minimize the loss.
+A particularly relevant application arises when the inference is performed by a neural network rather than an explicit likelihood calculation.
+Consider a regression task in which the network predicts both the mean $\hat{y}$ and the variance $\hat{\sigma}^2$ of the output.
+Training with the heteroscedastic Gaussian negative log-likelihood loss of Eq.~\eqref{eq:heteroscedastic_nll} teaches the network to estimate its own aleatoric uncertainty---the irreducible noise inherent in each observation \cite{Kendall:2017}.
+Data points with high noise are automatically down-weighted by the large $\sigma_i^2$ in the denominator, while the logarithmic regularization term prevents the network from predicting infinite variance to trivially minimize the loss.
 
-Epistemic uncertainty---the model's ignorance about regions of parameter space with limited training data---is captured separately through Monte Carlo dropout \cite{Gal:2016}. By keeping dropout active at test time and performing $T$ stochastic forward passes through the network, one obtains an ensemble of predictions whose sample variance quantifies the model uncertainty. This procedure is mathematically equivalent to approximate variational inference in a deep Gaussian process \cite{Gal:2016}. The total predictive uncertainty is the sum of the aleatoric and epistemic components:
+Epistemic uncertainty---the model's ignorance about regions of parameter space with limited training data---is captured separately through Monte Carlo dropout \cite{Gal:2016}.
+By keeping dropout active at test time and performing $T$ stochastic forward passes through the network, one obtains an ensemble of predictions whose sample variance quantifies the model uncertainty.
+This procedure is mathematically equivalent to approximate variational inference in a deep Gaussian process \cite{Gal:2016}.
+The total predictive uncertainty is the sum of the aleatoric and epistemic components:
 \begin{equation}
-\mathrm{Var}(y) \approx \frac{1}{T}\sum_{t=1}^{T} \hat{\sigma}_t^2 + \frac{1}{T}\sum_{t=1}^{T} \hat{y}_t^2 - \left(\frac{1}{T}\sum_{t=1}^{T}\hat{y}_t\right)^2.
-\label{eq:total_variance}
+	\mathrm{Var}(y) \approx \frac{1}{T}\sum_{t=1}^{T} \hat{\sigma}_t^2 + \frac{1}{T}\sum_{t=1}^{T} \hat{y}_t^2 - \left(\frac{1}{T}\sum_{t=1}^{T}\hat{y}_t\right)^2.
+	\label{eq:total_variance}
 \end{equation}
 
 \paragraph{Application preview.}
 
-In Paper~1 \cite{Amerio:2023dns}, a CNN trained on $\sim$900k synthetic gamma-ray sky maps uses this framework to reconstruct the source-count distribution $dN/dS$ and its uncertainty. The network employs the heteroscedastic Gaussian NLL to learn the aleatoric error as a function of flux, while concrete dropout \cite{Gal:2017}---a variant that self-learns the optimal dropout probability during training---provides the epistemic uncertainty. The resulting Bayesian error estimates are independently validated against a frequentist cross-check (see Section~\ref{sec:3.1.4}), with the two approaches yielding compatible error bands on the reconstructed $dN/dS$. Full architectural and training details are deferred to Chapter~6.
-
+In Paper~1 \cite{Amerio:2023dns}, a CNN trained on $\sim$900k synthetic gamma-ray sky maps uses this framework to reconstruct the source-count distribution $dN/dS$ and its uncertainty.
+The network employs the heteroscedastic Gaussian NLL to learn the aleatoric error as a function of flux, while concrete dropout \cite{Gal:2017}---a variant that self-learns the optimal dropout probability during training---provides the epistemic uncertainty.
+The resulting Bayesian error estimates are independently validated against a frequentist cross-check (see Section~\ref{sec:3.1.4}), with the two approaches yielding compatible error bands on the reconstructed $dN/dS$.
+Full architectural and training details are deferred to Chapter~6.
 
 %% --- 3.1.4 ---
 
@@ -118,10 +160,22 @@ In Paper~1 \cite{Amerio:2023dns}, a CNN trained on $\sim$900k synthetic gamma-ra
 
 The frequentist and Bayesian frameworks each carry distinct practical advantages, and the choice between them is dictated by the specific requirements of the analysis rather than by any fundamental superiority of one over the other.
 
-Frequentist methods are well suited to hypothesis testing and the construction of upper limits, where the goal is to reject or constrain a specific model without introducing prior assumptions on the parameters. The profile likelihood and Wilks' theorem provide a direct path from the data to confidence intervals and detection significances with minimal modelling choices. These properties make the frequentist approach the natural default for standard Fermi-LAT analyses, where the test statistic is used to determine source detection thresholds and to set upper bounds on new physics contributions \cite{Amerio:2025sub, Amerio:2024msp}.
+Frequentist methods are well suited to hypothesis testing and the construction of upper limits, where the goal is to reject or constrain a specific model without introducing prior assumptions on the parameters.
+The profile likelihood and Wilks' theorem provide a direct path from the data to confidence intervals and detection significances with minimal modelling choices.
+These properties make the frequentist approach the natural default for standard Fermi-LAT analyses, where the test statistic is used to determine source detection thresholds and to set upper bounds on new physics contributions \cite{Amerio:2025sub, Amerio:2024msp}.
 
-Bayesian methods, by contrast, provide natural uncertainty quantification as the default output: the posterior distribution encodes the full probability distribution over the parameters of interest, including correlations and multi-modality. When prior information is available---for instance, physical constraints on parameter ranges---Bayesian inference offers a principled mechanism for incorporating it. Marginalization over nuisance parameters is conceptually straightforward and avoids the point-estimate approximation inherent in profiling.
+Bayesian methods, by contrast, provide natural uncertainty quantification as the default output: the posterior distribution encodes the full probability distribution over the parameters of interest, including correlations and multi-modality.
+When prior information is available---for instance, physical constraints on parameter ranges---Bayesian inference offers a principled mechanism for incorporating it.
+Marginalization over nuisance parameters is conceptually straightforward and avoids the point-estimate approximation inherent in profiling.
 
-In machine learning applications, the distinction maps onto the two types of predictive uncertainty. Aleatoric uncertainty captures the irreducible noise in the observations and is modelled as a data-dependent output variance through the heteroscedastic loss function. Epistemic uncertainty captures the model's ignorance in regions of parameter space underrepresented in the training data and is estimated through Monte Carlo dropout. The former cannot be reduced by collecting more training data; the latter decreases as the training set grows \cite{Kendall:2017, Hullermeier:2021}. Modelling both types is important: aleatoric uncertainty dominates in data-rich regimes and allows the network to down-weight noisy observations, while epistemic uncertainty is required to identify out-of-distribution inputs where the model's predictions should not be trusted \cite{Kendall:2017}.
+In machine learning applications, the distinction maps onto the two types of predictive uncertainty.
+Aleatoric uncertainty captures the irreducible noise in the observations and is modelled as a data-dependent output variance through the heteroscedastic loss function.
+Epistemic uncertainty captures the model's ignorance in regions of parameter space underrepresented in the training data and is estimated through Monte Carlo dropout.
+The former cannot be reduced by collecting more training data; the latter decreases as the training set grows \cite{Kendall:2017, Hullermeier:2021}.
+Modelling both types is important: aleatoric uncertainty dominates in data-rich regimes and allows the network to down-weight noisy observations, while epistemic uncertainty is required to identify out-of-distribution inputs where the model's predictions should not be trusted \cite{Kendall:2017}.
 
-In practice, both paradigms are used throughout this thesis, and in some cases they are applied to the same problem as independent cross-checks. In Paper~1 \cite{Amerio:2023dns}, the CNN provides Bayesian error estimates on the reconstructed $dN/dS$ through dropout and the heteroscedastic loss. These are validated against a frequentist analysis of the same validation dataset, where the $1\sigma$ and $2\sigma$ confidence intervals are extracted from the empirical distribution of residuals across 100\,000 synthetic maps. The frequentist cross-check also provides a formal estimate of the model's bias---the systematic deviation between the median prediction and the true value---which is found to be negligible across the flux range of interest. The compatibility of the two independent error estimates provides confidence that the uncertainty quantification is robust \cite{Amerio:2023dns}.
+In practice, both paradigms are used throughout this thesis, and in some cases they are applied to the same problem as independent cross-checks.
+In Paper~1 \cite{Amerio:2023dns}, the CNN provides Bayesian error estimates on the reconstructed $dN/dS$ through dropout and the heteroscedastic loss.
+These are validated against a frequentist analysis of the same validation dataset, where the $1\sigma$ and $2\sigma$ confidence intervals are extracted from the empirical distribution of residuals across 100\,000 synthetic maps.
+The frequentist cross-check also provides a formal estimate of the model's bias---the systematic deviation between the median prediction and the true value---which is found to be negligible across the flux range of interest.
+The compatibility of the two independent error estimates provides confidence that the uncertainty quantification is robust \cite{Amerio:2023dns}.

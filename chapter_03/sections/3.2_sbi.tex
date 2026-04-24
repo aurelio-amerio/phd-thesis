@@ -1,61 +1,106 @@
 \subsection{The Simulation-Based Inference Paradigm}
 \label{sec:3.2}
 
-The inference framework presented in Section~\ref{sec:3.1} assumes that the likelihood function can be evaluated explicitly. This assumption holds for many standard analyses, but it breaks down when the data-generating process involves a complex simulator whose internal stochastic structure prevents the likelihood from being written in closed form. Simulation-based inference (SBI) provides a principled alternative: rather than computing the likelihood analytically, one trains machine learning models on simulated data to approximate the posterior, the likelihood, or their ratio. This section introduces the SBI paradigm, the neural estimation strategies that underpin it, and the validation techniques required to ensure the reliability of the results.
-
+The inference framework presented in Section~\ref{sec:3.1} assumes that the likelihood function can be evaluated explicitly.
+This assumption holds for many standard analyses, but it breaks down when the data-generating process involves a complex simulator whose internal stochastic structure prevents the likelihood from being written in closed form.
+Simulation-based inference (SBI) provides a principled alternative: rather than computing the likelihood analytically, one trains machine learning models on simulated data to approximate the posterior, the likelihood, or their ratio.
+This section introduces the SBI paradigm, the neural estimation strategies that underpin it, and the validation techniques required to ensure the reliability of the results.
 
 %% --- 3.2.1 ---
 
 \subsubsection{The Intractable Likelihood Problem}
 \label{sec:3.2.1}
 
-The inference methods presented in Section~\ref{sec:3.1} share a common requirement: the ability to evaluate the likelihood function $p(\mathbf{x}|\boldsymbol{\theta})$ for a given set of parameters. In many problems of interest, however, the data-generating process is described by a complex computer simulation rather than by an analytically tractable probability distribution. Such models are known as \emph{implicit models}, in contrast to \emph{prescribed models} for which the likelihood can be written in closed form~\cite{Cranmer:2020,Diggle:1984}. The resulting inference problem has historically been called \emph{likelihood-free inference}, although the term is somewhat misleading: these methods typically estimate the intractable likelihood rather than dispensing with it entirely. The more descriptive term \emph{simulation-based inference} (SBI) is now preferred~\cite{Cranmer:2020}, and we adopt it throughout this thesis.
+The inference methods presented in Section~\ref{sec:3.1} share a common requirement: the ability to evaluate the likelihood function $p(\mathbf{x}|\boldsymbol{\theta})$ for a given set of parameters.
+In many problems of interest, however, the data-generating process is described by a complex computer simulation rather than by an analytically tractable probability distribution.
+Such models are known as \emph{implicit models}, in contrast to \emph{prescribed models} for which the likelihood can be written in closed form~\cite{Cranmer:2020,Diggle:1984}.
+The resulting inference problem has historically been called \emph{likelihood-free inference}, although the term is somewhat misleading: these methods typically estimate the intractable likelihood rather than dispensing with it entirely.
+The more descriptive term \emph{simulation-based inference} (SBI) is now preferred~\cite{Cranmer:2020}, and we adopt it throughout this thesis.
 
-The source of the difficulty is straightforward to state. A typical simulator takes as input a vector of physical parameters $\boldsymbol{\theta}$, samples a series of internal stochastic states or latent variables $z_i$, and produces synthetic data $\mathbf{x}$ as output. The exact likelihood of this output requires marginalizing over the joint density of data and latent variables:
+The source of the difficulty is straightforward to state.
+A typical simulator takes as input a vector of physical parameters $\boldsymbol{\theta}$, samples a series of internal stochastic states or latent variables $z_i$, and produces synthetic data $\mathbf{x}$ as output.
+The exact likelihood of this output requires marginalizing over the joint density of data and latent variables:
 \begin{equation}
-\label{eq:intractable_likelihood}
-p(\mathbf{x}|\boldsymbol{\theta}) = \int p(\mathbf{x}, \mathbf{z}|\boldsymbol{\theta}) \, d\mathbf{z},
+	\label{eq:intractable_likelihood}
+	p(\mathbf{x}|\boldsymbol{\theta}) = \int p(\mathbf{x}, \mathbf{z}|\boldsymbol{\theta}) \, d\mathbf{z},
 \end{equation}
-where the integral runs over every possible execution trace of the simulator~\cite{Cranmer:2020}. For realistic simulations involving billions of latent variables, such as particle transport through a detector, the stochastic evolution of astrophysical populations, or the formation of large-scale structure, this high-dimensional integral is computationally intractable.
+where the integral runs over every possible execution trace of the simulator~\cite{Cranmer:2020}.
+For realistic simulations involving billions of latent variables, such as particle transport through a detector, the stochastic evolution of astrophysical populations, or the formation of large-scale structure, this high-dimensional integral is computationally intractable.
 
-The asymmetry between the forward and inverse problems is a defining feature of the SBI setting. Running the simulator to produce synthetic observations from a given $\boldsymbol{\theta}$ is computationally cheap: one simply executes the program. Inverting this process to obtain $p(\mathbf{x}|\boldsymbol{\theta})$ analytically, however, would require enumerating all possible internal configurations that could have led to the same observable output. This forward--inverse asymmetry motivates an alternative strategy: rather than evaluating the likelihood directly, one can generate large numbers of simulated datasets and use them to learn the relationship between parameters and observables.
+The asymmetry between the forward and inverse problems is a defining feature of the SBI setting.
+Running the simulator to produce synthetic observations from a given $\boldsymbol{\theta}$ is computationally cheap: one simply executes the program.
+Inverting this process to obtain $p(\mathbf{x}|\boldsymbol{\theta})$ analytically, however, would require enumerating all possible internal configurations that could have led to the same observable output.
+This forward--inverse asymmetry motivates an alternative strategy: rather than evaluating the likelihood directly, one can generate large numbers of simulated datasets and use them to learn the relationship between parameters and observables.
 
-A concrete astrophysical example arises in the measurement of the gamma-ray source-count distribution $dN/dS$ below the Fermi-LAT detection threshold. As we will discuss in detail in Chapter~6, the observed photon-count map results from the superposition of thousands of unresolved point sources, each convolved with the instrument point spread function, added to a diffuse Galactic foreground and an isotropic background, and finally subjected to Poisson counting noise~\cite{Amerio:2023dns}. Writing a closed-form likelihood for this full sky map would require integrating over every possible spatial configuration, flux, and number of the unresolved sources. Generating a synthetic map from a given set of $dN/dS$ parameters, by contrast, amounts to a sequence of well-defined sampling steps: draw source fluxes from the $dN/dS$, scatter them on the sky, convolve with the PSF, add backgrounds, multiply by the exposure, and apply Poisson noise~\cite{Amerio:2023dns}. The forward simulation is straightforward; the inverse problem is not. SBI addresses exactly this kind of problem, and the following subsections describe how the inversion is accomplished.
-
+A concrete astrophysical example arises in the measurement of the gamma-ray source-count distribution $dN/dS$ below the Fermi-LAT detection threshold.
+As we will discuss in detail in Chapter~6, the observed photon-count map results from the superposition of thousands of unresolved point sources, each convolved with the instrument point spread function, added to a diffuse Galactic foreground and an isotropic background, and finally subjected to Poisson counting noise~\cite{Amerio:2023dns}.
+Writing a closed-form likelihood for this full sky map would require integrating over every possible spatial configuration, flux, and number of the unresolved sources.
+Generating a synthetic map from a given set of $dN/dS$ parameters, by contrast, amounts to a sequence of well-defined sampling steps: draw source fluxes from the $dN/dS$, scatter them on the sky, convolve with the PSF, add backgrounds, multiply by the exposure, and apply Poisson noise~\cite{Amerio:2023dns}.
+The forward simulation is straightforward; the inverse problem is not.
+SBI addresses exactly this kind of problem, and the following subsections describe how the inversion is accomplished.
 
 %% --- 3.2.2 ---
 
 \subsubsection{Likelihood-Free Approaches}
 \label{sec:3.2.2}
 
-Given the impossibility of evaluating the likelihood directly, SBI replaces explicit likelihood computation with learned surrogates trained on simulated data. The idea has a long history: Diggle and Gratton~\cite{Diggle:1984} proposed using kernel density estimation to approximate intractable likelihoods from simulator output as early as 1984, while Approximate Bayesian Computation (ABC) developed in parallel as an entirely sampling-based alternative (see~\cite{Cranmer:2020} for a review). Both approaches, however, suffer from the curse of dimensionality: they require hand-crafted summary statistics to compress the data into low-dimensional representations, inevitably discarding information about the parameters of interest. ABC additionally lacks amortization, meaning the full inference procedure must be repeated for each new observation. Modern neural SBI methods overcome these limitations by using deep neural networks as flexible density estimators that operate directly on high-dimensional data~\cite{Cranmer:2020}. Three main neural strategies have emerged, distinguished by which statistical quantity their surrogate network learns to approximate.
+Given the impossibility of evaluating the likelihood directly, SBI replaces explicit likelihood computation with learned surrogates trained on simulated data.
+The idea has a long history: Diggle and Gratton~\cite{Diggle:1984} proposed using kernel density estimation to approximate intractable likelihoods from simulator output as early as 1984, while Approximate Bayesian Computation (ABC) developed in parallel as an entirely sampling-based alternative (see~\cite{Cranmer:2020} for a review).
+Both approaches, however, suffer from the curse of dimensionality: they require hand-crafted summary statistics to compress the data into low-dimensional representations, inevitably discarding information about the parameters of interest.
+ABC additionally lacks amortization, meaning the full inference procedure must be repeated for each new observation.
+Modern neural SBI methods overcome these limitations by using deep neural networks as flexible density estimators that operate directly on high-dimensional data~\cite{Cranmer:2020}.
+Three main neural strategies have emerged, distinguished by which statistical quantity their surrogate network learns to approximate.
 
-\emph{Neural Posterior Estimation} (NPE) trains a conditional density estimator, typically implemented with normalizing flows~\cite{Papamakarios:2021}, to directly approximate the posterior distribution $p(\boldsymbol{\theta}|\mathbf{x})$~\cite{Greenberg:2019}. By conditioning the density estimator on the observed data $\mathbf{x}$, the network learns to output the posterior density for any input observation. Because NPE directly provides the posterior, it is the most straightforward approach for Bayesian inference. However, because the prior enters the training, changing the prior requires retraining. The mathematical details of normalizing flow architectures are deferred to Chapters~6 and~9.
+\emph{Neural Posterior Estimation} (NPE) trains a conditional density estimator, typically implemented with normalizing flows~\cite{Papamakarios:2021}, to directly approximate the posterior distribution $p(\boldsymbol{\theta}|\mathbf{x})$~\cite{Greenberg:2019}.
+By conditioning the density estimator on the observed data $\mathbf{x}$, the network learns to output the posterior density for any input observation.
+Because NPE directly provides the posterior, it is the most straightforward approach for Bayesian inference.
+However, because the prior enters the training, changing the prior requires retraining.
+The mathematical details of normalizing flow architectures are deferred to Chapters~6 and~9.
 
-\emph{Neural Likelihood Estimation} (NLE) instead approximates the likelihood function $p(\mathbf{x}|\boldsymbol{\theta})$, conditioning the density estimator on $\boldsymbol{\theta}$ rather than on $\mathbf{x}$~\cite{Cranmer:2020}. Once the likelihood surrogate is trained, Bayesian inference proceeds through standard MCMC sampling with any choice of prior. This separation of the likelihood from the prior provides additional flexibility, at the cost of an extra sampling step.
+\emph{Neural Likelihood Estimation} (NLE) instead approximates the likelihood function $p(\mathbf{x}|\boldsymbol{\theta})$, conditioning the density estimator on $\boldsymbol{\theta}$ rather than on $\mathbf{x}$~\cite{Cranmer:2020}.
+Once the likelihood surrogate is trained, Bayesian inference proceeds through standard MCMC sampling with any choice of prior.
+This separation of the likelihood from the prior provides additional flexibility, at the cost of an extra sampling step.
 
-\emph{Neural Ratio Estimation} (NRE) takes a different approach altogether: rather than learning a probability density, a classifier is trained via supervised learning to discriminate between synthetic datasets generated at different parameter points. The classifier output can be converted into the likelihood ratio $p(\mathbf{x}|\boldsymbol{\theta}_0)/p(\mathbf{x}|\boldsymbol{\theta}_1)$, a result closely related to the Neyman--Pearson lemma~\cite{Cranmer:2020}. Because the ratio is all that is needed for hypothesis testing and constructing confidence sets, NRE is particularly well-suited to frequentist applications.
+\emph{Neural Ratio Estimation} (NRE) takes a different approach altogether: rather than learning a probability density, a classifier is trained via supervised learning to discriminate between synthetic datasets generated at different parameter points.
+The classifier output can be converted into the likelihood ratio $p(\mathbf{x}|\boldsymbol{\theta}_0)/p(\mathbf{x}|\boldsymbol{\theta}_1)$, a result closely related to the Neyman--Pearson lemma~\cite{Cranmer:2020}.
+Because the ratio is all that is needed for hypothesis testing and constructing confidence sets, NRE is particularly well-suited to frequentist applications.
 
-All three strategies provide \emph{amortized inference}: the computationally expensive simulation and training steps are performed once upfront, after which posterior evaluation for new observed data is nearly instantaneous~\cite{Cranmer:2020}. The neural network also implicitly marginalizes over the vast latent space of the simulator, so that the trained surrogate preserves information that hand-crafted summary statistics would discard.
+All three strategies provide \emph{amortized inference}: the computationally expensive simulation and training steps are performed once upfront, after which posterior evaluation for new observed data is nearly instantaneous~\cite{Cranmer:2020}.
+The neural network also implicitly marginalizes over the vast latent space of the simulator, so that the trained surrogate preserves information that hand-crafted summary statistics would discard.
 
 \paragraph{Application preview.}
 
-In this thesis, NPE is the SBI strategy most directly relevant to our work. In Paper~1~\cite{Amerio:2023dns}, a convolutional neural network is trained on $9 \times 10^5$ synthetic gamma-ray sky maps to estimate the $dN/dS$ and its uncertainty for any input map, without ever evaluating an explicit likelihood. The approach operates in the spirit of NPE: the CNN directly maps an observed sky map to posterior summaries (the mean and variance for each flux bin), bypassing any explicit likelihood evaluation, though it uses a heteroscedastic Gaussian loss (Section~\ref{sec:3.1.3}) rather than a normalizing flow to parameterize the output distribution. Once trained, the network can be applied to the real 14-year Fermi-LAT sky map to immediately obtain the source-count distribution. The full details of the architecture and training procedure are deferred to Chapter~6.
-
+In this thesis, NPE is the SBI strategy most directly relevant to our work.
+In Paper~1~\cite{Amerio:2023dns}, a convolutional neural network is trained on $9 \times 10^5$ synthetic gamma-ray sky maps to estimate the $dN/dS$ and its uncertainty for any input map, without ever evaluating an explicit likelihood.
+The approach operates in the spirit of NPE: the CNN directly maps an observed sky map to posterior summaries (the mean and variance for each flux bin), bypassing any explicit likelihood evaluation, though it uses a heteroscedastic Gaussian loss (Section~\ref{sec:3.1.3}) rather than a normalizing flow to parameterize the output distribution.
+Once trained, the network can be applied to the real 14-year Fermi-LAT sky map to immediately obtain the source-count distribution.
+The full details of the architecture and training procedure are deferred to Chapter~6.
 
 %% --- 3.2.3 ---
 
 \subsubsection{Validation of Simulation-Based Inference}
 \label{sec:3.2.3}
 
-A neural density estimator trained on finite simulations can, in principle, produce posteriors that are poorly calibrated: the reported credible intervals may be systematically too narrow or too wide. Validating SBI results is therefore an integral part of any simulation-based analysis, and the simulator itself provides the means for doing so.
+A neural density estimator trained on finite simulations can, in principle, produce posteriors that are poorly calibrated: the reported credible intervals may be systematically too narrow or too wide.
+Validating SBI results is therefore an integral part of any simulation-based analysis, and the simulator itself provides the means for doing so.
 
-The standard validation framework is \emph{simulation-based calibration} (SBC), introduced by Talts et al.~\cite{Talts:2018}. The procedure is conceptually simple. One samples parameters $\boldsymbol{\theta}^*$ from the prior, generates synthetic data $\mathbf{x}^* \sim p(\mathbf{x}|\boldsymbol{\theta}^*)$ using the simulator, and then applies the trained estimator to obtain the approximate posterior $\hat{p}(\boldsymbol{\theta}|\mathbf{x}^*)$. Because the true parameters are known by construction, one can check whether the posterior places the correct amount of probability mass around $\boldsymbol{\theta}^*$. Repeating this test across hundreds or thousands of independent simulations yields a statistical picture of the estimator's calibration: if the $(1-\alpha)$ credible intervals contain the true parameters in exactly a fraction $(1-\alpha)$ of trials, the estimator is well-calibrated. Systematic deviations indicate over- or underdispersion of the posterior~\cite{Cranmer:2020,Talts:2018}.
+The standard validation framework is \emph{simulation-based calibration} (SBC), introduced by Talts et al.~\cite{Talts:2018}.
+The procedure is conceptually simple.
+One samples parameters $\boldsymbol{\theta}^*$ from the prior, generates synthetic data $\mathbf{x}^* \sim p(\mathbf{x}|\boldsymbol{\theta}^*)$ using the simulator, and then applies the trained estimator to obtain the approximate posterior $\hat{p}(\boldsymbol{\theta}|\mathbf{x}^*)$.
+Because the true parameters are known by construction, one can check whether the posterior places the correct amount of probability mass around $\boldsymbol{\theta}^*$.
+Repeating this test across hundreds or thousands of independent simulations yields a statistical picture of the estimator's calibration: if the $(1-\alpha)$ credible intervals contain the true parameters in exactly a fraction $(1-\alpha)$ of trials, the estimator is well-calibrated.
+Systematic deviations indicate over- or underdispersion of the posterior~\cite{Cranmer:2020,Talts:2018}.
 
-SBC is particularly well-suited to amortized estimators, since evaluating the posterior for each new synthetic observation is nearly free once the network has been trained. For non-amortized methods, the computational cost of fitting a new posterior for each of the hundreds of required test datasets would be prohibitive.
+SBC is particularly well-suited to amortized estimators, since evaluating the posterior for each new synthetic observation is nearly free once the network has been trained.
+For non-amortized methods, the computational cost of fitting a new posterior for each of the hundreds of required test datasets would be prohibitive.
 
-A complementary approach is \emph{coverage testing}: for a given confidence level, one directly measures the fraction of test cases in which the true parameters fall within the corresponding credible region. The empirical coverage can be compared to the nominal level across a range of credibility thresholds, and the discrepancy is formally quantified through the empirical calibration error~\cite{Cranmer:2020}. Departures from the diagonal in a coverage-vs-credibility plot flag potential miscalibration.
+A complementary approach is \emph{coverage testing}: for a given confidence level, one directly measures the fraction of test cases in which the true parameters fall within the corresponding credible region.
+The empirical coverage can be compared to the nominal level across a range of credibility thresholds, and the discrepancy is formally quantified through the empirical calibration error~\cite{Cranmer:2020}.
+Departures from the diagonal in a coverage-vs-credibility plot flag potential miscalibration.
 
-In practice, many SBI analyses supplement these general calibration checks with problem-specific diagnostics. In Paper~1~\cite{Amerio:2023dns}, the internally estimated Bayesian uncertainties from the CNN are cross-checked against frequentist error bars derived from the distribution of residuals over the validation set. The close agreement between the two error estimates provides confidence in the reliability of the uncertainty quantification without requiring access to the true posterior, which, for the $dN/dS$ problem, is unknown. The details of this validation strategy are presented in Chapter~6.
+In practice, many SBI analyses supplement these general calibration checks with problem-specific diagnostics.
+In Paper~1~\cite{Amerio:2023dns}, the internally estimated Bayesian uncertainties from the CNN are cross-checked against frequentist error bars derived from the distribution of residuals over the validation set.
+The close agreement between the two error estimates provides confidence in the reliability of the uncertainty quantification without requiring access to the true posterior, which, for the $dN/dS$ problem, is unknown.
+The details of this validation strategy are presented in Chapter~6.
 
 These three validation strategies---calibration, coverage, and problem-specific diagnostics---are applied in each of the analyses presented in the subsequent chapters of this thesis.

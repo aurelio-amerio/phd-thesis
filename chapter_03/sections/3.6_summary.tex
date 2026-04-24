@@ -3,16 +3,27 @@
 \section{Summary}
 \label{sec:ch3_summary}
 
-This chapter has established the statistical and computational framework referenced throughout the remainder of this thesis. The presentation has been deliberately conceptual: each method was introduced with its definitions, key equations, and standard examples, while the full technical implementations are deferred to the chapters where they are first applied.
+This chapter has established the statistical and computational framework referenced throughout the remainder of this thesis.
+The presentation has been deliberately conceptual: each method was introduced with its definitions, key equations, and standard examples, while the full technical implementations are deferred to the chapters where they are first applied.
 
-Section~\ref{sec:3.1} developed the frequentist and Bayesian inference paradigms from the shared foundation of the likelihood function. On the frequentist side, we introduced maximum likelihood estimation, the profile and integrated likelihoods for handling nuisance parameters, and the likelihood-ratio test statistic with Wilks' theorem---tools that underpin the analyses in Papers~3, 4, and~5. On the Bayesian side, we presented Bayes' theorem, posterior marginalization, and the heteroscedastic Gaussian loss function that enables neural networks to estimate their own predictive uncertainty, as exploited in Paper~1.
+Section~\ref{sec:3.1} developed the frequentist and Bayesian inference paradigms from the shared foundation of the likelihood function.
+On the frequentist side, we introduced maximum likelihood estimation, the profile and integrated likelihoods for handling nuisance parameters, and the likelihood-ratio test statistic with Wilks' theorem---tools that underpin the analyses in Papers~3, 4, and~5.
+On the Bayesian side, we presented Bayes' theorem, posterior marginalization, and the heteroscedastic Gaussian loss function that enables neural networks to estimate their own predictive uncertainty, as exploited in Paper~1.
 
-Section~\ref{sec:3.2} introduced simulation-based inference as a solution to the intractable likelihood problem. When the forward model involves complex simulations with many latent variables, the three neural estimation strategies---NPE, NLE, and NRE---replace explicit likelihood evaluation with learned surrogates trained on synthetic data. We also discussed the validation tools, simulation-based calibration and coverage testing, that are necessary to ensure the reliability of these learned posteriors.
+Section~\ref{sec:3.2} introduced simulation-based inference as a solution to the intractable likelihood problem.
+When the forward model involves complex simulations with many latent variables, the three neural estimation strategies---NPE, NLE, and NRE---replace explicit likelihood evaluation with learned surrogates trained on synthetic data.
+We also discussed the validation tools, simulation-based calibration and coverage testing, that are necessary to ensure the reliability of these learned posteriors.
 
-Section~\ref{sec:3.3} covered the machine learning methods used for regression, classification, and density estimation on gamma-ray data. Convolutional neural networks, with their weight-sharing and translation-equivariant properties, are well suited to the spatial structure of photon-count maps. Kernel density estimation and the Expectation-Maximization algorithm for mixture models provide the population-level inference framework that forms the basis of the subhalo search in Paper~4.
+Section~\ref{sec:3.3} covered the machine learning methods used for regression, classification, and density estimation on gamma-ray data.
+Convolutional neural networks, with their weight-sharing and translation-equivariant properties, are well suited to the spatial structure of photon-count maps.
+Kernel density estimation and the Expectation-Maximization algorithm for mixture models provide the population-level inference framework that forms the basis of the subhalo search in Paper~4.
 
-Section~\ref{sec:3.4} formalized the dataset shift problem---the mismatch between training and target distributions that arises when classifiers trained on associated Fermi-LAT sources are applied to unassociated ones. We distinguished between covariate shift, where the feature distributions change while the class-conditional relationships are preserved, and prior shift, where the class prevalences differ. In general, both act simultaneously, and correcting for one without accounting for the other can produce biased results.
+Section~\ref{sec:3.4} formalized the dataset shift problem---the mismatch between training and target distributions that arises when classifiers trained on associated Fermi-LAT sources are applied to unassociated ones.
+We distinguished between covariate shift, where the feature distributions change while the class-conditional relationships are preserved, and prior shift, where the class prevalences differ.
+In general, both act simultaneously, and correcting for one without accounting for the other can produce biased results.
 
-Finally, Section~\ref{sec:cross_correlations} introduced the angular cross-correlation formalism. By correlating the gamma-ray sky with an independent gravitational tracer such as a galaxy catalog, one gains access to the collective dark matter signal from unresolved cosmological structure---a statistical signature that no individual source produces and that benefits from the physical independence of the noise sources in the two datasets.
+Finally, Section~\ref{sec:cross_correlations} introduced the angular cross-correlation formalism.
+By correlating the gamma-ray sky with an independent gravitational tracer such as a galaxy catalog, one gains access to the collective dark matter signal from unresolved cosmological structure---a statistical signature that no individual source produces and that benefits from the physical independence of the noise sources in the two datasets.
 
-Together, these methods form a coherent toolkit that is applied in various combinations throughout the thesis. The following chapters present the physics results: Chapter~4 introduces the Galactic Center Excess and applies the frequentist framework of Section~\ref{sec:3.1} to constrain the millisecond pulsar luminosity function, providing the first direct application of the statistical vocabulary developed here.
+Together, these methods form a coherent toolkit that is applied in various combinations throughout the thesis.
+The following chapters present the physics results: Chapter~4 introduces the Galactic Center Excess and applies the frequentist framework of Section~\ref{sec:3.1} to constrain the millisecond pulsar luminosity function, providing the first direct application of the statistical vocabulary developed here.
