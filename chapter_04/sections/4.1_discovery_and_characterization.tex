@@ -6,6 +6,7 @@
 
 This section traces the observational history of the Galactic Center Excess, from its first identification in early Fermi-LAT data through the systematic studies that refined its spectral and morphological properties.
 By the mid-2010s, these studies had converged on a set of observational properties that would frame the interpretive debate discussed in subsequent sections.
+We close by examining the consistency of these properties with dark matter annihilation.
 
 \subsection{First Identification}
 \label{sec:4.1.1}
@@ -67,7 +68,7 @@ The spectrum of the GCE displays a pronounced peak at energies of 1--3~GeV.
 Below the peak, the emission rises steeply, with a spectral index harder than $\sim 2$ down to the lowest energies accessible to the analysis ($\sim 300$~MeV), though the precise shape of this sub-GeV component depends on the adopted diffuse model~\cite{Calore:2014xka}.
 Above the peak, the spectrum follows a power-law tail with index $\sim -2.7$~\cite{Calore:2014xka, Daylan:2014rsa}.
 The behavior at energies above $\sim 10$~GeV remains the subject of some debate: early analyses suggested that the spectrum might drop sharply to zero at these energies, but the systematic study by Calore, Cholis, and Weniger~\cite{Calore:2014xka} showed that this conclusion was not robust, and that a finite, model-dependent flux persists into the tens-of-GeV range.
-The behavior of the spectrum above 10~GeV would later become relevant to distinguishing between astrophysical and dark matter interpretations, as discussed in Section~\ref{sec:4.2}.
+The behavior of the spectrum above 10~GeV would later become relevant to distinguishing between astrophysical and dark matter interpretations, as discussed in Section~\ref{sec:4.1.4}.
 
 The spatial morphology of the excess is approximately spherically symmetric.
 Daylan et al.
@@ -82,3 +83,32 @@ The $\sim 1$--$3$~GeV spectral peak persists across all 60 diffuse models tested
 No known combination of astrophysical diffuse emission processes --- including cosmic-ray interactions with gas and radiation fields, emission from the Fermi Bubbles, or known point source populations --- reproduces the observed spherically symmetric morphology~\cite{Daylan:2014rsa}.
 The spherical symmetry, in particular, does not trace any standard astrophysical component (gas, dust, starlight, or star formation), all of which are concentrated along the Galactic Plane.
 While the signal cannot by itself identify its origin, the existence of a genuine, spatially extended, spectrally peaked excess centered on the Galactic Center was firmly established as a consensus result by 2015.
+
+\subsection{Consistency with Dark Matter Annihilation}
+\label{sec:4.1.4}
+
+The observational properties established above align closely with the predictions of WIMP dark matter annihilation, a coincidence that has sustained interest in this interpretation for over a decade.
+The strength of the dark matter case rests on three independent lines of agreement---spectral, morphological, and normalization---each of which is tightly constrained by a small number of parameters.
+
+The expected gamma-ray flux from dark matter annihilation in the Galactic halo takes the factorized form
+\begin{equation}
+	\frac{d\Phi_\gamma}{d\Omega\, dE} = \frac{\langle \sigma v \rangle}{8\pi\, m_\chi^2}\, \frac{dN_\gamma}{dE}\, \times \int_{\mathrm{l.o.s.}} \rho^2(r)\, dl\,,
+	\label{eq:dm_flux_gce}
+\end{equation}
+where the particle physics content---the annihilation cross section $\langle \sigma v \rangle$, the WIMP mass $m_\chi$, and the photon yield per annihilation $dN_\gamma/dE$---is cleanly separated from the astrophysical J-factor, the line-of-sight integral of the squared dark matter density (see Section~\ref{sec:1.4} for a detailed treatment).
+Because annihilation occurs essentially at rest\footnote{WIMPs are a cold dark matter candidate and are therefore non-relativistic.}, the observed spectrum is fixed by the mass and annihilation channel, while the angular distribution on the sky is determined entirely by the density profile.
+With only three free parameters---$m_\chi$, the annihilation channel, and the inner slope $\gamma$ of the halo profile---the dark matter model must simultaneously reproduce both the energy spectrum and the spatial morphology of the excess~\cite{Daylan:2014rsa}.
+Additional parameters of the halo profile---the scale radius $r_s$ and the local dark matter density $\rho_\odot$---are conventionally fixed using dynamical constraints external to the gamma-ray data~\cite{Abazajian:2014fta, Daylan:2014rsa}, but their uncertainties propagate into the inferred cross section, as discussed below.
+
+This minimal model succeeds on all three fronts.
+The GCE spectrum, morphology, and spatial extent are each independently consistent with annihilation of a $\sim 30$--$50$~GeV WIMP into $b\bar{b}$ final states, distributed according to a contracted NFW profile with inner slope $\gamma \approx 1.1$--$1.3$ (Section~\ref{sec:4.1.2} for the spectral fits; Section~\ref{sec:4.1.3} for the morphological characterization).
+No tuning of separate parameters is required to accommodate different observables: the same mass and channel that fit the spectrum also predict the correct spatial distribution, and the same halo profile that matches the morphology yields the observed flux level.
+
+A notable feature of the dark matter fit is its normalization.
+The annihilation cross section required to produce the observed flux falls in the range $\langle \sigma v \rangle \sim (1$--$3) \times 10^{-26}$~cm$^3$/s~\cite{Daylan:2014rsa, Calore:2014xka}, which is consistent with the canonical thermal relic value of $\langle \sigma v \rangle_{\mathrm{cosmo}} \approx 2.2 \times 10^{-26}$~cm$^3$/s~\cite{Cirelli:2024ssz}.
+In other words, the very cross section needed to explain the GCE brightness today is the same cross section that would cause a WIMP to freeze out in the early universe with an abundance equal to the observed cosmological dark matter density.
+No Sommerfeld enhancement, substructure boost factors, or non-thermal production mechanisms are required~\cite{Daylan:2014rsa}.
+The fact that three independent observables---spectrum, morphology, and flux normalization---converge on a simple, internally consistent dark matter model with parameters close to the thermal relic prediction has made the GCE one of the most compelling indirect detection signals in the literature.
+This agreement should, however, be interpreted with care.
+The inferred cross section is degenerate with the assumed local dark matter density, since the annihilation flux scales as $\rho_\odot^2$; varying $\rho_\odot$ within its observationally allowed range ($0.3$--$0.4$~GeV/cm$^3$) shifts $\langle \sigma v \rangle$ by a factor of $\sim 1.8$~\cite{Abazajian:2014fta, Daylan:2014rsa}.
+Additionally, Fermi-LAT observations of dwarf spheroidal galaxies place upper limits on the annihilation cross section that are in tension with this interpretation for some channel and mass combinations~\cite{Fermi-LAT:2015att}.
