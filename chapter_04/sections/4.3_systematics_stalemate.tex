@@ -1,8 +1,8 @@
-% Section 4.4: The Systematics Stalemate
+% Section 4.3: The Systematics Stalemate
 % Structure: Intro → NPTF Crisis → Morphological Ambiguity → DM Revival
 
 \section{The Systematics Stalemate}
-\label{sec:4.4}
+\label{sec:4.3}
 
 The evidence reviewed in the preceding section, both for and against the MSP hypothesis, was obtained through template-based analyses that share a common vulnerability: their conclusions depend on modeling choices for which no unique, model-independent prescription exists.
 The choice of interstellar emission model, the treatment of the Fermi Bubbles at low latitudes, the masking of known point sources, and the parameterization of the source-count function at the faint end each contribute irreducible systematic uncertainties that propagate into the final answer.
@@ -10,9 +10,9 @@ Over the past decade, a series of exchanges has demonstrated that these uncertai
 This section traces how the debate reached an impasse and how recent methodological advances are beginning to chart a path forward.
 
 \subsection{The NPTF Crisis}
-\label{sec:4.4.1}
+\label{sec:4.3.1}
 
-The evidence for point sources presented in Section~\ref{sec:4.3.2} rested largely on the Non-Poissonian Template Fitting (NPTF) framework, which exploits the difference in photon statistics between smooth (Poissonian) emission and populations of unresolved point sources.
+The evidence for point sources presented in Section~\ref{sec:4.2.2} rested largely on the Non-Poissonian Template Fitting (NPTF) framework, which exploits the difference in photon statistics between smooth (Poissonian) emission and populations of unresolved point sources.
 In 2019, a pair of analyses by Leane and Slatyer called the reliability of these results into question.
 
 The first challenge came from a conceptually simple diagnostic: injecting a known, artificially generated dark matter signal into the real Fermi-LAT data and testing whether the NPTF pipeline could recover it~\cite{Leane:2019xiy}.
@@ -44,10 +44,10 @@ The preference for point sources can be made to appear or vanish depending on th
 No analysis to date has achieved a resolution that all groups accept, and the community consensus has shifted accordingly: the NPTF, as currently implemented, cannot robustly distinguish between smooth and point-source emission in the inner Galaxy.
 
 \subsection{The Morphological Ambiguity}
-\label{sec:4.4.2}
+\label{sec:4.3.2}
 
 Beyond the statistical question of smooth versus point-source emission, the spatial morphology of the GCE itself has become a second axis of contention.
-As discussed in Section~\ref{sec:4.2.3}, the excess was initially characterized as approximately spherically symmetric, centered on Sgr~A$^*$, and consistent with a generalized NFW profile with inner slope $\gamma \approx 1.1$--$1.3$.
+As discussed in Section~\ref{sec:4.1.3}, the excess was initially characterized as approximately spherically symmetric, centered on Sgr~A$^*$, and consistent with a generalized NFW profile with inner slope $\gamma \approx 1.1$--$1.3$.
 This morphology has no obvious astrophysical counterpart among known Galactic structures and was therefore regarded as a strong indicator of dark matter annihilation.
 However, a series of analyses beginning with Macias et al.~\cite{Macias:2016nev,Macias:2019omb} and Bartels et al.~\cite{Bartels:2018xom} challenged this picture by arguing that the GCE traces the boxy, X-shaped stellar bulge of the Milky Way rather than a smooth, spherically symmetric halo.
 Using near-infrared stellar mass maps as spatial templates, these studies found that the stellar bulge template absorbed the GCE flux with a statistically better fit than a standard NFW profile, supporting an astrophysical origin tied to the old stellar population of the inner Galaxy.
@@ -69,7 +69,7 @@ Taken together, the morphological and spectral ambiguities reinforce the conclus
 The answer depends on modeling choices for which there is no clear, model-independent criterion to adjudicate.
 
 \subsection{Recent Revival of the Dark Matter Hypothesis}
-\label{sec:4.4.3}
+\label{sec:4.3.3}
 
 While the debates over the NPTF and the GCE morphology exposed deep vulnerabilities in established methods, a recent analysis has reframed the question entirely by incorporating energy information into the point-source inference for the first time.
 List et al.~\cite{List:2025qbx} developed a CNN-based simulation-based inference framework that simultaneously fits the spatial and spectral properties of the inner Galaxy across ten logarithmically spaced energy bins from 2 to 20~GeV.
@@ -104,4 +104,4 @@ This represents a marked shift from the earlier energy-independent CNN analysis,
 The implications are twofold.
 First, the key historical evidence that the GCE originates from point sources, including the NPTF's strong Bayes factor and the inferred SCD peaking near the detection threshold, is substantially weakened when spectral information is properly incorporated.
 Second, if the GCE is nonetheless produced by astrophysical point sources, those sources must be extraordinarily faint and numerous, forming a population with no direct precedent among known Galactic source classes.
-As we will discuss in Section~\ref{sec:4.5}, this ultra-faint regime is precisely where independent constraints from globular cluster observations become most informative: the MSP luminosity function measured in globular clusters predicts sources that are far too bright and too few to match the distribution required by the energy-dependent analysis.
+As we will discuss in Section~\ref{sec:4.4}, this ultra-faint regime is precisely where independent constraints from globular cluster observations become most informative: the MSP luminosity function measured in globular clusters predicts sources that are far too bright and too few to match the distribution required by the energy-dependent analysis.
