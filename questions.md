@@ -1,0 +1,2 @@
+- understand better the mechanism of formation of MSPs in globular clusters: what is recycling? 
+- GLCs tend to inspiral towards the GC. During this process, stars get tidally stripped while MSPs get deposited towards the GC, potentially forming the bulge distribution responsible for the GCE. In our paper we argued that MSPs in GLCs are as old as the MSps in the bulge. But new MSPs might be produced in present day GLCs through recylcing, producing a younger population of MSPs. How can we distinguish between these two populations? Does this matter?
