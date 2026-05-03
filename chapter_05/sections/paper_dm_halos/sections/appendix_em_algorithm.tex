@@ -1,8 +1,8 @@
-\section{Details of model optimization with the EM algorithm}
+﻿\section{Details of model optimization with the EM algorithm}
 \label{app:EM}
 
 Maximum likelihood estimation of the parameters of a mixture model is a challenging task due to the interplay between the mixture weights and the distribution parameters. 
-A standard iterative algorithm for this task is the  Expectation Maximization (EM) algorithm \cite{bishop, hastie2009elements}. 
+A standard iterative algorithm for this task is the  Expectation Maximization (EM) algorithm \cite{Bishop:2006, Hastie:2009}. 
 
 We introduce latent binary vectors $\textbf{z}_i$, corresponding to each data point $\bx_i$, where dim($\textbf{z}_i)=K$, where $K$ is the number of mixture components. These latent variables encode the membership of point $\bx_i$ in the $k$-th component of the mixture, such that all elements of $\textbf{z}_i$ are zero, except for $z_{ik}=1$. In other words, $\textbf{z}_i$ is a categorical random variable represented with the one-hot-encoding scheme. The coefficients $\pi_k$ of the likelihood in eq.~(\ref{eq:mixture}) are interpreted as the parameters determining the corresponding categorical \textit{prior} distribution of $\textbf{z}_i$, i.e. $p(z_{ik}=1)=\pi_k~\forall i$, such that  
 \begin{equation}

@@ -1,4 +1,4 @@
-\subsection{From Classification to Quantification: The Dataset Shift Challenge}
+﻿\subsection{From Classification to Quantification: The Dataset Shift Challenge}
 \label{sec:5.5}
 
 The previous section surveyed prior efforts to identify dark matter subhalos among Fermi-LAT unassociated sources, all of which relied on a common strategy: classify individual sources and count the candidates.
@@ -119,7 +119,7 @@ The approach adopted here is the spectral-parameter analogue: the ``templates'' 
 The generative formulation brings three concrete advantages over classification for the subhalo search.
 First, it yields a well-defined likelihood: the product $\mathcal{L} = \prod_i p_\mathrm{target}(\mathbf{x}_i)$ over all unassociated sources provides a global goodness-of-fit measure that can be maximized to determine the best-fit parameters and profiled to derive confidence intervals on $\langle\sigma v\rangle$~\cite{Amerio:2025fhz}.
 Second, the model is generative in the statistical sense: once the parameters are fixed, it can be sampled to produce synthetic datasets, enabling Monte Carlo validation of the inference procedure and estimation of statistical uncertainties~\cite{Amerio:2025fhz}.
-Third, because the class prevalences are fit rather than assumed, the model naturally accommodates prior shift and can include a new class---dark matter subhalos---whose prevalence was zero in the training sample but may be non-zero in the target population~\cite{Amerio:2025fhz, 10.1162/089976602753284446_Saerens}.
+Third, because the class prevalences are fit rather than assumed, the model naturally accommodates prior shift and can include a new class---dark matter subhalos---whose prevalence was zero in the training sample but may be non-zero in the target population~\cite{Amerio:2025fhz, Saerens_2002}.
 
 The practical construction of $p(\mathbf{x}|k)$ from the associated source catalog, and the extension of the mixture model to simultaneously handle covariate shift and the DM component, are described in the next section.
 
@@ -129,7 +129,7 @@ The practical construction of $p(\mathbf{x}|k)$ from the associated source catal
 We now outline the statistical model that implements the quantification learning framework for the subhalo search, deferring the detailed construction, optimization procedure, and results to the paper body (Section~\ref{sec:5.6} onward).
 
 The unassociated source population at $|b| > 10^\circ$ is modeled as a three-component mixture.
-The first two components represent the known astrophysical source classes---Galactic (primarily pulsars, supernova remnants, and binaries) and extragalactic (predominantly AGNs)---whose spectral parameter distributions are estimated from the associated catalog using kernel density estimation~\cite{Amerio:2025fhz, bishop}.
+The first two components represent the known astrophysical source classes---Galactic (primarily pulsars, supernova remnants, and binaries) and extragalactic (predominantly AGNs)---whose spectral parameter distributions are estimated from the associated catalog using kernel density estimation~\cite{Amerio:2025fhz, Bishop:2006}.
 The third component represents a hypothetical population of dark matter subhalos, whose spectral parameter distribution is not drawn from data but instead derived from Monte Carlo simulations for fixed DM parameters (mass $m_\mathrm{DM}$, annihilation cross-section $\langle\sigma v\rangle$, and annihilation channel)~\cite{Amerio:2025fhz}.
 This physically anchored construction means that the DM template is not a free-form density: it is fully determined by the assumed particle physics and the J-factor distributions obtained from N-body simulations (Section~\ref{sec:5.2}).
 
@@ -141,7 +141,7 @@ The model for the probability density of an unassociated source with feature vec
 Each component in this equation addresses one of the problems identified in the previous sections:
 
 The class prevalences $\pi_k$ for the Galactic and extragalactic components are free parameters, fit to the unassociated data by maximum likelihood.
-This handles the prior shift directly: the model determines how much of the unassociated population is Galactic and how much is extragalactic, rather than inheriting those fractions from the associated catalog~\cite{10.1145/3117807_Gonzalez_quantification, 10.1162/089976602753284446_Saerens}.
+This handles the prior shift directly: the model determines how much of the unassociated population is Galactic and how much is extragalactic, rather than inheriting those fractions from the associated catalog~\cite{10.1145/3117807_Gonzalez_quantification, Saerens_2002}.
 
 The covariate shift, arising from the brightness-dependent association bias, is corrected by the modulation function $\tilde{C}(\mathbf{x};\boldsymbol{\theta}_\mathrm{cov})$, defined in Section~\ref{sec:3.4.2} (Equation~\ref{eq:sigmoid_modulation}) as a product of sigmoid functions along each feature dimension.
 The sigmoid parameters $\boldsymbol{\theta}_\mathrm{cov} = \{b_d, c_d\}$ are optimized jointly with the prevalences, so the model adapts the shape of the astrophysical templates to account for the fact that unassociated sources are systematically fainter and have different spectral distributions than their associated counterparts~\cite{Amerio:2025fhz}.
@@ -158,7 +158,7 @@ where $N_\mathrm{sub}^\mathrm{ROI}$ is the expected number of detectable subhalo
 The DM contribution therefore increases with $\langle\sigma v\rangle$ and depends on the J-factor model, but it is not adjusted independently of the underlying physics~\cite{Amerio:2025fhz}.
 
 The full likelihood is the product of $\tilde{p}_\mathrm{unas}(\mathbf{x}_i)$ over all unassociated sources in the region of interest.
-This likelihood is maximized using the Expectation-Maximization algorithm~\cite{10.1162/089976602753284446_Saerens, bishop}, simultaneously optimizing $\pi_k$, $\boldsymbol{\theta}_\mathrm{cov}$, and $\langle\sigma v\rangle$.
+This likelihood is maximized using the Expectation-Maximization algorithm~\cite{Saerens_2002, Bishop:2006}, simultaneously optimizing $\pi_k$, $\boldsymbol{\theta}_\mathrm{cov}$, and $\langle\sigma v\rangle$.
 Upper bounds on the annihilation cross-section are obtained by profiling the likelihood ratio test statistic and identifying the value of $\langle\sigma v\rangle$ at which $\mathrm{TS} = 3.84$, corresponding to the 95\% confidence level for one degree of freedom~\cite{Amerio:2025fhz}.
 
 This framework addresses each of the four shortcomings identified earlier.
