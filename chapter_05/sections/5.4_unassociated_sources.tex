@@ -12,21 +12,22 @@ The Fermi-LAT catalogs contain a large population of gamma-ray sources with no i
 \label{sec:5.4.1}
 
 The latest incremental release, the 4FGL-DR4 catalog~\cite{2022ApJS..260...53A, 2023arXiv230712546B}, contains approximately 7,200 sources detected above a significance threshold of $4\sigma$.
-Of these, 2,428 sources---roughly one third---remain unassociated, meaning that no plausible counterpart has been identified at other wavelengths~\cite{2023arXiv230712546B}.
-Among the unassociated population, 1,282 sources lie at Galactic latitudes $|b| > 10{{}^\circ}$, where contamination from diffuse Galactic emission is reduced and the search for exotic source populations becomes more tractable.
+Of these, \red{2,428 sources}---roughly one third---remain unassociated, meaning that no plausible counterpart has been identified at other wavelengths~\cite{2023arXiv230712546B}.
+Among the unassociated population, \red{1,282} sources lie at Galactic latitudes $|b| > 10{{}^\circ}$, where contamination from diffuse Galactic emission is reduced and the search for exotic source populations becomes more tractable. \aure{check these number again in the paper}
 
 Association completeness depends on both source brightness and Galactic latitude: brighter sources are far easier to link to multi-wavelength counterparts, while the association fraction drops from approximately 85\% at high latitudes to around 40\% near the Galactic plane, where dense source fields and X-ray absorption impede counterpart identification~\cite{2020ApJS..247...33A}.
 The majority of unassociated sources are therefore expected to be ordinary astrophysical objects whose association has failed for instrumental or geometric reasons.
 Their spectral properties offer direct clues to their nature: at high latitudes, the average photon index ($\Gamma \approx 2.24$) matches that of blazars of unknown type, while closer to the Galactic plane the spectra soften ($\Gamma \approx 2.42$), consistent with pulsars~\cite{2020ApJS..247...33A}.
-Further discussion of the Fermi-LAT association procedure and its completeness can be found in Section~\ref{sec:2.3}.
+Further discussion of the Fermi-LAT association procedure and its completeness can be found in Section~\ref{sec:2.3}.\aure{update link in the future when ch2 is finalized}
 
 To date, no unassociated Fermi-LAT source has been confirmed as a dark matter subhalo~\cite{2020ApJS..247...33A, 2022ApJS..260...53A}.
+\aure{recently, there have been some claim of detection of dm subhalos, although the community is still skeptical. I need to find them and add them, there should be two of them, probably 2507.16932 and 2409.19493}
 As discussed in Section~\ref{sec:5.3}, even under optimistic assumptions the most detectable subhalos would produce gamma-ray spectra similar to those of pulsars or soft-spectrum blazars, making individual identification on spectral grounds alone extremely difficult.
 Nevertheless, the large unassociated population has motivated a sustained effort to search for DM subhalo candidates within it.
 
 \subsection{Previous DM Subhalo Searches and the Failure of Classify-and-Count}
 \label{sec:5.4.2}
-
+\aure{this is a strong statement, review it and maybe tone it down or better scope it}
 All prior searches for dark matter subhalos among Fermi-LAT unassociated sources share a common strategy, referred to as \textit{classify-and-count}: a set of DM subhalo candidates is selected from the unassociated population based on their gamma-ray properties, and upper limits on $\langle\sigma v\rangle$ are derived under the assumption that the number of true subhalos cannot exceed the candidate count~\DMsubhaloUnas.
 Early analyses relied on hand-crafted spectral and spatial cuts applied to successive catalog releases~\cite{2010PhRvD..82f3501B, 2012A&A...538A..93Z, 2012ApJ...747..121A, 2014PhRvD..89a6014B, 2015JCAP...12..035B, 2016JCAP...05..028S, 2017JCAP...04..018H}, with some studies emphasizing spatial extension as a potential discriminant~\cite{2014PhRvD..89a6014B, 2015JCAP...12..035B, 2022PhRvD.105h3006C}.
 More recently, machine learning classifiers have automated and extended the candidate selection~\DMsubhaloML.
