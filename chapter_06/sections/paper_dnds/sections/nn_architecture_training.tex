@@ -1,4 +1,4 @@
-\section{Neural network architecture and training}
+\subsection{Neural network architecture and training}
 \label{sec:architechture-and-training}
 
 In this Section we describe the architecture of the CNN we adopt and how data are handled.
@@ -13,7 +13,7 @@ As further described below, we will use an approach in which we will let the CNN
 Since we are dealing with sky maps, we can approach the problem from the point of view of image analysis. However, the image here is in spherical projection. We therefore need to adopt a method able to deal with this situation.
 
 
-\subsection{Spherical neural networks}
+\subsubsection{Spherical neural networks}
 In the last years, the machine learning community has realised the importance of developing neural network architectures on complex topologies. One of the most interesting non-trivial domains is that of a sphere, since it cannot be mapped on a plane without introducing distortion. This is the case we are confronting here, since we are dealing with sky maps.  There are many efforts to implement CNN architectures that can do convolutions on the sphere \cite{DBLP:journals/corr/abs-1708-00919,DBLP:journals/corr/abs-1902-04615,DBLP:journals/corr/abs-2012-15000,nnhealpix,mapped-convolutions}, and while there have been many proposals, there is not yet agreement on a standard algorithm.
 
 In dealing with information extraction from spherical images, one has to cope with a set of issues: 
@@ -43,7 +43,7 @@ This approach is extremely fast, since it leverages on optimised 3D convolutions
 In order to cross-check our method, we also implemented the full-sky truly-spherical convolutions of \cite{nnhealpix}, obtaining very similar results. {  In  Appendix \ref{sec:full-spherical-nn}, we report some examples of the results and checks performed with a fully spherical convolution model.} The two methods are therefore interchangeable for the type of information we want extract from the \fermi maps: however, our implementation allowed us to gain more than a factor of 10 in time of execution of the whole pipeline of training and validation. This convergence of results with the fully spherical method of \cite{nnhealpix} gives us confidence on the reliability of our model, and the speed gain sets the basis for a future efficient extension of our analysis to several energy bins in the full \fermi energy range, in order to determine also the energy dependence of the $\dnds$  of unresolved sources.
 
 
-\subsection{Data pre-processing}
+\subsubsection{Data pre-processing}
 \label{sec:preprocessing}
 
 The maps are constructed with the procedure outlined in Section \ref{sec:generation}. As explained more in detail there, even though we apply a latitude cut to the maps, in order to further reduce the impact of the galactic foreground (and as it is customary in analyses of the extragalactic gamma-ray background), we subtract the galactic foreground (normalized by the $A_\textrm{gal}$ constant) from the input maps. This will also facilitate to some extent the training of the CNN, whose goal is to reconstruct the source-count distribution. Photon-counts maps are converted in units of flux, by using the exposure map. In order to reduce the variability of the inputs seen by the CNN and stabilize its behaviour, we take the logarithm of the flux values in the pixels and then map them in $[-1,1]$ range. 
@@ -51,7 +51,7 @@ Finally, each map is parsed into 12 patches using the \verb|map2patch| algorithm
 
 Given the approximate $S^{-2}$ behavior of the $\dnds$, for the output vector, we reconstruct $y_i = S^2 \dnds|_i \times 10^{11}$ cm$^{2}$ s deg$^{2}$ ($i=1,20$) and $y_{21}=\fiso \cdot  10^{7}$ cm$^{2}$ s sr, in order to work with (pure) numbers of order unity. We adopt this strategy in order to avoid that the mean square error could favour the optimisation of any flux bin over another, making the deviations more even across the range of $S$.
 
-\subsection{Network architecture}
+\subsubsection{Network architecture}
 In recent years, we have seen the rise of many convolutional neural network models for computer vision tasks \cite{CNNreview1, CNNreview2, CNNreview3}.
 Modern convolutional neural network architectures can have a very large numbers of internal parameters. This is due to the complex links between each neural unit, which allows for these models to be highly expressive and effectively behave as universal approximators for many kinds of tasks \cite{HORNIK1989359}. Unfortunately this comes with a downside: these models are prone to fitting too well the training dataset, which would lead to poorer performance on new data. In the field of Machine Learning, this problem is known as "overfitting" \cite{overfitting}. In order to prevent overfitting, 
 a possible solution is to train the model on a big enough dataset.
@@ -68,7 +68,7 @@ We therefore adopt the implementation of dropout as a concrete Bernoulli distrib
 
 
 
-\subsection{Bayesian error estimation and cost function}
+\subsubsection{Bayesian error estimation and cost function}
 \label{sec:bayesian-error}
 
 
@@ -99,19 +99,19 @@ In principle, the above cost function can easily be generalized to account for t
 
 
 
-\subsection{Training and validation}
+\subsubsection{Training and validation}
 \label{sec:NN-training}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.6\textwidth]{img/model_plots/MSE.pdf}
+\includegraphics[width=0.6\textwidth]{chapter_06/sections/paper_dnds/img/model_plots/MSE.pdf}
 \caption{ Epoch evolution of the MSE for the training (blue line) and validation (orange line) sets.}
 \label{fig:mse-training}
 \end{figure}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=1.0\textwidth]{img/model_plots/model_42/baseline/sample_maps.pdf}
+\includegraphics[width=1.0\textwidth]{chapter_06/sections/paper_dnds/img/model_plots/model_42/baseline/sample_maps.pdf}
 \caption{Some example $\dnds$ from the validation dataset. Each panel shows the input $\dnds$ and $\fiso$ and the corresponding quantities reconstructed by the CNN. The colored bands indicate 1-2 $\sigma$ uncertainty regions. See text for more details. }
 \label{fig:random-maps}
 \end{figure}
@@ -130,19 +130,19 @@ The CNN recovers a $\dnds$ which is compatible with the input. The error bands a
 
 
 
-\subsection{Frequentist error estimation and Bias} 
+\subsubsection{Frequentist error estimation and Bias}
 \label{sec:bias}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=1.0\textwidth]{img/model_plots/model_42/baseline/model_42_7e2_n64_flat_HL_error_histogram.pdf}
+\includegraphics[width=1.0\textwidth]{chapter_06/sections/paper_dnds/img/model_plots/model_42/baseline/model_42_7e2_n64_flat_HL_error_histogram.pdf}
 \caption{ Histograms of the percentage deviations between the true and reconstructed $\dnds$ for 14 values of $S$ across its interval of interest, and for $\fiso$. The bottom right panel shows the same, but for a derived quantity, namely the total flux. The dotted vertical black lines indicate the 68\% confidence region.}
 \label{fig:bias-histogram}
 \end{figure}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.8\textwidth]{img/model_plots/model_42/baseline/model_42_7e2_n64_flat_HL_dNdS_errors}
+\includegraphics[width=0.8\textwidth]{chapter_06/sections/paper_dnds/img/model_plots/model_42/baseline/model_42_7e2_n64_flat_HL_dNdS_errors}
 \caption{68\% error for the reconstructed $\dnds$ as function of $S$, for $\fiso$ and for the total flux. Also shown is the bias given by the median of the histogram for each $S$ bin (squares).
 }
 \label{fig:bias-plot}

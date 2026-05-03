@@ -1,4 +1,4 @@
-\section{Results}
+\subsection{Results}
 \label{sec:dnds:results}
 
 After the training and validation processes described in the previous Section, we have applied the fully trained CNN to the 14 years \fermi data. The result of our baseline analysis, which adopts the \verb|gll_iem_v07| galactic foreground and a latitude cut of $|b|<30^\circ$, is shown in Fig. \ref{fig:prediction-fermi-12y}. The blue line is the reconstructed $\dnds$ and the error bands are the Bayesian errors obtained as described in Section \ref{sec:bayesian-error}. The blue points show the $\dnds$ of the resolved sources, obtained from the 4FGL-DR3 catalog. We can see that in the resolved limit, the CNN reconstructs a $\dnds$ fully compatible with the one derived from the catalog, but then extends it to the unresolved regime with a behaviour compatible with $\dnds \sim S^{-2}$ down to the smallest flux considered of $S = 5 \cdot 10^{-12}$ cm$^{-2}$ s$^{-1}$.
@@ -41,29 +41,29 @@ In Appendix \ref{furthertests}, we also discuss the results of further tests tha
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.9\textwidth]
-{img/model_plots/model_42/baseline/fermi_prediction_hs.pdf}
+{chapter_06/sections/paper_dnds/img/model_plots/model_42/baseline/fermi_prediction_hs.pdf}
 \caption{Reconstructed $\dnds$ and $\fiso$  and their Bayesian errors, when the trained CNN is applied to the \fermi map. This is the main baseline result of the analysis.}
 \label{fig:prediction-fermi-12y}
 \end{figure}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.9\textwidth]{img/model_plots/model_42/baseline/model_42_7e2_n64_flat_HL_comparison_with_paper.pdf}
+\includegraphics[width=0.9\textwidth]{chapter_06/sections/paper_dnds/img/model_plots/model_42/baseline/model_42_7e2_n64_flat_HL_comparison_with_paper.pdf}
 \caption{Same as Fig. \ref{fig:prediction-fermi-12y}, including a comparison with the result of Ref. \cite{Cuoco-1pdf}.}
 \label{fig:prediction-fermi-12y-vs-zechlin}
 \end{figure}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.9\textwidth]{img/model_plots/model_42/baseline/fermi_prediction_hist.pdf}
+\includegraphics[width=0.9\textwidth]{chapter_06/sections/paper_dnds/img/model_plots/model_42/baseline/fermi_prediction_hist.pdf}
 \caption{Same as in Fig. \ref{fig:prediction-fermi-12y}, but with errors estimated through a frequentist approach.}
 \label{fig:prediction-fermi-12y-bayesian}
 \end{figure}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.9\textwidth]{img/model_plots/model_42/b40/fermi_prediction_hs.pdf}
-\includegraphics[width=0.9\textwidth]{img/model_plots/model_42/b50/fermi_prediction_hs.pdf}
+\includegraphics[width=0.9\textwidth]{chapter_06/sections/paper_dnds/img/model_plots/model_42/b40/fermi_prediction_hs.pdf}
+\includegraphics[width=0.9\textwidth]{chapter_06/sections/paper_dnds/img/model_plots/model_42/b50/fermi_prediction_hs.pdf}
 \caption{Same as Fig. \ref{fig:prediction-fermi-12y} but for a latitude cut of 40$^\circ$ and 50$^\circ$. The blue datapoints of the $\dnds$ of the 4FGL sources have been updated using only the source in the given region of interested. }
 \label{fig:prediction-fermi-12y-b4050}
 \end{figure}
@@ -71,7 +71,7 @@ In Appendix \ref{furthertests}, we also discuss the results of further tests tha
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.9\textwidth]{img/model_plots/model_42/fg5/fermi_prediction_hs.pdf}
+\includegraphics[width=0.9\textwidth]{chapter_06/sections/paper_dnds/img/model_plots/model_42/fg5/fermi_prediction_hs.pdf}
 \caption{Same as Fig. \ref{fig:prediction-fermi-12y} but using a CNN trained using the foreground model v05.}
 \label{fig:prediction-fermi-12y-fg-v5}
 \end{figure}

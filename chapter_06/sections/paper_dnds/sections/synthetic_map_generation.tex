@@ -1,4 +1,4 @@
-\section{Synthetic map generation}
+\subsection{Synthetic map generation}
 \label{sec:generation}
 
 In order to instruct the CNN to extract the $\dnds$ from the \fermi photon-count map, we need to produce synthetic analogs of the map, constructed from a wide selection of $\dnds$ and for the same characteristics (detector exposure and PSF, known physical foregrounds) of the data we will be using. These maps will then be partly used to train a CNN and partly used to validate the CNN, to determine its performance and to
@@ -41,14 +41,14 @@ From the count map $\mathcal{N}$, which contains the number of photon counts in 
 
 In the next Sections we discuss in more detail how the components of Eq. \ref{eq:dnds:map} are modeled.
 
-\subsection{Differential source-count distribution}
+\subsubsection{Differential source-count distribution}
 \label{sec:dnds}
 
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.49\textwidth]{img/data_selection/4FGL.pdf}
-\includegraphics[width=0.49\textwidth]{img/data_selection/dNdS_annotato.pdf}
+\includegraphics[width=0.49\textwidth]{chapter_06/sections/paper_dnds/img/data_selection/4FGL.pdf}
+\includegraphics[width=0.49\textwidth]{chapter_06/sections/paper_dnds/img/data_selection/dNdS_annotato.pdf}
 \caption{Left: The 1-10 GeV $\dnds$ for resolved \fermi sources, obtained from the 4FGL-DR3 \cite{2022ApJS..260...53A} catalog. Right: An example of $dN/dS$ with 3 breaks $S_j$ ($j=1,3$) and four slopes, where $n_i$ ($i=1,4$) is the inclination of the slope.}
 \label{fig:dNdS-annotato}
 \end{figure}
@@ -89,8 +89,8 @@ Following \cite{Cuoco-1pdf}, the differential source-count distribution $\dnds$ 
 
 \begin{figure}[t]
 \centering
-\includegraphics[scale=0.60]{img/data_selection/point_sources.pdf}
-\includegraphics[scale=0.60]{img/data_selection/smoothed_PS.pdf}
+\includegraphics[scale=0.60]{chapter_06/sections/paper_dnds/img/data_selection/point_sources.pdf}
+\includegraphics[scale=0.60]{chapter_06/sections/paper_dnds/img/data_selection/smoothed_PS.pdf}
 \caption{Simulated flux map of point sources extracted from a specific source-count distribution, before (upper panel) and after (lower panel) the PSF is applied, in units of photons/(cm$^2$ s sr). The maps are shown at Healpix resolution $N_\textrm{side} = 128$ ($n=7$). 
 }
 \label{fig:point-sources}
@@ -124,12 +124,12 @@ The maps $\mathcal{S}$ are generated according to the following procedure:
 
 In order to avoid possible biases in the generated maps, due to the resolution of the angular binning, the maps generated with the procedure described above have been produced at a resolution higher than the one adopted for the analysis. We have therefore built our maps with $N_\textrm{side} = 128$. These maps have then been downgraded to $N_\textrm{side} = 64$ for the analysis.
 
-\subsection{Galactic foreground and isotropic background}
+\subsubsection{Galactic foreground and isotropic background}
 \label{sec:galactic}
 
 \begin{figure}[t]
 \centering
-\includegraphics[scale=0.6]{img/data_selection/gf7.pdf}
+\includegraphics[scale=0.6]{chapter_06/sections/paper_dnds/img/data_selection/gf7.pdf}
 \caption{\texttt{gll\_iem\_v07} galactic foreground model \cite{4FGL}, integrated in the $(1,10)$ GeV energy bin, in units of photons/(cm$^2$ s sr), at the Healpix resolution $N_\textrm{side} = 128$ ($n=7$).}
 \label{fig:galactic-foreground}
 \end{figure}
@@ -188,7 +188,7 @@ Example plots are shown in the Appendix \ref{sec:agal-var}.}
 
 
 
-\subsection{Count maps}
+\subsubsection{Count maps}
 
 With a flux map $\mathcal{M}$ available, we can now produce a synthetic photon-count map $\mathcal{N}$ as described in Eq. \ref{eq:count}. 
 One example is shown in Fig. \ref{fig:map-total-counts}. 
@@ -207,22 +207,22 @@ In this way the CNN can focus on learning the $\dnds$, seeing the exposure and g
 
 \begin{figure}[t]
 \centering
-\includegraphics[scale=0.6]{img/data_selection/point_sources_fg.pdf}
+\includegraphics[scale=0.6]{chapter_06/sections/paper_dnds/img/data_selection/point_sources_fg.pdf}
 \caption{The same as in Fig. \ref{fig:point-sources}, with the galactic foreground model normalized with $A_\textrm{gal} = 0.886$ and an isotropic background component $F_\textrm{iso} = 4 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$. Units are photons/(cm$^2$ s sr).}
 \label{fig:map_with_gf}
 \end{figure}
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.6]{img/data_selection/counts_map.pdf}
+\includegraphics[scale=0.6]{chapter_06/sections/paper_dnds/img/data_selection/counts_map.pdf}
 \caption{Simulated count map in units of counts per pixel,  at the Healpix resolution $N_\textrm{side} = 128$ ($n=7$). }
 \label{fig:map-total-counts}
 \end{figure}
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.6]{img/data_selection/counts_map_effective.pdf}
-\includegraphics[scale=0.6]{img/data_selection/counts_map_effective_masked.pdf}
+\includegraphics[scale=0.6]{chapter_06/sections/paper_dnds/img/data_selection/counts_map_effective.pdf}
+\includegraphics[scale=0.6]{chapter_06/sections/paper_dnds/img/data_selection/counts_map_effective_masked.pdf}
 \caption{Simulated map in units of counts per pixel after  adding Poisson noise from the synthetic model map of Fig. \ref{fig:map-total-counts}, at the same Healpix resolution $N_\textrm{side} = 128$ ($n=7$). The lower panel shows the map with a $|b| < 30^\circ$ latitude cut.}
 \label{fig:map-effective}
 \end{figure}

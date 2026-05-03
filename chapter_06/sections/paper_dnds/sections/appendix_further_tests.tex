@@ -1,23 +1,23 @@
-\section{Further Tests}
+\subsection{Further Tests}
 \label{furthertests}
 
 In this appendix we describe further tests that we have performed to cross-check the stability and robustness of the $\dnds$ derived in the main text.
 
 
-\subsection{Flat $S^2\,\dnds$}
+\subsubsection{Flat $S^2\,\dnds$}
 
 
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=1.0\textwidth]{img/model_plots/model_42/baseline/pendenza2.pdf}
+\includegraphics[width=1.0\textwidth]{chapter_06/sections/paper_dnds/img/model_plots/model_42/baseline/pendenza2.pdf}
 \caption{  Same as Fig. \ref{fig:random-maps}  but for 6 different random realization of the same flat $S^2\dnds$ and same $F_\textrm{iso,true}=4.84 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$.  }
 \label{fig:flat-maps}
 \end{figure}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=1.0\textwidth]{img/model_plots/model_42/baseline/pendenza2-fg5.pdf}
+\includegraphics[width=1.0\textwidth]{chapter_06/sections/paper_dnds/img/model_plots/model_42/baseline/pendenza2-fg5.pdf}
 \caption{
  Same as Fig. \ref{fig:flat-maps} but for synthetic maps generated using version v05 of the foreground model.  }
 \label{fig:flat-maps-v5}
@@ -32,14 +32,14 @@ As a further test, we show in Fig. \ref{fig:flat-maps-v5} the case where we appl
 
 
 
-\subsection{UltraCleanVeto Selection} 
+\subsubsection{UltraCleanVeto Selection} 
 
 
 In this section we further test the robustness of the results to the \fermi data selection. In particular, while for the main results we used the \texttt{SOURCEVETO} event class selection, here we test the \texttt{ULTRACLEANVETO} selection. This event class has more stringent cuts with respct to the \texttt{SOURCEVETO} class, and it thus contains a lower residual charged  cosmic-ray background, at the prize of a lower effective area (by about 15\%). Except for the different data selection all the rest of the analysis is performed in the same identical way as for the \texttt{SOURCEVETO} case. The resulting $\dnds$ is shown in Fig. \ref{fig:prediction-fermi-12y-ucv} and it can be seen that it is compatible with the main results, while, as expected, the value of $\fiso$ is a bit lower. 
 
 
 
-\subsection{Multipole Analysis}
+\subsubsection{Multipole Analysis}
 
 
 
@@ -85,7 +85,7 @@ In conclusion, these tests give confidence on the reliability of the method and 
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.9\textwidth]{img/model_plots/model_42/UCV/fermi_prediction_hs.pdf}
+\includegraphics[width=0.9\textwidth]{chapter_06/sections/paper_dnds/img/model_plots/model_42/UCV/fermi_prediction_hs.pdf}
 \caption{Same as Fig. \ref{fig:prediction-fermi-12y} but  for the \texttt{ULTRACLEANVETO}  \fermi data selection. }
 \label{fig:prediction-fermi-12y-ucv}
 \end{figure}
@@ -97,35 +97,35 @@ In conclusion, these tests give confidence on the reliability of the method and 
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=1.0\textwidth]{img/model_plots/model_42/baseline/fermi_map_cleaning.pdf}
+\includegraphics[width=1.0\textwidth]{chapter_06/sections/paper_dnds/img/model_plots/model_42/baseline/fermi_map_cleaning.pdf}
 \caption{Same as Fig. \ref{fig:prediction-fermi-12y} but where the \fermi map given as input to the CNN has been processed with the improved foreground cleaning procedure based on multipole decomposition described in the text. Each panel refer to a different maximal multipole $\ell_{max}$ used for the cleaning.  }
 \label{fig:multipole-cleaningv7}
 \end{figure}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=1.0\textwidth]{img/model_plots/model_42/fg5/fermi_map_cleaning.pdf}
+\includegraphics[width=1.0\textwidth]{chapter_06/sections/paper_dnds/img/model_plots/model_42/fg5/fermi_map_cleaning.pdf}
 \caption{Same as Fig. \ref{fig:multipole-cleaningv7} but using a CNN trained with the v05 version of the foreground model, as well as using as input a \fermi count map processed with the same foreground model.}
 \label{fig:multipole-cleaningv5}
 \end{figure}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=1.0\textwidth]{img/model_plots/model_42/baseline/syn_flat_map_fg5.pdf}
+\includegraphics[width=1.0\textwidth]{chapter_06/sections/paper_dnds/img/model_plots/model_42/baseline/syn_flat_map_fg5.pdf}
 \caption{Same as Fig. \ref{fig:multipole-cleaningv7} but using as input a synthetic map generated with a flat $S^2 \dnds$ and with the v05 version of the foreground model.}
 \label{fig:multipole-cleaning-v5-and-v7}
 \end{figure}
 
 
 
-\subsection{Changing $A_\textrm{gal}$}
+\subsubsection{Changing $A_\textrm{gal}$}
 \label{sec:agal-var}
 
 In order to test the stability of the results against changes in the values of $A_\textrm{gal}$, we have provided, as input to our trained CNN, \fermi maps cleaned with different values of $A_\textrm{gal}$, ranging from 0.78 to 1.0 (our fiducial value is $0.888 \pm 0.005$, thus the chosen range encompass many standard deviations around its central value). The results are shown in Fig. \ref{fig:Agal_change} below. It can be seen that the $dN/dS$ is considerably robust and stable to different values of $A_\textrm{gal}$, despite the large range explored. Instead, different values of $A_\textrm{gal}$ seem to imply a significant variation in the reconstructed value of $F_\textrm{iso}$, as expected since at the large Galactic latitudes explored in our analysis ($|b| > 30^\circ$) there is a certain amount of degeneracy between a purely isotropic emission and the Galactic foreground emission itself. However, this does not affect the reconstructed $dN/dS$.
 
 
 
-\subsection{Fully spherical CNN}
+\subsubsection{Fully spherical CNN}
 \label{sec:full-spherical-nn}
 
 In this section we show a comparison of the results obtained using a fully spherical CNN, instead of the \verb|map2patch| algorithm used in the main analysis. In particular, we adopt here the NNHealpix \cite{nnhealpix} algorithm.
@@ -144,14 +144,14 @@ The spherical CNN has similar performances as the  CNN that uses \verb|map2patch
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.45\textwidth]{img/model_plots/model_42/baseline/Agal/fermi_prediction_Agal_0.780000.pdf}
-\includegraphics[width=0.45\textwidth]{img/model_plots/model_42/baseline/Agal/fermi_prediction_Agal_0.873000.pdf}
-\includegraphics[width=0.45\textwidth]{img/model_plots/model_42/baseline/Agal/fermi_prediction_Agal_0.883000.pdf}
-\includegraphics[width=0.45\textwidth]{img/model_plots/model_42/baseline/Agal/fermi_prediction_Agal_0.888000.pdf}
-\includegraphics[width=0.45\textwidth]{img/model_plots/model_42/baseline/Agal/fermi_prediction_Agal_0.893000.pdf}
-\includegraphics[width=0.45\textwidth]{img/model_plots/model_42/baseline/Agal/fermi_prediction_Agal_0.903000.pdf}
-\includegraphics[width=0.45\textwidth]{img/model_plots/model_42/baseline/Agal/fermi_prediction_Agal_0.980000.pdf}
-\includegraphics[width=0.45\textwidth]{img/model_plots/model_42/baseline/Agal/fermi_prediction_Agal_1.000000.pdf}
+\includegraphics[width=0.45\textwidth]{chapter_06/sections/paper_dnds/img/model_plots/model_42/baseline/Agal/fermi_prediction_Agal_0.780000.pdf}
+\includegraphics[width=0.45\textwidth]{chapter_06/sections/paper_dnds/img/model_plots/model_42/baseline/Agal/fermi_prediction_Agal_0.873000.pdf}
+\includegraphics[width=0.45\textwidth]{chapter_06/sections/paper_dnds/img/model_plots/model_42/baseline/Agal/fermi_prediction_Agal_0.883000.pdf}
+\includegraphics[width=0.45\textwidth]{chapter_06/sections/paper_dnds/img/model_plots/model_42/baseline/Agal/fermi_prediction_Agal_0.888000.pdf}
+\includegraphics[width=0.45\textwidth]{chapter_06/sections/paper_dnds/img/model_plots/model_42/baseline/Agal/fermi_prediction_Agal_0.893000.pdf}
+\includegraphics[width=0.45\textwidth]{chapter_06/sections/paper_dnds/img/model_plots/model_42/baseline/Agal/fermi_prediction_Agal_0.903000.pdf}
+\includegraphics[width=0.45\textwidth]{chapter_06/sections/paper_dnds/img/model_plots/model_42/baseline/Agal/fermi_prediction_Agal_0.980000.pdf}
+\includegraphics[width=0.45\textwidth]{chapter_06/sections/paper_dnds/img/model_plots/model_42/baseline/Agal/fermi_prediction_Agal_1.000000.pdf}
 \caption{%Same as Fig. \ref{fig:prediction-fermi-12y} 
 Reconstructed $\dnds$ and $\fiso$  and their Bayesian errors, when the trained CNN is applied to the \fermi map  using  different values of $A_\textrm{gal}$ as indicated in the panel labels.}
 \label{fig:Agal_change}
@@ -163,7 +163,7 @@ Reconstructed $\dnds$ and $\fiso$  and their Bayesian errors, when the trained C
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.9\textwidth]{img/model_plots/model_42/spherical/fermi_prediction_hist.pdf}
+\includegraphics[width=0.9\textwidth]{chapter_06/sections/paper_dnds/img/model_plots/model_42/spherical/fermi_prediction_hist.pdf}
 \caption{Reconstructed $\dnds$ and $\fiso$  and their errors, using a fully spherical  CNN, trained on simulated maps and then applied to the \fermi map. }
 \label{fig:SphericalNN-Fermi-dnds}
 \end{figure}
@@ -172,7 +172,7 @@ Reconstructed $\dnds$ and $\fiso$  and their Bayesian errors, when the trained C
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=1.0\textwidth]{img/model_plots/model_42/spherical/model_42_7i2_n64_sp_HL_predictions.pdf}
+\includegraphics[width=1.0\textwidth]{chapter_06/sections/paper_dnds/img/model_plots/model_42/spherical/model_42_7i2_n64_sp_HL_predictions.pdf}
 \caption{Some example $\dnds$ from the validation dataset of the spherical CNN. Each panel shows the input $\dnds$ and $\fiso$ and the corresponding quantities reconstructed by the CNN. The colored areas indicate the $1\sigma$ and $2\sigma$ uncertainty bands. }
 \label{fig:SphericalNN-test-random}
 \end{figure}
@@ -183,7 +183,7 @@ Reconstructed $\dnds$ and $\fiso$  and their Bayesian errors, when the trained C
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=1.0\textwidth]{img/model_plots/model_42/spherical/pendenza2.pdf}
+\includegraphics[width=1.0\textwidth]{chapter_06/sections/paper_dnds/img/model_plots/model_42/spherical/pendenza2.pdf}
 \caption{Same as Fig. \ref{fig:SphericalNN-test-random}  but for 6 different random realization of a flat $S^2\dnds$ and same 
 $F_\textrm{iso}$.}
 %$F_\textrm{iso,true}=4.84 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$.   }
