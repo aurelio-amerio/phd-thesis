@@ -36,7 +36,7 @@ In all cases, none of the identified candidates could be unambiguously distingui
 The classify-and-count approach, whether implemented with hand-crafted cuts or ML classifiers, suffers from three interrelated problems that compromise the statistical rigor of the resulting constraints.
 First, no dark matter subhalo has ever been identified, so the ``DM'' class used in supervised classification has no empirical anchor and the resulting classification probabilities cannot be calibrated against reality.
 \aure{need to review this phrase, it's imprecise}
-\red{Second, classifiers trained on balanced datasets with comparable fractions of AGNs, pulsars, and simulated DM sources bear no relation to the actual class composition of the gamma-ray sky, where the DM prevalence may well be zero; this constitutes a prior shift (Section~\ref{sec:3.4}) that systematically inflates the predicted DM probabilities.}
+\red{Second, classifiers trained on balanced datasets with comparable fractions of AGNs, pulsars, and simulated DM sources bear no relation to the actual class composition of the gamma-ray sky, where the DM prevalence may well be zero. This is likely to bias the estimation of any model trainined in such a way when applied to real world data.}
 Third, the number of DM candidates depends on an ad hoc probability threshold $p_\mathrm{DM} > p_\mathrm{threshold}$ whose value carries no statistical justification: different thresholds yield candidate counts that can differ by an order of magnitude and, consequently, different physical bounds on $\langle\sigma v\rangle$.
 The resulting upper limits lack a well-defined confidence level---they represent an assumption ($N_\mathrm{DM} \leq N_\mathrm{candidates}$) rather than a statistical inference.
 
