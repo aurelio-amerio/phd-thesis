@@ -1,4 +1,4 @@
-﻿% Section 5.4 â€” The Unassociated Source Problem
+% Section 5.4  The Unassociated Source Problem
 % Trimmed: condensed association completeness, compressed previous search chronology.
 % Absorbed 5.5 concepts: quantification learning motivation as closing paragraphs.
 
@@ -12,43 +12,67 @@ The Fermi-LAT catalogs contain a large population of gamma-ray sources with no i
 \label{sec:5.4.1}
 
 The latest incremental release, the 4FGL-DR4 catalog~\cite{2022ApJS..260...53A, 2023arXiv230712546B}, contains approximately 7,200 sources detected above a significance threshold of $4\sigma$.
-Of these, 2,428 sources---roughly one third---remain unassociated, meaning that no plausible counterpart has been identified at other wavelengths~\cite{2023arXiv230712546B}.
-Among the unassociated population, 1,282 sources lie at Galactic latitudes $|b| > 10{{}^\circ}$, where contamination from diffuse Galactic emission is reduced and the search for exotic source populations becomes more tractable.
+Of these, \red{2,428 sources}---roughly one third---remain unassociated, meaning that no plausible counterpart has been identified at other wavelengths~\cite{2023arXiv230712546B}.
+Among the unassociated population, \red{1,282} sources lie at Galactic latitudes $|b| > 10{{}^\circ}$, where contamination from diffuse Galactic emission is reduced and the search for exotic source populations becomes more tractable. \aure{check these number again in the paper}
 
 Association completeness depends on both source brightness and Galactic latitude: brighter sources are far easier to link to multi-wavelength counterparts, while the association fraction drops from approximately 85\% at high latitudes to around 40\% near the Galactic plane, where dense source fields and X-ray absorption impede counterpart identification~\cite{2020ApJS..247...33A}.
 The majority of unassociated sources are therefore expected to be ordinary astrophysical objects whose association has failed for instrumental or geometric reasons.
 Their spectral properties offer direct clues to their nature: at high latitudes, the average photon index ($\Gamma \approx 2.24$) matches that of blazars of unknown type, while closer to the Galactic plane the spectra soften ($\Gamma \approx 2.42$), consistent with pulsars~\cite{2020ApJS..247...33A}.
-Further discussion of the Fermi-LAT association procedure and its completeness can be found in Section~\ref{sec:2.3}.
+Further discussion of the Fermi-LAT association procedure and its completeness can be found in Section~\ref{sec:2.3}.\aure{update link in the future when ch2 is finalized}
 
 To date, no unassociated Fermi-LAT source has been confirmed as a dark matter subhalo~\cite{2020ApJS..247...33A, 2022ApJS..260...53A}.
+\aure{recently, there have been some claim of detection of dm subhalos, although the community is still skeptical. I need to find them and add them, there should be two of them, probably 2507.16932 and 2409.19493}
 As discussed in Section~\ref{sec:5.3}, even under optimistic assumptions the most detectable subhalos would produce gamma-ray spectra similar to those of pulsars or soft-spectrum blazars, making individual identification on spectral grounds alone extremely difficult.
 Nevertheless, the large unassociated population has motivated a sustained effort to search for DM subhalo candidates within it.
 
 \subsection{Previous DM Subhalo Searches and the Failure of Classify-and-Count}
 \label{sec:5.4.2}
-
+\aure{this is a strong statement, review it and maybe tone it down or better scope it}
 All prior searches for dark matter subhalos among Fermi-LAT unassociated sources share a common strategy, referred to as \textit{classify-and-count}: a set of DM subhalo candidates is selected from the unassociated population based on their gamma-ray properties, and upper limits on $\langle\sigma v\rangle$ are derived under the assumption that the number of true subhalos cannot exceed the candidate count~\DMsubhaloUnas.
 Early analyses relied on hand-crafted spectral and spatial cuts applied to successive catalog releases~\cite{2010PhRvD..82f3501B, 2012A&A...538A..93Z, 2012ApJ...747..121A, 2014PhRvD..89a6014B, 2015JCAP...12..035B, 2016JCAP...05..028S, 2017JCAP...04..018H}, with some studies emphasizing spatial extension as a potential discriminant~\cite{2014PhRvD..89a6014B, 2015JCAP...12..035B, 2022PhRvD.105h3006C}.
 More recently, machine learning classifiers have automated and extended the candidate selection~\DMsubhaloML.
 In all cases, none of the identified candidates could be unambiguously distinguished from standard astrophysical sources.
 
 The classify-and-count approach, whether implemented with hand-crafted cuts or ML classifiers, suffers from three interrelated problems that compromise the statistical rigor of the resulting constraints.
-First, no dark matter subhalo has ever been identified, so the ``DM'' class used in supervised classification has no empirical anchor and the resulting classification probabilities cannot be calibrated against reality~\cite{Amerio:2025fhz}.
-Second, classifiers trained on balanced datasets with comparable fractions of AGNs, pulsars, and simulated DM sources bear no relation to the actual class composition of the gamma-ray sky, where the DM prevalence may well be zero; this constitutes a prior shift (Section~\ref{sec:3.4}) that systematically inflates the predicted DM probabilities~\cite{Amerio:2025fhz}.
-Third, the number of DM candidates depends on an ad hoc probability threshold $p_\mathrm{DM} > p_\mathrm{threshold}$ whose value carries no statistical justification: different thresholds yield candidate counts that can differ by an order of magnitude and, consequently, different physical bounds on $\langle\sigma v\rangle$~\cite{Amerio:2025fhz}.
+First, no dark matter subhalo has ever been identified, so the ``DM'' class used in supervised classification has no empirical anchor and the resulting classification probabilities cannot be calibrated against reality.
+\aure{need to review this phrase, it's imprecise}
+\red{Second, classifiers trained on balanced datasets with comparable fractions of AGNs, pulsars, and simulated DM sources bear no relation to the actual class composition of the gamma-ray sky, where the DM prevalence may well be zero. This is likely to bias the estimation of any model trainined in such a way when applied to real world data.}
+Third, the number of DM candidates depends on an ad hoc probability threshold $p_\mathrm{DM} > p_\mathrm{threshold}$ whose value carries no statistical justification: different thresholds yield candidate counts that can differ by an order of magnitude and, consequently, different physical bounds on $\langle\sigma v\rangle$.
 The resulting upper limits lack a well-defined confidence level---they represent an assumption ($N_\mathrm{DM} \leq N_\mathrm{candidates}$) rather than a statistical inference.
 
 \subsection{The Quantification Learning Alternative}
 \label{sec:5.4.3}
 
-The failure of classify-and-count is conceptual, not technical: the approach attempts to answer a population-level question---how many DM subhalos contribute to the unassociated catalog?---using a tool designed for individual-level decisions.
+The failure of classify-and-count is conceptual, not technical: the approach attempts to answer a population-level question---how many DM subhalos contribute to the unassociated catalog?---using a tool designed for individual-level decisions. 
+If we had access to an already well established population of DM subhalos, we could train a machine learning model to identify new ones, but that is currently not the case. 
 A different framework is needed, one that models the composition of the unassociated population as a whole and fits the DM contribution directly to the data.
 
-The formal machinery for this problem was introduced in Section~\ref{sec:3.4}: \textit{quantification learning} replaces the discriminative question ``what class does this source belong to?'' with the generative question ``what is the probability of observing features $\mathbf{x}$ given that the source belongs to class $k$?''
-By estimating the class-conditional densities $p(\mathbf{x}|k)$ from the associated catalog and modeling the unassociated population as a mixture $p_\mathrm{target}(\mathbf{x}) = \sum_k \pi_k\, p(\mathbf{x}|k)$, the class prevalences $\pi_k$ become free parameters determined by the data rather than imposed during training~\cite{10.1145/3117807_Gonzalez_quantification, 2024arXiv240100490M}.
-This generative formulation yields a well-defined product likelihood over all unassociated sources, provides a natural mechanism for including a new class (dark matter subhalos) whose prevalence was zero in the training set, and supports statistically rigorous confidence intervals through the profile likelihood~\cite{Amerio:2025fhz}.
+The formal machinery for this problem was introduced in Section~\ref{sec:3.4}: \textit{quantification learning}.
+Standard classifiers estimate the posterior probability $p(k|\mathbf{x})$---the probability that a source belongs to class~$k$ given its observed features---and are therefore designed to label individual objects.
+However, as shown in Section~\ref{sec:3.4.2}, the posterior absorbs the class prevalences of the training set: through Bayes' theorem, $p(k|\mathbf{x}) \propto p(\mathbf{x}|k)\,p(k)$, so any change in the underlying class fractions between the associated and unassociated populations invalidates the classifier's predictions.
+Quantification learning inverts the question.
+Instead of asking ``to which class does this source belong?'', it asks ``what is the distribution of observed features within each class?''---that is, it estimates the class-conditional densities $p(\mathbf{x}|k)$.
+These densities describe the intrinsic physical profile of each source population: the spectral shape, curvature, and flux distribution that characterize, say, blazars or pulsars as a class.
+Because the physical properties of a source class do not change when its relative abundance changes, $p(\mathbf{x}|k)$ is invariant under prior shift ($p_\mathrm{assoc}(\mathbf{x}|k) = p_\mathrm{unas}(\mathbf{x}|k)$; see Equation~\ref{eq:prior_shift}).
+This invariance is what makes the class-conditional densities learnable from the associated catalog and directly portable to the unassociated population.
 
-The entanglement of prior and covariate shift between Fermi-LAT associated and unassociated populations---documented in Section~\ref{sec:3.4} and arising from the brightness-dependent association completeness---is handled simultaneously within this framework through sigmoid modulation functions that adapt the astrophysical templates to the unassociated feature space.
+The shift from $p(k|\mathbf{x})$ to $p(\mathbf{x}|k)$ carries a deeper conceptual consequence: the unit of analysis moves from the individual source to the population.
+A classifier assigns each source a label and is only as good as the labels in its training set---labels that, for a class never observed (dark matter subhalos), simply do not exist.
+A generative model, by contrast, characterizes each class through its feature distribution and then models the target data as a mixture of these distributions, $\tilde{p}_\mathrm{unas}(\mathbf{x}) = \sum_k \pi_k\, p(\mathbf{x}|k)$.
+In this formulation, the class prevalences $\pi_k$ are free parameters determined by fitting the model to the data rather than imposed during training~\cite{10.1145/3117807_Gonzalez_quantification, 2024arXiv240100490M}.
+Maximizing the product likelihood over all unassociated sources simultaneously constrains every mixing fraction, naturally accommodates a new class (dark matter subhalos) whose prevalence was zero in the training set, and supports statistically rigorous confidence intervals through the profile likelihood~\cite{Amerio:2025fhz}.
+
+
+
+% The formal machinery for this problem was introduced in Section~\ref{sec:3.4}: \textit{quantification learning} replaces the discriminative question ``what class does this source belong to?'' with the generative question ``what is the probability of observing features $\mathbf{x}$ given that the source belongs to class $k$?''
+% By estimating the class-conditional densities $p(\mathbf{x}|k)$ from the associated catalog and modeling the unassociated population as a mixture $p_\mathrm{target}(\mathbf{x}) = \sum_k \pi_k\, p(\mathbf{x}|k)$, the class prevalences $\pi_k$ become free parameters determined by the data rather than imposed during training~\cite{10.1145/3117807_Gonzalez_quantification, 2024arXiv240100490M}.
+% This generative formulation yields a well-defined product likelihood over all unassociated sources, provides a natural mechanism for including a new class (dark matter subhalos) whose prevalence was zero in the training set, and supports statistically rigorous confidence intervals through the profile likelihood~\cite{Amerio:2025fhz}.
+
+In practice, prior shift and covariate shift between the associated and unassociated populations act simultaneously (Section~\ref{sec:3.4.2}).
+The covariate shift arises from observational biases---it is easier to associate bright, high-latitude sources---and is therefore an instrumental effect that depends on the measured features of a source rather than on its intrinsic physical class.
+Accordingly, the sigmoid modulation functions $\tilde{C}(\mathbf{x};\boldsymbol{\theta}_\mathrm{cov})$ that correct for this bias are shared across all astrophysical classes, and their parameters are fitted jointly with the class prevalences.
+The results of the analysis show that prior shift is the dominant effect driving the differences between the two populations: the relative fraction of Galactic sources rises from 6\% in the associated sample to 29\% among the unassociated sources (table~\ref{tab:class_prevalence_astro}), consistent with the higher density of unassociated sources near the Galactic plane.
+A quantitative comparison presented in appendix~\ref{app:prior_vs_cov} confirms that the prior shift alone is preferred at $7\sigma$ significance over a model with no dataset shift, while the covariate shift alone reaches $4.5\sigma$; the covariate shift correction is thus statistically significant but acts as a secondary refinement.
 The full construction of this mixture model, including the kernel density estimation of astrophysical templates, the Monte Carlo simulation of the DM component, and the optimization via the Expectation-Maximization algorithm, is presented in the paper body that follows.
 
 \aure{Follows the paper:}
