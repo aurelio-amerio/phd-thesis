@@ -1,4 +1,4 @@
-\section{The Cherenkov Telescope Array}\label{sec:CTA}
+\subsection{The Cherenkov Telescope Array}\label{sec:CTA}
 %%%%%%%%%%%%%%%%%%
 The CTAO will represent the next generation of imaging atmospheric Cherenkov telescopes (IACTs), improving the technology of the current ground-based $\gamma$-ray detectors, such as H.E.S.S., MAGIC, and VERITAS. It is designed to surpass the sensitivity of current IACTs by an order of magnitude in the TeV regime, to improve the angular resolution, as well as to enhance the surveying and monitoring capabilities. CTAO  will consist of two IACT arrays: one located in the Southern hemisphere (CTAO-South) and the other in the Northern hemisphere (CTAO-North) \cite{CTAConsortium:2018tzg}.
 
@@ -10,7 +10,7 @@ The telescopes will be equipped with cameras featuring wide fields of view:
 
 At the same time, CTAO will carry out a large number of traditional, dedicated pointings across the sky. The off-source data collected through these observations will cumulatively cover a substantial sky area with a significant average exposure. In this work, we consider extragalactic data obtained from both observational strategies, as detailed in two subsections below.
 
-\subsection{The Extra-Galactic survey}
+\subsubsection{The Extra-Galactic survey}
 
 To study the auto- and cross-correlation signals with gamma-rays, {it is essential to use maps of large sky regions with approximately uniform coverage}. Among CTAO Key Science Projects, the dedicated survey of the extragalactic sky---referred to as the extra-galactic (EGAL) survey - presents the required characteristics.
 
@@ -18,7 +18,7 @@ As described in \cite{CTAConsortium:2018tzg} (Sect. 8), the EGAL survey will cov
 
 The EGAL observations are planned to be carried out over three years of observations, using the full CTAO Observatory (both the Southern and Northern arrays) to achieve nearly uniform sensitivity over the survey region. It is proposed that 15\% of the sky will be covered by the Southern array using 400 h and 10\% by the Northern array using 600 h, resulting in a total observation time of $\sim$ 1000 h. The default {observing strategy consists of a grid spaced by $\sim 3^\circ$ across the survey area, with each pointing observed for 0.51 h in the South and 1.11 h in the North. This configuration is expected to yield an effective exposure of approximately 3 h per point within the EGAL survey boundary.} 
 
-\subsection{Simulating survey observations}
+\subsubsection{Simulating survey observations}
 To simulate the planned EGAL survey observations, we use the software package \texttt{ctools},\footnote{\url{http://CTA.irap.omp.eu/ctools/}.} developed for a scientific analysis of CTA data. 
 We used the instrument response functions (IRFs) for the observatory,\footnote{See \url{http://www.CTA-observatory.org/science/CTA-performance/} for more details.} labeled \texttt{prod3b-v2}, defining the so-called ``omega'' configuration. The respective IRF data files are publicly available at Ref. \cite{zenodo}.
 
@@ -26,7 +26,7 @@ To enclose the region of the sky covered by the EGAL survey, we simulate observa
 
 \begin{figure}[t!]
     \centering
-    \includegraphics[width=0.45\textwidth]{figures/previous_analysis/pointings_NSIDE16.pdf}
+    \includegraphics[width=0.45\textwidth]{paper_xcorr/figures/previous_analysis/pointings_NSIDE16.pdf}
     \caption{Pointing directions for the region of the sky {planned to be covered by the extragalactic survey. The pointing directions are shown using a HEALPix pixelization with NSIDE = 16.}}
     \label{fig:pnts}
 \end{figure}
@@ -35,7 +35,7 @@ The overlap of the FoV from different pointings contributes to a more uniform co
 
 \begin{figure}[t!]
     \centering
-    \includegraphics[width=0.45\textwidth]{figures/previous_analysis/pointings_zoom20deg_NSIDE16.pdf}
+    \includegraphics[width=0.45\textwidth]{paper_xcorr/figures/previous_analysis/pointings_zoom20deg_NSIDE16.pdf}
     \caption{Overlapping areas of different pointings. \emph{Top:} A zoomed-in scheme of the pointing strategy shown in \cref{fig:pnts} (red), {together with the overlapping fields of view of individual pointings} (turquoise). \emph{Bottom:} {Simulated exposure map showing variations relative to the average exposure, highlighting the anisotropic pattern created by overlapping pointing regions.}}
     \label{fig:pnt_zoom}
 \end{figure}
@@ -44,7 +44,7 @@ The IRFs we use are optimized for observations under different zenith angles. {F
 
 \begin{figure*}
     \centering
-    \includegraphics[width=\textwidth]{figures/previous_analysis/zenith_angles_NSIDE16_extragal_Luigi_irf5h.pdf}
+    \includegraphics[width=\textwidth]{paper_xcorr/figures/previous_analysis/zenith_angles_NSIDE16_extragal_Luigi_irf5h.pdf}
     \caption{Strategy for assigning Instrument Response Functions (IRFs) across the extragalactic survey region as a function of zenith angle. In the left panel, the color scale shows, for each sky position, the zenith angle as measured in the observatory reference frame during observation (the values of the zenith angles and their color coding are reported on the vertical bar on the left). Since the IRFs are derived in three zenith angle bins (indicated by the color bar on the side of the right panel), the right panel shows which IRF is assigned to each region of the sky. The three IRFs shown here refer to 5 hrs of observation and to zenith angles below 30 deg (dark blue), between 30 and 50 deg (light blue) and above 60 deg (green).
 }
     \label{fig:zenith_irf}
@@ -54,7 +54,7 @@ The observational strategy presented in Sec. 8 of Ref. \cite{CTAConsortium:2018t
 
 The survey observations are simulated for energies between 30 GeV and 30 TeV, using 30 log-spaced energy bins to ensure proper sampling of the IRFs across the energy range. For the purpose of estimating the background events and exposure over the whole extragalactic survey, we simulate the entire survey ROI, using coarser spatial binning of $1.0^\circ \times 1.0^\circ$ per pixel. For the sensitivity analysis, we instead simulate templates covering an ROI of $6.0^\circ\times 6.0^\circ$, using a finer spatial binning of $0.02^\circ \times 0.02^\circ$ per pixel.
 
-\subsection{Off-source data scenario}
+\subsubsection{Off-source data scenario}
 
 In addition to performing extensive surveys of the $\gamma$-ray sky, CTAO will be operated as an open, proposal-driven observatory. The observation time awarded to the wider research community can be added to the dedicated survey observation times of CTAO, and increasing the overall exposure that will be achieved over the first 10 years of telescope operation. An educated guess based on the performance of current IACTs can be made for CTAO observations performed through the proposal-driven program. In {Ref.} \cite{Coronado_Blazquez_2021}, the authors calculate the sky coverage and resulting observation time of the CTAO proposal program, assuming similarity with the actual operations of the MAGIC telescope. They extrapolate the 6.5 years of data obtained with the MAGIC array to 10 years of observation time using the two CTAO arrays. We adopt a similar approach to estimate the most optimistic case scenario for the observations of the extragalactic sky with CTAO, assuming an effective observation time of $\sim50$ hours per point and the same sky coverage as in the EGAL survey, consistent with the findings in {Ref.} \cite{Coronado_Blazquez_2021}. In the sensitivity analysis described below, we use a corresponding re-scaling factor to estimate the point source sensitivity of CTAO {under this scenario}. Details on how we derive the effective observation time for this scenario can be found in {\cref{app:expo}}.
 
