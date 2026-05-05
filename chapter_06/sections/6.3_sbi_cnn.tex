@@ -1,7 +1,9 @@
 \section{Simulation-Based Inference for $dN/dS$}
 \label{sec:sbi_cnn}
 
-The 1pPDF formalism reviewed in the previous section represents the most developed analytical approach to sub-threshold source counts. It has produced the strongest existing measurements of the gamma-ray $dN/dS$ below the \textit{Fermi}-LAT detection limit. However, its underlying assumptions --- a parametric model for the source-count distribution, a simplified treatment of spatial correlations, and a computationally expensive non-amortized likelihood --- impose limitations that motivate a complementary approach.
+The 1pPDF formalism reviewed in the previous section represents the most developed analytical approach to sub-threshold source counts.
+It has produced the strongest existing measurements of the gamma-ray $dN/dS$ below the \textit{Fermi}-LAT detection limit.
+However, its underlying assumptions --- a parametric model for the source-count distribution, a simplified treatment of spatial correlations, and a computationally expensive non-amortized likelihood --- impose limitations that motivate a complementary approach.
 
 This section discusses those limitations in detail (Section~\ref{sec:6.3.1}), then introduces the simulation-based inference framework that addresses them (Section~\ref{sec:6.3.2}), and finally summarizes the handling of the spherical geometry of the input data (Section~\ref{sec:6.3.3}).
 
@@ -10,30 +12,52 @@ This section discusses those limitations in detail (Section~\ref{sec:6.3.1}), th
 
 The generating function formalism underlying the 1pPDF method rests on several simplifying assumptions, each of which constrains its applicability.
 
-\textit{Neglect of spatial correlations.} The 1pPDF treats each pixel independently. In practice, however, the point-spread function (PSF) of the \textit{Fermi} LAT smears a point source across multiple pixels, introducing spatial correlations that the generating function approach does not capture. These correlations carry information about the source-count distribution that is discarded in the single-pixel treatment, reducing the effective constraining power and potentially introducing biases.
+\textit{Neglect of spatial correlations.}
+The 1pPDF treats each pixel independently.
+In practice, however, the point-spread function (PSF) of the \textit{Fermi} LAT smears a point source across multiple pixels, introducing spatial correlations that the generating function approach does not capture.
+These correlations carry information about the source-count distribution that is discarded in the single-pixel treatment, reducing the effective constraining power and potentially introducing biases.
 
-\textit{Parametric dependence.} The $dN/dS$ is typically modeled as a multiply broken power law with a fixed number of segments. This assumption is sufficiently flexible for smooth, featureless distributions, but it cannot accommodate spectral features, bumps, or breaks at unforeseen flux values. The reconstruction is therefore conditional on the assumed functional form.
+\textit{Parametric dependence.}
+The $dN/dS$ is typically modeled as a multiply broken power law with a fixed number of segments.
+This assumption is sufficiently flexible for smooth, featureless distributions, but it cannot accommodate spectral features, bumps, or breaks at unforeseen flux values.
+The reconstruction is therefore conditional on the assumed functional form.
 
-\textit{Absence of amortization.} Each evaluation of the likelihood requires a fresh computation of the generating function at every pixel, which is computationally expensive. Exploring high-dimensional posterior distributions over the $dN/dS$ parameters and nuisance parameters (such as the Galactic foreground normalization) demands large numbers of these evaluations, making the inference slow and scaling poorly with the number of energy bins or model parameters.
+\textit{Absence of amortization.}
+Each evaluation of the likelihood requires a fresh computation of the generating function at every pixel, which is computationally expensive.
+Exploring high-dimensional posterior distributions over the $dN/dS$ parameters and nuisance parameters (such as the Galactic foreground normalization) demands large numbers of these evaluations, making the inference slow and scaling poorly with the number of energy bins or model parameters.
 
 \textit{Limited multi-band extension.} While multi-energy extensions of the 1pPDF have been performed \cite{Zechlin:2016pme, Lisanti:2016jub}, extending the formalism to a large number of energy bins simultaneously is practically challenging, since the number of model parameters and the computational cost grow rapidly.
 
-The community has recognized some of these issues: Zechlin et al.\ developed a Compound Poisson Generator (CPG) formalism \cite{Zechlin:2015wdz} to address potential biases in the 1pPDF approach, though this alternative still operates within the generating-function framework. A fundamentally different strategy is needed to overcome all four limitations simultaneously.
+The community has recognized some of these issues: Zechlin et al.
+\ developed a Compound Poisson Generator (CPG) formalism \cite{Zechlin:2015wdz} to address potential biases in the 1pPDF approach, though this alternative still operates within the generating-function framework.
+A fundamentally different strategy is needed to overcome all four limitations simultaneously.
 
 \subsection{A Simulation-Based Approach}
 \label{sec:6.3.2}
 
-The limitations identified above share a common root: the 1pPDF relies on an analytic likelihood that incorporates only a subset of the information contained in the photon-count map. An alternative is to bypass the likelihood entirely and employ simulation-based inference (SBI), the general framework introduced in Section~\ref{sec:3.2}.
+The limitations identified above share a common root: the 1pPDF relies on an analytic likelihood that incorporates only a subset of the information contained in the photon-count map.
+An alternative is to bypass the likelihood entirely and employ simulation-based inference (SBI), the general framework introduced in Section~\ref{sec:3.2}.
 
-As discussed in Chapter~3, the SBI paradigm exploits an asymmetry between the forward and inverse problems (Section~\ref{sec:3.2.1}): simulating a realistic gamma-ray sky map from a given set of $dN/dS$ parameters is computationally straightforward, whereas evaluating the corresponding likelihood is not. In the forward direction, one draws source fluxes from a parametric $dN/dS$, places them on the sky following an assumed spatial distribution, convolves with the instrument PSF and exposure, adds the Galactic foreground and isotropic background, and applies Poisson noise to produce a synthetic photon-count map. Each simulation is fast and faithful to the known instrumental and astrophysical effects.
+As discussed in Chapter~3, the SBI paradigm exploits an asymmetry between the forward and inverse problems (Section~\ref{sec:3.2.1}): simulating a realistic gamma-ray sky map from a given set of $dN/dS$ parameters is computationally straightforward, whereas evaluating the corresponding likelihood is not.
+In the forward direction, one draws source fluxes from a parametric $dN/dS$, places them on the sky following an assumed spatial distribution, convolves with the instrument PSF and exposure, adds the Galactic foreground and isotropic background, and applies Poisson noise to produce a synthetic photon-count map.
+Each simulation is fast and faithful to the known instrumental and astrophysical effects.
 
-A convolutional neural network (CNN) is then trained on an ensemble of such simulated maps to learn the mapping from a photon-count sky to the underlying $dN/dS$, using the architecture and training methodology detailed in Section~\ref{sec:3.3}. The specific configuration adopted for the $dN/dS$ problem discretizes the output into 20 flux bins spanning $[5 \times 10^{-12},\, 10^{-7}]$~cm$^{-2}$~s$^{-1}$, plus the isotropic background level $F_\mathrm{iso}$, yielding 21 output parameters. An ensemble of $9 \times 10^5$ synthetic maps is generated for training. The discretized representation is critical: unlike the parametric power-law adopted by the 1pPDF, it allows the CNN to reconstruct the $dN/dS$ non-parametrically, without assuming a fixed functional form. The network employs the heteroscedastic Gaussian negative log-likelihood cost function and concrete dropout regularization described in Section~\ref{sec:3.3}, which enable simultaneous estimation of the $dN/dS$ and its uncertainties. A frequentist cross-check using the distribution of residuals on held-out validation maps confirms that the Bayesian error bands are well calibrated; the full error analysis is presented in the paper body (Section~\ref{sec:bias}).
+A convolutional neural network (CNN) is then trained on an ensemble of such simulated maps to learn the mapping from a photon-count sky to the underlying $dN/dS$, using the architecture and training methodology detailed in Section~\ref{sec:3.3}.
+The specific configuration adopted for the $dN/dS$ problem discretizes the output into 20 flux bins spanning $[5 \times 10^{-12},\, 10^{-7}]$~cm$^{-2}$~s$^{-1}$, plus the isotropic background level $F_\mathrm{iso}$, yielding 21 output parameters.
+An ensemble of $9 \times 10^5$ synthetic maps is generated for training.
+The discretized representation is critical: unlike the parametric power-law adopted by the 1pPDF, it allows the CNN to reconstruct the $dN/dS$ non-parametrically, without assuming a fixed functional form.
+The network employs the heteroscedastic Gaussian negative log-likelihood cost function and concrete dropout regularization described in Section~\ref{sec:3.3}, which enable simultaneous estimation of the $dN/dS$ and its uncertainties. A frequentist cross-check using the distribution of residuals on held-out validation maps confirms that the Bayesian error bands are well calibrated; the full error analysis is presented in the paper body (Section~\ref{sec:bias}).
 
 This framework addresses the four limitations identified in Section~\ref{sec:6.3.1}: inter-pixel PSF correlations are captured implicitly by the convolutional architecture, the $dN/dS$ is recovered non-parametrically, inference is amortized (a trained network produces predictions in milliseconds), and the pipeline extends naturally to multiple energy bins by adding input channels.
 
 \subsection{Inference on Spherical Data}
 \label{sec:6.3.3}
 
-\textit{Fermi}-LAT data are represented as HEALPix sky maps on the sphere. Applying standard planar CNNs to such data requires projecting the sphere onto a flat image, which inevitably introduces distortions. The \texttt{map2patches} algorithm, described in Section~\ref{sec:3.3}, addresses this by subdividing the HEALPix sphere into 12 equal-area base patches at order $n=0$, each of which is independently mapped to a 2D image and processed through standard 3D convolutions. This approach preserves the area and information content of each pixel without spherical distortion, while leveraging the optimized performance of standard convolutional operations.
+\textit{Fermi}-LAT data are represented as HEALPix sky maps on the sphere.
+Applying standard planar CNNs to such data requires projecting the sphere onto a flat image, which inevitably introduces distortions.
+The \texttt{map2patches} algorithm, described in Section~\ref{sec:3.3}, addresses this by subdividing the HEALPix sphere into 12 equal-area base patches at order $n=0$, each of which is independently mapped to a 2D image and processed through standard 3D convolutions.
+This approach preserves the area and information content of each pixel without spherical distortion, while leveraging the optimized performance of standard convolutional operations.
 
-A fully spherical cross-check using the NNHealpix architecture \cite{nnhealpix} yields compatible results, confirming that the map2patches approximation is reliable for the isotropic, small-scale signal of interest. The map2patches implementation is approximately an order of magnitude faster, enabling efficient generation of the large training ensembles required by the SBI framework. Full architectural details are presented in the paper body (Section~\ref{sec:architechture-and-training}).
+A fully spherical cross-check using the NNHealpix architecture \cite{nnhealpix} yields compatible results, confirming that the map2patches approximation is reliable for the isotropic, small-scale signal of interest.
+The map2patches implementation is approximately an order of magnitude faster, enabling efficient generation of the large training ensembles required by the SBI framework.
+Full architectural details are presented in the paper body (Section~\ref{sec:architechture-and-training}).
