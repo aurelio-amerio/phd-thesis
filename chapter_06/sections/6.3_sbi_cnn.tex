@@ -38,7 +38,7 @@ A fundamentally different strategy is needed to overcome all four limitations si
 The limitations identified above share a common root: the 1pPDF relies on an analytic likelihood that incorporates only a subset of the information contained in the photon-count map.
 An alternative is to bypass the likelihood entirely and employ simulation-based inference (SBI), the general framework introduced in Section~\ref{sec:3.2}.
 
-As discussed in Chapter~3, the SBI paradigm exploits an asymmetry between the forward and inverse problems (Section~\ref{sec:3.2.1}): simulating a realistic gamma-ray sky map from a given set of $dN/dS$ parameters is computationally straightforward, whereas evaluating the corresponding likelihood is not.
+As discussed in Chapter~\ref{ch:3}, the SBI paradigm exploits an asymmetry between the forward and inverse problems (Section~\ref{sec:3.2.1}): simulating a realistic gamma-ray sky map from a given set of $dN/dS$ parameters is computationally straightforward, whereas evaluating the corresponding likelihood is not.
 In the forward direction, one draws source fluxes from a parametric $dN/dS$, places them on the sky following an assumed spatial distribution, convolves with the instrument PSF and exposure, adds the Galactic foreground and isotropic background, and applies Poisson noise to produce a synthetic photon-count map.
 Each simulation is fast and faithful to the known instrumental and astrophysical effects.
 

@@ -22,20 +22,24 @@ This reconstruction is the central challenge addressed by this chapter.
 The source-count distribution is the observational projection of a more fundamental quantity: the luminosity function.
 The gamma-ray luminosity function, $\Phi_\gamma(z, L_\gamma)$, gives the comoving number density of sources per unit luminosity $L_\gamma$ as a function of redshift $z$.
 The connection between the two is given by \cite{Fornasa:2015qua}
+\aure{this equation is correct, I double checked}
 \begin{equation}
 	\frac{dN}{dS} = \int_{z_\mathrm{min}}^{z_\mathrm{max}} dz \int_{\Gamma_\mathrm{min}}^{\Gamma_\mathrm{max}} d\Gamma \; \frac{dN}{dV \, dL_\gamma \, d\Gamma}(z, L_\gamma, \Gamma) \; \frac{dV}{dz \, d\Omega} \; \frac{dL_\gamma}{dS},
 	\label{eq:dnds_lf}
 \end{equation}
-where $\Gamma$ characterizes the spectral shape of the source, $dV/(dz \, d\Omega)$ is the comoving volume element per unit redshift and solid angle, and $dL_\gamma/dS$ is the Jacobian relating luminosity to observed flux through the luminosity distance $D_L(z)$.
+where $\Gamma$ is a parameter that characterizes the energy spectrum shape of the source, $dV/(dz \, d\Omega)$ is the comoving volume element per unit redshift and solid angle, and $dL_\gamma/dS$ is the Jacobian relating luminosity to observed flux through the luminosity distance $D_L(z)$.
 The integrand $dN/(dV \, dL_\gamma \, d\Gamma)$ --- the comoving density of sources per unit luminosity and spectral index --- is the luminosity function itself, which encodes the intrinsic abundance of sources at each cosmic epoch.
 
 This integral makes precise the physical content of $dN/dS$: it takes the intrinsic distribution of sources in luminosity and redshift, projects it through the flux--distance relation, and integrates over all redshifts and spectral shapes to produce the observed flux distribution.
-In other words, $dN/dS$ is what we observe when we look at the sky, while the luminosity function is the astrophysical quantity we ultimately want to constrain.
+In other words, $dN/dS$ can be interpreted as the integral along the line of sight of the gamma-ray luminosity function. It is what we observe when we look at the sky, while the luminosity function is the astrophysical quantity we ultimately want to constrain.
 
 The source-count distribution therefore bridges two distinct observational regimes.
 At the bright end, it is anchored by direct measurements from the Fermi-LAT catalog, which shows a flux distribution broadly compatible with an $S^{-2}$ power law (shallower than the Euclidean expectation $S^{-5/2}$) across most of the resolved range \cite{Amerio:2023uet}.
 At the faint end, below the detection threshold of approximately $S_\mathrm{th} \sim 2 \times 10^{-10}$~cm$^{-2}$~s$^{-1}$ in the 1--10 GeV band, the $dN/dS$ must be reconstructed statistically from the collective imprint of unresolved sources on the photon-count map.
 The techniques for performing this reconstruction --- and for extending the $dN/dS$ well below the Fermi-LAT threshold --- are the subject of the following subsections.
+
+\aure{maybe add a nothe on that 5/2, where it comes from and why, it can be a footnote as that's a question that pops up often in talks: why do we get $S^{-2}$ and do we expect that?}
+\aure{stopped here}
 
 \subsection{The 1-Point Photon-Count Distribution}
 \label{sec:6.2.2}
@@ -94,9 +98,9 @@ Millisecond pulsars are subdominant, contributing less than 1\% of the UGRB inte
 The tighter the observational constraints on $dN/dS$, the smaller the residual room for non-standard contributions --- including dark matter annihilation --- to the background.
 
 This diagnostic power extends in two directions that are directly relevant to this thesis.
-First, the $dN/dS$ measured in this chapter provides the empirical prior for the probabilistic cataloging framework developed in Chapter 7, where it is used to determine the expected flux distribution of sources just below the detection threshold.
+First, the $dN/dS$ measured in this chapter provides the empirical prior for the probabilistic cataloging framework developed in Chapter~\ref{ch:7}, where it is used to determine the expected flux distribution of sources just below the detection threshold.
 Second, energy-dependent decomposition of the $dN/dS$ into individual source classes opens the possibility of searching for spectral signatures of a dark matter component --- a natural extension of the methodology that remains a goal for future work.
-The complementary approach of searching for collective dark matter emission through angular cross-correlations with tracers of large-scale structure is addressed in Chapter 8.
+The complementary approach of searching for collective dark matter emission through angular cross-correlations with tracers of large-scale structure is addressed in Chapter~\ref{ch:8}.
 
 The analytical 1pPDF approach reviewed in the preceding subsection has been remarkably successful, but it operates under assumptions that limit its scope.
 The generating function framework requires a parametric model for the $dN/dS$ (typically a multiply broken power law), and the inference is not amortized: each new dataset or parameter configuration requires a full re-convergence of the likelihood, which is computationally expensive.
