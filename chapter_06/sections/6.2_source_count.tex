@@ -5,7 +5,7 @@ The analysis of the unresolved gamma-ray sky begins with a single observable: th
 This function describes how many point sources exist at each flux level and provides the most direct statistical characterization of the populations that contribute to the unresolved gamma-ray background.
 Its reconstruction below the telescope detection threshold --- where individual sources can no longer be identified --- is the central inference problem addressed in this chapter.
 
-This section introduces the $dN/dS$ and the methodological context necessary to understand the approach developed in Section~\ref{sec:sbi_cnn}. We begin with the formal definition and its connection to the underlying luminosity function (Section~\ref{sec:6.2.1}), then review the 1-point photon-count distribution, the principal analytical method used to extract $dN/dS$ from sub-threshold data (Section~\ref{sec:6.2.2}). We close by discussing why the source-count distribution is such a valuable diagnostic of the gamma-ray sky and how it connects to the broader goals of this thesis (Section~\ref{sec:6.2.3}).
+This section introduces the $dN/dS$ and the methodological context necessary to understand the approach developed in Section~\ref{sec:sbi_cnn}. We begin with the formal definition and its connection to the underlying luminosity function (Section~\ref{sec:6.2.1}), then review the 1-point photon-count distribution, the principal analytical method used to extract $dN/dS$ from sub-threshold data (Section~\ref{sec:6.2.2}). We close by discussing how measurements of the total source-count distribution, combined with population-specific estimates, constrain the composition of the unresolved gamma-ray sky (Section~\ref{sec:6.2.3}).
 
 \subsection{Definition and Physical Meaning}
 \label{sec:6.2.1}
@@ -42,67 +42,47 @@ The techniques for performing this reconstruction --- and for extending the $dN/
 
 \subsection{The 1-Point Photon-Count Distribution}
 \label{sec:6.2.2}
-\aure{maybe shrink this section a bit?}
 
 Recovering the source-count distribution below the detection threshold requires extracting population information from the collective statistical imprint of unresolved sources on the photon-count map.
-The photon-count distribution --- also called the 1-point probability distribution function (1pPDF) --- provides a method for doing so that has been developed and refined since its introduction in 2011.
+The photon-count distribution --- also called the 1-point probability distribution function (1pPDF) --- provides a well-established method for doing so.
 
-Given a pixelated sky map, one constructs the histogram of the number of pixels containing exactly $k$ photons.
-Different populations of gamma-ray emitters have different effects on this histogram \cite{Fornasa:2015qua}.
-Bright but rare sources, such as blazars just below the detection limit, produce multiple photons per source during the observation period.
-Because these photons are spatially correlated --- they originate from the same point --- they populate pixels with moderately large photon counts, generating non-Poissonian tails in the distribution.
+The idea is straightforward: given a pixelated sky map, one constructs the histogram of the number of pixels containing exactly $k$ photons.
+Different source populations leave distinct imprints on this histogram \cite{Fornasa:2015qua}.
+Bright but rare sources, such as blazars just below the detection limit, produce multiple photons during the observation period; because these photons are spatially correlated, they populate pixels with moderately large photon counts, generating non-Poissonian tails in the distribution.
 By contrast, faint but numerous sources, such as star-forming galaxies, contribute on average far less than one photon each; their combined signal is statistically indistinguishable from a smooth Poissonian background \cite{Malyshev:2011zi}.
-Analyzing the shape of the photon-count distribution --- and in particular the departures from Poisson statistics --- thus encodes information about the sub-threshold source population and its $dN/dS$.
+The departures from Poisson statistics therefore encode information about the sub-threshold source population and its $dN/dS$.
+This connection is made rigorous through a generating-function formalism \cite{Malyshev:2011zi, Fornasa:2015qua} in which the total photon-count probability factorises into independent contributions from point sources, Galactic foreground, and isotropic background, and the parameters of $dN/dS$ are obtained by fitting the predicted pixel histogram to data via maximum likelihood.
 
-The mathematical framework that makes this precise is the generating function formalism \cite{Malyshev:2011zi}.
-For a discrete probability distribution $p_k$ (the probability of finding $k$ photons in a given pixel), the generating function is defined as the power series $P(t) = \sum_{k=0}^{\infty} p_k t^k$.
-The central property of this formalism is that independent emission components multiply: if the observed photon count is the sum of contributions from point sources, Galactic foreground, and isotropic background, then the total generating function is the product of the individual generating functions of each component \cite{Malyshev:2011zi, Fornasa:2015qua}. For a population of point sources, the generating function takes the form
-\begin{equation}
-	P_\mathrm{PS}(t) = \exp\!
-	\left(\sum_{m=1}^{\infty}(x_m\, t^m - x_m)\right),
-	\label{eq:1ppdf_gf}
-\end{equation}
-where $x_m$ is the average number of sources per pixel emitting exactly $m$ photons during the observation time.
-The set $\{x_m\}$ can be derived from the $dN/dS$, and the parameters of the source-count distribution are then obtained by fitting the predicted photon-count probability to the observed pixel histogram via maximum likelihood.
+Malyshev and Hogg~\cite{Malyshev:2011zi} pioneered this approach for gamma rays, applying it to 11 months of Fermi-LAT data and constraining the contribution of unresolved AGN-like sources to approximately $17 \pm 2\%$ of the total flux at high Galactic latitudes above 1~GeV.
+Zechlin, Cuoco et al.~\cite{Zechlin:2015wdz} improved the method by incorporating the spatial variation of the Galactic foreground and exposure at the pixel level, measuring the $dN/dS$ in the 1--10~GeV band down to fluxes approximately one order of magnitude below the detection threshold.
+Subsequent extensions by the same group~\cite{Zechlin:2016pme} and by Lisanti et al.~\cite{Lisanti:2016jub} generalised the technique to multiple independent energy bands spanning 1--171~GeV.
+The same pixel-statistics formalism was also adapted for the Non-Poissonian Template Fit (NPTF) applied to the Galactic Center Excess (Section~\ref{sec:4.4}), where it served to distinguish a smooth dark matter signal from a population of unresolved point sources such as millisecond pulsars --- illustrating the broad applicability of photon-count methods across very different science cases.
 
-Malyshev and Hogg \cite{Malyshev:2011zi} pioneered this approach for gamma rays, applying it to 11 months of Fermi-LAT data.
-They modeled the photon-count probabilities as the product of three generating functions --- point sources, Galactic diffuse emission, and isotropic background --- and constrained the contribution of unresolved AGN-like sources to the total flux, finding it to be approximately $17 \pm 2\%$ at high Galactic latitudes for photon energies above 1 GeV.
-Zechlin, Cuoco et al.
-\ \cite{Zechlin:2015wdz} improved the method significantly by adopting a pixel-dependent approach: rather than averaging the generating function across the sky, they incorporated the spatial variation of the Galactic foreground and exposure into the pixel-level probability calculation.
-Using 6 years of Fermi-LAT data, this pixel-dependent 1pPDF measured the $dN/dS$ in the 1--10 GeV band down to fluxes approximately one order of magnitude below the Fermi-LAT detection threshold.
-Subsequent work by the same group \cite{Zechlin:2016pme} and by Lisanti et al.\ \cite{Lisanti:2016jub} extended the technique to multiple energy bands spanning 1--171 GeV, providing the first energy-dependent measurements of the unresolved source-count distribution, albeit in independent energy bins.
-
-It is worth noting that the same pixel-statistics formalism was later adapted for a different purpose: the Non-Poissonian Template Fit (NPTF) applied to the Galactic Center Excess (see Section~\ref{sec:4.4}).
-In that context, the method was used to distinguish between a smooth dark matter signal and a population of unresolved point sources (such as millisecond pulsars) near the Galactic Center.
-The versatility of photon-count methods across these very different science cases --- from extragalactic population statistics to the GCE debate --- illustrates their broad applicability.
-Having established how the 1pPDF extracts $dN/dS$ from the pixel statistics, we now turn to why the source-count distribution itself is a powerful diagnostic of the unresolved gamma-ray sky.
-
-\subsection{Why $dN/dS$ Is a Powerful Observable}
+\subsection{Constraining the Composition of the Unresolved Sky}
 \label{sec:6.2.3}
 
-\aure{comments: the paper mentioned attempt to constrain the percentage of different sources composing the UGRB. I should probably add some caveats as to which are the failure modes of those studies, and why these percentages are indicative, and not set in stone. }
+The photon-count methods described above --- the 1pPDF and, as we shall see, the CNN-based approach developed in this chapter --- reconstruct the \emph{total} source-count distribution: the aggregate $dN/dS$ of all point sources, regardless of their astrophysical class.
+They measure how many sources exist at each flux level, but they cannot, by themselves, separate the blazar contribution from that of star-forming galaxies, misaligned AGNs, or any other population.
+This is a fundamental feature of photon-count statistics: they respond to photons, not to source identities.
 
-The source-count distribution is more than a statistical summary of the faint source population --- it is a direct diagnostic of the composition and evolution of the gamma-ray sky.
-Its power lies in the fact that different astrophysical source classes contribute to different portions of the flux range, so that the shape of $dN/dS$ encodes information about the relative abundance and properties of each population.
+A complementary body of work approaches the problem from the opposite direction, attempting to estimate the $dN/dS$ of individual source classes by leveraging multi-wavelength information.
+For blazars, the most numerous resolved population, the gamma-ray luminosity function can be constructed directly from Fermi-LAT catalog sources by fitting the observed flux distribution with a broken power law and correcting for detection efficiency \cite{Ajello:2015mfa}.
+These analyses indicate that unresolved blazars could account for roughly 20--30\% of the UGRB intensity below 100~GeV, while high-synchrotron-peaked BL Lacs dominate the background above a few tens of GeV \cite{Ajello:2015mfa}.
+For star-forming galaxies, which are too faint to be resolved in significant numbers, the strategy relies on empirical scaling relations between gamma-ray and infrared luminosity \cite{Fermi-LAT:2012nqz}; the well-measured infrared luminosity function is then used to extrapolate the gamma-ray contribution, yielding estimates that range from a few percent to $\sim\!50\%$ of the UGRB below 10~GeV, depending on the assumed redshift evolution \cite{Fornasa:2015qua, Fermi-LAT:2012nqz}.
+Misaligned AGNs (radio galaxies) are treated similarly, through correlations between their core radio luminosity and gamma-ray luminosity \cite{Inoue:2011bm, DiMauro:2014wha}; the resulting estimates place their contribution at roughly 10--25\% of the UGRB, but with an uncertainty band spanning almost an order of magnitude, reflecting the scarcity of the underlying radio data \cite{Fornasa:2015qua}.
+Millisecond pulsars contribute less than $1\%$ and are subdominant at all energies.
+These numbers should be taken as order-of-magnitude indications rather than precise measurements: the scaling relations are derived from small samples of nearby, bright objects and extrapolated to high redshifts, and the resulting uncertainty propagates directly into the inferred $dN/dS$ for each class.
 
-At the bright end, blazars --- both BL Lac objects and flat-spectrum radio quasars --- dominate the resolved catalog and the high-flux source counts \cite{Fornasa:2015qua}.
-At progressively fainter fluxes, other populations become relevant: misaligned AGNs, star-forming galaxies, and potentially more exotic contributors occupy the sub-threshold regime where direct detection fails.
-Decomposing the $dN/dS$ into these individual components constrains the luminosity functions of populations that are otherwise accessible only through indirect multi-wavelength correlations.
-The 1pPDF-based studies by \red{Korsmeier et al.
-\\cite{Korsmeier:2022cwp}, Manconi et al.\\cite{Manconi:2019ynl}, and Di Mauro et al.\\cite{DiMauro:2017ing}} demonstrated that photon-count statistics can isolate the blazar contribution to the unresolved sky and constrain its energy-dependent $dN/dS$, thereby probing the faint end of the blazar luminosity function.
+Since these known populations appear to collectively account for a large fraction of the UGRB intensity \cite{Ajello:2015mfa, Fornasa:2015qua}, a more precise measurement of the total $dN/dS$ would help constrain the room remaining for additional contributors such as dark matter annihilation.
 
-Integrating the sub-threshold $dN/dS$ yields the total contribution of unresolved point sources to the UGRB --- a quantity that carries direct implications for the composition of the diffuse gamma-ray sky.
-Current estimates indicate that the guaranteed astrophysical populations (blazars, misaligned AGNs, star-forming galaxies, and millisecond pulsars) can collectively account for much of the observed background intensity \cite{Fornasa:2015qua}.
-Blazars contribute approximately 20\% of the UGRB between 0.1 and 100 GeV, though high-synchrotron-peaked BL Lacs dominate the background above a few tens of GeV.
-Misaligned AGNs account for an estimated ${\sim}\,25\%$ above 100 MeV, while star-forming galaxies contribute between a few percent and ${\sim}\,50\%$ below 10 GeV, depending on the assumed evolutionary model.
-Millisecond pulsars are subdominant, contributing less than 1\% of the UGRB intensity.
-The tighter the observational constraints on $dN/dS$, the smaller the residual room for non-standard contributions --- including dark matter annihilation --- to the background.
+Any such measurement, however, is bounded from below by the detector exposure.
+Below a characteristic flux $F_\mathrm{sens} = 1 / \mathcal{E}_\mathrm{av}$ --- where $\mathcal{E}_\mathrm{av}$ is the average exposure in the region of interest --- a point source contributes fewer than one photon on average, and its signal becomes statistically indistinguishable from smooth Poisson noise.
+For 14 years of Fermi-LAT data at high Galactic latitudes in the 1--10~GeV band, this floor lies at approximately $4 \times 10^{-12}$~cm$^{-2}$~s$^{-1}$.
+Both the 1pPDF \cite{Zechlin:2015wdz, Zechlin:2016pme} and the CNN-based method developed in this chapter can probe the $dN/dS$ down to $\sim\!5 \times 10^{-12}$~cm$^{-2}$~s$^{-1}$, though the reconstruction uncertainties grow rapidly as this limit is approached.
 
-This diagnostic power extends in two directions that are directly relevant to this thesis.
-First, the $dN/dS$ measured in this chapter provides the empirical prior for the probabilistic cataloging framework developed in Chapter~\ref{ch:7}, where it is used to determine the expected flux distribution of sources just below the detection threshold.
-Second, energy-dependent decomposition of the $dN/dS$ into individual source classes opens the possibility of searching for spectral signatures of a dark matter component --- a natural extension of the methodology that remains a goal for future work.
+Beyond the direct characterization of the unresolved sky, the $dN/dS$ measured in this chapter provides the empirical prior for the probabilistic cataloging framework developed in Chapter~\ref{ch:7}, where it determines the expected flux distribution of sources just below the detection threshold.
 The complementary approach of searching for collective dark matter emission through angular cross-correlations with tracers of large-scale structure is addressed in Chapter~\ref{ch:8}.
 
-The analytical 1pPDF approach reviewed in the preceding subsection has been remarkably successful, but it operates under assumptions that limit its scope.
-The generating function framework requires a parametric model for the $dN/dS$ (typically a multiply broken power law), and the inference is not amortized: each new dataset or parameter configuration requires a full re-convergence of the likelihood, which is computationally expensive.
+The 1pPDF approach reviewed in the preceding subsection has been successful, but it operates under assumptions that limit its scope.
+The generating-function framework requires a parametric model for the $dN/dS$ (typically a multiply broken power law), and the inference is not amortized: each new dataset or parameter configuration requires a full re-convergence of the likelihood.
 The next section introduces a simulation-based alternative that relaxes these assumptions and enables non-parametric, amortized inference of the source-count distribution.
