@@ -39,7 +39,6 @@ At the faint end, below the detection threshold of approximately $S_\mathrm{th} 
 The techniques for performing this reconstruction --- and for extending the $dN/dS$ well below the Fermi-LAT threshold --- are the subject of the following subsections.
 
 \aure{maybe add a nothe on that $S^{-5/2}$, where it comes from and why, it can be a footnote as that's a question that pops up often in talks: why do we get $S^{-2}$ and do we expect that?}
-\aure{stopped here}
 
 \subsection{The 1-Point Photon-Count Distribution}
 \label{sec:6.2.2}
@@ -48,9 +47,8 @@ The techniques for performing this reconstruction --- and for extending the $dN/
 Recovering the source-count distribution below the detection threshold requires extracting population information from the collective statistical imprint of unresolved sources on the photon-count map.
 The photon-count distribution --- also called the 1-point probability distribution function (1pPDF) --- provides a method for doing so that has been developed and refined since its introduction in 2011.
 
-The basic idea is simple.
 Given a pixelated sky map, one constructs the histogram of the number of pixels containing exactly $k$ photons.
-Different populations of gamma-ray emitters leave different imprints on this histogram \cite{Fornasa:2015qua}.
+Different populations of gamma-ray emitters have different effects on this histogram \cite{Fornasa:2015qua}.
 Bright but rare sources, such as blazars just below the detection limit, produce multiple photons per source during the observation period.
 Because these photons are spatially correlated --- they originate from the same point --- they populate pixels with moderately large photon counts, generating non-Poissonian tails in the distribution.
 By contrast, faint but numerous sources, such as star-forming galaxies, contribute on average far less than one photon each; their combined signal is statistically indistinguishable from a smooth Poissonian background \cite{Malyshev:2011zi}.
