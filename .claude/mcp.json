@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "review-mode-mcp": {
+      "command": "review-mode-mcp",
+      "args": []
+    }
+  }
+}

@@ -329,3 +329,5 @@ TSWLatexianTemp*
 
 # don't commit the thesis file for now
 main.pdf
+
+.revisions

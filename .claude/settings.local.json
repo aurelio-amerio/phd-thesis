@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path \"c:\\\\Users\\\\Aure\\\\Documents\\\\GitHub\\\\phd-thesis\" -Recurse -Directory | Select-Object FullName | ForEach-Object { $_.FullName -replace [regex]::Escape\\(\"c:\\\\Users\\\\Aure\\\\Documents\\\\GitHub\\\\phd-thesis\"\\), \".\" } | Sort-Object)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\Aure\\\\Documents\\\\GitHub\\\\phd-thesis\\\\.agent\" -Recurse -File)",
+      "Bash(Select-Object FullName)",
+      "Bash(Sort-Object FullName)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "mcp__review-mode-mcp__get_annotations",
+      "mcp__review-mode-mcp__open_review"
+    ]
+  },
+  "plansDirectory": "plans"
+}
