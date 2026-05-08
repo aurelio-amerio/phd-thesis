@@ -1,5 +1,10 @@
-\section{Introduction}
+% Paper introduction — redundant material commented out.
+% The pedagogical motivation (lit review, dN/dS context, prior methods)
+% is covered by Sections 7.0–7.2 of the thesis.
+% What remains is the scope paragraph and section roadmap, following the
+% pattern established in Chapters 5 and 6.
 
+\begin{comment}
 Our view of the high-energy $\gamma$-ray sky has been revolutionised  by the Large Area Telescope (LAT) onboard the \Fermi~satellite, which is on its surveying mission since 2008: Since the publication of the fourth source  catalogue (4FGL) based on 8 years of data~\cite{Fermi-LAT:2019yla}, incremental updates appear periodically. The latest incarnation, the data release 3 (DR3) based on 12 yrs of data~\cite{2022ApJS..260...53A}, includes 6658 point-like sources in the energy range from 50 MeV to 1 TeV, with extragalactic blazars constituting the largest associated class. Apart for revealing entirely new classes of objects (such as Galactic millisecond pulsars~\cite{Caraveo:2013lra}), the explosion of the number of $\gamma$-ray sources has allowed for numerous applications in multi-wavelength and multi-messenger astrophysics and astroparticle physics. Unsurprisingly, the essential requirement for a source to enter a catalogue is  that its signal strength is significantly above the background, dominated by $\gamma$ rays associated to energy-loss processes of cosmic rays in the interstellar gas and radiation field. Since the pioneering analysis of EGRET data~\cite{Mattox:1996zz}, the signal strength is typically quantified by a test statistics $2\ln(\mathcal{L}/\mathcal{L}_0)$,  comparing the maximum value of the likelihood function including the source, $\mathcal{L}$, vs. the one without the source, $\mathcal{L}_0$. 
 
 However, many more sources are believed to hide below the detection threshold. In particular, a significant part of the quasi-isotropic, high Galactic latitude emission, is attributed to point-like sources too dim to be individually detected by the LAT~\cite{Fornasa:2015qua}. Nonetheless, a statistical approach relying on the pixel-count distribution has long been suggested to provide a diagnostic tool to 
@@ -12,15 +17,17 @@ Recently, in~\cite{Amerio:2023uet} one of us extended these results by adopting 
 In~\cite{Amerio:2023uet}, the $\dNdS$ has been deduced by training a neural network to reconstruct the source-count distribution of the high-latitude sky given a set of simulations with broad priors for the $\dNdS$ parameters. The core idea was that if a neural network can learn how to correctly reconstruct the $\dNdS$ for a series of simulated sky maps whose prior is broad enough, and if the simulator is accurate enough, then the neural network can determine correctly the source-count distribution function given the \Fermi~photon counts map. 
 %
 The output of~\cite{Amerio:2023uet}, i.e.~$\dNdS$, describes the number of gamma-ray sources per differential unit of flux. This quantity can only be statistically used to describe the unresolved gamma-ray source population, and gives us no information concerning the location of any of the sources.
+\end{comment}
 
-The goal of the present work is instead to probabilistically extend the \Fermi-LAT source catalogue exploiting the output of~\cite{Amerio:2023uet}. We will do so by proposing a new methodology applied to the \Fermi-LAT data which consists in a) proposing a test statistic (TS) for the gamma-ray counts in the sky, whose distributions across spatial pixels corresponding to the \Fermi-LAT measured map and those coming from the simulations can be compared; and b) identifying the pixels in the measured map whose TS values are large enough depending on the previous comparison, therefore overcoming the limitation of~\cite{Amerio:2023uet} of not being able to provide spatial information.
+The goal of this analysis is to probabilistically extend the \Fermi-LAT source catalogue exploiting the $\dNdS$ recovered in Chapter~\ref{ch:6}. We do so by proposing a new methodology applied to the \Fermi-LAT data which consists in a) proposing a test statistic (TS) for the gamma-ray counts in the sky, whose distributions across spatial pixels corresponding to the \Fermi-LAT measured map and those coming from the simulations can be compared; and b) identifying the pixels in the measured map whose TS values are large enough depending on the previous comparison, therefore overcoming the limitation of the $\dNdS$ analysis of not being able to provide spatial information.
 
+\begin{comment}
 The new methodological development we propose in this work can be exploited to obtain an extended catalogue, final product of this analysis, which, albeit only probabilistically defined, can be nonetheless very useful, for instance, in multi-wavelength (e.g.~\cite{2015ApJS..217....2M,Pena-Herazo:2021yrp,Pena-Herazo:2021ybj}) or in cross-correlation~\cite{2009ApJ...707L..56K,2010MNRAS.407..791G,Turley:2018biv,Li:2022vsb} analyses.   
 %
 Other methods to build $\gamma$-ray probabilistic catalogues have been attempted in the past, e.g.~\cite{Daylan:2016tia}, which however has been applied to limited regions of the real sky.
+\end{comment}
 
-
-This article is structured as follows: In Sec.~\ref{sec:catalog:data} we describe our data selection and introduce the map-making models we  use in our analysis.  Sec.~\ref {sec:procedure} is devoted to the quantitative setting of the problem and the statistical procedure followed. In Sec.~\ref{sec:catalogue} we present our results, which are also  made publicly available at \href{https://doi.org/10.5281/zenodo.8070852}{https://doi.org/10.5281/zenodo.8070852}. In Sec.~\ref{sec:catalog:conclusions} we outline some perspectives and present our conclusions.  
+In Section~\ref{sec:catalog:data} we describe the data selection, while Section~\ref{sec:catalog:models} introduces the null- and alternative-hypothesis models used in the analysis.  Section~\ref{sec:procedure} is devoted to the quantitative setting of the problem and the statistical procedure followed. In Section~\ref{sec:catalogue} we present the results, which are also  made publicly available at \href{https://doi.org/10.5281/zenodo.8070852}{https://doi.org/10.5281/zenodo.8070852}. In Section~\ref{sec:catalog:conclusions} we outline some perspectives and present our conclusions.  
 
 %%%%
 

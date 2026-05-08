@@ -1,7 +1,7 @@
-\subsection{Data selection and model components}
+% \subsection{Data selection and model components}
+% %%%%
+\subsection{Data selection}
 \label{sec:catalog:data}
-%%%%
-\subsubsection{Data selection}
 We consider the updated 14 years \Fermi-LAT data set (from week 9 to week 745) in the $(1,10)$ GeV energy range~\footnote{The energy range is chosen for consistency with the $\dNdS$ determination used below.} and Pass 8 event selection \cite{Fermi-LAT:2013jgq,Bruel:2018lac}. This ensures a good balance between high statistics and good angular resolution of the detector. We employ the \texttt{Fermi Science Tools} suite version 2.0.8 ~\cite{Fermitools} to analyse \Fermi-LAT data with the following settings: 
 We adopt the \verb|P8R3_SOURCEVETO_V3| instrument response functions (IRF), event class (EVCLASS) 2048 (\texttt{SOURCEVETO}) and event type (EVTYPE) 1 (\verb|FRONT|). We used standard quality selection criteria, i.e. \verb|DATA QUAL==1| and \verb|LAT CONFIG==1|.
 Atmospheric $\gamma$~rays from the Earth limb emission are removed by adopting a cut on the maximum zenith angle \texttt{ZMAX} of 90 degrees. We consider \verb|FRONT| events in order to have an optimal angular resolution, and the \texttt{SOURCEVETO} class of events, in order to have a good suppression of the charged cosmic-ray background while still retaining a large event statistics. 
@@ -36,7 +36,8 @@ ZMAX & 90 \\
 \label{tab:catalog:settings}
 \end{table}
 
-\subsubsection{Null- and alternative-hypothesis models}
+\subsection{Null- and alternative-hypothesis models}
+\label{sec:catalog:models}
 
 Our goal is to devise an algorithm able to detect point sources as $\gamma$-ray excesses
 on top of a Poisson-distributed model for the background diffuse emission components. 
