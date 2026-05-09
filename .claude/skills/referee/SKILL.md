@@ -1,5 +1,5 @@
 ---
-name: review
+name: referee
 description: Critical review of thesis sections or chapters. Evaluates scientific rigor, writing quality, logical flow, and citation completeness. Supports section-level (/referee X.Y) and chapter-level (/referee X) scope.
 ---
 

@@ -8,7 +8,9 @@
       "WebFetch(domain:github.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
       "mcp__review-mode-mcp__get_annotations",
-      "mcp__review-mode-mcp__open_review"
+      "mcp__review-mode-mcp__open_review",
+      "mcp__review-mode-mcp__list_reviewed_files",
+      "mcp__review-mode-mcp__update_annotation"
     ]
   },
   "plansDirectory": "plans"

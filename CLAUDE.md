@@ -56,7 +56,7 @@ These are the primary ways to drive thesis writing. Invoke via Claude Code:
 |---------|--------|
 | `/chapter N` | Generate detailed chapter outline for chapter N |
 | `/draft X.Y` or `/draft X.Y.Z` | Write prose for a section or subsection |
-| `/review X.Y` or `/review X` | Critical review of a section or full chapter |
+| `/referee X.Y` or `/referee X` | Critical review of a section or full chapter |
 
 The `/draft` workflow runs a three-layer writing pipeline: `scientific-writing` → `humanizer` → personal style adaptation. It automatically performs a review pass at the end.
 
