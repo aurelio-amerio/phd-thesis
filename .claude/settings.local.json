@@ -8,7 +8,8 @@
       "mcp__review-mode-mcp__list_reviewed_files",
       "mcp__review-mode-mcp__update_annotation",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(grep *)"
     ]
   },
   "plansDirectory": "plans"
