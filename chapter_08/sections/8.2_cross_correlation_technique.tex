@@ -11,13 +11,9 @@ The argument rests on three interlocking ideas: the redshift selectivity conferr
 \subsection{Tomographic Redshift Slicing}
 \label{sec:8.2.1}
 
-The angular cross-power spectrum $C_\ell^{\gamma g}$ introduced in Section~\ref{sec:3.5} measures how the gamma-ray intensity field and the galaxy number counts fluctuate together as a function of angular scale. In the Limber approximation~\cite{Pinetti:2025hgd}, valid for the multipole range $\ell \gg 1$ of interest here, this is a single integral over comoving distance:
-\begin{equation}
-	C_\ell^{\gamma g} = \int \frac{d\chi}{\chi^2}\, W_\gamma(\chi)\, W_g(\chi)\, P_{\gamma g}\!
-	\left(k = \frac{\ell}{\chi}, \chi\right),
-\end{equation}
-where $\chi(z)$ is the radial comoving distance, $W_\gamma$ and $W_g$ are the window functions of the gamma-ray and galaxy fields, respectively, and $P_{\gamma g}$ is the three-dimensional cross-power spectrum.
-The key observation is that $C_\ell^{\gamma g}$ receives contributions only from the redshift range where both $W_\gamma$ and $W_g$ are simultaneously nonzero.
+The angular cross-power spectrum $C_\ell^{\gamma g}$ introduced in Section~\ref{sec:3.5} measures how the gamma-ray intensity field and the galaxy number counts fluctuate together as a function of angular scale.
+Under the Limber approximation (Eq.~\ref{eq:limber_aps}), this is a single integral over comoving distance, weighted by the product of the gamma-ray and galaxy window functions $W_\gamma(\chi)$ and $W_g(\chi)$.
+The key observation is that $C_\ell^{\gamma g}$ receives contributions only from the redshift range where both window functions are simultaneously nonzero.
 Choosing a galaxy catalog with a narrow, well-understood redshift distribution therefore selects a specific slice of the universe, filtering out emission from all other distances.
 This is the essence of the tomographic approach~\cite{Xia:2015wka,Fornasa:2015qua}.
 
@@ -46,23 +42,16 @@ Cross-correlation provides exactly that handle: by choosing a catalog confined t
 \subsection{Why Cross-Correlation Outperforms Auto-Correlation}
 \label{sec:8.2.2}
 
-The statistical variance of the estimated cross-power spectrum $\hat{C}_\ell^{\gamma g}$ is given by the expression~\cite{Pinetti:2025hgd}:
-\begin{equation}
-	\left(\Delta C_\ell^{\gamma g}\right)^2 = \frac{1}{(2\ell+1)f_\mathrm{sky}} \left[ \left(C_\ell^{\gamma g}\right)^2 + \left(C_\ell^{\gamma\gamma} + \frac{C_N}{B_\ell^2}\right)\left(C_\ell^{gg} + C_{Ng}\right) \right],
-\end{equation}
-where $f_\mathrm{sky}$ is the sky fraction observed, $C_N$ is the photon noise of the gamma-ray map, $C_{Ng}$ is the galaxy shot noise, and $B_\ell$ is the beam function of the gamma-ray instrument.
-The noise terms $C_N$ and $C_{Ng}$ arise from the discrete, finite number of detected photons and catalogued galaxies, respectively.
-These two noise sources are physically independent: photons emitted by gamma-ray sources carry no correlation with the positions of the external galaxy catalog.
+The statistical properties of the cross-correlation estimator reveal why this approach is fundamentally more powerful than auto-correlation for dark matter searches.
+The variance of the cross-power spectrum (Eq.~\ref{eq:variance_cross}) contains the product of the gamma-ray noise term $(C_\ell^{\gamma\gamma} + C_N/B_\ell^2)$ and the galaxy noise term $(C_\ell^{gg} + C_{N_g})$.
+The photon noise $C_N$ in the gamma-ray map and the galaxy shot noise $C_{N_g}$ are physically independent: their cross-noise vanishes on average.
+The noise therefore inflates the error bars on $C_\ell^{\gamma g}$ but does not add a systematic offset to the signal itself.
 
-This independence has a decisive consequence: the noise inflates the error bars on $C_\ell^{\gamma g}$ but does not add a systematic offset to the signal itself.
-The auto-correlation gives a qualitatively different variance:
-\begin{equation}
-	\left(\Delta C_\ell^{\gamma\gamma}\right)^2 = \frac{2}{(2\ell+1)f_\mathrm{sky}} \left(C_\ell^{\gamma\gamma} + \frac{C_N}{B_\ell^2}\right)^2.
-\end{equation}
+The auto-correlation variance (Eq.~\ref{eq:variance_auto}) is qualitatively different.
 Here the photon noise enters quadratically and adds directly to the gamma-ray auto-power spectrum.
 For a ground-based instrument like CTAO, the cosmic-ray rejection rate is never perfect, so $C_N$ is dominated by the irreducible cosmic-ray background rather than by photon statistics alone, making it very large.
 Any attempt to extract a DM signal from $C_\ell^{\gamma\gamma}$ must therefore contend with subtracting this large noise term with high precision.
-By contrast, $C_N$ in the cross-correlation variance multiplies the galaxy auto-spectrum $C_\ell^{gg} + C_{Ng}$, which is well measured independently; the DM signal is not hidden beneath the noise but simply requires accumulating sufficient signal-to-noise over multipoles and energy bins.
+By contrast, $C_N$ in the cross-correlation variance multiplies the galaxy auto-spectrum $C_\ell^{gg} + C_{N_g}$, which is well measured independently; the DM signal is not hidden beneath the noise but simply requires accumulating sufficient signal-to-noise over multipoles and energy bins.
 
 The second advantage of cross-correlation concerns the astrophysical foreground itself.
 The gamma-ray auto-correlation power spectrum $C_\ell^{\gamma\gamma}$ is dominated by the Poisson shot noise of unresolved blazars at essentially all multipoles of interest~\cite{Fornasa:2015qua,Fornengo:2013rga}.
@@ -74,10 +63,7 @@ Cross-correlation with a galaxy catalog suppresses this foreground through the w
 The high-redshift blazar population does not correlate with a local galaxy catalog, so their 1-halo Poisson term does not appear in $C_\ell^{\gamma g}$.
 The cross-correlation SNR for the astrophysical signal depends on the point-source sensitivity only weakly, through the window function of the resolved fraction, whereas the auto-correlation SNR is strongly sensitive to it~\cite{Pinetti:2025hgd}.
 For DM, which is always diffuse, the cross-correlation sensitivity is essentially immune to the blazar detection threshold.
-
-The power of this suppression is quantified directly in Paper~5~\cite{Pinetti:2025hgd}.
-For 50\,h of CTAO extragalactic survey observation and the 2MASS catalog, the forecast cross-correlation upper bound on the DM annihilation cross section is approximately a factor of five better than the forecast auto-correlation bound for the $b\bar{b}$ channel.
-Figure~\ref{fig:bounds1} shows the projected sensitivity curves for both approaches; the gap between the solid (cross-correlation) and dot-dashed (auto-correlation) lines quantifies this improvement.
+The quantitative impact of this suppression on the dark matter sensitivity is derived in the paper that follows, which compares the cross-correlation and auto-correlation constraints directly.
 
 The physical interpretation decomposes into the 1-halo and 2-halo structure of the three-dimensional cross-power spectrum, introduced in Section~\ref{sec:3.5} and detailed in~\cite{Camera:2012cj,Fornasa:2015qua}.
 The 1-halo term captures correlations between pairs of points within the same halo --- for DM this traces the density profile within individual halos and dominates at small angular scales ($\ell \gtrsim 200$).
@@ -106,10 +92,7 @@ Together these results confirmed that the cross-correlation technique is sensiti
 
 Cuoco et al.
 \ (2015) performed a joint fit to the measured cross-correlation functions including DM, blazars, SFGs, and mAGN as separate components~\cite{Cuoco:2015rfa}.
-A non-zero DM contribution was allowed by the data but degenerate with the mAGN and SFG components.
-Setting upper limits by requiring that the DM term does not overproduce the observed signal, the analysis excluded the thermal annihilation cross section at 95\% confidence level for $m_\chi \lesssim 25\,\mathrm{GeV}$ ($b\bar{b}$ channel) under a conservative substructure model, and up to $\sim 600\,\mathrm{GeV}$ under an optimistic substructure assumption.
-Lower bounds on the DM decay lifetime reached $\tau \gtrsim 10^{28}\,\mathrm{s}$ for a wide range of masses, roughly independent of particle mass.
-These constraints are competitive with those from dSphs and galaxy clusters at the same epoch, and they arise from a different physical observable --- the spatial coherence of DM emission with the cosmic web --- making them a genuinely independent probe~\cite{Regis:2015zka}.
+A non-zero DM contribution was allowed by the data but degenerate with the astrophysical components; the resulting upper limits on the annihilation cross section and decay lifetime were competitive with contemporary constraints from dwarf spheroidal galaxies and galaxy clusters, while arising from a genuinely independent observable --- the spatial coherence of DM emission with the cosmic web~\cite{Regis:2015zka}.
 
 Beyond galaxy number counts, gravitational lensing maps offer an alternative tracer with independent systematics.
 Cross-correlating the UGRB with weak-lensing convergence maps, Shirasaki et al.
