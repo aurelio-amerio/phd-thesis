@@ -106,30 +106,30 @@ This clean dataset is the baseline for all modern \textit{Fermi}-LAT analyses, i
 
 With the IRFs established, we now turn to how the LAT data are translated into astrophysical catalogs.
 Converting raw photon events into measurements of individual sources requires disentangling point-like objects from the structured diffuse backgrounds.
-The \textit{Fermi}-LAT collaboration achieves this through a global maximum likelihood framework \cite{Mattox:1996zz,2020ApJS..247...33A}.
+The \textit{Fermi}-LAT collaboration achieves this through a global maximum likelihood framework \cite{Mattox:1996zz,Fermi-LAT:2019yla}.
 The observed sky is modeled as a linear combination of spatial and spectral templates: the highly structured Galactic diffuse emission, a spatially uniform isotropic component capturing the extragalactic background and residual instrumental noise, and individual point sources each parametrized by a position and spectral model.
 The normalizations and spectral parameters of all components are simultaneously adjusted to maximize the Poisson likelihood function against the observed photon counts across the sky.
 
 To evaluate the significance of a candidate point source, the framework computes the Test Statistic (TS), defined as \[ TS = 2\ln\frac{\mathcal{L}_1}{\mathcal{L}_0}, \] where $\mathcal{L}_1$ is the maximum likelihood of the model with the candidate source included and $\mathcal{L}_0$ is the maximum likelihood of the null hypothesis without it \cite{Mattox:1996zz}.
 By Wilks' theorem, $TS$ is approximately distributed as $\chi^2$ with a number of degrees of freedom equal to the additional free parameters of the source model.
-For a point source with four free parameters (two spatial and two spectral), the catalog detection threshold of $TS > 25$ corresponds to a significance of just over $4\sigma$ \cite{Fermi-LAT:2015bhf,2020ApJS..247...33A}.
+For a point source with four free parameters (two spatial and two spectral), the catalog detection threshold of $TS > 25$ corresponds to a significance of just over $4\sigma$ \cite{Fermi-LAT:2015bhf,Fermi-LAT:2019yla}.
 As a practical rule of thumb, for an isolated source with known position (one spectral degree of freedom), the significance is well approximated by $\sqrt{TS}\,\sigma$.
 This threshold defines the boundary between what is considered a ``resolved'' source entering the catalog and what remains part of the unresolved diffuse background.
 
 The results of these analyses have been systematically compiled into a series of catalogs of increasing depth.
-The progression from the First \textit{Fermi}-LAT Catalog (1FGL, based on 11 months of data) through the Third Catalog (3FGL, 4 years, 3,033 sources) to the Fourth Catalog (4FGL, 8 years, 5,064 sources) \cite{Fermi-LAT:2015bhf,2020ApJS..247...33A} reflects both the accumulation of exposure and successive improvements in event reconstruction and background modeling.
+The progression from the First \textit{Fermi}-LAT Catalog (1FGL, based on 11 months of data) through the Third Catalog (3FGL, 4 years, 3,033 sources) to the Fourth Catalog (4FGL, 8 years, 5,064 sources) \cite{Fermi-LAT:2015bhf,Fermi-LAT:2019yla} reflects both the accumulation of exposure and successive improvements in event reconstruction and background modeling.
 The most recent published incremental release, 4FGL-DR3, extends the dataset to 12 years and contains 6,658 sources \cite{2022ApJS..260...53A}, with more recent data releases continuing to grow the catalog.
 Throughout this evolution, the detection threshold has remained at $TS > 25$, so the growing source count is driven primarily by longer exposure and improved sensitivity from Pass~8 event reconstruction.
 
 Each catalog entry reports the source localization (with 95\% confidence ellipse), the integrated energy flux in multiple bands, the best-fit spectral model, a variability index, and multi-wavelength associations.
 The spectral models employed include the simple power law, the log-parabola (commonly preferred for blazars), and the power law with an exponential cutoff (standard for pulsars).
-These spectral characterizations, together with variability and localization accuracy, form the feature space used in Paper~4 for the machine-learning classification of unassociated sources.
+These spectral characterizations, together with variability and localization accuracy, form the feature space used in Chapter~\ref{ch:dm_halos} for the machine-learning classification of unassociated sources.
 
 The association procedure matches each gamma-ray source against catalogs at radio, infrared, optical, and X-ray wavelengths using Bayesian and likelihood-ratio methods.
 Sources receiving a high-confidence match are labeled as ``associated''; those with firm identification through periodicity, correlated variability, or resolved angular extent are labeled as ``identified.'' In the 4FGL, more than 3,130 sources are identified or associated with active galaxies of the blazar class, while pulsars represent the largest Galactic source class.
-However, a substantial fraction---1,336 sources (26\%) in the base 4FGL---lacks any plausible multi-wavelength counterpart and remains unassociated \cite{2020ApJS..247...33A}.
+However, a substantial fraction---1,336 sources (26\%) in the base 4FGL---lacks any plausible multi-wavelength counterpart and remains unassociated \cite{Fermi-LAT:2019yla}.
 These unassociated sources are concentrated along the Galactic plane, where the dense background complicates counterpart searches, and at high latitudes, where their average spectral properties resemble those of blazars of unknown type.
 
 This large population of unassociated sources is scientifically important for multiple reasons.
 Beyond its likely composition of faint blazars and pulsars below the sensitivity of current multi-wavelength surveys, it also constitutes the primary search pool for exotic gamma-ray emitters such as dark matter subhalos.
-As discussed in Chapter~1, $\Lambda$CDM cosmology predicts the existence of thousands of Galactic subhalos below $\sim 10^7\,M_\odot$---too low in mass to retain gas or form stars, and therefore invisible at all wavelengths except gamma rays, where WIMP annihilation could produce a faint, spectrally soft signal closely resembling an unassociated \textit{Fermi}-LAT point source \cite{2020ApJS..247...33A}.Separating such candidates from the astrophysical contaminants within the 4FGL catalog is the central challenge addressed in Paper~4, where machine-learning classification techniques are used to search for dark matter subhalo candidates among the unassociated sources.
+As discussed in Chapter~1, $\Lambda$CDM cosmology predicts the existence of thousands of Galactic subhalos below $\sim 10^7\,M_\odot$---too low in mass to retain gas or form stars, and therefore invisible at all wavelengths except gamma rays, where WIMP annihilation could produce a faint, spectrally soft signal closely resembling an unassociated \textit{Fermi}-LAT point source \cite{Cirelli:2024ssz, Springel:2008cc}. Separating such candidates from the astrophysical contaminants within the 4FGL catalog is the central challenge addressed in Chapter~\ref{ch:dm_halos}, where machine-learning classification techniques are used to search for dark matter subhalo candidates among the unassociated sources.
