@@ -135,11 +135,10 @@ When analyzing \textit{Fermi}-LAT data, the standard procedure is to model the o
 The total photon counts in each spatial and energy bin are fit to a linear combination of: the GALPROP-derived $\pi^0$-decay, ICS, and bremsstrahlung templates; a catalog of individually resolved point sources; spatial templates for large-scale structures such as Loop I and the Fermi Bubbles; and a spatially uniform isotropic component representing the combined extragalactic background and residual instrumental contamination.
 The normalizations of these Galactic templates are typically left as free parameters and fitted independently in each energy bin, allowing the data to correct for imperfections in the GALPROP predictions.
 
-\aure{Here I need to add the link to the appropriate sections}
 Despite the physical sophistication of GALPROP and the flexibility of the template-fitting procedure, the GDE cannot be modeled perfectly.
 Imperfect modeling of the interstellar emission remains the largest single source of systematic uncertainty in gamma-ray astrophysics, introducing errors between 15\% and 30\% depending on the energy range \cite{Ackermann:2014usa, DGRB-review}.
 Uncertainties in the gas column densities (particularly the conversion from CO emission to molecular hydrogen), the interstellar radiation field, and the cosmic-ray propagation parameters all contribute.
 For the analyses presented in this thesis, these uncertainties are critical.
-In Paper~1, extracting the faint source-count distribution requires precise control over the diffuse background model.
-In Paper~4, mismodeling the Interstellar Emission Model directly induces a \emph{dataset shift}---a systematic discrepancy between the training simulations and the real observational data---that complicates the identification of dark matter subhalos.
+In Chapter~\ref{ch:dnds}, extracting the faint source-count distribution requires precise control over the diffuse background model.
+In Chapter~\ref{ch:dm_halos}, mismodeling the Interstellar Emission Model directly induces a \emph{dataset shift}---a systematic discrepancy between the training simulations and the real observational data---that complicates the identification of dark matter subhalos.
 The advanced statistical techniques developed in later chapters, particularly simulation-based inference and robust machine learning classifiers, are largely motivated by the need to operate reliably within these foreground-dominated, systematically uncertain regimes.
