@@ -9,8 +9,13 @@
       "mcp__review-mode-mcp__update_annotation",
       "Bash(git add *)",
       "Bash(git commit *)",
-      "Bash(grep *)"
+      "Bash(grep *)",
+      "Bash(awk NR==108,NR==112 { print NR\": \"$0 } *)"
     ]
+  },
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true
   },
   "plansDirectory": "plans"
 }
