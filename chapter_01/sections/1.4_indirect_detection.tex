@@ -132,7 +132,7 @@ Indeed, ICS constraints from peaked density profiles have been used to exclude l
 \subsection{How Dark Matter is Distributed: Density Profiles}
 \label{sec:density_profiles}
 
-The annihilation and decay rates derived in Section 1.4.1 depend directly on the dark matter density $\rho(r)$ --- and for annihilation, on its square.
+The annihilation and decay rates derived in Section~\ref{sec:ann_decay} depend directly on the dark matter density $\rho(r)$ --- and for annihilation, on its square.
 The predicted gamma-ray flux from any astrophysical target therefore hinges on the assumed density profile.
 The same measurement that constrains the particle physics simultaneously probes the dark matter distribution, but the result is only as reliable as the profile assumed --- a tension that runs through every chapter of this thesis.
 
@@ -219,17 +219,17 @@ After kinetic decoupling, dark matter particles free-stream over a characteristi
 For a 100 GeV WIMP with weak-scale couplings, $M_\text{min} \sim 10^{-6}\, M_\odot$ --- roughly an Earth mass \cite{Cirelli:2024ssz}.
 This scale lies far below the resolution of any current simulation and represents a fundamental uncertainty in the predicted total annihilation rate, since the integral over the subhalo mass function is dominated by the smallest masses.
 
-The density profiles and substructure properties introduced here feed directly into the $J$-factor and $D$-factor formalism of Section 1.4.4, which combines them with the particle physics of Section 1.4.1 to produce the master equations for gamma-ray indirect detection.
+The density profiles and substructure properties introduced here feed directly into the $J$-factor and $D$-factor formalism of Section~\ref{sec:jfactor}, which combines them with the particle physics of Section~\ref{sec:ann_decay} to produce the master equations for gamma-ray indirect detection.
 
 \subsection{The Flux Factorization: $J$-Factor and $D$-Factor}
 \label{sec:jfactor}
 
-Combining the particle physics of Section 1.4.1 with the density profiles of Section 1.4.3, we can now write the differential gamma-ray flux from dark matter annihilation observed from a direction $\psi$ relative to the Galactic Center \cite{Cirelli:2024ssz, Hooper:2024}:
+Combining the particle physics of Section~\ref{sec:ann_decay} with the density profiles of Section~\ref{sec:density_profiles}, we can now write the differential gamma-ray flux from dark matter annihilation observed from a direction $\psi$ relative to the Galactic Center \cite{Cirelli:2024ssz, Hooper:2024}:
 
 \[ \frac{d\Phi_\gamma}{dE\, d\Omega} = \underbrace{\frac{1}{4\pi} \frac{\langle \sigma v_\text{rel} \rangle}{2 m_\chi^2} \frac{dN_\gamma}{dE}}_{\text{Particle Physics}} \times \underbrace{J(\psi)}_{\text{Astrophysics}} \,.
 \]
 
-The prefactor $1/(4\pi)$ reflects the isotropic emission of photons over the full sphere, and the factor of $1/2$ avoids double-counting for self-conjugate (Majorana) particles, as discussed in Section 1.4.1.
+The prefactor $1/(4\pi)$ reflects the isotropic emission of photons over the full sphere, and the factor of $1/2$ avoids double-counting for self-conjugate (Majorana) particles, as discussed in Section~\ref{sec:ann_decay}.
 The $J$-factor is the line-of-sight integral of the density squared:
 
 \[ J(\psi) = \int_\text{l.o.s.
@@ -274,7 +274,7 @@ First, it assumes a \textit{velocity-independent} annihilation cross-section.
 If $\langle \sigma v_\text{rel} \rangle$ depends on the dark matter velocity --- as it does for $p$-wave annihilation ($\sigma v \propto v^2$) or Sommerfeld-enhanced models ($\sigma v \propto 1/v$) --- the cross-section can no longer be factored out of the line-of-sight integral \cite{Cirelli:2024ssz}.
 In such cases, one must compute an \textit{effective $J$-factor} that folds the full, position-dependent velocity distribution into the integral, and the clean particle-physics/astrophysics separation is lost.
 
-Second, even for velocity-independent cross-sections, the $J$-factor depends quadratically on the density profile, making it extremely sensitive to the uncertainties discussed in Section 1.4.3.
+Second, even for velocity-independent cross-sections, the $J$-factor depends quadratically on the density profile, making it extremely sensitive to the uncertainties discussed in Section~\ref{sec:density_profiles}.
 For the Galactic Center, the $J$-factor computed with an NFW profile can exceed the Burkert value by orders of magnitude \cite{Cirelli:2024ssz}; even within the NFW family, varying the inner slope from $\gamma = 0.7$ to $\gamma = 1.3$ changes the predicted flux by more than an order of magnitude \cite{Hooper:2024}.
 The astrophysical factor is therefore the dominant systematic uncertainty in annihilation searches --- a theme that recurs in every chapter of this thesis.
 
