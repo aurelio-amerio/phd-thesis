@@ -4,7 +4,7 @@
 Extracting physical information from noisy gamma-ray data requires a well-defined statistical language.
 The analyses presented in this thesis draw on two complementary paradigms---frequentist and Bayesian inference---each providing distinct tools for parameter estimation, uncertainty quantification, and hypothesis testing.
 This section introduces both frameworks from the shared foundation of the likelihood function, develops the key concepts used in the research papers, and discusses when each paradigm is most appropriate.
-Readers familiar with statistical inference may proceed directly to the application previews, which connect the general formalism to its specific use in Papers~1--5.
+Readers familiar with statistical inference may proceed directly to the application previews, which connect the general formalism to its specific use in the research chapters of this thesis.
 
 %% --- 3.1.1 ---
 
@@ -48,7 +48,7 @@ $, and the MLE is simply $\hat{\mu} = N$. While this example is trivial, the Poi
 	\mathcal{L}(\boldsymbol{\theta}) = \prod_{a=1}^{N_{\mathrm{pix}}} \frac{\lambda_a(\boldsymbol{\theta})^{k_a} \, e^{-\lambda_a(\boldsymbol{\theta})}}{k_a!},
 	\label{eq:poisson_likelihood}
 \end{equation}
-with $k_a$ the observed counts and $\lambda_a(\boldsymbol{\theta})$ the model prediction in pixel $a$ \cite{Amerio:2023dns}.
+with $k_a$ the observed counts and $\lambda_a(\boldsymbol{\theta})$ the model prediction in pixel $a$.
 This product-of-Poisson construction is the standard likelihood used in Fermi-LAT analyses \cite{Mattox:1996}.
 
 \paragraph{Nuisance parameters and the profile likelihood.}
@@ -84,11 +84,9 @@ For example, to establish a one-sided 95\% confidence-level upper bound on a sin
 
 The frequentist framework developed above is used extensively in this thesis:
 \begin{itemize}
-	\item In Paper~3 \cite{Amerio:2024msp}, the MSP luminosity function parameters $(\langle L_\gamma \rangle, \sigma_L)$ are constrained via MLE applied to an integrated likelihood.
-	      The observational likelihood profile of each globular cluster's gamma-ray flux is combined with the theoretical luminosity function and marginalized over the true flux, yielding a joint integrated likelihood across all clusters.
-	      Model comparison among five scaling hypotheses is performed through $-2\Delta\ln\mathcal{L}$ values.
-	\item In Paper~4 \cite{Amerio:2025sub}, a profile likelihood $\mathrm{TS}(\langle\sigma v\rangle) = -2\ln[\mathcal{L}(\langle\sigma v\rangle)/\mathcal{L}_{\mathrm{max}}]$ is used to set 95\% CL upper bounds on the dark matter annihilation cross-section, relying on Wilks' theorem with one degree of freedom ($\mathrm{TS} = 3.84$).
-	\item In Paper~5 \cite{Pinetti:2025}, a $\Delta\chi^2$ test statistic compares the astrophysical-only and astrophysical-plus-DM hypotheses for the cross-correlation angular power spectrum, with $2\sigma$ sensitivity bounds drawn at $\Delta\chi^2 = 4$.
+	\item In Chapter~\ref{ch:4}, the MSP luminosity function is constrained via MLE applied to an integrated likelihood, and model comparison is performed through $-2\Delta\ln\mathcal{L}$ values.
+	\item In Chapter~\ref{ch:5}, a profile likelihood test statistic is used with Wilks' theorem to set 95\% CL upper bounds on the dark matter annihilation cross-section.
+	\item In Chapter~\ref{ch:8}, a $\Delta\chi^2$ test statistic compares astrophysical-only and astrophysical-plus-DM hypotheses for the cross-correlation angular power spectrum.
 \end{itemize}
 
 %% --- 3.1.3 ---
@@ -148,10 +146,9 @@ The total predictive uncertainty is the sum of the aleatoric and epistemic compo
 
 \paragraph{Application preview.}
 
-In Paper~1 \cite{Amerio:2023dns}, a CNN trained on $\sim$900k synthetic gamma-ray sky maps uses this framework to reconstruct the source-count distribution $dN/dS$ and its uncertainty.
-The network employs the heteroscedastic Gaussian NLL to learn the aleatoric error as a function of flux, while concrete dropout \cite{Gal:2017}---a variant that self-learns the optimal dropout probability during training---provides the epistemic uncertainty.
-The resulting Bayesian error estimates are independently validated against a frequentist cross-check (see Section~\ref{sec:3.1.4}), with the two approaches yielding compatible error bands on the reconstructed $dN/dS$.
-Full architectural and training details are deferred to Chapter~6.
+In Chapter~\ref{ch:6}, this framework is applied to reconstruct the source-count distribution $dN/dS$ and its uncertainty from gamma-ray sky maps.
+A neural network trained with the heteroscedastic loss learns the aleatoric uncertainty as a function of flux, while concrete dropout \cite{Gal:2017} provides the epistemic component.
+The resulting Bayesian error estimates are validated against an independent frequentist cross-check (Section~\ref{sec:3.1.4}).
 
 %% --- 3.1.4 ---
 
@@ -162,7 +159,7 @@ The frequentist and Bayesian frameworks each carry distinct practical advantages
 
 Frequentist methods are well suited to hypothesis testing and the construction of upper limits, where the goal is to reject or constrain a specific model without introducing prior assumptions on the parameters.
 The profile likelihood and Wilks' theorem provide a direct path from the data to confidence intervals and detection significances with minimal modelling choices.
-These properties make the frequentist approach the natural default for standard Fermi-LAT analyses, where the test statistic is used to determine source detection thresholds and to set upper bounds on new physics contributions \cite{Amerio:2025sub, Amerio:2024msp}.
+These properties make the frequentist approach the natural default for standard Fermi-LAT analyses, where the test statistic is used to determine source detection thresholds and to set upper bounds on new physics contributions (see Chapters~\ref{ch:4} and~\ref{ch:5}).
 
 Bayesian methods, by contrast, provide natural uncertainty quantification as the default output: the posterior distribution encodes the full probability distribution over the parameters of interest, including correlations and multi-modality.
 When prior information is available---for instance, physical constraints on parameter ranges---Bayesian inference offers a principled mechanism for incorporating it.
@@ -175,7 +172,7 @@ The former cannot be reduced by collecting more training data; the latter decrea
 Modelling both types is important: aleatoric uncertainty dominates in data-rich regimes and allows the network to down-weight noisy observations, while epistemic uncertainty is required to identify out-of-distribution inputs where the model's predictions should not be trusted \cite{Kendall:2017}.
 
 In practice, both paradigms are used throughout this thesis, and in some cases they are applied to the same problem as independent cross-checks.
-In Paper~1 \cite{Amerio:2023dns}, the CNN provides Bayesian error estimates on the reconstructed $dN/dS$ through dropout and the heteroscedastic loss.
-These are validated against a frequentist analysis of the same validation dataset, where the $1\sigma$ and $2\sigma$ confidence intervals are extracted from the empirical distribution of residuals across 100\,000 synthetic maps.
-The frequentist cross-check also provides a formal estimate of the model's bias---the systematic deviation between the median prediction and the true value---which is found to be negligible across the flux range of interest.
-The compatibility of the two independent error estimates provides confidence that the uncertainty quantification is robust \cite{Amerio:2023dns}.
+In Chapter~\ref{ch:6}, the neural network provides Bayesian error estimates on the reconstructed $dN/dS$ through dropout and the heteroscedastic loss.
+These are validated against a frequentist analysis of the same data, where confidence intervals are extracted from the empirical distribution of residuals across the validation set.
+The frequentist cross-check also provides a formal estimate of the model's bias, which is found to be negligible across the flux range of interest.
+The compatibility of the two independent error estimates provides confidence that the uncertainty quantification is robust.
