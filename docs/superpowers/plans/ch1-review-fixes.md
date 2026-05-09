@@ -60,21 +60,21 @@ git commit -m "fix: rewrite Ch1 introduction roadmap to include all four section
 
 **Issue:** `Ackermann:2015tah` is the *isotropic gamma-ray background* paper. The dSph stacked analysis (arXiv:1503.02641) is `Fermi-LAT:2015att`.
 
-- [ ] **Step 1: Replace first occurrence (line 336)**
+- [ ] **Step 1: Fix and deduplicate first pair (lines 336–337)**
+
+Lines 336–337 are consecutive sentences describing the same dSph result. Keep the citation on 336 (first mention), drop it from 337.
 
 ```
-old: \cite{Ackermann:2015tah, Hooper:2024}.
-new: \cite{Fermi-LAT:2015att, Hooper:2024}.
+old (line 336): \cite{Ackermann:2015tah, Hooper:2024}.
+new (line 336): \cite{Fermi-LAT:2015att, Hooper:2024}.
 ```
 
-- [ ] **Step 2: Replace second occurrence (line 337)**
-
 ```
-old: \cite{Ackermann:2015tah, Hooper:2024}.
-new: \cite{Fermi-LAT:2015att, Hooper:2024}.
+old (line 337): channel \cite{Ackermann:2015tah, Hooper:2024}.
+new (line 337): channel.
 ```
 
-- [ ] **Step 3: Replace third occurrence (line 417)**
+- [ ] **Step 2: Fix occurrence on line 417**
 
 ```
 old: \cite{Ackermann:2015tah, Hooper:2024}.
