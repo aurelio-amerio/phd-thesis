@@ -226,30 +226,37 @@ The density profiles and substructure properties introduced here feed directly i
 
 Combining the particle physics of Section~\ref{sec:ann_decay} with the density profiles of Section~\ref{sec:density_profiles}, we can now write the differential gamma-ray flux from dark matter annihilation observed from a direction $\psi$ relative to the Galactic Center \cite{Cirelli:2024ssz, Hooper:2024}:
 
-\[ \frac{d\Phi_\gamma}{dE\, d\Omega} = \underbrace{\frac{1}{4\pi} \frac{\langle \sigma v_\text{rel} \rangle}{2 m_\chi^2} \frac{dN_\gamma}{dE}}_{\text{Particle Physics}} \times \underbrace{J(\psi)}_{\text{Astrophysics}} \,.
-\]
+\begin{equation}
+	\frac{d\Phi_\gamma}{dE\, d\Omega} = \underbrace{\frac{1}{4\pi} \frac{\langle \sigma v_\text{rel} \rangle}{2 m_\chi^2} \frac{dN_\gamma}{dE}}_{\text{Particle Physics}} \times \underbrace{J(\psi)}_{\text{Astrophysics}} \,.
+	\label{eq:flux_ann}
+\end{equation}
 
 The prefactor $1/(4\pi)$ reflects the isotropic emission of photons over the full sphere, and the factor of $1/2$ avoids double-counting for self-conjugate (Majorana) particles, as discussed in Section~\ref{sec:ann_decay}.
 The $J$-factor is the line-of-sight integral of the density squared:
 
-\[ J(\psi) = \int_\text{l.o.s.
-	} \rho^2\bigl(r(s, \psi)\bigr) \, ds \,,
-\]
+\begin{equation}
+	J(\psi) = \int_\text{l.o.s.} \rho^2\bigl(r(s, \psi)\bigr) \, ds \,,
+	\label{eq:jfactor}
+\end{equation}
 
 where $s$ parametrizes distance along the line of sight and $r$ is the galactocentric radius, related to $s$ and the observation angle $\psi$ by $r = (r_\odot^2 + s^2 - 2 r_\odot s \cos\psi)^{1/2}$, with $r_\odot \simeq 8.33$ kpc the Sun--Galactic Center distance \cite{Cirelli:2024ssz}.
 In this dimensionful convention, $J$ carries units of GeV$^2$ cm$^{-5}$; an alternative dimensionless definition, in which $\rho$ and $s$ are normalized to $\rho_\odot$ and $r_\odot$ respectively, is also common in the literature \cite{Cirelli:2024ssz}.
 
 For decaying dark matter, the analogous expression is \cite{Cirelli:2024ssz, Pinetti:2021jjs}:
 
-\[ \frac{d\Phi_\gamma}{dE\, d\Omega} = \frac{1}{4\pi} \frac{\Gamma}{m_\chi} \frac{dN_\gamma}{dE} \times D(\psi) \,, \]
+\begin{equation}
+	\frac{d\Phi_\gamma}{dE\, d\Omega} = \frac{1}{4\pi} \frac{\Gamma}{m_\chi} \frac{dN_\gamma}{dE} \times D(\psi) \,,
+	\label{eq:flux_dec}
+\end{equation}
 
 where $\Gamma = 1/\tau$ is the decay rate.
 No symmetry factor appears, since decay is a single-particle process.
 The $D$-factor integrates the density linearly:
 
-\[ D(\psi) = \int_\text{l.o.s.
-	} \rho\bigl(r(s, \psi)\bigr) \, ds \,,
-\]
+\begin{equation}
+	D(\psi) = \int_\text{l.o.s.} \rho\bigl(r(s, \psi)\bigr) \, ds \,,
+	\label{eq:dfactor}
+\end{equation}
 
 and carries units of GeV cm$^{-2}$.
 Because $D$ depends on $\rho$ rather than $\rho^2$, it is far less sensitive to the assumed density profile than the $J$-factor, and substructure boost factors are entirely absent for decay \cite{Cirelli:2024ssz}.
