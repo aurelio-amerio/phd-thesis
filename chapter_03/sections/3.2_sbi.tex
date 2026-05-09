@@ -33,9 +33,9 @@ Inverting this process to obtain $p(\mathbf{x}|\boldsymbol{\theta})$ analyticall
 This forward--inverse asymmetry motivates an alternative strategy: rather than evaluating the likelihood directly, one can generate large numbers of simulated datasets and use them to learn the relationship between parameters and observables.
 
 A concrete astrophysical example arises in the measurement of the gamma-ray source-count distribution $dN/dS$ below the Fermi-LAT detection threshold.
-As we will discuss in detail in Chapter~6, the observed photon-count map results from the superposition of thousands of unresolved point sources, each convolved with the instrument point spread function, added to a diffuse Galactic foreground and an isotropic background, and finally subjected to Poisson counting noise~\cite{Amerio:2023dns}.
+As discussed in detail in Chapter~\ref{ch:6}, the observed photon-count map results from the superposition of thousands of unresolved point sources, each convolved with the instrument point spread function, added to a diffuse Galactic foreground and an isotropic background, and finally subjected to Poisson counting noise.
 Writing a closed-form likelihood for this full sky map would require integrating over every possible spatial configuration, flux, and number of the unresolved sources.
-Generating a synthetic map from a given set of $dN/dS$ parameters, by contrast, amounts to a sequence of well-defined sampling steps: draw source fluxes from the $dN/dS$, scatter them on the sky, convolve with the PSF, add backgrounds, multiply by the exposure, and apply Poisson noise~\cite{Amerio:2023dns}.
+Generating a synthetic map from a given set of $dN/dS$ parameters, by contrast, amounts to a sequence of well-defined sampling steps: draw source fluxes from the $dN/dS$, scatter them on the sky, convolve with the PSF, add backgrounds, multiply by the exposure, and apply Poisson noise.
 The forward simulation is straightforward; the inverse problem is not.
 SBI addresses exactly this kind of problem, and the following subsections describe how the inversion is accomplished.
 
@@ -71,10 +71,9 @@ The neural network also implicitly marginalizes over the vast latent space of th
 \paragraph{Application preview.}
 
 In this thesis, NPE is the SBI strategy most directly relevant to our work.
-In Paper~1~\cite{Amerio:2023dns}, a convolutional neural network is trained on $9 \times 10^5$ synthetic gamma-ray sky maps to estimate the $dN/dS$ and its uncertainty for any input map, without ever evaluating an explicit likelihood.
-The approach operates in the spirit of NPE: the CNN directly maps an observed sky map to posterior summaries (the mean and variance for each flux bin), bypassing any explicit likelihood evaluation, though it uses a heteroscedastic Gaussian loss (Section~\ref{sec:3.1.3}) rather than a normalizing flow to parameterize the output distribution.
-Once trained, the network can be applied to the real 14-year Fermi-LAT sky map to immediately obtain the source-count distribution.
-The full details of the architecture and training procedure are deferred to Chapter~6.
+In Chapter~\ref{ch:6}, a convolutional neural network trained on synthetic gamma-ray sky maps estimates the source-count distribution $dN/dS$ and its uncertainty for any input map, without evaluating an explicit likelihood.
+The approach operates in the spirit of NPE: the network directly maps an observed sky map to posterior summaries (the mean and variance for each flux bin), though it uses a heteroscedastic Gaussian loss (Section~\ref{sec:3.1.3}) rather than a normalizing flow to parameterize the output distribution.
+Once trained, the inference is amortized: the network can be applied to the real Fermi-LAT sky map to immediately obtain the source-count distribution.
 
 %% --- 3.2.3 ---
 
@@ -99,8 +98,7 @@ The empirical coverage can be compared to the nominal level across a range of cr
 Departures from the diagonal in a coverage-vs-credibility plot flag potential miscalibration.
 
 In practice, many SBI analyses supplement these general calibration checks with problem-specific diagnostics.
-In Paper~1~\cite{Amerio:2023dns}, the internally estimated Bayesian uncertainties from the CNN are cross-checked against frequentist error bars derived from the distribution of residuals over the validation set.
-The close agreement between the two error estimates provides confidence in the reliability of the uncertainty quantification without requiring access to the true posterior, which, for the $dN/dS$ problem, is unknown.
-The details of this validation strategy are presented in Chapter~6.
+In Chapter~\ref{ch:6}, the internally estimated Bayesian uncertainties are cross-checked against frequentist error bars derived from the distribution of residuals over the validation set (see also Section~\ref{sec:3.1.4}).
+The close agreement between the two independent error estimates provides confidence in the reliability of the uncertainty quantification.
 
 These three validation strategies---calibration, coverage, and problem-specific diagnostics---are applied in each of the analyses presented in the subsequent chapters of this thesis.
