@@ -10,7 +10,9 @@
       "Bash(git add *)",
       "Bash(git commit *)",
       "Bash(grep *)",
-      "Bash(awk NR==108,NR==112 { print NR\": \"$0 } *)"
+      "Bash(awk NR==108,NR==112 { print NR\": \"$0 } *)",
+      "mcp__notebooklm-mcp__notebook_list",
+      "mcp__notebooklm-mcp__notebook_query"
     ]
   },
   "sandbox": {

@@ -4,14 +4,14 @@
 \section{The Cross-Correlation Technique}
 \label{sec:8.2}
 
-The angular power spectrum introduced in Section~\ref{sec:3.5} provides the mathematical language.
+The angular power spectrum introduced in Section~\ref{sec:cross_correlations} provides the mathematical language.
 What remains is to demonstrate why cross-correlating the gamma-ray sky with a galaxy catalog offers a practical handle that the auto-correlation and spectral analyses alone cannot match.
 The argument rests on three interlocking ideas: the redshift selectivity conferred by window function overlap (Section~\ref{sec:8.2.1}), the favorable noise properties that follow from combining two physically independent observables (Section~\ref{sec:8.2.2}), and the specific choice of low-redshift catalogs that maximizes both effects simultaneously (Section~\ref{sec:8.2.3}).
 
 \subsection{Tomographic Redshift Slicing}
 \label{sec:8.2.1}
 
-The angular cross-power spectrum $C_\ell^{\gamma g}$ introduced in Section~\ref{sec:3.5} measures how the gamma-ray intensity field and the galaxy number counts fluctuate together as a function of angular scale.
+The angular cross-power spectrum $C_\ell^{\gamma g}$ introduced in Section~\ref{sec:cross_correlations} measures how the gamma-ray intensity field and the galaxy number counts fluctuate together as a function of angular scale.
 Under the Limber approximation (Eq.~\ref{eq:limber_aps}), this is a single integral over comoving distance, weighted by the product of the gamma-ray and galaxy window functions $W_\gamma(\chi)$ and $W_g(\chi)$.
 The key observation is that $C_\ell^{\gamma g}$ receives contributions only from the redshift range where both window functions are simultaneously nonzero.
 Choosing a galaxy catalog with a narrow, well-understood redshift distribution therefore selects a specific slice of the universe, filtering out emission from all other distances.
@@ -65,7 +65,7 @@ The cross-correlation SNR for the astrophysical signal depends on the point-sour
 For DM, which is always diffuse, the cross-correlation sensitivity is essentially immune to the blazar detection threshold.
 The quantitative impact of this suppression on the dark matter sensitivity is derived in the paper that follows, which compares the cross-correlation and auto-correlation constraints directly.
 
-The physical interpretation decomposes into the 1-halo and 2-halo structure of the three-dimensional cross-power spectrum, introduced in Section~\ref{sec:3.5} and detailed in~\cite{Camera:2012cj,Fornasa:2015qua}.
+The physical interpretation decomposes into the 1-halo and 2-halo structure of the three-dimensional cross-power spectrum, introduced in Section~\ref{sec:cross_correlations} and detailed in~\cite{Camera:2012cj,Fornasa:2015qua}.
 The 1-halo term captures correlations between pairs of points within the same halo --- for DM this traces the density profile within individual halos and dominates at small angular scales ($\ell \gtrsim 200$).
 The 2-halo term describes the large-scale clustering between different halos, following the linear matter power spectrum weighted by a bias factor.
 Measuring $C_\ell^{\gamma g}$ across multipoles allows one to separate these two contributions and probe both the internal structure of DM halos and their clustering properties, a richer physical picture than the energy spectrum or the auto-correlation alone can provide.

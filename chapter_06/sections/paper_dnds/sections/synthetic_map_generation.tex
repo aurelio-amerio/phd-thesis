@@ -25,7 +25,7 @@ A flux map $\mathcal{M}$ will therefore be obtained as the sum of three contribu
 \end{equation}
 where $\mathcal{S}$ is the map due to the underlying distribution of sources (obtained from a $\dnds$ model as described in the next subsection), $\mathcal{G}$ is a template map for the foreground emission and $\fiso$ is a constant that denotes the isotropic component discussed above. The constant $A_\textrm{gal}$ is a normalization constant for the galactic foreground template. 
 
-The count map $\mathcal{N}$ is then obtained by multiplying the flux map by the \fermi exposure map $\mathcal{E}$, depicted in Fig. \ref{fig:exposure}, and by taking into account the steradian-to-pixel conversion factor. Specifically, the counts in pixel $a$ are obtained as:
+The count map $\mathcal{N}$ is then obtained by multiplying the flux map by the \fermi exposure map $\mathcal{E}$, depicted in Figure \ref{fig:exposure}, and by taking into account the steradian-to-pixel conversion factor. Specifically, the counts in pixel $a$ are obtained as:
 \begin{equation}
     \mathcal{N}_a = \mathcal{M}_a \cdot \mathcal{E}_a \cdot \frac{4\pi}{N_\textrm{pix}}
     \label{eq:count}
@@ -107,7 +107,7 @@ For definiteness, in this work we adopt 3 breaks and 4 slopes. The ranges in whi
 
 
 
-The prior ranges for the power-law slopes are anchored to the results from the 4FGL catalog in the resolved regime, and allow for progressively wider variability moving toward the unresolved regime. Since catalog data exhibit a source count compatible with $S^{-2}$, except for large fluxes, where the slope increases, we adopt priors for $n_1$ and $n_2$ around these behaviours. For $n_3$ and $n_4$, we progressively enlarge the prior ranges, in order to allow for more variability especially in the sub-threshold (unresolved) regime we are interested in. An example of a $\dnds$ generated from this procedure is shown in the right panel of Fig. \ref{fig:dNdS-annotato}, which also illustrates the notation.
+The prior ranges for the power-law slopes are anchored to the results from the 4FGL catalog in the resolved regime, and allow for progressively wider variability moving toward the unresolved regime. Since catalog data exhibit a source count compatible with $S^{-2}$, except for large fluxes, where the slope increases, we adopt priors for $n_1$ and $n_2$ around these behaviours. For $n_3$ and $n_4$, we progressively enlarge the prior ranges, in order to allow for more variability especially in the sub-threshold (unresolved) regime we are interested in. An example of a $\dnds$ generated from this procedure is shown in the right panel of Figure \ref{fig:dNdS-annotato}, which also illustrates the notation.
 
 The maps $\mathcal{S}$ are generated according to the following procedure:
 \begin{enumerate}
@@ -117,9 +117,9 @@ The maps $\mathcal{S}$ are generated according to the following procedure:
 
 \item A Poisson extraction on $N_i$ determines the number of sources $N_{P,i}$ in each flux interval;
 
-\item The sources are randomly positioned on the sphere by uniformly sampling $\cos\theta$ in $[-1,1]$ and $\varphi$ in $[0, 2\pi]$, $\theta$ and $\varphi$ being the spherical coordinates. The selected angular position is then converted into a pixel position in the Healpix pixeling scheme with the \texttt{ang2pix} routine. An example of a point-source map is shown in the upper panel of Fig. \ref{fig:point-sources};
+\item The sources are randomly positioned on the sphere by uniformly sampling $\cos\theta$ in $[-1,1]$ and $\varphi$ in $[0, 2\pi]$, $\theta$ and $\varphi$ being the spherical coordinates. The selected angular position is then converted into a pixel position in the Healpix pixeling scheme with the \texttt{ang2pix} routine. An example of a point-source map is shown in the upper panel of Figure \ref{fig:point-sources};
 
-\item Finally, convolution with the \fermi PSF shown in Fig. \ref{fig:PSF} is applied to each point source. Since sources are assumed to be point-like, we simply replace each point source with an extended circular object with a radial profile equal to the PSF, and whose total flux is equal to the one of the original source. Since the image formation process is linear in the intensity, in case of overlapping sources (either because of their spatial position, or because of the PSF smearing) the resulting flux is additive. An example of flux map with the PSF applied is shown in the lower panel of Fig. \ref{fig:point-sources}.
+\item Finally, convolution with the \fermi PSF shown in Figure \ref{fig:PSF} is applied to each point source. Since sources are assumed to be point-like, we simply replace each point source with an extended circular object with a radial profile equal to the PSF, and whose total flux is equal to the one of the original source. Since the image formation process is linear in the intensity, in case of overlapping sources (either because of their spatial position, or because of the PSF smearing) the resulting flux is additive. An example of flux map with the PSF applied is shown in the lower panel of Figure \ref{fig:point-sources}.
 \end{enumerate}
 
 In order to avoid possible biases in the generated maps, due to the resolution of the angular binning, the maps generated with the procedure described above have been produced at a resolution higher than the one adopted for the analysis. We have therefore built our maps with $N_\textrm{side} = 128$. These maps have then been downgraded to $N_\textrm{side} = 64$ for the analysis.
@@ -135,9 +135,9 @@ In order to avoid possible biases in the generated maps, due to the resolution o
 \end{figure}
 
 The galactic foreground is implemented through the adoption of the \fermi template model \verb|gll_iem_v07|\footnote{\url{https://fermi.gsfc.nasa.gov/ssc/data/access/lat/BackgroundModels.html}}. 
-The map of the integrated flux in the $(1, 10)$ GeV energy range is shown in Fig. \ref{fig:galactic-foreground}. To check consistency and stability of our results, we will also adopt a different version of the galactic template, namely model \verb|gll_iem_v05|\footnotemark[\value{footnote}]. The extragalactic isotropic background instead is modeled as a constant flux $\fiso$, which captures all the unresolved emission which is too faint to be associated to the emission modeled through the $\dnds$ (i.e., which refers to fluxes $S<5 \cdot 10^{-12}$ cm$^{-2}$ s$^{-1}$, below our region of interest).
+The map of the integrated flux in the $(1, 10)$ GeV energy range is shown in Figure \ref{fig:galactic-foreground}. To check consistency and stability of our results, we will also adopt a different version of the galactic template, namely model \verb|gll_iem_v05|\footnotemark[\value{footnote}]. The extragalactic isotropic background instead is modeled as a constant flux $\fiso$, which captures all the unresolved emission which is too faint to be associated to the emission modeled through the $\dnds$ (i.e., which refers to fluxes $S<5 \cdot 10^{-12}$ cm$^{-2}$ s$^{-1}$, below our region of interest).
 
-As shown in Fig. \ref{fig:galactic-foreground}, the galactic foreground dominates at low latitudes, although it extends to high latitudes with a smaller flux. For these reasons, low latitudes are unsuitable for the study of the extra-galactic background. Our baseline analysis will therefore apply a mask to the maps to cover the dominant part of the galactic emission, for which we adopt a latitude cut $|b|<30^\circ$. In order to check the stability of the results against the foreground treatment, in Section \ref{sec:dnds:results} we will show the results obtained with two additional latitude cuts: $|b|<40^\circ$ and $|b|<50^\circ$.
+As shown in Figure \ref{fig:galactic-foreground}, the galactic foreground dominates at low latitudes, although it extends to high latitudes with a smaller flux. For these reasons, low latitudes are unsuitable for the study of the extra-galactic background. Our baseline analysis will therefore apply a mask to the maps to cover the dominant part of the galactic emission, for which we adopt a latitude cut $|b|<30^\circ$. In order to check the stability of the results against the foreground treatment, in Section \ref{sec:dnds:results} we will show the results obtained with two additional latitude cuts: $|b|<40^\circ$ and $|b|<50^\circ$.
 
 Given the various approximations we use, instead of using the nominal normalization of the galactic foreground models, we prefer to use a data-driven approach and normalize 
 the galactic templates \verb|gll_iem_v07| and \verb|gll_iem_v05| directly to the observed \fermi map. This is realized by performing a maximum-likelihood Poisson fit, using as likelihood:
@@ -175,7 +175,7 @@ The normalization of the \verb|v07| model different from 1 is related to the fac
 
 Throughout the rest of the analysis we will fix the normalization parameter $A_\textrm{gal}$ to the value determined from the above fit. The values of $F'_\textrm{iso}$ are, instead, used to define the range of the prior for $F_\textrm{iso}$ in Table \ref{tab:prior-dNdS} and \textsl{a posteriori} to check consistency of the results.
 %
-One illustration of a flux map obtained as the sum of all components is shown in Fig. \ref{fig:map_with_gf}.
+One illustration of a flux map obtained as the sum of all components is shown in Figure \ref{fig:map_with_gf}.
 Instead of fixing $A_\textrm{gal}$, in principle, we could also leave it as a free parameter and instruct the network to predict its value. We found, however, that the above procedure constrains $A_\textrm{gal}$ very precisely and it is thus preferable. Furthermore, we also found that fixing $A_\textrm{gal}$ provides a better stability of the neural network.  
 
 {  Nonetheless, to better asses the impact of fixing the $A_\textrm{gal}$ value, we also performed a further test using different values in the range $(0.78, 1.0)$ (i.e., a range centered on our fiducial value $0.888 \pm 0.005$, thus encompassing many standard deviations away from its central value.)
@@ -191,12 +191,12 @@ Example plots are shown in the Appendix \ref{sec:agal-var}.}
 \subsubsection{Count maps}
 
 With a flux map $\mathcal{M}$ available, we can now produce a synthetic photon-count map $\mathcal{N}$ as described in Eq. \ref{eq:count}. 
-One example is shown in Fig. \ref{fig:map-total-counts}. 
-In order to generate maps compatible with a counting experiment like \fermi, we then add Poisson noise to the map performing a Poisson realization of the number of photons in each pixel of the map $\mathcal{N}$, and we dub this final map as $\mathcal{N}_\mathcal{P}$ count map. One example is shown in Fig. \ref{fig:map-effective}, which also shows the same map with the latitude cut applied: these are the type of maps that we use to train and validate the neural network. We have generated in total 1 million maps, 90\% of which have been used for training and 10\% for validation. The maps have been stored as a \verb|TFRecord| dataset\footnote{\texttt{https://www.tensorflow.org/tutorials/load\_data/tfrecord}} for use with Tensorflow \cite{tensorflow2015-whitepaper}. The maps have been generated in Healpix format with $N_\textrm{side} = 128$ resolution (order $n=7$) and then downsampled to $N_\textrm{side} = 64$ (order $n=6$) for the training and validation (this resolution corresponds to 49152 pixels). 
+One example is shown in Figure \ref{fig:map-total-counts}. 
+In order to generate maps compatible with a counting experiment like \fermi, we then add Poisson noise to the map performing a Poisson realization of the number of photons in each pixel of the map $\mathcal{N}$, and we dub this final map as $\mathcal{N}_\mathcal{P}$ count map. One example is shown in Figure \ref{fig:map-effective}, which also shows the same map with the latitude cut applied: these are the type of maps that we use to train and validate the neural network. We have generated in total 1 million maps, 90\% of which have been used for training and 10\% for validation. The maps have been stored as a \verb|TFRecord| dataset\footnote{\texttt{https://www.tensorflow.org/tutorials/load\_data/tfrecord}} for use with Tensorflow \cite{tensorflow2015-whitepaper}. The maps have been generated in Healpix format with $N_\textrm{side} = 128$ resolution (order $n=7$) and then downsampled to $N_\textrm{side} = 64$ (order $n=6$) for the training and validation (this resolution corresponds to 49152 pixels). 
 
 The training of the CNN and the subsequent analysis of the \fermi data can be performed equivalently with maps in units of photon-count or in units of flux. Nonetheless, we will work with maps in units of flux, which are easily obtained from the $\mathcal{N}_\mathcal{P}$ count maps by using the exposure map and by inverting Eq. (\ref{eq:count}).  The reason to convert the $\mathcal{N}_\mathcal{P}$ count maps in units of flux is motivated by the fact that 
 count maps contain a spurious large-scale angular dependence
-introduced by the exposure map (see Fig. \ref{fig:exposure}) which
+introduced by the exposure map (see Figure \ref{fig:exposure}) which
 might confuse the CNN, while this potential issue is avoided
 using flux maps.
 Finally, to further ease the learning process of the CNN
@@ -208,7 +208,7 @@ In this way the CNN can focus on learning the $\dnds$, seeing the exposure and g
 \begin{figure}[t]
 \centering
 \includegraphics[scale=0.6]{chapter_06/sections/paper_dnds/img/data_selection/point_sources_fg.pdf}
-\caption{The same as in Fig. \ref{fig:point-sources}, with the galactic foreground model normalized with $A_\textrm{gal} = 0.886$ and an isotropic background component $F_\textrm{iso} = 4 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$. Units are photons/(cm$^2$ s sr).}
+\caption{The same as in Figure \ref{fig:point-sources}, with the galactic foreground model normalized with $A_\textrm{gal} = 0.886$ and an isotropic background component $F_\textrm{iso} = 4 \cdot 10^{-7}$ cm$^{-2}$ s$^{-1}$ sr$^{-1}$. Units are photons/(cm$^2$ s sr).}
 \label{fig:map_with_gf}
 \end{figure}
 
@@ -223,7 +223,7 @@ In this way the CNN can focus on learning the $\dnds$, seeing the exposure and g
 \centering
 \includegraphics[scale=0.6]{chapter_06/sections/paper_dnds/img/data_selection/counts_map_effective.pdf}
 \includegraphics[scale=0.6]{chapter_06/sections/paper_dnds/img/data_selection/counts_map_effective_masked.pdf}
-\caption{Simulated map in units of counts per pixel after  adding Poisson noise from the synthetic model map of Fig. \ref{fig:map-total-counts}, at the same Healpix resolution $N_\textrm{side} = 128$ ($n=7$). The lower panel shows the map with a $|b| < 30^\circ$ latitude cut.}
+\caption{Simulated map in units of counts per pixel after  adding Poisson noise from the synthetic model map of Figure \ref{fig:map-total-counts}, at the same Healpix resolution $N_\textrm{side} = 128$ ($n=7$). The lower panel shows the map with a $|b| < 30^\circ$ latitude cut.}
 \label{fig:map-effective}
 \end{figure}
 

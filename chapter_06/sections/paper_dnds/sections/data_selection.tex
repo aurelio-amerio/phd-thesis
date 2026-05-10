@@ -27,7 +27,7 @@ The atmospheric gamma rays from the Earth limb emission is removed by adopting a
 on the maximum zenith angle ZMAX of 90 degrees.
 \verb|FRONT| events refer to gamma-rays detected by the first layers of the tracking module of the \fermi detector, and are optimised in order to have a better angular resolution, which is a crucial requirement for our analysis. 
 The \texttt{SOURCEVETO} class of events achieves good suppression of the charged cosmic-ray (CR) background while still retaining a large event statistics. All those settings are summarised in Table \ref{tab:dnds:settings}. Finally, the maps are constructed with equal-area pixels by adopting the Healpix \cite{healpix} pixelisation scheme of order $n=6$ ($N_\textrm{side} = 64$ resolution, which corresponds to $0.92^\circ$ pixel side) although for testing we will also use maps with order $n=7$ ($N_\textrm{side} = 128$).  
-The photon count map, in counts per pixel, for the 14 year data set is shown in Fig. \ref{fig:FermiMap}. This is the map to which we will apply the CNN to extract the source-count distribution of gamma-ray sources. 
+The photon count map, in counts per pixel, for the 14 year data set is shown in Figure \ref{fig:FermiMap}. This is the map to which we will apply the CNN to extract the source-count distribution of gamma-ray sources. 
 
 \begin{figure}[t]
 \centering
@@ -42,10 +42,10 @@ Using the \fermi tools we further extract
 the \fermi exposure map and the point-spread-function (PSF) for photon energies in $(1,10)$ GeV, which will be needed to construct the synthetic maps used to train and validate the CNN.
 Some care is required, since the PSF is a rapidly varying function of energy.
 Following previous works \cite{Cuoco-1pdf,Fornasa:2016ohl},
-we build the $(1,10)$ GeV mean PSF by averaging the energy-dependent PSF in the $(1,10)$ GeV energy range with a $E^{-2.4}$ weight, corresponding to the approximate energy spectrum of the high Galactic latitude gamma-ray sky. The average exposure map in the $(1,10)$ GeV energy bin and the averaged PSF profile are shown in Fig. \ref{fig:exposure}  and in Fig. \ref{fig:PSF}, respectively. The \fermi exposure slightly changes with energy, although its variation inside our energy bin is small.
+we build the $(1,10)$ GeV mean PSF by averaging the energy-dependent PSF in the $(1,10)$ GeV energy range with a $E^{-2.4}$ weight, corresponding to the approximate energy spectrum of the high Galactic latitude gamma-ray sky. The average exposure map in the $(1,10)$ GeV energy bin and the averaged PSF profile are shown in Figure \ref{fig:exposure}  and in Figure \ref{fig:PSF}, respectively. The \fermi exposure slightly changes with energy, although its variation inside our energy bin is small.
 
 A further dataset we will use is the catalog of resolved sources.
-In particular, we will employ the recently released  Data Release 3 of the fourth \fermi catalog of gamma-rays sources (4FGL-DR3) \cite{2022ApJS..260...53A}, which increments the previous release to 12 years of data taking and contains 6658 resolved sources. From this catalog, we obtain the (1-10) GeV source-count distribution in the resolved regime, shown in Fig. \ref{fig:dNdS-annotato}. 
+In particular, we will employ the recently released  Data Release 3 of the fourth \fermi catalog of gamma-rays sources (4FGL-DR3) \cite{2022ApJS..260...53A}, which increments the previous release to 12 years of data taking and contains 6658 resolved sources. From this catalog, we obtain the (1-10) GeV source-count distribution in the resolved regime, shown in Figure \ref{fig:dNdS-annotato}. 
 The detailed procedure with which we obtain the $\dnds$ from the list of sources is described in Appendix B of \cite{Cuoco-1pdf}.
 Here and through the rest of the manuscript $S$ will always refer to an integral flux in the range 1-10 GeV.
 The blue points refer to the regime in which the catalog is fully efficient in detecting sources, while the gray points denote sources for which the \fermi sensitivity to point sources starts degrading. 

@@ -56,18 +56,18 @@ The annihilation flux is additionally sensitive to highly uncertain quantities: 
 The boost factor itself can vary by orders of magnitude depending on these assumptions.
 A purely spectral analysis of the UGRB therefore constrains combinations of particle physics parameters and astrophysical modeling choices that are difficult to disentangle.
 
-\aure{stopped here}
 Spatial anisotropies provide the orthogonal handle.
 The UGRB is not perfectly isotropic: each contributing population imprints spatial fluctuations whose statistical properties --- the angular power spectrum $C_\ell$ --- are determined by the clustering properties of the sources and their redshift distribution.
 Dark matter annihilation traces the squared density field of the cosmic web, which is more clustered on small angular scales and at lower redshifts than the blazars that constitute most of the astrophysical background~\cite{Ando:2005xg,Fermi-LAT:2012pez}. The \textit{Fermi}-LAT Collaboration provided the first measurement of the UGRB angular power spectrum, detecting an approximately scale-invariant (Poisson) component consistent with unresolved point sources, but without clear evidence for a dark matter contribution~\cite{Fermi-LAT:2012pez}.
-The auto-correlation power spectrum, however, suffers from a fundamental limitation: the signal from dark matter is always mixed with the shot noise and correlated fluctuations of astrophysical sources that contribute at the same angular scales, and it lacks any redshift information.
-
+The auto-correlation power spectrum, however, suffers from a fundamental limitation: the signal from dark matter is always mixed with the shot noise and correlated fluctuations of astrophysical sources that contribute at the same angular scales.
+Furthermore, the \textit{measured} angular power spectrum --- a single number per multipole $\ell$ constructed from the 2D projected gamma-ray sky --- is a line-of-sight integral over all redshifts and therefore carries no redshift resolution.
+While the theoretical model for $C_\ell$ is built from window functions $W_\gamma(z)$ that encode the redshift distribution of each source class (as developed in Section~\ref{sec:cross_correlations}), this information is observationally inaccessible from gamma-ray data alone: there is no way to decompose the measured $C_\ell$ into contributions from different redshifts.
 Cross-correlating the gamma-ray map with an external gravitational tracer resolves both problems.
-A galaxy catalog provides a redshift-selected map of large-scale structure that correlates with the dark matter distribution at specific cosmic distances.
+A galaxy catalog provides a redshift-dependent map of large-scale structure that correlates with the dark matter distribution at specific cosmic distances.
 The cross-power spectrum between the gamma-ray sky and the galaxy density field vanishes by construction for any source population that does not cluster with the selected galaxies --- this is the noise-cancellation advantage that makes cross-correlation a qualitatively more powerful probe than auto-correlation~\cite{Fornengo:2013rga,Camera:2012cj}.
 The dark matter annihilation signal peaks at low redshift (because the flux is proportional to $\rho^2$ and thus weights dense, nearby structures more heavily), precisely where a catalog of local galaxies has the highest completeness.
 By choosing a catalog with $z \lesssim 0.1$, one can arrange for the dark matter window function to overlap substantially with the galaxy window function while the blazar window function --- whose redshift distribution peaks at $z \sim 0.3$--0.4 --- mostly does not.
-The angular cross-power spectrum developed formally in Section~\ref{sec:3.5} is the mathematical realization of this strategy.
+The angular cross-power spectrum developed formally in Section~\ref{sec:cross_correlations} is the mathematical realization of this strategy.
 
 Figure~\ref{fig:window_main} illustrates the core idea.
 The dark matter window function $W_\gamma^\mathrm{DM}(z)$, which describes the redshift distribution of the gamma-ray emission, is sharply peaked at $z < 0.1$ due to the $\rho^2$ density weighting of the annihilation rate.

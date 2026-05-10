@@ -62,7 +62,7 @@ At energies below a few GeV, the resolution is dominated by the multiple Coulomb
 Consequently, the PSF is strongly energy-dependent: at 100~MeV, the 68\% containment radius spans approximately $3.5^\circ$ to $5^\circ$; it tightens to roughly $0.6^\circ$ at 1~GeV and reaches an asymptotic limit of less than $0.15^\circ$ above 10~GeV \cite{Atwood:2009ez}.
 Off-axis, the containment radius degrades by up to a factor of 1.7 at $55^\circ$ incidence.
 The broad PSF at lower energies creates a severe source confusion limit: because the spatial profiles of nearby point sources overlap with each other and with the intense Galactic diffuse emission, it becomes statistically difficult to disentangle individual faint objects.
-This confusion directly limits the depth of point-source catalogs and motivates the use of statistical population methods---such as those developed in Chapters~\ref{ch:dnds} and~\ref{ch:dnds_catalog}---rather than standard source-by-source extraction.
+This confusion directly limits the depth of point-source catalogs and motivates the use of statistical population methods---such as those developed in Chapters~\ref{ch:6} and~\ref{ch:7}---rather than standard source-by-source extraction.
 
 \begin{figure}[t]
 	\centering
@@ -123,7 +123,7 @@ Throughout this evolution, the detection threshold has remained at $TS > 25$, so
 
 Each catalog entry reports the source localization (with 95\% confidence ellipse), the integrated energy flux in multiple bands, the best-fit spectral model, a variability index, and multi-wavelength associations.
 The spectral models employed include the simple power law, the log-parabola (commonly preferred for blazars), and the power law with an exponential cutoff (standard for pulsars).
-These spectral characterizations, together with variability and localization accuracy, form the feature space used in Chapter~\ref{ch:dm_halos} for the machine-learning classification of unassociated sources.
+These spectral characterizations, together with variability and localization accuracy, form the feature space used in Chapter~\ref{ch:5} for the machine-learning classification of unassociated sources.
 
 The association procedure matches each gamma-ray source against catalogs at radio, infrared, optical, and X-ray wavelengths using Bayesian and likelihood-ratio methods.
 Sources receiving a high-confidence match are labeled as ``associated''; those with firm identification through periodicity, correlated variability, or resolved angular extent are labeled as ``identified.'' In the 4FGL, more than 3,130 sources are identified or associated with active galaxies of the blazar class, while pulsars represent the largest Galactic source class.
@@ -132,4 +132,4 @@ These unassociated sources are concentrated along the Galactic plane, where the 
 
 This large population of unassociated sources is scientifically important for multiple reasons.
 Beyond its likely composition of faint blazars and pulsars below the sensitivity of current multi-wavelength surveys, it also constitutes the primary search pool for exotic gamma-ray emitters such as dark matter subhalos.
-As discussed in Chapter~1, $\Lambda$CDM cosmology predicts the existence of thousands of Galactic subhalos below $\sim 10^7\,M_\odot$---too low in mass to retain gas or form stars, and therefore invisible at all wavelengths except gamma rays, where WIMP annihilation could produce a faint, spectrally soft signal closely resembling an unassociated \textit{Fermi}-LAT point source \cite{Cirelli:2024ssz, Springel:2008cc}. Separating such candidates from the astrophysical contaminants within the 4FGL catalog is the central challenge addressed in Chapter~\ref{ch:dm_halos}, where machine-learning classification techniques are used to search for dark matter subhalo candidates among the unassociated sources.
+As discussed in Chapter~1, $\Lambda$CDM cosmology predicts the existence of thousands of Galactic subhalos below $\sim 10^7\,M_\odot$---too low in mass to retain gas or form stars, and therefore invisible at all wavelengths except gamma rays, where WIMP annihilation could produce a faint, spectrally soft signal closely resembling an unassociated \textit{Fermi}-LAT point source \cite{Cirelli:2024ssz, Springel:2008cc}. Separating such candidates from the astrophysical contaminants within the 4FGL catalog is the central challenge addressed in Chapter~\ref{ch:5}, where machine learning techniques are used to search for dark matter subhalo candidates among the unassociated sources.

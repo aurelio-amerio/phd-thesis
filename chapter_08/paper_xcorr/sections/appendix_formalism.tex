@@ -1,7 +1,7 @@
-\subsection{Formalism and details of the modeling}
+\section{Formalism and details of the modeling}
 \label{app:model}
 
-\subsubsection{Angular Power Spectra}
+\subsection{Angular Power Spectra}
 
 The angular power spectra for the $\gamma$-ray autocorrelation and for the cross-correlation between the unresolved $\gamma$-ray emission and a galaxy catalog $g$ can be expressed as \cite{camera2013novel,camera2015tomographic,fornengo2014particle}
 \begin{eqnarray}
@@ -124,7 +124,7 @@ C_{N_g}= \frac{4\,\pi\,f_{\textrm{sky},g}}{N_g}
 \ee
 where $f_{\textrm{sky},g}$ represents the fraction of the sky covered by the catalog, and $N_g$ is the number of galaxies in the catalog. \cref{fig:Cl_vs_E} shows the quantity $\sqrt{C_N\,C_{N_g}}$ as a representative level for the cross-correlation noise, which approximately corresponds to the noise expected in a noise-dominated regime. 
 
-\subsubsection{Window functions}
+\subsection{Window functions}
 \label{app:window}
 
 \paragraph{Gamma-ray astrophysical sources}
@@ -209,7 +209,7 @@ For annihilating DM, the window function reads
  \ee
 %
 where  $\langle \sigma v \rangle$ is the velocity-averaged annihilation cross-section. Unlike DM decay, the annihilation window function also contains the flux multiplier factor $\varDelta^2(z)$, which accounts for the enhancement of the flux due to the clumping of DM and the presence of sub-structures within the DM halos. Details on the way we model the flux multiplier can be found in Ref. \cite{Pinetti:2021jjs,Pinetti:2019ztr,Arcari:2022zul}.
-Window functions for both DM and astrophysical sources are plotted in Fig.\ref{fig:zWindows} as a function of redshift for two different energies, and for $3\,\textrm{hrs}$ and $5\,\textrm{hrs}$ of observation time. It can be seen that the DM window always peaks at low $z$, while the astrophysical signal peaks at $z\sim 0.4-0.5$ at 50 GeV and  $z\sim 0.1-0.2$ at 1 TeV, with the horizon shrinking due to the effect of EBL $\gamma$-ray absorption.
+Window functions for both DM and astrophysical sources are plotted in Figure~\ref{fig:zWindows} as a function of redshift for two different energies, and for $3\,\textrm{hrs}$ and $5\,\textrm{hrs}$ of observation time. It can be seen that the DM window always peaks at low $z$, while the astrophysical signal peaks at $z\sim 0.4-0.5$ at 50 GeV and  $z\sim 0.1-0.2$ at 1 TeV, with the horizon shrinking due to the effect of EBL $\gamma$-ray absorption.
 \cref{fig:E2_mean_intensity}, instead, displays the intensity $\langle I \rangle$ as a function of the energy for the two classes of astrophysical sources used in the analysis and for a few representative cases of DM annihilation. 
 
 
@@ -232,7 +232,7 @@ We use the $dN_g/\de z$ as given in \cite{Huchra:2011ii,Ando:2017wff} for 2MRS a
     \includegraphics[width=0.45\textwidth]{paper_xcorr/figures/new_analysis/W_at_50GeV_50h.pdf}
     \includegraphics[width=0.45\textwidth]{paper_xcorr/figures/new_analysis/W_at_1TeV_3h.pdf}
     \includegraphics[width=0.45\textwidth]{paper_xcorr/figures/new_analysis/W_at_1TeV_50h.pdf}
-    \caption{$\gamma$-ray window functions, normalized to the mean $\gamma$-ray intensity, as a function of redshift (and divided by the Hubble parameter). Left panels show results for 3 hours of observation, and right panels for 50 hours. The blue solid and dashed lines represent the HSP and LISP astrophysical sources, respectively. The red and green solid lines refer to DM annihilation into $b\bar{b}$, $\langle \sigma v \rangle = 3 \times 10^{-26}$cm$^{-3}$s$^{-1}$ and masses of 1 TeV (red) and 30 TeV (green). The upper row is calculated for a $\gamma$-ray energy of 50 GeV, while the lower row is for 1 TeV (only the 30 TeV DM case is shown here). {The 3-hour observation time cases are the same as shown in Fig. \ref{fig:window_main}}.}
+    \caption{$\gamma$-ray window functions, normalized to the mean $\gamma$-ray intensity, as a function of redshift (and divided by the Hubble parameter). Left panels show results for 3 hours of observation, and right panels for 50 hours. The blue solid and dashed lines represent the HSP and LISP astrophysical sources, respectively. The red and green solid lines refer to DM annihilation into $b\bar{b}$, $\langle \sigma v \rangle = 3 \times 10^{-26}$cm$^{-3}$s$^{-1}$ and masses of 1 TeV (red) and 30 TeV (green). The upper row is calculated for a $\gamma$-ray energy of 50 GeV, while the lower row is for 1 TeV (only the 30 TeV DM case is shown here). {The 3-hour observation time cases are the same as shown in Figure \ref{fig:window_main}}.}
     \label{fig:zWindows}
 \end{figure}
 
@@ -245,7 +245,7 @@ We use the $dN_g/\de z$ as given in \cite{Huchra:2011ii,Ando:2017wff} for 2MRS a
 \end{figure}
 
 
-\subsubsection{Galaxies Halo Occupation Distribution}
+\subsection{Galaxies Halo Occupation Distribution}
 To model the clustering of galaxies within the catalog, we use the Halo Occupation Distribution (HOD) formalism (see  \cite{Zheng:2004id,Berlind:2001xk,Cooray:2002dia}).
 
 
@@ -260,10 +260,10 @@ The parameters $M_\textrm{th}, \ \sigma_\textrm{logM}, \ \alpha, \ M_1, \ M_\tex
 
 
 
-\subsubsection{3D Power Spectra}
+\subsection{3D Power Spectra}
 The 3D Power Spectra $P(k)$  (PS) have been calculated by using the Halo Model formalism \cite{Cooray:2002dia}. We have derived the autocorrelation 3D PS of decaying DM $P_\delta(k)$, annihilating DM $P_{\delta^2}(k)$ and astrophysical sources $P_\gamma(k)$, and the 3D cross-correlation PS among the same three categories of tracers: $P_{g\delta}(k)$ for the cross-correlation between galaxies and decaying DM $\gamma$-ray emission,  $P_{g\delta^2}(k)$ for the cross-correlation between galaxies and annihilating DM $\gamma$-ray emission, for the cross-correlation between galaxies and astrophysical sources $\gamma$-ray emission $P_{g\gamma}(k)$. The explicit formulas for the power spectra are reported in Ref. \cite{Cuoco:2015rfa}, to which we refer the reader for details. 
 
-Figs. \ref{fig:PS_tot}-\ref{fig:P1h_P2h} report the plots of the various 3D power spectra adopted in the analysis. Figs.\ref{fig:Cl_1TeV_binned}-\ref{fig:Cl_1TeV_cross} show a few samples of auto and cross-correlation APS as a function of the multipole $\ell$. It can be seen that auto APS of astrophysical sources is constant in $\ell$, since they are point-like, while the DM APS presents some structure due to the extension of the DM halos. Fig.\ref{fig:Cl_vs_E}, instead, shows the APS as a function of energy at a fixed multipole $\ell=100$. For comparison, the auto- and cross-correlation noise level is plotted, thus showing that the expected signal-to-noise ratio is typically low.
+Figures~\ \ref{fig:PS_tot}-\ref{fig:P1h_P2h} report the plots of the various 3D power spectra adopted in the analysis. Figures~\ref{fig:Cl_1TeV_binned}-\ref{fig:Cl_1TeV_cross} show a few samples of auto and cross-correlation APS as a function of the multipole $\ell$. It can be seen that auto APS of astrophysical sources is constant in $\ell$, since they are point-like, while the DM APS presents some structure due to the extension of the DM halos. Figure~\ref{fig:Cl_vs_E}, instead, shows the APS as a function of energy at a fixed multipole $\ell=100$. For comparison, the auto- and cross-correlation noise level is plotted, thus showing that the expected signal-to-noise ratio is typically low.
 
 
 
@@ -279,7 +279,7 @@ Figs. \ref{fig:PS_tot}-\ref{fig:P1h_P2h} report the plots of the various 3D powe
     \centering
     \includegraphics[width=0.45\textwidth]{paper_xcorr/figures/new_analysis/PS_auto_vs_k.pdf}
     \includegraphics[width=0.45\textwidth]{paper_xcorr/figures/new_analysis/PS_cross_vs_k.pdf}
-    \caption{The same as Fig.\ref{fig:PS_tot} but with the 1-halo (dotted) and the 2-halo (solid) terms shown separately. }
+    \caption{The same as Figure~\ref{fig:PS_tot} but with the 1-halo (dotted) and the 2-halo (solid) terms shown separately. }
     \label{fig:P1h_P2h}
 \end{figure}
 
@@ -311,7 +311,7 @@ Figs. \ref{fig:PS_tot}-\ref{fig:P1h_P2h} report the plots of the various 3D powe
 \end{figure}
 
 
-\subsubsection{Poisson anisotropy}
+\subsection{Poisson anisotropy}
 The auto-correlation angular power spectrum of blazars is dominated by the constant 1-halo term. and is therefore flat in $\ell$. It is thus convenient to define the Poisson anisotropy as the normalization of this spectrum.
 \cref{fig:Cp_I2} shows the Poisson anisotropy of unresolved blazars, divided by the square of the intensity as a function of energy for 3 hours and 50 hours of observation. As expected, the anisotropy decreases with increasing observation time, since a larger fraction of the brighter sources (which contribute more significantly to the anisotropy) become resolved. Across the entire energy range, the anisotropy remains at the level of percent or below.
 
