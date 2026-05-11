@@ -48,20 +48,23 @@ The auto-correlation variance (Eq.~\ref{eq:variance_auto}) is qualitatively diff
 Here the photon noise enters quadratically and adds directly to the gamma-ray auto-power spectrum.
 For a ground-based instrument like CTAO, the cosmic-ray rejection rate is never perfect, so $C_N$ is dominated by the irreducible cosmic-ray background rather than by photon statistics alone, making it very large.
 Any attempt to extract a DM signal from $C_\ell^{\gamma\gamma}$ must therefore contend with subtracting this large noise term with high precision.
+\aure{check this statement}
 By contrast, $C_N$ in the cross-correlation variance multiplies the galaxy auto-spectrum $C_\ell^{gg} + C_{N_g}$, which is well measured independently; the DM signal is not hidden beneath the noise but simply requires accumulating sufficient signal-to-noise over multipoles and energy bins.
 
 The second advantage of cross-correlation concerns the astrophysical foreground itself.
 The gamma-ray auto-correlation power spectrum $C_\ell^{\gamma\gamma}$ is dominated by the Poisson shot noise of unresolved blazars at essentially all multipoles of interest~\cite{Fornasa:2015qua,Fornengo:2013rga}.
-These are rare, bright point sources whose auto-correlation is a flat (Poissonian) $C_\ell$ from the 1-halo term, dwarfing any diffuse DM component.
-The detectability of astrophysical sources in auto-correlation therefore depends sensitively on how deeply the instrument can resolve and excise individual blazars: the better the point-source sensitivity, the lower the residual unresolved blazar background and the smaller $C_\ell^{\gamma\gamma}$.
-For the DM signal, which is always diffuse and unresolved, the auto-correlation sensitivity therefore degrades as a function of the Poisson blazar floor.
+These are rare, bright point sources whose auto-correlation is a flat (Poissonian) $C_\ell$ from the 1-halo term, covering any diffuse DM component.
+The detectability of astrophysical sources in auto-correlation therefore depends on how deeply the instrument can resolve individual blazars: the better the point-source sensitivity, the lower the residual unresolved blazar background and the smaller $C_\ell^{\gamma\gamma}$.
+For the DM signal, which is effectively diffuse and unresolved, the auto-correlation sensitivity therefore degrades as a function of the Poisson blazar floor.
 
 Cross-correlation with a galaxy catalog suppresses this foreground through the window function mismatch described in Section~\ref{sec:8.2.1}.
 The high-redshift blazar population does not correlate with a local galaxy catalog, so their 1-halo Poisson term does not appear in $C_\ell^{\gamma g}$.
 The cross-correlation SNR for the astrophysical signal depends on the point-source sensitivity only weakly, through the window function of the resolved fraction, whereas the auto-correlation SNR is strongly sensitive to it.
+\aure{better clarify this statement}
 For DM, which is always diffuse, the cross-correlation sensitivity is essentially immune to the blazar detection threshold.
 The quantitative impact of this suppression on the dark matter sensitivity is derived in the paper that follows, which compares the cross-correlation and auto-correlation constraints directly.
 
+\aure{clarify this phrase, it's a bad conenctor and very vague}
 The physical interpretation decomposes into the 1-halo and 2-halo structure of the three-dimensional cross-power spectrum, introduced in Section~\ref{sec:cross_correlations} and detailed in~\cite{Camera:2012cj,Fornasa:2015qua}.
 The 1-halo term captures correlations between pairs of points within the same halo --- for DM this traces the density profile within individual halos and dominates at small angular scales ($\ell \gtrsim 200$).
 The 2-halo term describes the large-scale clustering between different halos, following the linear matter power spectrum weighted by a bias factor.
@@ -73,29 +76,29 @@ Measuring $C_\ell^{\gamma g}$ across multipoles allows one to separate these two
 The redshift overlap argument of Section~\ref{sec:8.2.1} points to a specific class of galaxy catalogs as optimal for DM annihilation searches: dense, all-sky surveys covering the local universe at $z \lesssim 0.1$--$0.2$.
 Two datasets stand out in this role.
 The Two Micron All-Sky Survey (2MASS) Extended Source Catalog contains approximately one million galaxies and has a redshift distribution peaking at $z \approx 0.072$, making it one of the shallowest but most complete all-sky galaxy surveys available~\cite{Fornasa:2015qua}. The 2MASS Redshift Survey (2MRS) is its spectroscopic subsample, extending to $z \sim 0.1$ with full spectroscopic redshifts, providing both a precise $dN_g/dz$ for modeling and higher galaxy density per solid angle in the local volume.
+\aure{this is unclear, galaxy catalogs cover all sky, no? we are interested in the high latitude gamma ray sky, not low latitude, and in fact the galactic plane is being masked when deriving the CN for fermi-lat data in the original paper}
 Both catalogs cover the sky area in the low-latitude region around the galactic plane and are therefore complementary in the extragalactic analysis.
 
+\aure{this phrase is in contradiction to what we say before in the thesis, where we state that blazars might constitute a large part of the UGRB. We need to clarify this statement, frame it better. Do we even need to claim that fermi has resolved the majority of blazars? clearly there are a lot of still unresolved gamma ray sources, how can we know that we have resolved most of the blazars at z<0.1? is that due to their expected luminosity? are blazars at z>0.1 fainter, and as such unresolved? }
 The practical advantage of 2MASS and 2MRS is that the Fermi-LAT has already resolved the vast majority of blazars in the local universe down to sensitivities far below the population average.
 Unresolved blazars in the volume $z \lesssim 0.1$ are therefore a negligible component of the unresolved gamma-ray background (UGRB) at Fermi-LAT energies~\cite{Fornasa:2015qua}.
 The cross-correlation of the UGRB with these catalogs is thus free from the dominant astrophysical contaminant that plagues both the gamma-ray auto-correlation and searches at higher redshift.
 The signal remaining in $C_\ell^{\gamma g}$ is a mixture of star-forming galaxies (SFGs), misaligned active galactic nuclei (mAGN), and any DM contribution --- precisely the populations one expects to find in the local large-scale structure.
 
+\aure{clarify this is a cross correlation of astriophysical sources (mainly blazars) in the UGRB, not DM}
 The first statistically significant detections of this cross-correlation were obtained with 60 months of Fermi-LAT data~\cite{Cuoco:2015rfa,Xia:2015wka}.
-Xia et al.
-\ (2015) measured a cross-correlation signal at angular scales below one degree between the Fermi-LAT UGRB and four catalogs of large-scale structure.
+Xia et al.~\cite{Xia:2015wka} measured a cross-correlation signal at angular scales below one degree between the Fermi-LAT UGRB and four catalogs of large-scale structure.
 The detection significance reached $3.6\sigma$ for the 2MASS photometric catalog and $3\sigma$ for the SDSS main galaxy sample, rising to $4.5\sigma$ when cross-correlating with SDSS quasars.
 An apparent $10\sigma$ detection with the NVSS radio catalog was traced to a 1-halo contamination consistent with sub-threshold AGN just below the Fermi-LAT detection limit, not a genuine large-scale-structure signal~\cite{Fornasa:2015qua}.
 Together these results confirmed that the cross-correlation technique is sensitive to the UGRB source population at a level relevant for DM searches.
 
 Cuoco et al.
 \ (2015) performed a joint fit to the measured cross-correlation functions including DM, blazars, SFGs, and mAGN as separate components~\cite{Cuoco:2015rfa}.
-A non-zero DM contribution was allowed by the data but degenerate with the astrophysical components; the resulting upper limits on the annihilation cross section and decay lifetime were competitive with contemporary constraints from dwarf spheroidal galaxies and galaxy clusters, while arising from a genuinely independent observable --- the spatial coherence of DM emission with the cosmic web~\cite{Regis:2015zka}.
+A non-zero DM contribution was allowed by the data but degenerate with the astrophysical components; the resulting upper limits on the annihilation cross section and decay lifetime were competitive with contemporary constraints from dwarf spheroidal galaxies and galaxy clusters, while arising from an independent observable --- the spatial coherence of DM emission with the cosmic web~\cite{Regis:2015zka}.
 
 Beyond galaxy number counts, gravitational lensing maps offer an alternative tracer with independent systematics.
-Cross-correlating the UGRB with weak-lensing convergence maps, Shirasaki et al.
-\ (2014) found no significant signal and used the null result to set upper limits on $\langle\sigma v\rangle$, demonstrating that cosmic shear is useful for DM searches even in the absence of a detection~\cite{Shirasaki:2014noa}.
-Camera et al.
-\ (2013) showed theoretically that the shear window function overlaps well with the DM annihilation window function, making this combination particularly clean from an astrophysical foreground perspective~\cite{Camera:2012cj}.
+Cross-correlating the UGRB with weak-lensing convergence maps, Shirasaki et al.~\cite{Shirasaki:2014noa} found no significant signal and used the null result to set upper limits on $\langle\sigma v\rangle$, demonstrating that cosmic shear is useful for DM searches even in the absence of a detection.
+Camera et al.~\cite{Camera:2012cj} showed theoretically that the shear window function overlaps well with the DM annihilation window function, making this combination particularly clean from an astrophysical foreground perspective.
 The main practical challenge is the much larger noise of current weak-lensing surveys compared with galaxy number counts.
 
 Looking ahead to CTAO, the choice of 2MASS and 2MRS as the reference catalogs is well motivated: their redshift distributions maximize the overlap with the DM window function in the energy range where CTAO is most sensitive ($\gtrsim 50\,\mathrm{GeV}$, where EBL absorption shrinks the gamma-ray horizon of astrophysical sources to $z \lesssim 0.2$).
