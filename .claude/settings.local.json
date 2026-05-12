@@ -12,7 +12,9 @@
       "Bash(grep *)",
       "Bash(awk NR==108,NR==112 { print NR\": \"$0 } *)",
       "mcp__notebooklm-mcp__notebook_list",
-      "mcp__notebooklm-mcp__notebook_query"
+      "mcp__notebooklm-mcp__notebook_query",
+      "mcp__review-mode-mcp__get_review_summary",
+      "mcp__notebooklm-mcp__notebook_get"
     ]
   },
   "sandbox": {
