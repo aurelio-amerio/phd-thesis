@@ -3,63 +3,54 @@
 
 \section{The Astrophysical Gamma-Ray Sky}
 \label{sec:astro_sky}
-\aure{stopped here}
 
-The high-energy sky observed by the Fermi Large Area Telescope (Fermi-LAT) is a complex superposition of energetic processes spanning our local Galactic neighborhood and the broader universe.
+The high-energy sky observed by the Fermi Large Area Telescope (Fermi-LAT) is a complex superposition of processes spanning our local Galactic neighborhood and the broader universe.
 Phenomenologically, this emission falls into two domains.
-The Galactic sky is dominated by the diffuse foreground of cosmic-ray interactions and populated by energetic point sources, most notably pulsars.
+The Galactic sky is dominated by the diffuse foreground of cosmic-ray interactions and populated by Galactic gamma-ray sources, most notably pulsars.
 The extragalactic sky, in contrast, is characterized by an isotropic background arising primarily from unresolved active galactic nuclei and star-forming galaxies.
 A detailed understanding of the astrophysical processes behind these conventional emitters is necessary for dark matter indirect detection, where every ordinary astrophysical signal is a potential background.
-Isolating any dark matter contribution therefore requires a thorough characterization of the astrophysical gamma-ray sky.
 
 \subsection{Galactic Sources}
 \label{sec:galactic_sources}
 
 The gamma-ray emission from the Milky Way comprises two broad components: a diffuse foreground and a diverse population of individual point sources.
-As discussed in Section~\ref{sec:gde_model}, the Galactic Diffuse Emission (GDE) dominates the observed sky.
-As discussed in Section~\ref{sec:production_mechanisms}, this emission arises from cosmic-ray interactions with the interstellar medium and radiation fields: hadronic pion production traces the distribution of interstellar gas along the Galactic plane, while inverse-Compton scattering off starlight and the CMB produces a more extended high-latitude component.
-To isolate other astrophysical signals, the standard approach relies on template fitting, in which the spatial and spectral distribution of the GDE is modeled using cosmic-ray propagation codes such as GALPROP \cite{Ackermann:2014usa, DGRB-review}.
-The Fermi-LAT sky model decomposes the observed counts into a linear combination of these GDE templates, individually resolved point sources, and a residual isotropic component.
-However, this decomposition depends on the assumed interstellar emission model (IEM), and the use of different IEM templates leads to systematic differences in the extracted residuals.
-Unmodeled gas structures, uncertainties in the cosmic-ray source distribution, and poorly constrained radiation fields all contribute to making the GDE template the largest source of systematic uncertainty in Fermi-LAT analyses.
-This mismodeling directly induces dataset shift when applying simulation-trained algorithms to real data, a challenge addressed in Chapter~5.
+The Galactic Diffuse Emission dominates the observed sky and, as discussed in Section~\ref{sec:gde_model}, its template-based modeling remains the largest source of systematic uncertainty in Fermi-LAT analyses.
+Alongside this diffuse foreground, the Galactic sky is populated by individual energetic sources, among which pulsars are the most prominent gamma-ray emitters.
 
-Beyond the diffuse foreground, the Galactic plane is populated by individual energetic sources, with pulsars being the most prominent gamma-ray emitters.
 Young pulsars are rapidly spinning neutron stars with large surface magnetic fields ($10^{11}$--$10^{13}$~G), emitting gamma rays primarily through curvature radiation in their magnetospheric gaps.
-Their spin-down timescale is $\tau = P/2\dot{P}$, and their gamma-ray emission fades over millions of years as the pulsar decelerates.
+This emission typically continues over millions of years as the pulsar gradually decelerates (spins down).
 Over longer timescales, neutron stars in binary systems can undergo a recycling process: the older neutron star accretes matter and angular momentum from its companion, spinning back up to periods of 2--10 milliseconds \cite{1982Natur.300..728A}.
 These millisecond pulsars (MSPs) possess weaker magnetic fields ($10^8$--$10^9$~G) but maintain their rapid rotation for gigayears.
 While young pulsars remain tightly clustered near their birthplaces in the Galactic disk, MSPs have orbited the Galaxy numerous times.
 Their natal kicks and prolonged dynamical history broaden their spatial distribution, causing MSP populations to extend to higher Galactic latitudes and to densely populate the Galactic bulge \cite{Calore:2014oga}.
 
-The gamma-ray spectrum of MSPs poses a direct challenge for dark matter indirect detection.
-Curvature radiation produces a characteristic power-law spectrum with an exponential cutoff at a few GeV.
-This spectral shape is essentially indistinguishable from the expected photon yield of a $\sim$50~GeV WIMP annihilating into $b\bar{b}$ quarks \cite{Cirelli:2024ssz}.
-Because the spectral shapes overlap so precisely, an unresolved population of thousands of MSPs in the Galactic bulge provides a compelling astrophysical explanation for the Galactic Center Excess (GCE).
+Their concentration in the Galactic bulge places MSPs squarely in the regions most targeted by dark matter searches, but the challenge extends beyond spatial overlap: curvature radiation produces a characteristic power-law spectrum with an exponential cutoff at a few GeV.
+This spectral shape is essentially indistinguishable from the expected photon yield of a $\sim$50~GeV WIMP annihilating into $b\bar{b}$ quarks \cite{Cirelli:2024ssz} --- a topic we will extensively explore in Chapters~\ref{ch:4} and \ref{ch:5}.
 
-Whether MSPs can fully account for the GCE depends on their gamma-ray luminosity function, the distribution of individual source luminosities within the population.
-Field MSPs detected in the Galactic plane have mean luminosities of $\langle L_\gamma \rangle \sim 10^{33}$--$10^{34}$~erg/s \cite{Hooper:2015jlu}, but the bulge population probed by the GCE may differ in age, metallicity, and binary history.
-Breaking the spectral degeneracy between WIMP annihilation and unresolved MSPs therefore requires independent constraints on this luminosity function.
-One effective approach is to measure it in relatively clean environments with known distances, such as globular clusters.
-These dense stellar environments act as efficient factories for the binary systems necessary for MSP recycling.
-By characterizing the luminosity function of globular cluster MSPs, one can derive constraints that can be extrapolated to the broader Galactic bulge population.
-This is the approach adopted in Chapter~4, where we use simulation-based inference to measure the MSP luminosity function and scrutinize the origin of the GCE.
+% MSPs detected in the Galactic plane have mean luminosities of $\langle L_\gamma \rangle \sim 10^{33}$--$10^{34}$~erg/s \cite{Hooper:2015jlu}, but the population closer to the Galactic center may differ in age, metallicity, and binary history.
+% Breaking the spectral degeneracy between WIMP annihilation and unresolved MSPs therefore requires independent constraints on this luminosity function.
+% One effective approach is to measure it in relatively clean environments with known distances, such as globular clusters.
+% These dense stellar environments act as efficient factories for the binary systems necessary for MSP recycling.
+% By characterizing the luminosity function of globular cluster MSPs, one can derive constraints that can be extrapolated to the broader Galactic bulge population.
+% This is the approach adopted in Chapter~4, where we use simulation-based inference to measure the MSP luminosity function and scrutinize the origin of the GCE.
 
 Among the remaining Galactic gamma-ray sources, supernova remnants and pulsar wind nebulae are routinely detected by the Fermi-LAT but represent subdominant backgrounds for the dark matter searches undertaken in this thesis.
-Having surveyed the Galactic foreground and its point-source populations, we now turn to the extragalactic sky.
 
-\begin{figure}[t]
-	\centering
-	\includegraphics[width=0.7\columnwidth]{figures/gce_spectrum.pdf}
-	\caption{The energy spectrum of the Galactic Center GeV excess fitted with a dark matter annihilation model ($b\bar{b}$ channel, $\sim$45 GeV).
-		This spectral shape is highly degenerate with the curvature radiation spectrum of a population of millisecond pulsars.
-		Credit: Figure 9.2 from Cirelli et al.\ (2024) \cite{Cirelli:2024ssz}.
-	}
-	\label{fig:gce_spectrum}
-\end{figure}
+% Having surveyed the Galactic foreground and its point-source populations, we now turn to the extragalactic sky.
+
+% \begin{figure}[t]
+% 	\centering
+% 	\includegraphics[width=0.7\columnwidth]{figures/gce_spectrum.pdf}
+% 	\caption{The energy spectrum of the Galactic Center GeV excess fitted with a dark matter annihilation model ($b\bar{b}$ channel, $\sim$45 GeV).
+% 		This spectral shape is highly degenerate with the curvature radiation spectrum of a population of millisecond pulsars.
+% 		Credit: Figure 9.2 from Cirelli et al.\ (2024) \cite{Cirelli:2024ssz}.
+% 	}
+% 	\label{fig:gce_spectrum}
+% \end{figure}
 
 \subsection{Extragalactic Sources}
 \label{sec:extragalactic_sources}
+\aure{stopped here}
 
 The high-latitude sky is dominated by the Extragalactic Gamma-Ray Background (EGB), which encompasses the total gamma-ray emission originating outside our Galaxy.
 The EGB combines both individually resolved extragalactic sources and the unresolved glow of fainter objects \cite{DGRB-review, Ajello:2015mfa}.
