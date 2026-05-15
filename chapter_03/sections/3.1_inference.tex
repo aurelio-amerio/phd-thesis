@@ -142,52 +142,37 @@ The Bayesian approach handles them by marginalizing the joint posterior:
 which integrates out the nuisance parameters $\boldsymbol{\eta}$ to yield the marginal posterior for the parameters of interest $\boldsymbol{\psi}$.
 This is conceptually analogous to the frequentist integrated likelihood (see Section~\ref{sec:3.1.2}), but the probabilistic interpretation differs: the Bayesian marginal posterior is a fully coherent probability distribution over $\boldsymbol{\psi}$, conditioned on both the data and the prior.
 
-\paragraph{Bayesian error estimation in neural networks.}
-\aure{stopped here}
-
-A particularly relevant application arises when the inference is performed by a neural network rather than an explicit likelihood calculation.
-Consider a regression task in which the network predicts both the mean $\hat{y}$ and the variance $\hat{\sigma}^2$ of the output.
-Training with the heteroscedastic Gaussian negative log-likelihood loss of Eq.~\eqref{eq:heteroscedastic_nll} teaches the network to estimate its own aleatoric uncertainty---the irreducible noise inherent in each observation \cite{Kendall:2017}.
-Data points with high noise are automatically down-weighted by the large $\sigma_i^2$ in the denominator, while the logarithmic regularization term prevents the network from predicting infinite variance to trivially minimize the loss.
-
-Epistemic uncertainty---the model's ignorance about regions of parameter space with limited training data---is captured separately through Monte Carlo dropout \cite{Gal:2016}.
-By keeping dropout active at test time and performing $T$ stochastic forward passes through the network, one obtains an ensemble of predictions whose sample variance quantifies the model uncertainty.
-This procedure is mathematically equivalent to approximate variational inference in a deep Gaussian process \cite{Gal:2016}.
-The total predictive uncertainty is the sum of the aleatoric and epistemic components:
-\begin{equation}
-	\mathrm{Var}(y) \approx \frac{1}{T}\sum_{t=1}^{T} \hat{\sigma}_t^2 + \frac{1}{T}\sum_{t=1}^{T} \hat{y}_t^2 - \left(\frac{1}{T}\sum_{t=1}^{T}\hat{y}_t\right)^2.
-	\label{eq:total_variance}
-\end{equation}
+When the likelihood is intractable---as is often the case for complex forward models involving high-dimensional simulations---neural networks offer a route to Bayesian inference through simulation-based methods, in which a density estimator learns the posterior directly from simulated data--parameter pairs.
+These approaches are developed in Section~\ref{sec:3.2}.
 
 \paragraph{Application preview.}
 
-In Chapter~\ref{ch:6}, this framework is applied to reconstruct the source-count distribution $dN/dS$ and its uncertainty from gamma-ray sky maps.
-A neural network trained with the heteroscedastic loss learns the aleatoric uncertainty as a function of flux, while concrete dropout \cite{Gal:2017} provides the epistemic component.
-The resulting Bayesian error estimates are validated against an independent frequentist cross-check (Section~\ref{sec:3.1.4}).
+In Chapter~\ref{ch:6}, the Bayesian framework is implemented via simulation-based inference to reconstruct the source-count distribution $dN/dS$ from gamma-ray sky maps, with posterior uncertainty estimates validated against an independent frequentist cross-check (Section~\ref{sec:3.1.4}).
 
 %% --- 3.1.4 ---
 
 \subsection{When to Use Which}
 \label{sec:3.1.4}
 
-The frequentist and Bayesian frameworks each carry distinct practical advantages, and the choice between them is dictated by the specific requirements of the analysis rather than by any fundamental superiority of one over the other.
+For most inference tasks encountered in practice---parameter estimation, upper-limit setting, model comparison---both the frequentist and Bayesian frameworks can reach the same scientific conclusion.
+The choice between them is usually pragmatic rather than fundamental, driven by the scientific question at hand, computational considerations, and the conventions of the relevant research community.
+Community practice already carries considerable weight: high-energy particle physics and the Fermi-LAT collaboration have traditionally favored frequentist methods---source detection via the TS, upper limits via the profile likelihood and Wilks' theorem, catalog pipelines built on maximum-likelihood fitting \cite{Mattox:1996}---while cosmology and large-scale-structure analyses have largely adopted Bayesian Markov Chain Monte Carlo (MCMC) methods \cite{Hastie:2009}.
+Neither convention reflects a judgment on the foundations of probability; both reflect what works well for the typical dimensionality and structure of the problems each field encounters most often.
 
-Frequentist methods are well suited to hypothesis testing and the construction of upper limits, where the goal is to reject or constrain a specific model without introducing prior assumptions on the parameters.
-The profile likelihood and Wilks' theorem provide a direct path from the data to confidence intervals and detection significances with minimal modelling choices.
-These properties make the frequentist approach the natural default for standard Fermi-LAT analyses, where the test statistic is used to determine source detection thresholds and to set upper bounds on new physics contributions (see Chapters~\ref{ch:4} and~\ref{ch:5}).
+Beyond community defaults, the central question is whether the analysis requires a full characterization of uncertainty or whether a point estimate with a simple error bar suffices.
+When the posterior structure matters---correlations between parameters, degeneracies, multi-modality, or the marginalization of many nuisance parameters---the Bayesian framework provides this information as its default output (Section~\ref{sec:3.1.3}).
+In high-dimensional parameter spaces, however, MCMC itself becomes expensive: samplers suffer from poor mixing, correlated samples, and trapping in local modes.
+Frequentist point estimation can remain tractable in the same regime through gradient-based optimization or iterative algorithms such as EM (Section~\ref{sec:3.3.3}), which converge efficiently without exploring the full parameter space---but at the cost of forgoing the posterior structure that motivates the Bayesian approach in the first place.
+When a one-dimensional confidence interval or upper limit is the target, as in standard source detection or cross-section bounds, the frequentist route is typically more direct.
 
-Bayesian methods, by contrast, provide natural uncertainty quantification as the default output: the posterior distribution encodes the full probability distribution over the parameters of interest, including correlations and multi-modality.
-When prior information is available---for instance, physical constraints on parameter ranges---Bayesian inference offers a principled mechanism for incorporating it.
-Marginalization over nuisance parameters is conceptually straightforward and avoids the point-estimate approximation inherent in profiling.
+A second discriminating factor is the role of external information.
+Bayesian inference provides a coherent mechanism for incorporating physical constraints---positivity of fluxes, calibration ranges from auxiliary measurements, results from complementary experiments---through the prior.
+Frequentist methods are preferred when the goal is to present a result with minimal sensitivity to external assumptions, particularly in the data-sparse regime where the prior can considerably shape the posterior.
+This prior dependence extends to model comparison: the Bayes factor offers a principled comparison between arbitrary model pairs but is sensitive to the prior volume, especially when priors are vague or the models differ substantially in complexity \cite{Kass:1995}; the frequentist likelihood-ratio test (Section~\ref{sec:3.1.2}) is prior-free but restricted to nested hypotheses; information criteria such as the AIC apply more broadly but produce only relative rankings without significance levels.
 
-In machine learning applications, the distinction maps onto the two types of predictive uncertainty.
-Aleatoric uncertainty captures the irreducible noise in the observations and is modelled as a data-dependent output variance through the heteroscedastic loss function.
-Epistemic uncertainty captures the model's ignorance in regions of parameter space underrepresented in the training data and is estimated through Monte Carlo dropout.
-The former cannot be reduced by collecting more training data; the latter decreases as the training set grows \cite{Kendall:2017, Hullermeier:2021}.
-Modelling both types is important: aleatoric uncertainty dominates in data-rich regimes and allows the network to down-weight noisy observations, while epistemic uncertainty is required to identify out-of-distribution inputs where the model's predictions should not be trusted \cite{Kendall:2017}.
-
-In practice, both paradigms are used throughout this thesis, and in some cases they are applied to the same problem as independent cross-checks.
-In Chapter~\ref{ch:6}, the neural network provides Bayesian error estimates on the reconstructed $dN/dS$ through dropout and the heteroscedastic loss.
-These are validated against a frequentist analysis of the same data, where confidence intervals are extracted from the empirical distribution of residuals across the validation set.
+In the limit of abundant, constraining data, these distinctions fade: the likelihood dominates any reasonable prior, and Bayesian credible intervals coincide numerically with frequentist confidence intervals.
+The choice becomes consequential precisely when data are sparse, priors are informative, or the parameter space is high-dimensional.
+In the analyses presented in this thesis, both paradigms are used, and in some cases they are applied to the same problem as independent cross-checks.
+In Chapter~\ref{ch:6}, a simulation-based inference approach provides Bayesian posterior estimates on the reconstructed $dN/dS$, which are validated against a frequentist analysis of the same data where confidence intervals are extracted from the empirical distribution of residuals across the validation set.
 The frequentist cross-check also provides a formal estimate of the model's bias, which is found to be negligible across the flux range of interest.
 The compatibility of the two independent error estimates provides confidence that the uncertainty quantification is robust.

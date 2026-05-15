@@ -16,7 +16,8 @@
       "mcp__review-mode-mcp__get_review_summary",
       "mcp__notebooklm-mcp__notebook_get",
       "Skill(scientific-writing)",
-      "Skill(scientific-writing:*)"
+      "Skill(scientific-writing:*)",
+      "Skill(source_registry)"
     ]
   },
   "sandbox": {
