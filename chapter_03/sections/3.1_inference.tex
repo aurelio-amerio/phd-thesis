@@ -3,7 +3,7 @@
 
 Extracting physical information from noisy gamma-ray data requires a well-defined statistical language.
 The analyses presented in this thesis draw on two complementary paradigms---frequentist and Bayesian inference---each providing distinct tools for parameter estimation, uncertainty quantification, and hypothesis testing.
-This section introduces both frameworks from the shared foundation of the likelihood function, develops the key concepts used in the research papers, and discusses when each paradigm is most appropriate.
+This section introduces both frameworks from the shared foundation of the likelihood function, develops the key concepts used in the research papers, and discusses when each paradigm is most appropriate (according to personal bias).
 Readers familiar with statistical inference may proceed directly to the application previews, which connect the general formalism to its specific use in the research chapters of this thesis.
 
 %% --- 3.1.1 ---
@@ -70,7 +70,7 @@ Although this resembles Bayesian marginalization in form, the integrated likelih
 
 \paragraph{Hypothesis testing and the Test Statistic.}
 
-To compare competing hypotheses---for instance, whether a gamma-ray source exists at a given position---one constructs a likelihood-ratio test statistic (TS):
+To compare competing hypotheses---for instance, whether a gamma-ray source exists at a given position---one generally constructs a likelihood-ratio test statistic (TS):
 \begin{equation}
 	\mathrm{TS} = -2 \ln \frac{\mathcal{L}_0}{\mathcal{L}_1},
 	\label{eq:ts}
@@ -78,14 +78,29 @@ To compare competing hypotheses---for instance, whether a gamma-ray source exist
 where $\mathcal{L}_0$ is the likelihood under the null hypothesis and $\mathcal{L}_1$ the likelihood under the alternative (or, more commonly, the globally maximized likelihood) \cite{Mattox:1996}.
 By Wilks' theorem, under certain regularity conditions the TS is asymptotically distributed as a $\chi^2$ random variable with degrees of freedom equal to the difference in free parameters between the two hypotheses \cite{Wilks:1938}.
 This result allows direct conversion of TS values to statistical significance without explicit Monte Carlo simulations.
-For example, to establish a one-sided 95\% confidence-level upper bound on a single parameter, one identifies the parameter value at which $\mathrm{TS} = 3.84$.
+% For example, to establish a one-sided 95\% confidence-level upper bound on a single parameter, one identifies the parameter value at which $\mathrm{TS} = 3.84$.
+
+The likelihood-ratio test relies on nested hypotheses and on the regularity conditions underlying Wilks' theorem.
+When these assumptions do not hold---in particular, when the hypotheses are non-nested, or when one wishes to assess the absolute compatibility of the data with a single model---other frequentist tools are available.
+The Kolmogorov--Smirnov test \cite{KS_test} addresses the latter case by taking as test statistic the supremum of the absolute difference between the empirical cumulative distribution function of the data and that predicted by the model.
+Its null distribution is independent of the underlying distribution, which makes it a common diagnostic for goodness-of-fit when no specific alternative is being tested.
+For comparing models that are not nested, information criteria offer a complementary approach.
+The Akaike Information Criterion \cite{Akaike:1974} is defined as
+\begin{equation}
+	\mathrm{AIC} = -2 \ln \mathcal{L}_{\max} + 2k,
+	\label{eq:aic}
+\end{equation}
+where $\mathcal{L}_{\max}$ is the maximum value of the likelihood and $k$ the number of free parameters.
+The AIC provides an estimator of the relative Kullback--Leibler divergence between each candidate model and the data-generating process, with the $2k$ term penalising additional parameters and thus discouraging overfitting.
+Model selection then proceeds by minimising the AIC across the candidates; differences in AIC, rather than absolute values, carry the statistical meaning, and no $p$-value is produced.
 
 \paragraph{Application preview.}
 
 The frequentist framework developed above is used extensively in this thesis:
 \begin{itemize}
 	\item In Chapter~\ref{ch:4}, the MSP luminosity function is constrained via MLE applied to an integrated likelihood, and model comparison is performed through $-2\Delta\ln\mathcal{L}$ values.
-	\item In Chapter~\ref{ch:5}, a profile likelihood test statistic is used with Wilks' theorem to set 95\% CL upper bounds on the dark matter annihilation cross-section.
+	\item In Chapter~\ref{ch:5}, a profile likelihood test statistic is used with Wilks' theorem to set 95\% CL upper bounds on the dark matter annihilation cross-section; the AIC is additionally used to compare competing models for the unassociated source population.
+	\item In Chapter~\ref{ch:7}, a two-sample KS test compares the cumulative pixel-wise TS distributions of the real \Fermi-LAT sky against synthetic realizations drawn from the source-count distribution, providing the statistical criterion that defines sub-threshold source candidates.
 	\item In Chapter~\ref{ch:8}, a $\Delta\chi^2$ test statistic compares astrophysical-only and astrophysical-plus-DM hypotheses for the cross-correlation angular power spectrum.
 \end{itemize}
 
@@ -93,8 +108,7 @@ The frequentist framework developed above is used extensively in this thesis:
 
 \subsection{Bayesian Inference}
 \label{sec:3.1.3}
-
-The Bayesian framework treats the model parameters $\boldsymbol{\theta}$ not as fixed unknowns but as random variables endowed with a probability distribution.
+The Bayesian framework treats the model parameters $\boldsymbol{\theta}$ not as fixed unknowns but as random variables associated with a probability distribution.
 Before observing any data, our state of knowledge about $\boldsymbol{\theta}$ is encoded in a prior distribution $p(\boldsymbol{\theta})$.
 After observing data $\mathbf{d}$, this knowledge is updated through Bayes' theorem:
 \begin{equation}
@@ -129,6 +143,7 @@ which integrates out the nuisance parameters $\boldsymbol{\eta}$ to yield the ma
 This is conceptually analogous to the frequentist integrated likelihood (see Section~\ref{sec:3.1.2}), but the probabilistic interpretation differs: the Bayesian marginal posterior is a fully coherent probability distribution over $\boldsymbol{\psi}$, conditioned on both the data and the prior.
 
 \paragraph{Bayesian error estimation in neural networks.}
+\aure{stopped here}
 
 A particularly relevant application arises when the inference is performed by a neural network rather than an explicit likelihood calculation.
 Consider a regression task in which the network predicts both the mean $\hat{y}$ and the variance $\hat{\sigma}^2$ of the output.

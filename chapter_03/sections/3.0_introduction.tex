@@ -5,11 +5,12 @@ The gamma-ray sky described in the previous chapter presents a formidable data a
 Faint signals from potential dark matter annihilation or decay are embedded in bright, spatially structured astrophysical backgrounds; source populations overlap in both position and spectral shape; and instrumental effects---finite angular resolution, energy-dependent sensitivity, detection thresholds---leave a large fraction of the emitting population unresolved or unclassified.
 Extracting new physics from this environment requires moving beyond standard signal-over-background methods toward a more comprehensive statistical toolkit.
 
+\aure{This has nice momentum, but maybe there's a way to rewrite it to have shorter sentences?}
 The analyses presented in this thesis draw on techniques spanning classical statistics, modern machine learning, and domain-specific tools developed for astrophysical inference.
 Each method addresses a different aspect of the extraction problem: frequentist and Bayesian approaches provide the language for parameter estimation and hypothesis testing; simulation-based inference bypasses intractable likelihoods that arise in complex forward models; neural networks learn directly from high-dimensional data when explicit physical models are unavailable; domain adaptation corrects for the systematic mismatches between simulated training data and real observations; and angular cross-correlations exploit the connection between gamma-ray emission and the large-scale distribution of matter to access collective signals invisible to single-instrument analyses.
 
 This chapter introduces the mathematical framework used throughout the thesis.
-Each method is presented at a conceptual level---definitions, key equations, and worked examples---with forward references to the research papers where the full technical details appear.
+Each method is presented at a conceptual level, with forward references to the research papers and chapters where the full technical details appear.
 We begin with the foundations of frequentist and Bayesian inference in Section~\ref{sec:3.1}, establishing the likelihood function, maximum likelihood estimation, Bayesian posteriors, and hypothesis testing.
 Section~\ref{sec:3.2} introduces the simulation-based inference paradigm for problems where the likelihood cannot be evaluated analytically.
 Section~\ref{sec:3.3} covers the machine learning tools---convolutional neural networks, density estimation, and mixture models---used for regression and classification tasks on gamma-ray data.
