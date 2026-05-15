@@ -17,7 +17,12 @@
       "mcp__notebooklm-mcp__notebook_get",
       "Skill(scientific-writing)",
       "Skill(scientific-writing:*)",
-      "Skill(source_registry)"
+      "Skill(source_registry)",
+      "Skill(review-mode:implement-review)",
+      "mcp__plugin_review-mode_review-mode__get_annotations",
+      "mcp__plugin_review-mode_review-mode__update_annotation",
+      "mcp__plugin_review-mode_review-mode__open_review",
+      "Skill(review-mode:update-plan)"
     ]
   },
   "sandbox": {
