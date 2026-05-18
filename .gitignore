@@ -331,3 +331,7 @@ TSWLatexianTemp*
 main.pdf
 
 .revisions
+
+# citecheck plugin output dirs
+.citecache/
+.citecheck/
