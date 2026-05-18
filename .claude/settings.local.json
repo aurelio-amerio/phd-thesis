@@ -16,7 +16,8 @@
       "mcp__review-mode-mcp__get_review_summary",
       "mcp__notebooklm-mcp__notebook_get",
       "Skill(source_registry)",
-      "Skill(review-mode:implement-review)"
+      "Skill(review-mode:implement-review)",
+      "Skill(superpowers:brainstorming)"
     ]
   },
   "sandbox": {
