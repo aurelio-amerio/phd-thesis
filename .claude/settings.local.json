@@ -17,7 +17,9 @@
       "mcp__notebooklm-mcp__notebook_get",
       "Skill(source_registry)",
       "Skill(review-mode:implement-review)",
-      "Skill(superpowers:brainstorming)"
+      "Skill(superpowers:brainstorming)",
+      "Skill(superpowers:writing-plans)",
+      "Skill(humanizer)"
     ]
   },
   "sandbox": {
