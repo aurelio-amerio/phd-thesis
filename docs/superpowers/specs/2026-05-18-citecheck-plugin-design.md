@@ -21,8 +21,10 @@ it is a cheap filter to surface obvious mistakes.
 - Input: one `.tex` file at a time (max ~100 citations per file in practice). The
   user invokes the skill repeatedly across files.
 - Output: a markdown report + JSON sidecar at `.citecheck/{tex_basename}.{md,json}`.
-- Source of truth for abstracts: the public InspireHEP REST API (the bibliography is
-  physics-dominated). Non-physics entries gracefully degrade to "no abstract".
+- Sources of truth for abstracts: InspireHEP REST API (preferred — bibliography is
+  physics-dominated) with the arXiv API as a fallback for entries Inspire does not
+  index (ML / CS papers in particular). Non-arXiv, non-Inspire entries gracefully
+  degrade to "no abstract".
 - The skill does **not** modify the `.tex` file or `bibliography.bib`.
 
 ## Non-goals
@@ -140,15 +142,31 @@ side-effects.
 Input: list of bibkeys with no `.citecache/abstracts/{bibkey}.json` yet, joined with
 their bib metadata.
 
-Resolution order per key (first hit wins):
+Resolution order per key (first hit wins), Inspire preferred, arXiv as fallback so
+ML / CS papers absent from Inspire are still resolved:
 
-1. **arXiv ID** → `GET https://inspirehep.net/api/literature?q=arxiv:{id}&fields=titles,authors,abstracts,arxiv_eprints,external_system_identifiers`
-2. **DOI** → `q=doi:{doi}`
-3. **Title** → `q=title:{quoted_title}` — accept only if top hit's normalized title
-   similarity to the bib title is ≥ 0.90, else fall through to not_found.
+1. **Inspire by arXiv ID** → `GET https://inspirehep.net/api/literature?q=arxiv:{id}&fields=titles,authors,abstracts,arxiv_eprints,external_system_identifiers`
+2. **Inspire by DOI** → `q=doi:{doi}`
+3. **Inspire by title** → `q=title:{quoted_title}` — accept only if top hit's
+   normalized title similarity to the bib title is ≥ 0.90.
+4. **arXiv by arXiv ID** → `GET https://export.arxiv.org/api/query?id_list={id}`
+   (Atom XML; parse `<title>` and `<summary>` from the single entry).
+5. **arXiv by title** → `GET https://export.arxiv.org/api/query?search_query=ti:{quoted_title}&max_results=3` —
+   accept only if a hit has normalized title similarity ≥ 0.90.
+
+If all five paths fail, write `source: "not_found"`.
+
+**Optional cross-check** (off by default, `--cross-check` flag): when the Inspire
+result has `title_match: "mismatch"`, also query arXiv with the same ID. If arXiv's
+title matches the bib title closely, prefer the arXiv abstract and mark
+`source: "arxiv_xref"` with a `cross_check_note` field. This catches the case where
+an Inspire arXiv-ID lookup happens to point at a different paper than the bib entry
+intends.
 
 Concurrency: `concurrent.futures.ThreadPoolExecutor` with 8 workers, 100 ms jitter,
-one retry on 429/5xx with 500 ms backoff.
+one retry on 429/5xx with 500 ms backoff. The arXiv API has its own rate limit
+(roughly 1 request/3 s recommended for bulk); the fetcher applies a per-host token
+bucket so arXiv calls stay polite even when Inspire calls run hot.
 
 **Title validation runs after every successful fetch** regardless of which path
 matched, since a wrong arXiv ID in the bib entry would silently fetch the wrong
@@ -183,8 +201,8 @@ Cache file shape `.citecache/abstracts/{bibkey}.json`:
 }
 ```
 
-`source` values: `inspire_arxiv` | `inspire_doi` | `inspire_title` | `not_found` |
-`fetch_error`.
+`source` values: `inspire_arxiv` | `inspire_doi` | `inspire_title` | `arxiv_id` |
+`arxiv_title` | `arxiv_xref` | `not_found` | `fetch_error`.
 
 Not-found entries are still written so dead keys are not re-queried; a `--refresh`
 flag forces re-fetch of `not_found` and `fetch_error` rows.
@@ -366,6 +384,8 @@ citation: score, reason, abstract_status, similarity, paragraph excerpt, line.
 - `--bib <path>` — override the walk-up resolver.
 - `--refresh` — re-fetch all abstracts ignoring cache.
 - `--refresh-missing` — re-fetch only `not_found` and `fetch_error` rows.
+- `--cross-check` — enable Inspire-vs-arXiv cross-check on title mismatches.
+- `--no-arxiv-fallback` — restrict resolution to Inspire only.
 - `--batch-size <n>` — default 15.
 - `--parallel <n>` — default 8.
 
@@ -381,5 +401,7 @@ can adjudicate by eye in under five minutes.
 - Acting on findings — replacing wrong keys, removing hallucinated entries. Stays
   manual or delegated to `fixref`.
 - Cross-file deduplication / global bib audit. Skill stays single-file.
-- Alternative sources (ADS, CrossRef) for non-physics entries.
+- Additional sources beyond Inspire and arXiv (ADS, CrossRef, Semantic Scholar) for
+  entries indexed by neither — books, software, blog posts, conference proceedings
+  not on arXiv.
 - Score caching by `(bibkey, paragraph hash)` for incremental re-runs.
