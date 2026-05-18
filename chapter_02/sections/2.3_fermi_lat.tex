@@ -3,8 +3,6 @@
 
 \section{The Fermi Large Area Telescope}
 \label{sec:fermi_lat_section}
-\aure{stopped here}
-
 The overlapping source populations, diffuse foregrounds, and the faint unresolved emission described in the previous section place specific demands on both the detecting instrument and the data analysis pipeline.
 To interpret the astrophysical gamma-ray sky, we must first understand the telescope that observes it.
 Launched in 2008, the \textit{Fermi} Large Area Telescope (LAT) has provided the most sensitive all-sky survey in the GeV domain to date, operating continuously for over fifteen years.
@@ -16,7 +14,7 @@ In this section, we review the fundamental design of the LAT, the energy-depende
 
 The \textit{Fermi} Large Area Telescope (LAT) is a pair-conversion telescope designed to measure cosmic gamma rays.
 Because high-energy gamma rays cannot be reflected or refracted, they must be detected indirectly through their interaction with matter.
-The LAT is therefore structured around four primary subsystems that convert incident photons into charged particles, track their trajectories, measure their energy, and reject the overwhelming background of cosmic rays \cite{Atwood:2009ez}.
+Fermi-LAT is therefore structured around four primary subsystems that convert incident photons into charged particles, track their trajectories, measure their energy, and reject the overwhelming background of cosmic rays \cite{Atwood:2009ez}.
 Figure~\ref{fig:lat_schematic} illustrates the instrument components.
 
 \begin{figure}[t]
@@ -68,9 +66,9 @@ This confusion directly limits the depth of point-source catalogs and motivates 
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.5\columnwidth, angle=90]{chapter_02/figures/lat_psf.pdf}
-	\caption{The 68\% containment radius of the Point Spread Function as a function of energy at normal incidence (solid) and at $60^\circ$ off-axis (dashed), for conversions in the thin section of the tracker.
-		The strong energy dependence at low energies, driven by multiple scattering in the tungsten foils, governs the source confusion limit of the instrument.
-		Credit: Figure 17 from \cite{Atwood:2009ez}.
+	\caption{The 68\% containment radius of the Point Spread Function as a function of energy at normal incidence (solid) and at $60^\circ$ off-axis (dashed), for photons converting in the thin \textit{front} section of the tracker.
+	Photons converting in the thick \textit{back} section have a PSF approximately twice as wide at 1~GeV.
+	Credit: Figure 17 from \cite{Atwood:2009ez}.
 	}
 	\label{fig:lat_psf}
 \end{figure}
@@ -85,10 +83,10 @@ Not every gamma ray that enters the LAT produces a usable event: some pass throu
 The effective area captures this by expressing the instrument's photon-collecting power as the area of an ideal, perfectly efficient detector that would record the same number of events.
 At normal incidence, it rises steeply from $\sim$100~cm$^2$ at 20~MeV to a broad plateau of $\sim$8,000--9,500~cm$^2$ between 1~GeV and several hundred GeV, before declining at the highest energies \cite{Atwood:2009ez}.
 For comparison, the LAT's overall footprint is $1.8 \times 1.8~\mathrm{m}^2$; the peak effective area of $\sim$9,500~cm$^2$---roughly a third of the geometric area---reflects the compounded probabilities of pair conversion in the tungsten, successful track reconstruction, and survival of background-rejection cuts.
-For a survey instrument like the LAT, however, what matters is not just how efficiently it detects photons from a single direction, but how much sky it can monitor simultaneously.
-The \emph{acceptance}---the effective area integrated over the instrument's field of view---captures both factors at once.
-The LAT's acceptance peaks at $\sim$2.5~m$^2$~sr above 1~GeV, meaning the telescope collects photons as if it were a perfect $2.5~\mathrm{m}^2$ detector watching one steradian of sky, or equivalently a smaller detector watching a proportionally wider region.
-To put this in perspective, the third EGRET catalog contained only 271 sources; the LAT's much larger acceptance, combined with its suppression of the backsplash self-veto that crippled EGRET above 10~GeV, is the primary reason the LAT has been able to catalog thousands \cite{Atwood:2009ez}.
+For a survey instrument, however, the relevant figure of merit is not the on-axis effective area alone, but the \emph{acceptance}---the effective area integrated over all incident directions.
+While the effective area quantifies the detection efficiency for photons arriving from a single direction, the acceptance captures the instrument's total photon-collecting power across the full field of view simultaneously.
+The LAT's acceptance peaks at $\sim$2.5~m$^2$~sr above 1~GeV \cite{Atwood:2009ez}, a direct consequence of the large 2.4~sr field of view enabled by the tracker's compact aspect ratio.
+Combined with the scanning survey mode described in Section~\ref{sec:fermi_lat}, this large acceptance allows the LAT to achieve nearly uniform full-sky exposure every three hours, operating as a continuous all-sky monitor rather than a pointed observatory.
 
 The accuracy of the IRFs relies directly on the underlying event reconstruction algorithms.
 The Pass~8 analysis framework represents a comprehensive overhaul of the LAT event-level reconstruction, designed to maximize the scientific return of the data \cite{Fermi-LAT:2013jgq}.
@@ -117,15 +115,16 @@ This threshold defines the boundary between what is considered a ``resolved'' so
 The results of these analyses have been systematically compiled into a series of catalogs of increasing depth.
 The progression from the First \textit{Fermi}-LAT Catalog (1FGL, based on 11 months of data) through the Third Catalog (3FGL, 4 years, 3,033 sources) to the Fourth Catalog (4FGL, 8 years, 5,064 sources) \cite{Fermi-LAT:2015bhf,Fermi-LAT:2019yla} reflects both the accumulation of exposure and successive improvements in event reconstruction and background modeling.
 The most recent published incremental release, 4FGL-DR4, extends the dataset to 14 years and contains 7,194 sources \cite{2023arXiv230712546B}, with more recent data releases continuing to grow the catalog.
-Throughout this evolution, the detection threshold has remained at $TS > 25$, so the growing source count is driven primarily by longer exposure and improved sensitivity from Pass~8 event reconstruction.
+Throughout this evolution, the detection threshold has remained at $TS > 25$, so the growing source count is driven primarily by longer exposure, improvements in the galactic foreground modeling, and improved sensitivity from Pass~8 event reconstruction.
 
 Each catalog entry reports the source localization (with 95\% confidence ellipse), the integrated energy flux in multiple bands, the best-fit spectral model, a variability index, and multi-wavelength associations.
 The spectral models employed include the simple power law, the log-parabola (commonly preferred for blazars), and the power law with an exponential cutoff (standard for pulsars).
-These spectral characterizations, together with variability and localization accuracy, form the feature space used in Chapter~\ref{ch:5} for the machine-learning classification of unassociated sources.
+These spectral characterizations---in particular the flux, spectral index, and curvature from the log-parabola fits---form the feature space used in Chapter~\ref{ch:5} for a population-level study of unassociated sources.
 
 The association procedure matches each gamma-ray source against catalogs at radio, infrared, optical, and X-ray wavelengths using Bayesian and likelihood-ratio methods.
-Sources receiving a high-confidence match are labeled as ``associated''; those with firm identification through periodicity, correlated variability, or resolved angular extent are labeled as ``identified.'' In the 4FGL, more than 3,130 sources are identified or associated with active galaxies of the blazar class, while pulsars represent the largest Galactic source class.
-However, a substantial fraction---1,336 sources (26\%) in the base 4FGL---lacks any plausible multi-wavelength counterpart and remains unassociated \cite{Fermi-LAT:2019yla}.
+Sources receiving a high-confidence match are labeled as ``associated''; those with firm identification through periodicity, correlated variability, or resolved angular extent are labeled as ``identified.''
+In the 4FGL-DR4, 4021 sources are identified or associated with extragalactic objects and 593 with Galactic source classes.
+However, a substantial fraction---2577 sources---lacks any plausible multi-wavelength counterpart and remains unassociated \cite{2023arXiv230712546B}.
 These unassociated sources are concentrated along the Galactic plane, where the dense background complicates counterpart searches, and at high latitudes, where their average spectral properties resemble those of blazars of unknown type.
 
 This large population of unassociated sources is scientifically important for multiple reasons.
