@@ -86,7 +86,7 @@ but the class prevalences differ: $p_{\text{train}}(k) \neq p_{\text{target}}(k)
 This type of shift is common when the population composition changes between the training and deployment environments.
 Among Fermi-LAT sources, for instance, the fraction of Galactic sources is considerably larger in the unassociated sample than in the associated one, because a higher proportion of unassociated sources lie near the Galactic plane \cite{2023RASTI...2..735M}.
 Standard classifiers trained with balanced or representative class fractions from the associated data will therefore assign incorrect class probabilities when applied to the unassociated population.
-The quantification learning literature \cite{10.1145/3117807_Gonzalez_quantification} addresses this problem by fitting the mixture weights $\pi_k$ of a generative model directly to the target data, rather than relying on the class fractions of the training set \cite{10.1162/089976602753284446_Saerens, 2024arXiv240100490M}.
+The quantification learning literature \cite{10.1145/3117807_Gonzalez_quantification} addresses this problem by fitting the mixture weights $\pi_k$ of a generative model directly to the target data, rather than relying on the class fractions of the training set \cite{10.1162/089976602753284446_Saerens,2024arXiv240100490M}.
 
 \paragraph{Combined shift.}
 

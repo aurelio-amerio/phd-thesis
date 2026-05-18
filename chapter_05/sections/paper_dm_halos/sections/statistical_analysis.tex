@@ -5,11 +5,11 @@
 \label{sec:halos:data}
 
 
-In this work we use the 4FGL-DR4 catalog~\cite{2022ApJS..260...53A, 2023arXiv230712546B}. We group the known types of associated sources into two classes:%
-\footnote{Cf. table 5 in ref.~\cite{2022ApJS..260...53A} for details about the types of sources. Galactic sources: psr, hmb, sfr, snr, pwn, gc, gal, bin, msp, lmb, spp, glc, nov. Extragalactic sources: bll, sbg, rdg, css, bcu, ssrq, fsrq, sey, nlsy1, agn.}
+In this work we use the 4FGL-DR4 catalog~\cite{Fermi-LAT:2022byn,Ballet:2023qzs}. We group the known types of associated sources into two classes:%
+\footnote{Cf. table 5 in ref.~\cite{Fermi-LAT:2022byn} for details about the types of sources. Galactic sources: psr, hmb, sfr, snr, pwn, gc, gal, bin, msp, lmb, spp, glc, nov. Extragalactic sources: bll, sbg, rdg, css, bcu, ssrq, fsrq, sey, nlsy1, agn.}
 \begin{itemize}
-    \item Galactic \new{(dominated by millisecond pulsars at high latitudes~\cite{Fermi-LAT:2023zzt, 2020ApJS..247...33A, Fornasa:2015qua, Hooper:2024avz, Cholis:2014noa, Caraveo:2013lra})}: pulsars, binaries, star-forming regions, supernova remnants, pulsar wind nebulae, globular clusters, and novae;
-    \item Extragalactic (\new{mostly AGNs~\cite{Fossati:1998zn, 2020ApJS..247...33A, Fornasa:2015qua, Dermer:2009zz, Ackermann_2015, Ajello:2015mfa, Lisanti:2016jub}}): blazars, quasars, starburst galaxies, normal galaxies, radio galaxies and radio sources, Seyfert galaxies, and non-blazar active galaxies.
+    \item Galactic \new{(dominated by millisecond pulsars at high latitudes~\cite{Fermi-LAT:2023zzt,Fermi-LAT:2019yla,DGRB-review,Hooper:2024,Cholis:2014noa,Caraveo:2013lra})}: pulsars, binaries, star-forming regions, supernova remnants, pulsar wind nebulae, globular clusters, and novae;
+    \item Extragalactic (\new{mostly AGNs~\cite{fossati1998unifying,Fermi-LAT:2019yla,DGRB-review,Dermer:2009zz,Fermi-LAT:2014ryh,Ajello:2015mfa,Lisanti:2016jub}}): blazars, quasars, starburst galaxies, normal galaxies, radio galaxies and radio sources, Seyfert galaxies, and non-blazar active galaxies.
 \end{itemize}
 %
 %% aure: working here
@@ -142,7 +142,7 @@ where each function has two parameters $(b_d,c_d)$ determined from maximizing th
 Our region of interest (ROI) in feature space will be restricted to a window in every dimension where the ratio 
 $p_\textrm{unas}/p_\textrm{assoc}$ 
 of the empirical distributions are monotonous. 
-We approximate the empirical distributions of associated and unassociated gamma-ray sources using kernel density estimation (KDE) with a Gaussian kernel \cite{Bishop:2006}. 
+We approximate the empirical distributions of associated and unassociated gamma-ray sources using kernel density estimation (KDE) with a Gaussian kernel \cite{bishop}. 
 In order to find the optimal bandwidth for the kernels, we perform 5-fold cross-validation repeated 20 times. 
 For each of the repetitions, we randomize the dataset,  split it into 5 subsets, and repeat the training 5 times: each time, a new subset is used for testing, and the remaining four subsets are used for training.
 The performance is evaluated by calculating the likelihood of the model on the testing dataset.

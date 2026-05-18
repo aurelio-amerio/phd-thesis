@@ -29,7 +29,10 @@
       "Bash(PYTHONPATH=/private/tmp/claude/pytest_local /private/tmp/claude/pytest_local/bin/pytest tests/test_fetch_abstracts.py -v)",
       "mcp__plugin_review-mode_review-mode__get_annotations",
       "mcp__plugin_review-mode_review-mode__update_annotation",
-      "mcp__plugin_review-mode_review-mode__open_review"
+      "mcp__plugin_review-mode_review-mode__open_review",
+      "Bash(python check_missing.py)",
+      "Bash(python find_mappings.py)",
+      "Bash(python investigate_unmatched.py)"
     ]
   },
   "sandbox": {

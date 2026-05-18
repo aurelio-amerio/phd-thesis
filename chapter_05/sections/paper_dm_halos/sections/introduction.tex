@@ -10,15 +10,15 @@ dwarf spheroidal galaxies.
 These subhalos can be detected either by gravitational effects or through annihilation or decay of DM particles into Standard Model (SM) particles.
 One of the most popular types of particle DM candidates is the Weakly Interacting Massive Particle (WIMP) with masses in the GeV -- TeV range annihilating into SM particles, such as $b\bar{b}$ or $\tau^+\tau^-$ 
 %refs:WIMP DM review
-\cite{2016PhR...636....1C, 2017NatPh..13..224C, Gammaldi:2019mel}.
+\cite{2016PhR...636....1C,2017NatPh..13..224C,Gammaldi:2019mel}.
 For sufficiently large masses of DM particles, e.g., above about 1 GeV, DM annihilation events in subhalos can be detected by the {\Fermi} Large Area Telescope (LAT).
-Although DM subhalos may emit radiation at other frequencies, e.g., in radio wavelengths due to synchrotron radiation from the electrons and positrons created in DM annihilations, the corresponding signal is expected to be small for DM subhalos with masses less than ${\sim 10^8~M_{\odot}}$ \cite{2015JCAP...02..032C} (the radio emission from the dwarf spheroidal galaxies can be rather significant but has large uncertainties \cite{2007PhRvD..75b3513C, 2013PhRvD..88h3535N, 2014JCAP...10..016R}).
+Although DM subhalos may emit radiation at other frequencies, e.g., in radio wavelengths due to synchrotron radiation from the electrons and positrons created in DM annihilations, the corresponding signal is expected to be small for DM subhalos with masses less than ${\sim 10^8~M_{\odot}}$ \cite{2015JCAP...02..032C} (the radio emission from the dwarf spheroidal galaxies can be rather significant but has large uncertainties \cite{2007PhRvD..75b3513C,2013PhRvD..88h3535N,2014JCAP...10..016R}).
 As a result, the DM subhalos would primarily manifest themselves as a population of unassociated gamma-ray sources in {\Fermi}-LAT catalogs with approximately isotropic distribution in the sky 
 %refs:DM subhalos as unassoc sources
 \DMsubhaloUnas.
 
 
-The latest \Fermi-LAT catalog (4FGL-DR4)~\cite{2022ApJS..260...53A, 2023arXiv230712546B} contains 2428 unassociated sources (unIDs), which is about one third of all detected sources.
+The latest \Fermi-LAT catalog (4FGL-DR4)~\cite{Fermi-LAT:2022byn,Ballet:2023qzs} contains 2428 unassociated sources (unIDs), which is about one third of all detected sources.
 Among these sources, 1282 are at latitudes $|b| > 10^\circ$.
 Provided that unIDs have no known counterparts at other wavelengths, these gamma-ray sources are natural candidates to search for DM-dominated subhalos shining in gamma rays
 due to DM annihilation.
@@ -31,7 +31,7 @@ The limits on DM annihilation have been derived assuming that there cannot be mo
 A general caveat of previous searches of DM candidates based on gamma-ray properties is that the same source may be consistent both with a DM subhalo as well as an astrophysical source, e.g., an active galactic nucleus (AGN) or a pulsar.
 Thus, unless there is a smoking gun signature of a DM subhalo, such as a physical extension consistent with the distribution of DM 
 %refs:DM subhalos by extension
-\cite{2014PhRvD..89a6014B, 2015JCAP...12..035B, 2017PhRvD..96f3009C, 2022PhRvD.105h3006C, 2019JCAP...11..045C}, this analysis does not allow one to claim a detection of a population of DM subhalos among \Fermi-LAT unIDs.
+\cite{2014PhRvD..89a6014B,2015JCAP...12..035B,2017PhRvD..96f3009C,2022PhRvD.105h3006C,2019JCAP...11..045C}, this analysis does not allow one to claim a detection of a population of DM subhalos among \Fermi-LAT unIDs.
 Although one can estimate an upper limit on DM annihilation assuming that the number of DM subhalos cannot exceed the number of DM subhalo candidates,
 it is, nevertheless, challenging to calculate a statistical significance of the DM exclusion.
 For instance, in ML-based approaches the estimate of the number of DM subhalo candidates depends on the threshold for the probability that an unassociated source is a DM subhalo.
@@ -41,7 +41,7 @@ For the calibration one would use a realistic testing dataset, which is not avai
 The problem of difference of class prevalences for training and testing (or target) datasets is known as prior shift.
 Similar problem (implicitly) exist for searches of DM subhalos, which are not based on ML estimates of DM-like probabilities.
 
-Another problem, which affects the searches of DM subhalos but has not been addressed in the literature so far (e.g., in the classify-and-count approach) is that the distribution of associated and unassociated sources are different as a function of most of features, such as flux, spectral index, spectral curvature, variability etc.~\cite{2022ApJS..260...53A, 2023RASTI...2..735M}.
+Another problem, which affects the searches of DM subhalos but has not been addressed in the literature so far (e.g., in the classify-and-count approach) is that the distribution of associated and unassociated sources are different as a function of most of features, such as flux, spectral index, spectral curvature, variability etc.~\cite{Fermi-LAT:2022byn,2023RASTI...2..735M}.
 This difference can be due to bias in associations, e.g., it is easier to associate bright sources at high latitudes (cf. covariate shift discussion in section~\ref{sec:cov_prior}). It may also be a signature of a new class of sources, such as DM subhalos (cf. prior shift discussion above and in section~\ref{sec:cov_prior}).
 A priori the reason for the differences in the distributions is not known. As a result, one needs to put additional constraints, e.g., on the association bias, in order to break the degeneracy between the association bias and the presence of a new class of sources.
 
@@ -52,7 +52,7 @@ In order to overcome the limitation of the classify-and-count approach we use, f
 
 The main purpose of quantification analysis 
 %refs:quantification reviews
-\cite{10.1145/3117807_Gonzalez_quantification, 2022arXiv221108063M, esuli2023learning} 
+\cite{10.1145/3117807_Gonzalez_quantification,2022arXiv221108063M,esuli2023learning} 
 is to accurately predict the prevalence of classes rather than to optimize the performance for classification of individual sources, which is the main goal of classification analysis.
 One of the methods in quantification learning is known as template matching~\cite{2024arXiv240100490M}. It is familiar in astrophysics in modeling of large-scale radio, X-ray, or gamma-ray emission as a linear combination of templates based on tracers of the different components of emission, e.g., the distribution of dust is used as a tracer of hadronic component of diffuse gamma-ray emission due to interactions of high-energy cosmic rays with gas.
 

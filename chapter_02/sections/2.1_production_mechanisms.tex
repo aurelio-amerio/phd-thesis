@@ -108,7 +108,7 @@ The following section describes how these individual components are combined int
 \subsection{The Galactic Diffuse Emission Model}
 \label{sec:gde_model}
 
-The individual production mechanisms described in the preceding sections combine to produce the Galactic Diffuse Emission (GDE)---the brightest feature in the gamma-ray sky, accounting for roughly 80\% of all photons detected by the \textit{Fermi}-LAT \cite{Ackermann:2014usa, DGRB-review}.
+The individual production mechanisms described in the preceding sections combine to produce the Galactic Diffuse Emission (GDE)---the brightest feature in the gamma-ray sky, accounting for roughly 80\% of all photons detected by the \textit{Fermi}-LAT \cite{Fermi-LAT:2014ryh,DGRB-review}.
 This emission arises from the integrated interactions of propagating cosmic rays with the interstellar gas and radiation fields of the Milky Way.
 
 To model this complex, spatially structured foreground, astrophysicists rely on numerical cosmic-ray propagation codes, of which GALPROP is the most established \cite{Strong:2007nh}.
@@ -131,12 +131,12 @@ The energy- and position-dependent balance between these loss channels is shown 
 	\label{fig:energy_loss_coefficients}
 \end{figure}
 
-When analyzing \textit{Fermi}-LAT data, the standard procedure is to model the observed sky through template decomposition \cite{Ackermann:2014usa}.
+When analyzing \textit{Fermi}-LAT data, the standard procedure is to model the observed sky through template decomposition \cite{Fermi-LAT:2014ryh}.
 The total photon counts in each spatial and energy bin are fit to a linear combination of: the GALPROP-derived $\pi^0$-decay, ICS, and bremsstrahlung templates; a catalog of individually resolved point sources; spatial templates for large-scale structures such as Loop I and the Fermi Bubbles; and a spatially uniform isotropic component representing the combined extragalactic background and residual instrumental contamination.
 The normalizations of these Galactic templates are typically left as free parameters and fitted independently in each energy bin, allowing the data to correct for imperfections in the GALPROP predictions.
 The Fermi collaboration applies precisely this procedure to produce the official Galactic interstellar emission model \texttt{gll\_iem\_v07}, which serves as the standard foreground template in Fermi-LAT analyses.
 Despite the physical sophistication of GALPROP and the flexibility of the template-fitting procedure, the GDE cannot be modeled perfectly.
-Imperfect modeling of the interstellar emission remains the largest single source of systematic uncertainty in gamma-ray astrophysics, introducing errors between 15\% and 30\% depending on the energy range \cite{Ackermann:2014usa, DGRB-review}.
+Imperfect modeling of the interstellar emission remains the largest single source of systematic uncertainty in gamma-ray astrophysics, introducing errors between 15\% and 30\% depending on the energy range \cite{Fermi-LAT:2014ryh,DGRB-review}.
 Uncertainties in the gas column densities (particularly the conversion from CO emission to molecular hydrogen), the interstellar radiation field, and the cosmic-ray propagation parameters all contribute.
 Handling the Galactic foreground properly is a necessary condition for any analysis of the gamma-ray sky: without adequate foreground control, both spectral characterization and source detection are biased.
 This challenge recurs throughout this thesis---in the extraction of the Galactic Center Excess (Chapter~\ref{ch:4}), the search for dark matter subhalos (Chapter~\ref{ch:5}), and the reconstruction of the extragalactic source-count distribution (Chapter~\ref{ch:6}).

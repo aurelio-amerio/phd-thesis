@@ -13,7 +13,7 @@ This section introduces the $dN/dS$ and the methodological context necessary to 
 The differential source-count distribution, $dN/dS$, gives the number of sources per unit solid angle per unit flux at a given integral photon flux $S$ in a specified energy band.
 It is the fundamental observable that describes how point sources are distributed as a function of their apparent brightness, and it connects directly to the physics of the emitting populations.
 
-For sources bright enough to be individually cataloged, $dN/dS$ is measured by simply counting objects in the catalog as a function of their flux (see also Section~\ref{sec:astro_sky}). The 4FGL-DR3 catalog \cite{2022ApJS..260...53A}, based on 12 years of Fermi-LAT data, contains 6658 resolved sources and provides a direct measurement of the source-count distribution in the resolved regime \cite{Amerio:2023uet}.
+For sources bright enough to be individually cataloged, $dN/dS$ is measured by simply counting objects in the catalog as a function of their flux (see also Section~\ref{sec:astro_sky}). The 4FGL-DR3 catalog \cite{Fermi-LAT:2022byn}, based on 12 years of Fermi-LAT data, contains 6658 resolved sources and provides a direct measurement of the source-count distribution in the resolved regime \cite{Amerio:2023uet}.
 Above the flux threshold where the catalog detection efficiency reaches 100\%, this measurement is straightforward.
 Below this threshold, the detection efficiency degrades, and direct counting must be supplemented by Monte Carlo corrections to reconstruct the true underlying distribution.
 Further below --- in the unresolved regime, where individual sources are too faint to be detected at all --- the cumulative emission of these sources forms the unresolved gamma-ray background (UGRB), and the $dN/dS$ must be inferred from the statistical properties of the photon-count map.
@@ -21,7 +21,7 @@ This reconstruction is the central challenge addressed by this chapter.
 
 The source-count distribution is the observational projection of a more fundamental quantity: the luminosity function.
 The gamma-ray luminosity function, $\Phi_\gamma(z, L_\gamma)$, gives the comoving number density of sources per unit luminosity $L_\gamma$ as a function of redshift $z$.
-The connection between the two is given by \cite{Fornasa:2015qua}
+The connection between the two is given by \cite{DGRB-review}
 \aure{this equation is correct, I double checked}
 \begin{equation}
 	\frac{dN}{dS} = \int_{z_\mathrm{min}}^{z_\mathrm{max}} dz \int_{\Gamma_\mathrm{min}}^{\Gamma_\mathrm{max}} d\Gamma \; \frac{dN}{dV \, dL_\gamma \, d\Gamma}(z, L_\gamma, \Gamma) \; \frac{dV}{dz \, d\Omega} \; \frac{dL_\gamma}{dS},
@@ -47,14 +47,14 @@ Recovering the source-count distribution below the detection threshold requires 
 The photon-count distribution --- also called the 1-point probability distribution function (1pPDF) --- provides a well-established method for doing so.
 
 The idea is straightforward: given a pixelated sky map, one constructs the histogram of the number of pixels containing exactly $k$ photons.
-Different source populations leave distinct imprints on this histogram \cite{Fornasa:2015qua}.
+Different source populations leave distinct imprints on this histogram \cite{DGRB-review}.
 Bright but rare sources, such as blazars just below the detection limit, produce multiple photons during the observation period; because these photons are spatially correlated, they populate pixels with moderately large photon counts, generating non-Poissonian tails in the distribution.
-By contrast, faint but numerous sources, such as star-forming galaxies, contribute on average far less than one photon each; their combined signal is statistically indistinguishable from a smooth Poissonian background \cite{Malyshev:2011zi}.
+By contrast, faint but numerous sources, such as star-forming galaxies, contribute on average far less than one photon each; their combined signal is statistically indistinguishable from a smooth Poissonian background \cite{malyshev2011statistics}.
 The departures from Poisson statistics therefore encode information about the sub-threshold source population and its $dN/dS$.
-This connection is made rigorous through a generating-function formalism \cite{Malyshev:2011zi, Fornasa:2015qua} in which the total photon-count probability factorises into independent contributions from point sources, Galactic foreground, and isotropic background, and the parameters of $dN/dS$ are obtained by fitting the predicted pixel histogram to data via maximum likelihood.
+This connection is made rigorous through a generating-function formalism \cite{malyshev2011statistics,DGRB-review} in which the total photon-count probability factorises into independent contributions from point sources, Galactic foreground, and isotropic background, and the parameters of $dN/dS$ are obtained by fitting the predicted pixel histogram to data via maximum likelihood.
 
-Malyshev and Hogg~\cite{Malyshev:2011zi} pioneered this approach for gamma rays, applying it to 11 months of Fermi-LAT data and constraining the contribution of unresolved AGN-like sources to approximately $17 \pm 2\%$ of the total flux at high Galactic latitudes above 1~GeV.
-Zechlin, Cuoco et al.~\cite{Zechlin:2015wdz} improved the method by incorporating the spatial variation of the Galactic foreground and exposure at the pixel level, measuring the $dN/dS$ in the 1--10~GeV band down to fluxes approximately one order of magnitude below the detection threshold.
+Malyshev and Hogg~\cite{malyshev2011statistics} pioneered this approach for gamma rays, applying it to 11 months of Fermi-LAT data and constraining the contribution of unresolved AGN-like sources to approximately $17 \pm 2\%$ of the total flux at high Galactic latitudes above 1~GeV.
+Zechlin, Cuoco et al.~\cite{Cuoco-1pdf} improved the method by incorporating the spatial variation of the Galactic foreground and exposure at the pixel level, measuring the $dN/dS$ in the 1--10~GeV band down to fluxes approximately one order of magnitude below the detection threshold.
 Subsequent extensions by the same group~\cite{Zechlin:2016pme} and by Lisanti et al.~\cite{Lisanti:2016jub} generalised the technique to multiple independent energy bands spanning 1--171~GeV.
 The same pixel-statistics formalism was also adapted for the Non-Poissonian Template Fit (NPTF) applied to the Galactic Center Excess (Section~\ref{sec:4.4}), where it served to distinguish a smooth dark matter signal from a population of unresolved point sources such as millisecond pulsars --- illustrating the broad applicability of photon-count methods across very different science cases.
 
@@ -62,6 +62,6 @@ These photon-count methods --- the 1pPDF and, as we shall see, the CNN-based app
 They measure how many sources exist at each flux level, but they cannot, by themselves, separate the blazar contribution from that of star-forming galaxies, misaligned AGNs, or any other population.
 This is a fundamental feature of photon-count statistics: they respond to photons, not to source identities.
 A complementary body of work approaches the problem from the opposite direction, estimating the $dN/dS$ of individual source classes by extrapolating from multi-wavelength correlations.
-Blazars are modeled through direct luminosity-function fits to the Fermi-LAT catalog and may account for roughly 20--30\% of the UGRB intensity below 100~GeV \cite{Ajello:2015mfa}; star-forming galaxies and misaligned AGNs are estimated through empirical scaling relations linking their gamma-ray emission to better-measured infrared and radio luminosities \cite{Fermi-LAT:2012nqz, Inoue:2011bm, DiMauro:2014wha}, with each contributing of order 10--50\% depending on the assumed redshift evolution \cite{Fornasa:2015qua}.
+Blazars are modeled through direct luminosity-function fits to the Fermi-LAT catalog and may account for roughly 20--30\% of the UGRB intensity below 100~GeV \cite{Ajello:2015mfa}; star-forming galaxies and misaligned AGNs are estimated through empirical scaling relations linking their gamma-ray emission to better-measured infrared and radio luminosities \cite{Fermi-LAT:2012nqz,Inoue:2011bm,DiMauro:2014wha}, with each contributing of order 10--50\% depending on the assumed redshift evolution \cite{DGRB-review}.
 These estimates suggest that the known astrophysical populations could collectively account for a large fraction of the UGRB intensity, though each carries uncertainties of at least a factor of a few, reflecting the limited samples from which the scaling relations are derived.
 A more precise measurement of the total $dN/dS$ would therefore help constrain the room remaining for additional contributors such as dark matter annihilation.

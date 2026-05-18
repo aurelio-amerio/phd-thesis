@@ -3,7 +3,7 @@
 
 \subsection{Angular Power Spectra}
 
-The angular power spectra for the $\gamma$-ray autocorrelation and for the cross-correlation between the unresolved $\gamma$-ray emission and a galaxy catalog $g$ can be expressed as \cite{camera2013novel,camera2015tomographic,fornengo2014particle}
+The angular power spectra for the $\gamma$-ray autocorrelation and for the cross-correlation between the unresolved $\gamma$-ray emission and a galaxy catalog $g$ can be expressed as \cite{Camera:2012cj,Camera_2015,Fornengo:2013rga}
 \begin{eqnarray}
     \label{eq:auto}
      C_\ell^{\gamma \gamma} &=& \int \frac{\de\chi}{\chi^2}\,W_{\gamma}^2(\chi)  
@@ -113,7 +113,7 @@ The noise $C_N$ is shown explicitly in \cref{fig:Cl_vs_E}, together with a selec
     \label{fig:diffsens}
 \end{figure}
 
-In the case of cross-correlations, the variance is instead given by \cite{camera2013novel,camera2015tomographic,fornengo2014particle}
+In the case of cross-correlations, the variance is instead given by \cite{Camera:2012cj,Camera_2015,Fornengo:2013rga}
 \begin{equation}
     (\varDelta C^{\gamma g}_\ell)^2 = \frac{1}{\left(2\ell+1 \right) f_\textrm{{sky}}} \left[(C_\ell^{\gamma g})^2 + \left(C_\ell^{\gamma \gamma} + \frac{C_N}{B_\ell^2}\right)\left(C_\ell^{gg} + C_{N_g} \right) \right].
     \label{eq:deltagamma g}
@@ -176,7 +176,7 @@ L_\textrm{th}(z) = 4\,\pi\,d_L^2(z) \; F_\textrm{sens}^\textrm{CTA}(z) \;
 \ee
 %
 
-The HSP and LISP point source sensitivity has been obtained through extensive Monte Carlo simulations \cite{CTAConsortium:2018tzg,VeronikaThesis} and is shown in \cref{fig:diffsens} for $3\,\textrm{hrs}$ of observation across different energy bins. The same plot compares the differential sensitivity with the $\gamma$-ray spectra of LISP and HSP blazars normalized to the minimum detectable intensity. As shown, the spectra observed at Earth are redshift-dependent, as sources at different redshifts experience different levels of EBL absorption. \cref{fig:Fsens} instead shows the integrated HSP and LISP point source sensitivity in the energy range 30 GeV to 30 TeV as a function of $z$, where the normalization of the SED in \cref{eq:SED} has been fixed to its threshold value $A_\textrm{th}(z)$, obtained from \cref{FsensCTA} by employing the Monte Carlo modeling of $F_\textrm{sens}^\textrm{CTA}(z)$.
+The HSP and LISP point source sensitivity has been obtained through extensive Monte Carlo simulations \cite{CTAConsortium:2017dvg,VeronikaThesis} and is shown in \cref{fig:diffsens} for $3\,\textrm{hrs}$ of observation across different energy bins. The same plot compares the differential sensitivity with the $\gamma$-ray spectra of LISP and HSP blazars normalized to the minimum detectable intensity. As shown, the spectra observed at Earth are redshift-dependent, as sources at different redshifts experience different levels of EBL absorption. \cref{fig:Fsens} instead shows the integrated HSP and LISP point source sensitivity in the energy range 30 GeV to 30 TeV as a function of $z$, where the normalization of the SED in \cref{eq:SED} has been fixed to its threshold value $A_\textrm{th}(z)$, obtained from \cref{FsensCTA} by employing the Monte Carlo modeling of $F_\textrm{sens}^\textrm{CTA}(z)$.
 
 
 \begin{figure}[t!]
@@ -190,7 +190,7 @@ The HSP and LISP point source sensitivity has been obtained through extensive Mo
 \paragraph{Gamma-ray emission from dark matter}
 \label{app:WDM}
 
-Window functions for dark matter are modeled as in Refs. \cite{camera2015tomographic,fornengo2014particle,Cuoco:2015rfa}, to which we refer for additional details. For decaying dark matter, we have
+Window functions for dark matter are modeled as in Refs. \cite{Camera_2015,Fornengo:2013rga,Cuoco:2015rfa}, to which we refer for additional details. For decaying dark matter, we have
 %
  \be
      W(E, \chi) = \frac{\de W}{\de E\,\de\chi} = \, \left (\frac{\varOmega_\textrm{DM} \,\rho_\textrm{c} }{m_{\chi}} \right) \, \frac{\varGamma_\textrm{d}}{4 \pi}  \frac{\de N}{\de E}[(1+z)/E] \, \exp[-\tau(E,z)]
@@ -240,7 +240,7 @@ We use the $dN_g/\de z$ as given in \cite{Huchra:2011ii,Ando:2017wff} for 2MRS a
 \begin{figure}[t!]
     \centering
     \includegraphics[width=0.45\textwidth]{paper_xcorr/figures/new_analysis/E2_mean_intensity.pdf}
-    \caption{$\gamma$-ray intensity in our benchmark model for HSP (solid green) and LISP (solid blue), along with three cases of dark matter annihilation for particle masses of 100 GeV (solid black), 1 TeV (dashed black). and 30 TeV (dotted black). The 100 GeV and 1 TeV lines correspond to an annihilation cross-section $\langle \sigma v \rangle = 3 \times 10^{-26}$cm$^{-3}$s$^{-1}$, while for 30 TeV we adopted $\langle \sigma v \rangle = 3 \times 10^{-23}$cm$^{-3}$s$^{-1}$. The figure also shows the measured IGRB (red dashed line and red band for its uncertainty) \cite{Ackermann_2015}.}
+    \caption{$\gamma$-ray intensity in our benchmark model for HSP (solid green) and LISP (solid blue), along with three cases of dark matter annihilation for particle masses of 100 GeV (solid black), 1 TeV (dashed black). and 30 TeV (dotted black). The 100 GeV and 1 TeV lines correspond to an annihilation cross-section $\langle \sigma v \rangle = 3 \times 10^{-26}$cm$^{-3}$s$^{-1}$, while for 30 TeV we adopted $\langle \sigma v \rangle = 3 \times 10^{-23}$cm$^{-3}$s$^{-1}$. The figure also shows the measured IGRB (red dashed line and red band for its uncertainty) \cite{Fermi-LAT:2014ryh}.}
     \label{fig:E2_mean_intensity}
 \end{figure}
 

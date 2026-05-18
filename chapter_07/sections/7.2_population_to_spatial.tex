@@ -4,7 +4,7 @@
 \section{From Population Statistics to Spatial Information}
 \label{sec:pop_to_spatial}
 
-The previous section showed that a fixed TS threshold discards sub-threshold sources whose aggregate properties --- including the $dN/dS$ --- are measurable from photon-count statistics~\cite{Malyshev:2011zi, Zechlin:2015wdz}.
+The previous section showed that a fixed TS threshold discards sub-threshold sources whose aggregate properties --- including the $dN/dS$ --- are measurable from photon-count statistics~\cite{malyshev2011statistics,Cuoco-1pdf}.
 The $dN/dS$ is, however, a purely statistical quantity: it tells us how many sources exist at each flux level, but nothing about where they are.
 This section describes how the $dN/dS$ can be complemented with spatial information by comparing ensembles of simulated skies against the real data.
 
@@ -36,7 +36,7 @@ Pixels in the real sky whose TS exceeds this threshold are labeled ``firing pixe
 This approach differs from earlier efforts at probabilistic gamma-ray cataloging.
 The Bayesian framework PCAT~\cite{Daylan:2016tia} samples posterior distributions of full catalogs --- including source positions, fluxes, and spectra --- using transdimensional Markov Chain Monte Carlo.
 While PCAT provides a complete probabilistic description of the source population in a given region of interest, its computational cost scales roughly as the square of the number of modeled sources, which limits its applicability to restricted sky areas.
-In its original implementation, PCAT was applied to a $40^\circ \times 40^\circ$ patch around the North Galactic Pole, requiring approximately 250~CPU hours for a single inference run~\cite{Daylan:2016tia}. Machine learning approaches to probabilistic cataloging have also been explored~\cite{Bhat:2021wtb}, though these too have been applied to localized regions rather than to the full high-latitude sky.
+In its original implementation, PCAT was applied to a $40^\circ \times 40^\circ$ patch around the North Galactic Pole, requiring approximately 250~CPU hours for a single inference run~\cite{Daylan:2016tia}. Machine learning approaches to probabilistic cataloging have also been explored~\cite{Bhat:2022}, though these too have been applied to localized regions rather than to the full high-latitude sky.
 
 The simulated-sky comparison framework adopted here takes a different route.
 Rather than sampling the full catalog posterior, it reduces the problem to a comparison of one-dimensional TS distributions, which is computationally inexpensive and naturally scalable to the entire high-latitude sky.

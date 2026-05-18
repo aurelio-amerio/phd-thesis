@@ -8,7 +8,7 @@ This section develops the tools needed for both analyses: the relevant learning 
 \subsection{Learning Tasks}
 \label{sec:3.3.1}
 
-Machine learning provides a flexible framework for extracting information from data when explicit physical models are either unavailable or computationally intractable \cite{Bishop:2006, Hastie:2009}.
+Machine learning provides a flexible framework for extracting information from data when explicit physical models are either unavailable or computationally intractable \cite{bishop,Hastie:2009}.
 The problems addressed in this thesis can be organized into three canonical learning tasks, each motivated by a distinct physical question.
 
 The first is \textit{classification}: assigning a discrete label to an input based on its observed features.
@@ -19,7 +19,7 @@ In Chapter~\ref{ch:5}, this paradigm is extended beyond standard source classes 
 
 The second task is \textit{regression}: predicting a continuous quantity from observational data.
 In Chapter~\ref{ch:6}, a convolutional neural network estimates the source-count distribution $dN/dS$ directly from gamma-ray sky maps.
-By adopting a heteroscedastic loss function (described in Section~\ref{sec:3.3.2}), the network simultaneously performs regression on both the $dN/dS$ values and their associated uncertainties, predicting the variance of each output alongside its mean \cite{Kendall:2017}.
+By adopting a heteroscedastic loss function (described in Section~\ref{sec:3.3.2}), the network simultaneously performs regression on both the $dN/dS$ values and their associated uncertainties, predicting the variance of each output alongside its mean \cite{heteroscedastic-error}.
 
 The third task is \textit{density estimation}: approximating the probability distribution from which observed source features are drawn.
 While classification asks ``what class is this source?
@@ -36,7 +36,7 @@ While classification asks ``what class is this source?
 
 A neural network is a parametric function $f_{\boldsymbol{w}}: \mathbb{R}^n \to \mathbb{R}^m$ composed of a sequence of affine transformations, each followed by a non-linear activation function.
 In a network with $L$ layers, the output of layer $\ell$ is $\mathbf{h}^{(\ell)} = \sigma(\mathbf{W}^{(\ell)}\mathbf{h}^{(\ell-1)} + \mathbf{b}^{(\ell)})$, where $\mathbf{W}^{(\ell)}$ and $\mathbf{b}^{(\ell)}$ are trainable weight matrices and bias vectors, and $\sigma$ is a non-linear function such as the rectified linear unit $\mathrm{ReLU}(x) = \max(0, x)$.
-Given a sufficiently large number of parameters, neural networks can approximate any continuous function to arbitrary accuracy \cite{Bishop:2006}, and training consists of adjusting the weights $\boldsymbol{w}$ to minimize a cost function $\mathcal{J}(\boldsymbol{w})$ using gradient-based optimization.
+Given a sufficiently large number of parameters, neural networks can approximate any continuous function to arbitrary accuracy \cite{bishop}, and training consists of adjusting the weights $\boldsymbol{w}$ to minimize a cost function $\mathcal{J}(\boldsymbol{w})$ using gradient-based optimization.
 
 \paragraph{Convolutional neural networks.}
 
@@ -76,17 +76,17 @@ The heteroscedastic Gaussian negative log-likelihood,
 	\mathrm{NLL} = \sum_{i=1}^{N} \left[ \frac{(y_i^\mathrm{true} - y_i^\mathrm{pred})^2}{2\sigma_i^2} + \frac{1}{2}\ln \sigma_i^2 \right],
 	\label{eq:heteroscedastic_nll}
 \end{equation}
-achieves this through a self-regulating mechanism: the first term allows the network to attenuate the loss for noisy data points by predicting a large $\sigma_i^2$, while the second term penalizes excessive uncertainty, preventing the network from trivially ignoring the data \cite{Kendall:2017}.
-The variance $\sigma_i^2$ learned in this way captures the \textit{aleatoric} uncertainty---the irreducible noise inherent in the observations, which cannot be reduced by collecting more training data \cite{Kendall:2017}.
+achieves this through a self-regulating mechanism: the first term allows the network to attenuate the loss for noisy data points by predicting a large $\sigma_i^2$, while the second term penalizes excessive uncertainty, preventing the network from trivially ignoring the data \cite{heteroscedastic-error}.
+The variance $\sigma_i^2$ learned in this way captures the \textit{aleatoric} uncertainty---the irreducible noise inherent in the observations, which cannot be reduced by collecting more training data \cite{heteroscedastic-error}.
 
 A second source of uncertainty, called \textit{epistemic} uncertainty, arises from the finite size of the training set and reflects the model's ignorance about which parameter values best describe the data.
-Gal and Ghahramani \cite{Gal:2016} showed that a neural network with dropout applied before every weight layer is mathematically equivalent to approximate variational inference in a deep Gaussian process.
-At test time, this equivalence is exploited through \textit{Monte Carlo dropout}: by performing $T$ stochastic forward passes with dropout active, the sample mean provides the predictive estimate and the sample variance quantifies the epistemic uncertainty \cite{Gal:2016}.
+Gal and Ghahramani \cite{mcdropout} showed that a neural network with dropout applied before every weight layer is mathematically equivalent to approximate variational inference in a deep Gaussian process.
+At test time, this equivalence is exploited through \textit{Monte Carlo dropout}: by performing $T$ stochastic forward passes with dropout active, the sample mean provides the predictive estimate and the sample variance quantifies the epistemic uncertainty \cite{mcdropout}.
 
 \paragraph{Regularization: concrete dropout.}
 
 In standard dropout, the drop probability $p$ must be set manually or tuned via grid search---a procedure that becomes impractical for large architectures.
-Concrete dropout \cite{Gal:2017} addresses this by replacing the discrete Bernoulli mask with a continuous relaxation (the ``concrete'' distribution), making the dropout probability differentiable with respect to the network parameters.
+Concrete dropout \cite{concrete-dropout} addresses this by replacing the discrete Bernoulli mask with a continuous relaxation (the ``concrete'' distribution), making the dropout probability differentiable with respect to the network parameters.
 The optimal $p$ for each layer is then learned jointly with the network weights during training, through standard gradient-based optimization.
 This self-tuning mechanism simultaneously regularizes the network and calibrates its epistemic uncertainties, without introducing additional hyperparameters.
 

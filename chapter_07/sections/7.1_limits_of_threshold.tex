@@ -32,7 +32,7 @@ While such a threshold is operationally necessary to maintain a controlled false
 
 The fixed detection threshold does not only exclude noise.
 Genuine astrophysical sources exist below $\mathrm{TS} = 25$ --- the $dN/dS$ recovered in Chapter~\ref{ch:6} confirms this directly --- and their collective emission contributes to the high-latitude gamma-ray sky at a level that depends on the population model assumed.
-As discussed in Section~\ref{sec:source_count}, blazars, misaligned active galactic nuclei, star-forming galaxies, and millisecond pulsars all contribute to this unresolved emission, and their aggregate flux may account for a large fraction of the unresolved gamma-ray background~\cite{Fornasa:2015qua, Fermi-LAT:2014ryh}, though the individual budget shares remain model-dependent.
+As discussed in Section~\ref{sec:source_count}, blazars, misaligned active galactic nuclei, star-forming galaxies, and millisecond pulsars all contribute to this unresolved emission, and their aggregate flux may account for a large fraction of the unresolved gamma-ray background~\cite{DGRB-review,Fermi-LAT:2014ryh}, though the individual budget shares remain model-dependent.
 
 The source-count distribution recovered in Chapter~\ref{ch:6} (cf.\ Section~\ref{sec:source_count}) quantifies this sub-threshold population directly.
 The $dN/dS$ measured from high-latitude photon counts extends as $\sim S^{-2}$ down to fluxes of approximately $5 \times 10^{-12}~\mathrm{cm}^{-2}\,\mathrm{s}^{-1}$, roughly 50 times below the nominal catalog sensitivity in the $1$--$10~\mathrm{GeV}$ band~\cite{Korsmeier:2022cwp} (cf.\ Chapter~\ref{ch:6}).
@@ -45,6 +45,6 @@ Similarly, multi-wavelength source identification campaigns benefit from having 
 The practical consequences of the fixed threshold become visible in the incremental catalog releases.
 In the 4FGL-DR3, which extends the observation baseline from eight to twelve years, 112 sources originally included in the first data release dropped below $\mathrm{TS} = 25$, fifteen of which fell below $\mathrm{TS} = 16$, with the lowest reaching $\mathrm{TS} = 9.8$~\cite{Fermi-LAT:2022byn}.
 An additional 69 sources from the second data release also fell below threshold~\cite{Fermi-LAT:2022byn}.
-These sources were retained for continuity and explicitly flagged, but the episode exposes a structural problem: highly variable objects such as flat-spectrum radio quasars can be bright enough to enter the catalog during one observation window and fade below threshold in a subsequent accumulation~\cite{Bhat:2021wtb}.
-Lowering the threshold does not help, since it would increase false detections from background fluctuations~\cite{Bhat:2021wtb}.
+These sources were retained for continuity and explicitly flagged, but the episode exposes a structural problem: highly variable objects such as flat-spectrum radio quasars can be bright enough to enter the catalog during one observation window and fade below threshold in a subsequent accumulation~\cite{Bhat:2022}.
+Lowering the threshold does not help, since it would increase false detections from background fluctuations~\cite{Bhat:2022}.
 What is needed is a framework that replaces the binary in-or-out decision with a simulation-calibrated probability of source presence, informed by the sub-threshold population measured through the $dN/dS$.

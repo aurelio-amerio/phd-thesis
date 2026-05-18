@@ -1,8 +1,8 @@
 \subsection{The cross-correlation signal}
 \label{sec:formalism}
 
-The cross-correlation between a map of the UGRB, $\gamma(\hat{\bm n})$, and fluctuations in galaxy number counts, $g(\hat{\bm n})$, can be measured through the cross-correlation angular power spectrum (APS) \cite{camera2013novel,camera2015tomographic,fornengo2014particle}. In our analysis, the field $g$ will be the distribution of galaxies, which is a biased tracer of the underlying dark matter distribution. 
-In the Limber approximation \citep{1953ApJ...117..134L,1992ApJ...388..272K,1998ApJ...498...26K}, the APS can be written as~{\cite{camera2013novel,camera2015tomographic,fornengo2014particle}}
+The cross-correlation between a map of the UGRB, $\gamma(\hat{\bm n})$, and fluctuations in galaxy number counts, $g(\hat{\bm n})$, can be measured through the cross-correlation angular power spectrum (APS) \cite{Camera:2012cj,Camera_2015,Fornengo:2013rga}. In our analysis, the field $g$ will be the distribution of galaxies, which is a biased tracer of the underlying dark matter distribution. 
+In the Limber approximation \citep{Limber:1953apj,1992ApJ...388..272K,1998ApJ...498...26K}, the APS can be written as~{\cite{Camera:2012cj,Camera_2015,Fornengo:2013rga}}
 \begin{equation}
  C_\ell^{\gamma g}=\int \frac{\de\chi}{\chi^2}\,\,W_{\gamma}(\chi)\, W_g(\chi)\,P_{\gamma g}\left(k=\ell/\chi,\chi\right)\;,
 \label{eq:clfin}    
@@ -13,7 +13,7 @@ In the Limber approximation \citep{1953ApJ...117..134L,1992ApJ...388..272K,1998A
 As astrophysical $\gamma$-ray sources we consider only BL Lacs, subdivided into the two sub-categories of high-synchrotron-peaked (HSP) blazars and low and intermediate synchrotron-peaked (LISP) blazars \cite{DiMauro:2013zfa}.
 We model the spectral energy distribution (SED) of these sources as power-laws with index $\varGamma$ and exponential cutoffs $E_\textrm{cut}$, whose specific parameter values are reported in Table~\ref{table:BLLACS}, together with the minimum and maximum luminosities of the population.
 Since we focus on CTAO and thus on energies above approximately {20} GeV, 
-other typical $\gamma$-ray emitters like misaligned AGN, star-forming galaxies, and flat-spectrum radio quasars can be neglected, since their contribution are dominant at lower energies \cite{Fornasa_2015}. Full details on the modeling of the astrophysical sources are provided in Appendix~\ref{app:model}, together with the expressions for their window functions and 3D cross-correlation power spectra, obtained within the halo model formalism.
+other typical $\gamma$-ray emitters like misaligned AGN, star-forming galaxies, and flat-spectrum radio quasars can be neglected, since their contribution are dominant at lower energies \cite{DGRB-review}. Full details on the modeling of the astrophysical sources are provided in Appendix~\ref{app:model}, together with the expressions for their window functions and 3D cross-correlation power spectra, obtained within the halo model formalism.
 
 Let us just recall here that the window function of the $\gamma$-ray emission of astrophysical sources depends on the $\gamma$-ray luminosity function (GLF) of each specific source-type and on their SED, and is integrated over the luminosity of the sources up to a threshold luminosity, which corresponds to the minimal luminosity that a source must posses in order to be resolved by the detector (in this way, the window function which is then obtained pertains to the \textit{unresolved} sources, those contributing to the UGRB). The full expression and the detailed modeling can be found in Appendix~\ref{app:Wastro}.
 
@@ -37,19 +37,19 @@ The present analysis is thus optimized for DM searches, while for astrophysical 
 
 Let us note that in our analysis, the window function $W_g(z)$ of the galaxy catalogs is normalized to unity: $\int \de z\, W_g(z) =1$. For the $\gamma$-ray window function $W_\gamma(\chi)$, we define it such that the (average) intensity energy spectrum is obtained as: $I_{\gamma}(E) = \int \de\chi\ W_\gamma(E,\chi)$. 
 
-The cross-correlation APS signal has a variance $\smash{(\varDelta C^{\gamma g}_\ell)^2}$ given by~{\cite{camera2013novel,camera2015tomographic,fornengo2014particle}}
+The cross-correlation APS signal has a variance $\smash{(\varDelta C^{\gamma g}_\ell)^2}$ given by~{\cite{Camera:2012cj,Camera_2015,Fornengo:2013rga}}
 \begin{equation}
     (\varDelta C^{\gamma g}_\ell)^2 \,(2\,\ell+1)\,f_\textrm{sky} =  (C_\ell^{\gamma g})^2 + \left[C_\ell^{\gamma \gamma} + \frac{C_N}{(B_\ell)^2}\right]\,\left(C_\ell^{gg} + C_{N_g} \right)\;, \label{eq:Delta}
 \end{equation}
 where $C_\ell^{\gamma\gamma}$ and $C_\ell^{gg}$ are the $\gamma$-ray and galaxy auto-correlation APS, $C_N$ is the photon noise, $C_{N_g}$ the galaxy catalog noise, and $B_\ell$ denotes the beam correction {accounting for the finite angular resolution of the $\gamma$-ray instrument. No beam correction is applied to the galaxy term, since the angular resolution of galaxy catalogs (typically of the order of arcseconds) is negligible for the purposes of this analysis. The parameter} $f_\textrm{{sky}}$ denotes the fraction of the sky covered by the analysis. All the relevant terms in Eq.~\ref{eq:Delta} are outlined in Appendix~\ref{app:model}.
 
-For completeness, in the following analysis, we will also use the $\gamma$-ray auto-correlation APS, which is a measure of the intrinsic anisotropy of the $\gamma$-ray emission. It reads~\cite{Ando:2013ff,camera2013novel,camera2015tomographic,fornengo2014particle}
+For completeness, in the following analysis, we will also use the $\gamma$-ray auto-correlation APS, which is a measure of the intrinsic anisotropy of the $\gamma$-ray emission. It reads~\cite{Ando:2013ff,Camera:2012cj,Camera_2015,Fornengo:2013rga}
 \begin{equation}
  C_\ell^{\gamma \gamma}=\int \frac{\de\chi}{\chi^2}\,W_{\gamma}^2(\chi)  
  \,P_{\gamma \gamma}\left(k=\ell/\chi,\chi\right)\;,
 \label{eq:clfin_auto}    
 \end{equation}
-where $P_{\gamma \gamma}$ is the 3D power spectrum of the $\gamma$-ray emission. The corresponding variance on $C_\ell^{\gamma \gamma}$ is~{\cite{camera2013novel,camera2015tomographic,fornengo2014particle}}
+where $P_{\gamma \gamma}$ is the 3D power spectrum of the $\gamma$-ray emission. The corresponding variance on $C_\ell^{\gamma \gamma}$ is~{\cite{Camera:2012cj,Camera_2015,Fornengo:2013rga}}
 \be
 (\varDelta C_\ell^{\gamma \gamma})^2 = \frac{2}{(2\,\ell+1)\,f_\textrm{sky}} \left[C_\ell^{\gamma \gamma} + \frac{C_N}{(B_\ell)^2} \right]^2\;.\label{eq:variance_gammagamma}
 \ee

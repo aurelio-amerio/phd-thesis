@@ -11,17 +11,17 @@ The Fermi-LAT catalogs contain a large population of gamma-ray sources with no i
 \subsection{Unassociated Sources in Fermi-LAT Catalogs}
 \label{sec:5.4.1}
 
-The latest incremental release, the 4FGL-DR4 catalog~\cite{2022ApJS..260...53A, 2023arXiv230712546B}, contains approximately 7,200 sources detected above a significance threshold of $4\sigma$.
-Of these, \red{2,428 sources}---roughly one third---remain unassociated, meaning that no plausible counterpart has been identified at other wavelengths~\cite{2023arXiv230712546B}.
+The latest incremental release, the 4FGL-DR4 catalog~\cite{Fermi-LAT:2022byn,Ballet:2023qzs}, contains approximately 7,200 sources detected above a significance threshold of $4\sigma$.
+Of these, \red{2,428 sources}---roughly one third---remain unassociated, meaning that no plausible counterpart has been identified at other wavelengths~\cite{Ballet:2023qzs}.
 Among the unassociated population, \red{1,282} sources lie at Galactic latitudes $|b| > 10{{}^\circ}$, where contamination from diffuse Galactic emission is reduced and the search for exotic source populations becomes more tractable.
 \aure{check these number again in the paper}
 
-Association completeness depends on both source brightness and Galactic latitude: brighter sources are far easier to link to multi-wavelength counterparts, while the association fraction drops from approximately 85\% at high latitudes to around 40\% near the Galactic plane, where dense source fields and X-ray absorption impede counterpart identification~\cite{2020ApJS..247...33A}.
+Association completeness depends on both source brightness and Galactic latitude: brighter sources are far easier to link to multi-wavelength counterparts, while the association fraction drops from approximately 85\% at high latitudes to around 40\% near the Galactic plane, where dense source fields and X-ray absorption impede counterpart identification~\cite{Fermi-LAT:2019yla}.
 The majority of unassociated sources are therefore expected to be ordinary astrophysical objects whose association has failed for instrumental or geometric reasons.
-Their spectral properties offer direct clues to their nature: at high latitudes, the average photon index ($\Gamma \approx 2.24$) matches that of blazars of unknown type, while closer to the Galactic plane the spectra soften ($\Gamma \approx 2.42$), consistent with pulsars~\cite{2020ApJS..247...33A}.
+Their spectral properties offer direct clues to their nature: at high latitudes, the average photon index ($\Gamma \approx 2.24$) matches that of blazars of unknown type, while closer to the Galactic plane the spectra soften ($\Gamma \approx 2.42$), consistent with pulsars~\cite{Fermi-LAT:2019yla}.
 Further discussion of the Fermi-LAT association procedure and its completeness can be found in Section~\ref{sec:fermi_lat}.\aure{update link in the future when ch2 is finalized}
 
-To date, no unassociated Fermi-LAT source has been confirmed as a dark matter subhalo~\cite{2020ApJS..247...33A, 2022ApJS..260...53A}.
+To date, no unassociated Fermi-LAT source has been confirmed as a dark matter subhalo~\cite{Fermi-LAT:2019yla,Fermi-LAT:2022byn}.
 \aure{recently, there have been some claim of detection of dm subhalos, although the community is still skeptical. I need to find them and add them, there should be two of them, probably 2507.16932 and 2409.19493}
 As discussed in Section~\ref{sec:5.3}, even under optimistic assumptions the most detectable subhalos would produce gamma-ray spectra similar to those of pulsars or soft-spectrum blazars, making individual identification on spectral grounds alone extremely difficult.
 Nevertheless, the large unassociated population has motivated a sustained effort to search for DM subhalo candidates within it.
@@ -30,7 +30,7 @@ Nevertheless, the large unassociated population has motivated a sustained effort
 \label{sec:5.4.2}
 \aure{this is a strong statement, review it and maybe tone it down or better scope it}
 All prior searches for dark matter subhalos among Fermi-LAT unassociated sources share a common strategy, referred to as \textit{classify-and-count}: a set of DM subhalo candidates is selected from the unassociated population based on their gamma-ray properties, and upper limits on $\langle\sigma v\rangle$ are derived under the assumption that the number of true subhalos cannot exceed the candidate count~\DMsubhaloUnas.
-Early analyses relied on hand-crafted spectral and spatial cuts applied to successive catalog releases~\cite{2010PhRvD..82f3501B, 2012A&A...538A..93Z, 2012ApJ...747..121A, 2014PhRvD..89a6014B, 2015JCAP...12..035B, 2016JCAP...05..028S, 2017JCAP...04..018H}, with some studies emphasizing spatial extension as a potential discriminant~\cite{2014PhRvD..89a6014B, 2015JCAP...12..035B, 2022PhRvD.105h3006C}.
+Early analyses relied on hand-crafted spectral and spatial cuts applied to successive catalog releases~\cite{2010PhRvD..82f3501B,2012A&A...538A..93Z,2012ApJ...747..121A,2014PhRvD..89a6014B,2015JCAP...12..035B,2016JCAP...05..028S,2017JCAP...04..018H}, with some studies emphasizing spatial extension as a potential discriminant~\cite{2014PhRvD..89a6014B,2015JCAP...12..035B,2022PhRvD.105h3006C}.
 More recently, machine learning classifiers have automated and extended the candidate selection~\DMsubhaloML.
 In all cases, none of the identified candidates could be unambiguously distinguished from standard astrophysical sources.
 
@@ -65,11 +65,11 @@ This invariance is what makes the class-conditional densities learnable from the
 The shift from $p(k|\mathbf{x})$ to $p(\mathbf{x}|k)$ carries a deeper conceptual consequence: the unit of analysis moves from the individual source to the population.
 A classifier assigns each source a label and is only as good as the labels in its training set---labels that, for a class never observed (dark matter subhalos), simply do not exist.
 A generative model, by contrast, characterizes each class through its feature distribution and then models the target data as a mixture of these distributions, $\tilde{p}_\mathrm{unas}(\mathbf{x}) = \sum_k \pi_k\, p(\mathbf{x}|k)$.
-In this formulation, the class prevalences $\pi_k$ are free parameters determined by fitting the model to the data rather than imposed during training~\cite{10.1145/3117807_Gonzalez_quantification, 2024arXiv240100490M}.
+In this formulation, the class prevalences $\pi_k$ are free parameters determined by fitting the model to the data rather than imposed during training~\cite{10.1145/3117807_Gonzalez_quantification,2024arXiv240100490M}.
 Maximizing the product likelihood over all unassociated sources simultaneously constrains every mixing fraction, naturally accommodates a new class (dark matter subhalos) whose prevalence was zero in the training set, and supports statistically rigorous confidence intervals through the profile likelihood~\cite{Amerio:2025fhz}.
 
 % The formal machinery for this problem was introduced in Section~\ref{sec:3.4}: \textit{quantification learning} replaces the discriminative question ``what class does this source belong to?'' with the generative question ``what is the probability of observing features $\mathbf{x}$ given that the source belongs to class $k$?''
-% By estimating the class-conditional densities $p(\mathbf{x}|k)$ from the associated catalog and modeling the unassociated population as a mixture $p_\mathrm{target}(\mathbf{x}) = \sum_k \pi_k\, p(\mathbf{x}|k)$, the class prevalences $\pi_k$ become free parameters determined by the data rather than imposed during training~\cite{10.1145/3117807_Gonzalez_quantification, 2024arXiv240100490M}.
+% By estimating the class-conditional densities $p(\mathbf{x}|k)$ from the associated catalog and modeling the unassociated population as a mixture $p_\mathrm{target}(\mathbf{x}) = \sum_k \pi_k\, p(\mathbf{x}|k)$, the class prevalences $\pi_k$ become free parameters determined by the data rather than imposed during training~\cite{10.1145/3117807_Gonzalez_quantification,2024arXiv240100490M}.
 % This generative formulation yields a well-defined product likelihood over all unassociated sources, provides a natural mechanism for including a new class (dark matter subhalos) whose prevalence was zero in the training set, and supports statistically rigorous confidence intervals through the profile likelihood~\cite{Amerio:2025fhz}.
 
 In practice, prior shift and covariate shift between the associated and unassociated populations act simultaneously (Section~\ref{sec:3.4.2}).

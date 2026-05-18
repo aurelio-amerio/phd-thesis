@@ -18,7 +18,7 @@ The model $\mathcal{M}$ connects these parameters to the expected data through a
 The connection between parameters and data is formalized by the likelihood function $\mathcal{L}(\boldsymbol{\theta}) = p(\mathbf{d} \,|\, \boldsymbol{\theta})$, which quantifies how well a given parameter choice explains the observed data \cite{Cranmer:2020}.
 This function is the shared foundation of both major inference paradigms.
 In the frequentist approach, the parameters $\boldsymbol{\theta}$ are treated as fixed but unknown quantities, and inference proceeds by identifying the parameter values that maximize $\mathcal{L}$.
-In the Bayesian approach, $\boldsymbol{\theta}$ are themselves treated as random variables with a prior distribution $p(\boldsymbol{\theta})$, and the goal is to compute the posterior $p(\boldsymbol{\theta} \,|\, \mathbf{d})$ via Bayes' theorem \cite{Bishop:2006, Hastie:2009}.
+In the Bayesian approach, $\boldsymbol{\theta}$ are themselves treated as random variables with a prior distribution $p(\boldsymbol{\theta})$, and the goal is to compute the posterior $p(\boldsymbol{\theta} \,|\, \mathbf{d})$ via Bayes' theorem \cite{bishop,Hastie:2009}.
 
 These two philosophies are not in competition; they are complementary tools, each with distinct strengths suited to different aspects of the inference problem.
 In the analyses presented in this thesis, both are used---sometimes on the same dataset---to extract physical information and quantify uncertainty.
@@ -49,7 +49,7 @@ $, and the MLE is simply $\hat{\mu} = N$. While this example is trivial, the Poi
 	\label{eq:poisson_likelihood}
 \end{equation}
 with $k_a$ the observed counts and $\lambda_a(\boldsymbol{\theta})$ the model prediction in pixel $a$.
-This product-of-Poisson construction is the standard likelihood used in Fermi-LAT analyses \cite{Mattox:1996}.
+This product-of-Poisson construction is the standard likelihood used in Fermi-LAT analyses \cite{Mattox:1996zz}.
 
 \paragraph{Nuisance parameters and the profile likelihood.}
 
@@ -75,7 +75,7 @@ To compare competing hypotheses---for instance, whether a gamma-ray source exist
 	\mathrm{TS} = -2 \ln \frac{\mathcal{L}_0}{\mathcal{L}_1},
 	\label{eq:ts}
 \end{equation}
-where $\mathcal{L}_0$ is the likelihood under the null hypothesis and $\mathcal{L}_1$ the likelihood under the alternative (or, more commonly, the globally maximized likelihood) \cite{Mattox:1996}.
+where $\mathcal{L}_0$ is the likelihood under the null hypothesis and $\mathcal{L}_1$ the likelihood under the alternative (or, more commonly, the globally maximized likelihood) \cite{Mattox:1996zz}.
 By Wilks' theorem, under certain regularity conditions the TS is asymptotically distributed as a $\chi^2$ random variable with degrees of freedom equal to the difference in free parameters between the two hypotheses \cite{Wilks:1938}.
 This result allows direct conversion of TS values to statistical significance without explicit Monte Carlo simulations.
 % For example, to establish a one-sided 95\% confidence-level upper bound on a single parameter, one identifies the parameter value at which $\mathrm{TS} = 3.84$.
@@ -115,7 +115,7 @@ After observing data $\mathbf{d}$, this knowledge is updated through Bayes' theo
 	p(\boldsymbol{\theta} \,|\, \mathbf{d}) = \frac{p(\mathbf{d} \,|\, \boldsymbol{\theta}) \, p(\boldsymbol{\theta})}{p(\mathbf{d})},
 	\label{eq:bayes}
 \end{equation}
-where $p(\mathbf{d} \,|\, \boldsymbol{\theta}) = \mathcal{L}(\boldsymbol{\theta})$ is the same likelihood function used in the frequentist approach, and $p(\mathbf{d}) = \int p(\mathbf{d} \,|\, \boldsymbol{\theta}') \, p(\boldsymbol{\theta}') \, d\boldsymbol{\theta}'$ is the evidence, a normalization constant that integrates the likelihood weighted by the prior over the full parameter space \cite{Bishop:2006}.
+where $p(\mathbf{d} \,|\, \boldsymbol{\theta}) = \mathcal{L}(\boldsymbol{\theta})$ is the same likelihood function used in the frequentist approach, and $p(\mathbf{d}) = \int p(\mathbf{d} \,|\, \boldsymbol{\theta}') \, p(\boldsymbol{\theta}') \, d\boldsymbol{\theta}'$ is the evidence, a normalization constant that integrates the likelihood weighted by the prior over the full parameter space \cite{bishop}.
 Within the assumed model, the posterior $p(\boldsymbol{\theta} \,|\, \mathbf{d})$ is the complete answer to the inference problem: it encodes not only the best-fit values but also the full uncertainty structure, including correlations between parameters.
 
 \paragraph{Prior, posterior, and evidence.}
@@ -156,7 +156,7 @@ In Chapter~\ref{ch:6}, the Bayesian framework is implemented via simulation-base
 
 For most inference tasks encountered in practice---parameter estimation, upper-limit setting, model comparison---both the frequentist and Bayesian frameworks can reach the same scientific conclusion.
 The choice between them is usually pragmatic rather than fundamental, driven by the scientific question at hand, computational considerations, and the conventions of the relevant research community.
-Community practice already carries considerable weight: high-energy particle physics and the Fermi-LAT collaboration have traditionally favored frequentist methods---source detection via the TS, upper limits via the profile likelihood and Wilks' theorem, catalog pipelines built on maximum-likelihood fitting \cite{Mattox:1996}---while cosmology and large-scale-structure analyses have largely adopted Bayesian Markov Chain Monte Carlo (MCMC) methods \cite{Hastie:2009}.
+Community practice already carries considerable weight: high-energy particle physics and the Fermi-LAT collaboration have traditionally favored frequentist methods---source detection via the TS, upper limits via the profile likelihood and Wilks' theorem, catalog pipelines built on maximum-likelihood fitting \cite{Mattox:1996zz}---while cosmology and large-scale-structure analyses have largely adopted Bayesian Markov Chain Monte Carlo (MCMC) methods \cite{Hastie:2009}.
 Neither convention reflects a judgment on the foundations of probability; both reflect what works well for the typical dimensionality and structure of the problems each field encounters most often.
 
 Beyond community defaults, the central question is whether the analysis requires a full characterization of uncertainty or whether a point estimate with a simple error bar suffices.
