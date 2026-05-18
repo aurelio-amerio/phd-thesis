@@ -19,7 +19,9 @@
       "Skill(review-mode:implement-review)",
       "Skill(superpowers:brainstorming)",
       "Skill(superpowers:writing-plans)",
-      "Skill(humanizer)"
+      "Skill(humanizer)",
+      "WebFetch(domain:pypi.org)",
+      "mcp__openpets__openpets_say"
     ]
   },
   "sandbox": {

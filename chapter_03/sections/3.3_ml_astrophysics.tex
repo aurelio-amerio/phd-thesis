@@ -23,12 +23,17 @@ By adopting a heteroscedastic loss function (described in Section~\ref{sec:3.3.2
 
 The third task is \textit{density estimation}: approximating the probability distribution from which observed source features are drawn.
 While classification asks ``what class is this source?
-'', density estimation asks the complementary question ``what does the overall population look like?'' This shift from individual classification to population-level inference is central to the quantification learning framework developed in Chapter~\ref{ch:5}, where Kernel Density Estimation is used to model the spectral parameter distributions of known source classes.
-The resulting class-conditional densities $p(\mathbf{x}|k)$ are then combined into a generative mixture model whose parameters---including the prevalence of a potential dark matter component---are determined by maximizing the likelihood over the unassociated source data.
-The mathematical framework for density estimation and mixture models is developed in Section~\ref{sec:3.3.3}.
+'', density estimation asks the complementary question ``what does the overall population look like?'' This shift from individual classification to population-level inference underpins the generative mixture model developed in Chapter~\ref{ch:5}, where Kernel Density Estimation---used to model the feature distributions of associated sources---is combined with mixture model fitting to infer the energy spectrum composition of the unassociated gamma-ray sources.
+
+
+
+% where Kernel Density Estimation is used to model the spectral parameter distributions of known source classes.
+% The resulting class-conditional densities $p(\mathbf{x}|k)$ are then combined into a generative mixture model whose parameters---including the prevalence of a potential dark matter component---are determined by maximizing the likelihood over the unassociated source data.
+% The mathematical framework for density estimation and mixture models is developed in Section~\ref{sec:3.3.3}.
 
 \subsection{Neural Networks and Deep Learning}
 \label{sec:3.3.2}
+\aure{stopped here}
 
 A neural network is a parametric function $f_{\boldsymbol{w}}: \mathbb{R}^n \to \mathbb{R}^m$ composed of a sequence of affine transformations, each followed by a non-linear activation function.
 In a network with $L$ layers, the output of layer $\ell$ is $\mathbf{h}^{(\ell)} = \sigma(\mathbf{W}^{(\ell)}\mathbf{h}^{(\ell-1)} + \mathbf{b}^{(\ell)})$, where $\mathbf{W}^{(\ell)}$ and $\mathbf{b}^{(\ell)}$ are trainable weight matrices and bias vectors, and $\sigma$ is a non-linear function such as the rectified linear unit $\mathrm{ReLU}(x) = \max(0, x)$.
