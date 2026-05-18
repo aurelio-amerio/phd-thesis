@@ -33,7 +33,6 @@ While classification asks ``what class is this source?
 
 \subsection{Neural Networks and Deep Learning}
 \label{sec:3.3.2}
-\aure{stopped here}
 
 A neural network is a parametric function $f_{\boldsymbol{w}}: \mathbb{R}^n \to \mathbb{R}^m$ composed of a sequence of affine transformations, each followed by a non-linear activation function.
 In a network with $L$ layers, the output of layer $\ell$ is $\mathbf{h}^{(\ell)} = \sigma(\mathbf{W}^{(\ell)}\mathbf{h}^{(\ell-1)} + \mathbf{b}^{(\ell)})$, where $\mathbf{W}^{(\ell)}$ and $\mathbf{b}^{(\ell)}$ are trainable weight matrices and bias vectors, and $\sigma$ is a non-linear function such as the rectified linear unit $\mathrm{ReLU}(x) = \max(0, x)$.
@@ -47,14 +46,27 @@ Because the same filter is applied everywhere across the input, the number of pa
 This makes CNNs particularly well-suited to gamma-ray astronomy, where point sources are sparse, approximately isotropic across the sky, and convolved with the instrument's point spread function.
 
 A specific challenge arises when the data live on the sphere rather than on a flat grid.
-Two approaches have been developed for the HEALPix pixelization scheme used in Fermi-LAT analyses.
-The first, \texttt{NNHealpix} \cite{Krachmalnicoff:2019}, operates directly on the spherical pixel neighborhoods by unrolling each pixel and its eight nearest neighbors into a nine-element vector, then applying standard 1D convolutions with stride nine.
-This preserves the full topology of the sphere, but at higher computational cost.
-The second approach, \texttt{map2patch} (Chapter~\ref{ch:6}), subdivides the sphere into the 12 equal-area base pixels of the HEALPix scheme, treating each as an independent flat image processed through standard 2D convolutions.
+Three broad strategies have been developed to extend convolutional architectures to spherical data.
+
+The first strategy performs convolutions in the spherical harmonic domain.
+Because the spherical harmonics are the natural eigenbasis of the Laplace--Beltrami operator on $S^2$, a spectral convolution can be defined in exact analogy with the classical convolution theorem on the real line.
+\texttt{DeepSphere} \cite{DBLP:journals/corr/abs-2012-15000} implements this idea using a graph-based approximation, representing the sphere as a graph whose nodes are HEALPix pixels and whose edges encode pixel adjacencies; spectral graph convolutions then replace the standard spatial filters.
+This approach respects the global topology of the sphere and naturally handles irregular pixelizations.
+
+The second strategy applies convolutions to local projections of the sphere.
+Rather than operating on the curved manifold directly, these methods project spherical patches onto tangent planes or polyhedral faces, where standard 2D convolutions apply without modification.
+Icosahedral projections \cite{eder2019convolutions} decompose the sphere into 20 equilateral triangular faces that cover it nearly uniformly, limiting the distortion inherent in any flat projection.
+
+The third strategy, and the one most directly relevant to this thesis, operates on the HEALPix pixelization itself.
+\texttt{NNHealpix} \cite{Krachmalnicoff:2019} exploits the fixed neighborhood structure of HEALPix pixels by unrolling each pixel and its eight nearest neighbors into a nine-element vector and applying standard 1D convolutions with stride nine.
+This preserves the full topology of the sphere at the cost of higher computational overhead and sensitivity to the orientation of pixel neighborhoods.
+The \texttt{map2patch} algorithm developed in Chapter~\ref{ch:6} addresses these limitations by subdividing the sphere into the 12 equal-area base pixels of the HEALPix scheme and treating each as an independent flat image processed through standard 2D convolutions.
 This subdivision preserves the exact area and photon content of every pixel without resampling, at the cost of discarding spatial information at patch boundaries.
-For statistically isotropic, small-scale signals such as the point-source population studied in Chapter~\ref{ch:6}, the two methods produce compatible results, but \texttt{map2patch} provides more than an order of magnitude improvement in execution speed.
+For statistically isotropic, small-scale signals such as the point-source population studied in Chapter~\ref{ch:6}, \texttt{map2patch} and \texttt{NNHealpix} produce compatible results, while \texttt{map2patch} achieves more than an order of magnitude improvement in execution speed.
+More recently, \texttt{HEAL-SWIN} \cite{carlsson2024healswin} has pushed the state of the art further by adapting the Swin Vision Transformer to the HEALPix sphere: shifted-window attention operates within local HEALPix patches, and the window boundaries are shifted between successive transformer blocks so that the model captures both local and global spherical structure while retaining the computational efficiency of window-based attention.
 
 \paragraph{Cost functions and uncertainty estimation.}
+\aure{stopped here}
 
 The choice of cost function determines what the network learns.
 For a standard regression problem, the mean squared error $\mathcal{J} = \sum_i (y_i^\mathrm{true} - y_i^\mathrm{pred})^2$ penalizes deviations between predictions and targets uniformly.

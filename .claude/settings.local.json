@@ -21,7 +21,15 @@
       "Skill(superpowers:writing-plans)",
       "Skill(humanizer)",
       "WebFetch(domain:pypi.org)",
-      "mcp__openpets__openpets_say"
+      "mcp__openpets__openpets_say",
+      "Bash(PYTHONPATH=/tmp/claude/pytest_local:/tmp/claude/citecheck-worktree/citecheck-plugin/skills/citecheck/scripts python3 *)",
+      "WebFetch(domain:inspirehep.net)",
+      "WebFetch(domain:export.arxiv.org)",
+      "WebFetch(domain:files.pythonhosted.org)",
+      "Bash(PYTHONPATH=/private/tmp/claude/pytest_local /private/tmp/claude/pytest_local/bin/pytest tests/test_fetch_abstracts.py -v)",
+      "mcp__plugin_review-mode_review-mode__get_annotations",
+      "mcp__plugin_review-mode_review-mode__update_annotation",
+      "mcp__plugin_review-mode_review-mode__open_review"
     ]
   },
   "sandbox": {
