@@ -32,7 +32,9 @@
       "mcp__plugin_review-mode_review-mode__open_review",
       "Bash(python check_missing.py)",
       "Bash(python find_mappings.py)",
-      "Bash(python investigate_unmatched.py)"
+      "Bash(python investigate_unmatched.py)",
+      "WebFetch(domain:arxiv.org)",
+      "mcp__notebooklm-mcp__notebook_query_status"
     ]
   },
   "sandbox": {
