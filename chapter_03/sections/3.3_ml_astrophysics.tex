@@ -2,7 +2,7 @@
 \label{sec:3.3}
 
 The simulation-based inference framework of Section~\ref{sec:3.2} already uses machine learning to approximate intractable posteriors, but machine learning enters this thesis through two distinct paradigms.
-\emph{Image-domain analyses} feed pixel arrays directly into a neural network: the convolutional architectures of computer vision are a natural choice because their inductive biases---locality, weight sharing, translation equivariance---align with how astrophysical signals appear on detectors.
+\emph{Image-domain analyses} feed pixel arrays directly into a neural network: convolutional architectures are well suited to this setting because their inductive biases---locality, weight sharing, translation equivariance---align with how astrophysical signals appear on detectors.
 Chapter~\ref{ch:6} adopts this paradigm to reconstruct the source-count distribution from gamma-ray sky maps.
 \emph{Summary-statistic analyses}, in contrast, first reduce each object to a low-dimensional feature vector and apply machine learning to those features; Chapter~\ref{ch:5} adopts this paradigm to search for a dark matter subhalo population among unassociated Fermi-LAT sources.
 Both paradigms are widely used in astrophysics; the choice depends on data type and scientific question.
@@ -13,8 +13,8 @@ The treatment is a primer rather than a survey; references are given throughout 
 \subsection{Learning Tasks}
 \label{sec:3.3.1}
 
-Machine learning provides a flexible framework for extracting information from data when explicit physical models are either unavailable or computationally intractable~\cite{bishop,Hastie:2009}.
-The problems addressed in this thesis can be organized into three canonical learning tasks, each motivated by a distinct physical question.
+Machine learning provides tools for extracting information from data when explicit physical models are either unavailable or computationally intractable~\cite{bishop,Hastie:2009}.
+The problems addressed in this thesis fall into three canonical learning tasks.
 
 The first is \textit{classification}: assigning a discrete label to an input based on its observed features.
 In the gamma-ray context, this amounts to determining the astrophysical nature of a detected source.
@@ -42,7 +42,7 @@ Given a sufficiently large number of parameters, neural networks can approximate
 Training consists of adjusting the weights $\boldsymbol{w}$ to minimize a cost function $\mathcal{J}(\boldsymbol{w})$ using gradient-based optimisation.
 Backpropagation provides the necessary gradients by applying the chain rule recursively through the network layers, yielding the partial derivative of $\mathcal{J}$ with respect to every weight in a single backward pass.
 In practice, gradients are estimated from mini-batches rather than the full dataset, giving rise to stochastic gradient descent (SGD) and its modern adaptive variants such as Adam and AdamW~\cite{Loshchilov:2017bsp}, which maintain per-parameter learning rates and momentum estimates.
-The empirical success of deep learning over the past decade has been driven not only by algorithmic advances but equally by the combination of network depth, dataset scale, and GPU-accelerated compute~\cite{LeCun:2015pmr}.
+The empirical success of deep learning over the past decade rests on algorithmic advances together with network depth, large datasets, and GPU-accelerated compute~\cite{LeCun:2015pmr}.
 
 The choice of cost function determines what the network learns.
 For a standard regression problem, the mean squared error $\mathcal{J} = \sum_i (y_i^\mathrm{true} - y_i^\mathrm{pred})^2$ penalises deviations between predictions and targets uniformly; for classification, the cross-entropy loss measures the divergence between predicted class probabilities and one-hot labels.
@@ -63,7 +63,7 @@ Chapter~\ref{ch:6} adopts concrete dropout as its regularisation and uncertainty
 \label{sec:3.3.3}
 
 For image-domain analyses, the input is a pixel grid---or, in astrophysics, a HEALPix sky map---and convolutional neural networks (CNNs) exploit this spatial structure directly.
-CNNs have been applied to a wide range of astrophysical problems, including galaxy morphology classification, strong gravitational lens identification, and electromagnetic transient detection.
+CNNs have been applied to astrophysical problems such as galaxy morphology classification, strong gravitational lens identification, and electromagnetic transient detection.
 In this thesis, Chapter~\ref{ch:6} adopts a CNN to reconstruct the source-count distribution from gamma-ray sky maps.
 
 A convolutional layer applies a set of learnable filters (kernels) to local patches of the input, producing feature maps that respond to spatial patterns at specific scales.
@@ -76,7 +76,7 @@ Because the same filter is applied everywhere across the input, the number of pa
 
 Stacking convolutional layers builds progressively larger receptive fields: shallow layers detect local features such as edges and peaks, while deeper layers combine these into more abstract representations.
 Pooling operations (max or average over local windows) downsample the feature maps between successive convolutional stages, providing approximate translation invariance at the cost of spatial resolution~\cite{Goodfellow:2016dlbook,LeCun:2015pmr}.
-The resulting hierarchy of local-to-global features is what makes CNNs effective for tasks where the relevant information is distributed across spatial scales.
+This hierarchy of local-to-global features allows CNNs to capture information distributed across spatial scales.
 
 \begin{figure}[t]
   \centering
@@ -85,7 +85,7 @@ The resulting hierarchy of local-to-global features is what makes CNNs effective
   \label{fig:cnn-architecture}
 \end{figure}
 
-Modern CNNs build on a small number of architectural innovations that consistently improve performance: most prominently VGG-style stacks of small convolutions~\cite{Simonyan:2014cmh}, and the residual connections introduced by ResNet~\cite{he2015deep}, which enabled training of networks hundreds of layers deep.
+Modern CNNs build on a few architectural ideas: VGG-style stacks of small convolutions~\cite{Simonyan:2014cmh} and the residual connections introduced by ResNet~\cite{he2015deep}, which enabled training of networks hundreds of layers deep.
 Contemporary computer-vision architectures often combine convolutional building blocks with attention mechanisms borrowed from transformers, as in vision transformers~\cite{Dosovitskiy:2020qjv} and hybrid models.
 
 A specific challenge arises when the data live on the sphere rather than on a flat grid.
@@ -95,7 +95,7 @@ Three broad strategies have been developed to extend convolutional architectures
 The first strategy performs convolutions in the spherical harmonic domain.
 Because the spherical harmonics are the natural eigenbasis of the Laplace--Beltrami operator on $S^2$, a spectral convolution can be defined in exact analogy with the classical convolution theorem on the real line.
 \texttt{DeepSphere}~\cite{DBLP:journals/corr/abs-2012-15000} implements this idea using a graph-based approximation, representing the sphere as a graph whose nodes are HEALPix pixels and whose edges encode pixel adjacencies; spectral graph convolutions then replace the standard spatial filters.
-This approach respects the global topology of the sphere and naturally handles irregular pixelisations.
+This approach preserves the global topology of the sphere and handles irregular pixelisations.
 
 The second strategy applies convolutions to local projections of the sphere.
 Rather than operating on the curved manifold directly, these methods project spherical patches onto tangent planes or polyhedral faces, where standard 2D convolutions apply without modification.
@@ -107,7 +107,7 @@ This preserves the full topology of the sphere at the cost of higher computation
 The \texttt{map2patch} algorithm developed in Chapter~\ref{ch:6} subdivides the sphere into the 12 equal-area base pixels of the HEALPix scheme and treats each as an independent flat image processed through standard 2D convolutions.
 This subdivision preserves the exact area and photon content of every pixel without resampling, at the cost of discarding spatial information at patch boundaries; details of the implementation are deferred to Chapter~\ref{ch:6}.
 For statistically isotropic, small-scale signals such as the point-source population studied in Chapter~\ref{ch:6}, \texttt{map2patch} and \texttt{NNHealpix} produce compatible results, while \texttt{map2patch} achieves more than an order of magnitude improvement in execution speed.
-More recently, \texttt{HEAL-SWIN}~\cite{carlsson2024healswin} has pushed the state of the art further by adapting the Swin Vision Transformer to the HEALPix sphere: shifted-window attention operates within local HEALPix patches, and the window boundaries are shifted between successive transformer blocks so that the model captures both local and global spherical structure while retaining the computational efficiency of window-based attention.
+More recently, \texttt{HEAL-SWIN}~\cite{carlsson2024healswin} adapted the Swin Vision Transformer to the HEALPix sphere: shifted-window attention operates within local HEALPix patches, and the window boundaries are shifted between successive transformer blocks so that the model captures both local and global spherical structure while retaining the computational efficiency of window-based attention.
 
 \begin{figure}[t]
   \centering
@@ -121,13 +121,12 @@ Chapter~\ref{ch:6} combines the \texttt{map2patch} tiling with concrete dropout 
 \subsection{Density Estimation}
 \label{sec:3.3.4}
 
-Density estimation encompasses a broad family of methods.
-Neural density estimators---normalising flows for low-to-moderate dimensional problems with exact log-likelihood evaluation, score-based diffusion models with multi-step sampling, and flow matching~\cite{Lipman:2023hef,Song:2021zrs}---excel for high-dimensional or complex distributions, as introduced in the simulation-based inference context of Section~\ref{sec:3.2}~\cite{Papamakarios:2021,Cranmer:2020}.
-Classical non-parametric methods such as Kernel Density Estimation and mixture models with Expectation-Maximisation remain valuable for low-dimensional, well-defined feature spaces where neural surrogates are unnecessary.
+Neural density estimators---normalising flows for low-to-moderate dimensional problems with exact log-likelihood evaluation, score-based diffusion models with multi-step sampling, and flow matching~\cite{Lipman:2023hef,Song:2021zrs}---are well suited to high-dimensional or complex distributions, as introduced in the simulation-based inference context of Section~\ref{sec:3.2}~\cite{Papamakarios:2021,Cranmer:2020}.
+For low-dimensional, well-defined feature spaces, classical non-parametric methods such as Kernel Density Estimation and mixture models with Expectation-Maximisation are sufficient and often preferable.
 Chapter~\ref{ch:5} sits squarely in this regime: the input features are a handful of spectral and variability quantities per source, and the rest of this subsection introduces the classical tools used there.
 
 Given a set of $N$ observed data points $\{\mathbf{x}_1, \ldots, \mathbf{x}_N\}$ drawn from an unknown distribution, the goal is to estimate the probability density function $p(\mathbf{x})$ that generated them.
-Unlike classification, which learns a decision boundary in feature space, density estimation reconstructs the full probability landscape and can therefore reveal populations that were absent from the training set.
+Unlike classification, which learns a decision boundary in feature space, density estimation reconstructs the full probability distribution and can therefore reveal populations that were absent from the training set.
 A non-parametric approach to this problem is provided by Kernel Density Estimation (KDE).
 Given $N$ samples, the KDE approximation to the density at a point $\mathbf{x}$ is
 \begin{equation}
