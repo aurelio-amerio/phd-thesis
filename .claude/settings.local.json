@@ -34,12 +34,18 @@
       "Bash(python find_mappings.py)",
       "Bash(python investigate_unmatched.py)",
       "WebFetch(domain:arxiv.org)",
-      "mcp__notebooklm-mcp__notebook_query_status"
+      "mcp__notebooklm-mcp__notebook_query_status",
+      "Bash(git checkout *)",
+      "mcp__inspirehep__search_papers",
+      "mcp__inspirehep__get_bibtex",
+      "Bash(git *)",
+      "mcp__inspirehep__get_paper_details",
+      "mcp__arxiv-mcp-server__search_papers"
     ]
   },
   "sandbox": {
-    "enabled": false,
-    "autoAllowBashIfSandboxed": false
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true
   },
   "plansDirectory": "plans"
 }
