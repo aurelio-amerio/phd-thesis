@@ -40,7 +40,8 @@
       "mcp__inspirehep__get_bibtex",
       "Bash(git *)",
       "mcp__inspirehep__get_paper_details",
-      "mcp__arxiv-mcp-server__search_papers"
+      "mcp__arxiv-mcp-server__search_papers",
+      "Skill(scientific-writing)"
     ]
   },
   "sandbox": {
