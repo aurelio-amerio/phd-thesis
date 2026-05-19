@@ -63,7 +63,7 @@ Chapter~\ref{ch:6} adopts concrete dropout as its regularisation and uncertainty
 \label{sec:3.3.3}
 
 For image-domain analyses, the input is a pixel grid---or, in astrophysics, a HEALPix sky map---and convolutional neural networks (CNNs) exploit this spatial structure directly.
-CNNs have been applied to astrophysical problems such as galaxy morphology classification, strong gravitational lens identification, and electromagnetic transient detection.
+CNNs have been applied to astrophysical problems such as galaxy morphology classification~\cite{Dieleman:2015wdg}, strong gravitational lens identification~\cite{Hezaveh:2017sht}, and electromagnetic transient detection.
 In this thesis, Chapter~\ref{ch:6} adopts a CNN to reconstruct the source-count distribution from gamma-ray sky maps.
 
 A convolutional layer applies a set of learnable filters (kernels) to local patches of the input, producing feature maps that respond to spatial patterns at specific scales.
@@ -121,7 +121,8 @@ Chapter~\ref{ch:6} combines the \texttt{map2patch} tiling with concrete dropout 
 \subsection{Density Estimation}
 \label{sec:3.3.4}
 
-Neural density estimators---normalising flows for low-to-moderate dimensional problems with exact log-likelihood evaluation, score-based diffusion models with multi-step sampling, and flow matching~\cite{Lipman:2023hef,Song:2021zrs}---are well suited to high-dimensional or complex distributions, as introduced in the simulation-based inference context of Section~\ref{sec:3.2}~\cite{Papamakarios:2021,Cranmer:2020}.
+Having introduced the convolutional architectures used for image-domain inference in Chapter~\ref{ch:6}, we now turn to the tools underlying the summary-statistic approach of Chapter~\ref{ch:5}.
+The simulation-based inference framework of Section~\ref{sec:3.2} relies on neural density estimators---normalising flows, score-based diffusion models, and flow matching~\cite{Papamakarios:2021,Song:2021zrs,Lipman:2023hef}---that are well suited to high-dimensional or complex distributions~\cite{Cranmer:2020}.
 For low-dimensional, well-defined feature spaces, classical non-parametric methods such as Kernel Density Estimation and mixture models with Expectation-Maximisation are sufficient and often preferable.
 Chapter~\ref{ch:5} sits squarely in this regime: the input features are a handful of spectral and variability quantities per source, and the rest of this subsection introduces the classical tools used there.
 
