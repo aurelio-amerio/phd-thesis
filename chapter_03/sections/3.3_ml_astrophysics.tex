@@ -66,7 +66,6 @@ For statistically isotropic, small-scale signals such as the point-source popula
 More recently, \texttt{HEAL-SWIN} \cite{carlsson2024healswin} has pushed the state of the art further by adapting the Swin Vision Transformer to the HEALPix sphere: shifted-window attention operates within local HEALPix patches, and the window boundaries are shifted between successive transformer blocks so that the model captures both local and global spherical structure while retaining the computational efficiency of window-based attention.
 
 \paragraph{Cost functions and uncertainty estimation.}
-\aure{stopped here}
 
 The choice of cost function determines what the network learns.
 For a standard regression problem, the mean squared error $\mathcal{J} = \sum_i (y_i^\mathrm{true} - y_i^\mathrm{pred})^2$ penalizes deviations between predictions and targets uniformly.
