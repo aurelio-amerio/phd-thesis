@@ -57,7 +57,7 @@ Gal and Ghahramani~\cite{mcdropout} showed that a neural network with dropout ap
 Overparameterised models can memorise the training set; regularisation keeps them honest.
 In practice, several complementary techniques are typically used in combination: weight decay (an $L_2$ penalty on the weights), dropout---which randomly zeros a fraction of activations during training---batch and layer normalisation~\cite{batchnorm}, data augmentation, and early stopping.
 Dropout doubles as an uncertainty quantifier when left active at test time, as described above, and its self-tuning variant \textit{concrete dropout}~\cite{concrete-dropout} replaces the discrete Bernoulli mask with a continuous relaxation that makes the drop probability differentiable, so that the optimal rate for each layer is learned jointly with the network weights during training.
-Chapter~\ref{ch:6} adopts concrete dropout as its regularisation and uncertainty calibration strategy; the specific recipe is detailed there~\cite{Goodfellow:2016dlbook}.
+Chapter~\ref{ch:6} adopts concrete dropout as its regularisation and uncertainty calibration strategy; the specific recipe is detailed there.
 
 \subsection{Convolutional Neural Networks}
 \label{sec:3.3.3}
