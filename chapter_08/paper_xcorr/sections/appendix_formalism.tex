@@ -1,13 +1,15 @@
 \section{Formalism and details of the modeling}
 \label{app:model}
 
+The general cross-correlation formalism---the angular power spectrum, the Limber approximation, the variance expressions, and the halo model decomposition---is introduced in Section~\ref{sec:cross_correlations}. This appendix provides the specific forms and modeling choices entering the CTAO analysis.
+
 \subsection{Angular Power Spectra}
 
-The angular power spectra for the $\gamma$-ray autocorrelation and for the cross-correlation between the unresolved $\gamma$-ray emission and a galaxy catalog $g$ can be expressed as \cite{Camera:2012cj,Camera_2015,Fornengo:2013rga}
+The angular power spectra for the $\gamma$-ray autocorrelation and for the cross-correlation between the unresolved $\gamma$-ray emission and a galaxy catalog $g$ can be expressed as (cf.\ Eq.~\ref{eq:limber_aps}) \cite{Camera:2012cj,Camera_2015,Fornengo:2013rga}
 \begin{eqnarray}
     \label{eq:auto}
-     C_\ell^{\gamma \gamma} &=& \int \frac{\de\chi}{\chi^2}\,W_{\gamma}^2(\chi)  
- \,P_{\gamma \gamma}\left(k=\ell/\chi,\chi\right) \\ 
+     C_\ell^{\gamma \gamma} &=& \int \frac{\de\chi}{\chi^2}\,W_{\gamma}^2(\chi)
+ \,P_{\gamma \gamma}\left(k=\ell/\chi,\chi\right) \\
      C_\ell^{\gamma g} &=&\int \frac{\de\chi}{\chi^2}\,W_{\gamma}(\chi)\, W_g(\chi)\,P_{\gamma g}\left(k=\ell/\chi,\chi\right) \; , \label{eq:cross}
  \end{eqnarray}
  where $\ell$ denotes the multipole, $\chi$ is the comoving distance, $W_{\gamma}(\chi)$ and $W_g(\chi)$ are the window functions of the $\gamma$-ray emission and of the galaxy catalog, respectively, that is the functions describing how the observables are distributed in redshift.  $P_{\gamma \gamma}$ and $P_{\gamma g}$ are the 3D power spectra of the auto- and cross- correlation, respectively, which quantify the fluctuations of the corresponding observables. All these components are discussed in the following sub-sections.
@@ -113,7 +115,7 @@ The noise $C_N$ is shown explicitly in \cref{fig:Cl_vs_E}, together with a selec
     \label{fig:diffsens}
 \end{figure}
 
-In the case of cross-correlations, the variance is instead given by \cite{Camera:2012cj,Camera_2015,Fornengo:2013rga}
+In the case of cross-correlations, the variance is instead given by (cf.\ Eq.~\ref{eq:variance_cross}) \cite{Camera:2012cj,Camera_2015,Fornengo:2013rga}
 \begin{equation}
     (\varDelta C^{\gamma g}_\ell)^2 = \frac{1}{\left(2\ell+1 \right) f_\textrm{{sky}}} \left[(C_\ell^{\gamma g})^2 + \left(C_\ell^{\gamma \gamma} + \frac{C_N}{B_\ell^2}\right)\left(C_\ell^{gg} + C_{N_g} \right) \right].
     \label{eq:deltagamma g}
@@ -201,7 +203,7 @@ where $\varOmega_\textrm{DM}$ is the dark matter density parameter, $\rho_\textr
 $m_{\chi}$ the DM particle mass, $\varGamma_\textrm{d}$ the DM decay rate, $dN/\de E$ the $\gamma$-ray energy spectrum per decay event, which we take from \cite{Arina:2023eic} for decay into $b\bar{b}$, $\tau^+ \tau^-$, $W^+ W^-$. The last term in the equation refers again to $\gamma$-ray absorption, as discussed for the astrophysical sources.
 
 
-For annihilating DM, the window function reads
+For annihilating DM, the window function reads (cf.\ Eq.~\ref{eq:window_dm_ann})
 %
  \be
      W(E, \chi) = \frac{\de W}{\de E\de\chi} = \frac{1}{4 \pi} \, \frac{\langle \sigma v \rangle}{2} \varDelta^2(z) \, \left (\frac{\varOmega_\textrm{DM} \,\rho_\textrm{c} }{m_{\chi}} \right)^2 (1+z)^3  \frac{d N}{d E}[(1+z)E]  \exp[-\tau(E,z)]\;,
