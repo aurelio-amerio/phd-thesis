@@ -1,13 +1,14 @@
 \section{Machine Learning in Astrophysics}
 \label{sec:3.3}
-Section~\ref{sec:3.2} introduced simulation-based inference as a framework for problems with intractable likelihoods; this section presents the concrete machine-learning architectures and techniques that implement it, and that underpin data-driven inference in astrophysics and cosmology more broadly.
-In practice, the data that these methods must process arrive at one of two levels.
-\emph{Field-level data}---images, sky maps of photon counts, light curves---preserve the full spatial or temporal structure of the signal and call for architectures that can exploit that structure directly.
-\emph{Summary statistics}---energy spectra, variability indicators, flux ratios---compress the raw signal into a low-dimensional feature set that is easier to model but inevitably discards some information in the process.
-The two approaches are complementary: field-level methods retain more information at the cost of architectural complexity, while summary statistics trade information content for a simpler, lower-dimensional input space.
-Both appear in this thesis: Chapter~\ref{ch:6} works at the field level, feeding gamma-ray sky maps into a convolutional network to reconstruct the source-count distribution, while Chapter~\ref{ch:5} operates on spectral and variability features to search for a dark matter subhalo population among unassociated Fermi-LAT sources.
+\aure{I will rewrite this myself}
+The simulation-based inference framework of Section~\ref{sec:3.2} already uses machine learning to approximate intractable posteriors, but machine learning enters this thesis through two distinct paradigms.
+\emph{Image-domain analyses} feed pixel arrays directly into a neural network: convolutional architectures are well suited to this setting because their inductive biases---locality, weight sharing, translation equivariance---align with how astrophysical signals appear on detectors.
+Chapter~\ref{ch:6} adopts this paradigm to reconstruct the source-count distribution from gamma-ray sky maps.
+\emph{Summary-statistic analyses}, in contrast, first reduce each object to a low-dimensional feature vector and apply machine learning to those features; Chapter~\ref{ch:5} adopts this paradigm to search for a dark matter subhalo population among unassociated Fermi-LAT sources.
+Both paradigms are widely used in astrophysics; the choice depends on data type and scientific question.
 
-This section introduces the machine-learning concepts and architectures that underpin both analyses: the canonical learning tasks (Section~\ref{sec:3.3.1}); neural networks, their training, and uncertainty estimation (Section~\ref{sec:3.3.2}); convolutional architectures and their spherical extensions for sky-map data (Section~\ref{sec:3.3.3}); and classical non-parametric density estimation for population-level inference on feature vectors (Section~\ref{sec:3.3.4}).
+This section provides the minimum machine-learning vocabulary needed to read those two chapters: the canonical learning tasks (Section~\ref{sec:3.3.1}); neural networks, their training, and uncertainty estimation (Section~\ref{sec:3.3.2}); convolutional architectures and their spherical extensions for sky-map data (Section~\ref{sec:3.3.3}); and classical non-parametric density estimation for population-level inference on feature vectors (Section~\ref{sec:3.3.4}).
+The treatment is a primer rather than a survey; references are given throughout for readers who want more.
 
 \subsection{Learning Tasks}
 \label{sec:3.3.1}
@@ -43,11 +44,10 @@ Backpropagation provides the necessary gradients by applying the chain rule recu
 In practice, gradients are estimated from mini-batches rather than the full dataset, giving rise to stochastic gradient descent (SGD) and its modern adaptive variants such as Adam and AdamW~\cite{Loshchilov:2017bsp}, which maintain per-parameter learning rates and momentum estimates.
 The empirical success of deep learning over the past decade rests on algorithmic advances together with network depth, large datasets, and GPU-accelerated compute~\cite{LeCun:2015pmr}.
 
-The choice of cost function determines what the network learns, and all of the losses used in this thesis are best understood as instances of maximum-likelihood estimation under an appropriate probabilistic model~\cite{bishop,Murphy:2022pml}.
-For a standard regression problem, the mean squared error $\mathcal{J} = \sum_i (y_i^\mathrm{true} - y_i^\mathrm{pred})^2$ penalises deviations between predictions and targets uniformly and coincides, up to constants, with the negative log-likelihood of the targets under a homoscedastic Gaussian noise model.
-For classification, the cross-entropy loss measures the divergence between predicted class probabilities and one-hot labels and is equivalently the negative log-likelihood of the observed labels under a categorical model.
-Density estimation is most commonly cast as minimising the forward Kullback--Leibler divergence between the data distribution and a parametric model; because the data-side entropy is independent of the model parameters, this minimisation reduces to maximising the log-likelihood of the data---or, for latent-variable models in which the marginal likelihood is intractable, the evidence lower bound (ELBO).
-When the noise level varies across the output space, the Gaussian variance can itself be parameterised as a network output, yielding the heteroscedastic Gaussian negative log-likelihood~\cite{heteroscedastic-error}; the formalism is presented in Section~\ref{sec:bayesian-error}, where Chapter~\ref{ch:6} puts it to use.
+The choice of cost function determines what the network learns.
+For a standard regression problem, the mean squared error $\mathcal{J} = \sum_i (y_i^\mathrm{true} - y_i^\mathrm{pred})^2$ penalises deviations between predictions and targets uniformly; for classification, the cross-entropy loss measures the divergence between predicted class probabilities and one-hot labels; and for neural density estimation, usually a variant of the Kuller-Leibler divergence or Evidence Lower Bound (ELBO) is adopted. 
+All of them can be understood as special cases of the negative log-likelihood under an appropriate probabilistic model~\cite{bishop,Murphy:2022pml}.
+When the noise level varies across the output space, the variance can itself be parameterised as a network output, yielding the heteroscedastic Gaussian negative log-likelihood~\cite{heteroscedastic-error}; the formalism is presented in Section~\ref{sec:bayesian-error}, where Chapter~\ref{ch:6} puts it to use.
 
 Beyond a point estimate, predictions carry two distinct sources of error: \textit{aleatoric} uncertainty, intrinsic to the data (irreducible noise that more training data cannot remove), and \textit{epistemic} uncertainty, reflecting the model's ignorance about which parameter values best describe the data (reducible in the limit of infinite data and capacity).
 Bayesian neural networks aim to recover both jointly by treating the network weights as random variables rather than fixed parameters, in the same spirit as the simulation-based inference framework of Section~\ref{sec:3.2}.
@@ -57,7 +57,7 @@ Gal and Ghahramani~\cite{mcdropout} showed that a neural network with dropout ap
 Overparameterised models can memorise the training set; regularisation keeps them honest.
 In practice, several complementary techniques are typically used in combination: weight decay (an $L_2$ penalty on the weights), dropout---which randomly zeros a fraction of activations during training---batch and layer normalisation~\cite{batchnorm}, data augmentation, and early stopping.
 Dropout doubles as an uncertainty quantifier when left active at test time, as described above, and its self-tuning variant \textit{concrete dropout}~\cite{concrete-dropout} replaces the discrete Bernoulli mask with a continuous relaxation that makes the drop probability differentiable, so that the optimal rate for each layer is learned jointly with the network weights during training.
-Chapter~\ref{ch:6} adopts concrete dropout as its regularisation and uncertainty calibration strategy, to which we defer the details of the implementation.
+Chapter~\ref{ch:6} adopts concrete dropout as its regularisation and uncertainty calibration strategy; the specific recipe is detailed there.
 
 \subsection{Convolutional Neural Networks}
 \label{sec:3.3.3}
@@ -80,7 +80,6 @@ This hierarchy of local-to-global features allows CNNs to capture information di
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.85\textwidth]{example-image-a}
   %\includegraphics[width=0.85\textwidth]{chapter_03/figures/cnn_architecture}
   \caption{Generic convolutional neural network architecture: a kernel slides over the input image producing feature maps; successive convolution and pooling layers reduce spatial extent while increasing channel depth, before a fully connected head maps the learned features to the output.}
   \label{fig:cnn-architecture}
@@ -103,22 +102,21 @@ Rather than operating on the curved manifold directly, these methods project sph
 Icosahedral projections~\cite{eder2019convolutions} decompose the sphere into 20 equilateral triangular faces that cover it nearly uniformly, limiting the distortion inherent in any flat projection.
 
 The third strategy, and the one most directly relevant to this thesis, operates on the HEALPix pixelisation itself.
-\texttt{NNHealpix}~\cite{Krachmalnicoff:2019} exploits the fixed neighbourhood structure of HEALPix pixels by unrolling each pixel and its eight nearest neighbours into a nine-element vector and applying standard 1D convolutions with stride nine (Fig.~\ref{fig:nnhealpix-scheme}).
+\texttt{NNHealpix}~\cite{Krachmalnicoff:2019} exploits the fixed neighbourhood structure of HEALPix pixels by unrolling each pixel and its eight nearest neighbours into a nine-element vector and applying standard 1D convolutions with stride nine.
 This preserves the full topology of the sphere at the cost of higher computational overhead and sensitivity to the orientation of pixel neighbourhoods.
-The \texttt{map2patch} algorithm developed in Chapter~\ref{ch:6} subdivides the sphere into the 12 equal-area base pixels of the HEALPix scheme and processes them jointly as a stack of flat tiles, exploiting the exact equal-area property of the base faces so that standard 2D convolutions apply without resampling distortion.
-The spherical topology is preserved across patch boundaries through a padding scheme that borrows pixels from the adjacent base faces, so that no spatial information is lost where neighbouring tiles meet.
-The construction preserves the exact area and photon content of every pixel; details of the implementation are deferred to Chapter~\ref{ch:6}.
+The \texttt{map2patch} algorithm developed in Chapter~\ref{ch:6} subdivides the sphere into the 12 equal-area base pixels of the HEALPix scheme and treats each as an independent flat image processed through standard 2D convolutions.
+This subdivision preserves the exact area and photon content of every pixel without resampling, at the cost of discarding spatial information at patch boundaries; details of the implementation are deferred to Chapter~\ref{ch:6}.
 For statistically isotropic, small-scale signals such as the point-source population studied in Chapter~\ref{ch:6}, \texttt{map2patch} and \texttt{NNHealpix} produce compatible results, while \texttt{map2patch} achieves more than an order of magnitude improvement in execution speed.
 More recently, \texttt{HEAL-SWIN}~\cite{carlsson2024healswin} adapted the Swin Vision Transformer to the HEALPix sphere: shifted-window attention operates within local HEALPix patches, and the window boundaries are shifted between successive transformer blocks so that the model captures both local and global spherical structure while retaining the computational efficiency of window-based attention.
 
 \begin{figure}[t]
   \centering
   \subbottom[Pixel neighbourhood on the HEALPix sphere.\label{fig:nnhealpix-pixels}]{%
-    \includegraphics[width=0.35\textwidth]{chapter_03/figures/nnhealpix_fig2.pdf}}
+    \includegraphics[width=0.35\textwidth]{chapter_03/figures/nnhealpix_fig2}}
   % \hfill
   \hspace{1cm}
   \subbottom[Unrolled convolution scheme.\label{fig:nnhealpix-conv}]{%
-    \includegraphics[width=0.49\textwidth]{chapter_03/figures/nnhealpix_fig3.pdf}}
+    \includegraphics[width=0.49\textwidth]{chapter_03/figures/nnhealpix_fig3}}
   \caption{Convolution on the HEALPix sphere.
   \textit{Left}: each pixel and its nearest neighbours define a local window that can be mapped to a flat patch for convolution.
   \textit{Right}: in the \texttt{NNHealpix} scheme, each pixel and its eight neighbours are unrolled into a nine-element vector, and a standard one-dimensional convolution with stride nine is applied.
@@ -138,7 +136,7 @@ Chapter~\ref{ch:5} sits squarely in this regime: the input features are a handfu
 
 Given a set of $N$ observed data points $\{\mathbf{x}_1, \ldots, \mathbf{x}_N\}$ drawn from an unknown distribution, the goal is to estimate the probability density function $p(\mathbf{x})$ that generated them.
 Unlike classification, which learns a decision boundary in feature space, density estimation reconstructs the full probability distribution and can therefore reveal populations that were absent from the training set.
-A non-parametric approach to this problem is provided by Kernel Density Estimation (KDE); we refer the interested reader to Section~2.5.1 of~\cite{bishop} for a comprehensive treatment.
+A non-parametric approach to this problem is provided by Kernel Density Estimation (KDE).
 Given $N$ samples, the KDE approximation to the density at a point $\mathbf{x}$ is
 \begin{equation}
 	\hat{p}(\mathbf{x}) = \frac{1}{N} \sum_{i=1}^{N} K_h(\mathbf{x} - \mathbf{x}_i),
@@ -155,7 +153,7 @@ When the observed data arise from multiple overlapping populations, the total de
 	\label{eq:mixture_model}
 \end{equation}
 where $\pi_k$ are the mixing weights (class prevalences) satisfying $\sum_k \pi_k = 1$, and $p(\mathbf{x}|k)$ is the class-conditional density.
-The mixing weights and any free parameters of the component densities are typically determined by the Expectation-Maximisation (EM) algorithm~\cite{Dempster:1977}: an iterative procedure that alternates between computing the posterior class responsibilities $\gamma_{ik} = p(k | \mathbf{x}_i)$ for each data point (the E-step), and updating the model parameters to maximise the expected log-likelihood under those responsibilities (the M-step); a detailed derivation, including the general formulation of EM and its application to Gaussian mixtures, is given in Chapter~9 of~\cite{bishop}.
+The mixing weights and any free parameters of the component densities are typically determined by the Expectation-Maximisation (EM) algorithm~\cite{Dempster:1977}: an iterative procedure that alternates between computing the posterior class responsibilities $\gamma_{ik} = p(k | \mathbf{x}_i)$ for each data point (the E-step), and updating the model parameters to maximise the expected log-likelihood under those responsibilities (the M-step).
 For the mixing weights, the M-step admits a closed-form solution: $\pi_k^\mathrm{new} = N^{-1}\sum_i \gamma_{ik}$, i.e., each weight is updated as the average posterior responsibility over the dataset.
 
 In Chapter~\ref{ch:5}, this framework is extended to search for dark matter subhalos among the unassociated Fermi-LAT sources.

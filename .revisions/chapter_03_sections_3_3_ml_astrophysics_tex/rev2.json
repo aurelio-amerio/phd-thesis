@@ -1,0 +1,62 @@
+[
+  {
+    "id": "0y1jt3q",
+    "startLine": 4,
+    "endLine": 8,
+    "textPreview": "The simulation-based inference framework of Section~\\ref{sec:3.2} already uses machine learning to approximate intractable posteriors, but machine learning enters this thesis through two distinct paradigms.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "jpb94xu",
+        "text": "we better ease a bit more into this discussion.",
+        "createdAt": "2026-05-19T13:46:12.282Z"
+      },
+      {
+        "id": "q8qets5",
+        "text": "dont' go immediately to image domain vs summary statistics.",
+        "createdAt": "2026-05-19T13:46:29.789Z"
+      }
+    ]
+  },
+  {
+    "id": "eo450oo",
+    "startLine": 48,
+    "endLine": 49,
+    "textPreview": "For a standard regression problem, the mean squared error $\\mathcal{J} = \\sum_i (y_i^\\mathrm{true} - y_i^\\mathrm{pred})^2$ penalises deviations between predictions and targets uniformly; for classification, the cross-entropy loss measures the divergence between predicted class probabilities and one-hot labels; and for neural density estimation, usually a variant of the Kuller-Leibler divergence or Evidence Lower Bound (ELBO) is adopted.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "3altuav",
+        "text": "refine this statement, I have added a comment on the KL divergence",
+        "createdAt": "2026-05-19T13:52:49.657Z"
+      },
+      {
+        "id": "c8ju5pu",
+        "text": "is it true that also optimizing the KL divergence can be understood as a NLL problem? maybe inquire with notebook lm, not sure about that, as we are computing the distance between two distributions in principle, and it's not really a likelihood",
+        "createdAt": "2026-05-19T13:53:52.331Z"
+      },
+      {
+        "id": "ya1e3pn",
+        "text": "check that this phrase is properly tied up with the part that follows. Maybe we mught want to move the KL and NDE comment after we discuss the form of uncertanties? think about how to properly shape the direction of the argument",
+        "createdAt": "2026-05-19T13:55:11.525Z"
+      }
+    ]
+  },
+  {
+    "id": "69xefs5",
+    "startLine": 60,
+    "endLine": 60,
+    "textPreview": "Chapter~\\ref{ch:6} adopts concrete dropout as its regularisation and uncertainty calibration strategy; the specific recipe is detailed there.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "0a8h600",
+        "text": "maybe change the last part and write something \"to which we defer the details of the implementation\", or similar",
+        "createdAt": "2026-05-19T13:56:44.764Z"
+      }
+    ]
+  }
+]

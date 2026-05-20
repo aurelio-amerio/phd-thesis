@@ -330,7 +330,7 @@ TSWLatexianTemp*
 # don't commit the thesis file for now
 main.pdf
 
-.revisions
+# .revisions
 
 # citecheck plugin output dirs
 .citecache/

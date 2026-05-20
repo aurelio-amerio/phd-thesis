@@ -1,0 +1,22 @@
+[
+  {
+    "id": "pef9103",
+    "startLine": 4,
+    "endLine": 8,
+    "textPreview": "The simulation-based inference framework of Section~\\ref{sec:3.2} already uses machine learning to approximate intractable posteriors, but machine learning enters this thesis through two distinct paradigms.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "jpb94xu",
+        "text": "we better ease a bit more into this discussion.",
+        "createdAt": "2026-05-19T13:46:12.282Z"
+      },
+      {
+        "id": "q8qets5",
+        "text": "dont' go immediately to image domain vs summary statistics.",
+        "createdAt": "2026-05-19T13:46:29.789Z"
+      }
+    ]
+  }
+]

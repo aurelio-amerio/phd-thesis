@@ -1,0 +1,32 @@
+[
+  {
+    "id": "mzlunt3",
+    "startLine": 71,
+    "endLine": 71,
+    "textPreview": "Credit: Figure 17 from \\cite{Atwood:2009ez}.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "69jm9e6",
+        "text": "we should better clarify which is the thin part of the detector, as it is not entirely clear in this context",
+        "createdAt": "2026-05-18T07:41:19.269Z"
+      },
+      {
+        "id": "kaarqs8",
+        "text": "use notebooklm to fetch additional information, and make this caption a little bit more detailed",
+        "createdAt": "2026-05-18T07:41:39.954Z"
+      },
+      {
+        "id": "ec2bmvy",
+        "text": "the thin section of the tracker refers to the front part of the detector, the one with the better angular resolution",
+        "createdAt": "2026-05-18T07:44:15.299Z"
+      },
+      {
+        "id": "jp7xfls",
+        "text": "[AGENT] Clarified \"thin section\" as the front section (top 12 planes, 0.03 X\u2080 foils). Added sentence about the back section (0.18 X\u2080 foils, ~2\u00d7 wider PSF at 1 GeV) to give context for the design trade-off, sourced from Atwood:2009ez via NotebookLM.",
+        "createdAt": "2026-05-18T07:46:40.152201+00:00"
+      }
+    ]
+  }
+]

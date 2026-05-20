@@ -2,7 +2,7 @@
 \label{sec:3.3}
 Section~\ref{sec:3.2} introduced simulation-based inference as a framework for problems with intractable likelihoods; this section presents the concrete machine-learning architectures and techniques that implement it, and that underpin data-driven inference in astrophysics and cosmology more broadly.
 In practice, the data that these methods must process arrive at one of two levels.
-\emph{Field-level data}---images, sky maps of photon counts, light curves---preserve the full spatial or temporal structure of the signal and call for architectures that can exploit that structure directly.
+\emph{Field-level data}---images, sky maps of photon counts, gravitational-wave strain time series---preserve the full spatial or temporal structure of the signal and call for architectures that can exploit that structure directly.
 \emph{Summary statistics}---energy spectra, variability indicators, flux ratios---compress the raw signal into a low-dimensional feature set that is easier to model but inevitably discards some information in the process.
 The two approaches are complementary: field-level methods retain more information at the cost of architectural complexity, while summary statistics trade information content for a simpler, lower-dimensional input space.
 Both appear in this thesis: Chapter~\ref{ch:6} works at the field level, feeding gamma-ray sky maps into a convolutional network to reconstruct the source-count distribution, while Chapter~\ref{ch:5} operates on spectral and variability features to search for a dark matter subhalo population among unassociated Fermi-LAT sources.
@@ -114,11 +114,11 @@ More recently, \texttt{HEAL-SWIN}~\cite{carlsson2024healswin} adapted the Swin V
 \begin{figure}[t]
   \centering
   \subbottom[Pixel neighbourhood on the HEALPix sphere.\label{fig:nnhealpix-pixels}]{%
-    \includegraphics[width=0.35\textwidth]{chapter_03/figures/nnhealpix_fig2.pdf}}
+    \includegraphics[width=0.35\textwidth]{chapter_03/figures/nnhealpix_fig2}}
   % \hfill
   \hspace{1cm}
   \subbottom[Unrolled convolution scheme.\label{fig:nnhealpix-conv}]{%
-    \includegraphics[width=0.49\textwidth]{chapter_03/figures/nnhealpix_fig3.pdf}}
+    \includegraphics[width=0.49\textwidth]{chapter_03/figures/nnhealpix_fig3}}
   \caption{Convolution on the HEALPix sphere.
   \textit{Left}: each pixel and its nearest neighbours define a local window that can be mapped to a flat patch for convolution.
   \textit{Right}: in the \texttt{NNHealpix} scheme, each pixel and its eight neighbours are unrolled into a nine-element vector, and a standard one-dimensional convolution with stride nine is applied.

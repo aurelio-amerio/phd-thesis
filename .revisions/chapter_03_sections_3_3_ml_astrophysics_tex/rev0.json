@@ -1,0 +1,92 @@
+[
+  {
+    "id": "jea0uil",
+    "startLine": 70,
+    "endLine": 83,
+    "textPreview": "The choice of cost function determines what the network learns.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "46qshzb",
+        "text": "I think that this section should be more general",
+        "createdAt": "2026-05-19T09:22:40.582Z"
+      },
+      {
+        "id": "elwbieq",
+        "text": "In this thesis, we are using in chapter 6 this laplace approximation of a bayesian NN. This is a methodology details that is more suited to chapter 6, in the paper text, while here we should have a more general explanation of what is the cost function.",
+        "createdAt": "2026-05-19T09:24:36.420Z"
+      },
+      {
+        "id": "k3wkcmv",
+        "text": "I would remove the mention to the heteroscedastic errors etc, and the modified MSE error, as that's something I was doing in the past,and I don't want to give it too much emphasis",
+        "createdAt": "2026-05-19T09:25:16.789Z"
+      },
+      {
+        "id": "t7rbx6m",
+        "text": "modern SBI techniques don't do that, ppl use normalising flows or diffusion models, so let's not highlight too much our dark past",
+        "createdAt": "2026-05-19T09:25:46.367Z"
+      },
+      {
+        "id": "4tv7x3z",
+        "text": "[AGENT] Addressed in \u00a73.3.2 rewrite: loss-function paragraph is now general (MSE, cross-entropy, NLL as unifying view). Heteroscedastic NLL equation removed from \u00a73.3 entirely \u2014 only a one-sentence mention with forward-pointer to sec:bayesian-error in Ch 6 for the formalism.",
+        "createdAt": "2026-05-19T12:54:22.382046+00:00"
+      }
+    ]
+  },
+  {
+    "id": "fu3sqph",
+    "startLine": 87,
+    "endLine": 90,
+    "textPreview": "In standard dropout, the drop probability $p$ must be set manually or tuned via grid search---a procedure that becomes impractical for large architectures.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "vno5edc",
+        "text": "concernign the regularization, people are moving away from dropout. Nowadays we use many different techniques for batch normalization, and dropout is being used less and less (because we don't want to waste part of our weights). We should focus more on the idea that since models have lot of parameters, regularization is required in order to make sure we don't overfit.",
+        "createdAt": "2026-05-19T09:28:07.818Z"
+      },
+      {
+        "id": "8lqfbe4",
+        "text": "In general, for these ML topics and SBI, you can also query the \"gensbi - paper\" notebook, which has more ML specific information relevant to modern SBI methods",
+        "createdAt": "2026-05-19T09:28:52.840Z"
+      },
+      {
+        "id": "3ck89ue",
+        "text": "[AGENT] Addressed in \u00a73.3.2 rewrite: regularization paragraph now names weight decay, dropout, batch/layer normalisation, data augmentation, and early stopping as complementary techniques typically used in combination. Concrete dropout is mentioned as one valid choice (Ch 6's recipe), not as \"the\" regularization method.",
+        "createdAt": "2026-05-19T12:54:24.698251+00:00"
+      }
+    ]
+  },
+  {
+    "id": "vhlua9z",
+    "startLine": 97,
+    "endLine": 97,
+    "textPreview": "\\subsection{Density Estimation}",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "fygij79",
+        "text": "I think that this section needs to be better scoped",
+        "createdAt": "2026-05-19T09:31:04.255Z"
+      },
+      {
+        "id": "30tbb0n",
+        "text": "density estimation is a very broad task, which is being tackled with MCMC, beside SBI methods like NF for NPE, NLE, as well as NRE methodologies, diffusion models etc. So this is a very broad landscape that can be tackled from many point of views. We should make it clear that here we want to introduce some information about the methodologies that are actually being used in ch 5",
+        "createdAt": "2026-05-19T09:32:21.463Z"
+      },
+      {
+        "id": "j2ep0zi",
+        "text": "in general, this part on density estimation needs reframing",
+        "createdAt": "2026-05-19T10:13:37.835Z"
+      },
+      {
+        "id": "p6w9ekz",
+        "text": "[AGENT] Addressed in \u00a73.3.4 rewrite: new landscape paragraph acknowledges neural density estimators (normalising flows, score-based diffusion, flow matching) with citations, then explicitly scopes the rest to classical methods used in Ch 5. Opening sentence callbacks to the two-paradigm framing.",
+        "createdAt": "2026-05-19T12:54:26.547846+00:00"
+      }
+    ]
+  }
+]

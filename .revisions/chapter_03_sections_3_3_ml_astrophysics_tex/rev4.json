@@ -1,0 +1,130 @@
+[
+  {
+    "id": "qq3823d",
+    "startLine": 4,
+    "endLine": 4,
+    "textPreview": "Astrophysics and cosmology have, over the past decade, increasingly turned to machine learning to extract information from observational data---complementing rather than replacing the simulation-based inference framework introduced in Section~\\ref{sec:3.2}.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "sx9rho8",
+        "text": "fix this phrase",
+        "createdAt": "2026-05-19T14:57:36.241Z"
+      },
+      {
+        "id": "e267zoh",
+        "text": "[AGENT] Implemented all changes: (1) Rewrote section opener to bridge from \u00a73.2 instead of generic survey-style phrasing; (2) Added time series / gravitational waves to field-level data examples; (3) Rephrased roadmap as \"introduces the concepts and architectures\" instead of \"vocabulary\"; (4) Removed the \"primer rather than a survey\" sentence; (5) Folded ELBO mention into the KL divergence sentence en passant, removed standalone sentence; (6) Changed KDE reference to \"we refer the interested reader to...\"",
+        "createdAt": "2026-05-19T15:09:16.452152+00:00"
+      }
+    ],
+    "previousVersionContext": "-The simulation-based inference framework of Section~\\ref{sec:3.2} already uses machine learning to approximate intractable posteriors, but machine learning enters this thesis through two distinct paradigms.\n-\\emph{Image-domain analyses} feed pixel arrays directly into a neural network: convolutional architectures are well suited to this setting because their inductive biases---locality, weight sharing, translation equivariance---align with how astrophysical signals appear on detectors.\n-Chapter~\\ref{ch:6} adopts this paradigm to reconstruct the source-count distribution from gamma-ray sky maps.\n-\\emph{Summary-statistic analyses}, in contrast, first reduce each object to a low-dimensional feature vector and apply machine learning to those features; Chapter~\\ref{ch:5} adopts this paradigm to search for a dark matter subhalo population among unassociated Fermi-LAT sources.\n-Both paradigms are widely used in astrophysics; the choice depends on data type and scientific question.",
+    "currentVersionContext": "+Astrophysics and cosmology have, over the past decade, increasingly turned to machine learning to extract information from observational data---complementing rather than replacing the simulation-based inference framework introduced in Section~\\ref{sec:3.2}.\n+Across these fields, the way machine learning is brought to bear on the data tends to fall into two broad families, distinguished by the level at which the observables enter the model.\n+The first family operates on \\emph{field-level data}: the observable is treated as a spatial (or spatio-spectral) field, most commonly an image produced by a telescope or a sky map of photon counts, and a neural network is applied directly to that field.\n+The second family operates on \\emph{summary statistics}: each object, region, or epoch is first reduced to a low-dimensional set of features---an energy spectrum, a set of variability indicators, a handful of moments---and machine learning is applied to those features rather than to the raw signal.\n+The two are not mutually exclusive, and the same scientific question can often be addressed from either angle; the choice is dictated by what the data look like, what information is preserved or discarded by a given summary, and what computational and statistical resources are available.\n+The two analyses presented in this thesis fall on opposite sides of this divide and illustrate it concretely: Chapter~\\ref{ch:6} works at the field level, feeding gamma-ray sky maps into a convolutional network to reconstruct the source-count distribution, while Chapter~\\ref{ch:5} works with per-source spectral and variability summary statistics to search for a dark matter subhalo population among unassociated Fermi-LAT sources."
+  },
+  {
+    "id": "lpt7x9v",
+    "startLine": 6,
+    "endLine": 6,
+    "textPreview": "The first family operates on \\emph{field-level data}: the observable is treated as a spatial (or spatio-spectral) field, most commonly an image produced by a telescope or a sky map of photon counts, and a neural network is applied directly to that field.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "kyykqrh",
+        "text": "include time series (for example for gravitational waves)",
+        "createdAt": "2026-05-19T14:58:38.865Z"
+      },
+      {
+        "id": "bpdo6ua",
+        "text": "[AGENT] Implemented all changes: (1) Rewrote section opener to bridge from \u00a73.2 instead of generic survey-style phrasing; (2) Added time series / gravitational waves to field-level data examples; (3) Rephrased roadmap as \"introduces the concepts and architectures\" instead of \"vocabulary\"; (4) Removed the \"primer rather than a survey\" sentence; (5) Folded ELBO mention into the KL divergence sentence en passant, removed standalone sentence; (6) Changed KDE reference to \"we refer the interested reader to...\"",
+        "createdAt": "2026-05-19T15:09:16.452176+00:00"
+      }
+    ],
+    "previousVersionContext": "-The simulation-based inference framework of Section~\\ref{sec:3.2} already uses machine learning to approximate intractable posteriors, but machine learning enters this thesis through two distinct paradigms.\n-\\emph{Image-domain analyses} feed pixel arrays directly into a neural network: convolutional architectures are well suited to this setting because their inductive biases---locality, weight sharing, translation equivariance---align with how astrophysical signals appear on detectors.\n-Chapter~\\ref{ch:6} adopts this paradigm to reconstruct the source-count distribution from gamma-ray sky maps.\n-\\emph{Summary-statistic analyses}, in contrast, first reduce each object to a low-dimensional feature vector and apply machine learning to those features; Chapter~\\ref{ch:5} adopts this paradigm to search for a dark matter subhalo population among unassociated Fermi-LAT sources.\n-Both paradigms are widely used in astrophysics; the choice depends on data type and scientific question.",
+    "currentVersionContext": "+Astrophysics and cosmology have, over the past decade, increasingly turned to machine learning to extract information from observational data---complementing rather than replacing the simulation-based inference framework introduced in Section~\\ref{sec:3.2}.\n+Across these fields, the way machine learning is brought to bear on the data tends to fall into two broad families, distinguished by the level at which the observables enter the model.\n+The first family operates on \\emph{field-level data}: the observable is treated as a spatial (or spatio-spectral) field, most commonly an image produced by a telescope or a sky map of photon counts, and a neural network is applied directly to that field.\n+The second family operates on \\emph{summary statistics}: each object, region, or epoch is first reduced to a low-dimensional set of features---an energy spectrum, a set of variability indicators, a handful of moments---and machine learning is applied to those features rather than to the raw signal.\n+The two are not mutually exclusive, and the same scientific question can often be addressed from either angle; the choice is dictated by what the data look like, what information is preserved or discarded by a given summary, and what computational and statistical resources are available.\n+The two analyses presented in this thesis fall on opposite sides of this divide and illustrate it concretely: Chapter~\\ref{ch:6} works at the field level, feeding gamma-ray sky maps into a convolutional network to reconstruct the source-count distribution, while Chapter~\\ref{ch:5} works with per-source spectral and variability summary statistics to search for a dark matter subhalo population among unassociated Fermi-LAT sources."
+  },
+  {
+    "id": "viqdzo7",
+    "startLine": 11,
+    "endLine": 11,
+    "textPreview": "This section provides the minimum machine-learning vocabulary needed to read those two chapters: the canonical learning tasks (Section~\\ref{sec:3.3.1}); neural networks, their training, and uncertainty estimation (Section~\\ref{sec:3.3.2}); convolutional architectures and their spherical extensions for sky-map data (Section~\\ref{sec:3.3.3}); and classical non-parametric density estimation for population-level inference on feature vectors (Section~\\ref{sec:3.3.4}).",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "cee2dad",
+        "text": "rather than vocabulary, phrase this as an introduction to the topics",
+        "createdAt": "2026-05-19T14:59:29.381Z"
+      },
+      {
+        "id": "avqwali",
+        "text": "[AGENT] Implemented all changes: (1) Rewrote section opener to bridge from \u00a73.2 instead of generic survey-style phrasing; (2) Added time series / gravitational waves to field-level data examples; (3) Rephrased roadmap as \"introduces the concepts and architectures\" instead of \"vocabulary\"; (4) Removed the \"primer rather than a survey\" sentence; (5) Folded ELBO mention into the KL divergence sentence en passant, removed standalone sentence; (6) Changed KDE reference to \"we refer the interested reader to...\"",
+        "createdAt": "2026-05-19T15:09:16.452180+00:00"
+      }
+    ]
+  },
+  {
+    "id": "aq72cib",
+    "startLine": 12,
+    "endLine": 12,
+    "textPreview": "The treatment is a primer rather than a survey; references are given throughout for readers who want more.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "e2yp9ep",
+        "text": "this phrase is useless",
+        "createdAt": "2026-05-19T14:59:42.804Z"
+      },
+      {
+        "id": "knltucg",
+        "text": "[AGENT] Implemented all changes: (1) Rewrote section opener to bridge from \u00a73.2 instead of generic survey-style phrasing; (2) Added time series / gravitational waves to field-level data examples; (3) Rephrased roadmap as \"introduces the concepts and architectures\" instead of \"vocabulary\"; (4) Removed the \"primer rather than a survey\" sentence; (5) Folded ELBO mention into the KL divergence sentence en passant, removed standalone sentence; (6) Changed KDE reference to \"we refer the interested reader to...\"",
+        "createdAt": "2026-05-19T15:09:16.452183+00:00"
+      }
+    ]
+  },
+  {
+    "id": "0aq3ldv",
+    "startLine": 52,
+    "endLine": 52,
+    "textPreview": "For latent-variable models in which the marginal likelihood is intractable, this is replaced by the evidence lower bound (ELBO), a tractable lower bound on the log-marginal-likelihood that recovers maximum-likelihood estimation when the bound becomes tight.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "uajlw1a",
+        "text": "remove this. mention the ELBO in the KL part en passant",
+        "createdAt": "2026-05-19T15:01:40.852Z"
+      },
+      {
+        "id": "fmqn1w7",
+        "text": "[AGENT] Implemented all changes: (1) Rewrote section opener to bridge from \u00a73.2 instead of generic survey-style phrasing; (2) Added time series / gravitational waves to field-level data examples; (3) Rephrased roadmap as \"introduces the concepts and architectures\" instead of \"vocabulary\"; (4) Removed the \"primer rather than a survey\" sentence; (5) Folded ELBO mention into the KL divergence sentence en passant, removed standalone sentence; (6) Changed KDE reference to \"we refer the interested reader to...\"",
+        "createdAt": "2026-05-19T15:09:16.452184+00:00"
+      }
+    ],
+    "previousVersionContext": "-The choice of cost function determines what the network learns.\n-For a standard regression problem, the mean squared error $\\mathcal{J} = \\sum_i (y_i^\\mathrm{true} - y_i^\\mathrm{pred})^2$ penalises deviations between predictions and targets uniformly; for classification, the cross-entropy loss measures the divergence between predicted class probabilities and one-hot labels; and for neural density estimation, usually a variant of the Kuller-Leibler divergence or Evidence Lower Bound (ELBO) is adopted. \n-All of them can be understood as special cases of the negative log-likelihood under an appropriate probabilistic model~\\cite{bishop,Murphy:2022pml}.\n-When the noise level varies across the output space, the variance can itself be parameterised as a network output, yielding the heteroscedastic Gaussian negative log-likelihood~\\cite{heteroscedastic-error}; the formalism is presented in Section~\\ref{sec:bayesian-error}, where Chapter~\\ref{ch:6} puts it to use.",
+    "currentVersionContext": "+The choice of cost function determines what the network learns, and all of the losses used in this thesis are best understood as instances of maximum-likelihood estimation under an appropriate probabilistic model~\\cite{bishop,Murphy:2022pml}.\n+For a standard regression problem, the mean squared error $\\mathcal{J} = \\sum_i (y_i^\\mathrm{true} - y_i^\\mathrm{pred})^2$ penalises deviations between predictions and targets uniformly and coincides, up to constants, with the negative log-likelihood of the targets under a homoscedastic Gaussian noise model.\n+For classification, the cross-entropy loss measures the divergence between predicted class probabilities and one-hot labels and is equivalently the negative log-likelihood of the observed labels under a categorical model.\n+Density estimation is most commonly cast as minimising the forward Kullback--Leibler divergence between the data distribution and a parametric model; because the data-side entropy is independent of the model parameters, this minimisation is equivalent to maximising the log-likelihood of the data, and the two prescriptions yield identical gradients.\n+For latent-variable models in which the marginal likelihood is intractable, this is replaced by the evidence lower bound (ELBO), a tractable lower bound on the log-marginal-likelihood that recovers maximum-likelihood estimation when the bound becomes tight.\n+When the noise level varies across the output space, the Gaussian variance can itself be parameterised as a network output, yielding the heteroscedastic Gaussian negative log-likelihood~\\cite{heteroscedastic-error}; the formalism is presented in Section~\\ref{sec:bayesian-error}, where Chapter~\\ref{ch:6} puts it to use."
+  },
+  {
+    "id": "n7mocwu",
+    "startLine": 144,
+    "endLine": 144,
+    "textPreview": "A non-parametric approach to this problem is provided by Kernel Density Estimation (KDE), for which we defer a comprehensive textbook treatment to Section~2.5.1 of~\\cite{bishop}.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "b82n0s1",
+        "text": "use a more standard scientifical phrase. Like, we point the interested reader to...",
+        "createdAt": "2026-05-19T15:02:58.484Z"
+      },
+      {
+        "id": "5umczxa",
+        "text": "[AGENT] Implemented all changes: (1) Rewrote section opener to bridge from \u00a73.2 instead of generic survey-style phrasing; (2) Added time series / gravitational waves to field-level data examples; (3) Rephrased roadmap as \"introduces the concepts and architectures\" instead of \"vocabulary\"; (4) Removed the \"primer rather than a survey\" sentence; (5) Folded ELBO mention into the KL divergence sentence en passant, removed standalone sentence; (6) Changed KDE reference to \"we refer the interested reader to...\"",
+        "createdAt": "2026-05-19T15:09:16.452186+00:00"
+      }
+    ],
+    "previousVersionContext": "-A non-parametric approach to this problem is provided by Kernel Density Estimation (KDE).",
+    "currentVersionContext": "+A non-parametric approach to this problem is provided by Kernel Density Estimation (KDE), for which we defer a comprehensive textbook treatment to Section~2.5.1 of~\\cite{bishop}."
+  }
+]

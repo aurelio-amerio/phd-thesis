@@ -114,11 +114,11 @@ More recently, \texttt{HEAL-SWIN}~\cite{carlsson2024healswin} adapted the Swin V
 \begin{figure}[t]
   \centering
   \subbottom[Pixel neighbourhood on the HEALPix sphere.\label{fig:nnhealpix-pixels}]{%
-    \includegraphics[width=0.35\textwidth]{chapter_03/figures/nnhealpix_fig2.pdf}}
+    \includegraphics[width=0.35\textwidth]{chapter_03/figures/nnhealpix_fig2}}
   % \hfill
   \hspace{1cm}
   \subbottom[Unrolled convolution scheme.\label{fig:nnhealpix-conv}]{%
-    \includegraphics[width=0.49\textwidth]{chapter_03/figures/nnhealpix_fig3.pdf}}
+    \includegraphics[width=0.49\textwidth]{chapter_03/figures/nnhealpix_fig3}}
   \caption{Convolution on the HEALPix sphere.
   \textit{Left}: each pixel and its nearest neighbours define a local window that can be mapped to a flat patch for convolution.
   \textit{Right}: in the \texttt{NNHealpix} scheme, each pixel and its eight neighbours are unrolled into a nine-element vector, and a standard one-dimensional convolution with stride nine is applied.

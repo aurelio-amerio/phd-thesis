@@ -1,0 +1,48 @@
+{
+  "version": 3,
+  "sourceFile": "chapter_01/sections/1.1_evidence_for_dark_matter.tex",
+  "revisions": [
+    {
+      "revision": 0,
+      "snapshotFile": "1.1_evidence_for_dark_matter.rev0.tex",
+      "annotationsFile": "rev0.json",
+      "createdAt": "2026-05-20T15:00:40.121Z"
+    },
+    {
+      "revision": 1,
+      "snapshotFile": "1.1_evidence_for_dark_matter.rev1.tex",
+      "annotationsFile": "rev1.json",
+      "createdAt": "2026-05-20T15:01:48.067Z"
+    },
+    {
+      "revision": 2,
+      "snapshotFile": "1.1_evidence_for_dark_matter.rev2.tex",
+      "annotationsFile": "rev2.json",
+      "createdAt": "2026-05-20T15:12:00.288Z"
+    },
+    {
+      "revision": 3,
+      "snapshotFile": "1.1_evidence_for_dark_matter.rev3.tex",
+      "annotationsFile": "rev3.json",
+      "createdAt": "2026-05-20T15:30:07.922Z"
+    },
+    {
+      "revision": 4,
+      "snapshotFile": "1.1_evidence_for_dark_matter.rev4.tex",
+      "annotationsFile": "rev4.json",
+      "createdAt": "2026-05-20T15:30:18.765Z"
+    },
+    {
+      "revision": 5,
+      "snapshotFile": "1.1_evidence_for_dark_matter.rev5.tex",
+      "annotationsFile": "rev5.json",
+      "createdAt": "2026-05-20T15:31:53.972Z"
+    },
+    {
+      "revision": 6,
+      "snapshotFile": "1.1_evidence_for_dark_matter.rev6.tex",
+      "annotationsFile": "rev6.json",
+      "createdAt": "2026-05-20T15:32:12.956Z"
+    }
+  ]
+}

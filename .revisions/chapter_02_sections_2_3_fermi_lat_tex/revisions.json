@@ -1,0 +1,48 @@
+{
+  "version": 3,
+  "sourceFile": "chapter_02/sections/2.3_fermi_lat.tex",
+  "revisions": [
+    {
+      "revision": 0,
+      "snapshotFile": "2.3_fermi_lat.rev0.tex",
+      "annotationsFile": "rev0.json",
+      "createdAt": "2026-05-18T07:40:49.825Z"
+    },
+    {
+      "revision": 1,
+      "snapshotFile": "2.3_fermi_lat.rev1.tex",
+      "annotationsFile": "rev1.json",
+      "createdAt": "2026-05-18T07:46:42.450Z"
+    },
+    {
+      "revision": 2,
+      "snapshotFile": "2.3_fermi_lat.rev2.tex",
+      "annotationsFile": "rev2.json",
+      "createdAt": "2026-05-18T07:59:34.661Z"
+    },
+    {
+      "revision": 3,
+      "snapshotFile": "2.3_fermi_lat.rev3.tex",
+      "annotationsFile": "rev3.json",
+      "createdAt": "2026-05-18T08:19:29.837Z"
+    },
+    {
+      "revision": 4,
+      "snapshotFile": "2.3_fermi_lat.rev4.tex",
+      "annotationsFile": "rev4.json",
+      "createdAt": "2026-05-18T08:28:06.520Z"
+    },
+    {
+      "revision": 5,
+      "snapshotFile": "2.3_fermi_lat.rev5.tex",
+      "annotationsFile": "rev5.json",
+      "createdAt": "2026-05-18T08:33:53.150Z"
+    },
+    {
+      "revision": 6,
+      "snapshotFile": "2.3_fermi_lat.rev6.tex",
+      "annotationsFile": "rev6.json",
+      "createdAt": "2026-05-18T08:39:12.057Z"
+    }
+  ]
+}
