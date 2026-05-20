@@ -78,3 +78,36 @@ Skills live in `.agent/skills/` (antigravity) and `.claude/skills/` (Claude Code
 - `chapter_outline.md` per chapter is the authoritative section-level specification.
 - `outline.md` is the master thesis-level narrative document.
 - The `.revisions/` directory contains revision directives from supervisor feedback.
+
+## Style and Tone
+
+The voice is consistent across hand-written and paper-integrated chapters. Match it when drafting new prose. (Inferred from the compiled `main.pdf` as of May 2026 — sample Ch. 2, 3, 4, 6.)
+
+**Voice and person.** First-person plural ("we", "our analysis"). The author takes positions: names competing camps, summarizes community consensus, calls open questions open. Avoid effacing constructs ("the present author") and false neutrality on contested issues.
+
+**Sentence and paragraph rhythm.**
+- Long, multi-clause sentences. Em dashes for parenthetical inserts; colons and semicolons to chain related ideas.
+- Paragraphs are **long** (typically 6–12 sentences) and self-contained: topic sentence → development → implication/transition.
+- **No bullet points in narrative prose.** Numbered enumerations only when comparing alternatives or stating discrete hypotheses (cf. the five MSP-scaling hypotheses in §4.5.2).
+
+**Section openings.** Each chapter and major section opens with (1) a broad-scene paragraph ("The gamma-ray sky is rich and complex..."), (2) why standard methods fall short, and (3) what this chapter contributes — with an explicit roadmap: *"Section 2.1 reviews..., Section 2.2 surveys..., Finally, Section 2.3 describes..."*
+
+**Bold/italic lead-ins.** Subsections use bold or italic paragraph lead-ins for scannable structure: `\textbf{Application preview.}`, `\textbf{Credible intervals versus confidence intervals.}`, `\emph{Neglect of spatial correlations.}` Italicize *technical terms on first appearance* (e.g. *simulation-based inference*, *pion bump*, *aleatoric*/*epistemic*).
+
+**Application-preview pattern.** Methodological subsections close with a bolded `\textbf{Application preview.}` paragraph naming the chapter where the abstract method is concretely used. This is the main device that ties Chapter 3 to Chapters 5–9.
+
+**Cross-references as connective tissue.** Heavy forward and backward referencing — "as developed in Section 3.2", "(cf. Section 2.2.2)", "we defer the details to Chapter 6". Use these liberally; they make the integrated papers read as one thesis rather than a stapled collection.
+
+**Citations.** JHEP numbered style: `[22]`, `[76, 77]`. In running prose, refer to authors as "Leane and Slatyer", "Buschmann et al."
+
+**Calibrated hedging.** Quantitative when possible ("roughly 17 ± 2%", "of order 10⁵", "approximately"). Avoid vague hedges ("perhaps", "might possibly", "somewhat"). When a question is unsettled, say so plainly: *"remains an open problem"*, *"should be regarded as provisional"*.
+
+**Tense.** Past for results obtained ("we measured", "we detected"). Present for general scientific facts and methodological description ("hadronic emission dominates", "we adopt").
+
+**Recurring connectives.** *Rather than X, ...*; *In practice, ...*; *In the limit of ...*; *Crucially*, *Specifically*, *Notably*; *Taken together, ...* (closes synthesis paragraphs).
+
+**Figures and tables.** Captions are full descriptive sentences, not labels. End with `Credit: ...` when reusing external figures. Reference inline as `Fig. X.Y` / `Table X.Y`.
+
+**Spelling.** US/UK spelling is inconsistent across paper-integrated sections (each paper carried its own convention). Do not normalize globally — follow the surrounding section.
+
+**WIP markers.** `\aure{...}` orange annotations mark in-progress notes, missing citations, "double-check this" reminders. Keep them in drafts; resolve before final submission. Do not silently delete them.
