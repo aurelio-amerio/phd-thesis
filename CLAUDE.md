@@ -60,6 +60,8 @@ These are the primary ways to drive thesis writing. Invoke via Claude Code:
 
 The `/draft` workflow runs a three-layer writing pipeline: `scientific-writing` → `humanizer` → personal style adaptation. It automatically performs a review pass at the end.
 
+**Review in fresh context.** Always dispatch review workflows (humanizer, scientific-writing, `/referee`) in independent subagents with fresh context — never inline in the drafting conversation. A fresh agent reads the prose cold, avoiding the familiarity bias that makes the drafter blind to issues.
+
 Skills live in `.agent/skills/` (antigravity) and `.claude/skills/` (Claude Code), invoked via the Skill tool. Slash commands are defined in `.claude/commands/`.
 
 ## Key Macros
