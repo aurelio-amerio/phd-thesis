@@ -215,6 +215,51 @@
     ]
   },
   {
+    "id": "ube9kzd",
+    "startLine": 109,
+    "endLine": 109,
+    "textPreview": "As CMB photons propagate toward us from the surface of last scattering, their paths are further deflected by intervening large-scale structure, an effect known as CMB gravitational lensing.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "e125ucd",
+        "text": "again, technical cosmological terminology. we need to say what is the surface of the last scattering. I don't want to discuss in detail the history of the universe, but some more context is needed to understand this section",
+        "createdAt": "2026-05-21T08:44:36.872Z"
+      }
+    ]
+  },
+  {
+    "id": "3eou1by",
+    "startLine": 109,
+    "endLine": 110,
+    "textPreview": "As CMB photons propagate toward us from the surface of last scattering, their paths are further deflected by intervening large-scale structure, an effect known as CMB gravitational lensing.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "zd9kjqa",
+        "text": "maybe this is too technical, and we don't need to include it. let's think about it, this is not a cosmology thesis, and this cmb section is to basically show that CMB sets constraints on DM abundance, not really explain every way we can do it",
+        "createdAt": "2026-05-21T08:45:53.894Z"
+      }
+    ]
+  },
+  {
+    "id": "9alvihf",
+    "startLine": 111,
+    "endLine": 111,
+    "textPreview": "The dramatic impact of cold dark matter on both the CMB and matter power spectra is illustrated in Figure~\\ref{fig:cmb_lss}: the bottom row compares the observed spectra with those predicted in a universe without dark matter, showing just how radically different the cosmic picture would be.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "nqwhvhr",
+        "text": "as mentioned, here there will be some reshuffling needed once we break the figure apart",
+        "createdAt": "2026-05-21T08:47:24.473Z"
+      }
+    ]
+  },
+  {
     "id": "29mm8pp",
     "startLine": 113,
     "endLine": 125,
@@ -241,6 +286,116 @@
         "id": "cm9afgz",
         "text": "I would query cirelli with nlm to get the exact references for each of the figures included, as we need to cite them, not just cirelli. We would say Credit: [original papers]. and then [adapted from Cirelli ...]",
         "createdAt": "2026-05-21T08:38:35.629Z"
+      }
+    ]
+  },
+  {
+    "id": "a0qxqph",
+    "startLine": 128,
+    "endLine": 128,
+    "textPreview": "In a purely baryonic universe, structure formation would have been severely hindered: before recombination, baryons were tightly coupled to photons through Thomson scattering, and their density perturbations were erased on small scales by photon diffusion --- a process known as Silk damping~\\cite{Cirelli:2024ssz}.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "2n0u7wi",
+        "text": "again, thecnical cosmological part. what is recombination? we need to explain the context for cosmological evolution for the reader to understand what is going on. So, to sum it up, don't give for granted that the reader knows everything about cosmology",
+        "createdAt": "2026-05-21T08:48:48.065Z"
+      }
+    ]
+  },
+  {
+    "id": "6ncm8ec",
+    "startLine": 130,
+    "endLine": 130,
+    "textPreview": "The potential wells established by dark matter then served as the seeds into which baryons fell after decoupling, seeding the formation of galaxies and clusters~\\cite{Cirelli:2024ssz}.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "ptxuxcn",
+        "text": "do we talk about this later (i.e. the halo model)? if so we should forward link to that section to give more information on structure formation. I think we might say something about this in chapter 5 when talking about dark matter subhalos (as we probably introduced how halo form), but check better",
+        "createdAt": "2026-05-21T08:50:06.539Z"
+      }
+    ]
+  },
+  {
+    "id": "4m15lzm",
+    "startLine": 133,
+    "endLine": 135,
+    "textPreview": "Baryon acoustic oscillations (BAO) preserve the imprint of the primordial sound waves frozen into the matter distribution at recombination.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "z2vaqrm",
+        "text": "BAO are something somewhat recently discovered, we need to add more context on what they are, and cite the relevant papers",
+        "createdAt": "2026-05-21T08:51:58.662Z"
+      }
+    ]
+  },
+  {
+    "id": "zbxjtya",
+    "startLine": 136,
+    "endLine": 137,
+    "textPreview": "Observations of Type~Ia supernovae as standardizable candles, meanwhile, established the accelerated expansion of the Universe~\\cite{SupernovaSearchTeam:1998fmf,SupernovaCosmologyProject:1998vns}.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "a87aaat",
+        "text": "here we jumped to dark energy without connections to the part before",
+        "createdAt": "2026-05-21T08:52:42.247Z"
+      }
+    ]
+  },
+  {
+    "id": "od3xstt",
+    "startLine": 139,
+    "endLine": 139,
+    "textPreview": "The final, logically essential element is Big Bang Nucleosynthesis.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "ilvvyt8",
+        "text": "why logically? these connecting phrases need to make sense, don't use useless words. use /scientific-writing",
+        "createdAt": "2026-05-21T08:53:27.992Z"
+      }
+    ]
+  },
+  {
+    "id": "r0kiokp",
+    "startLine": 141,
+    "endLine": 141,
+    "textPreview": "Measured primordial abundances of deuterium, $^4$He, and $^7$Li tightly constrain the baryon density to $\\Omega_b h^2 \\approx 0.022$~\\cite{Cirelli:2024ssz}, in excellent agreement with the independent CMB determination.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "s5qqi8d",
+        "text": "cite the original paper",
+        "createdAt": "2026-05-21T08:53:44.996Z"
+      }
+    ]
+  },
+  {
+    "id": "477mmrs",
+    "startLine": 142,
+    "endLine": 144,
+    "textPreview": "Since the total matter density is $\\Omega_m h^2 \\approx 0.14$ --- nearly seven times larger --- the majority of the matter in the Universe cannot be made of baryons~\\cite{Cirelli:2024ssz}.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "ppwgii5",
+        "text": "the fact that DM cannot be baryonic is something on which we need to expand a bit more. Not necessarily with more information, but this section needs more space to breath.",
+        "createdAt": "2026-05-21T08:54:37.350Z"
+      },
+      {
+        "id": "5cyducm",
+        "text": "we need to turn the argument a bit upside down. we need to ask the question (to conclude), could dark matter be a new form of baryonic matter? So far we jsut said that it is not interacting, or very weakly so, why can't it be some kind of new neutrino for example? (I don't mean sterile neutrinos, but like, something that interacts weakly). then we need to explain why DM cannot be of barionic origin",
+        "createdAt": "2026-05-21T08:56:18.673Z"
       }
     ]
   }
