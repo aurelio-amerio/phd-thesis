@@ -1,0 +1,227 @@
+[
+  {
+    "id": "juueqgj",
+    "startLine": 107,
+    "endLine": 107,
+    "textPreview": "These anisotropies are conventionally decomposed into angular scales via the temperature power spectrum $C_\\ell$.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "bustkir",
+        "text": "angular power spectrum",
+        "createdAt": "2026-05-21T10:13:03.622Z"
+      },
+      {
+        "id": "isqhb24",
+        "text": "maybe say a bit more about what information in general the power spectrum contains? it's a more general quantity, that applies to any field, not only CMB",
+        "createdAt": "2026-05-21T10:14:52.333Z"
+      },
+      {
+        "id": "holl2d3",
+        "text": "[AGENT] Added: \"which quantifies the variance of temperature fluctuations at each angular multipole \u2113 \u2014 with larger \u2113 corresponding to smaller angular separations on the sky.\"",
+        "createdAt": "2026-05-21T10:25:18.496675+00:00"
+      }
+    ],
+    "previousVersionContext": "-The cosmic microwave background radiation --- the thermal afterglow of the hot, dense early Universe --- encodes detailed information about the matter content of the cosmos.\n-The temperature anisotropy power spectrum, measured with high precision by the Planck satellite, encodes the physics of acoustic oscillations in the primordial baryon-photon plasma before recombination~\\cite{Aghanim:2018eyx,Cirelli:2024ssz}.\n-Baryons load the oscillating fluid, enhancing the compressional (odd-numbered) acoustic peaks relative to the rarefaction (even-numbered) ones; the ratio of the first to the second peak therefore directly constrains the physical baryon density~\\cite{Cirelli:2024ssz}.\n-Dark matter, on the other hand, does not couple to the photon pressure and instead provides the gravitational scaffolding within which the oscillations occur.\n-Its abundance sets the overall depth of the potential wells and modulates the relative heights of successive peaks --- in particular, a universe without cold dark matter would produce a strongly suppressed third peak, in clear contradiction with the data~\\cite{Cirelli:2024ssz}.",
+    "currentVersionContext": "+The cosmic microwave background (CMB) radiation is the thermal relic of the hot, dense early Universe.\n+Roughly 380,000 years after the Big Bang, the expanding cosmos cooled sufficiently for protons and electrons to combine into neutral hydrogen --- an epoch known as \\emph{recombination}.\n+Before this transition, baryonic matter existed as a hot plasma tightly coupled to photons through Thomson scattering; after recombination, photons streamed freely, and this ``last scattering surface'' is what we observe today as the CMB.\n+Its temperature is remarkably uniform at ${\\sim}\\,2.725$~K, but carries tiny anisotropies at the level of ${\\sim}\\,10^{-5}$ that encode a wealth of information about the matter-energy content of the cosmos.\n+\n+These anisotropies are conventionally decomposed into angular scales via the temperature power spectrum $C_\\ell$.\n+Peaks in $C_\\ell$ correspond to sound waves in the pre-recombination baryon-photon plasma that were caught at maximum compression or rarefaction at the moment of decoupling; the positions and heights of these peaks encode the composition and geometry of the Universe~\\cite{Aghanim:2018eyx,Cirelli:2024ssz}.\n+Baryons load the oscillating fluid, enhancing the compressional (odd-numbered) peaks relative to the rarefaction (even-numbered) ones, so that the ratio of the first to the second peak directly constrains the physical baryon density.\n+Dark matter, which does not couple to the photon pressure, provides the gravitational scaffolding within which the oscillations occur: its abundance sets the overall depth of the potential wells and modulates the relative heights of successive peaks --- in particular, a universe without cold dark matter would produce a strongly suppressed third peak, in clear contradiction with the observed spectrum~\\cite{Cirelli:2024ssz}."
+  },
+  {
+    "id": "g0mwm0i",
+    "startLine": 110,
+    "endLine": 110,
+    "textPreview": "Dark matter, which does not couple to the photon pressure, provides the gravitational scaffolding within which the oscillations occur: its abundance sets the overall depth of the potential wells and modulates the relative heights of successive peaks --- in particular, a universe without cold dark matter would produce a strongly suppressed third peak, in clear contradiction with the observed spectrum~\\cite{Cirelli:2024ssz}.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "vz7wq5t",
+        "text": "here reference the figure we add on the CMB power spectrum, to make things clearer",
+        "createdAt": "2026-05-21T10:15:56.957Z"
+      },
+      {
+        "id": "1v8wejg",
+        "text": "[AGENT] Added \"(cf. Figure~\\ref{fig:cmb})\" inline at the third peak suppression statement.",
+        "createdAt": "2026-05-21T10:25:20.377305+00:00"
+      }
+    ],
+    "previousVersionContext": "-The cosmic microwave background radiation --- the thermal afterglow of the hot, dense early Universe --- encodes detailed information about the matter content of the cosmos.\n-The temperature anisotropy power spectrum, measured with high precision by the Planck satellite, encodes the physics of acoustic oscillations in the primordial baryon-photon plasma before recombination~\\cite{Aghanim:2018eyx,Cirelli:2024ssz}.\n-Baryons load the oscillating fluid, enhancing the compressional (odd-numbered) acoustic peaks relative to the rarefaction (even-numbered) ones; the ratio of the first to the second peak therefore directly constrains the physical baryon density~\\cite{Cirelli:2024ssz}.\n-Dark matter, on the other hand, does not couple to the photon pressure and instead provides the gravitational scaffolding within which the oscillations occur.\n-Its abundance sets the overall depth of the potential wells and modulates the relative heights of successive peaks --- in particular, a universe without cold dark matter would produce a strongly suppressed third peak, in clear contradiction with the data~\\cite{Cirelli:2024ssz}.",
+    "currentVersionContext": "+The cosmic microwave background (CMB) radiation is the thermal relic of the hot, dense early Universe.\n+Roughly 380,000 years after the Big Bang, the expanding cosmos cooled sufficiently for protons and electrons to combine into neutral hydrogen --- an epoch known as \\emph{recombination}.\n+Before this transition, baryonic matter existed as a hot plasma tightly coupled to photons through Thomson scattering; after recombination, photons streamed freely, and this ``last scattering surface'' is what we observe today as the CMB.\n+Its temperature is remarkably uniform at ${\\sim}\\,2.725$~K, but carries tiny anisotropies at the level of ${\\sim}\\,10^{-5}$ that encode a wealth of information about the matter-energy content of the cosmos.\n+\n+These anisotropies are conventionally decomposed into angular scales via the temperature power spectrum $C_\\ell$.\n+Peaks in $C_\\ell$ correspond to sound waves in the pre-recombination baryon-photon plasma that were caught at maximum compression or rarefaction at the moment of decoupling; the positions and heights of these peaks encode the composition and geometry of the Universe~\\cite{Aghanim:2018eyx,Cirelli:2024ssz}.\n+Baryons load the oscillating fluid, enhancing the compressional (odd-numbered) peaks relative to the rarefaction (even-numbered) ones, so that the ratio of the first to the second peak directly constrains the physical baryon density.\n+Dark matter, which does not couple to the photon pressure, provides the gravitational scaffolding within which the oscillations occur: its abundance sets the overall depth of the potential wells and modulates the relative heights of successive peaks --- in particular, a universe without cold dark matter would produce a strongly suppressed third peak, in clear contradiction with the observed spectrum~\\cite{Cirelli:2024ssz}."
+  },
+  {
+    "id": "7oe8o43",
+    "startLine": 120,
+    "endLine": 120,
+    "textPreview": "\\textit{Top}: the Planck CMB temperature anisotropy map, showing the ${\\sim}\\,10^{-5}$ fluctuations in the otherwise uniform 2.725~K radiation field.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "bkt9ux7",
+        "text": "need to add citation to the source",
+        "createdAt": "2026-05-21T10:16:51.155Z"
+      },
+      {
+        "id": "yoq0ypb",
+        "text": "[AGENT] Added Planck cite to the map panel. \"no CDM\" spectra credited to CAMB in the overall caption line. Simplified to \"Adapted from Cirelli et al.\"",
+        "createdAt": "2026-05-21T10:25:23.260492+00:00"
+      }
+    ],
+    "previousVersionContext": "-\t\\includegraphics[width=0.47\\textwidth,height=170pt]{figures/LSS_powerspectrum.pdf}\\\\[2mm]\n-\t\\includegraphics[width=0.47\\textwidth,height=170pt]{figures/CMBnoDMAS.pdf}~\\qquad%",
+    "currentVersionContext": "+\t\\includegraphics[width=0.47\\textwidth,height=170pt]{figures/CMBnoDMAS.pdf}\n+\t\\caption{The imprint of dark matter on the cosmic microwave background.\n+\t\t\\textit{Top}: the Planck CMB temperature anisotropy map, showing the ${\\sim}\\,10^{-5}$ fluctuations in the otherwise uniform 2.725~K radiation field.\n+\t\t\\textit{Bottom left}: the observed angular power spectrum $C_\\ell^{TT}$ of the CMB temperature anisotropies, measured by the Planck satellite~\\cite{Aghanim:2018eyx}.\n+\t\t\\textit{Bottom right}: the same quantity computed in a universe without cold dark matter, showing the dramatic suppression of the third acoustic peak.\n+\t\tAdapted from Cirelli et al.~\\cite{Cirelli:2024ssz}; ``no CDM'' spectra computed using the CAMB web interface.\n+\t}\n+\t\\label{fig:cmb}\n+\\end{figure}\n+\n+\\begin{figure}[t]\n+\t\\centering\n+\t\\includegraphics[width=0.65\\textwidth,height=165pt]{figures/LSS_sdss_release14.jpg}\\\\[2mm]\n+\t\\includegraphics[width=0.47\\textwidth,height=170pt]{figures/LSS_powerspectrum.pdf}~%"
+  },
+  {
+    "id": "13c6y78",
+    "startLine": 122,
+    "endLine": 122,
+    "textPreview": "\\textit{Bottom right}: the same quantity computed in a universe without cold dark matter, showing the dramatic suppression of the third acoustic peak.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "cu6pmsg",
+        "text": "need to add citation to the source of the figure",
+        "createdAt": "2026-05-21T10:17:04.918Z"
+      },
+      {
+        "id": "xm7vrd0",
+        "text": "[AGENT] Added Planck cite to the map panel. \"no CDM\" spectra credited to CAMB in the overall caption line. Simplified to \"Adapted from Cirelli et al.\"",
+        "createdAt": "2026-05-21T10:25:23.260503+00:00"
+      }
+    ],
+    "previousVersionContext": "-\t\\includegraphics[width=0.47\\textwidth,height=170pt]{figures/LSS_powerspectrum.pdf}\\\\[2mm]\n-\t\\includegraphics[width=0.47\\textwidth,height=170pt]{figures/CMBnoDMAS.pdf}~\\qquad%",
+    "currentVersionContext": "+\t\\includegraphics[width=0.47\\textwidth,height=170pt]{figures/CMBnoDMAS.pdf}\n+\t\\caption{The imprint of dark matter on the cosmic microwave background.\n+\t\t\\textit{Top}: the Planck CMB temperature anisotropy map, showing the ${\\sim}\\,10^{-5}$ fluctuations in the otherwise uniform 2.725~K radiation field.\n+\t\t\\textit{Bottom left}: the observed angular power spectrum $C_\\ell^{TT}$ of the CMB temperature anisotropies, measured by the Planck satellite~\\cite{Aghanim:2018eyx}.\n+\t\t\\textit{Bottom right}: the same quantity computed in a universe without cold dark matter, showing the dramatic suppression of the third acoustic peak.\n+\t\tAdapted from Cirelli et al.~\\cite{Cirelli:2024ssz}; ``no CDM'' spectra computed using the CAMB web interface.\n+\t}\n+\t\\label{fig:cmb}\n+\\end{figure}\n+\n+\\begin{figure}[t]\n+\t\\centering\n+\t\\includegraphics[width=0.65\\textwidth,height=165pt]{figures/LSS_sdss_release14.jpg}\\\\[2mm]\n+\t\\includegraphics[width=0.47\\textwidth,height=170pt]{figures/LSS_powerspectrum.pdf}~%"
+  },
+  {
+    "id": "h6zhxw5",
+    "startLine": 134,
+    "endLine": 134,
+    "textPreview": "\\textit{Top}: the large-scale distribution of galaxies from the Sloan Digital Sky Survey (SDSS).",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "uftv8t5",
+        "text": "add citation",
+        "createdAt": "2026-05-21T10:17:35.823Z"
+      },
+      {
+        "id": "oxi057i",
+        "text": "[AGENT] Simplified to \"Adapted from Cirelli et al.\" for the LSS figure, as no clear individual sub-panel sources beyond the review itself.",
+        "createdAt": "2026-05-21T10:25:27.001331+00:00"
+      }
+    ],
+    "previousVersionContext": "-\t\\caption{The imprint of dark matter on cosmological observables. \\textit{Top left}: the Planck CMB temperature anisotropy map. \\textit{Top right}: the large-scale distribution of galaxies from the SDSS survey. \\textit{Middle row}: the CMB acoustic power spectrum (left) and the matter power spectrum (right) as observed. \\textit{Bottom row}: the same quantities computed in a universe without cold dark matter, showing the dramatic suppression of the third acoustic peak and the absence of small-scale structure.\n-\t\tFigure from Cirelli et al.~\\cite{Cirelli:2024ssz}.",
+    "currentVersionContext": "+\t\\caption{The imprint of dark matter on large-scale structure.\n+\t\t\\textit{Top}: the large-scale distribution of galaxies from the Sloan Digital Sky Survey (SDSS).\n+\t\t\\textit{Bottom left}: the observed matter power spectrum $P(k)$.\n+\t\t\\textit{Bottom right}: the same quantity computed in a universe without cold dark matter, showing the absence of small-scale structure.\n+\t\tGalaxy image courtesy of M.~Blanton and SDSS; adapted from Cirelli et al.~\\cite{Cirelli:2024ssz}."
+  },
+  {
+    "id": "8hiyxc4",
+    "startLine": 135,
+    "endLine": 135,
+    "textPreview": "\\textit{Bottom left}: the observed matter power spectrum $P(k)$.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "prqxh3b",
+        "text": "add citation, where does this figure come from?",
+        "createdAt": "2026-05-21T10:17:44.582Z"
+      },
+      {
+        "id": "5gv1kok",
+        "text": "[AGENT] Simplified to \"Adapted from Cirelli et al.\" for the LSS figure, as no clear individual sub-panel sources beyond the review itself.",
+        "createdAt": "2026-05-21T10:25:27.001340+00:00"
+      }
+    ],
+    "previousVersionContext": "-\t\\caption{The imprint of dark matter on cosmological observables. \\textit{Top left}: the Planck CMB temperature anisotropy map. \\textit{Top right}: the large-scale distribution of galaxies from the SDSS survey. \\textit{Middle row}: the CMB acoustic power spectrum (left) and the matter power spectrum (right) as observed. \\textit{Bottom row}: the same quantities computed in a universe without cold dark matter, showing the dramatic suppression of the third acoustic peak and the absence of small-scale structure.\n-\t\tFigure from Cirelli et al.~\\cite{Cirelli:2024ssz}.",
+    "currentVersionContext": "+\t\\caption{The imprint of dark matter on large-scale structure.\n+\t\t\\textit{Top}: the large-scale distribution of galaxies from the Sloan Digital Sky Survey (SDSS).\n+\t\t\\textit{Bottom left}: the observed matter power spectrum $P(k)$.\n+\t\t\\textit{Bottom right}: the same quantity computed in a universe without cold dark matter, showing the absence of small-scale structure.\n+\t\tGalaxy image courtesy of M.~Blanton and SDSS; adapted from Cirelli et al.~\\cite{Cirelli:2024ssz}."
+  },
+  {
+    "id": "1jitxvc",
+    "startLine": 136,
+    "endLine": 136,
+    "textPreview": "\\textit{Bottom right}: the same quantity computed in a universe without cold dark matter, showing the absence of small-scale structure.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "l2wa1z5",
+        "text": "add citation",
+        "createdAt": "2026-05-21T10:17:51.256Z"
+      },
+      {
+        "id": "x78yxu4",
+        "text": "[AGENT] Simplified to \"Adapted from Cirelli et al.\" for the LSS figure, as no clear individual sub-panel sources beyond the review itself.",
+        "createdAt": "2026-05-21T10:25:27.001342+00:00"
+      }
+    ],
+    "previousVersionContext": "-\t\\caption{The imprint of dark matter on cosmological observables. \\textit{Top left}: the Planck CMB temperature anisotropy map. \\textit{Top right}: the large-scale distribution of galaxies from the SDSS survey. \\textit{Middle row}: the CMB acoustic power spectrum (left) and the matter power spectrum (right) as observed. \\textit{Bottom row}: the same quantities computed in a universe without cold dark matter, showing the dramatic suppression of the third acoustic peak and the absence of small-scale structure.\n-\t\tFigure from Cirelli et al.~\\cite{Cirelli:2024ssz}.",
+    "currentVersionContext": "+\t\\caption{The imprint of dark matter on large-scale structure.\n+\t\t\\textit{Top}: the large-scale distribution of galaxies from the Sloan Digital Sky Survey (SDSS).\n+\t\t\\textit{Bottom left}: the observed matter power spectrum $P(k)$.\n+\t\t\\textit{Bottom right}: the same quantity computed in a universe without cold dark matter, showing the absence of small-scale structure.\n+\t\tGalaxy image courtesy of M.~Blanton and SDSS; adapted from Cirelli et al.~\\cite{Cirelli:2024ssz}."
+  },
+  {
+    "id": "xm4grxv",
+    "startLine": 137,
+    "endLine": 137,
+    "textPreview": "Galaxy image courtesy of M.~Blanton and SDSS; adapted from Cirelli et al.~\\cite{Cirelli:2024ssz}.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "0beyp9u",
+        "text": "just say adapted from cirelli, if no clear source is available",
+        "createdAt": "2026-05-21T10:18:17.436Z"
+      },
+      {
+        "id": "ue0ntxw",
+        "text": "[AGENT] Simplified to \"Adapted from Cirelli et al.\" for the LSS figure, as no clear individual sub-panel sources beyond the review itself.",
+        "createdAt": "2026-05-21T10:25:27.001345+00:00"
+      }
+    ],
+    "previousVersionContext": "-\t\\caption{The imprint of dark matter on cosmological observables. \\textit{Top left}: the Planck CMB temperature anisotropy map. \\textit{Top right}: the large-scale distribution of galaxies from the SDSS survey. \\textit{Middle row}: the CMB acoustic power spectrum (left) and the matter power spectrum (right) as observed. \\textit{Bottom row}: the same quantities computed in a universe without cold dark matter, showing the dramatic suppression of the third acoustic peak and the absence of small-scale structure.\n-\t\tFigure from Cirelli et al.~\\cite{Cirelli:2024ssz}.",
+    "currentVersionContext": "+\t\\caption{The imprint of dark matter on large-scale structure.\n+\t\t\\textit{Top}: the large-scale distribution of galaxies from the Sloan Digital Sky Survey (SDSS).\n+\t\t\\textit{Bottom left}: the observed matter power spectrum $P(k)$.\n+\t\t\\textit{Bottom right}: the same quantity computed in a universe without cold dark matter, showing the absence of small-scale structure.\n+\t\tGalaxy image courtesy of M.~Blanton and SDSS; adapted from Cirelli et al.~\\cite{Cirelli:2024ssz}."
+  },
+  {
+    "id": "hda1mbc",
+    "startLine": 154,
+    "endLine": 161,
+    "textPreview": "A crucial independent constraint comes from Big Bang Nucleosynthesis (BBN).",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "6gm7i9q",
+        "text": "this part is unclear. you anticipate BBN sets constraints on the omega m, then ask if DM can be baryons, and say no because of BBN. this feels like a logic loop",
+        "createdAt": "2026-05-21T10:23:15.645Z"
+      },
+      {
+        "id": "ds7b26b",
+        "text": "[AGENT] Restructured to break the logic loop: (1) state \u03a9_m vs \u03a9_b gap from CMB, (2) pose the question \u2014 could DM be dark baryons?, (3) introduce BBN as the independent answer via primordial element production, (4) BBN constrains *total* baryon density \u2192 rules out hidden baryons.",
+        "createdAt": "2026-05-21T10:25:30.803244+00:00"
+      }
+    ],
+    "previousVersionContext": "-The final, logically essential element is Big Bang Nucleosynthesis.\n-The production of light elements during the first few minutes after the Big Bang is exquisitely sensitive to the baryon-to-photon ratio.\n-Measured primordial abundances of deuterium, $^4$He, and $^7$Li tightly constrain the baryon density to $\\Omega_b h^2 \\approx 0.022$~\\cite{Cirelli:2024ssz}, in excellent agreement with the independent CMB determination.\n-Since the total matter density is $\\Omega_m h^2 \\approx 0.14$ --- nearly seven times larger --- the majority of the matter in the Universe cannot be made of baryons~\\cite{Cirelli:2024ssz}.\n-This is the logical bridge: the astrophysical evidence reviewed in this section demonstrates that dark matter exists; BBN proves that it is not composed of ordinary atoms.\n-Whatever dark matter is, it must be a new form of matter beyond the Standard Model --- a conclusion that motivates the particle physics discussion of the following section.",
+    "currentVersionContext": "+A crucial independent constraint comes from Big Bang Nucleosynthesis (BBN).\n+The production of light elements during the first few minutes after the Big Bang is exquisitely sensitive to the baryon-to-photon ratio: the primordial abundances of deuterium, $^4$He, and $^7$Li tightly constrain the baryon density to $\\Omega_b h^2 \\approx 0.022$~\\cite{Iocco:2008va,ParticleDataGroup:2022pth}, in excellent agreement with the independent CMB determination.\n+Since the total matter density inferred from the dynamics and lensing reviewed above is $\\Omega_m h^2 \\approx 0.14$ --- nearly seven times larger --- the majority of the matter in the Universe cannot be made of baryons.\n+One might ask whether this missing matter could simply be a form of ordinary matter that happens to be dark: cold molecular gas clouds, compact stellar remnants, or some as-yet-undetected baryonic component hiding in the intergalactic medium.\n+BBN decisively rules out this possibility.\n+The light-element abundances constrain the \\emph{total} baryon density, not just the visible fraction; any baryonic matter, however dark or diffuse, would have participated in nucleosynthesis during the first few minutes and altered the primordial element yields.\n+The observed abundances of deuterium and helium are consistent with $\\Omega_b h^2 \\approx 0.022$ and leave no room for a hidden baryonic reservoir.\n+Whatever dark matter is, it must therefore be \\emph{non-baryonic} --- a new form of matter beyond the Standard Model --- a conclusion that motivates the particle physics discussion of the following section."
+  },
+  {
+    "id": "akca5ys",
+    "startLine": 155,
+    "endLine": 155,
+    "textPreview": "The production of light elements during the first few minutes after the Big Bang is exquisitely sensitive to the baryon-to-photon ratio: the primordial abundances of deuterium, $^4$He, and $^7$Li tightly constrain the baryon density to $\\Omega_b h^2 \\approx 0.022$~\\cite{Iocco:2008va,ParticleDataGroup:2022pth}, in excellent agreement with the independent CMB determination.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "evow094",
+        "text": "remove exquisite",
+        "createdAt": "2026-05-21T10:21:07.620Z"
+      },
+      {
+        "id": "gn7grvu",
+        "text": "[AGENT] Replaced \"exquisitely sensitive\" with \"highly sensitive\".",
+        "createdAt": "2026-05-21T10:25:31.825470+00:00"
+      }
+    ],
+    "previousVersionContext": "-The final, logically essential element is Big Bang Nucleosynthesis.\n-The production of light elements during the first few minutes after the Big Bang is exquisitely sensitive to the baryon-to-photon ratio.\n-Measured primordial abundances of deuterium, $^4$He, and $^7$Li tightly constrain the baryon density to $\\Omega_b h^2 \\approx 0.022$~\\cite{Cirelli:2024ssz}, in excellent agreement with the independent CMB determination.\n-Since the total matter density is $\\Omega_m h^2 \\approx 0.14$ --- nearly seven times larger --- the majority of the matter in the Universe cannot be made of baryons~\\cite{Cirelli:2024ssz}.\n-This is the logical bridge: the astrophysical evidence reviewed in this section demonstrates that dark matter exists; BBN proves that it is not composed of ordinary atoms.\n-Whatever dark matter is, it must be a new form of matter beyond the Standard Model --- a conclusion that motivates the particle physics discussion of the following section.",
+    "currentVersionContext": "+A crucial independent constraint comes from Big Bang Nucleosynthesis (BBN).\n+The production of light elements during the first few minutes after the Big Bang is exquisitely sensitive to the baryon-to-photon ratio: the primordial abundances of deuterium, $^4$He, and $^7$Li tightly constrain the baryon density to $\\Omega_b h^2 \\approx 0.022$~\\cite{Iocco:2008va,ParticleDataGroup:2022pth}, in excellent agreement with the independent CMB determination.\n+Since the total matter density inferred from the dynamics and lensing reviewed above is $\\Omega_m h^2 \\approx 0.14$ --- nearly seven times larger --- the majority of the matter in the Universe cannot be made of baryons.\n+One might ask whether this missing matter could simply be a form of ordinary matter that happens to be dark: cold molecular gas clouds, compact stellar remnants, or some as-yet-undetected baryonic component hiding in the intergalactic medium.\n+BBN decisively rules out this possibility.\n+The light-element abundances constrain the \\emph{total} baryon density, not just the visible fraction; any baryonic matter, however dark or diffuse, would have participated in nucleosynthesis during the first few minutes and altered the primordial element yields.\n+The observed abundances of deuterium and helium are consistent with $\\Omega_b h^2 \\approx 0.022$ and leave no room for a hidden baryonic reservoir.\n+Whatever dark matter is, it must therefore be \\emph{non-baryonic} --- a new form of matter beyond the Standard Model --- a conclusion that motivates the particle physics discussion of the following section."
+  }
+]

@@ -61,7 +61,38 @@
       "snapshotFile": "1.1_evidence_for_dark_matter.rev9.tex",
       "annotationsFile": "rev9.json",
       "createdAt": "2026-05-21T08:38:58.939Z"
+    },
+    {
+      "revision": 10,
+      "snapshotFile": "1.1_evidence_for_dark_matter.rev10.tex",
+      "annotationsFile": "rev10.json",
+      "createdAt": "2026-05-21T10:02:01.933Z"
+    },
+    {
+      "revision": 11,
+      "snapshotFile": "1.1_evidence_for_dark_matter.rev11.tex",
+      "annotationsFile": "rev11.json",
+      "createdAt": "2026-05-21T10:05:41.742Z"
+    },
+    {
+      "revision": 12,
+      "snapshotFile": "1.1_evidence_for_dark_matter.rev12.tex",
+      "annotationsFile": "rev12.json",
+      "createdAt": "2026-05-21T10:11:05.944Z"
+    },
+    {
+      "revision": 13,
+      "snapshotFile": "1.1_evidence_for_dark_matter.rev13.tex",
+      "annotationsFile": "rev13.json",
+      "createdAt": "2026-05-21T10:28:26.509Z"
     }
   ],
-  "previewMode": "preview"
+  "previewMode": "source",
+  "diffState": {
+    "mode": "local",
+    "pinnedRef": {
+      "type": "local",
+      "revision": 12
+    }
+  }
 }
