@@ -1,6 +1,6 @@
 [
   {
-    "id": "2zsldke",
+    "id": "pbgc5xd",
     "startLine": 16,
     "endLine": 18,
     "textPreview": "The most direct evidence for dark matter comes from the internal kinematics of galaxies.",
@@ -15,7 +15,7 @@
     ]
   },
   {
-    "id": "nyynvzf",
+    "id": "iz0nfe6",
     "startLine": 20,
     "endLine": 26,
     "textPreview": "Observations tell a different story.",
@@ -35,7 +35,7 @@
     ]
   },
   {
-    "id": "xihidpu",
+    "id": "v0n7en6",
     "startLine": 28,
     "endLine": 33,
     "textPreview": "Modern data have only strengthened this picture.",
@@ -60,7 +60,7 @@
     ]
   },
   {
-    "id": "8nmsxgx",
+    "id": "7dvi4gj",
     "startLine": 40,
     "endLine": 48,
     "textPreview": "\\begin{figure}[t]",
@@ -85,7 +85,7 @@
     ]
   },
   {
-    "id": "jd6pd8c",
+    "id": "0g5e6uq",
     "startLine": 50,
     "endLine": 55,
     "textPreview": "An independent line of evidence comes from dispersion-supported systems.",
@@ -100,7 +100,7 @@
     ]
   },
   {
-    "id": "v1cor0u",
+    "id": "pbn4h5c",
     "startLine": 61,
     "endLine": 61,
     "textPreview": "The earliest quantitative argument dates to 1933, when Zwicky~\\cite{Cirelli:2024ssz} studied the radial velocities of galaxies in the Coma Cluster and applied the virial theorem --- which relates the time-averaged kinetic energy of a gravitationally bound system to its potential energy, $2\\langle K \\rangle + \\langle U \\rangle = 0$ --- to estimate the cluster's total mass.",
@@ -120,7 +120,7 @@
     ]
   },
   {
-    "id": "tkj3anu",
+    "id": "az2jhas",
     "startLine": 62,
     "endLine": 62,
     "textPreview": "He found a mass-to-light ratio of order ${\\sim}\\,400$, far exceeding what could be accounted for by the luminous galaxies alone, and concluded that the cluster must contain a large amount of unseen ``dunkle Materie''~\\cite{Cirelli:2024ssz}.",
@@ -135,7 +135,7 @@
     ]
   },
   {
-    "id": "bdymb6q",
+    "id": "w00s5v2",
     "startLine": 66,
     "endLine": 66,
     "textPreview": "This gas radiates thermally through bremsstrahlung emission, observed in the X-ray band~\\cite{Cirelli:2024ssz}.",
@@ -150,7 +150,7 @@
     ]
   },
   {
-    "id": "ydr2g85",
+    "id": "xesh7c8",
     "startLine": 73,
     "endLine": 73,
     "textPreview": "Combined with independent constraints on the baryon density from Big Bang Nucleosynthesis (BBN) and the CMB, SZ measurements of the cluster baryon fraction $f_b \\approx \\Omega_b / \\Omega_m$ yield a total matter density $\\Omega_m \\approx 0.3$, well above the baryonic contribution~\\cite{Cirelli:2024ssz}.",
@@ -159,13 +159,63 @@
     "thread": [
       {
         "id": "eou2jzk",
-        "text": "maybe here it would be convenient to remember the reader of the approzzimate omega_b value for comparison",
+        "text": "maybe here it would be convenient to remind the reader of the approzzimate omega_b value for comparison",
         "createdAt": "2026-05-21T08:08:03.125Z"
       },
       {
         "id": "9nyxlh0",
-        "text": "maybe let's also cite plank18, since that's what gives the cmb constraints on omaga b and m",
+        "text": "maybe let's also cite plank18, since that's what gives the cmb constraints on omaga b and m. we already talk about plank in the upcoming section, so no details here, just cite it as a reference for the numbers",
         "createdAt": "2026-05-21T08:15:01.280Z"
+      }
+    ]
+  },
+  {
+    "id": "nyvgt86",
+    "startLine": 97,
+    "endLine": 97,
+    "textPreview": "",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "uc068c7",
+        "text": "as a general comment to the previous subsection, we are citing cirelli a bit too much. it's clear why, since it's the review on DM we are referencing, but we should better investigate with notebooklm (when we cite cirelli) if the cirelli work itself cites other sources to support the claim, and cite them. Else it looks like we have just read the cirelli review and nothing else, which is true, but for a thesis we should also cite the original literature sources when possible, and without being too excessive",
+        "createdAt": "2026-05-21T08:19:51.403Z"
+      },
+      {
+        "id": "egweql3",
+        "text": "I think this applies also to section 1.1.3",
+        "createdAt": "2026-05-21T08:26:12.440Z"
+      }
+    ]
+  },
+  {
+    "id": "wahi50h",
+    "startLine": 113,
+    "endLine": 125,
+    "textPreview": "\\begin{figure}[t]",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "lfv4ccp",
+        "text": "this figure does a lot of heavy lifting, and needs to be better discussed in the text. The left column describes CMB, which is influenced by DM, while the right column shows the same properties, but for the large distribution of galaxies",
+        "createdAt": "2026-05-21T08:35:43.156Z"
+      },
+      {
+        "id": "zk5it2z",
+        "text": "This is very useful, since it allows a direct comparison with a quantity which includes DM properties, vs one that is purely baryonic",
+        "createdAt": "2026-05-21T08:36:55.206Z"
+      },
+      {
+        "id": "6qovsqg",
+        "text": "I think it might be convenient to split this figure in two. one just for DM, and one just for galaxies, so we can discuss them more topically in the body, and not just the caption",
+        "createdAt": "2026-05-21T08:37:42.447Z"
+      },
+      {
+        "id": "cm9afgz",
+        "text": "I would query cirelli with nlm to get the exact references for each of the figures included, as we need to cite them, not just cirelli. We would say Credit: [original papers]. and then [adapted from Cirelli ...]",
+        "createdAt": "2026-05-21T08:38:35.629Z"
       }
     ]
   }

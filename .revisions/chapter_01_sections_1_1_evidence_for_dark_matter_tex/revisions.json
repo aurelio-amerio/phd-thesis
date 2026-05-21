@@ -49,6 +49,18 @@
       "snapshotFile": "1.1_evidence_for_dark_matter.rev7.tex",
       "annotationsFile": "rev7.json",
       "createdAt": "2026-05-20T16:57:34.882Z"
+    },
+    {
+      "revision": 8,
+      "snapshotFile": "1.1_evidence_for_dark_matter.rev8.tex",
+      "annotationsFile": "rev8.json",
+      "createdAt": "2026-05-21T08:17:00.471Z"
+    },
+    {
+      "revision": 9,
+      "snapshotFile": "1.1_evidence_for_dark_matter.rev9.tex",
+      "annotationsFile": "rev9.json",
+      "createdAt": "2026-05-21T08:38:58.939Z"
     }
   ],
   "previewMode": "preview"
