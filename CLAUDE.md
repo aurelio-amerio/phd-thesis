@@ -78,6 +78,8 @@ Skills live in `.agent/skills/` (antigravity) and `.claude/skills/` (Claude Code
 - `chapter_outline.md` per chapter is the authoritative section-level specification.
 - `outline.md` is the master thesis-level narrative document.
 - The `.revisions/` directory contains revision directives from supervisor feedback.
+- **Never create BibTeX entries manually.** Only add bib entries fetched from InspireHEP or arXiv. For papers not found on these platforms, list them in an MD artifact (authors, year, title, journal) so the author can add them via Google Scholar. Use `\aure{}` placeholders in the LaTeX for the missing cite keys.
+- **Figures from external papers.** Always download figures from the original arXiv TeX source using `python arxiv_downloader.py <arxiv_id>` to extract publication-quality vector PDFs. InspireHEP figure API images are low-resolution rasters — acceptable as temporary placeholders during drafting, but must be replaced with originals from the arXiv source before the final version. When adding a figure placeholder, mark it with `\aure{replace with original PDF from arXiv source: <arxiv_id>}`.
 
 ## Style and Tone
 

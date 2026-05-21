@@ -1,0 +1,132 @@
+[
+  {
+    "id": "g9ims7k",
+    "startLine": 13,
+    "endLine": 13,
+    "textPreview": "- **Expansion budget:** Moderate. The section can grow by 1\u20132 pages total (across all three subsections). This is an astroparticle thesis \u2014 add enough cosmological context for any physicist to follow, but don't write a cosmology textbook.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "gcj7qh5",
+        "text": "I'd say each of the 3 subsections (1.1.1, 1.1.2, 1.1.3) can grow by max 1-2 pages, not the entirety of 1.1 (which could grow by maybe 4 pages at most). Overall, let's not bloat section 1.1, just need some more context when needed, without stressing too much about how much we add, as long as what we write is good and feels natural for the context",
+        "createdAt": "2026-05-21T09:19:40.407Z"
+      },
+      {
+        "id": "skokw30",
+        "text": "[AGENT] Implemented all 6 feedback items: expanded budget to 1-2pp per subsection (~4pp total), kept optional Gaia mention, added arXiv downloader + manual fallback for figure, clarified L62 citation removal, added NLM-first for X-ray refs, distinguished MOND 'what it is' vs 'why it fails' citations, expanded Phase 3 budget.",
+        "createdAt": "2026-05-21T09:29:48.646165+00:00"
+      }
+    ]
+  },
+  {
+    "id": "tqtih7y",
+    "startLine": 38,
+    "endLine": 44,
+    "textPreview": "| ID | Comment | Action |",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "gvlsdyj",
+        "text": "if you want, you can keep a mention to gaia, since it's one modern survey, but don't go on a tangent just to be able to name drop gaia dr3",
+        "createdAt": "2026-05-21T09:21:31.348Z"
+      },
+      {
+        "id": "a1mnbhd",
+        "text": "[AGENT] Implemented all 6 feedback items: expanded budget to 1-2pp per subsection (~4pp total), kept optional Gaia mention, added arXiv downloader + manual fallback for figure, clarified L62 citation removal, added NLM-first for X-ray refs, distinguished MOND 'what it is' vs 'why it fails' citations, expanded Phase 3 budget.",
+        "createdAt": "2026-05-21T09:29:48.646218+00:00"
+      }
+    ]
+  },
+  {
+    "id": "ipo3hqx",
+    "startLine": 49,
+    "endLine": 49,
+    "textPreview": "- **Add:** Download Fig 2 from arXiv:2111.05343 (Afruni et al. 2021) \u2014 shows M31 rotation curve with mass decomposition",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "34diejh",
+        "text": "use the arxiv downloader script for that",
+        "createdAt": "2026-05-21T09:21:52.874Z"
+      },
+      {
+        "id": "a1sdkv3",
+        "text": "download the paper in the current project directory. there's a change we might fail to identify the correct figure in the paper source, in that case I'll go back to it manually, and extract the figure from the tex source files",
+        "createdAt": "2026-05-21T09:22:42.648Z"
+      },
+      {
+        "id": "ljngqm6",
+        "text": "[AGENT] Implemented all 6 feedback items: expanded budget to 1-2pp per subsection (~4pp total), kept optional Gaia mention, added arXiv downloader + manual fallback for figure, clarified L62 citation removal, added NLM-first for X-ray refs, distinguished MOND 'what it is' vs 'why it fails' citations, expanded Phase 3 budget.",
+        "createdAt": "2026-05-21T09:29:48.646224+00:00"
+      }
+    ]
+  },
+  {
+    "id": "gkn0eah",
+    "startLine": 75,
+    "endLine": 85,
+    "textPreview": "| Claim | Current cite | Original paper(s) to find |",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "huhizz7",
+        "text": "L62 you can remove the citation, sice you are already citing on L61 the same paper, I think",
+        "createdAt": "2026-05-21T09:23:28.368Z"
+      },
+      {
+        "id": "097tkmi",
+        "text": "L66 make sure to ask also notebooklm, but you can check one of the references you are thinking of against inspire if you want",
+        "createdAt": "2026-05-21T09:24:01.395Z"
+      },
+      {
+        "id": "8fry1ti",
+        "text": "[AGENT] Implemented all 6 feedback items: expanded budget to 1-2pp per subsection (~4pp total), kept optional Gaia mention, added arXiv downloader + manual fallback for figure, clarified L62 citation removal, added NLM-first for X-ray refs, distinguished MOND 'what it is' vs 'why it fails' citations, expanded Phase 3 budget.",
+        "createdAt": "2026-05-21T09:29:48.646227+00:00"
+      }
+    ]
+  },
+  {
+    "id": "33hlg0n",
+    "startLine": 84,
+    "endLine": 84,
+    "textPreview": "| MOND prediction failure (L83) | Cirelli only | Check if Cirelli cites Milgrom or Bekenstein |",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "km13mwl",
+        "text": "we can cite one of these papers for reference to what is MOND (modified gravity), but not cite them to say they can't explain these claims, I think, for which the cirelli citation is enough",
+        "createdAt": "2026-05-21T09:25:22.353Z"
+      },
+      {
+        "id": "ruea92l",
+        "text": "[AGENT] Implemented all 6 feedback items: expanded budget to 1-2pp per subsection (~4pp total), kept optional Gaia mention, added arXiv downloader + manual fallback for figure, clarified L62 citation removal, added NLM-first for X-ray refs, distinguished MOND 'what it is' vs 'why it fails' citations, expanded Phase 3 budget.",
+        "createdAt": "2026-05-21T09:29:48.646230+00:00"
+      }
+    ]
+  },
+  {
+    "id": "b3pl4du",
+    "startLine": 115,
+    "endLine": 115,
+    "textPreview": "This phase has the most substantial rewriting. The expansion budget (~1\u20131.5 pages) is spent here.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "bieqa66",
+        "text": "you have a budget of 1-2 pages for this subsubsection alone, so use them as you see fit",
+        "createdAt": "2026-05-21T09:26:47.408Z"
+      },
+      {
+        "id": "m6jwqhu",
+        "text": "[AGENT] Implemented all 6 feedback items: expanded budget to 1-2pp per subsection (~4pp total), kept optional Gaia mention, added arXiv downloader + manual fallback for figure, clarified L62 citation removal, added NLM-first for X-ray refs, distinguished MOND 'what it is' vs 'why it fails' citations, expanded Phase 3 budget.",
+        "createdAt": "2026-05-21T09:29:48.646232+00:00"
+      }
+    ]
+  }
+]
