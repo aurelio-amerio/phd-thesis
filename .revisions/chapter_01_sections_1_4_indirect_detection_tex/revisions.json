@@ -1,0 +1,30 @@
+{
+  "version": 3,
+  "sourceFile": "chapter_01/sections/1.4_indirect_detection.tex",
+  "revisions": [
+    {
+      "revision": 0,
+      "snapshotFile": "1.4_indirect_detection.rev0.tex",
+      "annotationsFile": "rev0.json",
+      "createdAt": "2026-05-22T09:25:16.461Z"
+    },
+    {
+      "revision": 1,
+      "snapshotFile": "1.4_indirect_detection.rev1.tex",
+      "annotationsFile": "rev1.json",
+      "createdAt": "2026-05-22T09:27:02.799Z"
+    },
+    {
+      "revision": 2,
+      "snapshotFile": "1.4_indirect_detection.rev2.tex",
+      "annotationsFile": "rev2.json",
+      "createdAt": "2026-05-22T09:27:23.436Z"
+    },
+    {
+      "revision": 3,
+      "snapshotFile": "1.4_indirect_detection.rev3.tex",
+      "annotationsFile": "rev3.json",
+      "createdAt": "2026-05-22T09:27:56.159Z"
+    }
+  ]
+}

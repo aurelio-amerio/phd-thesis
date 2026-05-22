@@ -24,14 +24,18 @@ These hard kinematic endpoints are one of the most distinctive features of a dar
 The second consequence is more profound and concerns the spatial morphology of the expected signal.
 Annihilation is a two-body process --- two dark matter particles must find each other --- and its rate per unit volume is therefore proportional to the square of the local dark matter density:
 
-\[ \frac{d\Gamma_\text{ann}}{dV} = \frac{\langle \sigma v_\text{rel} \rangle}{2} \frac{\rho^2}{m_\chi^2} \,, \]
+\begin{equation}
+	\frac{d\Gamma_\text{ann}}{dV} = \frac{\langle \sigma v_\text{rel} \rangle}{2} \frac{\rho^2}{m_\chi^2} \,,
+	\label{eq:ann_rate}
+\end{equation}
 
 where $\langle \sigma v_\text{rel} \rangle$ is the thermally averaged annihilation cross-section and the factor of $1/2$ avoids double-counting for self-conjugate particles \cite{Hooper:2024,Cirelli:2024ssz}.
 (For Dirac dark matter, where particle and antiparticle are distinct, the factor becomes $1/4$ but the thermal cross-section required for the correct relic abundance is correspondingly larger, leaving the observable rate unchanged \cite{Hooper:2024}.) Decay, by contrast, is a single-particle process with a rate proportional to the first power of the density:
 
-\[
+\begin{equation}
 	\frac{d\Gamma_\text{dec}}{dV} = \frac{\rho}{m_\chi \tau} \,,
-\]
+	\label{eq:dec_rate}
+\end{equation}
 
 where $\tau$ is the dark matter lifetime \cite{Hooper:2024,Pinetti:2021jjs}.
 Current gamma-ray observations constrain $\tau \gtrsim 10^{28}$ s \cite{Cirelli:2024ssz}, far exceeding the age of the universe --- making decay an intrinsically rare process whose detection requires enormous integrated exposures.
@@ -41,8 +45,10 @@ This morphological difference provides a powerful diagnostic: an excess that tra
 The stable particles emerging from an annihilation or decay event --- photons, neutrinos, electrons, positrons, protons, antiprotons --- are determined by the primary channel into which the dark matter annihilates.
 In a model-independent analysis, one parametrizes the annihilation as $\chi\chi \to f\bar{f}$ for a specific Standard Model final state $f$ (quarks, leptons, or gauge bosons), and the total gamma-ray spectrum is given by a sum over channels weighted by branching ratios \cite{Cirelli:2024ssz}:
 
-\[ \frac{dN_\gamma}{dE} = \sum_f \text{BR}_f \, \frac{dN_\gamma^{(f)}}{dE} \,.
-\]
+\begin{equation}
+	\frac{dN_\gamma}{dE} = \sum_f \text{BR}_f \, \frac{dN_\gamma^{(f)}}{dE} \,.
+	\label{eq:spectrum_sum}
+\end{equation}
 
 In practice, limits are derived for one channel at a time --- setting $\text{BR}_f = 1$ for a chosen final state --- so each "benchmark channel" maps to a distinctive spectral shape.
 The spectra $dN_\gamma^{(f)}/dE$ for each channel are computed using Monte Carlo event generators such as Pythia, with the results tabulated in standard libraries such as PPPC 4 DM ID \cite{Cirelli:2010xx,Hooper:2024}.
@@ -98,7 +104,7 @@ These spectral features are illustrated schematically in Figure~\ref{fig:spectra
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.42\textwidth]{figures/IndirectDetectionSpectrumCartoonNew}
+	\includegraphics[width=0.42\textwidth]{figures/IndirectDetectionSpectrumCartoonNew.pdf}
 	\caption{Notable sharp gamma-ray spectral features from dark matter annihilation.
 		From left to right: the monochromatic line from $\chi\chi \to \gamma\gamma$, the ``saw-tooth'' shape of virtual internal bremsstrahlung (VIB), the ``top-hat'' (box-shaped) spectrum from cascade decays $\chi\chi \to XX \to \gamma\gamma\gamma\gamma$, and the single saw-tooth from $\chi\chi \to XX \to \gamma\nu\gamma\nu$.
 		Unlike charged cosmic-ray features, these sharp structures propagate intact to the detector and can be searched for directly.
@@ -171,7 +177,7 @@ At large radii (around $r_\odot$) all profiles agree, but they diverge by orders
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=\textwidth]{figures/DMprofiles}
+	\includegraphics[width=\textwidth]{figures/DMprofiles.pdf}
 	\caption{Dark matter density profiles and their Milky Way parameters. \textit{Left}: NFW (red), Einasto (blue), Burkert (green), and Isothermal (purple) profiles as a function of galactocentric distance.
 		The profiles agree at $r \sim r_\odot$ but diverge by orders of magnitude in the inner kiloparsec.
 		\textit{Right}: the corresponding scale radii $r_s$ and characteristic densities $\rho_s$ in the parametrizations of each profile.
@@ -271,8 +277,10 @@ A non-detection in a target with a well-determined $J$-factor translates directl
 When applied to an extended region of the sky, the integrated flux is obtained by integrating $J$ (or $D$) over the solid angle of interest.
 For comparing different targets, one typically quotes the $J$-factor integrated over a cone of half-angle $\theta_\star$ centered on the target:
 
-\[ J_\text{int}(\theta_\star) = \int_0^{\theta_\star} J(\psi) \, 2\pi \sin\psi \, d\psi \,.
-\]
+\begin{equation}
+	J_\text{int}(\theta_\star) = \int_0^{\theta_\star} J(\psi) \, 2\pi \sin\psi \, d\psi \,.
+	\label{eq:jfactor_int}
+\end{equation}
 
 For dwarf spheroidal galaxies observed by Fermi-LAT, typical integrated $J$-factors (within $\theta_\star = 0.5^\circ$) range from $\sim 10^{16}$ to $\sim 10^{19.5}$ GeV$^2$ cm$^{-5}$, depending on the system's mass, distance, and the quality of the kinematic data used to reconstruct its density profile \cite{Hooper:2024,Cirelli:2024ssz,Bonnivard:2015xpq}.
 These values are orders of magnitude smaller than the Galactic Center $J$-factor, but the absence of astrophysical backgrounds in dwarfs compensates for the reduced signal.
@@ -429,7 +437,7 @@ The central target for these searches --- the thermal relic cross-section --- is
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.47\textwidth]{figures/Omegafreeze-out}
+	\includegraphics[width=0.47\textwidth]{figures/Omegafreeze-out.pdf}
 	\caption{Dark matter freeze-out abundance $\Omega_\text{DM} h^2$ as a function of DM mass and annihilation cross-section $\langle \sigma v \rangle$ for Majorana dark matter.
 		The measured cosmological abundance $\Omega_\text{DM} h^2 = 0.120 \pm 0.001$ is reproduced within the orange band at $3\sigma$.
 		For smaller (larger) annihilation cross-sections --- i.e.\ in the lower (upper) part of the plot --- the freeze-out happens too early (too late) and therefore the DM relic abundance is too high (too low).
