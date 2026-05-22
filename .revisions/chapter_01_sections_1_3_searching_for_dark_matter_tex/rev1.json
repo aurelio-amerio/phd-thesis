@@ -1,1 +1,392 @@
-[]
+[
+  {
+    "id": "e5vw1pe",
+    "startLine": 4,
+    "endLine": 4,
+    "textPreview": "\\section{Searching for Dark Matter}",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "mfohk11",
+        "text": "in general, here there are a lot of citations to cirelli for backgroun facts that are well known in the field, and that are more like textbook information that does not necessarily need a citation. Especially if the citation is Cirelli",
+        "createdAt": "2026-05-22T08:54:50.862Z"
+      }
+    ]
+  },
+  {
+    "id": "6t0sqyb",
+    "startLine": 8,
+    "endLine": 8,
+    "textPreview": "The answer is not a single experiment but a coordinated campaign that attacks the problem from three distinct directions.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "w8o45y5",
+        "text": "attack -> tackles",
+        "createdAt": "2026-05-22T08:46:49.030Z"
+      }
+    ]
+  },
+  {
+    "id": "hhchtuq",
+    "startLine": 10,
+    "endLine": 10,
+    "textPreview": "These three approaches --- direct detection, collider production, and indirect detection --- form what is commonly known as the ``detection triangle''~\\cite{Cirelli:2024ssz}.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "1pcjdxp",
+        "text": "no need to cite cirelli, this is standard terminology",
+        "createdAt": "2026-05-22T08:47:27.029Z"
+      }
+    ]
+  },
+  {
+    "id": "gsblzur",
+    "startLine": 15,
+    "endLine": 15,
+    "textPreview": "Because the chiral structure of the dark matter--Standard Model coupling behaves very differently in these two limits, an interaction that produces a strong signal in one channel can be entirely invisible in another~\\cite{Cirelli:2024ssz}.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "tio58ph",
+        "text": "I think that here saying \"chiral structure\" out of context adds no further information. Either explain what chiral structure means, or rather rephrase this",
+        "createdAt": "2026-05-22T08:50:47.018Z"
+      }
+    ]
+  },
+  {
+    "id": "zt5eta4",
+    "startLine": 16,
+    "endLine": 16,
+    "textPreview": "This is not a weakness of the experimental program --- it is its strength.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "a3n7w5b",
+        "text": "Ai phrase",
+        "createdAt": "2026-05-22T08:51:19.436Z"
+      }
+    ]
+  },
+  {
+    "id": "a915nc0",
+    "startLine": 17,
+    "endLine": 17,
+    "textPreview": "A signal in one corner combined with a null result in another would directly reveal the spin and coupling structure of the dark sector~\\cite{Cirelli:2024ssz}.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "vq5easl",
+        "text": "this phrase needs better explanation",
+        "createdAt": "2026-05-22T08:52:21.938Z"
+      }
+    ]
+  },
+  {
+    "id": "a53h162",
+    "startLine": 38,
+    "endLine": 38,
+    "textPreview": "Direct detection experiments search for the faint recoil produced when a dark matter particle from the galactic halo scatters off an atomic nucleus inside a carefully shielded underground detector~\\cite{Cirelli:2024ssz}.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "jeq7hai",
+        "text": "remove citation, this is a fact well known",
+        "createdAt": "2026-05-22T08:53:54.302Z"
+      }
+    ]
+  },
+  {
+    "id": "oss3g83",
+    "startLine": 39,
+    "endLine": 39,
+    "textPreview": "The kinematics are straightforward: a WIMP with mass $M_\\chi$ and velocity $v \\sim 10^{-3}\\,c$ strikes a target nucleus of mass $m_A$ essentially at rest, transferring a recoil energy $E_R \\sim \\mu_A^2 v^2 / m_A$, where $\\mu_A = M_\\chi m_A / (M_\\chi + m_A)$ is the reduced mass of the system~\\cite{Cirelli:2024ssz}.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "t9r2510",
+        "text": "maybe we can cite the dodelson? or a standard book on this, rather than cirelli ? I think it might be useful to cite some other book sources in this chapter in general that is not cirelli",
+        "createdAt": "2026-05-22T08:56:15.780Z"
+      }
+    ]
+  },
+  {
+    "id": "xtwkw6q",
+    "startLine": 42,
+    "endLine": 42,
+    "textPreview": "The DAMA/LIBRA experiment has observed a persistent annual modulation signal in NaI(Tl) crystals over more than two decades~\\cite{Bernabei:2018yyw}, but its interpretation as WIMPs is in strong tension with null results from other experiments using different target materials, and the claimed signal remains controversial~\\cite{Cirelli:2024ssz}.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "6wb9c5o",
+        "text": "cite another paper",
+        "createdAt": "2026-05-22T08:57:35.029Z"
+      },
+      {
+        "id": "cowot3f",
+        "text": "not cirelli",
+        "createdAt": "2026-05-22T08:57:40.289Z"
+      }
+    ]
+  },
+  {
+    "id": "umovo6w",
+    "startLine": 48,
+    "endLine": 48,
+    "textPreview": "\\textbf{Spin-dependent (SD)} scattering, by contrast, couples to the nuclear spin $J$ and receives no coherent enhancement, leading to bounds that are typically three to five orders of magnitude weaker than the SI case~\\cite{Cirelli:2024ssz}.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "m47jw2z",
+        "text": "this citation to cirelli is fine",
+        "createdAt": "2026-05-22T08:58:47.021Z"
+      }
+    ]
+  },
+  {
+    "id": "r3e39te",
+    "startLine": 53,
+    "endLine": 53,
+    "textPreview": "Together, they have pushed the upper limit on the SI WIMP-nucleon cross-section down to $\\sigma_\\text{SI} \\lesssim 10^{-47}$~cm$^2$ near the minimum of the exclusion curve at $M_\\chi \\sim 30$~GeV~\\cite{LZ:2022lsv,XENON:2023cxc,PandaX-4T:2021bab,Cirelli:2024ssz}.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "biny02m",
+        "text": "maybe remove cirelli here",
+        "createdAt": "2026-05-22T09:00:05.542Z"
+      }
+    ]
+  },
+  {
+    "id": "zvhabgl",
+    "startLine": 64,
+    "endLine": 64,
+    "textPreview": "Pushing beyond this barrier may eventually require directional detectors capable of distinguishing the apparent ``dark matter wind'' coming from the Cygnus constellation from the isotropic neutrino background~\\cite{Cirelli:2024ssz}.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "xtp16pu",
+        "text": "I think that as of 2025, xenon NT and panda x are pushing into the neutrino fog, and people are starting to think of solar neutrinos as a new form of background, not an irreducible wall. we should maybe add a statement about that. Do we have enough sources about this?",
+        "createdAt": "2026-05-22T09:02:58.138Z"
+      }
+    ]
+  },
+  {
+    "id": "k9f22ak",
+    "startLine": 68,
+    "endLine": 68,
+    "textPreview": "These mass-dependent limitations, combined with the approaching neutrino fog, motivate a multi-pronged search strategy.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "xisjh3x",
+        "text": "multi-pronged is an AI word. also, we are now already touching the neutrino fog ans seing solar neutrinos, so we may need some rephrasing",
+        "createdAt": "2026-05-22T09:03:57.426Z"
+      }
+    ]
+  },
+  {
+    "id": "8ovvcol",
+    "startLine": 69,
+    "endLine": 69,
+    "textPreview": "Direct detection constrains the WIMP--nucleon scattering cross-section but is insensitive to the annihilation cross-section $\\langle \\sigma v_\\mathrm{rel} \\rangle$ that determines the thermal relic abundance --- the observable probed by indirect detection.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "knphog2",
+        "text": "I think that direct detection does not only consider wimps, I think that their experiments are \"general tailored\", so not specific for a certain candidate. Also, are we talking at all about Axion detection experiments with resonant cavities for example? I think it might be worth to add at least one small paragraph talking about the direct detection of Axions, since in principle we can produce them and detect thir effects at the lab",
+        "createdAt": "2026-05-22T09:05:35.210Z"
+      }
+    ]
+  },
+  {
+    "id": "oqst1gp",
+    "startLine": 79,
+    "endLine": 79,
+    "textPreview": "A detectable signal requires that an additional Standard Model particle --- a jet, a photon, or a $W/Z$ boson --- is radiated from the initial state, recoiling against the invisible dark matter pair~\\cite{Cirelli:2024ssz}.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "11mkg3x",
+        "text": "remove citation",
+        "createdAt": "2026-05-22T09:07:06.239Z"
+      }
+    ]
+  },
+  {
+    "id": "sgab11r",
+    "startLine": 82,
+    "endLine": 82,
+    "textPreview": "Current LHC measurements constrain the invisible branching ratio to $\\text{BR}_\\text{inv} \\lesssim 0.11$ at 95\\%~C.L., essentially requiring thermal relic dark matter to be heavier than $M_h/2 \\approx 63$~GeV in Higgs-portal scenarios~\\cite{Cirelli:2024ssz}.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "vg24bs6",
+        "text": "I think here we need another citation beside cirelli",
+        "createdAt": "2026-05-22T09:07:40.331Z"
+      }
+    ]
+  },
+  {
+    "id": "l61i6yv",
+    "startLine": 83,
+    "endLine": 83,
+    "textPreview": "Additional search channels arise in specific models --- for instance, the nearly degenerate charged partners predicted by minimal dark matter models produce \\textbf{disappearing tracks}, high-$p_T$ charged tracks that suddenly vanish when the charged state decays into the neutral dark matter particle and an undetectably soft pion~\\cite{Cirelli:2024ssz}.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "1afjqnc",
+        "text": "maybe too specific?",
+        "createdAt": "2026-05-22T09:10:22.302Z"
+      }
+    ]
+  },
+  {
+    "id": "f9flc6d",
+    "startLine": 85,
+    "endLine": 94,
+    "textPreview": "The theoretical interpretation of collider searches has evolved significantly.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "q59g1jt",
+        "text": "I think this part chan be condensed down to a single smaller paragraph, this is going too in depth on something that is largely irrelevant for the thesis",
+        "createdAt": "2026-05-22T09:10:11.686Z"
+      }
+    ]
+  },
+  {
+    "id": "l5uhtpo",
+    "startLine": 86,
+    "endLine": 86,
+    "textPreview": "The initial approach used an \\textbf{Effective Field Theory (EFT)} framework, integrating out the heavy mediator to produce contact interactions of the form $\\mathcal{O} \\sim (1/\\Lambda^2)(\\bar{q}\\Gamma q)(\\bar{\\chi}\\Gamma'\\chi)$~\\cite{Cirelli:2024ssz}.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "fumgi05",
+        "text": "this formula is too specific. remove it, it adds nothing here",
+        "createdAt": "2026-05-22T09:08:47.783Z"
+      }
+    ]
+  },
+  {
+    "id": "czr79pu",
+    "startLine": 105,
+    "endLine": 105,
+    "textPreview": "",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "b5kwzuf",
+        "text": "I think that it might be nice to aknowledge more directly the review from Cirelli, and potentially another book. At the end of this subsection, we should probably explicitly point to the cirelli review paper section to point the reader to where to find additional information. we might also cite a direct detection review (I think we have one in notebooklm)",
+        "createdAt": "2026-05-22T09:13:11.997Z"
+      },
+      {
+        "id": "zq22xbj",
+        "text": "this way we partially solve the problem of citing cirelli so many times here",
+        "createdAt": "2026-05-22T09:13:39.196Z"
+      }
+    ]
+  },
+  {
+    "id": "dza1ndt",
+    "startLine": 113,
+    "endLine": 113,
+    "textPreview": "Dark matter annihilation (or decay) in astrophysical environments produces all stable Standard Model particles --- gamma-rays, neutrinos, electrons, positrons, antiprotons, and heavier anti-nuclei --- each carrying information about the mass, coupling, and spatial distribution of the dark sector~\\cite{Cirelli:2024ssz}.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "u43f0xl",
+        "text": "we need at least another citation for this. maybe the cosmixs paper, the pppc, or even something else",
+        "createdAt": "2026-05-22T09:15:44.992Z"
+      }
+    ]
+  },
+  {
+    "id": "vyk1ddg",
+    "startLine": 118,
+    "endLine": 118,
+    "textPreview": "Gamma-rays therefore provide the cleanest window on dark matter annihilation: they carry uncontaminated morphological information (where the dark matter is concentrated) and spectral information (the dark matter mass and annihilation channel).",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "48and60",
+        "text": "say one of the cleanest windows. don't make this kind of absolute statements that are hard to defend",
+        "createdAt": "2026-05-22T09:17:45.208Z"
+      },
+      {
+        "id": "rltk2gn",
+        "text": "the spectrum alone does not univocally identify mass and annihilation channel, due to the uncertainties. let's tone this down a little, and say that the energy spectrum gives information about mass and channel, instead of framing it as a one way sure fire direction",
+        "createdAt": "2026-05-22T09:18:59.569Z"
+      }
+    ]
+  },
+  {
+    "id": "gs1nod8",
+    "startLine": 120,
+    "endLine": 120,
+    "textPreview": "The potential of gamma-ray indirect detection is underscored by the most debated anomaly in the field: the \\textbf{Galactic Center excess} (GCE), a statistically significant excess of GeV-scale gamma-rays from the inner Galaxy whose spectrum and morphology are consistent with dark matter annihilation but also with an unresolved population of millisecond pulsars~\\cite{Daylan:2014rsa,Cirelli:2024ssz}.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "uffgn6b",
+        "text": "don't cite cirelli. cite the original hooper paper, and more recent papers which support the MSP solution. borrow from ch4, we can add some more citations here",
+        "createdAt": "2026-05-22T09:20:25.494Z"
+      }
+    ]
+  },
+  {
+    "id": "usel8jv",
+    "startLine": 123,
+    "endLine": 123,
+    "textPreview": "To circumvent the significant backgrounds of the Galactic Center, astronomers have turned to \\textbf{dwarf spheroidal galaxies} (dSphs) --- satellite galaxies of the Milky Way that are among the most dark-matter-dominated objects known, with mass-to-light ratios reaching into the thousands~\\cite{Cirelli:2024ssz,Pinetti:2021jjs}.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "coyg3jr",
+        "text": "here cirelli and pinetti are not the best citations. we should cite some of the more important works on dwarfs, for example the ones we cite in ch 5 for the updated fermi lat bounds using drafs",
+        "createdAt": "2026-05-22T09:21:49.059Z"
+      }
+    ]
+  },
+  {
+    "id": "ok07dja",
+    "startLine": 129,
+    "endLine": 132,
+    "textPreview": "The complementary strengths of these targets --- the Galactic Center's brightness, the dSphs' cleanliness, and the integrated signal from the extragalactic background --- define the multi-target observation program pursued in this thesis.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "nced8dl",
+        "text": "this paragraph is bad. this summary is not really needed in this form. we should just bridge to the next subsection, which goes ham on indirect detection. Also, from the current phrasing, it seems we study dsph in detail in this thesis, which is not the case. let's jsut end with a bridge to the next subsection, and leave a recap for the final chapter usmmary",
+        "createdAt": "2026-05-22T09:24:24.058Z"
+      }
+    ]
+  }
+]
