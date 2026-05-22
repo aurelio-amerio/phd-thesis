@@ -13,6 +13,12 @@
       "snapshotFile": "1.3_searching_for_dark_matter.rev1.tex",
       "annotationsFile": "rev1.json",
       "createdAt": "2026-05-21T15:50:19.862Z"
+    },
+    {
+      "revision": 2,
+      "snapshotFile": "1.3_searching_for_dark_matter.rev2.tex",
+      "annotationsFile": "rev2.json",
+      "createdAt": "2026-05-22T14:29:26.849Z"
     }
   ]
 }
