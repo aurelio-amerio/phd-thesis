@@ -18,63 +18,56 @@ The thermal relic cross-section, firmly anchored in the physics of freeze-out, w
 \subsection{The Landscape of Candidates}
 \label{sec:1.2.1}
 
-The evidence reviewed in Section~\ref{sec:1.1} demonstrates that dark matter exists and is roughly five times more abundant than ordinary matter.
-Big Bang Nucleosynthesis further proves that it is non-baryonic.
-Whatever dark matter is, it must be a new form of matter --- but what kind?
-In principle, the viable mass range spans over 90 orders of magnitude, from ultra-light bosons at ${\sim}\,10^{-21}$~eV --- below which the de~Broglie wavelength exceeds the size of observed dwarf galaxies~\cite{Hu:2000ke} --- to macroscopic objects with masses up to ${\sim}\,10^{4}\,M_\odot$ (above which a single ``particle'' would exceed the mass of the smallest known dark-matter-dominated structures)~\cite{Cirelli:2024ssz}.
-Covering this parameter space requires both theoretical guidance and observational constraints to identify the most motivated regions.
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.95\textwidth]{chapter_01/figures/dm_mass_landscape.pdf}
+    \caption{The dark-matter mass landscape: viable candidate masses span roughly ninety orders of magnitude, from ultra-light bosonic fields to macroscopic primordial black holes. Each class is characterized by a distinct production mechanism and probed by a complementary set of experiments. Adapted from~\cite{Cirelli:2024ssz}. \aure{TODO: recreate from arXiv:2406.01705v3 figs/MDMscale.pdf}}
+    \label{fig:dm_mass_landscape}
+\end{figure}
 
-We begin by ruling out the Standard Model.
-Baryonic matter is excluded as the dominant component by two independent arguments: (i) BBN and CMB measurements constrain the baryon density to $\Omega_b h^2 \approx 0.022$~\cite{Aghanim:2018eyx,Cirelli:2024ssz}, far below the total matter density $\Omega_m h^2 \approx 0.14$; and (ii) baryons were tightly coupled to photons before recombination and could not collapse gravitationally to seed the observed large-scale structure~\cite{Cirelli:2024ssz}.
-Standard Model neutrinos, despite being neutral, stable, and weakly interacting, also fail as dark matter candidates.
-They are too light ($\sum m_\nu \lesssim 0.12$~eV from CMB and BAO data~\cite{Cirelli:2024ssz}) to produce the observed relic density.
-More fundamentally, neutrinos decoupled while still relativistic, making them ``hot'' dark matter: their high velocities would have free-streamed out of gravitational potential wells, suppressing structure formation on galactic scales and producing a ``top-down'' hierarchy of structure formation incompatible with observations~\cite{Cirelli:2024ssz}.
-A related constraint comes from the Tremaine--Gunn bound~\cite{Tremaine:1979we}: the Pauli exclusion principle limits the maximum phase-space density of a fermionic species, requiring any fermionic dark matter candidate to have $m \gtrsim 0.1$--$1$~keV to reproduce the dense halos of dwarf spheroidal galaxies~\cite{Cirelli:2024ssz}.
-Standard Model neutrinos, at sub-eV masses, fall well short of this bound.
+The evidence assembled in Section~\ref{sec:1.1} establishes that dark matter exists, that it is roughly five times more abundant than ordinary matter, and that it cannot be made of any Standard Model particle.
+The viable parameter space that remains is staggering.
+As Figure~\ref{fig:dm_mass_landscape} illustrates, candidate masses span roughly ninety orders of magnitude, from ultra-light bosonic fields near $10^{-21}$~eV, below which the de~Broglie wavelength would exceed the size of observed dwarf galaxies~\cite{Hu:2000ke}, up to macroscopic primordial black holes of tens of solar masses, and interaction strengths range from purely gravitational to just below current direct-detection sensitivity.
+Within this space the Standard Model is already excluded: the baryon density measured from Big Bang Nucleosynthesis and the cosmic microwave background, reviewed in Section~\ref{sec:1.1.3}, falls a factor of six short of the total matter density; the Tremaine--Gunn phase-space bound discussed in Section~\ref{sec:1.1.1} forbids any fermionic candidate lighter than about $1$~keV~\cite{Tremaine:1979we}; and hot relics that decouple while relativistic free-stream out of forming potential wells, washing out the small-scale power that observations require~\cite{Bullock:2017xww}.
+Dark matter must therefore be a new, non-baryonic, cold or at most warm form of matter, and the open question is which microphysical realization Nature has chosen.
 
-With the Standard Model excluded, the search turns to new physics.
-The candidate landscape can be organized by mass scale and production mechanism.
+Among the proposed answers, weakly interacting massive particles (WIMPs) have driven the experimental program for more than two decades.
+The reason is the so-called \emph{WIMP miracle}: a stable particle with electroweak-scale mass and weak-scale annihilation cross section is naturally produced by thermal freeze-out at roughly the observed abundance, a coincidence that we develop quantitatively in Section~\ref{sec:1.2.2}.
+Concrete realizations include the lightest neutralino of supersymmetric extensions of the Standard Model~\cite{Ellis:1983ew} and \emph{minimal dark matter} scenarios in which a single electroweak multiplet, stabilized by an accidental symmetry, plays the entire role of the dark sector~\cite{Cirelli:2005uq}.
+The operational appeal for this thesis is more immediate: the same cross section that fixes the relic density also fixes the rate at which present-day WIMPs annihilate into gamma rays inside dense halos, so that the indirect-detection signals studied in Chapters~\ref{ch:4}--\ref{ch:8} probe directly the parameter that thermal cosmology constrains.
 
-\paragraph{WIMPs.}
-Weakly Interacting Massive Particles occupy the GeV--TeV mass range and interact with Standard Model particles through weak-scale couplings.
-They are produced through thermal freeze-out in the early universe, a mechanism we derive in detail in the following subsection.
-The observation that a particle with weak-scale mass and coupling naturally yields the observed relic abundance --- the so-called ``WIMP miracle'' --- has made WIMPs the dominant dark matter paradigm for over three decades~\cite{Cirelli:2024ssz}.
-Concrete realizations include the lightest neutralino in supersymmetric extensions of the Standard Model~\cite{Ellis:1983ew} and the minimal dark matter framework, in which a single electroweak multiplet with the appropriate quantum numbers is automatically stable and yields the correct relic density~\cite{Cirelli:2005uq}.
-WIMPs are the focus of this thesis, as their annihilation cross-section is directly testable through indirect detection via gamma-rays.
+Axions are the second candidate that the community currently treats on equal footing with WIMPs, and the steady tightening of direct-detection limits and dwarf-spheroidal indirect-detection bounds has only increased their relative weight.
+Axions were originally proposed by Peccei and Quinn~\cite{Peccei:1977hh} as the pseudo-Nambu--Goldstone boson of a spontaneously broken global symmetry introduced to solve the strong CP problem of QCD~\cite{Weinberg:1977ma,Wilczek:1977pj}; the axion acquires a small mass at the QCD phase transition, and an initial misalignment between its field value and the minimum of its potential sources a coherent classical oscillating condensate that today behaves as cold dark matter.
+This \emph{misalignment mechanism}, reviewed in~\cite{Cirelli:2024ssz}, is generic to any light scalar with a late-developing potential and naturally explains why such a feebly coupled particle saturates the observed relic density.
+Because axions are bosons they evade the Tremaine--Gunn bound and can sit in occupation numbers $N \gg 1$, behaving as a classical field rather than as a gas of quanta.
+The phenomenologically viable range of axion masses is correspondingly broad, spanning roughly $10^{-12}$ to $10^{7}$~eV once astrophysical, cosmological, and laboratory bounds are combined~\cite{OHare:2021utq,Adams:2022pbo}; the open-source compilation maintained by O'Hare and collaborators~\cite{Adams:2022pbo}, complemented by the \texttt{AxionLimits} repository \aure{cite cajohare/AxionLimits Zenodo}, is the standard reference for the current global picture.
+Haloscope experiments such as ADMX search for the resonant conversion of the local axion field into microwave photons inside a tunable cavity threaded by a strong magnetic field, and the Snowmass community white paper documents the breadth of the dedicated experimental program~\cite{Adams:2022pbo}.
 
-\paragraph{Axions.}
-The axion is a light pseudoscalar boson arising from the Peccei--Quinn mechanism~\cite{Peccei:1977hh}, proposed to solve the strong CP problem in QCD~\cite{Weinberg:1977ma,Wilczek:1977pj}.
-It acquires a small mass around the QCD phase transition, typically in the $\mu$eV--meV range, and is produced non-thermally via the misalignment mechanism: the axion field is displaced from its potential minimum in the early universe and subsequently oscillates coherently, behaving as cold dark matter despite its extraordinarily low mass~\cite{Cirelli:2024ssz}.
-The post-inflationary misalignment scenario points toward masses around ${\sim}\,26\,\mu$eV~\cite{Cirelli:2024ssz}.
-Because axions are bosons, they are not subject to the Tremaine--Gunn bound and can have occupation numbers $N \gg 1$, effectively behaving as a classical oscillating field~\cite{Cirelli:2024ssz}.
-Dedicated haloscope experiments such as ADMX search for axion-to-photon conversion in strong magnetic fields.
+A separate keV-scale window is occupied by sterile (right-handed) neutrinos, which do not couple to the Standard Model weak interaction but mix slightly with active neutrinos.
+Two production mechanisms are commonly considered: the original Dodelson--Widrow scenario of non-resonant oscillations in the early Universe~\cite{Dodelson:1993je}, and the Shi--Fuller mechanism in which a primordial lepton asymmetry drives resonant oscillations and shifts the produced spectrum to colder momenta~\cite{Shi:1998km}.
+Resonant production is the more flexible option because it evades the most stringent free-streaming bounds from Lyman-$\alpha$ and Milky Way satellite counts, which otherwise push the allowed mass above $20$--$30$~keV.
+Once produced, sterile neutrinos are quasi-stable but decay radiatively as $N \to \nu\gamma$, yielding a monochromatic X-ray line that X-ray telescopes can search for as a smoking-gun signature; the canonical reviews of the model space and its observational status are those of Boyarsky et al.~\cite{Boyarsky:2018tvu} and the keV white paper by Drewes et al.~\cite{Drewes:2016upu}.
 
-\paragraph{Sterile neutrinos.}
-Hypothetical right-handed neutrinos that do not participate in Standard Model weak interactions but mix slightly with active neutrinos constitute viable warm dark matter candidates in the keV mass range~\cite{Cirelli:2024ssz}.
-They can be produced through non-resonant oscillations (the Dodelson--Widrow mechanism~\cite{Dodelson:1993je}) or resonantly via a primordial lepton asymmetry (the Shi--Fuller mechanism~\cite{Shi:1998km}).
-The latter allows sterile neutrinos to evade some of the most stringent free-streaming bounds, which otherwise require $m \gtrsim 20$--$30$~keV for non-resonantly produced candidates~\cite{Cirelli:2024ssz}.
-Their slow radiative decay $N \to \nu \gamma$ produces a monochromatic X-ray line that can be searched for with X-ray telescopes.
+Primordial black holes (PBHs) offer a qualitatively different option in which the dark matter is not a new particle at all but a population of macroscopic objects formed from the collapse of large density perturbations before BBN.
+Because PBHs are not made of baryons after BBN, they bypass the baryon-budget constraint discussed in Section~\ref{sec:1.1.3}.
+Microlensing surveys, dynamical bounds on wide stellar binaries and ultra-faint dwarfs, and CMB spectral-distortion limits together exclude PBHs as the dominant dark-matter component across most of the allowed mass range~\cite{Cirelli:2024ssz}.
+The single surviving window for a monochromatic PBH population to constitute all of the dark matter is the so-called asteroid-mass range, $10^{-16}\,M_\odot \lesssim M \lesssim 3 \times 10^{-12}\,M_\odot$, where Hawking-evaporation bounds from below and microlensing limits from above leave a narrow gap that next-generation experiments aim to close.
 
-\paragraph{Sub-GeV dark matter and dark photons.}
-Models featuring a ``dark sector'' with new light mediators --- such as a kinetically mixed dark photon --- allow dark matter in the MeV--GeV range to achieve the correct relic abundance through annihilation into dark-sector states~\cite{Cirelli:2024ssz}.
-These candidates evade the Lee--Weinberg bound (which applies only to Standard Model weak interactions) and have motivated a new generation of direct detection experiments sensitive to sub-GeV recoils, including SENSEI and DAMIC.
+A complementary direction for new physics modifies not the identity of the dark particle but its cosmological production history.
+In the \emph{freeze-in} scenario, feebly interacting massive particles (FIMPs) couple so weakly to the thermal bath that they never reach equilibrium~\cite{Hall:2009bx}; their abundance is built up gradually through rare decays and $2 \to 2$ scatterings, and crucially it grows with the coupling rather than shrinking, opposite to the freeze-out logic of Section~\ref{sec:1.2.2}~\cite{Cirelli:2024ssz}.
+The viable FIMP mass range is correspondingly broad, and the extreme smallness of the couplings places FIMPs naturally out of reach of direct-detection and collider searches, shifting attention to cosmological and astrophysical probes.
 
-\paragraph{Primordial black holes.}
-At the opposite extreme, dark matter could consist not of fundamental particles but of primordial black holes (PBHs), formed from the gravitational collapse of large density perturbations in the very early universe, before BBN~\cite{Cirelli:2024ssz}.
-Because PBHs form before nucleosynthesis, they are not subject to the baryonic budget constraints.
-Observational bounds from gravitational microlensing, dynamical effects on stellar systems, and CMB spectral distortions constrain PBHs across most of the mass range.
-At the time of writing, the ``asteroid-mass window'' $10^{-16}\,M_\odot \lesssim M \lesssim 3 \times 10^{-12}\,M_\odot$ remains the only range where PBHs with a monochromatic mass function could constitute all of the dark matter~\cite{Cirelli:2024ssz}.
+Beyond these production-based classifications, dark matter may also depart from the cold and collisionless idealization on which $\Lambda$CDM is built, and there are reasons to take that possibility seriously.
+The persistent small-scale tensions reviewed in Section~\ref{sec:1.1.2} --- the cusp/core problem in dwarf galaxies, the diversity of rotation curves at fixed maximum circular velocity, and the too-big-to-fail puzzle of the Milky Way satellites --- all point to fewer dense, cuspy halos on sub-galactic scales than collisionless simulations predict~\cite{Bullock:2017xww}.
+One response is \emph{warm dark matter} (WDM), a kinematic classification of any candidate with a free-streaming length intermediate between hot and cold relics; the resulting suppression of small-scale power softens the small-scale tensions while leaving the large-scale successes of $\Lambda$CDM untouched.
+Resonantly produced keV sterile neutrinos are a concrete realization, but WDM is broader, and the astrophysical and cosmological tests that constrain it are reviewed in~\cite{Adhikari:2022sbh}.
+A second, orthogonal direction is \emph{self-interacting dark matter} (SIDM), originally proposed by Spergel and Steinhardt~\cite{Spergel:1999mh} as a way to thermalize the inner regions of haloes through elastic scattering and so produce cored, not cuspy, density profiles.
+The relevant figure of merit is the cross section per unit mass: values of order $\sigma/M \sim 1~\mathrm{cm}^2/\mathrm{g}$ at dwarf-galaxy velocities are needed to produce a noticeable astrophysical effect, while bullet-cluster and cluster-scale observations require $\sigma/M \lesssim 1~\mathrm{cm}^2/\mathrm{g}$ globally and $\lesssim 0.1~\mathrm{cm}^2/\mathrm{g}$ at cluster velocities, motivating velocity-dependent SIDM models with a light mediator~\cite{Kaplinghat:2015aga}.
+The status of the program is summarized in the review of Tulin and Yu~\cite{Tulin:2017ara}, and a community of hydrodynamical simulators (the ETHOS framework and the works of Vogelsberger, Rocha, Peter, Fischer, and collaborators) now routinely compares SIDM and WDM predictions to dwarf-galaxy data.
 
-\paragraph{Freeze-in and FIMPs.}
-The candidates above are mostly produced either thermally (WIMPs) or via field dynamics (axions).
-An alternative production mechanism is freeze-in, in which Feebly Interacting Massive Particles (FIMPs) have couplings so small that they never reach thermal equilibrium with the primordial plasma~\cite{Hall:2009bx}.
-Instead, they are gradually produced through the rare decays or scatterings of bath particles.
-Unlike freeze-out --- where larger couplings produce less dark matter --- freeze-in yields an abundance that increases with the interaction strength~\cite{Cirelli:2024ssz}.
-This mechanism allows dark matter across a vast mass range while naturally evading direct detection and collider constraints due to the extremely weak couplings involved.
-
-This range of candidates --- spanning from $10^{-21}$~eV bosonic fields to solar-mass black holes --- reflects how little we know about the dark sector.
-The WIMP paradigm, however, stands out for a practical reason: the same annihilation cross-section that sets the relic abundance through thermal freeze-out is directly accessible to experimental searches via scattering (direct detection), production (colliders), and annihilation products (indirect detection).
-This testability, combined with the quantitative success of the thermal relic calculation, motivates the detailed treatment of the freeze-out mechanism that follows.
+What this catalogue makes clear is how little the existing evidence pins down about the microphysics of the dark sector.
+The WIMP paradigm nevertheless retains a privileged status, not because it is theoretically inevitable but because a single number, the velocity-averaged annihilation cross section, simultaneously fixes the cosmological relic abundance, the rate of elastic scattering on nuclei, the production cross section at colliders, and the present-day annihilation rate inside galactic halos.
+The remainder of this section develops the thermal freeze-out picture quantitatively and shows why the resulting target value of $\langle\sigma v\rangle$ is the natural setpoint of the experimental program that follows.
 
 \subsection{Thermodynamics of the Early Universe}
 \label{sec:1.2.2}
