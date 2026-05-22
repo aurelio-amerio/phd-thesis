@@ -25,6 +25,12 @@
       "snapshotFile": "1.4_indirect_detection.rev3.tex",
       "annotationsFile": "rev3.json",
       "createdAt": "2026-05-22T09:27:56.159Z"
+    },
+    {
+      "revision": 4,
+      "snapshotFile": "1.4_indirect_detection.rev4.tex",
+      "annotationsFile": "rev4.json",
+      "createdAt": "2026-05-22T10:26:40.557Z"
     }
   ]
 }
