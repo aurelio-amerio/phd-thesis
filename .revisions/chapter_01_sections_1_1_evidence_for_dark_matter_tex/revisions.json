@@ -85,14 +85,13 @@
       "snapshotFile": "1.1_evidence_for_dark_matter.rev13.tex",
       "annotationsFile": "rev13.json",
       "createdAt": "2026-05-21T10:28:26.509Z"
+    },
+    {
+      "revision": 14,
+      "snapshotFile": "1.1_evidence_for_dark_matter.rev14.tex",
+      "annotationsFile": "rev14.json",
+      "createdAt": "2026-05-22T12:54:08.993Z"
     }
   ],
-  "previewMode": "source",
-  "diffState": {
-    "mode": "local",
-    "pinnedRef": {
-      "type": "local",
-      "revision": 12
-    }
-  }
+  "previewMode": "source"
 }

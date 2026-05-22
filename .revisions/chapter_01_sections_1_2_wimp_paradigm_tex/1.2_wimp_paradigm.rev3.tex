@@ -1,0 +1,230 @@
+% Section 1.2: The WIMP Paradigm
+% Structure: Landscape → Freeze-out → Mass bounds → Beyond standard freeze-out
+
+\section{The WIMP Paradigm}
+\label{sec:1.2}
+
+The evidence reviewed in Section~\ref{sec:1.1} converges on a robust conclusion: dark matter exists, contributes roughly five times the cosmological energy density of baryons, and cannot be accommodated within the Standard Model.
+What that evidence does not do is fix the microphysics of the dark sector, and the resulting parameter space is enormous.
+Viable candidates span roughly ninety orders of magnitude in mass, from ultra-light bosonic fields with $m \sim 10^{-22}$~eV that behave as classical waves on galactic scales~\cite{Hu:2000ke} up to composite objects of macroscopic mass, with interaction strengths ranging from the purely gravitational floor to couplings just below current experimental sensitivity~\cite{Cirelli:2024ssz}.
+Within this landscape, \emph{weakly interacting massive particles} (WIMPs) are one prominent candidate class among many.
+Their dominance of the indirect-detection literature over the past two decades is a historical fact, driven by the so-called \emph{WIMP miracle} --- the observation that a thermal relic with electroweak-scale mass and electroweak-strength annihilation cross section automatically reproduces the observed dark matter abundance --- and not a statement that other well-motivated candidates such as axions, sterile neutrinos, or primordial black holes have been excluded.
+Each of these alternatives remains viable, with its own observational handles and its own dedicated experimental programs.
+The reason we devote the present section to the WIMP framework is operational rather than ideological: WIMPs are the candidate class probed via the gamma-ray indirect-detection analyses developed in Chapters~\ref{ch:4}--\ref{ch:8}, and the quantitative interpretation of those analyses requires a careful treatment of the freeze-out mechanism and its uncertainties.
+
+The remainder of this section is organized as follows.
+Section~\ref{sec:1.2.1} surveys the candidate landscape --- the main classes (WIMPs, axions, sterile neutrinos, primordial black holes, FIMPs) together with modifications of the cold collisionless paradigm such as warm and self-interacting dark matter --- so that the WIMP focus of the rest of the thesis is placed in proper context.
+Section~\ref{sec:1.2.2} then describes the thermal freeze-out mechanism, presents the Boltzmann equation governing the comoving abundance, and identifies the thermally averaged annihilation cross section $\langle\sigma v_\mathrm{rel}\rangle$ as the central observable that links early-universe cosmology to present-day signals; the canonical benchmark value $\langle\sigma v\rangle_\mathrm{cosmo} \approx 2.2\times 10^{-26}~\mathrm{cm}^3/\mathrm{s}$ emerges from this analysis.
+Section~\ref{sec:1.2.3} reviews the theoretical bounds that bracket the allowed WIMP mass range, with the Lee--Weinberg argument setting a lower edge near a few GeV and partial-wave unitarity together with perturbativity capping the upper end near $100$~TeV, jointly defining the GeV--100~TeV thermal window targeted by gamma-ray experiments.
+Section~\ref{sec:1.2.4} surveys the refinements that complicate the naive identification of the freeze-out cross section with the present-day annihilation rate: velocity dependence of the cross section, Sommerfeld enhancement at low relative velocities, co-annihilation among nearly degenerate dark-sector states, and resonant enhancement near a mediator pole.
+Taken together, these elements fix the framework within which the thermal-relic cross section provides the primary benchmark for the indirect-detection analyses presented throughout this thesis.
+
+\subsection{The Landscape of Candidates}
+\label{sec:1.2.1}
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.95\textwidth]{chapter_01/figures/dm_mass_landscape.pdf}
+	\caption{The dark-matter mass landscape: viable candidate masses span roughly ninety orders of magnitude, from ultra-light bosonic fields to macroscopic primordial black holes.
+		Each class is characterized by a distinct production mechanism and probed by a complementary set of experiments.
+		Adapted from~\cite{Cirelli:2024ssz}. \aure{TODO: recreate from arXiv:2406.01705v3 figs/MDMscale.pdf}}
+	\label{fig:dm_mass_landscape}
+\end{figure}
+
+The evidence assembled in Section~\ref{sec:1.1} establishes that dark matter exists, that it is roughly five times more abundant than ordinary matter, and that it cannot be made of any Standard Model particle.
+The viable parameter space that remains is staggering.
+As Figure~\ref{fig:dm_mass_landscape} illustrates, candidate masses span roughly ninety orders of magnitude, from ultra-light bosonic fields near $10^{-21}$~eV, below which the de~Broglie wavelength would exceed the size of observed dwarf galaxies~\cite{Hu:2000ke}, up to macroscopic primordial black holes of tens of solar masses, and interaction strengths range from purely gravitational to just below current direct-detection sensitivity.
+Within this space the Standard Model is already excluded: the baryon density measured from Big Bang Nucleosynthesis and the cosmic microwave background, reviewed in Section~\ref{sec:1.1.3}, falls a factor of six short of the total matter density; the Tremaine--Gunn phase-space bound forbids any fermionic candidate lighter than about $1$~keV~\cite{Tremaine:1979we}; and hot relics that decouple while relativistic free-stream out of forming potential wells, washing out the small-scale power that observations require~\cite{Bullock:2017xww}.
+Dark matter must therefore be a new, non-baryonic, cold or at most warm form of matter, and the open question is which microphysical realization Nature has chosen.
+
+Among the proposed answers, weakly interacting massive particles (WIMPs) have driven the experimental program for more than two decades.
+The reason is the so-called \emph{WIMP miracle}: a stable particle with electroweak-scale mass and weak-scale annihilation cross section is naturally produced by thermal freeze-out at roughly the observed abundance, a coincidence that we develop quantitatively in Section~\ref{sec:1.2.2}.
+Concrete realizations include the lightest neutralino of supersymmetric extensions of the Standard Model~\cite{Ellis:1983ew} and \emph{minimal dark matter} scenarios in which a single electroweak multiplet, stabilized by an accidental symmetry, plays the entire role of the dark sector~\cite{Cirelli:2005uq}.
+The operational appeal for this thesis is more immediate: the same cross section that fixes the relic density also fixes the rate at which present-day WIMPs annihilate into gamma rays inside dense halos, so that the indirect-detection signals studied in Chapters~\ref{ch:4}--\ref{ch:8} probe directly the parameter that thermal cosmology constrains.
+
+Axions are the second candidate that the community currently treats on equal footing with WIMPs, and the steady tightening of direct-detection limits and dwarf-spheroidal indirect-detection bounds has only increased their relative weight.
+Axions were originally proposed by Peccei and Quinn~\cite{Peccei:1977hh} as the pseudo-Nambu--Goldstone boson of a spontaneously broken global symmetry introduced to solve the strong CP problem of QCD~\cite{Weinberg:1977ma,Wilczek:1977pj}; the axion acquires a small mass at the QCD phase transition, and an initial misalignment between its field value and the minimum of its potential sources a coherent classical oscillating condensate that today behaves as cold dark matter.
+This \emph{misalignment mechanism}, reviewed in~\cite{Cirelli:2024ssz}, is generic to any light scalar with a late-developing potential and naturally explains why such a feebly coupled particle saturates the observed relic density.
+Because axions are bosons they evade the Tremaine--Gunn bound and can sit in occupation numbers $N \gg 1$, behaving as a classical field rather than as a gas of quanta.
+The phenomenologically viable range of axion masses is correspondingly broad, spanning roughly $10^{-12}$ to $10^{7}$~eV once astrophysical, cosmological, and laboratory bounds are combined~\cite{Adams:2022pbo}.
+Haloscope experiments such as ADMX search for the resonant conversion of the local axion field into microwave photons inside a tunable cavity threaded by a strong magnetic field, and the Snowmass community white paper documents the breadth of the dedicated experimental program~\cite{Adams:2022pbo}.
+
+A separate keV-scale window is occupied by sterile (right-handed) neutrinos, which do not couple to the Standard Model weak interaction but mix slightly with active neutrinos.
+Two production mechanisms are commonly considered: the original Dodelson--Widrow scenario of non-resonant oscillations in the early Universe~\cite{Dodelson:1993je}, and the Shi--Fuller mechanism in which a primordial lepton asymmetry drives resonant oscillations and shifts the produced spectrum to colder momenta~\cite{Shi:1998km}.
+Resonant production is the more flexible option because it evades the most stringent free-streaming bounds from Lyman-$\alpha$ and Milky Way satellite counts, which otherwise push the allowed mass above $20$--$30$~keV~\cite{Boyarsky:2018tvu}.
+Once produced, sterile neutrinos are quasi-stable but decay radiatively as $N \to \nu\gamma$, yielding a monochromatic X-ray line that X-ray telescopes can search for as a smoking-gun signature; the canonical reviews of the model space and its observational status are those of Boyarsky et al.~\cite{Boyarsky:2018tvu} and the keV white paper by Drewes et al.~\cite{Drewes:2016upu}.
+
+Primordial black holes (PBHs) offer a qualitatively different option in which the dark matter is not a new particle at all but a population of macroscopic objects formed from the collapse of large density perturbations before BBN.
+Because PBHs are not made of baryons after BBN, they bypass the baryon-budget constraint discussed in Section~\ref{sec:1.1.3}.
+Microlensing surveys, dynamical bounds on wide stellar binaries and ultra-faint dwarfs, and CMB spectral-distortion limits together exclude PBHs as the dominant dark-matter component across most of the allowed mass range~\cite{Cirelli:2024ssz}.
+The single surviving window for a monochromatic PBH population to constitute all of the dark matter is the so-called asteroid-mass range, $10^{-16}\,M_\odot \lesssim M \lesssim 3 \times 10^{-12}\,M_\odot$, where Hawking-evaporation bounds from below and microlensing limits from above leave a narrow gap that next-generation experiments aim to close.
+
+A complementary direction for new physics modifies not the identity of the dark particle but its cosmological production history.
+In the \emph{freeze-in} scenario, feebly interacting massive particles (FIMPs) couple so weakly to the thermal bath that they never reach equilibrium~\cite{Hall:2009bx}; their abundance is built up gradually through rare decays and $2 \to 2$ scatterings, and the final relic abundance grows with the coupling rather than shrinking, the inverse of the freeze-out logic of Section~\ref{sec:1.2.2}~\cite{Cirelli:2024ssz}.
+The viable FIMP mass range is correspondingly broad, and the extreme smallness of the couplings places FIMPs naturally out of reach of direct-detection and collider searches, shifting attention to cosmological and astrophysical probes.
+
+Beyond these production-based classifications, dark matter may also depart from the cold and collisionless idealization on which $\Lambda$CDM is built, and there are reasons to take that possibility seriously.
+The persistent small-scale tensions of $\Lambda$CDM --- the cusp/core problem in dwarf galaxies, the diversity of rotation curves at fixed maximum circular velocity, and the too-big-to-fail puzzle of the Milky Way satellites --- all point to fewer dense, cuspy halos on sub-galactic scales than collisionless simulations predict~\cite{Bullock:2017xww}.
+One response is \emph{warm dark matter} (WDM), a kinematic classification of any candidate with a free-streaming length intermediate between hot and cold relics; the resulting suppression of small-scale power softens the small-scale tensions while leaving the large-scale successes of $\Lambda$CDM untouched.
+Resonantly produced keV sterile neutrinos are a concrete realization, but WDM is broader, and the astrophysical and cosmological tests that constrain it are reviewed in~\cite{Adhikari:2022sbh}.
+A second, orthogonal direction is \emph{self-interacting dark matter} (SIDM), originally proposed by Spergel and Steinhardt~\cite{Spergel:1999mh} as a way to thermalize the inner regions of haloes through elastic scattering and so produce cored, not cuspy, density profiles.
+The relevant figure of merit is the cross section per unit mass: values of order $\sigma/M \sim 1~\mathrm{cm}^2/\mathrm{g}$ at dwarf-galaxy velocities are needed to produce a noticeable astrophysical effect, while bullet-cluster and cluster-scale observations require $\sigma/M \lesssim 1~\mathrm{cm}^2/\mathrm{g}$ globally and $\lesssim 0.1~\mathrm{cm}^2/\mathrm{g}$ at cluster velocities, motivating velocity-dependent SIDM models with a light mediator~\cite{Kaplinghat:2015aga}.
+The status of the program is summarized in the review of Tulin and Yu~\cite{Tulin:2017ara}, and a community of hydrodynamical simulators (the ETHOS framework and the works of Vogelsberger, Rocha, Peter, Fischer, and collaborators) now routinely compares SIDM and WDM predictions to dwarf-galaxy data.
+
+What this catalogue makes clear is how little the existing evidence pins down about the microphysics of the dark sector.
+The WIMP paradigm nevertheless retains a privileged status, not because it is theoretically inevitable but because a single number, the velocity-averaged annihilation cross section, simultaneously fixes the cosmological relic abundance, the rate of elastic scattering on nuclei, the production cross section at colliders, and the present-day annihilation rate inside galactic halos.
+The remainder of this section develops the thermal freeze-out picture quantitatively and shows why the resulting target value of $\langle\sigma v\rangle$ is the natural setpoint of the experimental program that follows.
+
+\subsection{Thermodynamics of the Early Universe}
+\label{sec:1.2.2}
+
+The thermal-relic mechanism gives the cosmological puzzle of Section~\ref{sec:1.2.1} a concrete particle-physics realization.
+Imagine a hypothetical species $\chi$ in chemical equilibrium with the Standard Model plasma of the very early Universe, kept in lockstep through pair-annihilation reactions $\chi\chi \leftrightarrow \mathrm{SM}\,\mathrm{SM}$ that proceed in both directions at equal rates.
+As the Universe expands and cools, two clocks run in competition: the cosmological expansion, which dilutes everything and lowers the temperature, and the annihilation rate, which depends on the density of $\chi$ particles still available to find each other.
+Eventually the expansion wins.
+The reactions become too slow to maintain equilibrium, the comoving number density of $\chi$ stops tracking its equilibrium value, and whatever population happens to remain is locked in as the relic abundance we observe today.
+The purpose of this section is to make that picture quantitative enough to identify what kind of particle reproduces $\Omega_\chi h^2 \approx 0.12$, with a counterintuitive result already visible in advance: the observable that controls the answer is not the mass of $\chi$ but its velocity-averaged annihilation cross section.
+
+The qualitative logic of this competition is worth pausing on before any formula appears.
+A particle that annihilates strongly stays in chemical equilibrium for longer; it follows the equilibrium population as the latter drops, and only departs from it when the equilibrium abundance has already become small.
+Such a particle leaves behind few relics.
+A particle that annihilates weakly, by contrast, loses contact with the bath earlier, while the equilibrium abundance is still large, and therefore freezes out at a higher residual density.
+The result is the counterintuitive maxim that, in the thermal-relic context, the weakest particle wins: the dark-matter abundance is set by how reluctantly a candidate annihilates, not by how massive it is.
+The mass enters the final answer only logarithmically, through the temperature at which the decoupling occurs, while the velocity-averaged annihilation rate $\langle \sigma v_\mathrm{rel}\rangle$ sets the relic abundance to first approximation.
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.85\textwidth]{chapter_01/figures/freezeout_yx.pdf}
+	\caption{Comoving abundance $Y \equiv n_\chi/s$ as a function of the dimensionless inverse temperature $x \equiv M_\chi/T$.
+		The dashed curve traces the equilibrium abundance $Y_\mathrm{eq}$, exponentially Boltzmann-suppressed once $T$ falls below $M_\chi$.
+		The solid curves show the actual abundance for three values of the velocity-averaged annihilation cross section, illustrating that stronger annihilation tracks equilibrium longer and freezes out at a smaller residual relic.
+		\aure{TODO: produce Y vs x freeze-out figure}}
+	\label{fig:freezeout_yx}
+\end{figure}
+
+Figure~\ref{fig:freezeout_yx} captures the picture in a single plot of the comoving abundance $Y \equiv n_\chi/s$ against the dimensionless inverse temperature $x \equiv M_\chi/T$.
+At very high temperatures, $x \ll 1$, the candidate is effectively relativistic and present in numbers comparable to the photons; the actual abundance hugs the equilibrium curve $Y_\mathrm{eq}$.
+Once the temperature drops below the rest mass, $x \gtrsim 1$, equilibrium requires that producing a $\chi$ pair pays an exponential Boltzmann cost, and $Y_\mathrm{eq}$ falls off as $e^{-x}$.
+The actual abundance tracks this exponential decline only as long as the annihilation rate $\Gamma = n_\chi \langle \sigma v_\mathrm{rel}\rangle$ exceeds the Hubble rate $H$; once $\Gamma$ drops below $H$, annihilations can no longer keep up with expansion, $Y$ peels away from $Y_\mathrm{eq}$, and the comoving abundance plateaus at its asymptotic value $Y_\infty$.
+For a weakly interacting candidate at the electroweak scale, this \emph{freeze-out} happens at $T_\mathrm{fo} \sim M_\chi/(20\text{--}25)$ --- comfortably non-relativistic, but well before today.
+
+A quantitative description of this process follows the comoving number density through a single transport equation~\cite{Gondolo:1990dk},
+\begin{equation}
+	\dot n_\chi + 3 H n_\chi = -\langle \sigma v_\mathrm{rel} \rangle\, \bigl( n_\chi^2 - n_\mathrm{eq}^2 \bigr)\,,
+	\label{eq:boltzmann}
+\end{equation}
+which has a transparent reading term by term: the $3 H n_\chi$ piece on the left is the dilution due to Hubble expansion of a comoving volume; the $-\langle \sigma v_\mathrm{rel}\rangle\, n_\chi^2$ piece on the right is the depletion of $\chi$ by annihilation into Standard Model final states; the $+\langle \sigma v_\mathrm{rel}\rangle\, n_\mathrm{eq}^2$ piece is the inverse process, in which $\chi$ pairs are recreated from the thermal bath at the rate dictated by detailed balance.
+It is convenient to factor out the trivial expansion dilution by passing from $n_\chi$ to the \emph{comoving abundance} $Y \equiv n_\chi / s$, where $s$ is the entropy density.
+The motivation for this change of variables is that, in adiabatic expansion, the entropy in a comoving volume is conserved, so $Y$ remains constant whenever the number of dark-matter particles per comoving volume is also conserved.
+Variations of $Y$ thus track only the genuinely interesting physics --- annihilation and creation --- rather than the cosmological dilution shared by every species.
+
+A subtlety worth flagging is what the quantity $\langle \sigma v_\mathrm{rel}\rangle$ actually means, since the dark-matter literature uses the word ``cross section'' for two physically distinct objects.
+The $\sigma v_\mathrm{rel}$ that controls Eq.~\eqref{eq:boltzmann} is the cross section for the annihilation process $\chi\chi \to \mathrm{SM}\,\mathrm{SM}$ multiplied by the relative velocity of the two incoming particles, then averaged over a Maxwell--Boltzmann distribution at temperature $T$; it carries units of cm$^3$/s.
+The cross section quoted in direct-detection experiments, by contrast, is the elastic cross section $\sigma_{\chi N}$ for the recoil process $\chi + N \to \chi + N$ on a target nucleon, with units of cm$^2$ or barns, and no thermal averaging at all.
+The two refer to different reactions, different kinematics, and different epochs in the dark-matter history, and confusing them is a common stumbling block.
+Throughout this thesis the symbol $\langle \sigma v\rangle$ in cm$^3$/s always denotes the annihilation case.
+One further point is that the relevant velocity averaging is performed at $T \sim M_\chi/25$ for freeze-out, but at $v \sim 10^{-3} c$ for indirect detection in present-day galactic halos; this mismatch motivates the velocity-dependent cases --- $p$-wave annihilation, Sommerfeld enhancement, resonances --- discussed in Section~\ref{sec:1.2.4}.
+
+Solving Eq.~\eqref{eq:boltzmann} through the freeze-out transition, in the limit of $s$-wave annihilation and weak-scale parameters, yields a remarkably compact answer~\cite{Steigman:2012nb,Cirelli:2024ssz}
+\begin{equation}
+	\frac{\Omega_\chi h^2}{0.12} \approx \frac{2.2 \times 10^{-26}~\mathrm{cm^3/s}}{\langle \sigma v_\mathrm{rel}\rangle}\,,
+	\label{eq:relic_abundance}
+\end{equation}
+in which the relic abundance is essentially the inverse of the annihilation cross section, with the mass entering only through logarithmic corrections to the prefactor.
+The numerator on the right-hand side is the canonical \emph{thermal cross section}, $\langle \sigma v\rangle_\mathrm{cosmo} \approx 2.2 \times 10^{-26}$~cm$^3$/s; any dark-matter candidate that annihilates at this rate gives, to within a few percent, the observed cosmological abundance.
+The \emph{WIMP miracle} is the observation that this number is precisely what one would estimate from dimensional analysis for a generic $2 \to 2$ annihilation mediated by an electroweak-strength coupling.
+For an annihilation amplitude characterized by a coupling $g$, with $\alpha \equiv g^2/(4\pi)$, the natural size of the cross section is $\langle \sigma v\rangle \sim \alpha^2/M_\chi^2$; plugging in the weak-interaction value $\alpha \sim \alpha_\mathrm{weak} \sim 0.03$ and demanding that this match $\langle \sigma v\rangle_\mathrm{cosmo}$ returns a mass $M_\chi$ of order a few hundred GeV up to a few TeV --- the electroweak scale, recovered without input from particle-physics motivation.
+That coincidence is the miracle: the electroweak scale falls out of cosmological abundance arithmetic with no parameter chosen by hand.
+Just as importantly, Eq.~\eqref{eq:relic_abundance} fixes the same $\langle \sigma v\rangle$ that controls the annihilation rate of dark-matter particles in present-day astrophysical environments, providing the link between cosmological abundance and indirect-detection signals that makes the gamma-ray searches of this thesis falsifiable; the resulting mass window and its observational consequences are taken up in Section~\ref{sec:1.2.3}.
+
+\subsection{Theoretical Bounds on the WIMP Mass}
+\label{sec:1.2.3}
+
+The relic-abundance arithmetic of the previous subsection does not just predict a single cross section: combined with a handful of basic physical requirements, it brackets the viable WIMP mass from both below and above.
+The lower bound comes from demanding that the candidate not overclose the Universe; the upper bound comes from a constraint as fundamental as probability conservation itself.
+Consider first a particle that talks to the Standard Model only through the weak interaction, with no dark mediator of its own.
+At freeze-out energies the annihilation cross section for such a particle, dominated by exchange of $W$ and $Z$ bosons, scales as $\sigma_0 \approx G_F^2 M_\chi^2 / 2\pi$, where $G_F$ is the Fermi constant~\cite{Cirelli:2024ssz}.
+This is an \emph{$s$-wave} process, meaning that the cross section is independent of the relative velocity of the colliding pair --- a feature we will return to repeatedly, since it controls whether the same $\langle \sigma v \rangle$ that fixes the cosmic abundance also drives present-day annihilations in galactic halos.
+Because $\sigma_0$ scales as $M_\chi^2$, lowering the candidate mass reduces the annihilation cross section quadratically; combined with the inverse dependence of the relic abundance on $\langle\sigma v\rangle$ in Eq.~\eqref{eq:relic_abundance}, this means a sufficiently light particle annihilates too weakly to thin itself out and ends up overproducing dark matter.
+The original Lee--Weinberg analysis~\cite{Lee:1977ua}, contemporaneous with the closely related arguments of Hut~\cite{Hut:1977zn} and Vysotsky, Dolgov, and Zeldovich~\cite{Vysotsky:1977pe}, obtained $M_\chi \gtrsim 2$~GeV for a heavy Dirac neutrino; modern evaluations with updated effective-degree-of-freedom counts give~\cite{Cirelli:2024ssz,Bertone:2004pz}
+\begin{equation}
+	M_\chi \gtrsim 3~\mathrm{GeV} \qquad \text{(Lee--Weinberg bound)}\,,
+	\label{eq:lee_weinberg}
+\end{equation}
+below which a thermal relic coupled to the Standard Model weak interaction is cosmologically forbidden.
+This GeV-scale floor is specific to weak-mediated annihilation; when that assumption is dropped the much weaker BBN bound discussed below takes over, extending the allowed lower edge into the MeV regime.
+
+The qualifier ``coupled to the Standard Model weak interaction'' is essential.
+The Lee--Weinberg bound applies specifically to candidates that annihilate through $W$ and $Z$ exchange; it says nothing about models in which a new mediator --- a \emph{dark photon}, a light scalar, or a hidden-sector gauge boson --- carries the annihilation~\cite{Cirelli:2024ssz}.
+With such ingredients the relic abundance can be reproduced down to the sub-GeV and even keV regimes, which is precisely why a parallel low-mass direct-detection program (SENSEI, DAMIC, and related semiconductor experiments) has grown alongside the conventional GeV--TeV searches; we mention it here only to delimit the scope of the bounds derived in the rest of this subsection, which assume Standard Model mediation.
+
+The upper end of the mass window has a more universal origin.
+Quantum mechanics requires probabilities to sum to one, and translated into scattering theory this becomes \emph{unitarity}: the cross section for any process is bounded from above by a quantity set purely by the available phase space.
+Expanding the amplitude in partial waves of definite orbital angular momentum $\ell$, the contribution of each partial wave to a two-body cross section obeys $\sigma_\ell \leq 4\pi (2\ell+1)/k^2$, with $k$ the center-of-mass momentum.
+For non-relativistic dark-matter annihilation we have $k = M_\chi v /2$, so the $s$-wave ($\ell = 0$) ceiling on the velocity-averaged cross section scales as $\langle \sigma v \rangle_\mathrm{max} \propto 1/M_\chi^2$.
+This is a ceiling that any theory must respect, regardless of how the underlying couplings are arranged.
+As the candidate mass increases, the unitarity ceiling drops; at some mass it sinks below the thermal benchmark $\langle \sigma v \rangle_\mathrm{cosmo}$ required to reproduce $\Omega_\chi h^2 \approx 0.12$, and beyond that point even a maximally coupled candidate must be over-abundant.
+The classic estimate of Griest and Kamionkowski places this crossover at~\cite{Griest:1989wd}
+\begin{equation}
+	M_\chi \lesssim 100~\mathrm{TeV} \qquad \text{(unitarity bound)}\,,
+	\label{eq:unitarity}
+\end{equation}
+above which thermal-relic dark matter is no longer viable as a single-particle, two-body annihilation problem and requires either bound-state formation, multi-step annihilation cascades, or a non-thermal cosmological history.
+
+A closely related but logically distinct constraint comes from \emph{perturbativity}.
+A renormalizable model with dimensionless coupling $g$ admits a controlled perturbative expansion only as long as $g^2 \lesssim 4\pi$; beyond that, loop corrections compete with tree-level amplitudes and the model loses its calculational meaning even if it remains nominally consistent.
+Because $\langle \sigma v \rangle \sim g^4 / M_\chi^2$ for a typical $2\to 2$ annihilation, this caps the achievable cross section at a value that, like the unitarity ceiling, falls with mass.
+Perturbativity yields a slightly looser upper bound than unitarity, and the difference between the two is conceptually instructive: perturbativity is a \emph{theory-quality} constraint that says we no longer trust our calculation, while unitarity is a \emph{physics-quality} constraint that says no physical theory can do better.
+In practice both reduce the achievable $\langle \sigma v\rangle$ as $M_\chi$ grows, and the unitarity bound is the conservative one we adopt.
+
+An independent lower bound, complementary to Lee--Weinberg and insensitive to which mediator is responsible for annihilation, comes from Big Bang nucleosynthesis~\cite{Nollett:2014lwa}.
+A dark-matter particle that is still in chemical contact with the plasma at $T \sim 1$~MeV would contribute to the radiation energy density during nucleosynthesis and inject electromagnetic or hadronic energy through its residual annihilations, both of which spoil the otherwise excellent agreement between predicted and observed primordial abundances of D, $^3$He, $^4$He, and $^7$Li.
+Requiring freeze-out to complete before BBN therefore enforces $M_\chi \gtrsim 3$~MeV, a floor that holds for any thermal relic regardless of the details of its couplings.
+
+Taken together, these arguments delineate a mass window
+\begin{equation}
+	3~\mathrm{GeV} \lesssim M_\chi \lesssim 100~\mathrm{TeV}
+	\label{eq:wimp_window}
+\end{equation}
+for WIMPs that annihilate through Standard Model weak interactions, with the BBN floor extending the lower edge into the MeV regime once one allows for non-Standard-Model mediators.
+The two boundaries are not on equal footing: the lower edge is set by cosmological book-keeping for a particular class of mediators, while the upper edge follows from unitarity and applies to any thermal candidate whatsoever.
+Within this window the thermal benchmark $\langle \sigma v \rangle_\mathrm{cosmo} \approx 2.2 \times 10^{-26}~\mathrm{cm}^3/\mathrm{s}$ is the natural target for indirect-detection experiments: any instrument that reaches this sensitivity is directly testing the thermal freeze-out hypothesis, rather than merely constraining a generic exotic signal.
+The Fermi Large Area Telescope already reaches the benchmark in the $b\bar b$ annihilation channel for dwarf-spheroidal targets up to masses of several tens of GeV, an analysis we revisit in Chapter~\ref{ch:4}; the Cherenkov Telescope Array Observatory, with its larger collection area and lower energy threshold relative to current imaging atmospheric Cherenkov arrays, will extend indirect-detection sensitivity into the TeV domain, the subject of Chapter~\ref{ch:8}.
+We close with a caveat that the next subsection unpacks: the bounds derived here assume the simplest possible freeze-out --- a single stable species annihilating into two-body final states through a velocity-independent $s$-wave amplitude --- and a handful of physically well-motivated effects can move the mapping between $\langle \sigma v \rangle_\mathrm{cosmo}$ and the present-day indirect-detection signal in either direction.
+
+\subsection{Beyond Standard Freeze-out}
+\label{sec:1.2.4}
+
+The bounds derived in Section~\ref{sec:1.2.3} assumed the simplest possible freeze-out scenario: a single stable species, two-body $s$-wave annihilation with velocity-independent cross section, and weak-scale perturbative couplings.
+Several physically motivated effects modify this picture and, more importantly, alter the mapping between the cosmological cross section $\langle\sigma v\rangle_\mathrm{cosmo}$ that fixes the relic abundance and the present-day annihilation rate probed by indirect detection.
+Non-relativistic two-body annihilation admits the partial-wave expansion
+\begin{equation}
+	\sigma v_\mathrm{rel} \simeq \sigma_0 + \sigma_1\, v_\mathrm{rel}^2 + \mathcal{O}(v_\mathrm{rel}^4)\,,
+	\label{eq:partial_wave}
+\end{equation}
+where $\sigma_0$ is the $s$-wave ($\ell=0$) contribution and $\sigma_1\, v_\mathrm{rel}^2$ the $p$-wave ($\ell=1$) contribution~\cite{Cirelli:2024ssz}.
+When the $s$-wave piece is non-vanishing the cross section is approximately constant from freeze-out velocities ($v_\mathrm{rel}\sim 0.3\,c$) down to typical halo velocities ($v_\mathrm{rel}\sim 10^{-3}\,c$), and $\langle\sigma v\rangle_\mathrm{cosmo}$ is a meaningful benchmark for indirect-detection searches.
+When the leading contribution is $p$-wave, in contrast, the present-day rate is suppressed by $v_\mathrm{rel}^2 \sim 10^{-6}$ relative to its value at freeze-out, and the channel becomes effectively invisible to indirect probes that rely on annihilation in cold galactic halos.
+Selection rules --- for instance specific initial-state quantum numbers, or symmetries of the underlying interaction --- can cause the $s$-wave amplitude to vanish identically in particular models, leaving $p$-wave as the leading contribution and rendering the channel invisible to gamma-ray searches~\cite{Cirelli:2024ssz}.
+For this reason the present thesis focuses on $s$-wave annihilation channels, where freeze-out and halo phenomenology remain quantitatively connected.
+
+A second class of corrections arises when dark matter couples to a mediator with mass $M_V \ll M_\chi$.
+The long-range attractive force then distorts the incoming-pair wave function and enhances the annihilation probability at low velocities, a non-perturbative effect known as the \emph{Sommerfeld enhancement}~\cite{Hisano:2004ds,ArkaniHamed:2008qn,Cirelli:2024ssz}.
+The resulting enhancement factor $S$ scales as $S\propto 1/v_\mathrm{rel}$ in the Coulomb regime $v_\mathrm{rel} \ll \pi\alpha_g$, saturates at $v_\mathrm{rel}\sim M_V/M_\chi$ for Yukawa mediators, and can exhibit resonant peaks at specific mass ratios where a zero-energy bound state appears in the dark-sector potential.
+Halo velocities $v_\mathrm{rel}\sim 10^{-3}\,c$ therefore probe a regime in which $S$ can reach $\mathcal{O}(10^2\text{--}10^3)$, while freeze-out velocities $v_\mathrm{rel}\sim 0.2\,c$ see only a moderate enhancement.
+The Sommerfeld effect is essential for heavy electroweak WIMPs --- the pure wino at $M_\chi\sim 3\,\mathrm{TeV}$, the higgsino near $M_\chi\sim 1.1\,\mathrm{TeV}$, and Minimal Dark Matter candidates more generally --- where it shifts the thermal-relic mass from hundreds of GeV up to multi-TeV scales and dominates the present-day indirect-detection phenomenology; we return to this point in Section~\ref{sec:1.4} when discussing $J$-factors and the loop-suppressed annihilation channels of Minimal Dark Matter.
+For the pure wino in particular, the enhanced halo rate at $v_\mathrm{rel}\sim 10^{-3}\,c$ is large enough that current gamma-ray constraints effectively rule the candidate out for cuspy halo profiles.
+For the GeV-scale candidates relevant to the Galactic Center excess analyzed in Chapter~\ref{ch:4}, by contrast, the standard thermal cross section fits the observed signal \emph{without} invoking any Sommerfeld enhancement, as Daylan et al.~\cite{Daylan:2014rsa} showed explicitly for a $\sim 30$--$50\,\mathrm{GeV}$ WIMP annihilating with $\langle\sigma v\rangle \approx (1$--$3)\times 10^{-26}\,\mathrm{cm}^3/\mathrm{s}$.
+
+Two further refinements deserve mention because they directly affect the relic-abundance--indirect-detection connection.
+The first is \emph{co-annihilation}: if the dark sector contains additional particles whose masses satisfy $M' - M_\chi \lesssim$ a few$\,\times T_\mathrm{fo}$, the heavier partners remain Boltzmann-abundant during freeze-out and contribute to depleting the dark-matter density through both their own annihilations and $\chi$-partner co-annihilation processes~\cite{Ellis:1983ew,Griest:1990kh,Cirelli:2024ssz}.
+After freeze-out the heavier states decay into $\chi$, so that only the lightest species remains in the present-day halo; its annihilation cross section is then typically smaller than the effective freeze-out value, and the link between $\Omega_\chi h^2$ and the indirect-detection signal is weakened.
+The second is \emph{resonant annihilation}: when dark matter annihilates through an $s$-channel mediator whose mass lies near the threshold $m_\mathrm{med}\approx 2 M_\chi$, the cross section follows a Breit--Wigner form with sharp velocity dependence~\cite{Griest:1990kh,Gondolo:1990dk}.
+Whether the present-day rate is enhanced or suppressed relative to its cosmological value depends on whether the resonance is accessed at thermal velocities, at halo velocities, or sits between them.
+Both co-annihilation and resonance therefore introduce additional model dependence into the mapping from $\langle\sigma v\rangle_\mathrm{cosmo}$ to the observable annihilation rate, and conclusions drawn from either freeze-out or indirect detection alone must be interpreted accordingly.
+
+Taken together, these refinements define a spectrum of theoretical possibilities, of which the standard scenario --- $s$-wave annihilation, no Sommerfeld enhancement, no co-annihilation, no resonance --- is the simplest and the least model-dependent.
+In this case the freeze-out cross section also fixes the galactic-halo annihilation rate, providing the cleanest target for indirect-detection experiments~\cite{Cirelli:2024ssz}.
+In richer scenarios the mapping remains calculable but model-dependent: Sommerfeld enhancement can boost halo rates by orders of magnitude, $p$-wave channels or off-resonance Breit--Wigner suppression can lower them, and co-annihilation can shift the relic-abundance target relative to the halo signal.
+Throughout this thesis we adopt the standard thermal-relic value of $\langle\sigma v\rangle$ as the primary benchmark when quoting cross-section bounds, while flagging explicitly the regimes in which these refinements would shift the interpretation.
+With this theoretical setting in place, we now turn to the three complementary experimental strategies for testing the WIMP hypothesis: direct detection, indirect detection, and collider searches.
