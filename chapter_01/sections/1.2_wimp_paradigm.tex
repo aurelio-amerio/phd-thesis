@@ -131,45 +131,56 @@ Just as importantly, Eq.~\eqref{eq:relic_abundance} fixes the same $\langle \sig
 \subsection{Theoretical Bounds on the WIMP Mass}
 \label{sec:1.2.3}
 
-The relic abundance formula derived in the previous subsection, combined with basic physical requirements, brackets the viable WIMP mass range from both below and above.
-These bounds define the GeV--TeV search window that has guided the experimental program for decades.
-
-\paragraph{The Lee--Weinberg bound.}
-A lower limit on the mass of a thermal WIMP follows from requiring that the freeze-out relic density does not exceed the observed dark matter abundance.
-For a particle that annihilates via the Standard Model weak interaction in an $s$-wave process, the annihilation cross-section scales as $\sigma_0 \approx G_F^2 M_\chi^2 / 2\pi$, where $G_F = \sqrt{2}\,g_2^2 / 8M_W^2$ is the Fermi constant~\cite{Cirelli:2024ssz}.
-Since the relic abundance is inversely proportional to the cross-section (Eq.~\eqref{eq:relic_abundance}), lighter particles annihilate less efficiently and freeze out with a larger residual density.
-The original analysis of Lee and Weinberg~\cite{Lee:1977ua} obtained $M_\chi \gtrsim 2$~GeV for a heavy Dirac neutrino; modern evaluations with updated values of $g_*$ give~\cite{Cirelli:2024ssz}
+The relic-abundance arithmetic of the previous subsection does not just predict a single cross section: combined with a handful of basic physical requirements, it brackets the viable WIMP mass from both below and above.
+The lower bound comes from demanding that the candidate not overclose the Universe; the upper bound comes from a constraint as fundamental as probability conservation itself.
+Consider first a particle that talks to the Standard Model only through the weak interaction, with no dark mediator of its own.
+At freeze-out energies the annihilation cross section for such a particle, dominated by exchange of $W$ and $Z$ bosons, scales as $\sigma_0 \approx G_F^2 M_\chi^2 / 2\pi$, where $G_F$ is the Fermi constant~\cite{Cirelli:2024ssz}.
+This is an \emph{$s$-wave} process, meaning that the cross section is independent of the relative velocity of the colliding pair --- a feature we will return to repeatedly, since it controls whether the same $\langle \sigma v \rangle$ that fixes the cosmic abundance also drives present-day annihilations in galactic halos.
+Because the relic density goes inversely as the cross section through Eq.~\eqref{eq:relic_abundance}, and because $\sigma_0$ shrinks with the candidate mass, a sufficiently light particle annihilates too weakly to thin itself out and ends up overproducing dark matter.
+The original Lee--Weinberg analysis~\cite{Lee:1977ua}, contemporaneous with the closely related arguments of Hut~\cite{Hut:1977zn} and Vysotsky, Dolgov, and Zeldovich~\cite{Vysotsky:1977pe}, obtained $M_\chi \gtrsim 2$~GeV for a heavy Dirac neutrino; modern evaluations with updated effective-degree-of-freedom counts give~\cite{Cirelli:2024ssz,Bertone:2004pz}
 \begin{equation}
-	M_\chi \gtrsim 3 \, \mathrm{GeV} \qquad \text{(Lee--Weinberg bound)} \,.
-	\label{eq:lee_weinberg}
+    M_\chi \gtrsim 3~\mathrm{GeV} \qquad \text{(Lee--Weinberg bound)}\,,
+    \label{eq:lee_weinberg}
 \end{equation}
-This bound applies specifically to particles that annihilate through the $W$ and $Z$ bosons of the Standard Model.
-Dark matter candidates that interact through alternative mediators --- such as a dark photon or a new scalar --- are not subject to this constraint and can be lighter, as discussed in Section~\ref{sec:1.2.1}~\cite{Cirelli:2024ssz}.
+below which a thermal relic coupled to the Standard Model weak interaction is cosmologically forbidden.
 
-\paragraph{The unitarity bound.}
-An upper limit arises from requiring that the annihilation cross-section remains consistent with partial-wave unitarity.
-For a generic $s$-wave $2 \to 2$ annihilation process with coupling $g$, the cross-section scales as $\langle \sigma v_\mathrm{rel} \rangle \sim g^4 / 4\pi M_\chi^2$, which decreases with increasing mass.
-The maximum value of $g$ is bounded by perturbativity, $g^2 \lesssim 4\pi$, imposing a ceiling on the cross-section for any given mass~\cite{Cirelli:2024ssz}.
-A particle that is too heavy will have a cross-section that falls below the thermal relic value $\langle \sigma v_\mathrm{rel} \rangle_\mathrm{cosmo}$, causing it to freeze out prematurely with an overabundant relic density.
-Requiring $\Omega_\chi h^2 \lesssim 0.12$ translates into the constraint~\cite{Cirelli:2024ssz,Griest:1989wd}
+The qualifier ``coupled to the Standard Model weak interaction'' is essential.
+The Lee--Weinberg bound applies specifically to candidates that annihilate through $W$ and $Z$ exchange; it says nothing about models in which a new mediator --- a \emph{dark photon}, a light scalar, or a hidden-sector gauge boson --- carries the annihilation~\cite{Cirelli:2024ssz}.
+With such ingredients the relic abundance can be reproduced down to the sub-GeV and even keV regimes, which is precisely why a parallel low-mass direct-detection program (SENSEI, DAMIC, and related semiconductor experiments) has grown alongside the conventional GeV--TeV searches; we mention it here only to delimit the scope of the bounds derived in the rest of this subsection, which assume Standard Model mediation.
+
+The upper end of the mass window has a more universal origin.
+Quantum mechanics requires probabilities to sum to one, and translated into scattering theory this becomes \emph{unitarity}: the cross section for any process is bounded from above by a quantity set purely by the available phase space.
+Expanding the amplitude in partial waves of definite orbital angular momentum $\ell$, the contribution of each partial wave to a two-body cross section obeys $\sigma_\ell \leq 4\pi (2\ell+1)/k^2$, with $k$ the center-of-mass momentum.
+For non-relativistic dark-matter annihilation we have $k = M_\chi v /2$, so the $s$-wave ($\ell = 0$) ceiling on the velocity-averaged cross section scales as $\langle \sigma v \rangle_\mathrm{max} \propto 1/M_\chi^2$.
+This is a ceiling that any theory must respect, regardless of how the underlying couplings are arranged.
+As we crank the candidate mass upward, the unitarity ceiling drops; at some mass it sinks below the thermal benchmark $\langle \sigma v \rangle_\mathrm{cosmo}$ required to reproduce $\Omega_\chi h^2 \approx 0.12$, and beyond that point even a maximally coupled candidate must be over-abundant.
+The classic estimate of Griest and Kamionkowski places this crossover at~\cite{Griest:1989wd}
 \begin{equation}
-	M_\chi \lesssim 100 \, \mathrm{TeV} \qquad \text{(unitarity bound)} \,.
-	\label{eq:unitarity}
+    M_\chi \lesssim 100~\mathrm{TeV} \qquad \text{(unitarity bound)}\,,
+    \label{eq:unitarity}
 \end{equation}
-An independent lower bound at $M_\chi \gtrsim 3$~MeV follows from requiring that the dark matter freezes out before the onset of BBN ($T \sim \mathrm{MeV}$), so that the additional energy density and annihilation products do not spoil the successful predictions for the primordial light element abundances~\cite{Nollett:2014lwa}.
+above which thermal-relic dark matter is no longer viable as a single-particle, two-body annihilation problem and requires either bound-state formation, multi-step annihilation cascades, or a non-thermal cosmological history.
 
-Together, the Lee--Weinberg and unitarity bounds define the mass window
+A closely related but logically distinct constraint comes from \emph{perturbativity}.
+A renormalizable model with dimensionless coupling $g$ admits a controlled perturbative expansion only as long as $g^2 \lesssim 4\pi$; beyond that, loop corrections compete with tree-level amplitudes and the model loses its calculational meaning even if it remains nominally consistent.
+Because $\langle \sigma v \rangle \sim g^4 / M_\chi^2$ for a typical $2\to 2$ annihilation, this caps the achievable cross section at a value that, like the unitarity ceiling, falls with mass.
+Perturbativity yields a slightly looser upper bound than unitarity, and the difference between the two is conceptually instructive: perturbativity is a \emph{theory-quality} constraint that says we no longer trust our calculation, while unitarity is a \emph{physics-quality} constraint that says no physical theory can do better.
+In practice both reduce the achievable $\langle \sigma v\rangle$ as $M_\chi$ grows, and the unitarity bound is the conservative one we adopt.
+
+An independent lower bound, complementary to Lee--Weinberg and insensitive to which mediator is responsible for annihilation, comes from Big Bang nucleosynthesis~\cite{Nollett:2014lwa}.
+A dark-matter particle that is still in chemical contact with the plasma at $T \sim 1$~MeV would contribute to the radiation energy density during nucleosynthesis and inject electromagnetic or hadronic energy through its residual annihilations, both of which spoil the otherwise excellent agreement between predicted and observed primordial abundances of D, $^3$He, $^4$He, and $^7$Li.
+Requiring freeze-out to complete before BBN therefore enforces $M_\chi \gtrsim 3$~MeV, a floor that holds for any thermal relic regardless of the details of its couplings.
+
+Taken together, these arguments delineate a mass window
 \begin{equation}
-	3 \, \mathrm{GeV} \lesssim M_\chi \lesssim 100 \, \mathrm{TeV}
-	\label{eq:wimp_window}
+    3~\mathrm{GeV} \lesssim M_\chi \lesssim 100~\mathrm{TeV}
+    \label{eq:wimp_window}
 \end{equation}
-for WIMPs that annihilate through Standard Model weak interactions.
-The lower end of this range is accessible to direct detection experiments, while the upper end pushes against the reach of current ground-based gamma-ray telescopes.
-For indirect detection through annihilation products, the thermal relic cross-section $\langle \sigma v_\mathrm{rel} \rangle_\mathrm{cosmo} \approx 2.2 \times 10^{-26}$~cm$^3$/s is a natural benchmark: any instrument capable of probing this value directly tests the thermal freeze-out hypothesis.
-As we will discuss in Chapter~\ref{ch:4}, the Fermi Large Area Telescope has reached this sensitivity for masses up to several tens of GeV, while the Cherenkov Telescope Array will extend the reach into the TeV domain.
-
-The bounds derived here assume the simplest freeze-out scenario: a single stable particle annihilating through a two-body $s$-wave process with velocity-independent cross-section.
-Several physical effects can modify this picture and shift the effective mass range, as we discuss next.
+for WIMPs that annihilate through Standard Model weak interactions, with the BBN floor extending the lower edge into the MeV regime once one allows for non-Standard-Model mediators.
+The two boundaries are not on equal footing: the lower edge is set by cosmological book-keeping for a particular class of mediators, while the upper edge follows from unitarity and applies to any thermal candidate whatsoever.
+Within this window the thermal benchmark $\langle \sigma v \rangle_\mathrm{cosmo} \approx 2.2 \times 10^{-26}~\mathrm{cm}^3/\mathrm{s}$ is the natural target for indirect-detection experiments: any instrument that reaches this sensitivity is directly testing the thermal freeze-out hypothesis, rather than merely constraining a generic exotic signal.
+The Fermi Large Area Telescope already reaches the benchmark in the $b\bar b$ annihilation channel for dwarf-spheroidal targets up to masses of several tens of GeV, an analysis we revisit in Chapter~\ref{ch:4}; the Cherenkov Telescope Array Observatory, with its larger collection area and lower energy threshold relative to current imaging atmospheric Cherenkov arrays, will extend indirect-detection sensitivity into the TeV domain, the subject of Chapter~\ref{ch:8}.
+We close with a caveat that the next subsection unpacks: the bounds derived here assume the simplest possible freeze-out --- a single stable species annihilating into two-body final states through a velocity-independent $s$-wave amplitude --- and a handful of physically well-motivated effects can move the mapping between $\langle \sigma v \rangle_\mathrm{cosmo}$ and the present-day indirect-detection signal in either direction.
 
 \subsection{Beyond Standard Freeze-out}
 \label{sec:1.2.4}
