@@ -310,6 +310,21 @@
     ]
   },
   {
+    "id": "gyrnm46",
+    "startLine": 106,
+    "endLine": 106,
+    "textPreview": "\\subsection{Why Indirect Detection?}",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "2i9qazf",
+        "text": "I think in this subsection in general you can cite hooper:2024 more instead of cirelli, if appropriate, since it's a published and established book. you can even acknowledge it at the end, similar to what we are supposed to do for the direct detection annd collider searches section, when mentioning a reference/book where to read more about a topic, and make where we borrow information from more explicit",
+        "createdAt": "2026-05-22T10:01:09.729Z"
+      }
+    ]
+  },
+  {
     "id": "dza1ndt",
     "startLine": 113,
     "endLine": 113,
