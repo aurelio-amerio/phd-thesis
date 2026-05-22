@@ -23,10 +23,12 @@ Taken together, these elements fix the framework within which the thermal-relic 
 \label{sec:1.2.1}
 
 \begin{figure}[t]
-    \centering
-    \includegraphics[width=0.95\textwidth]{chapter_01/figures/dm_mass_landscape.pdf}
-    \caption{The dark-matter mass landscape: viable candidate masses span roughly ninety orders of magnitude, from ultra-light bosonic fields to macroscopic primordial black holes. Each class is characterized by a distinct production mechanism and probed by a complementary set of experiments. Adapted from~\cite{Cirelli:2024ssz}. \aure{TODO: recreate from arXiv:2406.01705v3 figs/MDMscale.pdf}}
-    \label{fig:dm_mass_landscape}
+	\centering
+	\includegraphics[width=0.95\textwidth]{chapter_01/figures/dm_mass_landscape.pdf}
+	\caption{The dark-matter mass landscape: viable candidate masses span roughly ninety orders of magnitude, from ultra-light bosonic fields to macroscopic primordial black holes.
+		Each class is characterized by a distinct production mechanism and probed by a complementary set of experiments.
+		Adapted from~\cite{Cirelli:2024ssz}. \aure{TODO: recreate from arXiv:2406.01705v3 figs/MDMscale.pdf}}
+	\label{fig:dm_mass_landscape}
 \end{figure}
 
 The evidence assembled in Section~\ref{sec:1.1} establishes that dark matter exists, that it is roughly five times more abundant than ordinary matter, and that it cannot be made of any Standard Model particle.
@@ -91,10 +93,13 @@ The result is the counterintuitive maxim that, in the thermal-relic context, the
 The mass enters the final answer only logarithmically, through the temperature at which the decoupling occurs, while the velocity-averaged annihilation rate $\langle \sigma v_\mathrm{rel}\rangle$ sets the relic abundance to first approximation.
 
 \begin{figure}[t]
-    \centering
-    \includegraphics[width=0.85\textwidth]{chapter_01/figures/freezeout_yx.pdf}
-    \caption{Comoving abundance $Y \equiv n_\chi/s$ as a function of the dimensionless inverse temperature $x \equiv M_\chi/T$. The dashed curve traces the equilibrium abundance $Y_\mathrm{eq}$, exponentially Boltzmann-suppressed once $T$ falls below $M_\chi$. The solid curves show the actual abundance for three values of the velocity-averaged annihilation cross section, illustrating that stronger annihilation tracks equilibrium longer and freezes out at a smaller residual relic. \aure{TODO: produce Y vs x freeze-out figure}}
-    \label{fig:freezeout_yx}
+	\centering
+	\includegraphics[width=0.85\textwidth]{chapter_01/figures/freezeout_yx.pdf}
+	\caption{Comoving abundance $Y \equiv n_\chi/s$ as a function of the dimensionless inverse temperature $x \equiv M_\chi/T$.
+		The dashed curve traces the equilibrium abundance $Y_\mathrm{eq}$, exponentially Boltzmann-suppressed once $T$ falls below $M_\chi$.
+		The solid curves show the actual abundance for three values of the velocity-averaged annihilation cross section, illustrating that stronger annihilation tracks equilibrium longer and freezes out at a smaller residual relic.
+		\aure{TODO: produce Y vs x freeze-out figure}}
+	\label{fig:freezeout_yx}
 \end{figure}
 
 Figure~\ref{fig:freezeout_yx} captures the picture in a single plot of the comoving abundance $Y \equiv n_\chi/s$ against the dimensionless inverse temperature $x \equiv M_\chi/T$.
@@ -105,8 +110,8 @@ For a weakly interacting candidate at the electroweak scale, this \emph{freeze-o
 
 A quantitative description of this process follows the comoving number density through a single transport equation~\cite{Gondolo:1990dk},
 \begin{equation}
-    \dot n_\chi + 3 H n_\chi = -\langle \sigma v_\mathrm{rel} \rangle\, \bigl( n_\chi^2 - n_\mathrm{eq}^2 \bigr)\,,
-    \label{eq:boltzmann}
+	\dot n_\chi + 3 H n_\chi = -\langle \sigma v_\mathrm{rel} \rangle\, \bigl( n_\chi^2 - n_\mathrm{eq}^2 \bigr)\,,
+	\label{eq:boltzmann}
 \end{equation}
 which has a transparent reading term by term: the $3 H n_\chi$ piece on the left is the dilution due to Hubble expansion of a comoving volume; the $-\langle \sigma v_\mathrm{rel}\rangle\, n_\chi^2$ piece on the right is the depletion of $\chi$ by annihilation into Standard Model final states; the $+\langle \sigma v_\mathrm{rel}\rangle\, n_\mathrm{eq}^2$ piece is the inverse process, in which $\chi$ pairs are recreated from the thermal bath at the rate dictated by detailed balance.
 It is convenient to factor out the trivial expansion dilution by passing from $n_\chi$ to the \emph{comoving abundance} $Y \equiv n_\chi / s$, where $s$ is the entropy density.
@@ -122,8 +127,8 @@ One further point is that the relevant velocity averaging is performed at $T \si
 
 Solving Eq.~\eqref{eq:boltzmann} through the freeze-out transition, in the limit of $s$-wave annihilation and weak-scale parameters, yields a remarkably compact answer~\cite{Steigman:2012nb,Cirelli:2024ssz}
 \begin{equation}
-    \frac{\Omega_\chi h^2}{0.12} \approx \frac{2.2 \times 10^{-26}~\mathrm{cm^3/s}}{\langle \sigma v_\mathrm{rel}\rangle}\,,
-    \label{eq:relic_abundance}
+	\frac{\Omega_\chi h^2}{0.12} \approx \frac{2.2 \times 10^{-26}~\mathrm{cm^3/s}}{\langle \sigma v_\mathrm{rel}\rangle}\,,
+	\label{eq:relic_abundance}
 \end{equation}
 in which the relic abundance is essentially the inverse of the annihilation cross section, with the mass entering only through logarithmic corrections to the prefactor.
 The numerator on the right-hand side is the canonical \emph{thermal cross section}, $\langle \sigma v\rangle_\mathrm{cosmo} \approx 2.2 \times 10^{-26}$~cm$^3$/s; any dark-matter candidate that annihilates at this rate gives, to within a few percent, the observed cosmological abundance.
@@ -143,8 +148,8 @@ This is an \emph{$s$-wave} process, meaning that the cross section is independen
 Because the relic density goes inversely as the cross section through Eq.~\eqref{eq:relic_abundance}, and because $\sigma_0$ shrinks with the candidate mass, a sufficiently light particle annihilates too weakly to thin itself out and ends up overproducing dark matter.
 The original Lee--Weinberg analysis~\cite{Lee:1977ua}, contemporaneous with the closely related arguments of Hut~\cite{Hut:1977zn} and Vysotsky, Dolgov, and Zeldovich~\cite{Vysotsky:1977pe}, obtained $M_\chi \gtrsim 2$~GeV for a heavy Dirac neutrino; modern evaluations with updated effective-degree-of-freedom counts give~\cite{Cirelli:2024ssz,Bertone:2004pz}
 \begin{equation}
-    M_\chi \gtrsim 3~\mathrm{GeV} \qquad \text{(Lee--Weinberg bound)}\,,
-    \label{eq:lee_weinberg}
+	M_\chi \gtrsim 3~\mathrm{GeV} \qquad \text{(Lee--Weinberg bound)}\,,
+	\label{eq:lee_weinberg}
 \end{equation}
 below which a thermal relic coupled to the Standard Model weak interaction is cosmologically forbidden.
 
@@ -160,8 +165,8 @@ This is a ceiling that any theory must respect, regardless of how the underlying
 As we crank the candidate mass upward, the unitarity ceiling drops; at some mass it sinks below the thermal benchmark $\langle \sigma v \rangle_\mathrm{cosmo}$ required to reproduce $\Omega_\chi h^2 \approx 0.12$, and beyond that point even a maximally coupled candidate must be over-abundant.
 The classic estimate of Griest and Kamionkowski places this crossover at~\cite{Griest:1989wd}
 \begin{equation}
-    M_\chi \lesssim 100~\mathrm{TeV} \qquad \text{(unitarity bound)}\,,
-    \label{eq:unitarity}
+	M_\chi \lesssim 100~\mathrm{TeV} \qquad \text{(unitarity bound)}\,,
+	\label{eq:unitarity}
 \end{equation}
 above which thermal-relic dark matter is no longer viable as a single-particle, two-body annihilation problem and requires either bound-state formation, multi-step annihilation cascades, or a non-thermal cosmological history.
 
@@ -177,8 +182,8 @@ Requiring freeze-out to complete before BBN therefore enforces $M_\chi \gtrsim 3
 
 Taken together, these arguments delineate a mass window
 \begin{equation}
-    3~\mathrm{GeV} \lesssim M_\chi \lesssim 100~\mathrm{TeV}
-    \label{eq:wimp_window}
+	3~\mathrm{GeV} \lesssim M_\chi \lesssim 100~\mathrm{TeV}
+	\label{eq:wimp_window}
 \end{equation}
 for WIMPs that annihilate through Standard Model weak interactions, with the BBN floor extending the lower edge into the MeV regime once one allows for non-Standard-Model mediators.
 The two boundaries are not on equal footing: the lower edge is set by cosmological book-keeping for a particular class of mediators, while the upper edge follows from unitarity and applies to any thermal candidate whatsoever.
@@ -193,8 +198,8 @@ The bounds derived in Section~\ref{sec:1.2.3} assumed the simplest possible free
 Several physically motivated effects modify this picture and, more importantly, alter the mapping between the cosmological cross section $\langle\sigma v\rangle_\mathrm{cosmo}$ that fixes the relic abundance and the present-day annihilation rate probed by indirect detection.
 Non-relativistic two-body annihilation admits the partial-wave expansion
 \begin{equation}
-    \sigma v_\mathrm{rel} \simeq \sigma_0 + \sigma_1\, v_\mathrm{rel}^2 + \mathcal{O}(v_\mathrm{rel}^4)\,,
-    \label{eq:partial_wave}
+	\sigma v_\mathrm{rel} \simeq \sigma_0 + \sigma_1\, v_\mathrm{rel}^2 + \mathcal{O}(v_\mathrm{rel}^4)\,,
+	\label{eq:partial_wave}
 \end{equation}
 where $\sigma_0$ is the $s$-wave ($\ell=0$) contribution and $\sigma_1\, v_\mathrm{rel}^2$ the $p$-wave ($\ell=1$) contribution~\cite{Cirelli:2024ssz}.
 When the $s$-wave piece is non-vanishing the cross section is approximately constant from freeze-out velocities ($v_\mathrm{rel}\sim 0.3\,c$) down to typical halo velocities ($v_\mathrm{rel}\sim 10^{-3}\,c$), and $\langle\sigma v\rangle_\mathrm{cosmo}$ is a meaningful benchmark for indirect-detection searches.
