@@ -1,0 +1,244 @@
+[
+  {
+    "id": "ijgc4o3",
+    "startLine": 8,
+    "endLine": 8,
+    "textPreview": "The evidence reviewed in Section~\\ref{sec:1.1} converges on a robust conclusion: dark matter exists, contributes roughly five times the cosmological energy density of baryons, and cannot be accommodated within the Standard Model.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "j4kkddj",
+        "text": "let's tone it down slightly, and say that the evidence suggests that... keep it more similar to how it was written before, which had a lighter tone",
+        "createdAt": "2026-05-26T08:48:31.135Z"
+      },
+      {
+        "id": "1676e46",
+        "text": "[AGENT] Rewrote intro: restored rev0 lighter tone (\"evidence assembled... suggests\"), dropped \"converges on a robust conclusion\", \"What that evidence does not do\", \"operational rather than ideological\", and the over-cautious WIMP miracle hedge. Now uses \"narrow the focus\" framing from rev0 with rev5 content.",
+        "createdAt": "2026-05-26T09:19:37.220050+00:00"
+      }
+    ],
+    "previousVersionContext": "-The evidence assembled in the previous section suggests that dark matter constitutes the dominant form of matter in the Universe and that it cannot be made of Standard Model particles.\n-This conclusion opens a large parameter space of possible candidates, spanning from ultra-light bosonic fields to macroscopic primordial black holes, with interaction strengths that could range from gravitational to just below current experimental sensitivity.\n-In this section, we narrow the focus to the framework that has guided the most sustained experimental effort in the field: the paradigm of Weakly Interacting Massive Particles (WIMPs).",
+    "currentVersionContext": "+The evidence reviewed in Section~\\ref{sec:1.1} converges on a robust conclusion: dark matter exists, contributes roughly five times the cosmological energy density of baryons, and cannot be accommodated within the Standard Model.\n+What that evidence does not do is fix the microphysics of the dark sector, and the resulting parameter space is enormous.\n+Viable candidates span roughly ninety orders of magnitude in mass, from ultra-light bosonic fields with $m \\sim 10^{-22}$~eV that behave as classical waves on galactic scales~\\cite{Hu:2000ke} up to composite objects of macroscopic mass, with interaction strengths ranging from the purely gravitational floor to couplings just below current experimental sensitivity~\\cite{Cirelli:2024ssz}.\n+Within this landscape, \\emph{weakly interacting massive particles} (WIMPs) are one prominent candidate class among many.\n+Their dominance of the indirect-detection literature over the past two decades is a historical fact, driven by the so-called \\emph{WIMP miracle} --- the observation that a thermal relic with electroweak-scale mass and electroweak-strength annihilation cross section automatically reproduces the observed dark matter abundance --- and not a statement that other well-motivated candidates such as axions, sterile neutrinos, or primordial black holes have been excluded.\n+Each of these alternatives remains viable, with its own observational handles and its own dedicated experimental programs.\n+The reason we devote the present section to the WIMP framework is operational rather than ideological: WIMPs are the candidate class probed via the gamma-ray indirect-detection analyses developed in Chapters~\\ref{ch:4}--\\ref{ch:8}, and the quantitative interpretation of those analyses requires a careful treatment of the freeze-out mechanism and its uncertainties."
+  },
+  {
+    "id": "np07vrp",
+    "startLine": 9,
+    "endLine": 9,
+    "textPreview": "What that evidence does not do is fix the microphysics of the dark sector, and the resulting parameter space is enormous.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "o1lfidz",
+        "text": "it was better before",
+        "createdAt": "2026-05-26T08:48:50.750Z"
+      },
+      {
+        "id": "ipn6cti",
+        "text": "[AGENT] Rewrote intro: restored rev0 lighter tone (\"evidence assembled... suggests\"), dropped \"converges on a robust conclusion\", \"What that evidence does not do\", \"operational rather than ideological\", and the over-cautious WIMP miracle hedge. Now uses \"narrow the focus\" framing from rev0 with rev5 content.",
+        "createdAt": "2026-05-26T09:19:37.220408+00:00"
+      }
+    ],
+    "previousVersionContext": "-The evidence assembled in the previous section suggests that dark matter constitutes the dominant form of matter in the Universe and that it cannot be made of Standard Model particles.\n-This conclusion opens a large parameter space of possible candidates, spanning from ultra-light bosonic fields to macroscopic primordial black holes, with interaction strengths that could range from gravitational to just below current experimental sensitivity.\n-In this section, we narrow the focus to the framework that has guided the most sustained experimental effort in the field: the paradigm of Weakly Interacting Massive Particles (WIMPs).",
+    "currentVersionContext": "+The evidence reviewed in Section~\\ref{sec:1.1} converges on a robust conclusion: dark matter exists, contributes roughly five times the cosmological energy density of baryons, and cannot be accommodated within the Standard Model.\n+What that evidence does not do is fix the microphysics of the dark sector, and the resulting parameter space is enormous.\n+Viable candidates span roughly ninety orders of magnitude in mass, from ultra-light bosonic fields with $m \\sim 10^{-22}$~eV that behave as classical waves on galactic scales~\\cite{Hu:2000ke} up to composite objects of macroscopic mass, with interaction strengths ranging from the purely gravitational floor to couplings just below current experimental sensitivity~\\cite{Cirelli:2024ssz}.\n+Within this landscape, \\emph{weakly interacting massive particles} (WIMPs) are one prominent candidate class among many.\n+Their dominance of the indirect-detection literature over the past two decades is a historical fact, driven by the so-called \\emph{WIMP miracle} --- the observation that a thermal relic with electroweak-scale mass and electroweak-strength annihilation cross section automatically reproduces the observed dark matter abundance --- and not a statement that other well-motivated candidates such as axions, sterile neutrinos, or primordial black holes have been excluded.\n+Each of these alternatives remains viable, with its own observational handles and its own dedicated experimental programs.\n+The reason we devote the present section to the WIMP framework is operational rather than ideological: WIMPs are the candidate class probed via the gamma-ray indirect-detection analyses developed in Chapters~\\ref{ch:4}--\\ref{ch:8}, and the quantitative interpretation of those analyses requires a careful treatment of the freeze-out mechanism and its uncertainties."
+  },
+  {
+    "id": "7fv213b",
+    "startLine": 12,
+    "endLine": 13,
+    "textPreview": "Their dominance of the indirect-detection literature over the past two decades is a historical fact, driven by the so-called \\emph{WIMP miracle} --- the observation that a thermal relic with electroweak-scale mass and electroweak-strength annihilation cross section automatically reproduces the observed dark matter abundance --- and not a statement that other well-motivated candidates such as axions, sterile neutrinos, or primordial black holes have been excluded.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "fn4jzel",
+        "text": "this part is over cautious, and sounds AI written",
+        "createdAt": "2026-05-26T08:50:24.202Z"
+      },
+      {
+        "id": "6nlbcrr",
+        "text": "[AGENT] Rewrote intro: restored rev0 lighter tone (\"evidence assembled... suggests\"), dropped \"converges on a robust conclusion\", \"What that evidence does not do\", \"operational rather than ideological\", and the over-cautious WIMP miracle hedge. Now uses \"narrow the focus\" framing from rev0 with rev5 content.",
+        "createdAt": "2026-05-26T09:19:37.220412+00:00"
+      }
+    ],
+    "previousVersionContext": "-The evidence assembled in the previous section suggests that dark matter constitutes the dominant form of matter in the Universe and that it cannot be made of Standard Model particles.\n-This conclusion opens a large parameter space of possible candidates, spanning from ultra-light bosonic fields to macroscopic primordial black holes, with interaction strengths that could range from gravitational to just below current experimental sensitivity.\n-In this section, we narrow the focus to the framework that has guided the most sustained experimental effort in the field: the paradigm of Weakly Interacting Massive Particles (WIMPs).",
+    "currentVersionContext": "+The evidence reviewed in Section~\\ref{sec:1.1} converges on a robust conclusion: dark matter exists, contributes roughly five times the cosmological energy density of baryons, and cannot be accommodated within the Standard Model.\n+What that evidence does not do is fix the microphysics of the dark sector, and the resulting parameter space is enormous.\n+Viable candidates span roughly ninety orders of magnitude in mass, from ultra-light bosonic fields with $m \\sim 10^{-22}$~eV that behave as classical waves on galactic scales~\\cite{Hu:2000ke} up to composite objects of macroscopic mass, with interaction strengths ranging from the purely gravitational floor to couplings just below current experimental sensitivity~\\cite{Cirelli:2024ssz}.\n+Within this landscape, \\emph{weakly interacting massive particles} (WIMPs) are one prominent candidate class among many.\n+Their dominance of the indirect-detection literature over the past two decades is a historical fact, driven by the so-called \\emph{WIMP miracle} --- the observation that a thermal relic with electroweak-scale mass and electroweak-strength annihilation cross section automatically reproduces the observed dark matter abundance --- and not a statement that other well-motivated candidates such as axions, sterile neutrinos, or primordial black holes have been excluded.\n+Each of these alternatives remains viable, with its own observational handles and its own dedicated experimental programs.\n+The reason we devote the present section to the WIMP framework is operational rather than ideological: WIMPs are the candidate class probed via the gamma-ray indirect-detection analyses developed in Chapters~\\ref{ch:4}--\\ref{ch:8}, and the quantitative interpretation of those analyses requires a careful treatment of the freeze-out mechanism and its uncertainties."
+  },
+  {
+    "id": "bpg026a",
+    "startLine": 14,
+    "endLine": 14,
+    "textPreview": "The reason we devote the present section to the WIMP framework is operational rather than ideological: WIMPs are the candidate class probed via the gamma-ray indirect-detection analyses developed in Chapters~\\ref{ch:4}--\\ref{ch:8}, and the quantitative interpretation of those analyses requires a careful treatment of the freeze-out mechanism and its uncertainties.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "lkvfk7d",
+        "text": "this sounds AI written",
+        "createdAt": "2026-05-26T08:50:34.974Z"
+      },
+      {
+        "id": "uqwxxr9",
+        "text": "[AGENT] Rewrote intro: restored rev0 lighter tone (\"evidence assembled... suggests\"), dropped \"converges on a robust conclusion\", \"What that evidence does not do\", \"operational rather than ideological\", and the over-cautious WIMP miracle hedge. Now uses \"narrow the focus\" framing from rev0 with rev5 content.",
+        "createdAt": "2026-05-26T09:19:37.220418+00:00"
+      }
+    ],
+    "previousVersionContext": "-The evidence assembled in the previous section suggests that dark matter constitutes the dominant form of matter in the Universe and that it cannot be made of Standard Model particles.\n-This conclusion opens a large parameter space of possible candidates, spanning from ultra-light bosonic fields to macroscopic primordial black holes, with interaction strengths that could range from gravitational to just below current experimental sensitivity.\n-In this section, we narrow the focus to the framework that has guided the most sustained experimental effort in the field: the paradigm of Weakly Interacting Massive Particles (WIMPs).",
+    "currentVersionContext": "+The evidence reviewed in Section~\\ref{sec:1.1} converges on a robust conclusion: dark matter exists, contributes roughly five times the cosmological energy density of baryons, and cannot be accommodated within the Standard Model.\n+What that evidence does not do is fix the microphysics of the dark sector, and the resulting parameter space is enormous.\n+Viable candidates span roughly ninety orders of magnitude in mass, from ultra-light bosonic fields with $m \\sim 10^{-22}$~eV that behave as classical waves on galactic scales~\\cite{Hu:2000ke} up to composite objects of macroscopic mass, with interaction strengths ranging from the purely gravitational floor to couplings just below current experimental sensitivity~\\cite{Cirelli:2024ssz}.\n+Within this landscape, \\emph{weakly interacting massive particles} (WIMPs) are one prominent candidate class among many.\n+Their dominance of the indirect-detection literature over the past two decades is a historical fact, driven by the so-called \\emph{WIMP miracle} --- the observation that a thermal relic with electroweak-scale mass and electroweak-strength annihilation cross section automatically reproduces the observed dark matter abundance --- and not a statement that other well-motivated candidates such as axions, sterile neutrinos, or primordial black holes have been excluded.\n+Each of these alternatives remains viable, with its own observational handles and its own dedicated experimental programs.\n+The reason we devote the present section to the WIMP framework is operational rather than ideological: WIMPs are the candidate class probed via the gamma-ray indirect-detection analyses developed in Chapters~\\ref{ch:4}--\\ref{ch:8}, and the quantitative interpretation of those analyses requires a careful treatment of the freeze-out mechanism and its uncertainties."
+  },
+  {
+    "id": "oclcyp0",
+    "startLine": 35,
+    "endLine": 36,
+    "textPreview": "The evidence assembled in Section~\\ref{sec:1.1} establishes that dark matter exists, that it is roughly five times more abundant than ordinary matter, and that it cannot be made of any Standard Model particle.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "0fbtmab",
+        "text": "this is an almost exact repetition of what was written before",
+        "createdAt": "2026-05-26T08:51:41.234Z"
+      },
+      {
+        "id": "izscbu8",
+        "text": "[AGENT] Eliminated the repetitive opening. \u00a71.2.1 now opens with \"Having ruled out every Standard Model particle...\" as a bridge sentence, not a restatement of the intro.",
+        "createdAt": "2026-05-26T09:19:42.483624+00:00"
+      }
+    ],
+    "previousVersionContext": "-We begin by ruling out the Standard Model.\n-Baryonic matter is excluded as the dominant component by two independent arguments: (i) BBN and CMB measurements constrain the baryon density to $\\Omega_b h^2 \\approx 0.022$~\\cite{Aghanim:2018eyx,Cirelli:2024ssz}, far below the total matter density $\\Omega_m h^2 \\approx 0.14$; and (ii) baryons were tightly coupled to photons before recombination and could not collapse gravitationally to seed the observed large-scale structure~\\cite{Cirelli:2024ssz}.\n-Standard Model neutrinos, despite being neutral, stable, and weakly interacting, also fail as dark matter candidates.\n-They are too light ($\\sum m_\\nu \\lesssim 0.12$~eV from CMB and BAO data~\\cite{Cirelli:2024ssz}) to produce the observed relic density.\n-More fundamentally, neutrinos decoupled while still relativistic, making them ``hot'' dark matter: their high velocities would have free-streamed out of gravitational potential wells, suppressing structure formation on galactic scales and producing a ``top-down'' hierarchy of structure formation incompatible with observations~\\cite{Cirelli:2024ssz}.\n-A related constraint comes from the Tremaine--Gunn bound~\\cite{Tremaine:1979we}: the Pauli exclusion principle limits the maximum phase-space density of a fermionic species, requiring any fermionic dark matter candidate to have $m \\gtrsim 0.1$--$1$~keV to reproduce the dense halos of dwarf spheroidal galaxies~\\cite{Cirelli:2024ssz}.\n-Standard Model neutrinos, at sub-eV masses, fall well short of this bound.",
+    "currentVersionContext": "+The evidence assembled in Section~\\ref{sec:1.1} establishes that dark matter exists, that it is roughly five times more abundant than ordinary matter, and that it cannot be made of any Standard Model particle.\n+The viable parameter space that remains is staggering.\n+As Figure~\\ref{fig:dm_mass_landscape} illustrates, candidate masses span roughly ninety orders of magnitude, from ultra-light bosonic fields near $10^{-21}$~eV, below which the de~Broglie wavelength would exceed the size of observed dwarf galaxies~\\cite{Hu:2000ke}, up to macroscopic primordial black holes of tens of solar masses, and interaction strengths range from purely gravitational to just below current direct-detection sensitivity.\n+Within this space the Standard Model is already excluded: the baryon density measured from Big Bang Nucleosynthesis and the cosmic microwave background, reviewed in Section~\\ref{sec:1.1.3}, falls a factor of six short of the total matter density; and hot relics that decouple while relativistic free-stream out of forming potential wells, washing out the small-scale power that observations require~\\cite{Bullock:2017xww}.\n+A separate, quantum-mechanical constraint, the \\emph{Tremaine--Gunn} bound~\\cite{Tremaine:1979we,Boyarsky:2018tvu}, follows from Pauli exclusion: a fermionic species cannot exceed the maximum phase-space density observed in dwarf-spheroidal halos, which sets a mass floor of roughly $0.4$--$1$~keV on any light fermion below which it cannot reach the dense inner profiles measured in these systems.\n+Dark matter must therefore be a new, non-baryonic, cold or at most warm form of matter, and the open question is which microphysical realization Nature has chosen."
+  },
+  {
+    "id": "15y0cva",
+    "startLine": 44,
+    "endLine": 44,
+    "textPreview": "Concrete realizations include the lightest neutralino of supersymmetric extensions of the Standard Model~\\cite{Ellis:1983ew} and \\emph{minimal dark matter} scenarios in which a single electroweak multiplet, stabilized by an accidental symmetry, plays the entire role of the dark sector~\\cite{Cirelli:2005uq}.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "opl5gba",
+        "text": "is accidental the right word? ask notebooklm",
+        "createdAt": "2026-05-26T08:53:19.986Z"
+      },
+      {
+        "id": "awt0nyp",
+        "text": "[AGENT] Verified via NotebookLM: \"accidental symmetry\" is correct \u2014 Cirelli's MDM paper explicitly uses this term. The fermionic 5-plet is \"automatically stable\" because decay operators are forbidden by gauge/Lorentz symmetries up to dim-6. Kept as-is.",
+        "createdAt": "2026-05-26T09:19:46.401645+00:00"
+      }
+    ],
+    "previousVersionContext": "-With the Standard Model excluded, the search turns to new physics.\n-The candidate landscape can be organized by mass scale and production mechanism.",
+    "currentVersionContext": "+Among the proposed answers, weakly interacting massive particles (WIMPs) have driven the experimental program for more than two decades.\n+The reason is the so-called \\emph{WIMP miracle}: a stable particle with electroweak-scale mass and weak-scale annihilation cross section is naturally produced by thermal freeze-out at roughly the observed abundance, a coincidence that we develop quantitatively in Section~\\ref{sec:1.2.2}.\n+Concrete realizations include the lightest neutralino of supersymmetric extensions of the Standard Model~\\cite{Ellis:1983ew} and \\emph{minimal dark matter} scenarios in which a single electroweak multiplet, stabilized by an accidental symmetry, plays the entire role of the dark sector~\\cite{Cirelli:2005uq}.\n+The operational appeal for this thesis is more immediate: the same cross section that fixes the relic density also fixes the rate at which present-day WIMPs annihilate into gamma rays inside dense halos, so that the indirect-detection signals studied in Chapters~\\ref{ch:4}--\\ref{ch:8} probe directly the parameter that thermal cosmology constrains."
+  },
+  {
+    "id": "gqncq3j",
+    "startLine": 45,
+    "endLine": 45,
+    "textPreview": "The operational appeal for this thesis is more immediate: the same cross section that fixes the relic density also fixes the rate at which present-day WIMPs annihilate into gamma rays inside dense halos, so that the indirect-detection signals studied in Chapters~\\ref{ch:4}--\\ref{ch:8} probe directly the parameter that thermal cosmology constrains.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "etsi80q",
+        "text": "\"operational\" flagged for AI writing",
+        "createdAt": "2026-05-26T08:53:41.721Z"
+      },
+      {
+        "id": "zwn0emg",
+        "text": "[AGENT] Replaced \"The operational appeal for this thesis is more immediate\" with \"For this thesis, the appeal of the WIMP framework is more immediate\" \u2014 drops the AI-flagged \"operational\".",
+        "createdAt": "2026-05-26T09:19:48.742775+00:00"
+      }
+    ],
+    "previousVersionContext": "-With the Standard Model excluded, the search turns to new physics.\n-The candidate landscape can be organized by mass scale and production mechanism.",
+    "currentVersionContext": "+Among the proposed answers, weakly interacting massive particles (WIMPs) have driven the experimental program for more than two decades.\n+The reason is the so-called \\emph{WIMP miracle}: a stable particle with electroweak-scale mass and weak-scale annihilation cross section is naturally produced by thermal freeze-out at roughly the observed abundance, a coincidence that we develop quantitatively in Section~\\ref{sec:1.2.2}.\n+Concrete realizations include the lightest neutralino of supersymmetric extensions of the Standard Model~\\cite{Ellis:1983ew} and \\emph{minimal dark matter} scenarios in which a single electroweak multiplet, stabilized by an accidental symmetry, plays the entire role of the dark sector~\\cite{Cirelli:2005uq}.\n+The operational appeal for this thesis is more immediate: the same cross section that fixes the relic density also fixes the rate at which present-day WIMPs annihilate into gamma rays inside dense halos, so that the indirect-detection signals studied in Chapters~\\ref{ch:4}--\\ref{ch:8} probe directly the parameter that thermal cosmology constrains."
+  },
+  {
+    "id": "s5f9a63",
+    "startLine": 47,
+    "endLine": 47,
+    "textPreview": "Axions are the second candidate that the community currently treats on equal footing with WIMPs, and the steady tightening of direct-detection limits and dwarf-spheroidal indirect-detection bounds has only increased their relative weight.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "3hhn9ji",
+        "text": "this phrase is very bad. say they are one of the most popular candidates, not the second etc",
+        "createdAt": "2026-05-26T08:54:29.642Z"
+      },
+      {
+        "id": "jkkk7cn",
+        "text": "[AGENT] Changed \"Axions are the second candidate that the community currently treats on equal footing with WIMPs\" to \"Axions are among the most popular alternatives to WIMPs\".",
+        "createdAt": "2026-05-26T09:19:51.692240+00:00"
+      }
+    ],
+    "previousVersionContext": "-\\paragraph{WIMPs.}\n-Weakly Interacting Massive Particles occupy the GeV--TeV mass range and interact with Standard Model particles through weak-scale couplings.\n-They are produced through thermal freeze-out in the early universe, a mechanism we derive in detail in the following subsection.\n-The observation that a particle with weak-scale mass and coupling naturally yields the observed relic abundance --- the so-called ``WIMP miracle'' --- has made WIMPs the dominant dark matter paradigm for over three decades~\\cite{Cirelli:2024ssz}.\n-Concrete realizations include the lightest neutralino in supersymmetric extensions of the Standard Model~\\cite{Ellis:1983ew} and the minimal dark matter framework, in which a single electroweak multiplet with the appropriate quantum numbers is automatically stable and yields the correct relic density~\\cite{Cirelli:2005uq}.\n-WIMPs are the focus of this thesis, as their annihilation cross-section is directly testable through indirect detection via gamma-rays.",
+    "currentVersionContext": "+Axions are the second candidate that the community currently treats on equal footing with WIMPs, and the steady tightening of direct-detection limits and dwarf-spheroidal indirect-detection bounds has only increased their relative weight.\n+Axions were originally proposed by Peccei and Quinn~\\cite{Peccei:1977hh} as the pseudo-Nambu--Goldstone boson of a spontaneously broken global symmetry introduced to solve the strong CP problem of QCD~\\cite{Weinberg:1977ma,Wilczek:1977pj}; the axion acquires a small mass at the QCD phase transition, and an initial misalignment between its field value and the minimum of its potential sources a coherent classical oscillating condensate that today behaves as cold dark matter.\n+This \\emph{misalignment mechanism}~\\cite{Preskill:1982cy,Abbott:1982af,Dine:1982ah} is generic to any light scalar with a late-developing potential and naturally explains why such a feebly coupled particle saturates the observed relic density.\n+Because axions are bosons they evade the Tremaine--Gunn bound and can sit in occupation numbers $N \\gg 1$, behaving as a classical field rather than as a gas of quanta.\n+The phenomenologically viable range of axion masses is correspondingly broad, spanning roughly $10^{-12}$ to $10^{7}$~eV once astrophysical, cosmological, and laboratory bounds are combined~\\cite{Adams:2022pbo}.\n+Haloscope experiments such as ADMX search for the resonant conversion of the local axion field into microwave photons inside a tunable cavity threaded by a strong magnetic field, and the Snowmass community white paper documents the breadth of the dedicated experimental program~\\cite{Adams:2022pbo}."
+  },
+  {
+    "id": "4qyjmu1",
+    "startLine": 68,
+    "endLine": 68,
+    "textPreview": "Beyond these production-based classifications, dark matter may also depart from the cold and collisionless idealization on which $\\Lambda$CDM is built, and there are reasons to take that possibility seriously.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "8stlmic",
+        "text": "this is not scientific writing",
+        "createdAt": "2026-05-26T08:56:32.827Z"
+      },
+      {
+        "id": "hie0t6l",
+        "text": "[AGENT] Replaced \"dark matter may also depart from the cold and collisionless idealization... and there are reasons to take that possibility seriously\" with \"dark matter may also depart from the cold, collisionless idealization... Several persistent tensions at sub-galactic scales motivate this possibility:\" \u2014 scientific, not hand-wavy.",
+        "createdAt": "2026-05-26T09:19:54.980987+00:00"
+      }
+    ],
+    "previousVersionContext": "-\\paragraph{Primordial black holes.}\n-At the opposite extreme, dark matter could consist not of fundamental particles but of primordial black holes (PBHs), formed from the gravitational collapse of large density perturbations in the very early universe, before BBN~\\cite{Cirelli:2024ssz}.\n-Because PBHs form before nucleosynthesis, they are not subject to the baryonic budget constraints.\n-Observational bounds from gravitational microlensing, dynamical effects on stellar systems, and CMB spectral distortions constrain PBHs across most of the mass range.\n-At the time of writing, the ``asteroid-mass window'' $10^{-16}\\,M_\\odot \\lesssim M \\lesssim 3 \\times 10^{-12}\\,M_\\odot$ remains the only range where PBHs with a monochromatic mass function could constitute all of the dark matter~\\cite{Cirelli:2024ssz}.",
+    "currentVersionContext": "+Beyond these production-based classifications, dark matter may also depart from the cold and collisionless idealization on which $\\Lambda$CDM is built, and there are reasons to take that possibility seriously.\n+The persistent small-scale tensions of $\\Lambda$CDM --- the cusp/core problem in dwarf galaxies, the diversity of rotation curves at fixed maximum circular velocity, and the too-big-to-fail puzzle of the Milky Way satellites --- all point to fewer dense, cuspy halos on sub-galactic scales than collisionless simulations predict~\\cite{Bullock:2017xww}.\n+One response is \\emph{warm dark matter} (WDM), a kinematic classification of any candidate with a free-streaming length intermediate between hot and cold relics; the resulting suppression of small-scale power softens the small-scale tensions while leaving the large-scale successes of $\\Lambda$CDM untouched.\n+Resonantly produced keV sterile neutrinos are a concrete realization, but WDM is broader, and the astrophysical and cosmological tests that constrain it are reviewed in~\\cite{Adhikari:2022sbh}.\n+A second, orthogonal direction is \\emph{self-interacting dark matter} (SIDM), originally proposed by Spergel and Steinhardt~\\cite{Spergel:1999mh} as a way to thermalize the inner regions of haloes through elastic scattering and so produce cored, not cuspy, density profiles.\n+The relevant figure of merit is the cross section per unit mass: values of order $\\sigma/M \\sim 1~\\mathrm{cm}^2/\\mathrm{g}$ at dwarf-galaxy velocities are needed to produce a noticeable astrophysical effect, while bullet-cluster and cluster-scale observations require $\\sigma/M \\lesssim 1~\\mathrm{cm}^2/\\mathrm{g}$ globally and $\\lesssim 0.1~\\mathrm{cm}^2/\\mathrm{g}$ at cluster velocities, motivating velocity-dependent SIDM models with a light mediator~\\cite{Kaplinghat:2015aga}.\n+The status of the program is summarized in the review of Tulin and Yu~\\cite{Tulin:2017ara}, and frameworks such as ETHOS~\\cite{Cyr-Racine:2015ihg} now systematically integrate these non-standard interactions into cosmological hydrodynamical simulations for direct comparison with dwarf-galaxy data."
+  },
+  {
+    "id": "iwkb9wx",
+    "startLine": 90,
+    "endLine": 90,
+    "textPreview": "The qualitative logic of this competition is worth pausing on before any formula appears.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "ax3bge6",
+        "text": "this phrase is bad, makes no sense",
+        "createdAt": "2026-05-26T08:57:59.467Z"
+      },
+      {
+        "id": "7vw4trm",
+        "text": "[AGENT] Removed \"The qualitative logic of this competition is worth pausing on before any formula appears.\" The qualitative paragraph now starts directly with the physics: \"A particle that annihilates strongly stays in chemical equilibrium for a long time...\"",
+        "createdAt": "2026-05-26T09:19:58.274044+00:00"
+      }
+    ],
+    "previousVersionContext": "-We consider a stable particle $\\chi$ with mass $M_\\chi$ that was in thermal and chemical equilibrium with the Standard Model plasma in the early universe through reactions of the form $\\chi\\chi \\leftrightarrow \\mathrm{SM}\\,\\mathrm{SM}$.\n-At temperatures $T \\gg M_\\chi$, the dark matter particles are relativistic and as abundant as photons, with number density $n \\sim T^3$.\n-As the universe cools below $T \\sim M_\\chi$, the particles become non-relativistic and their equilibrium number density becomes exponentially suppressed by the Boltzmann factor~\\cite{Cirelli:2024ssz},\n-\\begin{equation}\n-\tn_\\mathrm{eq} = g_\\chi \\left(\\frac{M_\\chi T}{2\\pi}\\right)^{3/2} e^{-M_\\chi/T} \\,,\n-\t\\label{eq:n_eq}\n-\\end{equation}\n-where $g_\\chi$ counts the internal degrees of freedom of $\\chi$ ($g_\\chi = 1$ for a real scalar, $g_\\chi = 2$ for a Majorana fermion, etc.)~\\cite{Cirelli:2024ssz}.",
+    "currentVersionContext": "+The qualitative logic of this competition is worth pausing on before any formula appears.\n+A particle that annihilates strongly stays in chemical equilibrium for longer; it follows the equilibrium population as the latter drops, and only departs from it when the equilibrium abundance has already become small.\n+Such a particle leaves behind few relics.\n+A particle that annihilates weakly, by contrast, loses contact with the bath earlier, while the equilibrium abundance is still large, and therefore freezes out at a higher residual density.\n+The result is the counterintuitive maxim that, in the thermal-relic context, the weakest particle wins: the dark-matter abundance is set by how reluctantly a candidate annihilates, not by how massive it is.\n+The mass enters the final answer only logarithmically, through the temperature at which the decoupling occurs, while the velocity-averaged annihilation rate $\\langle \\sigma v_\\mathrm{rel}\\rangle$ sets the relic abundance to first approximation."
+  },
+  {
+    "id": "tcijd7k",
+    "startLine": 113,
+    "endLine": 113,
+    "textPreview": "A quantitative description of this process follows the comoving number density through a single transport equation~\\cite{Gondolo:1990dk},",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "nkeqzhm",
+        "text": "we can keep the cirelly review here",
+        "createdAt": "2026-05-26T09:00:01.168Z"
+      },
+      {
+        "id": "shfx3oy",
+        "text": "[AGENT] Added Cirelli review citation alongside Gondolo: now reads \"~\\cite{Gondolo:1990dk,Cirelli:2024ssz}\".",
+        "createdAt": "2026-05-26T09:20:00.561230+00:00"
+      }
+    ],
+    "previousVersionContext": "-The time evolution of $n_\\chi$ in the expanding universe is governed by the Boltzmann equation~\\cite{Cirelli:2024ssz,Gondolo:1990dk},",
+    "currentVersionContext": "+\\begin{figure}[t]\n+\t\\centering\n+\t\\includegraphics[width=0.85\\textwidth]{chapter_01/figures/freezeout_yx.pdf}\n+\t\\caption{Comoving abundance $Y \\equiv n_\\chi/s$ as a function of the dimensionless inverse temperature $x \\equiv M_\\chi/T$.\n+\t\tThe dashed curve traces the equilibrium abundance $Y_\\mathrm{eq}$, exponentially Boltzmann-suppressed once $T$ falls below $M_\\chi$.\n+\t\tThe solid curves show the actual abundance for three values of the velocity-averaged annihilation cross section, illustrating that stronger annihilation tracks equilibrium longer and freezes out at a smaller residual relic.\n+\t\t\\aure{TODO: produce Y vs x freeze-out figure}}\n+\t\\label{fig:freezeout_yx}\n+\\end{figure}\n+\n+Figure~\\ref{fig:freezeout_yx} captures the picture in a single plot of the comoving abundance $Y \\equiv n_\\chi/s$ against the dimensionless inverse temperature $x \\equiv M_\\chi/T$.\n+At very high temperatures, $x \\ll 1$, the candidate is effectively relativistic and present in numbers comparable to the photons; the actual abundance hugs the equilibrium curve $Y_\\mathrm{eq}$.\n+Once the temperature drops below the rest mass, $x \\gtrsim 1$, equilibrium requires that producing a $\\chi$ pair pays an exponential Boltzmann cost, and $Y_\\mathrm{eq}$ falls off as $e^{-x}$.\n+The actual abundance tracks this exponential decline only as long as the annihilation rate $\\Gamma = n_\\chi \\langle \\sigma v_\\mathrm{rel}\\rangle$ exceeds the Hubble rate $H$; once $\\Gamma$ drops below $H$, annihilations can no longer keep up with expansion, $Y$ peels away from $Y_\\mathrm{eq}$, and the comoving abundance plateaus at its asymptotic value $Y_\\infty$.\n+For a weakly interacting candidate at the electroweak scale, this \\emph{freeze-out} happens at $T_\\mathrm{fo} \\sim M_\\chi/(20\\text{--}25)$ --- comfortably non-relativistic, but well before today.\n+\n+A quantitative description of this process follows the comoving number density through a single transport equation~\\cite{Gondolo:1990dk},"
+  }
+]

@@ -31,13 +31,18 @@
       "snapshotFile": "1.2_wimp_paradigm.rev4.tex",
       "annotationsFile": "rev4.json",
       "createdAt": "2026-05-22T13:49:56.976Z"
+    },
+    {
+      "revision": 5,
+      "snapshotFile": "1.2_wimp_paradigm.rev5.tex",
+      "annotationsFile": "rev5.json",
+      "createdAt": "2026-05-26T08:45:53.379Z"
+    },
+    {
+      "revision": 6,
+      "snapshotFile": "1.2_wimp_paradigm.rev6.tex",
+      "annotationsFile": "rev6.json",
+      "createdAt": "2026-05-26T09:20:36.728Z"
     }
-  ],
-  "diffState": {
-    "mode": "local",
-    "pinnedRef": {
-      "type": "local",
-      "revision": 2
-    }
-  }
+  ]
 }
