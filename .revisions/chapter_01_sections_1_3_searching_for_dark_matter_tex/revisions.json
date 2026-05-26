@@ -31,6 +31,30 @@
       "snapshotFile": "1.3_searching_for_dark_matter.rev4.tex",
       "annotationsFile": "rev4.json",
       "createdAt": "2026-05-26T13:00:57.643Z"
+    },
+    {
+      "revision": 5,
+      "snapshotFile": "1.3_searching_for_dark_matter.rev5.tex",
+      "annotationsFile": "rev5.json",
+      "createdAt": "2026-05-26T13:04:41.528Z"
+    },
+    {
+      "revision": 6,
+      "snapshotFile": "1.3_searching_for_dark_matter.rev6.tex",
+      "annotationsFile": "rev6.json",
+      "createdAt": "2026-05-26T13:11:10.842Z"
+    },
+    {
+      "revision": 7,
+      "snapshotFile": "1.3_searching_for_dark_matter.rev7.tex",
+      "annotationsFile": "rev7.json",
+      "createdAt": "2026-05-26T13:14:39.457Z"
+    },
+    {
+      "revision": 8,
+      "snapshotFile": "1.3_searching_for_dark_matter.rev8.tex",
+      "annotationsFile": "rev8.json",
+      "createdAt": "2026-05-26T13:19:48.363Z"
     }
   ]
 }

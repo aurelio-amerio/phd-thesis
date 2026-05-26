@@ -31,8 +31,8 @@ A signal in all three would constitute an unambiguous identification.
 	\label{fig:detection_triangle}
 \end{figure}
 
-This section reviews direct detection and collider searches in turn, with emphasis on the physical principles rather than experimental details.
-We defer a more detailed discussion of indirect detection --- which is particularly relevant for this thesis --- to Section~\ref{sec:1.4}.
+This section reviews each strategy in turn, with emphasis on the physical principles rather than experimental details.
+We close with the argument for why indirect detection via gamma-rays --- the approach pursued throughout this thesis --- provides the most direct test of the WIMP hypothesis.
 
 \subsection{Direct Detection}
 \label{sec:1.3.1}
@@ -82,8 +82,12 @@ A detectable signal requires that an additional Standard Model particle --- a je
 These are the \textbf{mono-X searches}: mono-jet, mono-photon, mono-$Z$, and mono-Higgs, each paying a cross-section penalty of roughly $g^2/(4\pi)^2 \sim 10^{-3}$ for the additional emission~\cite{Cirelli:2024ssz}.
 A complementary channel probes \textbf{invisible Higgs decays}: if the dark matter is lighter than half the Higgs boson mass ($M_\chi < M_h/2$), the Higgs can decay directly into a dark matter pair.
 Current LHC measurements constrain the invisible branching ratio to $\text{BR}_\text{inv} \lesssim 0.11$ at 95\%~C.L., essentially excluding Higgs-portal thermal relic dark matter below $M_h/2 \approx 63$~GeV~\cite{ATLAS:2023tkt,Cirelli:2024ssz}.
-These results are interpreted within \textbf{simplified models} that include an explicit mediator and its couplings to quarks and dark matter, enabling direct comparison with direct and indirect detection bounds~\cite{Boveia:2018yeb}.
-Current data exclude $s$-channel mediators in roughly the $0.1$--$4$~TeV range and push the lower bound on colored mediators (squarks, gluinos) to $1$--$2$~TeV~\cite{Cirelli:2024ssz,Hooper:2024}, probing interaction strengths that non-relativistic direct detection cannot reach.
+The earliest collider analyses treated dark matter production as a contact interaction between dark matter and quarks, a model-independent framework that breaks down at the LHC, where the partonic collision energy routinely approaches or exceeds the mediator mass and the effective-operator expansion is no longer self-consistent.
+We therefore work with \textbf{simplified models} that keep an explicit dark matter particle, an explicit mediator (most commonly an $s$-channel vector $Z'$ or a pseudoscalar), and explicit couplings to quarks and to dark matter, which lets us confront the same parameter space with direct and indirect detection bounds~\cite{Boveia:2018yeb}.
+One consequence is worth spelling out: any mediator coupled to quarks strongly enough to be produced at the LHC must also decay back into quark-antiquark pairs, and the absence of a di-jet resonance is often a stronger constraint than the corresponding missing-energy search~\cite{Boveia:2018yeb}.
+Combined with mono-jet limits, current LHC data exclude $s$-channel mediators across roughly the $0.1$--$4$~TeV range unless the quark coupling is much smaller than the dark matter coupling, $g_q \ll g_\text{DM}$.
+For colored mediators such as squarks and gluinos in supersymmetric realizations, the larger QCD production rates push the lower bound on their masses to roughly $1$--$2$~TeV~\cite{Cirelli:2024ssz,Hooper:2024}.
+These collider bounds probe interaction strengths that direct detection cannot reach, because the production cross-section at LHC energies does not feel the velocity and momentum suppressions that control non-relativistic dark matter--nucleus scattering.
 
 Despite their power, collider experiments face a fundamental limitation: even if a new invisible particle is produced and characterized, the LHC cannot establish that it is cosmologically stable or that it constitutes the dark matter observed in gravitational systems.
 Confirming the cosmological connection --- that the particle froze out in the early universe with the correct relic abundance --- requires measuring the annihilation cross-section directly.
@@ -91,6 +95,30 @@ This is the domain of indirect detection.
 
 For a comprehensive recent treatment of dark matter searches at colliders, including the simplified-model framework and the LHC mono-X programme, we refer the reader to the review by Boveia and Doglioni~\cite{Boveia:2018yeb}, and to the broader reviews by Cirelli et al.~\cite{Cirelli:2024ssz} and Hooper~\cite{Hooper:2024}.
 
-Among the three vertices of the detection triangle, direct detection and collider searches --- reviewed above --- constrain the scattering cross-section and the production mechanism, respectively, but neither directly measures the annihilation cross-section $\langle \sigma v_\text{rel} \rangle$ that determines the thermal relic abundance.
-Indirect detection is the only strategy that probes this quantity, and gamma-rays are its most informative messenger.
-Because indirect detection is the approach pursued throughout this thesis, we devote the next section entirely to it.
+\subsection{Why Indirect Detection?}
+\label{sec:1.3.3}
+
+Among the three strategies, indirect detection is the only approach that directly probes the annihilation cross-section $\langle \sigma v_\text{rel} \rangle$ --- the same quantity that determines the thermal relic abundance~\cite{Hooper:2024}.
+For a standard $s$-wave WIMP, the cross-section at freeze-out is essentially the same as the one operating in today's galactic halos (see Section~\ref{sec:1.2.4}), providing a firm, parameter-free experimental target~\cite{Steigman:2012nb,Hooper:2024}.
+Neither direct detection nor collider production offers this direct connection to cosmology.
+
+Dark matter annihilation (or decay) in astrophysical environments produces all stable Standard Model particles --- gamma-rays, neutrinos, electrons, positrons, antiprotons, and heavier anti-nuclei --- each carrying information about the mass, coupling, and spatial distribution of the dark sector~\cite{Cirelli:2010xx,Arina:2023eic,Cirelli:2024ssz}.
+Among these messengers, \textbf{gamma-rays} have a decisive practical advantage.
+Photons are electrically neutral and travel in straight lines, preserving both the angular distribution and the spectral signature of their source~\cite{Cirelli:2024ssz,Pinetti:2021jjs}, whereas charged cosmic rays --- positrons, antiprotons --- are deflected by galactic magnetic fields, erasing all directional information and distorting the energy spectrum through diffusion and energy losses~\cite{Cirelli:2024ssz}.
+The universe is also largely transparent to gamma-rays up to TeV-scale energies over galactic distances, so they reach the detector without significant absorption~\cite{Hooper:2024}.
+Neutrinos share the advantage of being neutral and undeflected, but their interaction cross-sections are so small that detecting them requires cubic-kilometer-scale instruments and still yields far fewer events than a gamma-ray telescope of comparable collecting area~\cite{Cirelli:2024ssz}.
+Gamma-rays therefore provide one of the cleanest windows on dark matter annihilation: they carry uncontaminated morphological information (where the dark matter is concentrated) and spectral information that informs the dark matter mass and annihilation channel, modulo the degeneracies arising from spectral similarity between final states and from astrophysical uncertainties.
+
+The potential of gamma-ray indirect detection is illustrated by the most debated anomaly in the field: the \textbf{Galactic Center excess} (GCE), a statistically significant excess of GeV-scale gamma-rays from the inner Galaxy whose spectrum and morphology are consistent with dark matter annihilation but also with an unresolved population of millisecond pulsars~\cite{Goodenough:2009gk,Hooper:2010mq,Daylan:2014rsa,Macias:2019omb}.
+We discuss the GCE in detail in Section~\ref{sec:targets}, after developing the density profile and $J$-factor formalism needed to interpret it quantitatively; the dedicated analysis is presented in Chapter~\ref{ch:4}.
+
+To circumvent the significant backgrounds of the Galactic Center, astronomers have turned to \textbf{dwarf spheroidal galaxies} (dSphs) --- satellite galaxies of the Milky Way that are among the most dark-matter-dominated objects known, with mass-to-light ratios reaching into the thousands~\cite{Fermi-LAT:2015att}.
+These systems are essentially devoid of gas, active star formation, and pulsars, producing negligible astrophysical gamma-ray emission.
+While the expected dark matter flux from any individual dwarf is orders of magnitude smaller than from the Galactic Center, the absence of backgrounds makes them exceptionally clean targets~\cite{Hooper:2024}.
+By stacking observations of dozens of these systems, the Fermi-LAT collaboration has derived some of the tightest constraints on the annihilation cross-section to date, excluding the thermal relic value for masses below ${\sim}\,100$~GeV in the $b\bar{b}$ channel~\cite{Fermi-LAT:2015att,Hooper:2024}.
+These constraints carry systematic uncertainties related to the dark matter density profiles inferred from stellar kinematics~\cite{Bonnivard:2015xpq} --- an issue we revisit in Chapter~\ref{ch:5}.
+
+For comprehensive recent treatments of indirect detection covering target classes, propagation effects, and the multi-messenger landscape, we refer the reader to the reviews by Cirelli et al.~\cite{Cirelli:2024ssz} and Hooper~\cite{Hooper:2024}.
+
+With the case for gamma-ray indirect detection established, the next section develops the underlying formalism.
+We separate the predicted flux into a particle-physics factor and an astrophysical $J$-factor, and survey the catalogue of observational targets that together turn this strategy into a quantitative search.
