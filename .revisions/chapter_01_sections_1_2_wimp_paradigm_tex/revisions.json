@@ -44,5 +44,12 @@
       "annotationsFile": "rev6.json",
       "createdAt": "2026-05-26T09:20:36.728Z"
     }
-  ]
+  ],
+  "diffState": {
+    "mode": "git",
+    "pinnedRef": {
+      "type": "git",
+      "hash": "65591cc69d5e14e52bfc897dd2308debf92941ed"
+    }
+  }
 }

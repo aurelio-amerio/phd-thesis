@@ -25,13 +25,12 @@
       "snapshotFile": "1.3_searching_for_dark_matter.rev3.tex",
       "annotationsFile": "rev3.json",
       "createdAt": "2026-05-26T09:10:07.123Z"
+    },
+    {
+      "revision": 4,
+      "snapshotFile": "1.3_searching_for_dark_matter.rev4.tex",
+      "annotationsFile": "rev4.json",
+      "createdAt": "2026-05-26T13:00:57.643Z"
     }
-  ],
-  "diffState": {
-    "mode": "local",
-    "pinnedRef": {
-      "type": "local",
-      "revision": 0
-    }
-  }
+  ]
 }
