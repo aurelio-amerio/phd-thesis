@@ -43,13 +43,12 @@
       "snapshotFile": "1.2_wimp_paradigm.rev6.tex",
       "annotationsFile": "rev6.json",
       "createdAt": "2026-05-26T09:20:36.728Z"
+    },
+    {
+      "revision": 7,
+      "snapshotFile": "1.2_wimp_paradigm.rev7.tex",
+      "annotationsFile": "rev7.json",
+      "createdAt": "2026-05-26T13:25:02.796Z"
     }
-  ],
-  "diffState": {
-    "mode": "git",
-    "pinnedRef": {
-      "type": "git",
-      "hash": "65591cc69d5e14e52bfc897dd2308debf92941ed"
-    }
-  }
+  ]
 }
