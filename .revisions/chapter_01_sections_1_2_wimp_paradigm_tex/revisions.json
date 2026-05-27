@@ -49,6 +49,12 @@
       "snapshotFile": "1.2_wimp_paradigm.rev7.tex",
       "annotationsFile": "rev7.json",
       "createdAt": "2026-05-26T13:25:02.796Z"
+    },
+    {
+      "revision": 8,
+      "snapshotFile": "1.2_wimp_paradigm.rev8.tex",
+      "annotationsFile": "rev8.json",
+      "createdAt": "2026-05-27T12:39:50.759Z"
     }
   ]
 }
