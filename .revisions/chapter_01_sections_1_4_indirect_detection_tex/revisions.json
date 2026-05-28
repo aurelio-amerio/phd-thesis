@@ -91,13 +91,12 @@
       "snapshotFile": "1.4_indirect_detection.rev14.tex",
       "annotationsFile": "rev14.json",
       "createdAt": "2026-05-28T15:14:26.958Z"
+    },
+    {
+      "revision": 15,
+      "snapshotFile": "1.4_indirect_detection.rev15.tex",
+      "annotationsFile": "rev15.json",
+      "createdAt": "2026-05-28T15:39:23.679Z"
     }
-  ],
-  "diffState": {
-    "mode": "local",
-    "pinnedRef": {
-      "type": "local",
-      "revision": 13
-    }
-  }
+  ]
 }
