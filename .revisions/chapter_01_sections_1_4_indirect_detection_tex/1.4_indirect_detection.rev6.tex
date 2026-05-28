@@ -15,8 +15,7 @@ These ingredients combine into the $J$-factor and $D$-factor formalism --- a fac
 \subsection{Annihilation and Decay Physics}
 \label{sec:ann_decay}
 
-In the $\Lambda$CDM framework, structure forms hierarchically from cold, non-relativistic dark matter, and the particles that populate present-day galactic halos retain typical velocities of order $v \sim 10^{-3}\, c$ \cite{Hooper:2024}.
-They therefore annihilate or decay essentially at rest.
+Dark matter particles in present-day galactic halos are cold --- their typical velocities are $v \sim 10^{-3}\, c$ --- and annihilate or decay essentially at rest \cite{Cirelli:2024ssz}.
 This kinematic fact has two immediate consequences.
 First, the total center-of-mass energy available in an annihilation event is simply $\sqrt{s} = 2 m_\chi$, so the most energetic photon that can be produced carries energy $E_\gamma = m_\chi$.
 For decay, the available energy is instead $m_\chi$, and momentum conservation among at least two daughter particles limits the maximum photon energy to $E_\gamma = m_\chi / 2$.
@@ -40,12 +39,12 @@ Decay, by contrast, is a single-particle process with a rate proportional to the
 \end{equation}
 
 where $\tau$ is the dark matter lifetime \cite{Hooper:2024}.
-Current gamma-ray observations constrain $\tau \gtrsim 10^{28}$ s \cite{Cohen:2016uyg,Blanco_2019}, far exceeding the age of the universe --- making decay an intrinsically rare process whose detection requires enormous integrated exposures.
+Current gamma-ray observations constrain $\tau \gtrsim 10^{28}$ s \cite{Cirelli:2024ssz}, far exceeding the age of the universe --- making decay an intrinsically rare process whose detection requires enormous integrated exposures.
 The $\rho^2$ versus $\rho$ distinction has direct observational consequences: annihilation signals are sharply concentrated in the densest regions of a halo --- the inner kiloparsec of the Galactic Center, or the cores of dwarf galaxies --- while decay signals are spread diffusely across the entire halo volume, producing a much flatter angular profile.
 This morphological difference provides a powerful diagnostic: an excess that tracks the $\rho^2$ profile of the inner Galaxy but vanishes at high latitudes points toward annihilation, while a persistent, broadly distributed signal favours decay.
 
 The stable particles emerging from an annihilation or decay event --- photons, neutrinos, electrons, positrons, protons, antiprotons --- are determined by the primary channel into which the dark matter annihilates.
-In a model-independent analysis, one parametrizes the annihilation as $\chi\chi \to f\bar{f}$ for a specific Standard Model final state $f$ (quarks, leptons, or gauge bosons), and the total gamma-ray spectrum is given by a sum over channels weighted by branching ratios \cite{Cirelli:2024ssz,Cirelli:2010xx,Arina:2023eic}:
+In a model-independent analysis, one parametrizes the annihilation as $\chi\chi \to f\bar{f}$ for a specific Standard Model final state $f$ (quarks, leptons, or gauge bosons), and the total gamma-ray spectrum is given by a sum over channels weighted by branching ratios \cite{Cirelli:2024ssz}:
 
 \begin{equation}
 	\frac{dN_\gamma}{dE} = \sum_f \text{BR}_f \, \frac{dN_\gamma^{(f)}}{dE} \,.
@@ -53,16 +52,16 @@ In a model-independent analysis, one parametrizes the annihilation as $\chi\chi 
 \end{equation}
 
 In practice, limits are derived for one channel at a time --- setting $\text{BR}_f = 1$ for a chosen final state --- so each "benchmark channel" maps to a distinctive spectral shape.
-The spectra $dN_\gamma^{(f)}/dE$ for each channel are computed using Monte Carlo event generators such as Pythia, with the results tabulated in standard libraries such as PPPC 4 DM ID \cite{Cirelli:2010xx} or the more recent CosmiXs \cite{Arina:2023eic}.
+The spectra $dN_\gamma^{(f)}/dE$ for each channel are computed using Monte Carlo event generators such as Pythia, with the results tabulated in standard libraries such as PPPC 4 DM ID \cite{Cirelli:2010xx,Hooper:2024}.
 These spectra exhibit qualitatively different shapes depending on $f$.
 In hadronic channels such as $b\bar{b}$ or $t\bar{t}$, the quarks hadronize into jets containing many neutral pions, which decay almost instantly via $\pi^0 \to \gamma\gamma$.
 The resulting gamma-ray spectrum is broad and soft, peaking at $E_\gamma \sim m_\chi / 20$ in $E^2 \, dN/dE$ units \cite{Hooper:2024,Cirelli:2024ssz}.
-The $b\bar{b}$ channel has become the standard benchmark in Fermi-LAT analyses for two complementary reasons: the resulting gamma-ray spectrum depends dominantly on neutral pion decay in the hadronization cascade and is therefore representative of nearly all hadronic annihilation channels; and for typical WIMP masses ($\sim 30$--$60$ GeV), the $b\bar{b}$ spectrum peaks at $\sim 1$--$3$ GeV --- the energy range where Fermi-LAT exhibits its greatest sensitivity \cite{Hooper:2024}.
+The $b\bar{b}$ channel has become the standard benchmark in Fermi-LAT analyses because it produces a generic spectrum representative of many WIMP models.
 
 Leptonic channels behave differently.
 The $\tau^+\tau^-$ final state undergoes hadronic decays that produce fewer but more energetic pions, yielding a harder spectrum peaking at $E_\gamma \sim m_\chi / 3$ \cite{Hooper:2024}.
 Lighter leptons ($e^+e^-$, $\mu^+\mu^-$) do not produce pions at tree level --- their gamma-ray spectrum is dominated by final-state radiation and carries far less total flux, concentrated near the kinematic endpoint \cite{Cirelli:2024ssz}.
-Gauge boson channels ($W^+W^-$, $ZZ$) produce a combination of both behaviours: the hadronic decays of the $W$ and $Z$ generate a broad low-energy component similar to $b\bar{b}$, while leptonic decays and final-state radiation add a harder tail extending toward $E_\gamma \sim m_\chi$ \cite{Cirelli:2024ssz,Hooper:2024}.
+Gauge boson channels ($W^+W^-$, $ZZ$) produce a combination of both behaviours: the hadronic decays of the $W$ and $Z$ generate a broad low-energy bump similar to $b\bar{b}$, while the charged $W^\pm$ bosons also radiate hard photons directly, adding a hard photon tail near $E_\gamma \sim m_\chi$ \cite{Cirelli:2024ssz}.
 
 The more hadrons produced in the cascade, the softer the spectrum, because the available energy is shared among a larger multiplicity of pions.
 Channels that produce fewer, more energetic particles yield harder spectra with sharper features.
@@ -82,20 +81,26 @@ These qualitative differences are illustrated in Figure~\ref{fig:spectra_per_cha
 
 \subsection{Spectral Features and Signatures}
 \label{sec:spectral_features}
-The continuum spectra described above are broad, featureless apart from a cutoff at $m_\chi$, and not unique to dark matter --- astrophysical gamma-ray sources produce similar power-law-like spectra through conventional particle acceleration (cf.\ Chapter~\ref{chap:gamma_sky}).
-The discriminating power of gamma-ray searches therefore lies in spectral features that have no plausible astrophysical counterpart; and unlike charged cosmic rays, whose spectral structures are smeared by propagation through galactic magnetic fields, sharp features in the gamma-ray spectrum propagate intact from source to detector and can be searched for directly~\cite{Dermer:2009zz}.
+
+The continuum spectra described above are broad, featureless apart from a cutoff at $m_\chi$, and not unique to dark matter --- astrophysical gamma-ray sources produce similar power-law-like spectra through conventional particle acceleration (cf.\ Chapter~2\aure{add ref when ch:2 label exists}).
+The discriminating power of gamma-ray searches therefore lies in spectral features that have no plausible astrophysical counterpart.
+Unlike charged cosmic rays, whose spectral features are smeared by propagation through galactic magnetic fields, sharp structures in the gamma-ray spectrum propagate intact from source to detector and can be searched for directly \cite{Cirelli:2024ssz}.
 
 \textbf{Monochromatic lines.}
-The cleanest such feature is a gamma-ray line at $E_\gamma = m_\chi$, produced when two dark matter particles annihilate directly into a pair of photons, $\chi\chi \to \gamma\gamma$~\cite{Cirelli:2024ssz}.
-Because dark matter carries no electric charge, this process cannot occur at tree level; it must proceed through quantum loops of charged particles, suppressing the cross-section by a factor of order $\alpha^2$ relative to annihilation into Standard Model final states~\cite{Bergstrom:1997fj,Cirelli:2024ssz}.
-The expected flux is correspondingly small, yet no known astrophysical mechanism produces a sharp line superimposed on a smooth continuum --- the monochromatic signal has long been regarded as a ``smoking gun'' for dark matter~\cite{Bergstrom:1997fj,Bergstrom:2001jj}.
-Related processes such as $\chi\chi \to \gamma Z$ or $\gamma h$ produce secondary lines displaced to lower energies, since part of the available centre-of-mass energy goes into the mass of the $Z$ or Higgs boson; detecting multiple lines at predictable separations would provide a strong consistency check~\cite{Cirelli:2024ssz}.
-An exception to the generic loop suppression arises in models with non-perturbative Sommerfeld enhancement, where the line cross-section can be boosted to a level comparable with the continuum contribution for a range of dark matter masses~\cite{Cirelli:2024ssz}.
+The cleanest such feature is a gamma-ray line: a monochromatic photon emitted at a fixed energy $E_\gamma = m_\chi$ from the process $\chi\chi \to \gamma\gamma$ \cite{Cirelli:2024ssz}.
+Because dark matter is electrically neutral, this annihilation cannot proceed at tree level and must be mediated by a loop of charged particles, suppressing the cross-section by a loop factor relative to direct annihilation into Standard Model final states \cite{Cirelli:2024ssz}\aure{add a second review citation here, not Pinetti}.
+The expected flux is correspondingly small.
+Yet no known astrophysical mechanism produces a sharp line superimposed on smooth backgrounds, which is why the monochromatic signal has long been regarded as a ``smoking gun'' for dark matter \cite{Cirelli:2024ssz}.
+A related process, $\chi\chi \to \gamma Z$ or $\gamma h$, produces a secondary line displaced to lower energy, $E_\gamma = m_\chi(1 - M_{Z,h}^2/4m_\chi^2)$, providing an additional handle for identification \cite{Cirelli:2024ssz}.
+An interesting exception to the generic loop suppression arises in Minimal Dark Matter models, where the non-perturbative Sommerfeld enhancement boosts the loop-induced cross-section to a level comparable with the continuum contribution for a range of dark matter masses \cite{Cirelli:2024ssz}.
 
 \textbf{Virtual internal bremsstrahlung (VIB).}
-When a photon is radiated from a charged particle mediating the annihilation, the resulting spectrum acquires a characteristic \textit{saw-tooth} shape: rising steeply toward a sharp cutoff at $E_\gamma \lesssim m_\chi$~\cite{Bringmann:2007nk,Cirelli:2024ssz}.
-In models where two-body annihilation into light fermions is suppressed, this radiative three-body channel can become the dominant process, making the saw-tooth feature the leading spectral signature~\cite{Bringmann:2007nk,Cirelli:2024ssz}.
-
+A second sharp feature arises when a photon is radiated from a virtual charged particle mediating the annihilation \cite{Bringmann:2007nk}.
+Because this emission brings the virtual propagator closer to its mass shell --- particularly when the mediator mass is close to $m_\chi$ --- the process preferentially produces hard photons near the kinematic limit \cite{Cirelli:2024ssz}.
+The resulting VIB spectrum has a characteristic saw-tooth shape: rising steeply toward a sharp cutoff at $E_\gamma \lesssim m_\chi$ \cite{Bringmann:2007nk,Cirelli:2024ssz}.
+Beyond its distinctive spectral signature, VIB has an important kinematic consequence.
+As a three-body final state, it lifts the helicity suppression that affects two-body annihilation of Majorana fermions into light fermions: the emission of the additional photon removes the strict angular momentum constraints on the two-body process, allowing the annihilation to proceed via unsuppressed $s$-wave \cite{Bringmann:2007nk,Cirelli:2024ssz}.
+In models where the two-body rate is helicity-suppressed, the VIB cross-section can actually exceed the tree-level two-body rate, making the three-body radiative process the phenomenologically dominant channel \cite{Cirelli:2024ssz}.
 These spectral features are illustrated schematically in Figure~\ref{fig:spectral_features}.
 
 \begin{figure}[t]
@@ -110,20 +115,23 @@ These spectral features are illustrated schematically in Figure~\ref{fig:spectra
 \end{figure}
 
 \textbf{Electroweak corrections.}
-For TeV-scale dark matter ($m_\chi \gg M_W$), radiation of $W$ and $Z$ bosons from the annihilation products becomes significant and modifies the predicted spectra in two ways~\cite{Ciafaloni:2010ti,Cirelli:2024ssz}.
-First, sharp peaks such as monochromatic lines are smeared, and a new continuum of lower-energy gamma-rays appears from the hadronic and leptonic decays of the radiated gauge bosons.
-Second, the emitted weak bosons mix the messenger channels: purely leptonic final states ($\chi\chi \to e^+e^-$, $\mu^+\mu^-$) acquire an antiproton yield that would be entirely absent without electroweak radiation, altering multi-messenger predictions~\cite{Cirelli:2024ssz}.
+For TeV-scale dark matter ($m_\chi \gg M_W$), the radiation of $W$ and $Z$ bosons from the annihilation products becomes significant \cite{Ciafaloni:2010ti,Cirelli:2024ssz}.
+Although this is formally a higher-order process suppressed by the weak coupling, large logarithmic enhancements of the form $\ln(m_\chi / M_W)$ compensate the suppression at high masses \cite{Cirelli:2024ssz}.
+The consequences are twofold.
+First, the sharp peaks of monochromatic lines are smeared, and a new continuum of lower-energy gamma-rays ($E_\gamma \ll m_\chi$) appears from the hadronic and leptonic decays of the radiated gauge bosons \cite{Cirelli:2024ssz}.
+Second, purely leptonic channels ($\chi\chi \to e^+e^-$, $\mu^+\mu^-$) and even the $\gamma\gamma$ channel acquire an antiproton yield that would be entirely absent at tree level, altering the multi-messenger predictions \cite{Cirelli:2024ssz}.
+These electroweak corrections were incorporated into the standard spectral libraries only after 2013 \cite{Cirelli:2010xx,Cirelli:2024ssz}, and neglecting them leads to qualitatively wrong predictions for heavy dark matter candidates.
 
 \textbf{Prompt versus secondary emission.}
 The gamma-ray production mechanisms discussed so far --- pion decay, final-state radiation, lines, VIB --- all occur directly in the annihilation or decay event and are collectively termed \textit{prompt emission} \cite{Cirelli:2024ssz,Pinetti:2021jjs}.
 Prompt photons propagate freely through the Galaxy and arrive at the detector with their spectral shape intact, because the Galaxy is effectively transparent to gamma-rays below a few hundred TeV \cite{Hooper:2024}.
 
 A qualitatively different contribution arises when the energetic electrons and positrons produced by dark matter propagate through the interstellar medium.
-These leptons upscatter ambient low-energy photons to gamma-ray energies via \textit{inverse Compton scattering} (ICS) \cite{Blumenthal:1970gc,Hooper:2024}.
-The target photon field --- the interstellar radiation field (ISRF) --- consists of three components: the cosmic microwave background, optical starlight, and dust-reprocessed infrared light \cite{Strong:2007nh}.
+These leptons upscatter ambient low-energy photons to gamma-ray energies via \textit{inverse Compton scattering} (ICS) \cite{Cirelli:2024ssz,Pinetti:2021jjs}.
+The target photon field --- the interstellar radiation field (ISRF) --- consists of three components: the cosmic microwave background, optical starlight, and dust-reprocessed infrared light \cite{Cirelli:2024ssz,Pinetti:2021jjs}.
 As a representative example, a 1 TeV electron upscatters a CMB photon to $\sim 1.5$ GeV, or a UV starlight photon to $\sim 150$ GeV \cite{Cirelli:2024ssz}.
-The propagating $e^\pm$ also emit \textit{bremsstrahlung} radiation when deflected by the electric fields of interstellar gas nuclei, a process that dominates their energy losses in the 1--10 GeV range near the Galactic plane where gas densities are highest \cite{Blumenthal:1970gc,Dermer:2009zz}.
-These processes produce \textit{secondary} gamma-ray emission that is spatially extended and spectrally softer than the prompt component, and whose morphology depends on the magnetic field structure, gas distribution, and radiation fields of the host galaxy \cite{Strong:2007nh,Hooper:2024}.
+The propagating $e^\pm$ also emit \textit{bremsstrahlung} radiation when deflected by the electric fields of interstellar gas nuclei, a process that dominates their energy losses in the 1--10 GeV range near the Galactic plane where gas densities are highest \cite{Cirelli:2024ssz}.
+These processes produce \textit{secondary} gamma-ray emission that is spatially extended and spectrally softer than the prompt component, and whose morphology depends on the magnetic field structure, gas distribution, and radiation fields of the host galaxy \cite{Cirelli:2024ssz,Pinetti:2021jjs}.
 Secondary emission therefore depends not only on the dark matter distribution but also on the astrophysical environment --- magnetic fields, radiation fields, gas densities --- that reprocesses the primary electrons and positrons.
 Despite this additional layer of modelling uncertainty, secondary emission plays a central role in the interpretation of the Galactic Center excess discussed in Chapter~\ref{ch:4}, where the identification of the signal relies on subtracting the diffuse gamma-ray background dominated by cosmic-ray ICS and bremsstrahlung in the dense inner Galaxy \cite{Hooper:2024}.
 

@@ -37,6 +37,24 @@
       "snapshotFile": "1.4_indirect_detection.rev5.tex",
       "annotationsFile": "rev5.json",
       "createdAt": "2026-05-22T10:30:59.311Z"
+    },
+    {
+      "revision": 6,
+      "snapshotFile": "1.4_indirect_detection.rev6.tex",
+      "annotationsFile": "rev6.json",
+      "createdAt": "2026-05-28T10:59:00.777Z"
+    },
+    {
+      "revision": 7,
+      "snapshotFile": "1.4_indirect_detection.rev7.tex",
+      "annotationsFile": "rev7.json",
+      "createdAt": "2026-05-28T11:04:26.557Z"
+    },
+    {
+      "revision": 8,
+      "snapshotFile": "1.4_indirect_detection.rev8.tex",
+      "annotationsFile": "rev8.json",
+      "createdAt": "2026-05-28T11:10:18.608Z"
     }
   ]
 }

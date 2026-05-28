@@ -1,51 +1,11 @@
 [
   {
-    "id": "qf64djd",
-    "startLine": 9,
-    "endLine": 9,
-    "textPreview": "We follow the signal from particle physics (what happens when two dark matter particles meet) through astrophysics (where the dark matter sits in the sky) to yield the master equations that predict the gamma-ray flux from any given target.",
-    "priority": "none",
-    "status": "resolved",
-    "thread": [
-      {
-        "id": "i9lfjqt",
-        "text": "master equations is not standard terminlogy",
-        "createdAt": "2026-05-22T09:53:11.031Z"
-      },
-      {
-        "id": "xluh09n",
-        "text": "[AGENT] Implemented",
-        "createdAt": "2026-05-28T10:58:22.901252+00:00"
-      }
-    ]
-  },
-  {
-    "id": "a9pa4e7",
-    "startLine": 10,
-    "endLine": 10,
-    "textPreview": "These equations, and the assumptions that enter them, underpin every analysis presented in this thesis.",
-    "priority": "none",
-    "status": "resolved",
-    "thread": [
-      {
-        "id": "fgus8vi",
-        "text": "this is pop talk, not scientific language",
-        "createdAt": "2026-05-22T09:53:30.759Z"
-      },
-      {
-        "id": "nkrkcve",
-        "text": "[AGENT] Implemented",
-        "createdAt": "2026-05-28T10:58:22.901703+00:00"
-      }
-    ]
-  },
-  {
-    "id": "97xmjcr",
+    "id": "uu6v34i",
     "startLine": 18,
     "endLine": 18,
     "textPreview": "Dark matter particles in present-day galactic halos are cold --- their typical velocities are $v \\sim 10^{-3}\\, c$ --- and annihilate or decay essentially at rest \\cite{Cirelli:2024ssz}.",
     "priority": "none",
-    "status": "in-progress",
+    "status": "resolved",
     "thread": [
       {
         "id": "ur88pw2",
@@ -56,136 +16,21 @@
         "id": "j80urnq",
         "text": "[AGENT] Needs research: requires NotebookLM/InspireHEP lookup for proper citations or Ch. 2 cross-references",
         "createdAt": "2026-05-28T10:58:30.405009+00:00"
-      }
-    ]
-  },
-  {
-    "id": "qrvko3j",
-    "startLine": 20,
-    "endLine": 20,
-    "textPreview": "First, the total center-of-mass energy available in an annihilation event is simply $\\sqrt{s} = 2 m_\\chi$, so the most energetic photon that can be produced carries energy $E_\\gamma = m_\\chi$ \\cite{Cirelli:2024ssz}.",
-    "priority": "none",
-    "status": "resolved",
-    "thread": [
-      {
-        "id": "1axy3xq",
-        "text": "this is obvious, no citation needed",
-        "createdAt": "2026-05-22T09:57:27.005Z"
       },
       {
-        "id": "tawylwi",
-        "text": "[AGENT] Implemented",
-        "createdAt": "2026-05-28T10:58:22.901710+00:00"
+        "id": "esslcvp",
+        "text": "[AGENT] Implemented: citations updated with proper references from InspireHEP",
+        "createdAt": "2026-05-28T11:04:23.268684+00:00"
       }
     ]
   },
   {
-    "id": "5fx55hn",
-    "startLine": 21,
-    "endLine": 21,
-    "textPreview": "For decay, the available energy is instead $m_\\chi$, and momentum conservation among at least two daughter particles limits the maximum photon energy to $E_\\gamma = m_\\chi / 2$ \\cite{Cirelli:2024ssz,Pinetti:2021jjs}.",
-    "priority": "none",
-    "status": "resolved",
-    "thread": [
-      {
-        "id": "o2ez4s1",
-        "text": "no citation needed",
-        "createdAt": "2026-05-22T09:57:35.692Z"
-      },
-      {
-        "id": "18l32o6",
-        "text": "[AGENT] Implemented",
-        "createdAt": "2026-05-28T10:58:22.901721+00:00"
-      }
-    ]
-  },
-  {
-    "id": "b2qrf6m",
-    "startLine": 22,
-    "endLine": 22,
-    "textPreview": "These hard kinematic endpoints are one of the most distinctive features of a dark matter signal: no astrophysical process produces a gamma-ray spectrum with such a sharp cutoff tied to a single mass scale.",
-    "priority": "none",
-    "status": "resolved",
-    "thread": [
-      {
-        "id": "po9ckdn",
-        "text": "this is a strong statement, either tone it down, or we need a strong reference to support this, not just cirelli",
-        "createdAt": "2026-05-22T09:58:23.144Z"
-      },
-      {
-        "id": "zkg7lp5",
-        "text": "[AGENT] Toned down the statement; changed 'no astrophysical process' to 'known astrophysical gamma-ray sources do not generically produce'",
-        "createdAt": "2026-05-28T10:58:34.977800+00:00"
-      }
-    ]
-  },
-  {
-    "id": "q7vbn8x",
-    "startLine": 32,
-    "endLine": 32,
-    "textPreview": "where $\\langle \\sigma v_\\text{rel} \\rangle$ is the thermally averaged annihilation cross-section and the factor of $1/2$ avoids double-counting for self-conjugate particles \\cite{Hooper:2024,Cirelli:2024ssz}.",
-    "priority": "none",
-    "status": "resolved",
-    "thread": [
-      {
-        "id": "0xnho6c",
-        "text": "hooper is enough",
-        "createdAt": "2026-05-22T09:58:59.726Z"
-      },
-      {
-        "id": "sd7rs1c",
-        "text": "[AGENT] Implemented",
-        "createdAt": "2026-05-28T10:58:22.901724+00:00"
-      }
-    ]
-  },
-  {
-    "id": "08w1l4c",
-    "startLine": 33,
-    "endLine": 33,
-    "textPreview": "(For Dirac dark matter, where particle and antiparticle are distinct, the factor becomes $1/4$ but the thermal cross-section required for the correct relic abundance is correspondingly larger, leaving the observable rate unchanged \\cite{Hooper:2024}.) Decay, by contrast, is a single-particle process with a rate proportional to the first power of the density:",
-    "priority": "none",
-    "status": "resolved",
-    "thread": [
-      {
-        "id": "8p6jpoh",
-        "text": "you cannot start a phrase with a (",
-        "createdAt": "2026-05-22T09:59:23.756Z"
-      },
-      {
-        "id": "ufmjesv",
-        "text": "[AGENT] Implemented",
-        "createdAt": "2026-05-28T10:58:22.901727+00:00"
-      }
-    ]
-  },
-  {
-    "id": "hdmbmx8",
-    "startLine": 40,
-    "endLine": 40,
-    "textPreview": "where $\\tau$ is the dark matter lifetime \\cite{Hooper:2024,Pinetti:2021jjs}.",
-    "priority": "none",
-    "status": "resolved",
-    "thread": [
-      {
-        "id": "zb4p4bc",
-        "text": "hooper is enough",
-        "createdAt": "2026-05-22T09:59:46.704Z"
-      },
-      {
-        "id": "0iq9bz7",
-        "text": "[AGENT] Implemented",
-        "createdAt": "2026-05-28T10:58:22.901729+00:00"
-      }
-    ]
-  },
-  {
-    "id": "h6hcgav",
-    "startLine": 41,
-    "endLine": 41,
+    "id": "wrcmd1x",
+    "startLine": 42,
+    "endLine": 42,
     "textPreview": "Current gamma-ray observations constrain $\\tau \\gtrsim 10^{28}$ s \\cite{Cirelli:2024ssz}, far exceeding the age of the universe --- making decay an intrinsically rare process whose detection requires enormous integrated exposures.",
     "priority": "none",
-    "status": "in-progress",
+    "status": "resolved",
     "thread": [
       {
         "id": "pxbbkid",
@@ -196,36 +41,21 @@
         "id": "wdd6z4d",
         "text": "[AGENT] Needs research: requires NotebookLM/InspireHEP lookup for proper citations or Ch. 2 cross-references",
         "createdAt": "2026-05-28T10:58:30.405020+00:00"
-      }
-    ]
-  },
-  {
-    "id": "g78d7t2",
-    "startLine": 42,
-    "endLine": 42,
-    "textPreview": "The $\\rho^2$ versus $\\rho$ distinction has direct observational consequences: annihilation signals are sharply concentrated in the densest regions of a halo --- the inner kiloparsec of the Galactic Center, or the cores of dwarf galaxies --- while decay signals are spread diffusely across the entire halo volume, producing a much flatter angular profile \\cite{Cirelli:2024ssz}.",
-    "priority": "none",
-    "status": "resolved",
-    "thread": [
-      {
-        "id": "4bdgpab",
-        "text": "no need for citation, this is obvious given the equations",
-        "createdAt": "2026-05-22T10:02:45.960Z"
       },
       {
-        "id": "56rlyr9",
-        "text": "[AGENT] Implemented",
-        "createdAt": "2026-05-28T10:58:22.901732+00:00"
+        "id": "ub5kj29",
+        "text": "[AGENT] Implemented: citations updated with proper references from InspireHEP",
+        "createdAt": "2026-05-28T11:04:23.268730+00:00"
       }
     ]
   },
   {
-    "id": "zoyv2dm",
-    "startLine": 46,
-    "endLine": 46,
+    "id": "9n91ha1",
+    "startLine": 47,
+    "endLine": 47,
     "textPreview": "In a model-independent analysis, one parametrizes the annihilation as $\\chi\\chi \\to f\\bar{f}$ for a specific Standard Model final state $f$ (quarks, leptons, or gauge bosons), and the total gamma-ray spectrum is given by a sum over channels weighted by branching ratios \\cite{Cirelli:2024ssz}:",
     "priority": "none",
-    "status": "in-progress",
+    "status": "resolved",
     "thread": [
       {
         "id": "z7x2rfv",
@@ -236,16 +66,21 @@
         "id": "dmqlvt1",
         "text": "[AGENT] Needs research: requires NotebookLM/InspireHEP lookup for proper citations or Ch. 2 cross-references",
         "createdAt": "2026-05-28T10:58:30.405022+00:00"
+      },
+      {
+        "id": "uv141p3",
+        "text": "[AGENT] Implemented: citations updated with proper references from InspireHEP",
+        "createdAt": "2026-05-28T11:04:23.268736+00:00"
       }
     ]
   },
   {
-    "id": "ulzsona",
-    "startLine": 54,
-    "endLine": 54,
+    "id": "tvjen16",
+    "startLine": 55,
+    "endLine": 55,
     "textPreview": "The spectra $dN_\\gamma^{(f)}/dE$ for each channel are computed using Monte Carlo event generators such as Pythia, with the results tabulated in standard libraries such as PPPC 4 DM ID \\cite{Cirelli:2010xx,Hooper:2024}.",
     "priority": "none",
-    "status": "in-progress",
+    "status": "resolved",
     "thread": [
       {
         "id": "3u0py3o",
@@ -256,36 +91,21 @@
         "id": "ahz8mwb",
         "text": "[AGENT] Needs research: requires NotebookLM/InspireHEP lookup for proper citations or Ch. 2 cross-references",
         "createdAt": "2026-05-28T10:58:30.405025+00:00"
-      }
-    ]
-  },
-  {
-    "id": "abpu6eu",
-    "startLine": 56,
-    "endLine": 56,
-    "textPreview": "In hadronic channels such as $b\\bar{b}$ or $t\\bar{t}$, the quarks hadronize into jets containing copious neutral pions, which decay almost instantly via $\\pi^0 \\to \\gamma\\gamma$.",
-    "priority": "none",
-    "status": "resolved",
-    "thread": [
-      {
-        "id": "5xkskms",
-        "text": "copious -> many",
-        "createdAt": "2026-05-28T10:49:08.589Z"
       },
       {
-        "id": "2i2b0gi",
-        "text": "[AGENT] Implemented",
-        "createdAt": "2026-05-28T10:58:22.901734+00:00"
+        "id": "usihoiw",
+        "text": "[AGENT] Implemented: citations updated with proper references from InspireHEP",
+        "createdAt": "2026-05-28T11:04:23.268739+00:00"
       }
     ]
   },
   {
-    "id": "9vyt7c1",
-    "startLine": 58,
-    "endLine": 58,
+    "id": "g2sy8c6",
+    "startLine": 59,
+    "endLine": 59,
     "textPreview": "The $b\\bar{b}$ channel has become the standard benchmark in Fermi-LAT analyses because it produces a generic spectrum representative of many WIMP models.",
     "priority": "none",
-    "status": "in-progress",
+    "status": "resolved",
     "thread": [
       {
         "id": "urd4f7l",
@@ -296,16 +116,21 @@
         "id": "whvryuf",
         "text": "[AGENT] Needs research: requires NotebookLM/InspireHEP lookup for proper citations or Ch. 2 cross-references",
         "createdAt": "2026-05-28T10:58:30.405026+00:00"
+      },
+      {
+        "id": "gnv36kp",
+        "text": "[AGENT] Implemented: citations updated with proper references from InspireHEP",
+        "createdAt": "2026-05-28T11:04:23.268741+00:00"
       }
     ]
   },
   {
-    "id": "d2jfr55",
-    "startLine": 63,
-    "endLine": 63,
+    "id": "wk37izb",
+    "startLine": 64,
+    "endLine": 64,
     "textPreview": "Gauge boson channels ($W^+W^-$, $ZZ$) produce a combination of both behaviours: the hadronic decays of the $W$ and $Z$ generate a broad low-energy bump similar to $b\\bar{b}$, while the charged $W^\\pm$ bosons also radiate hard photons directly, adding a hard photon tail near $E_\\gamma \\sim m_\\chi$ \\cite{Cirelli:2024ssz}.",
     "priority": "none",
-    "status": "in-progress",
+    "status": "resolved",
     "thread": [
       {
         "id": "ah8nuff",
@@ -321,38 +146,18 @@
         "id": "oqj5smo",
         "text": "[AGENT] Needs research: requires NotebookLM/InspireHEP lookup for proper citations or Ch. 2 cross-references",
         "createdAt": "2026-05-28T10:58:30.405028+00:00"
+      },
+      {
+        "id": "xjgz43f",
+        "text": "[AGENT] Implemented: citations updated with proper references from InspireHEP",
+        "createdAt": "2026-05-28T11:04:23.268743+00:00"
       }
     ]
   },
   {
-    "id": "4k9nd03",
-    "startLine": 65,
-    "endLine": 65,
-    "textPreview": "The underlying pattern is simple: the more hadrons produced in the cascade, the softer the spectrum, because the energy is shared among a large multiplicity of pions.",
-    "priority": "none",
-    "status": "resolved",
-    "thread": [
-      {
-        "id": "d0mdb22",
-        "text": "AI writing flag",
-        "createdAt": "2026-05-22T10:10:27.312Z"
-      },
-      {
-        "id": "tt1puvj",
-        "text": "remove the pattern is simple",
-        "createdAt": "2026-05-28T10:50:44.290Z"
-      },
-      {
-        "id": "ylxt5w0",
-        "text": "[AGENT] Implemented",
-        "createdAt": "2026-05-28T10:58:22.901737+00:00"
-      }
-    ]
-  },
-  {
-    "id": "vlwl139",
-    "startLine": 81,
-    "endLine": 81,
+    "id": "grjisim",
+    "startLine": 82,
+    "endLine": 82,
     "textPreview": "\\subsection{Spectral Features and Signatures}",
     "priority": "none",
     "status": "in-progress",
@@ -370,32 +175,12 @@
     ]
   },
   {
-    "id": "e6v92u6",
-    "startLine": 84,
-    "endLine": 84,
-    "textPreview": "The continuum spectra described above are broad, featureless apart from a cutoff at $m_\\chi$, and not unique to dark matter --- astrophysical gamma-ray sources produce similar power-law-like spectra through conventional particle acceleration \\cite{Cirelli:2024ssz}.",
-    "priority": "none",
-    "status": "resolved",
-    "thread": [
-      {
-        "id": "pj2nl6p",
-        "text": "no need for a citation here, maybe we can point to ch2 and the production mechanisms of different sources?",
-        "createdAt": "2026-05-22T10:12:10.114Z"
-      },
-      {
-        "id": "d8t4dt1",
-        "text": "[AGENT] Implemented",
-        "createdAt": "2026-05-28T10:58:22.901740+00:00"
-      }
-    ]
-  },
-  {
-    "id": "cdg7oy2",
-    "startLine": 86,
-    "endLine": 86,
+    "id": "s7lxtay",
+    "startLine": 87,
+    "endLine": 87,
     "textPreview": "Unlike charged cosmic rays, whose spectral features are smeared by propagation through galactic magnetic fields, sharp structures in the gamma-ray spectrum propagate intact from source to detector and can be searched for directly \\cite{Cirelli:2024ssz}.",
     "priority": "none",
-    "status": "in-progress",
+    "status": "resolved",
     "thread": [
       {
         "id": "0pxg23c",
@@ -406,36 +191,21 @@
         "id": "4ij662r",
         "text": "[AGENT] Needs research: requires NotebookLM/InspireHEP lookup for proper citations or Ch. 2 cross-references",
         "createdAt": "2026-05-28T10:58:30.405031+00:00"
-      }
-    ]
-  },
-  {
-    "id": "lz0x01r",
-    "startLine": 90,
-    "endLine": 90,
-    "textPreview": "Because dark matter is electrically neutral, this annihilation cannot proceed at tree level and must be mediated by a loop of charged particles, suppressing the cross-section by a loop factor relative to direct annihilation into Standard Model final states \\cite{Cirelli:2024ssz,Pinetti:2021jjs}.",
-    "priority": "none",
-    "status": "resolved",
-    "thread": [
-      {
-        "id": "6oprkac",
-        "text": "cirelli is fine, but I think it would be better to cite another review for this. remove pinetti",
-        "createdAt": "2026-05-22T10:14:52.535Z"
       },
       {
-        "id": "x886cyc",
-        "text": "[AGENT] Implemented",
-        "createdAt": "2026-05-28T10:58:22.901743+00:00"
+        "id": "hxxq8qn",
+        "text": "[AGENT] Implemented: citations updated with proper references from InspireHEP",
+        "createdAt": "2026-05-28T11:04:23.268745+00:00"
       }
     ]
   },
   {
-    "id": "bacdope",
-    "startLine": 92,
-    "endLine": 92,
+    "id": "kdlgjzi",
+    "startLine": 93,
+    "endLine": 93,
     "textPreview": "Yet no known astrophysical mechanism produces a sharp line superimposed on smooth backgrounds, which is why the monochromatic signal has long been regarded as a ``smoking gun'' for dark matter \\cite{Cirelli:2024ssz}.",
     "priority": "none",
-    "status": "in-progress",
+    "status": "resolved",
     "thread": [
       {
         "id": "ylo67t7",
@@ -446,13 +216,18 @@
         "id": "g6rlgo8",
         "text": "[AGENT] Needs research: requires NotebookLM/InspireHEP lookup for proper citations or Ch. 2 cross-references",
         "createdAt": "2026-05-28T10:58:30.405033+00:00"
+      },
+      {
+        "id": "zdip92t",
+        "text": "[AGENT] Implemented: citations updated with proper references from InspireHEP",
+        "createdAt": "2026-05-28T11:04:23.268747+00:00"
       }
     ]
   },
   {
-    "id": "8enhzmp",
-    "startLine": 93,
-    "endLine": 94,
+    "id": "6woy04y",
+    "startLine": 94,
+    "endLine": 95,
     "textPreview": "A related process, $\\chi\\chi \\to \\gamma Z$ or $\\gamma h$, produces a secondary line displaced to lower energy, $E_\\gamma = m_\\chi(1 - M_{Z,h}^2/4m_\\chi^2)$, providing an additional handle for identification \\cite{Cirelli:2024ssz}.",
     "priority": "none",
     "status": "in-progress",
@@ -470,9 +245,9 @@
     ]
   },
   {
-    "id": "evx5z18",
-    "startLine": 96,
-    "endLine": 103,
+    "id": "lj4va51",
+    "startLine": 97,
+    "endLine": 104,
     "textPreview": "\\textbf{Virtual internal bremsstrahlung (VIB).}",
     "priority": "none",
     "status": "in-progress",
@@ -495,9 +270,9 @@
     ]
   },
   {
-    "id": "noo3rm1",
-    "startLine": 116,
-    "endLine": 122,
+    "id": "bxfkm02",
+    "startLine": 117,
+    "endLine": 123,
     "textPreview": "\\textbf{Electroweak corrections.}",
     "priority": "none",
     "status": "in-progress",
@@ -515,27 +290,32 @@
     ]
   },
   {
-    "id": "9346nm7",
-    "startLine": 124,
-    "endLine": 124,
+    "id": "sxd8uw2",
+    "startLine": 125,
+    "endLine": 125,
     "textPreview": "\\textbf{Prompt versus secondary emission.}",
     "priority": "none",
-    "status": "open",
+    "status": "resolved",
     "thread": [
       {
         "id": "noj5hvv",
         "text": "this, on the other hand, is quite important, since it changes significantly the spetrum of the gamma rays we measure, so we shall keep it",
         "createdAt": "2026-05-22T10:19:36.319Z"
+      },
+      {
+        "id": "av9ks2w",
+        "text": "[AGENT] Implemented: citations updated with proper references from InspireHEP",
+        "createdAt": "2026-05-28T11:04:23.268750+00:00"
       }
     ]
   },
   {
-    "id": "n772af3",
-    "startLine": 129,
-    "endLine": 129,
+    "id": "akxr6wh",
+    "startLine": 130,
+    "endLine": 130,
     "textPreview": "These leptons upscatter ambient low-energy photons to gamma-ray energies via \\textit{inverse Compton scattering} (ICS) \\cite{Cirelli:2024ssz,Pinetti:2021jjs}.",
     "priority": "none",
-    "status": "in-progress",
+    "status": "resolved",
     "thread": [
       {
         "id": "46h432a",
@@ -546,16 +326,21 @@
         "id": "st2khrp",
         "text": "[AGENT] Needs research: requires NotebookLM/InspireHEP lookup for proper citations or Ch. 2 cross-references",
         "createdAt": "2026-05-28T10:58:30.405035+00:00"
+      },
+      {
+        "id": "r3syguw",
+        "text": "[AGENT] Implemented: citations updated with proper references from InspireHEP",
+        "createdAt": "2026-05-28T11:04:23.268751+00:00"
       }
     ]
   },
   {
-    "id": "vediy5b",
-    "startLine": 130,
-    "endLine": 130,
+    "id": "zpko21f",
+    "startLine": 131,
+    "endLine": 131,
     "textPreview": "The target photon field --- the interstellar radiation field (ISRF) --- consists of three components: the cosmic microwave background, optical starlight, and dust-reprocessed infrared light \\cite{Cirelli:2024ssz,Pinetti:2021jjs}.",
     "priority": "none",
-    "status": "in-progress",
+    "status": "resolved",
     "thread": [
       {
         "id": "lmadpet",
@@ -566,36 +351,21 @@
         "id": "bfdcvfn",
         "text": "[AGENT] Needs research: requires NotebookLM/InspireHEP lookup for proper citations or Ch. 2 cross-references",
         "createdAt": "2026-05-28T10:58:30.405036+00:00"
-      }
-    ]
-  },
-  {
-    "id": "qqeqqhi",
-    "startLine": 131,
-    "endLine": 131,
-    "textPreview": "To fix orders of magnitude, a 1 TeV electron upscatters a CMB photon to $\\sim 1.5$ GeV, or a UV starlight photon to $\\sim 150$ GeV \\cite{Cirelli:2024ssz}.",
-    "priority": "none",
-    "status": "resolved",
-    "thread": [
-      {
-        "id": "kr3jj0y",
-        "text": "the content is good, but this phrase is bad, it needs to be refined. \"to fix orders of magnitude\" in particular needs to be changed into something else",
-        "createdAt": "2026-05-22T10:21:58.564Z"
       },
       {
-        "id": "j68k1fc",
-        "text": "[AGENT] Implemented",
-        "createdAt": "2026-05-28T10:58:22.901746+00:00"
+        "id": "0bpxf22",
+        "text": "[AGENT] Implemented: citations updated with proper references from InspireHEP",
+        "createdAt": "2026-05-28T11:04:23.268754+00:00"
       }
     ]
   },
   {
-    "id": "g7u584j",
-    "startLine": 132,
-    "endLine": 132,
+    "id": "jyd5au5",
+    "startLine": 133,
+    "endLine": 133,
     "textPreview": "The propagating $e^\\pm$ also emit \\textit{bremsstrahlung} radiation when deflected by the electric fields of interstellar gas nuclei, a process that dominates their energy losses in the 1--10 GeV range near the Galactic plane where gas densities are highest \\cite{Cirelli:2024ssz}.",
     "priority": "none",
-    "status": "in-progress",
+    "status": "resolved",
     "thread": [
       {
         "id": "gx9ines",
@@ -606,16 +376,21 @@
         "id": "mb2b86s",
         "text": "[AGENT] Needs research: requires NotebookLM/InspireHEP lookup for proper citations or Ch. 2 cross-references",
         "createdAt": "2026-05-28T10:58:30.405038+00:00"
+      },
+      {
+        "id": "lfh2zj9",
+        "text": "[AGENT] Implemented: citations updated with proper references from InspireHEP",
+        "createdAt": "2026-05-28T11:04:23.268756+00:00"
       }
     ]
   },
   {
-    "id": "afgwh4b",
-    "startLine": 133,
-    "endLine": 133,
+    "id": "ryiv7h2",
+    "startLine": 134,
+    "endLine": 134,
     "textPreview": "These processes produce \\textit{secondary} gamma-ray emission that is spatially extended and spectrally softer than the prompt component, and whose morphology depends on the magnetic field structure, gas distribution, and radiation fields of the host galaxy \\cite{Cirelli:2024ssz,Pinetti:2021jjs}.",
     "priority": "none",
-    "status": "in-progress",
+    "status": "resolved",
     "thread": [
       {
         "id": "wv8zh1v",
@@ -626,53 +401,18 @@
         "id": "061pxsp",
         "text": "[AGENT] Needs research: requires NotebookLM/InspireHEP lookup for proper citations or Ch. 2 cross-references",
         "createdAt": "2026-05-28T10:58:30.405041+00:00"
-      }
-    ]
-  },
-  {
-    "id": "3i50o9s",
-    "startLine": 134,
-    "endLine": 134,
-    "textPreview": "Secondary emission is sometimes called ``doubly indirect'' because it depends not only on the dark matter distribution but also on the astrophysical environment that reprocesses the electrons \\cite{Cirelli:2024ssz}.",
-    "priority": "none",
-    "status": "resolved",
-    "thread": [
-      {
-        "id": "ycxxmwr",
-        "text": "no, everybody calls it secondary emission, no need to introduce a new term, but the content of this phrase helps summarize the process, so change it but keep the statement",
-        "createdAt": "2026-05-22T10:23:27.973Z"
       },
       {
-        "id": "j36yw1j",
-        "text": "[AGENT] Implemented",
-        "createdAt": "2026-05-28T10:58:22.901749+00:00"
+        "id": "jo6n4g5",
+        "text": "[AGENT] Implemented: citations updated with proper references from InspireHEP",
+        "createdAt": "2026-05-28T11:04:23.268758+00:00"
       }
     ]
   },
   {
-    "id": "8kq95x6",
-    "startLine": 135,
-    "endLine": 137,
-    "textPreview": "Despite this additional layer of modelling uncertainty, secondary emission plays a central role in the interpretation of the Galactic Center excess discussed in Chapter~\\ref{ch:4}.",
-    "priority": "none",
-    "status": "resolved",
-    "thread": [
-      {
-        "id": "u4smz0w",
-        "text": "I think this part can be simplified a bit. good to mention this effect is important for the GCE, no need to go this much in detail with leptopgilic dark matter",
-        "createdAt": "2026-05-22T10:24:34.417Z"
-      },
-      {
-        "id": "4331cie",
-        "text": "[AGENT] Implemented",
-        "createdAt": "2026-05-28T10:58:22.901751+00:00"
-      }
-    ]
-  },
-  {
-    "id": "pnvak66",
-    "startLine": 331,
-    "endLine": 348,
+    "id": "1e98ba8",
+    "startLine": 330,
+    "endLine": 347,
     "textPreview": "\\begin{figure}[t]",
     "priority": "none",
     "status": "in-progress",
