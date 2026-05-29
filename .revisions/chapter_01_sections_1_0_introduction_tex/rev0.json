@@ -5,12 +5,17 @@
     "endLine": 12,
     "textPreview": "If dark matter is not made of ordinary atoms, then what is it?",
     "priority": "none",
-    "status": "open",
+    "status": "resolved",
     "thread": [
       {
         "id": "f0sj7mj",
         "text": "I think here we should say that we focus on wips in this thesis, but we shouldn't consider them the only candidate. We work with wimps because that's what we can probe with gamma rays, but there are also many other candidates like axions",
         "createdAt": "2026-05-20T14:58:51.505Z"
+      },
+      {
+        "id": "w9fo03j",
+        "text": "[AGENT] Added a sentence acknowledging the broad candidate landscape (~90 orders of magnitude in mass, axions to PBHs, none singled out by data) and a sentence clarifying that we adopt the WIMP as our working hypothesis not because it is uniquely favored, but because its annihilation yields are what gamma-ray observatories can probe most directly (axions, sterile neutrinos, PBHs named as well-motivated alternatives). Reused existing cite key Cirelli:2024ssz; no new bib entries.",
+        "createdAt": "2026-05-29T12:41:03.741763+00:00"
       }
     ]
   }
