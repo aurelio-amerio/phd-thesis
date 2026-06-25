@@ -5,33 +5,62 @@
 %
 
 
-%define many of the acronyms
-\newacronym{DM_}{DM}{Dark Matter}
-\newacronym{DGRB_}{DGRB}{Diffuse Gamma-Ray Background}
-\newacronym{EGB_}{EGB}{Extragalactic Gamma-Ray Background}
-\newacronym{LAT_}{LAT}{Large Area Telescope}
-\newacronym{SCDF_}{SCDF}{source-count distribution function}
-\newacronym[longplural={Active Galactic Nuclei}]{AGN_}{AGN}{Active Galactic Nucleus}
-\newacronym{UV_}{UV}{ultraviolet}
-\newacronym{IC_}{IC}{inverse Compton}
-\newacronym[longplural={Flat Spectrum Radio Quasars}]{FSRQ_}{FSRQ}{Flat Spectrum Radio Quasar}
-\newacronym[longplural={Misaligned Active Galactic Nuclei}]{mAGN_}{mAGN}{Misaligned Active Galactic Nucleus}
-\newacronym[longplural={Star Forming Galaxies}]{SFG_}{SFG}{Star Forming Galaxy}
-\newacronym[longplural={Cosmic Rays}]{CR_}{CR}{Cosmic Ray}
-\newacronym{NN_}{NN}{neural network}
-\newacronym{ML_}{ML}{Machine Learning}
-\newacronym{LSP_}{LSP}{Lightest Supersymmetric Particles}
-\newacronym[longplural={Weakly Interacting Massive Particles}]{WIMP_}{WIMP}{Weakly Interacting Massive Particle}
-\newacronym{PSF_}{PSF}{Point Spread Function}
-\newacronym{IRF_}{IRF}{Instrument Response Function}
-\newacronym{TPU_}{TPU}{Tensor Processing Unit}
-\newacronym{MLNN_}{MLNN}{Multilayer Neural Network}
-\newacronym{CNN_}{CNN}{Convolutional Neural Network}
-\newacronym{TF_}{TF}{Tensorflow}
+% ------------------------------------------------------------------
+% Acronym setup
+%   * long-short style: the first use of an acronym in the document
+%     prints "long form (SHORT)", every later use prints just "SHORT".
+%   * \newacro works exactly like \newacronym but ALSO defines a
+%     \SHORT command for the acronym, e.g. \CMB -> \gls{CMB_}.
+%     \xspace keeps the trailing space ("\CMB photons" -> "CMB photons")
+%     while still suppressing it before punctuation ("\CMB." -> "CMB.").
+%     For capitalised (sentence start) or plural forms use the
+%     glossaries commands directly: \Gls{key}, \glspl{key}, \Glspl{key}.
+% ------------------------------------------------------------------
+\RequirePackage{xspace}
+\setacronymstyle{long-short}
+\newcommand{\newacro}[4][]{%
+  \newacronym[#1]{#2}{#3}{#4}%
+  \expandafter\newcommand\csname #3\endcsname{\gls{#2}\xspace}%
+}
 
-\newacronym{resnet_}{ResNet}{Residual Neural Network}
-\newacronym{ICS_}{ICS}{Inverse Compton Scattering}
-\newacronym[longplural={Supernova Remnants}]{SNR_}{SNR}{Supernova Remnant}
+% define many of the acronyms (all via \newacro, so each gets a \SHORT command)
+% Long forms are lowercase except genuine proper nouns (instrument names,
+% person-names like Compton/Newtonian, the Big Bang, the TensorFlow brand).
+\newacro{DM_}{DM}{dark matter}
+\newacro{DGRB_}{DGRB}{diffuse gamma-ray background}
+\newacro{EGB_}{EGB}{extragalactic gamma-ray background}
+\newacro{LAT_}{LAT}{Large Area Telescope}
+\newacro{SCDF_}{SCDF}{source-count distribution function}
+\newacro[longplural={active galactic nuclei}]{AGN_}{AGN}{active galactic nucleus}
+\newacro{UV_}{UV}{ultraviolet}
+\newacro{IC_}{IC}{inverse Compton}
+\newacro[longplural={flat spectrum radio quasars}]{FSRQ_}{FSRQ}{flat spectrum radio quasar}
+\newacro[longplural={misaligned active galactic nuclei}]{mAGN_}{mAGN}{misaligned active galactic nucleus}
+\newacro[longplural={star forming galaxies}]{SFG_}{SFG}{star forming galaxy}
+\newacro[longplural={cosmic rays}]{CR_}{CR}{cosmic ray}
+\newacro{NN_}{NN}{neural network}
+\newacro{ML_}{ML}{machine learning}
+\newacro{LSP_}{LSP}{lightest supersymmetric particle}
+\newacro[longplural={weakly interacting massive particles}]{WIMP_}{WIMP}{weakly interacting massive particle}
+\newacro{PSF_}{PSF}{point spread function}
+\newacro{IRF_}{IRF}{instrument response function}
+\newacro{TPU_}{TPU}{tensor processing unit}
+\newacro{MLNN_}{MLNN}{multilayer neural network}
+\newacro{CNN_}{CNN}{convolutional neural network}
+\newacro{TF_}{TF}{TensorFlow}
+
+\newacro{resnet_}{ResNet}{residual neural network}
+\newacro{ICS_}{ICS}{inverse Compton scattering}
+\newacro[longplural={supernova remnants}]{SNR_}{SNR}{supernova remnant}
+
+% Chapter 1 (cosmology / evidence for dark matter)
+\newacro{CMB_}{CMB}{cosmic microwave background}
+\newacro{BBN_}{BBN}{Big Bang nucleosynthesis}
+\newacro{SZ_}{SZ}{Sunyaev-Zel'dovich}
+\newacro{ICM_}{ICM}{intracluster medium}
+\newacro[longplural={dwarf spheroidal galaxies}]{dSph_}{dSph}{dwarf spheroidal galaxy}
+\newacro{BAO_}{BAO}{baryon acoustic oscillations}
+\newacro{MOND_}{MOND}{modified Newtonian dynamics}
 
 %\newacronym{DM}{Dark Matter}
 

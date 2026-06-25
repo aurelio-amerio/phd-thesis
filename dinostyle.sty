@@ -182,6 +182,10 @@
 \setlength\doublerulesep{2\p@}
 \setlength\tabbingsep{\labelsep}
 \skip\@mpfootins = \skip\footins
+% Footnotes: enlarge the per-page space the footnote area may occupy, and
+% strongly discourage splitting a single footnote across a page break.
+\dimen\footins=0.8\textheight            % extend the footer space budget
+\interfootnotelinepenalty=10000          % keep one footnote on a single page
 \setlength\fboxsep{3\p@}
 \setlength\fboxrule{.4\p@}
 
