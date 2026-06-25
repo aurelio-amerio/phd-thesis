@@ -2,28 +2,29 @@
 
 \section{Evidence for Dark Matter}
 \label{sec:1.1}
-The case for dark matter rests on a convergence of independent lines of evidence spanning a wide range of astrophysical scales.
+% The case for dark matter rests on a convergence of independent lines of evidence spanning a wide range of astrophysical scales.
+Evidence of the existance of dark matter spans a wide range of astrophysical scales.
 We follow the hierarchical classification of Cirelli et al.~\cite{Cirelli:2024ssz}, organizing the evidence from galactic (``mini'') to cluster (``midi'') to cosmological (``maxi'') scales.
-The internal consistency of these measurements --- obtained with fundamentally different techniques, probing different physical environments --- constitutes one of the strongest arguments that dark matter is not an artifact of any single observational systematic.
+The internal consistency of these measurements --- obtained with fundamentally different techniques, probing different physical environments --- constitutes one of the strongest arguments in favor of a DM interpretation in terms of new physics. 
 
 \subsection{Galactic Scale}
 \label{sec:1.1.1}
 
-Among the earliest and most compelling evidence for dark matter are the internal kinematics of galaxies.
+Among the earliest and most compelling evidence for dark matter is the kinematics of galaxies.
 In a spiral galaxy, the circular velocity $v_c(r)$ of stars and gas at distance $r$ from the center is determined by the enclosed mass through $v_c(r) = \sqrt{GM(r)/r}$.
-If the visible mass --- concentrated in a central bulge and an exponential disk --- were the only source of gravity, the rotation curve should decline as $v_c \propto r^{-1/2}$ beyond the luminous extent, following the standard Keplerian falloff~\cite{Cirelli:2024ssz}.
+If the visible mass --- concentrated in a central bulge --- was the main source of the gravitational potential, the rotation curve should decline as $v_c \propto r^{-1/2}$ beyond the luminous extent of the bulge, following the standard Keplerian falloff~\cite{Cirelli:2024ssz}.
 
 Observations tell a different story.
 The first hints of anomalous galactic dynamics appeared with Babcock's 1939 study of M31, though the measurements lacked the radial extent and precision to be conclusive~\cite{Babcock:1939}.
 The modern picture took shape in 1970, when Rubin and Ford~\cite{Rubin:1970zza} obtained the first high-precision optical rotation curve of M31, tracing approximately 70 H\,\textsc{ii} regions out to ${\sim}\,22$~kpc and finding no evidence of the expected Keplerian decline.
 In the same year, Freeman identified similar discrepancies in the disk dynamics of several spiral galaxies~\cite{Freeman:1970}.
 Over the following decades, radio observations of the 21-cm hydrogen line extended rotation curves well beyond the optical disk, establishing that $v_c(r)$ remains approximately constant --- or even rises slightly --- out to the largest measurable radii in hundreds of systems~\cite{Rubin:1980zd,Bosma:1981zz}.
-To maintain a constant circular velocity, the enclosed mass must grow linearly with radius, $M(r) \propto r$, which requires an extended, roughly spherical halo of invisible matter with density $\rho(r) \propto r^{-2}$ at large radii.
+To maintain a constant circular velocity, the enclosed mass must grow linearly with radius, $M(r) \propto r$, which suggests an extended, roughly spherical halo of invisible matter with density $\rho(r) \propto r^{-2}$ at large radii.
 The comprehensive analysis of Persic, Salucci, and Stel~\cite{Persic:1995ru} synthesized rotation curves across a wide range of galaxy luminosities into a ``Universal Rotation Curve'', demonstrating that the dark-to-luminous mass ratio increases systematically with decreasing galaxy luminosity.
 
 Modern data have only strengthened this picture.
 The Spitzer Photometry and Accurate Rotation Curves (SPARC) compilation~\cite{Lelli:2016zqa} provides high-quality mass models for 175 disk galaxies spanning a broad range of surface brightnesses and morphologies.
-These data confirm the ubiquity of flat rotation curves and reveal tight empirical scaling relations --- such as the baryonic Tully-Fisher relation linking asymptotic rotation velocity to total baryonic mass --- that any successful dark matter model must reproduce.
+These data confirm the ubiquity of flat rotation curves and reveal tight empirical scaling relations --- such as the baryonic Tully-Fisher relation linking asymptotic rotation velocity to total baryonic mass~\cite{Trully1977, McGaugh:2000sr} --- that any successful dark matter model must reproduce.
 Figure~\ref{fig:rotation_curves} illustrates this evidence: the left panel shows the original optical rotation curve of M31 from Rubin and Ford~\cite{Rubin:1970zza}, while the right panel presents a modern mass decomposition demonstrating the dominant contribution of the dark matter halo at large radii.
 
 %
@@ -45,8 +46,8 @@ Figure~\ref{fig:rotation_curves} illustrates this evidence: the left panel shows
 
 An independent line of evidence comes from the satellite galaxies of the Milky Way.
 Dwarf spheroidal galaxies (dSphs) --- small, gas-poor stellar systems such as Draco, Sculptor, and Segue~1 --- orbit within the gravitational potential of our Galaxy and represent some of the smallest and faintest galaxies known.
-Unlike the disk galaxies discussed above, dSphs lack organized rotation; their stars move on essentially random orbits, making these systems pressure-supported rather than rotationally supported.
-The simple relation $v_c(r) = \sqrt{GM(r)/r}$ that governs rotating disks is therefore not directly applicable, and the enclosed mass must instead be inferred from the line-of-sight velocity dispersion $\sigma_*$ of the stellar population.
+Unlike the disk galaxies discussed above, stars in dSphs move on essentially random orbits, making these systems pressure-supported rather than rotationally supported.
+The simple relation $v_c(r) = \sqrt{GM(r)/r}$ that governs rotating disks is therefore not directly applicable, and the enclosed mass is instead inferred from the line-of-sight velocity dispersion $\sigma_*$ of the stellar population.
 Wolf et al.~\cite{Wolf:2009tu} showed that the mass enclosed within the three-dimensional half-light radius is robustly estimated by $M(<r_{1/2}) \approx 3\sigma_*^2 r_{1/2} / G$, a result that is largely insensitive to the unknown velocity anisotropy.
 Applying this estimator reveals extreme mass-to-light ratios: from $M/L \sim 10\,M_\odot/L_\odot$ in the classical dwarfs, to several hundred in Draco ($M/L \sim 300$), to well over a thousand in ultra-faint systems like Segue~1~\cite{Walker:2009zp,Wolf:2009tu,Cirelli:2024ssz}.
 These ratios cannot be explained by baryonic mechanisms alone, establishing dSphs as the most dark-matter-dominated objects known.
@@ -55,10 +56,10 @@ Their low astrophysical backgrounds also make them prime targets for indirect da
 \subsection{Galaxy Cluster Scale}
 \label{sec:1.1.2}
 
-Moving to larger scales, the dynamics of galaxy clusters provide a second, independent class of evidence for dark matter.
-The earliest quantitative argument dates to 1933, when Zwicky studied the radial velocities of galaxies in the Coma Cluster~\cite{Zwicky:1933}.
+Moving to larger scales, the dynamics of galaxy clusters provide another class of evidence for dark matter.
+The earliest quantitative argument dates back to 1933, when Fritz Zwicky studied the radial velocities of galaxies in the Coma Cluster~\cite{Zwicky:1933}.
 Applying the virial theorem --- which relates the time-averaged kinetic energy of a gravitationally bound system to its potential energy, $2\langle K \rangle + \langle U \rangle = 0$ --- he estimated the cluster's total mass and found a mass-to-light ratio of ${\sim}\,400$, far exceeding what could be accounted for by the luminous galaxies alone.
-Zwicky concluded that the cluster must contain a large amount of unseen matter, which he termed ``dunkle Materie'' --- dark matter.
+Zwicky concluded that the cluster must contain a large amount of unseen matter, to which he referred as ``dunkle materie'' --- dark matter.
 
 Modern X-ray observations have placed these early dynamical estimates on much firmer ground.
 Galaxy clusters contain massive reservoirs of ionized gas --- the intracluster medium (ICM) --- heated to temperatures of $10^7$--$10^8$~K as it falls into the cluster potential well.
@@ -72,13 +73,13 @@ The amplitude of this distortion is proportional to the integrated electron pres
 Combined with independent constraints on the baryon density from Big Bang Nucleosynthesis (BBN) and the CMB (where $\Omega_b \approx 0.05$), SZ measurements of the cluster baryon fraction $f_b \approx \Omega_b / \Omega_m$ yield a total matter density $\Omega_m \approx 0.3$, well above the baryonic contribution~\cite{Aghanim:2018eyx,Cirelli:2024ssz}.
 
 Gravitational lensing provides a direct method for mapping the total mass distribution of clusters, independent of assumptions about dynamical equilibrium.
-Strong lensing in the dense cluster core produces highly distorted arcs and multiple images of background galaxies, while weak lensing measures the subtle statistical shearing of background galaxy shapes over larger angular scales~\cite{Cirelli:2024ssz,Bullock:2017xww}.
+Strong lensing in the dense cluster core produces highly distorted arcs and multiple images of background galaxies, while weak lensing measures the statistical shearing of background galaxy shapes over larger angular scales~\cite{Cirelli:2024ssz,Bullock:2017xww}.
 Both regimes reconstruct the total mass distribution --- visible and dark --- from the geometry of light paths alone.
 
-The most striking application of gravitational lensing is the Bullet Cluster (1E\,0657-558), analyzed by Clowe et al.~\cite{Clowe:2006eq}.
+One of the most striking application of gravitational lensing is perhaps the Bullet Cluster (1E\,0657-558), analyzed by Clowe et al.~\cite{Clowe:2006eq}.
 This system consists of two galaxy clusters that passed through each other roughly 150 million years ago.
 X-ray observations reveal that the collisional baryonic gas from the two clusters interacted strongly, producing a bow shock and lagging behind the galaxies.
-Weak-lensing mass maps, however, show that the bulk of the total mass is spatially offset from the gas, coinciding instead with the collisionless galaxies~\cite{Clowe:2006eq}.
+Weak-lensing mass maps, however, show that the bulk of the total mass is spatially offset from the gas, coinciding instead with the collisionless galaxies.
 This spatial separation is visible in Figure~\ref{fig:bullet_cluster}: the green mass contours reconstructed through weak lensing are displaced from the X-ray-emitting gas, demonstrating that the dominant mass component is collisionless.
 The observed separation matches the behavior expected of collisionless dark matter and contradicts modified gravity theories such as MOND~\cite{Milgrom:1983ca}, in which the lensing signal should trace the baryonic gas~\cite{Cirelli:2024ssz}.
 Harvey et al.~\cite{Harvey:2015hha} extended this analysis to 72 colliding clusters, confirming the separation of dark matter from baryonic gas at greater than $7\sigma$ significance and setting stringent upper limits on the dark matter self-interaction cross-section~\cite{Cirelli:2024ssz}.
@@ -100,7 +101,7 @@ Harvey et al.~\cite{Harvey:2015hha} extended this analysis to 72 colliding clust
 
 At the largest scales, precision cosmological observations provide the tightest constraints on dark matter and its non-baryonic nature.
 
-The cosmic microwave background (CMB) radiation is the thermal relic of the hot, dense early Universe.
+The CMB radiation is the thermal relic of the hot, dense early Universe.
 Roughly 380,000 years after the Big Bang, the expanding cosmos cooled sufficiently for protons and electrons to combine into neutral hydrogen --- an epoch known as \emph{recombination}.
 Before this transition, baryonic matter existed as a hot plasma tightly coupled to photons through Thomson scattering; after recombination, photons streamed freely, and this ``last scattering surface'' is what we observe today as the CMB.
 Its temperature is remarkably uniform at ${\sim}\,2.725$~K, but carries tiny anisotropies at the level of ${\sim}\,10^{-5}$ that encode detailed information about the matter-energy content of the cosmos.
