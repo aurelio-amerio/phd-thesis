@@ -44,7 +44,7 @@ They are produced through thermal freeze-out in the early Universe, a mechanism 
 The observation that a particle with weak-scale mass and coupling naturally yields the observed relic abundance --- the \WIMP miracle --- has made \glspl{WIMP_} one of the dominant paradigms in the dark matter field for over two decades.
 % Concrete realizations include the lightest neutralino of supersymmetric extensions of the Standard Model~\cite{Ellis:1983ew} and \emph{minimal dark matter} scenarios in which a single electroweak multiplet, stabilized by an accidental symmetry, yields the correct relic density without additional model building~\cite{Cirelli:2005uq}.
 Concrete realizations include the lightest neutralino of supersymmetric extensions of the Standard Model~\cite{Ellis:1983ew} and \emph{minimal dark matter} scenarios~\cite{Cirelli:2005uq}.
-The same annihilation cross section that sets the relic density also fixes the rate at which \glspl{WIMP_} annihilate into gamma rays in present-day halos, so that the indirect-detection signals studied in Chapters~\ref{ch:4}--\ref{ch:8} provide a complementary probe to cosmological measurements of the relic abundance.
+The same annihilation cross section that sets the relic density also fixes the rate at which \glspl{WIMP_} annihilate into gamma rays in present-day halos, so that indirect-detection signals provide a complementary probe to cosmological measurements of the relic abundance.
 % probe directly the parameter that cosmology constrains.
 
 Axions are among the most popular alternatives to \glspl{WIMP_}, and as direct-detection limits on \glspl{WIMP_} have tightened, they have drawn growing attention from the dark matter community.
@@ -130,25 +130,28 @@ It is convenient to factor out the trivial expansion dilution by passing from $n
 Because the total entropy in a comoving volume is conserved during adiabatic expansion, $Y$ remains constant whenever the dark-matter number per comoving volume is also conserved; variations of $Y$ thus track only annihilation and creation, rather than the cosmological dilution shared by every species.
 
 A subtlety worth flagging is the meaning of $\langle \sigma v_\mathrm{rel}\rangle$, since the dark-matter literature uses the term ``cross section'' for two physically distinct objects.
-The $\sigma v_\mathrm{rel}$ that enters Eq.~\eqref{eq:boltzmann} is the cross section for the process $\chi\chi \to \mathrm{SM}\,\mathrm{SM}$ multiplied by the relative velocity of the incoming pair, then averaged over a Maxwell--Boltzmann distribution at temperature $T$; it carries units of cm$^3$/s.
-The cross section quoted in direct-detection experiments, by contrast, is the elastic cross section $\sigma_{\chi N}$ for the recoil process $\chi + N \to \chi + N$ on a target nucleon, measured in cm$^2$ and involving no thermal average.
+The $\sigma v_\mathrm{rel}$ that enters Eq.~\eqref{eq:boltzmann} (in units of cm$^3$/s) is the cross section for the process $\chi\chi \to \mathrm{SM}\,\mathrm{SM}$ multiplied by the relative velocity of the incoming pair, then averaged over a Maxwell--Boltzmann distribution at temperature $T$.
+The cross section quoted in direct-detection experiments (in units of cm$^2$), by contrast, is the elastic cross section $\sigma_{\chi N}$ for the recoil process $\chi + N \to \chi + N$ on a target nucleon, involving no thermal average.
 The two thus refer to different reactions, different kinematics, and different epochs in the dark-matter history.
-Throughout this thesis the symbol $\langle \sigma v\rangle$ in cm$^3$/s always denotes the annihilation case.
+Throughout this thesis the symbol $\langle \sigma v\rangle$ always denotes the annihilation case.
 % One further point is that the relevant velocity averaging is performed at $T \sim M_\chi/25$ for freeze-out, but at $v \sim 10^{-3} c$ for indirect detection in present-day galactic halos; this mismatch motivates the velocity-dependent cases discussed in Section~\ref{sec:1.2.4}.
 One further subtlety is that the thermal average entering the Boltzmann equation is evaluated at freeze-out velocities $v_\mathrm{rel} \sim 0.2\,c$, whereas dark-matter particles in present-day galactic halos move at velocities set by the gravitational potential, $v_\mathrm{rel} \sim 10^{-3}\,c$ --- roughly two orders of magnitude smaller.
 Whether $\langle \sigma v \rangle$ depends on the relative velocity therefore controls the mapping between the cosmological cross section that fixes the relic abundance and the annihilation rate accessible to indirect detection; we explore this issue in Section~\ref{sec:1.2.4}.
 
-Solving Eq.~\eqref{eq:boltzmann} through the freeze-out transition, in the limit of $s$-wave annihilation and weak-scale parameters, yields a compact result~\cite{Steigman:2012nb,Cirelli:2024ssz}:
+Solving Eq.~\eqref{eq:boltzmann} through the freeze-out transition, in the limit of $s$-wave annihilation and weak-scale parameters, yields~\cite{Steigman:2012nb,Cirelli:2024ssz}:
 \begin{equation}
 	\frac{\Omega_\chi h^2}{0.12} \approx \frac{2.2 \times 10^{-26}~\mathrm{cm^3/s}}{\langle \sigma v_\mathrm{rel}\rangle}\,,
 	\label{eq:relic_abundance}
 \end{equation}
-in which the relic abundance is essentially the inverse of the annihilation cross section, with the mass entering only through logarithmic corrections to the prefactor.
+where the relic abundance is essentially the inverse of the annihilation cross section, with the mass entering only through logarithmic corrections to the prefactor.
 The numerator is the canonical \emph{thermal cross section}, $\langle \sigma v\rangle_\mathrm{cosmo} \approx 2.2 \times 10^{-26}$~cm$^3$/s: any dark-matter candidate that annihilates at this rate reproduces, to within a few percent, the observed cosmological abundance.
 For an annihilation amplitude characterized by a coupling $g$, with $\alpha \equiv g^2/(4\pi)$, the natural size of the cross section is $\langle \sigma v\rangle \sim \alpha^2/M_\chi^2$.
 Plugging in the weak-interaction value $\alpha \sim \alpha_\mathrm{weak} \sim 0.03$ and demanding a match to $\langle \sigma v\rangle_\mathrm{cosmo}$ returns a mass $M_\chi$ of order a few hundred GeV to a few TeV --- the electroweak scale, recovered without any input from particle-physics model-building.
-That coincidence is the \emph{\WIMP miracle}: a stable particle with mass and coupling strength at the electroweak scale, produced thermally in the early Universe, naturally yields a relic abundance consistent with the observed dark matter density~\cite{Cirelli:2024ssz,Steigman:2012nb}.
-Equally important for this thesis, Eq.~\eqref{eq:relic_abundance} fixes the same $\langle \sigma v\rangle$ that controls the annihilation rate of dark-matter particles in present-day astrophysical environments, providing the link between cosmological abundance and indirect-detection signals that makes the gamma-ray searches of Chapters~\ref{ch:4}--\ref{ch:8} a direct test of the thermal freeze-out hypothesis.
+This result is known as the \emph{\WIMP miracle}: a stable particle with mass and coupling strength at the electroweak scale, produced thermally in the early Universe, naturally yields a relic abundance consistent with the observed dark matter density~\cite{Cirelli:2024ssz,Steigman:2012nb}.
+In the same $s$-wave limit, the cross section fixed by Eq.~\eqref{eq:relic_abundance} also sets the rate at which dark matter annihilates in present-day astrophysical environments.
+This connection between cosmological abundance and indirect-detection signals further motivates the gamma-ray searches of Chapters~\ref{ch:4}--\ref{ch:8}.
+
+\aure{stopped here}
 
 \subsection{Theoretical Bounds on the WIMP Mass}
 \label{sec:1.2.3}
