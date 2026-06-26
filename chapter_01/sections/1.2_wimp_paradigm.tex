@@ -156,13 +156,14 @@ This connection between cosmological abundance and indirect-detection signals fu
 \subsection{Theoretical Bounds on the WIMP Mass}
 \label{sec:1.2.3}
 
-The relic-abundance formula of the previous subsection, combined with some additional physical requirements, brackets the viable \WIMP mass from both below and above.
+% The relic-abundance formula of the previous subsection, combined with some additional physical requirements, brackets the viable \WIMP mass from both below and above.
 %
+In this section we explore the viable mass range for \glspl{WIMP_}.
 Consider first a particle that interacts with the Standard Model only through the weak interaction, with no dark mediator of its own.
 At freeze-out energies the annihilation cross section for such a particle, dominated by exchange of $W$ and $Z$ bosons, scales as $\sigma_0 \approx G_F^2 M_\chi^2 / 2\pi$, where $G_F$ is the Fermi constant~\cite{Bertone:2004pz}.
-This is an \emph{$s$-wave} process, meaning the cross section is independent of the relative velocity --- a feature we return to repeatedly, since it controls whether the same $\langle \sigma v \rangle$ that fixes the relic abundance also drives present-day annihilations in galactic halos.
-Because $\sigma_0$ scales as $M_\chi^2$, lowering the candidate mass reduces the annihilation cross section quadratically; combined with the inverse dependence of the relic abundance on $\langle\sigma v\rangle$ in Eq.~\eqref{eq:relic_abundance}, this means a sufficiently light particle annihilates too weakly to thin itself out and ends up overproducing dark matter.
-The original Lee--Weinberg analysis~\cite{Lee:1977ua}, contemporaneous with the closely related arguments of Hut~\cite{Hut:1977zn} and Vysotsky, Dolgov, and Zeldovich~\cite{Vysotsky:1977pe}, obtained $M_\chi \gtrsim 2$~GeV for a heavy Dirac neutrino; modern evaluations with updated effective-degree-of-freedom counts give~\cite{Cirelli:2024ssz,Bertone:2004pz}
+This is an \emph{$s$-wave} process, meaning the cross section is independent of the relative velocity --- a noteworthy property, since it distinguishes whether or not the same $\sigmav$ that fixes the relic abundance also drives present-day annihilations in galactic halos.
+Because $\sigma_0$ scales as $M_\chi^2$, lowering the candidate mass reduces the annihilation cross section quadratically; combined with the inverse dependence of the relic abundance on $\sigmav$ in Eq.~\eqref{eq:relic_abundance}, this means a sufficiently light particle annihilates too weakly to thin itself out and ends up overproducing dark matter.
+The original Lee--Weinberg analysis~\cite{Lee:1977ua}, contemporaneous with the closely related arguments of Hut~\cite{Hut:1977zn} and Vysotsky, Dolgov, and Zeldovich~\cite{Vysotsky:1977pe}, obtained $M_\chi \gtrsim 2$~GeV for a heavy Dirac neutrino. Modern evaluations with updated effective-degree-of-freedom counts give~\cite{Cirelli:2024ssz,Bertone:2004pz}
 \begin{equation}
 	M_\chi \gtrsim 3~\mathrm{GeV} \qquad \text{(Lee--Weinberg bound)}\,,
 	\label{eq:lee_weinberg}
@@ -170,9 +171,11 @@ The original Lee--Weinberg analysis~\cite{Lee:1977ua}, contemporaneous with the 
 below which a thermal relic coupled to the Standard Model weak interaction is cosmologically forbidden.
 This GeV-scale floor is specific to weak-mediated annihilation; when that assumption is dropped, the much weaker \BBN bound discussed below takes over, extending the allowed lower edge into the MeV regime.
 
-The qualifier ``coupled to the Standard Model weak interaction'' is essential.
+It is important to stress the coupling with the Standard Model weak interaction.
 The Lee--Weinberg bound says nothing about models in which a new mediator --- a dark photon, a light scalar, or a hidden-sector gauge boson --- carries the annihilation.
-With such ingredients the relic abundance can be reproduced down to the sub-GeV and even keV regimes, which is precisely why a parallel low-mass direct-detection program (SENSEI, DAMIC, and related semiconductor experiments) has grown alongside the conventional GeV--TeV searches; we mention it here only to delimit the scope of the bounds derived in the rest of this subsection, which assume Standard Model mediation.
+With such ingredients the relic abundance can be reproduced down to the sub-GeV and even keV regimes, which is precisely why a parallel low-mass direct-detection program (SENSEI, DAMIC, and related semiconductor experiments~\cite{SENSEI:2020dpa,DAMIC-M:2023gxo}) has grown alongside the conventional GeV--TeV searches.
+
+\aure{stopped here}
 
 The upper end of the mass window has a more universal origin, which is often reffered to as the \emph{unitarity bound}.
 % Quantum mechanics requires probabilities to sum to one, and translated into scattering theory this becomes \emph{unitarity}: the cross section for any process is bounded from above by a quantity set purely by the available phase space.
