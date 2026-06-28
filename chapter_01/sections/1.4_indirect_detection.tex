@@ -220,7 +220,7 @@ Early estimates of the boost factor ranged from modest ($B \sim 10$) to extreme 
 The survival of subhalos is governed by tidal stripping from the host halo's gravitational field, gravitational ``disk shocking'' as subhalos cross the dense baryonic disk, and encounters with individual stars --- all of which preferentially destroy subhalos in the inner Galaxy \cite{Cirelli:2024ssz,Sanchez-Conde:2013yxa}.
 When these effects are included, the boost factor for the Galaxy as a whole is $B \lesssim \mathcal{O}(10)$--$\mathcal{O}(30)$ \cite{Sanchez-Conde:2013yxa,Moline:2016pbm,Cirelli:2024ssz}.
 Toward the Galactic Center, where subhalos are most heavily depleted by tidal forces, the boost is expected to be negligible \cite{Cirelli:2024ssz,Sanchez-Conde:2013yxa}.
-The outskirts of the halo, by contrast, retain a richer substructure population, and the individual subhalos that survive there are the targets of the searches described in Chapter~\ref{ch:5}.
+The outer halo, by contrast, retains a richer subhalo population, since tidal forces weaken with galactocentric distance. These surviving subhalos --- seen preferentially at high galactic latitudes --- are the targets of the searches described in Chapter~\ref{ch:5}.
 
 The subhalo hierarchy does not extend to arbitrarily small masses.
 It is truncated at a minimum mass $M_\text{min}$ set by the kinetic decoupling of the dark matter particle from the thermal plasma in the early universe \cite{Cirelli:2024ssz}.
@@ -228,7 +228,7 @@ After kinetic decoupling, dark matter particles free-stream over a characteristi
 For a 100 GeV WIMP with weak-scale couplings, $M_\text{min} \sim 10^{-6}\, M_\odot$ --- roughly an Earth mass \cite{Cirelli:2024ssz}.
 This scale lies far below the resolution of any current simulation and represents a fundamental uncertainty in the predicted total annihilation rate, since the integral over the subhalo mass function is dominated by the smallest masses.
 
-The density profiles and substructure properties introduced here feed directly into the $J$-factor and $D$-factor formalism of Section~\ref{sec:jfactor}, which combines them with the particle physics of Section~\ref{sec:ann_decay} to produce the governing equations for gamma-ray indirect detection.
+The density profiles and substructure properties introduced here feed directly into the $J$-factor and $D$-factor formalism of Section~\ref{sec:jfactor}.
 
 \subsection{The Flux Factorization: $J$-Factor and $D$-Factor}
 \label{sec:jfactor}
@@ -236,20 +236,21 @@ The density profiles and substructure properties introduced here feed directly i
 Combining the particle physics of Section~\ref{sec:ann_decay} with the density profiles of Section~\ref{sec:density_profiles}, we can now write the differential gamma-ray flux from dark matter annihilation observed from a direction $\psi$ relative to the Galactic Center \cite{Cirelli:2024ssz,Hooper:2024}:
 
 \begin{equation}
-	\frac{d\Phi_\gamma}{dE\, d\Omega} = \underbrace{\frac{1}{4\pi} \frac{\langle \sigma v_\text{rel} \rangle}{2 m_\chi^2} \frac{dN_\gamma}{dE}}_{\text{Particle Physics}} \times \underbrace{J(\psi)}_{\text{Astrophysics}} \,.
+	\frac{d\Phi_\gamma}{dE\, d\Omega} = \underbrace{\frac{1}{4\pi} \frac{\langle \sigma v_\text{rel} \rangle}{2 m_\chi^2} \frac{dN_\gamma}{dE}}_{\text{Particle Physics}} \quad \times \underbrace{J(\psi)}_{\text{Astrophysics}} \,.
 	\label{eq:flux_ann}
 \end{equation}
 
 The prefactor $1/(4\pi)$ reflects the isotropic emission of photons over the full sphere, and the factor of $1/2$ avoids double-counting for self-conjugate (Majorana) particles, as discussed in Section~\ref{sec:ann_decay}.
 The $J$-factor is the line-of-sight integral of the density squared:
-
+%
 \begin{equation}
 	J(\psi) = \int_\text{l.o.s.} \rho^2\bigl(r(s, \psi)\bigr) \, ds \,,
 	\label{eq:jfactor}
 \end{equation}
-
-where $s$ parametrizes distance along the line of sight and $r$ is the galactocentric radius, related to $s$ and the observation angle $\psi$ by $r = (r_\odot^2 + s^2 - 2 r_\odot s \cos\psi)^{1/2}$, with $r_\odot \simeq 8.33$ kpc the Sun--Galactic Center distance \cite{Cirelli:2024ssz}.
-In this dimensionful convention, $J$ carries units of GeV$^2$ cm$^{-5}$; an alternative dimensionless definition, in which $\rho$ and $s$ are normalized to $\rho_\odot$ and $r_\odot$ respectively, is also common in the literature \cite{Cirelli:2024ssz}.
+%
+where $s$ parametrizes the distance along the line of sight and $r$ is the galactocentric radius, related to $s$ and the observation angle $\psi$ by $r = (r_\odot^2 + s^2 - 2 r_\odot s \cos\psi)^{1/2}$, with $r_\odot \simeq 8.33$ kpc the Sun--Galactic Center distance \cite{Cirelli:2024ssz}.
+In this dimensionful convention, $J$ carries units of GeV$^2$ cm$^{-5}$.
+An alternative dimensionless definition, in which $\rho$ and $s$ are normalized to $\rho_\odot$ and $r_\odot$ respectively, is also often used in the literature \cite{Cirelli:2024ssz}.
 
 For decaying dark matter, the analogous expression is \cite{Cirelli:2024ssz,Pinetti:2021jjs}:
 
@@ -260,21 +261,22 @@ For decaying dark matter, the analogous expression is \cite{Cirelli:2024ssz,Pine
 
 where $\Gamma = 1/\tau$ is the decay rate.
 No symmetry factor appears, since decay is a single-particle process.
-The $D$-factor integrates the density linearly:
-
+The $D$-factor is:
+%
 \begin{equation}
 	D(\psi) = \int_\text{l.o.s.} \rho\bigl(r(s, \psi)\bigr) \, ds \,,
 	\label{eq:dfactor}
 \end{equation}
-
+%
 and carries units of GeV cm$^{-2}$.
-Because $D$ depends on $\rho$ rather than $\rho^2$, it is far less sensitive to the assumed density profile than the $J$-factor, and substructure boost factors are entirely absent for decay \cite{Cirelli:2024ssz}.
-This robustness makes decay searches less model-dependent than their annihilation counterparts, though at the cost of weaker expected signals.
+Because $D$ depends on $\rho$ rather than $\rho^2$, it is far less sensitive to the assumed density profile than the $J$-factor, making decay searches less model-dependent than their annihilation counterparts.
+Beyond this technical difference, the two processes are interesting for different reasons.
+Annihilation is the characteristic signature of thermal-relic WIMPs, whose present-day cross-section is tied to the observed relic abundance (Section~\ref{sec:1.2}) \cite{Bertone:2004pz}, and the $\rho^2$ weighting makes the densest concentrations of dark matter --- the Galactic Center and individual subhalos --- the most rewarding targets.
+Decay, by contrast, is the natural channel for feebly-coupled or non-thermal candidates such as sterile neutrinos \cite{Dodelson:1993je,Boyarsky:2018tvu} and axion-like particles \cite{Arias:2012az}, whose only requirement is a lifetime exceeding the age of the universe; the linear $\rho$ weighting instead favours large, diffuse targets that maximise the enclosed mass --- the outer Galactic halo, galaxy clusters, the isotropic background \cite{Ibarra:2013cra}, and even cosmic-web filaments, where an annihilation signal would be suppressed \cite{Pinetti:2021jjs,Cirelli:2024ssz}.
 
-The power of this factorization is that it cleanly separates the unknowns.
 The particle physics factor --- containing $m_\chi$, $\langle \sigma v_\text{rel} \rangle$ (or $\tau$), and the spectral shape $dN_\gamma/dE$ --- encodes the dark matter model we wish to test.
 The astrophysical factor --- $J$ or $D$ --- encodes the distribution of dark matter along the line of sight, determined by the density profile of the host halo and constrained independently through kinematic measurements.
-A non-detection in a target with a well-determined $J$-factor translates directly into an upper limit on $\langle \sigma v_\text{rel} \rangle$; for decay, an upper limit on $\Gamma$ (equivalently, a lower limit on $\tau$).
+A non-detection translates directly into an upper limit on $\langle \sigma v_\text{rel} \rangle$ for annihilation; and an upper limit on $\Gamma$ (equivalently, a lower limit on $\tau$) for decay.
 
 When applied to an extended region of the sky, the integrated flux is obtained by integrating $J$ (or $D$) over the solid angle of interest.
 For comparing different targets, one typically quotes the $J$-factor integrated over a cone of half-angle $\theta_\star$ centered on the target:
@@ -294,11 +296,13 @@ If $\langle \sigma v_\text{rel} \rangle$ depends on the dark matter velocity ---
 In such cases, one must compute an \textit{effective $J$-factor} that folds the full, position-dependent velocity distribution into the integral, and the clean particle-physics/astrophysics separation is lost.
 
 Second, even for velocity-independent cross-sections, the $J$-factor depends quadratically on the density profile, making it extremely sensitive to the uncertainties discussed in Section~\ref{sec:density_profiles}.
-For the Galactic Center, the $J$-factor computed with an NFW profile can exceed the Burkert value by orders of magnitude \cite{Cirelli:2024ssz}; even within the NFW family, varying the inner slope from $\gamma = 0.7$ to $\gamma = 1.3$ changes the predicted flux by more than an order of magnitude \cite{Hooper:2024}.
+For the Galactic Center, the $J$-factor computed with an NFW profile can exceed the Burkert value by orders of magnitude \cite{Cirelli:2024ssz}; even within the NFW paradigm, varying the inner slope from $\gamma = 0.7$ to $\gamma = 1.3$ changes the predicted flux by more than an order of magnitude \cite{Hooper:2024}.
 The astrophysical factor is therefore the dominant systematic uncertainty in annihilation searches.
 
 \subsection{Observational Targets for Gamma-Ray Searches}
 \label{sec:targets}
+
+\aure{stopped here}
 
 The formalism of the preceding sections produces a clear prescription: to maximise the gamma-ray signal from dark matter, one should observe targets with large $J$-factors (for annihilation) or $D$-factors (for decay) and low astrophysical backgrounds.
 No single target satisfies both criteria simultaneously, and the field has consequently developed a multi-target observation programme in which the complementary strengths of different targets compensate each other's weaknesses.
