@@ -122,7 +122,7 @@ Second, they feed final states that would otherwise be absent, so that even pure
 
 \textbf{Prompt versus secondary emission.}
 The gamma-ray production mechanisms discussed so far --- pion decay, final-state radiation, lines, VIB --- all occur promptly after their parent annihilation or decay event, and are thus referred to as \textit{prompt emission} \cite{Cirelli:2024ssz,Pinetti:2021jjs}.
-Prompt photons propagate freely through the Galaxy and arrive at the detector with their spectral shape intact, because the Galaxy is effectively transparent to gamma-rays below a few hundred TeV \cite{Hooper:2024}.
+Prompt photons propagate freely through the Galaxy and arrive at the detector with their spectral shape intact, because the Galaxy is effectively transparent to gamma-rays below a few hundred TeV \cite{Hooper:2024}.\footnote{This transparency is specific to propagation \emph{within} the Galaxy, where pair production ($\gamma\gamma \to e^+e^-$) on the interstellar radiation field and the CMB only becomes significant at PeV energies. Over cosmological distances, by contrast, the interaction length on the extragalactic background light drops below the Hubble length already at energies $\gtrsim 100$~GeV, defining an effective gamma-ray horizon for extragalactic sources \cite{Hooper:2024}.}
 
 Different contributions arise when the energetic electrons and positrons produced by dark matter propagate through the interstellar medium.
 These leptons upscatter ambient low-energy photons to gamma-ray energies via \textit{inverse Compton scattering} (ICS) \cite{Blumenthal:1970gc,Hooper:2024}.
@@ -136,22 +136,23 @@ Despite this additional layer of modelling uncertainty, secondary emission plays
 \subsection{Dark Matter Density Profiles}
 \label{sec:density_profiles}
 
-The annihilation and decay rates derived in Section~\ref{sec:ann_decay} depend directly on the dark matter density $\rho(r)$ --- and for annihilation, on its square.
-The predicted gamma-ray flux from any astrophysical target is therefore directly determined by the assumed density profile.
-The same measurement that constrains the particle physics simultaneously probes the dark matter distribution, but the result is only as reliable as the profile assumed --- a tension that runs through every chapter of this thesis.
+The annihilation and decay rates derived in Section~\ref{sec:ann_decay} depend directly on the dark matter density $\rho(r)$ --- and for annihilation, on $\rho(r)^2$.
+The predicted gamma-ray flux from any astrophysical target is therefore directly related to the assumed density profile.
+The same measurement constraining the particle physics simultaneously probes the dark matter distribution.
 
-The standard profiles used in the field come from cosmological $N$-body simulations --- numerical experiments that follow the gravitational collapse of billions of dark matter particles from primordial density perturbations to the present-day cosmic web \cite{Cirelli:2024ssz}.
-These simulations show that the spherically averaged density $\rho(r)$ of collapsed halos follows a universal logarithmic slope $s(r) \equiv d\ln\rho / d\ln r$ that transitions smoothly from $s \approx -1$ in the inner region to $s \approx -3$ in the outskirts \cite{Cirelli:2024ssz}.
-The results can be captured by several fitting functions, each with a characteristic density $\rho_s$ and a scale radius $r_s$.
+The standard profiles come from cosmological $N$-body simulations which follow the gravitational collapse of billions of dark matter particles from primordial density perturbations to the present-day cosmic web \cite{Cirelli:2024ssz}.
+These simulations show that the spherically averaged density $\rho(r)$ of collapsed halos follows a logarithmic slope $s(r) \equiv d\ln\rho / d\ln r$ that steepens with radius, converging to $s \approx -3$ in the outskirts \cite{Cirelli:2024ssz}.
+The behaviour in the inner region, by contrast, remains an open question --- the \textit{cusp--core problem} discussed below --- with different profiles predicting central slopes that range from a steep cusp to a constant-density core (Figure~\ref{fig:dm_profiles}).
+These results can be captured by several fitting functions, each with a characteristic density $\rho_s$ and a scale radius $r_s$.
 
 \textbf{NFW (Navarro--Frenk--White).}
 The most widely adopted benchmark has a density that diverges as $\rho \propto r^{-1}$ toward the center (a ``cusp'') and falls off as $\rho \propto r^{-3}$ in the outer halo \cite{Navarro:1996gj}:
-
+%
 \begin{equation}
 	\rho_\text{NFW}(r) = \frac{\rho_s}{\dfrac{r}{r_s}\left(1 + \dfrac{r}{r_s}\right)^2} \,,
 	\label{eq:nfw}
 \end{equation}
-
+%
 A common generalization replaces the fixed inner slope with a free parameter $\gamma$, giving the ``generalized NFW'' (gNFW) profile $\rho \propto (r/r_s)^{-\gamma}(1 + r/r_s)^{\gamma - 3}$ \cite{Cirelli:2024ssz}.
 The standard NFW corresponds to $\gamma = 1$; steeper values ($\gamma > 1$) describe adiabatically contracted halos, while $\gamma < 1$ accommodates shallower cusps.
 This freedom is directly relevant for the Galactic Center excess analysis in Chapter~\ref{ch:4}, where the morphology of the signal constrains $\gamma$.
@@ -165,11 +166,11 @@ It is controlled by a shape parameter $\alpha_\text{Ein}$:
 	\label{eq:einasto}
 \end{equation}
 
-High-resolution simulations increasingly favour Einasto over NFW as a fitting function, with $\alpha_\text{Ein} \approx 0.17$ providing a good average fit across a range of halo masses \cite{Cirelli:2024ssz}.
-At the specific radii probed by indirect detection, however, the two profiles yield similar predictions, and both are used as standard benchmarks.
+High-resolution simulations seem to favour Einasto over NFW as a fitting function, with $\alpha_\text{Ein} \approx 0.17$ providing a good average fit across a range of halo masses \cite{Cirelli:2024ssz}.
+Nonetheless, both NFW and Einasto are commonly used as standard benchmarks.
 
 \textbf{Burkert (cored).}
-A profile with a constant-density core at small radii, motivated by observed rotation curves of dwarf and low-surface-brightness galaxies rather than $N$-body simulations \cite{Burkert:1995yz,Bullock:2017xww}:
+A profile with a constant-density core at small radii, it is motivated by observed rotation curves of dwarf and low-surface-brightness galaxies rather than $N$-body simulations \cite{Burkert:1995yz,Bullock:2017xww}:
 
 \begin{equation}
 	\rho_\text{Bur}(r) = \frac{\rho_s}{\left(1 + \dfrac{r}{r_s}\right)\left(1 + \left(\dfrac{r}{r_s}\right)^2\right)} \,.
@@ -177,44 +178,45 @@ A profile with a constant-density core at small radii, motivated by observed rot
 \end{equation}
 
 These three profiles are compared in Figure~\ref{fig:dm_profiles}, which shows both the radial density dependence and the fitted parameters for the Milky Way.
-At large radii (around $r_\odot$) all profiles agree, but they diverge by orders of magnitude in the inner kiloparsec --- the region most relevant for indirect detection from the Galactic Center.
+At large radii (around $r_\odot$) all profiles agree, but they diverge by orders of magnitude in the inner kiloparsec.
 
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.75\textwidth]{figures/DMprofiles.pdf}
 	\caption{Dark matter density profiles for the Milky Way: NFW (red), Einasto (blue), Burkert (green), and Isothermal (purple) as a function of galactocentric distance.
-		The profiles are normalized to agree at $r \sim r_\odot$ but diverge by orders of magnitude in the inner kiloparsec --- the region most relevant for indirect detection from the Galactic Center.
-		Figure from Cirelli et al.~\cite{Cirelli:2024ssz}.
+		The profiles are normalized to agree at $r \sim r_\odot$ but diverge by orders of magnitude in the inner kiloparsec.
+		Credit: Cirelli et al.~\cite{Cirelli:2024ssz}.
 	}
 	\label{fig:dm_profiles}
 \end{figure}
 
 When fit to the Milky Way, the parameters of these profiles are fixed by requiring consistency with the total Galactic mass ($\sim 4.7 \times 10^{11}\, M_\odot$) and the local dark matter density at the Sun's position ($r_\odot \simeq 8.12$ kpc) \cite{Cirelli:2024ssz,Pinetti:2021jjs}.
-The most recent determinations place the local density at $\rho_\odot \approx 0.40 \pm 0.10$ GeV/cm$^3$ \cite{Cirelli:2024ssz}, though many analyses continue to use the historical benchmark of 0.3 GeV/cm$^3$ for consistency with existing limits.
+The most recent determinations place the local density at $\rho_\odot \approx 0.40 \pm 0.10$ GeV/cm$^3$ \cite{Cirelli:2024ssz}, though many analyses continue to use the historical benchmark of 0.3 GeV/cm$^3$.
 Characteristic Milky Way parameters are $r_s \approx 14.5$ kpc and $\rho_s \approx 0.57$ GeV/cm$^3$ for NFW, and $r_s \approx 13.6$ kpc with $\rho_s \approx 0.15$ GeV/cm$^3$ for Einasto \cite{Cirelli:2024ssz}.
 
 At the solar radius, all three profiles agree by construction.
 They differ sharply in the inner kiloparsec, where no direct observational data constrain the dark matter profile and the resolution of current simulations reaches its limit (roughly a fraction of a kiloparsec for a Milky Way--sized halo) \cite{Cirelli:2024ssz,Navarro:1996gj,Bullock:2017xww}.
-The NFW and Einasto profiles predict densities at $r \sim 100$ pc that exceed the Burkert core prediction by one to two orders of magnitude \cite{Cirelli:2024ssz}.
-This discrepancy propagates directly into the $J$-factor: the predicted gamma-ray flux from the Galactic Center can vary by orders of magnitude depending on whether one assumes a cusp or a core.
+The NFW and Einasto profiles predict densities at $r \sim 100$ pc that exceed the Burkert core prediction by one to two orders of magnitude \cite{Cirelli:2024ssz}. 
+This is one of the main sources of uncertainty in indirect detection, and the choice of profile is therefore often treated as a systematic.
+% This discrepancy propagates directly into the $J$-factor: the predicted gamma-ray flux from the Galactic Center can vary by orders of magnitude depending on whether one assumes a cusp or a core.
 
-The disagreement between cuspy simulations and cored observations is the \textbf{cusp--core problem} \cite{Cirelli:2024ssz,Bullock:2017xww}.
+The disagreement between cuspy simulations and cored observations is known as the \textbf{cusp--core problem} \cite{Cirelli:2024ssz,Bullock:2017xww}.
 Dark matter--only $N$-body simulations consistently produce cusps with inner slopes $\gamma \approx 1$--$1.5$, while rotation curve measurements --- particularly in dwarf galaxies --- often favour constant-density cores ($\gamma \approx 0$--$0.5$) \cite{Bullock:2017xww}.
-Several resolutions have been proposed.
+Several solutions to this discrepancy have been proposed.
 From the particle physics side, self-interacting dark matter (with $\sigma/m \approx 0.5$--$10$ cm$^2$/g) transfers heat to halo centers and produces cores of the observed size \cite{Spergel:1999mh,Tulin:2017ara,Bullock:2017xww}, while ultralight ``fuzzy'' dark matter generates solitonic cores through quantum pressure on scales comparable to the de Broglie wavelength \cite{Hu:2000ke,Cirelli:2024ssz}.
 From the astrophysical side, modern hydrodynamical simulations show that repeated bursts of supernova-driven outflows can rapidly alter the central gravitational potential, pushing dark matter outward and flattening a primordial cusp into a core \cite{Cirelli:2024ssz,Bullock:2017xww}.
 
 The effectiveness of baryonic feedback depends non-monotonically on the stellar-to-halo mass ratio $M_\star / M_\text{vir}$: core formation peaks at intermediate ratios ($M_\star / M_\text{vir} \approx 5 \times 10^{-3}$, the regime of bright dwarfs), where supernovae are frequent enough to redistribute dark matter, but is negligible in ultrafaint dwarfs (too few stars) and in massive galaxies where adiabatic contraction recreates a cusp \cite{Cirelli:2024ssz,Bullock:2017xww}.
-For the Milky Way ($M_\star / M_\text{vir} \approx 0.08$), this places the expected inner profile in the cuspy regime --- though the argument rests on the assumption that feedback and contraction have been correctly modelled, which remains uncertain.
+For the Milky Way ($M_\star / M_\text{vir} \approx 0.08$), this would place the expected inner profile in the cuspy regime, although the argument rests on the assumption that feedback and contraction have been correctly modelled, which remains a field of active research with large uncertainties.
 
 \textbf{Substructure and boost factors.}
 Real dark matter halos are not smooth.
 $N$-body simulations reveal a rich hierarchy of gravitationally bound subhalos embedded within the main halo, with a mass function $dn/dM \propto M^{-2}$ extending from cluster masses down to the resolution limit \cite{Springel:2008cc,Diemand:2008in,Cirelli:2024ssz}.
 Because annihilation scales as $\rho^2$, the clumpy density field produces a higher total signal than a smooth halo of the same average density.
 This follows from Jensen's inequality applied to the convex function $\rho^2$: for any non-uniform density distribution, the volume-averaged squared density satisfies $\langle \rho^2 \rangle > \langle \rho \rangle^2$, with equality only for a perfectly homogeneous halo.
-This enhancement is parametrized by a multiplicative \textbf{boost factor} $B \equiv \langle \rho^2 \rangle / \langle \rho \rangle^2$ \cite{Cirelli:2024ssz}.
+This enhancement is parametrized by a multiplicative boost factor $B \equiv \langle \rho^2 \rangle / \langle \rho \rangle^2$ \cite{Cirelli:2024ssz}.
 
-Early estimates of the boost factor ranged from modest ($B \sim 10$) to extreme ($B \sim 10^9$), but modern analyses find much smaller values.
+Early estimates of the boost factor ranged from modest ($B \sim 10$) to extreme ($B \sim 10^9$) \cite{Bergstrom:1998jj,Calcaneo-Roldan:2000xwm,Berezinsky:2003vn,Stoehr:2003hf,Cirelli:2024ssz}, but modern analyses find much smaller values \cite{Lavalle:2007apj,Sanchez-Conde:2013yxa,Cirelli:2024ssz}.
 The survival of subhalos is governed by tidal stripping from the host halo's gravitational field, gravitational ``disk shocking'' as subhalos cross the dense baryonic disk, and encounters with individual stars --- all of which preferentially destroy subhalos in the inner Galaxy \cite{Cirelli:2024ssz,Sanchez-Conde:2013yxa}.
 When these effects are included, the boost factor for the Galaxy as a whole is $B \lesssim \mathcal{O}(10)$--$\mathcal{O}(30)$ \cite{Sanchez-Conde:2013yxa,Moline:2016pbm,Cirelli:2024ssz}.
 Toward the Galactic Center, where subhalos are most heavily depleted by tidal forces, the boost is expected to be negligible \cite{Cirelli:2024ssz,Sanchez-Conde:2013yxa}.
