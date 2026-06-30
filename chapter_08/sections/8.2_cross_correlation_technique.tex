@@ -3,41 +3,44 @@
 
 \section{The Cross-Correlation Technique}
 \label{sec:8.2}
-Section~\ref{sec:cross_correlations} laid out the mathematical formulation of the cross-correlation technique. What remains is to understand why it outperforms auto-correlation and spectral analyses in practice. Three properties are key: redshift selectivity from overlapping window functions (Section~\ref{sec:8.2.1}), the statistical gain from combining two independent observables (Section~\ref{sec:8.2.2}), and the choice of low-redshift catalogs that reinforces both (Section~\ref{sec:8.2.3}).
+Section~\ref{sec:cross_correlations} illustrated the mathematical formulation of the cross-correlation technique. 
+Three properties are key: redshift selection through overlapping window functions (Section~\ref{sec:8.2.1}), the statistical gain from combining two independent observables (Section~\ref{sec:8.2.2}), and the choice of low-redshift catalogs that reinforces both (Section~\ref{sec:8.2.3}).
 
-\subsection{Tomographic Redshift Slicing}
+\subsection{Redshift Tomography}
 \label{sec:8.2.1}
 
-The angular cross-power spectrum $C_\ell^{\gamma g}$ introduced in Section~\ref{sec:cross_correlations} measures how the gamma-ray intensity field and the galaxy number counts fluctuate together as a function of angular scale.
+The angular cross-power spectrum $C_\ell^{\gamma g}$ introduced in Section~\ref{sec:cross_correlations} measures the correlation between intensity fluctuations in the gamma-ray intensity field and in the galaxy number counts.
 Under the Limber approximation (Eq.~\ref{eq:limber_aps}), this is a single integral over comoving distance, weighted by the product of the gamma-ray and galaxy window functions $W_\gamma(\chi)$ and $W_g(\chi)$.
-The key observation is that $C_\ell^{\gamma g}$ receives contributions only from the redshift range where both window functions are simultaneously nonzero.
-Choosing a galaxy catalog with a narrow, well-understood redshift distribution therefore selects a specific slice of the universe, filtering out emission from all other distances.
+Note that $C_\ell^{\gamma g}$ receives contributions only from the redshift range where both window functions are simultaneously nonzero.
+Choosing a galaxy catalog with a narrow redshift distribution therefore selects a specific slice of the universe, filtering out emission from all other distances.
 This is the essence of the tomographic approach~\cite{xia2015tomography,DGRB-review}.
 
-The window function $W_\gamma(z)$ encodes the physical character of the gamma-ray emission.
+The window function $W_\gamma(z)$ encodes the redshift distribution of the gamma-ray emission.
 For unresolved astrophysical sources such as blazars, $W_\gamma$ depends on the luminosity function and the spectral energy distribution of the source class, modulated by EBL absorption at high energies.
-For dark matter annihilation, it is proportional to $\langle\sigma v\rangle\,\Delta^2(z)\,\left(\Omega_\mathrm{DM}\rho_c/m_\chi\right)^2\,(1+z)^3\,e^{-\tau(E,z)}$, where $\Delta^2(z)$ is the flux multiplier that captures the enhancement from DM clustering and substructure (see Section~\ref{sec:1.4}).
-Because the annihilation rate goes as $\rho^2$, it is highly sensitive to the dense central regions of halos and is effectively confined to the local universe: the DM window function peaks sharply at $z \lesssim 0.1$ and decays rapidly thereafter, regardless of the DM mass or annihilation channel.
+For dark matter annihilation, it is proportional to $\langle\sigma v\rangle\,\Delta^2(z)\,\left(\Omega_\mathrm{DM}\rho_c/m_\chi\right)^2\,(1+z)^3\,e^{-\tau(E,z)}$, where $\Delta^2(z)$ is the flux multiplier that captures the enhancement from DM clustering and substructures (see Section~\ref{sec:1.4}).
+The $\rho^2$ scaling makes the signal dominated by the late-time collapse of matter into dense halos and subhalos, whose clustering $\Delta^2(z)$ peaks in the local universe and outweighs the smoother high-redshift background.
+As a result, $W_\gamma^\mathrm{DM}$ peaks sharply at $z \lesssim 0.1$ and decays rapidly thereafter, regardless of the DM mass or annihilation channel.
 
-Astrophysical backgrounds present a very different picture.
+Astrophysical backgrounds present a very different behaviour.
 Unresolved blazars\footnote{High-synchrotron-peaked BL Lacertae objects are often denoted HSP, while low and intermediate-synchrotron-peaked BL Lacs are often grouped together and denoted LISP.} have their emission peak at $z \sim 0.3$--$0.5$ at $50\,\mathrm{GeV}$.
 At higher energies, EBL absorption progressively shrinks the gamma-ray horizon: above ${\sim}\,1\,\mathrm{TeV}$, the observable volume contracts to $z \lesssim 0.1$--$0.2$, irrespective of source type.
 Star-forming galaxies trace the cosmic star-formation rate and dominate at much higher redshifts, $z \sim 1$--$3$.
-These populations are effectively invisible to a galaxy catalog covering the local universe.
-Figure~\ref{fig:window_main} illustrates this separation quantitatively for the benchmark scenario considered in the analysis of this chapter: the DM window functions are confined to low redshift, while blazar contributions extend to $z \sim 0.4$--$0.5$ at 50 GeV.
+Figure~\ref{fig:window_main} illustrates this feature quantitatively for the benchmark scenario considered in the analysis of this chapter: the DM window functions are confined to low redshift, while blazar contributions extend to $z \sim 0.4$--$0.5$ at 50 GeV.
 
-The galaxy catalog window function $W_g(z) = dN_g/dz$, normalized to unity, is the redshift distribution of the galaxies in the sample.
-A dense, shallow catalog covering $z \lesssim 0.1$ such as the Two Micron All-Sky Survey (2MASS) aligns almost perfectly with the DM annihilation window function.
-The cross-correlation signal is then proportional to the overlap integral $\int W_\gamma W_g\, d\chi$.
-Because the blazar contribution to $W_\gamma$ lies at much higher redshift than $W_g$, it does not contribute to the signal --- the two window functions simply do not overlap.
-The DM signal, by contrast, overlaps strongly, and the cross-correlation becomes a redshift-selective probe of the local DM distribution.
+The galaxy catalog window function $W_g(z) = dN_g/dz$, normalized to unity, represents the redshift distribution of the galaxies in the sample.
+A dense, shallow catalog covering $z \lesssim 0.1$ such as the Two Micron All-Sky Survey (2MASS) overlaps nicely with the DM annihilation window function, which benefits
+the cross-correlation signal, given it is proportional to the overlap integral $\int dz\,W_\gamma(z)\,W_g(z)$.
+Because the blazar contribution to $W_\gamma$ lies mainly higher redshift than $W_g$, the cross-correlation signal coming from blazars is suppressed.
+The DM signal, by contrast, overlaps strongly in redshift, and the cross-correlation becomes a probe of the local DM distribution.
 
-This tomographic selectivity is the principal advantage of the cross-correlation over the auto-correlation of the gamma-ray sky alone.
-Even if a DM signal were present in the total intensity, the power-law continuum of unresolved blazars would prevent its isolation without additional redshift information.
-Cross-correlation provides exactly that handle: by choosing a catalog confined to the local universe, one selects for the DM component while astrophysical backgrounds at higher redshifts cancel from the observable.
+% Redshift tomography is thus a key advantage of the cross-correlation over the auto-correlation of the gamma-ray sky alone.
+% Even if a DM signal were present in the total intensity, the power-law continuum of unresolved blazars would prevent its isolation without additional redshift information.
+% Cross-correlation provides exactly that handle: by choosing a catalog confined to the local universe, one selects for the DM component while astrophysical backgrounds at higher redshifts cancel from the observable.
 
 \subsection{Why Cross-Correlation Outperforms Auto-Correlation}
 \label{sec:8.2.2}
+
+\aure{stopped here}
 
 The statistical properties of the cross-correlation estimator reveal why this approach is fundamentally more powerful than auto-correlation for dark matter searches.
 The variance of the cross-power spectrum (Eq.~\ref{eq:variance_cross}) contains the product of the gamma-ray noise term $(C_\ell^{\gamma\gamma} + C_N/B_\ell^2)$ and the galaxy noise term $(C_\ell^{gg} + C_{N_g})$.
