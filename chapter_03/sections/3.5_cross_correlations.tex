@@ -5,24 +5,24 @@
 \label{sec:cross_correlations}
 
 The methods discussed so far in this chapter---frequentist and Bayesian inference, simulation-based approaches, machine learning, and domain adaptation---all operate on data from a single instrument, extracting information about source populations from the gamma-ray sky alone.
-We now consider a qualitatively different approach: correlating the gamma-ray emission with an independent gravitational tracer of the dark matter distribution, such as a galaxy catalog.
-The angular cross-power spectrum between these two observables provides sensitivity to the collective dark matter signal from unresolved cosmological structure, offering a complementary probe that goes beyond what any single dataset can achieve.
-
-Cross-correlations are powerful precisely because they exploit the fact that dark matter, regardless of its particle nature, is the dominant source of gravitational clustering.
-If dark matter annihilates or decays into gamma rays, the resulting emission must trace the same large-scale structure \aure{check this section ref}(cf.\ Section~\ref{sec:1.1.3}) that is independently mapped by galaxy surveys.
-By measuring the spatial correlation between the two fields, one can isolate the collective dark matter contribution from the aggregate of unresolved cosmological structure---a statistical signal that no individual source produces, and one that would be undetectable in either dataset alone.
+% We now consider a qualitatively different approach: correlating the gamma-ray emission with an independent gravitational tracer of the dark matter distribution, such as a galaxy catalog.
+% The angular cross-power spectrum between these two observables provides sensitivity to the collective dark matter signal from unresolved cosmological structure, offering a complementary probe that goes beyond what any single dataset can achieve.
+We consider now a qualitatively different approach. The cross-correlation technique correlates a signal associated with the particle nature of dark matter---for instance, gamma rays from annihilation or decay---with an independent gravitational tracer of the matter distribution, such as a galaxy catalog. A positive correlation would favor an interpretation of DM in terms of new physics, since modified gravity theories do not predict the production of gamma-rays.
+Cross-correlations are powerful because they exploit the fact that dark matter is the dominant source of gravitational clustering.
+If dark matter annihilates or decays into gamma rays, the resulting emission must trace the same large-scale structure \aure{check this section ref}(cf.\ Section~\ref{sec:1.1.3}) mapped by galaxy surveys.
+% By measuring the spatial correlation between the two fields, one can isolate the collective dark matter contribution from the aggregate of unresolved cosmological structure---a statistical signal that no individual source produces, and one that would be undetectable in either dataset alone.
 
 We introduce the cross-correlation formalism in two steps.
 Section~\ref{sec:angular_power_spectrum} defines the angular power spectrum, the Limber approximation that projects three-dimensional clustering into two-dimensional observables, and the window functions that encode the redshift distribution of each signal.
-Section~\ref{sec:statistical_sensitivity} presents the statistical tools---the signal-to-noise ratio and the $\Delta\chi^2$ test statistic---used to forecast the sensitivity of a given experiment to dark matter.
+Section~\ref{sec:statistical_sensitivity} presents the signal-to-noise ratio and the $\Delta\chi^2$ test statistic---used to forecast the sensitivity of a given experiment to dark matter.
 The full application of this formalism, including the halo model computation and the detailed sensitivity forecasts for the Cherenkov Telescope Array Observatory, is deferred to Chapter~\ref{ch:8}.
 
 \subsection{The Angular Power Spectrum}
 \label{sec:angular_power_spectrum}
 
-The observable sky maps produced by gamma-ray telescopes and galaxy surveys are two-dimensional projections of the three-dimensional distribution of matter and radiation in the Universe.
-To study the spatial correlations between these projected fields, we expand them in the natural basis of the sphere: the spherical harmonics $Y_{\ell m}(\hat{n})$.
-The angular power spectrum (APS) $C_\ell$ then quantifies the amplitude of these correlations as a function of the angular scale, parameterized by the multipole $\ell$.
+The observable sky maps produced by gamma-ray telescopes and galaxy surveys are two-dimensional projections of the three-dimensional matter distribution in the Universe.
+To study the spatial correlations between these projected fields, we expand them in spherical harmonics $Y_{\ell m}(\hat{n})$.
+The angular power spectrum (APS) $C_\ell$ quantifies the amplitude of these correlations as a function of the angular scale, parameterized by the multipole $\ell$.
 
 We begin by considering a generic intensity field $I_g(\hat{n})$ along the direction $\hat{n}$, which can be written as an integral over the radial comoving distance $\chi(z)$ \cite{Fornengo:2013rga,Camera:2012cj}:
 \begin{equation}
@@ -43,10 +43,10 @@ For two intensity fields labelled $i$ and $j$ (for instance, the gamma-ray flux 
 	\label{eq:aps_definition}
 \end{equation}
 When $i = j$, the expression gives the auto-correlation APS, which measures the intrinsic clustering of a single field.
-When $i \neq j$, we obtain the cross-correlation APS, which measures the spatial overlap between two distinct observables.
+When $i \neq j$, we obtain the cross-correlation APS, which measures the spatial correlation between two distinct observables.
 By construction, $C_\ell^{ij} = C_\ell^{ji}$.
 
-To connect the measured two-dimensional APS to the underlying three-dimensional power spectrum $P_{ij}(k,\chi)$, which contains the physics of the source distribution, we apply the Limber approximation \cite{Limber:1953apj}.
+To connect the measured two-dimensional APS to the underlying three-dimensional power spectrum $P_{ij}(k,\chi)$, which encodes the spatial clustering of the correlated fields, we apply the Limber approximation \cite{Limber:1953apj}.
 This approximation, valid for multipoles $\ell \gg 1$, replaces the oscillatory integrals over spherical Bessel functions with a single line-of-sight integral by identifying the wavenumber $k = \ell / \chi$.
 The result is a compact expression for the angular power spectrum \cite{Fornengo:2013rga,Camera:2012cj}:
 \begin{equation}
@@ -54,8 +54,23 @@ The result is a compact expression for the angular power spectrum \cite{Fornengo
 	\left(k = \frac{\ell}{\chi},\, \chi\right)\,.
 	\label{eq:limber_aps}
 \end{equation}
-The amplitude of the cross-correlation signal depends on the overlap between the window functions $W_i(\chi)$ and $W_j(\chi)$ and on the three-dimensional cross-power spectrum at the relevant scales.
-A significant cross-correlation therefore requires that both observables trace the same large-scale structure at similar redshifts \cite{Fornengo:2013rga}.
+% NOTE (clarify the W vs P_ij split): the Limber integral sums over thin shells at
+% comoving distance chi (redshift z). The two ingredients play complementary roles:
+%  - W_i(chi) is the RADIAL/REDSHIFT WEIGHT: how much each shell contributes to the
+%    observed intensity. For a galaxy catalog it is literally dN/dz; for DM it is the
+%    emissivity kernel (cross section, mass, clumping, attenuation). The distribution
+%    of the signal ALONG THE LINE OF SIGHT lives entirely here.
+%  - P_ij(k,chi) is the SPATIAL CLUSTERING within a shell at fixed chi. Its dependence
+%    on chi is the cosmological EVOLUTION of clustering (growth of P_lin, evolution of
+%    the halo mass function, bias, HOD), NOT the redshift distribution of sources.
+% Subtlety: P_ij is not independent of the population -- source ABUNDANCE (dN/dV),
+% bias, and HOD enter it (e.g. the one-halo/Poisson term). What P_ij does NOT know is
+% the PROJECTED line-of-sight weighting; that is the window function's job.
+% => W governs the radial (redshift) distribution; P_ij governs spatial clustering at
+%    each redshift. Their product integrated over chi is the observable.
+The two ingredients play complementary roles.
+The window functions $W_i(\chi)$ act as line-of-sight weights that fix how each observable is distributed in redshift, whereas $P_{ij}(k,\chi)$ describes the spatial clustering of the fields within a shell at comoving distance $\chi$, its $\chi$-dependence tracking the cosmological evolution of the clustering.
+Since the integrand is a product of the two window functions, a significant cross-correlation requires that they overlap---that both observables trace the same large-scale structure at similar redshifts \cite{Fornengo:2013rga}.
 This idea of correlating a gamma-ray signal with a gravitational tracer of the dark matter distribution was pioneered by Camera et al.
 \ \cite{Camera:2012cj}, who first showed that the cross-correlation of gamma-ray emission with weak-lensing cosmic shear provides a viable channel for indirect dark matter searches.
 
@@ -71,11 +86,11 @@ For dark matter annihilation, the gamma-ray window function takes the form \cite
 \end{equation}
 where $\langle \sigma v \rangle$ is the velocity-averaged annihilation cross section, $m_\chi$ is the dark matter particle mass, $\Delta^2(z) = \langle \rho^2 \rangle / \bar{\rho}^2$ is the clumping factor accounting for the enhancement due to substructure within halos, $dN_a/dE$ is the photon spectrum per annihilation event, and $\tau(E,z)$ is the optical depth for absorption on the extragalactic background light.
 For decaying dark matter, the window function scales linearly with the density rather than quadratically, and the clumping factor does not appear \cite{Fornengo:2013rga}.
-The annihilation window function is strongly peaked at low redshifts, where the local dark matter density is highest and the clumping factor most effective.
+The dark matter window function is strongly peaked at low redshifts, where the local dark matter density is highest and the clumping factor most effective.
 By contrast, the \emph{unresolved} astrophysical source populations that contribute to the diffuse gamma-ray background have markedly different redshift distributions: virtually all blazars at $z \lesssim 0.1$ have already been individually detected and cataloged, so the redshift distribution of the remaining unresolved population drops sharply toward $z \sim 0$, peaking instead at moderate redshifts.
-This separation in redshift is what makes the cross-correlation with low-redshift galaxy catalogs particularly powerful for isolating a dark matter signal: the dark matter window function peaks precisely where the astrophysical foreground is most suppressed \cite{Fornengo:2013rga}.
+This separation in redshift is what makes the cross-correlation with low-redshift galaxy catalogs particularly powerful for isolating a dark matter signal: the dark matter window function peaks precisely where the unresolved astrophysical backgroundis most suppressed \cite{Fornengo:2013rga}.
 
-The three-dimensional power spectrum $P_{ij}(k,\chi)$ in the Limber integral describes the spatial clustering of the correlated fields.
+The three-dimensional power spectrum $P_{ij}(k,\chi)$ in the Limber approximation describes the spatial clustering of the correlated fields.
 It is computed within the halo model framework, which partitions all matter in the Universe into discrete, collapsed dark matter halos \cite{Cooray:2002dia}.
 Under this assumption, the power spectrum decomposes into two contributions \cite{Cooray:2002dia,Fornengo:2013rga}:
 \begin{equation}
@@ -99,7 +114,7 @@ The detectability of the cross-correlation signal from a given source population
 	\label{eq:snr}
 \end{equation}
 where the sum runs over the multipoles $\ell$ included in the analysis and the energy bins $i$.
-We note that the statistical formalism presented here is tailored to cross-correlations with galaxy catalogs, which is the gravitational tracer relevant for this thesis; cross-correlations with other tracers, such as weak-lensing cosmic shear or \textsc{Hi} intensity maps, involve analogous expressions but with modified noise terms and window functions that reflect the specifics of each probe and instrument.
+We note that the statistical formalism presented here is tailored to cross-correlations with galaxy catalogs, which is the gravitational tracer relevant for this thesis. Cross-correlations with other tracers, such as weak-lensing cosmic shear \cite{Camera:2012cj,Shirasaki:2014noa,troster2017cross,DES:2019ucp} or \textsc{Hi} intensity maps \cite{Pinetti:2019ztr}, involve analogous expressions but with modified noise terms and window functions that reflect the specifics of each probe and instrument.
 The variance of the cross-correlation spectrum, assuming Gaussian-distributed fluctuations, is given by \cite{Fornengo:2013rga}
 \begin{equation}
 	(\Delta C_\ell^{\gamma g})^2 = \frac{1}{(2\ell+1)\, f_\mathrm{sky}} \left[(C_\ell^{\gamma g})^2 + \left(C_\ell^{\gamma\gamma} + \frac{C_N}{B_\ell^2}\right)(C_\ell^{gg} + C_{N_g})\right]\,,
@@ -118,7 +133,7 @@ where the photon noise $C_N$ now enters quadratically and adds directly to the s
 In an auto-correlation measurement, $C_\ell^{\gamma\gamma} + C_N$ must be measured and the noise accurately estimated and subtracted to recover the true clustering spectrum.
 In cross-correlation, by contrast, the noise sources in the gamma-ray map and in the galaxy catalog are physically independent: their cross-noise vanishes on average.
 The photon noise $C_N$ and galaxy shot noise $C_{N_g}$ therefore contribute only to the statistical uncertainty (the error bars) of the cross-correlation measurement, not to the signal itself.
-This allows faint correlated signals---such as a subdominant dark matter contribution---to be extracted even in noisy datasets where the auto-correlation would be completely dominated by instrumental noise \cite{Fornengo:2013rga,Camera:2012cj}; a quantitative comparison of auto- and cross-correlation SNR for CTAO observations is given in Table~\ref{table:SNR}.
+This allows faint correlated signals---such as a subdominant dark matter contribution---to be extracted even in noisy datasets where the auto-correlation would be completely dominated by instrumental noise \cite{Fornengo:2013rga,Camera:2012cj}. A quantitative comparison of auto- and cross-correlation SNR for CTAO observations is given in Table~\ref{table:SNR}.
 
 To assess the sensitivity to a dark matter signal specifically, we perform a nested-model comparison in the spirit of Wilks' theorem \cite{Fornengo:2013rga}.
 The null hypothesis includes only astrophysical sources, while the alternative hypothesis adds a dark matter component parameterized by a single additional degree of freedom---the annihilation cross section $\langle \sigma v \rangle$ or, in the decay case, the lifetime $\tau_\chi$.
