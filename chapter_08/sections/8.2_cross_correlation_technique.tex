@@ -37,65 +37,63 @@ The DM signal, by contrast, overlaps strongly in redshift, and the cross-correla
 % Even if a DM signal were present in the total intensity, the power-law continuum of unresolved blazars would prevent its isolation without additional redshift information.
 % Cross-correlation provides exactly that handle: by choosing a catalog confined to the local universe, one selects for the DM component while astrophysical backgrounds at higher redshifts cancel from the observable.
 
-\subsection{Why Cross-Correlation Outperforms Auto-Correlation}
+\subsection{Advantages of Cross-Correlation Surveys}
 \label{sec:8.2.2}
-
-\aure{stopped here}
-
-The statistical properties of the cross-correlation estimator reveal why this approach is fundamentally more powerful than auto-correlation for dark matter searches.
-The variance of the cross-power spectrum (Eq.~\ref{eq:variance_cross}) contains the product of the gamma-ray noise term $(C_\ell^{\gamma\gamma} + C_N/B_\ell^2)$ and the galaxy noise term $(C_\ell^{gg} + C_{N_g})$.
+For a cross-correlation survey, the variance of the cross-power spectrum (Eq.~\ref{eq:variance_cross}) contains the product of the gamma-ray noise term $(C_\ell^{\gamma\gamma} + C_N/B_\ell^2)$ and the galaxy noise term $(C_\ell^{gg} + C_{N_g})$.
 The photon noise $C_N$ in the gamma-ray map and the galaxy shot noise $C_{N_g}$ are physically independent: their cross-noise vanishes on average.
 The noise therefore inflates the error bars on $C_\ell^{\gamma g}$ but does not add a systematic offset to the signal itself.
 
 The auto-correlation variance (Eq.~\ref{eq:variance_auto}) is qualitatively different.
 Here the photon noise enters quadratically and adds directly to the gamma-ray auto-power spectrum.
-For a ground-based instrument like CTAO, the cosmic-ray rejection rate is never perfect, so $C_N$ is dominated by the irreducible cosmic-ray background rather than by photon statistics alone, making it very large.
+For a ground-based instrument like CTAO, the cosmic-ray rejection rate is difficult to perform, so $C_N$ is dominated by the irreducible cosmic-ray background rather than by photon statistics alone, making it very large.
 Any attempt to extract a DM signal from $C_\ell^{\gamma\gamma}$ must therefore contend with subtracting this large noise term with high precision.
-By contrast, $C_N$ in the cross-correlation variance multiplies the galaxy auto-spectrum $C_\ell^{gg} + C_{N_g}$, which is well measured independently; the DM signal is not hidden beneath the noise but simply requires accumulating sufficient signal-to-noise over multipoles and energy bins.
+By contrast, $C_N$ in the cross-correlation variance multiplies the galaxy auto-spectrum $C_\ell^{gg} + C_{N_g}$, which is well measured independently; the DM signal is not hidden beneath the noise but requires accumulating sufficient signal-to-noise over multipoles and energy bins.
 
 The second advantage of cross-correlation concerns the astrophysical foreground itself.
 The gamma-ray auto-correlation power spectrum $C_\ell^{\gamma\gamma}$ is dominated by the Poisson shot noise of unresolved blazars at essentially all multipoles of interest~\cite{DGRB-review,Fornengo:2013rga}.
 These are rare, bright point sources whose auto-correlation is a flat (Poissonian) $C_\ell$ from the 1-halo term, covering any diffuse DM component.
 The detectability of astrophysical sources in auto-correlation therefore depends on how deeply the instrument can resolve individual blazars: the better the point-source sensitivity, the lower the residual unresolved blazar background and the smaller $C_\ell^{\gamma\gamma}$.
-For the DM signal, which is effectively diffuse and unresolved, the auto-correlation sensitivity therefore degrades as a function of the Poisson blazar floor.
+For the DM signal, which is effectively diffuse and unresolved, the auto-correlation sensitivity has to compete with this astrophysical foreground.
 
-Cross-correlation with a galaxy catalog suppresses this foreground through the window function mismatch described in Section~\ref{sec:8.2.1}.
+Cross-correlation with a galaxy catalog suppresses this foreground through the overlap of window functions, as described in Section~\ref{sec:8.2.1}.
 The high-redshift blazar population does not correlate with a local galaxy catalog, so their 1-halo Poisson term does not appear in $C_\ell^{\gamma g}$.
 The cross-correlation SNR for the astrophysical signal depends on the point-source sensitivity only weakly, through the window function of the resolved fraction, whereas the auto-correlation SNR is strongly sensitive to it because the detection threshold enters both the window function and the three-dimensional power spectrum.
-For dark matter, the situation is even more favourable: the DM emission is intrinsically diffuse --- no individual extragalactic DM halo has been resolved as a gamma-ray point source to date --- so the DM window function does not depend on the detection threshold at all.
-The cross-correlation sensitivity to a DM signal is therefore essentially immune to the blazar detection threshold.
+On the other hand, since no dark matter source has been resolved as a gamma-ray point source to date, the DM window function does not depend on the detection threshold at all.
 The quantitative impact of this suppression on the dark matter sensitivity is derived in the paper that follows, which compares the cross-correlation and auto-correlation constraints directly.
 
-Beyond the statistical advantages described above, the cross-correlation power spectrum carries richer physical information than either the energy spectrum or the auto-correlation alone.
+% Beyond the statistical advantages described above, auto/cross-correlation power spectra carry richer physical information than the energy spectrum alone.
+Auto and cross-correlation surveys further complement energy spectrum measurements by probing the spatial distribution of the gamma-ray emission.
 The angular dependence of $C_\ell^{\gamma g}$ can be decomposed into a 1-halo and a 2-halo contribution, following the halo-model formalism introduced in Section~\ref{sec:cross_correlations} and detailed in~\cite{Camera:2012cj,DGRB-review}.
 The 1-halo term captures correlations between pairs of points within the same halo --- for DM this traces the density profile within individual halos and dominates at small angular scales ($\ell \gtrsim 200$).
 The 2-halo term describes the large-scale clustering between different halos, following the linear matter power spectrum weighted by a bias factor.
 Measuring $C_\ell^{\gamma g}$ across multipoles therefore allows one to probe both the internal structure of DM halos and their clustering properties simultaneously, a richer physical picture than the energy spectrum or the auto-correlation alone can provide.
 
-\subsection{The ``Golden Channel'': Low-Redshift Galaxy Catalogs}
+\subsection{Low-Redshift Galaxy Catalogs}
 \label{sec:8.2.3}
 
-The redshift overlap argument of Section~\ref{sec:8.2.1} points to a specific class of galaxy catalogs as optimal for DM annihilation searches: dense, all-sky surveys covering the local universe at $z \lesssim 0.1$--$0.2$.
+% The redshift overlap argument of Section~\ref{sec:8.2.1} points to a specific class of galaxy catalogs as optimal for DM annihilation searches: dense, all-sky surveys covering the local universe at $z \lesssim 0.1$--$0.2$.
+As illustrated in Section~\ref{sec:8.2.1},  dense, all-sky surveys covering the local universe (z$<$0.1-0.2) are desirable for dark matter searches.
 Two datasets stand out in this role.
-The Two Micron All-Sky Survey (2MASS) Extended Source Catalog contains approximately one million galaxies and has a redshift distribution peaking at $z \approx 0.072$, making it one of the shallowest but most complete all-sky galaxy surveys available~\cite{DGRB-review}. The 2MASS Redshift Survey (2MRS) is its spectroscopic subsample, extending to $z \sim 0.1$ with full spectroscopic redshifts, providing both a precise $dN_g/dz$ for modeling and higher galaxy density per solid angle in the local volume.
-Both catalogs are nominally all-sky; however, in the cross-correlation analysis the low-latitude region around the Galactic plane (approximately $|b| < 30^\circ$) is masked in the gamma-ray maps to suppress Galactic diffuse emission~\cite{xia2015tomography,DGRB-review}. This masked region coincides with the region where dust obscuration already limits the completeness of infrared galaxy catalogs, making the masking consistent across both datasets.
+The Two Micron All-Sky Survey (2MASS) Extended Source Catalog contains approximately one million galaxies, it has a redshift distribution peaking at $z \approx 0.072$, and is one of the most complete all-sky galaxy surveys available at low redshift. The 2MASS Redshift Survey (2MRS) is its spectroscopic subsample, extending to $z \sim 0.1$ with full spectroscopic redshifts, providing both a precise $dN_g/dz$ for modeling and higher galaxy density per solid angle in the local volume.
+Both catalogs are nominally all-sky; however, in the cross-correlation analysis the low-latitude region around the Galactic plane (approximately $|b| < 30^\circ$) is masked in the gamma-ray maps to suppress Galactic diffuse emission~\cite{xia2015tomography,DGRB-review}. 
+% This masked region coincides with the region where dust obscuration already limits the completeness of infrared galaxy catalogs, making the masking consistent across both datasets.
 
-The practical advantage of 2MASS and 2MRS is that the blazar contribution to the UGRB in the local volume is strongly suppressed.
+The practical advantage of 2MASS and 2MRS is that the blazar contribution to the UGRB in the local volume is strongly suppressed in DM cross-correlation analyses.
 Although unresolved blazars may account for roughly 20--30\% of the total UGRB intensity integrated over all redshifts~\cite{Ajello:2015mfa}, this contribution arises predominantly from sources at $z \gtrsim 0.3$, where the large luminosity distance pushes their apparent flux below the Fermi-LAT detection threshold.
 In the local universe ($z \lesssim 0.1$), by contrast, even intrinsically faint blazars are close enough that their flux exceeds the point-source sensitivity of the Fermi-LAT~\cite{DGRB-review}; they are therefore individually detected, cataloged, and removed from the diffuse maps.
-As a result, the unresolved blazar window function drops sharply at low redshift, and unresolved blazars in the volume probed by 2MASS and 2MRS are a negligible component of the UGRB at Fermi-LAT energies~\cite{DGRB-review,Cuoco:2015rfa}.
-The cross-correlation of the UGRB with these catalogs is thus free from the dominant astrophysical contaminant that plagues both the gamma-ray auto-correlation and searches at higher redshift.
-The signal remaining in $C_\ell^{\gamma g}$ is a mixture of star-forming galaxies (SFGs), misaligned active galactic nuclei (mAGN), and any DM contribution --- precisely the populations one expects to find in the local large-scale structure.
+As a result, the unresolved blazar window function drops sharply at low redshift, and unresolved blazars in the volume probed by 2MASS and 2MRS are a less dominant component of the UGRB~\cite{DGRB-review,Cuoco:2015rfa}.
+The cross-correlation of the UGRB with these catalogs is thus less influenced by the dominant astrophysical contaminant that plagues both the gamma-ray auto-correlation and searches at higher redshift.
+The signal remaining in $C_\ell^{\gamma g}$ is a mixture of star-forming galaxies (SFGs), misaligned active galactic nuclei (mAGN), and any DM contribution.
 
-This expectation was confirmed observationally with 60 months of Fermi-LAT data: Xia et al.~\cite{xia2015tomography} detected a statistically significant cross-correlation between the UGRB and several galaxy catalogs at angular scales below one degree, finding that the signal is dominated by unresolved star-forming galaxies and misaligned AGNs, with blazars contributing less than 20\%.
+This expectation was confirmed observationally with 60 months of Fermi-LAT data: Xia et al.~\cite{xia2015tomography} detected a statistically significant cross-correlation between the UGRB and several galaxy catalogs at angular scales below one degree, finding that the signal appears to be dominated by unresolved star-forming galaxies and misaligned AGNs, with blazars contributing less than 20\%.
 Cuoco et al.~\cite{Cuoco:2015rfa} then performed a joint fit to the measured cross-correlation functions, decomposing the signal into DM, blazars, SFGs, and mAGN components.
-A non-zero DM contribution was allowed by the data but degenerate with the astrophysical components; the resulting upper limits on the annihilation cross section and decay lifetime were competitive with contemporary constraints from dwarf spheroidal galaxies and galaxy clusters, while arising from an independent observable --- the spatial coherence of DM emission with the cosmic web~\cite{regis2015particle}.
+A non-zero DM contribution was allowed by the data but degenerate with the astrophysical components; the resulting upper limits on the annihilation cross section and decay lifetime were competitive with constraints from dwarf spheroidal galaxies and galaxy clusters~\cite{regis2015particle}.
 
-Beyond galaxy number counts, gravitational lensing maps offer an alternative tracer with independent systematics.
-Cross-correlating the UGRB with weak-lensing convergence maps, Shirasaki et al.~\cite{Shirasaki:2014noa} found no significant signal and used the null result to set upper limits on $\langle\sigma v\rangle$, demonstrating that cosmic shear is useful for DM searches even in the absence of a detection.
-Camera et al.~\cite{Camera:2012cj} showed theoretically that the shear window function overlaps well with the DM annihilation window function, making this combination particularly clean from an astrophysical foreground perspective.
-The main practical challenge is the much larger noise of current weak-lensing surveys compared with galaxy number counts.
+% Beyond galaxy number counts, gravitational lensing maps offer an alternative tracer with independent systematics.
+% Cross-correlating the UGRB with weak-lensing convergence maps, Shirasaki et al.~\cite{Shirasaki:2014noa} found no significant signal and used the null result to set upper limits on $\langle\sigma v\rangle$, demonstrating that cosmic shear is useful for DM searches even in the absence of a detection.
+% Camera et al.~\cite{Camera:2012cj} showed theoretically that the shear window function overlaps well with the DM annihilation window function, making this combination particularly clean from an astrophysical foreground perspective.
+% The main practical challenge is the much larger noise of current weak-lensing surveys compared with galaxy number counts.
 
-Looking ahead to CTAO, the choice of 2MASS and 2MRS as the reference catalogs is well motivated: their redshift distributions maximize the overlap with the DM window function in the energy range where CTAO is most sensitive ($\gtrsim 50\,\mathrm{GeV}$, where EBL absorption shrinks the gamma-ray horizon of astrophysical sources to $z \lesssim 0.2$).
-As the EBL horizon effect progressively suppresses blazar emission at higher energies, the auto-correlation background decreases while the DM window function remains sharply peaked at low redshift.
-This energy-dependent competition makes the cross-correlation with local catalogs an even more powerful tool at TeV energies than at GeV energies, a feature that CTAO is uniquely positioned to exploit.
+\blue{In the context of cross-correlation with CTAO, the case for 2MASS and 2MRS is even stronger than in the Fermi-LAT analyses discussed above.
+These shallow surveys trace the local universe at $z \lesssim 0.1$, precisely where the DM annihilation signal peaks, since it is dominated by the halo and subhalos of our own Galaxy together with nearby structures.
+At TeV energies this overlap is reinforced by a second effect: above roughly $1\,\mathrm{TeV}$, pair production on the EBL shrinks the gamma-ray horizon to $z \lesssim 0.1$--$0.2$, exponentially attenuating distant blazars while the local dark matter photons arrive essentially unabsorbed.}
