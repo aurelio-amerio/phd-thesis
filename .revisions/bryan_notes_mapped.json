@@ -1,0 +1,1100 @@
+[
+ {
+  "page": 9,
+  "note": "pagina 1 aggiungere BAO BBN anche nella prima pèagina",
+  "dist": 49.2,
+  "para": "The nature of dark matter is an open question at the heart of fundamental physics. Over the past century, independent observations have established that the visible matter we can detect — stars, gas, dust — accounts for only a small fraction of the total matter content of the Universe. Flat rotation curves in spiral galaxies [1, 2], the dynamics and gravitational lensing of galaxy clusters [3], and the detailed pattern of temperature anisotropies in the cosmic microwave background (CMB) [4] all point consistently toward a dominant, non-luminous matter component. These observations, spanning scales from individual galaxies to the observable Universe as a whole, converge on the ΛCDM model, in which approximately 85% of the matter density is composed of cold, non-baryonic dark matter [4]. The non-baryonic character of this component is independently confirmed by Big Bang nucleosynthesis (BBN), which constrains the baryon density to Ωbh2 ≈0.022 — far below the total matter density Ωmh2 ≈0.14 measured by the CMB [5]."
+ },
+ {
+  "page": 11,
+  "note": "rimuovere rising slightly",
+  "dist": 68.8,
+  "para": "CHAPTER 1. THE DARK MATTER PROBLEM"
+ },
+ {
+  "page": 11,
+  "note": "label più grande",
+  "dist": 48.3,
+  "para": "Fig. 1.1. Rotation curves and mass decomposition of M31. Left: the original optical rotation curve measured by Rubin and Ford [1], one of the first datasets to show that the observed velocities do not follow the expected Keplerian decline. Right: a modern mass decomposition from Afruni et al. [15], showing the contributions of the stellar disk, gas, and dark matter halo to the total rotation curve; the dark matter halo dominates at large radii."
+ },
+ {
+  "page": 12,
+  "note": "valutare se mettere nella parte della CMB",
+  "dist": 15.1,
+  "para": "The Sunyaev-Zel’dovich (SZ) effect [20] offers a complementary probe. When CMB photons traverse a cluster, they undergo inverse-Compton scattering off the hot ICM electrons, gaining energy and producing a characteristic spectral distortion [5, 21]. The amplitude of this distortion is proportional to the integrated electron pressure along the line of sight and, unlike X-ray surface brightness, does not diminish with redshift. Combined with independent constraints on the baryon density from BBN and the CMB (where Ωb ≈0.05), SZ measurements of the cluster baryon fraction fb ≈Ωb/Ωm yield a total matter density Ωm ≈0.3, well above the baryonic contribution [4, 5]."
+ },
+ {
+  "page": 14,
+  "note": "label più grande",
+  "dist": 24.9,
+  "para": "600 ΛCDM"
+ },
+ {
+  "page": 14,
+  "note": "citare paper originale",
+  "dist": 12.6,
+  "para": "ℓ of the CMB temperature anisotropies, measured by the Planck satellite [4]. Bottom right: the same quantity computed in a universe without cold dark matter, showing the dramatic suppression of the third acoustic peak. Adapted from Cirelli et al. [5]."
+ },
+ {
+  "page": 14,
+  "note": "spiegare anche nbella figura la questione dei picchi",
+  "dist": 2.6,
+  "para": "ℓ of the CMB temperature anisotropies, measured by the Planck satellite [4]. Bottom right: the same quantity computed in a universe without cold dark matter, showing the dramatic suppression of the third acoustic peak. Adapted from Cirelli et al. [5]."
+ },
+ {
+  "page": 15,
+  "note": "commentare di più la figura",
+  "dist": 0.3,
+  "para": "Fig. 1.4. The imprint of dark matter on large-scale structure. Top: the large-scale distribution of galaxies from the Sloan Digital Sky Survey (SDSS). Bottom left: the observed matter power spectrum P(k). Bottom right: the same quantity computed in a universe without cold dark matter, showing the absence of small-scale structure. Adapted from Cirelli et al. [5]."
+ },
+ {
+  "page": 15,
+  "note": "spiegare meglio e correggere la dimensione",
+  "dist": 109.3,
+  "para": "Matter power spectrum"
+ },
+ {
+  "page": 15,
+  "note": "invertire colore",
+  "dist": 43.6,
+  "para": "CHAPTER 1. THE DARK MATTER PROBLEM"
+ },
+ {
+  "page": 15,
+  "note": "chiarifca, é x7 o x5",
+  "dist": 6.4,
+  "para": "The evidence reviewed so far establishes that the total matter density is Ωmh2 ≈0.14, while the CMB independently constrains the baryon density to Ωbh2 ≈0.022 [4] — nearly seven times smaller. Could this missing matter simply be a form of ordinary matter that happens to be dark: cold molecular gas clouds, compact stellar remnants, or some as-yet-undetected baryonic component hiding in the intergalactic medium? BBN decisively rules out this possibility. The production of light elements during the first few minutes after the Big Bang is highly sensitive to the baryon-to-photon ratio, and the observed primordial abundances of deuterium, 4He, and 7Li independently constrain the baryon density to Ωbh2 ≈0.022 [30, 31] — in agreement with the CMB, but through entirely different physics. Crucially, this constraint applies to the total baryon density, not just the visible fraction: any baryonic matter, however dark or diffuse, would have participated in nucleosynthesis and altered the primordial element yields Whatever dark"
+ },
+ {
+  "page": 15,
+  "note": "modificare, percé iu PBH sono materia barionica",
+  "dist": 5.8,
+  "para": "The evidence reviewed so far establishes that the total matter density is Ωmh2 ≈0.14, while the CMB independently constrains the baryon density to Ωbh2 ≈0.022 [4] — nearly seven times smaller. Could this missing matter simply be a form of ordinary matter that happens to be dark: cold molecular gas clouds, compact stellar remnants, or some as-yet-undetected baryonic component hiding in the intergalactic medium? BBN decisively rules out this possibility. The production of light elements during the first few minutes after the Big Bang is highly sensitive to the baryon-to-photon ratio, and the observed primordial abundances of deuterium, 4He, and 7Li independently constrain the baryon density to Ωbh2 ≈0.022 [30, 31] — in agreement with the CMB, but through entirely different physics. Crucially, this constraint applies to the total baryon density, not just the visible fraction: any baryonic matter, however dark or diffuse, would have participated in nucleosynthesis and altered the primordial element yields Whatever dark"
+ },
+ {
+  "page": 16,
+  "note": "smorzare perché ci sono pbh",
+  "dist": 0.5,
+  "para": "The evidence discussed in the previous section suggests that dark matter constitutes the dominant form of matter in the Universe and that it cannot be made of Standard Model particles. This conclusion opens a large parameter space of possible candidates: viable masses span roughly ninety orders of magnitude, from ultra-light bosonic fields with m ∼10−22 eV that behave as classical waves on galactic scales [32] up to macroscopic primordial black holes. In this section, we narrow our focus to the candidate class which is most relevant to Chapters 4through 8 of this thesis: weakly interacting massive particles (WIMPs). In fact, the so-called WIMP miracle — the observation that a thermal relic with electroweak-scale mass and coupling naturally reproduces the observed dark matter abundance — has made WIMPs one of the most compelling paradigms over the past two decades."
+ },
+ {
+  "page": 16,
+  "note": "circa 1e-26",
+  "dist": 0.0,
+  "para": "Section 1.2.1 surveys the candidate landscape — some of the main classes (including WIMPs, axions, sterile neutrinos, primordial black holes, FIMPs) together with modifications of the cold collisionless paradigm such as warm and self-interacting dark matter — to place the WIMP focus in context. Section 1.2.2 describes the thermal freeze-out mechanism, presents the Boltzmann equation governing the comoving abundance, and identifies the thermally averaged annihilation cross section 〈σvrel〉as the central observable linking early-universe cosmology to present-day signals; the canonical benchmark 〈σv〉cosmo ≈2.2×10−26 cm3/s emerges from this analysis. Section 1.2.3 reviews the theoretical bounds that bracket the allowed WIMP mass range, with the Lee–Weinberg argument setting a lower edge near a few GeV and partial-wave unitarity capping the upper end near 100 TeV, jointly defining the GeV–100 TeV thermal window targeted by gamma-ray experiments. Section 1.2.4 discusses the refinements that complicate the mapping between the freeze-out cross section and the present-day annihilation rate: velocity dependence, Sommerfeld enhancement, co-annihilation, and resonances. The thermal-relic cross section, established by the freeze-out calculation, serves as the primary benchmark for the indirect-detection analyses throughout this thesis."
+ },
+ {
+  "page": 16,
+  "note": "under certain hypothesis",
+  "dist": 0.0,
+  "para": "Section 1.2.1 surveys the candidate landscape — some of the main classes (including WIMPs, axions, sterile neutrinos, primordial black holes, FIMPs) together with modifications of the cold collisionless paradigm such as warm and self-interacting dark matter — to place the WIMP focus in context. Section 1.2.2 describes the thermal freeze-out mechanism, presents the Boltzmann equation governing the comoving abundance, and identifies the thermally averaged annihilation cross section 〈σvrel〉as the central observable linking early-universe cosmology to present-day signals; the canonical benchmark 〈σv〉cosmo ≈2.2×10−26 cm3/s emerges from this analysis. Section 1.2.3 reviews the theoretical bounds that bracket the allowed WIMP mass range, with the Lee–Weinberg argument setting a lower edge near a few GeV and partial-wave unitarity capping the upper end near 100 TeV, jointly defining the GeV–100 TeV thermal window targeted by gamma-ray experiments. Section 1.2.4 discusses the refinements that complicate the mapping between the freeze-out cross section and the present-day annihilation rate: velocity dependence, Sommerfeld enhancement, co-annihilation, and resonances. The thermal-relic cross section, established by the freeze-out calculation, serves as the primary benchmark for the indirect-detection analyses throughout this thesis."
+ },
+ {
+  "page": 16,
+  "note": "~MeV",
+  "dist": 0.0,
+  "para": "Section 1.2.1 surveys the candidate landscape — some of the main classes (including WIMPs, axions, sterile neutrinos, primordial black holes, FIMPs) together with modifications of the cold collisionless paradigm such as warm and self-interacting dark matter — to place the WIMP focus in context. Section 1.2.2 describes the thermal freeze-out mechanism, presents the Boltzmann equation governing the comoving abundance, and identifies the thermally averaged annihilation cross section 〈σvrel〉as the central observable linking early-universe cosmology to present-day signals; the canonical benchmark 〈σv〉cosmo ≈2.2×10−26 cm3/s emerges from this analysis. Section 1.2.3 reviews the theoretical bounds that bracket the allowed WIMP mass range, with the Lee–Weinberg argument setting a lower edge near a few GeV and partial-wave unitarity capping the upper end near 100 TeV, jointly defining the GeV–100 TeV thermal window targeted by gamma-ray experiments. Section 1.2.4 discusses the refinements that complicate the mapping between the freeze-out cross section and the present-day annihilation rate: velocity dependence, Sommerfeld enhancement, co-annihilation, and resonances. The thermal-relic cross section, established by the freeze-out calculation, serves as the primary benchmark for the indirect-detection analyses throughout this thesis."
+ },
+ {
+  "page": 16,
+  "note": "standard model baryons",
+  "dist": 4.3,
+  "para": "1.2.1 The Landscape of Candidates"
+ },
+ {
+  "page": 17,
+  "note": "qua ci sono due scale, kg e eV, magari mettere due scale? o unificare le unità di misura",
+  "dist": 0.0,
+  "para": "Å-1 Hubble Solar mass Asteroid mass Planck scale weak scale Tnow"
+ },
+ {
+  "page": 17,
+  "note": "corregegre la parte su non baryonica, e smorzare",
+  "dist": 0.0,
+  "para": "quantum-mechanical floor on fermionic candidates comes from the Tremaine–Gunn bound [33, 34]: Pauli exclusion limits the phase-space density that a fermionic species can achieve, requiring m ≳0.4–1 keV to match the inner profiles observed in dwarf-spheroidal halos. Dark matter must therefore be a new, non-baryonic particle: either cold (non-relativistic at decoupling, negligible free-streaming length) or at most warm (semi-relativistic, free-streaming length intermediate between neutrino-like relics and cold candidates, suppressing small-scale structure without erasing it). The open question is which microphysical realization Nature has chosen."
+ },
+ {
+  "page": 17,
+  "note": "ok rimuovere la parte su 2 decadi, credo sia ripetuto",
+  "dist": 12.3,
+  "para": "WIMPs constitute one of the most popular cold dark matter candidates. They have masses in the GeV–TeV range and interact with Standard Model particles through weak-scale couplings. They are produced through thermal freeze-out in the early Universe, a mechanism we describe in detail in Section 1.2.2. The observation that a particle with weak-scale mass and coupling naturally yields the observed relic abundance — the WIMP miracle — has made WIMPs one of the dominant paradigms in the dark matter field for over two decades. Concrete realizations include the lightest neutralino of supersymmetric extensions of the Standard Model [35] and minimal dark matter scenarios [36]. The same annihilation cross section that sets the relic density also fixes the rate at which WIMPs annihilate into gamma rays in present-day halos, so that indirect-detection signals provide a complementary probe to cosmological measurements of the relic abundance."
+ },
+ {
+  "page": 17,
+  "note": "under s wave assumption",
+  "dist": 1.8,
+  "para": "WIMPs constitute one of the most popular cold dark matter candidates. They have masses in the GeV–TeV range and interact with Standard Model particles through weak-scale couplings. They are produced through thermal freeze-out in the early Universe, a mechanism we describe in detail in Section 1.2.2. The observation that a particle with weak-scale mass and coupling naturally yields the observed relic abundance — the WIMP miracle — has made WIMPs one of the dominant paradigms in the dark matter field for over two decades. Concrete realizations include the lightest neutralino of supersymmetric extensions of the Standard Model [35] and minimal dark matter scenarios [36]. The same annihilation cross section that sets the relic density also fixes the rate at which WIMPs annihilate into gamma rays in present-day halos, so that indirect-detection signals provide a complementary probe to cosmological measurements of the relic abundance."
+ },
+ {
+  "page": 17,
+  "note": "o comunque dire che c'é una assumption",
+  "dist": 1.8,
+  "para": "WIMPs constitute one of the most popular cold dark matter candidates. They have masses in the GeV–TeV range and interact with Standard Model particles through weak-scale couplings. They are produced through thermal freeze-out in the early Universe, a mechanism we describe in detail in Section 1.2.2. The observation that a particle with weak-scale mass and coupling naturally yields the observed relic abundance — the WIMP miracle — has made WIMPs one of the dominant paradigms in the dark matter field for over two decades. Concrete realizations include the lightest neutralino of supersymmetric extensions of the Standard Model [35] and minimal dark matter scenarios [36]. The same annihilation cross section that sets the relic density also fixes the rate at which WIMPs annihilate into gamma rays in present-day halos, so that indirect-detection signals provide a complementary probe to cosmological measurements of the relic abundance."
+ },
+ {
+  "page": 17,
+  "note": "valutare se condensare",
+  "dist": 7.2,
+  "para": "Axions are among the most popular alternatives to WIMPs, and as direct-detection limits on WIMPs have tightened, they have drawn growing attention from the dark matter community. The axion was originally proposed by Peccei and Quinn [37] as the pseudo-Nambu–Goldstone boson of a spontaneously broken global symmetry introduced to solve the strong CP problem of QCD [38, 39]. It acquires a small mass at the QCD phase transition, and an initial misalignment between its field value and the potential minimum sources a coherent oscillating condensate that today behaves as cold dark matter. This misalignment mechanism [40–42] is generic to any light scalar with a late-developing potential and naturally explains why such a feebly coupled particle can saturate the observed relic density. Because axions are bosons, they evade the Tremaine–Gunn bound and can sit at occupation numbers N ≫1, behaving as a classical field rather than as a gas of quanta. The phenomenologically viable range of axion masses is broad, spanning roughly 10−12 to 107 eV once astrophysical, cosmological, and laboratory bounds are combined [43, 44]."
+ },
+ {
+  "page": 18,
+  "note": "cambiare l-ordine in base alla massa del candidato",
+  "dist": 18.3,
+  "para": "Primordial black holes (PBHs) offer a qualitatively different option in which the dark matter is not a new particle at all, but a population of macroscopic objects formed from the collapse of large density perturbations before BBN. Because PBHs are not made of baryons after BBN, they bypass the baryon-budget constraint of Section 1.1.3. Microlensing surveys, dynamical bounds on wide stellar binaries and ultra-faint dwarfs, and CMB spectral-distortion limits together exclude PBHs as the dominant dark-matter component across most of the mass range [48, 49]. The single surviving window for a monochromatic PBH population to constitute all of the dark matter is the asteroid-mass range, 10−16 M⊙≲M ≲3×10−12 M⊙, where Hawking-evaporation bounds from below and microlensing limits from above leave a narrow gap that next-generation experiments aim to close. [AA: check again this number, the plot is small]"
+ },
+ {
+  "page": 18,
+  "note": "processes like, perché ce ne sono altri",
+  "dist": 0.0,
+  "para": "An alternative production mechanism is freeze-in, in which feebly interacting massive particles (FIMPs) couple so weakly to the thermal bath that they never reach equilibrium [50]. Their abundance is built up gradually through rare decays and 2 →2 scatterings, and the final relic density grows with the coupling rather than shrinking — the inverse of the freeze-out logic described in Section 1.2.2. The viable FIMP mass range is broad, and the extreme smallness of the couplings places FIMPs out of reach of direct-detection and collider searches, shifting attention to cosmological and astrophysical probes."
+ },
+ {
+  "page": 18,
+  "note": "ok togliere, sono accessibili con collider searches",
+  "dist": 0.0,
+  "para": "An alternative production mechanism is freeze-in, in which feebly interacting massive particles (FIMPs) couple so weakly to the thermal bath that they never reach equilibrium [50]. Their abundance is built up gradually through rare decays and 2 →2 scatterings, and the final relic density grows with the coupling rather than shrinking — the inverse of the freeze-out logic described in Section 1.2.2. The viable FIMP mass range is broad, and the extreme smallness of the couplings places FIMPs out of reach of direct-detection and collider searches, shifting attention to cosmological and astrophysical probes."
+ },
+ {
+  "page": 18,
+  "note": "chiarificare la questioen della massa, sigmav é poco dipendente dalla massa al momemento del freeze-out",
+  "dist": 17.5,
+  "para": "These examples of candidates make clear how little the existing evidence constrains the microphysics of the dark sector. We narrow our attention now to the WIMP paradigm — the candidate class probed by the gamma-ray indirect-detection analyses developed in the later chapters of this thesis. The appeal of this framework is that its phenomenology is governed by a single quantity, the velocity-averaged annihilation cross section 〈σv〉, which simultaneously fixes the cosmological relic abundance, the elastic-scattering rate on nuclei, the production cross section at colliders, and the present-day annihilation rate in galactic halos. The following subsection"
+ },
+ {
+  "page": 19,
+  "note": "rinomina freeze-out",
+  "dist": 13.6,
+  "para": "1.2.2 Thermodynamics of the Early Universe"
+ },
+ {
+  "page": 19,
+  "note": "titolo troppo ampio",
+  "dist": 13.6,
+  "para": "1.2.2 Thermodynamics of the Early Universe"
+ },
+ {
+  "page": 19,
+  "note": "scrivere in equilibrio",
+  "dist": 7.7,
+  "para": "Consider a hypothetical species χ in chemical equilibrium with the Standard Model plasma of the early Universe, sustained by pair-annihilation reactions χχ ↔SMSM that proceed in both directions at equal rates. As the Universe expands and cools, two processes run in competition: the cosmological expansion, which dilutes everything and lowers the temperature, and the annihilation rate, which depends on the density of χ particles still available to find each other. Eventually the expansion wins: the reactions become too slow to maintain equilibrium, the comoving number density stops tracking its equilibrium value, and whatever population remains is locked in as the relic abundance we observe today. The purpose of this subsection is to identify what kind of particle reproduces Ωχh2 ≈0.12, and to show that the observable that controls the answer is not the mass of χ but its velocity-averaged annihilation cross section 〈σv〉."
+ },
+ {
+  "page": 19,
+  "note": "chiarire bene che tipo di equilibrio",
+  "dist": 7.7,
+  "para": "Consider a hypothetical species χ in chemical equilibrium with the Standard Model plasma of the early Universe, sustained by pair-annihilation reactions χχ ↔SMSM that proceed in both directions at equal rates. As the Universe expands and cools, two processes run in competition: the cosmological expansion, which dilutes everything and lowers the temperature, and the annihilation rate, which depends on the density of χ particles still available to find each other. Eventually the expansion wins: the reactions become too slow to maintain equilibrium, the comoving number density stops tracking its equilibrium value, and whatever population remains is locked in as the relic abundance we observe today. The purpose of this subsection is to identify what kind of particle reproduces Ωχh2 ≈0.12, and to show that the observable that controls the answer is not the mass of χ but its velocity-averaged annihilation cross section 〈σv〉."
+ },
+ {
+  "page": 19,
+  "note": "tirare in ballo anche la questione del 30-50 volte la massa della DM",
+  "dist": 22.6,
+  "para": "A particle that annihilates strongly enough stays in chemical equilibrium for a long time: it follows the equilibrium population as the latter drops exponentially, and only departs from it when the equilibrium abundance has already become small. Such a particle leaves behind few relics. A particle that annihilates weakly, by contrast, loses contact with the bath earlier, while its equilibrium abundance is still relatively large, and therefore freezes out at a higher residual density. In the thermal-relic context, the weakest particle wins. The dark-matter abundance is set by how little a candidate annihilates, not by how massive it is. The velocity-averaged annihilation rate 〈σvrel〉sets the relic abundance to first approximation, while the mass enters the final answer only logarithmically, through the temperature at which decoupling occurs."
+ },
+ {
+  "page": 19,
+  "note": "leave behind",
+  "dist": 16.2,
+  "para": "A particle that annihilates strongly enough stays in chemical equilibrium for a long time: it follows the equilibrium population as the latter drops exponentially, and only departs from it when the equilibrium abundance has already become small. Such a particle leaves behind few relics. A particle that annihilates weakly, by contrast, loses contact with the bath earlier, while its equilibrium abundance is still relatively large, and therefore freezes out at a higher residual density. In the thermal-relic context, the weakest particle wins. The dark-matter abundance is set by how little a candidate annihilates, not by how massive it is. The velocity-averaged annihilation rate 〈σvrel〉sets the relic abundance to first approximation, while the mass enters the final answer only logarithmically, through the temperature at which decoupling occurs."
+ },
+ {
+  "page": 19,
+  "note": "lasica",
+  "dist": 16.2,
+  "para": "A particle that annihilates strongly enough stays in chemical equilibrium for a long time: it follows the equilibrium population as the latter drops exponentially, and only departs from it when the equilibrium abundance has already become small. Such a particle leaves behind few relics. A particle that annihilates weakly, by contrast, loses contact with the bath earlier, while its equilibrium abundance is still relatively large, and therefore freezes out at a higher residual density. In the thermal-relic context, the weakest particle wins. The dark-matter abundance is set by how little a candidate annihilates, not by how massive it is. The velocity-averaged annihilation rate 〈σvrel〉sets the relic abundance to first approximation, while the mass enters the final answer only logarithmically, through the temperature at which decoupling occurs."
+ },
+ {
+  "page": 19,
+  "note": "correggere ,ho cambiato la notazione, non più Y",
+  "dist": 7.9,
+  "para": "Figure 1.6 shows the comoving abundance Y ≡nχ/s against the dimensionless inverse temperature x ≡Mχ/T. At high temperatures (x ≪1), χ is effectively relativistic and present in numbers comparable to the photons; the actual abundance follows the equilibrium curve Yeq. Once the temperature drops below the rest mass (x ≳1), producing a χ pair costs an exponential Boltzmann penalty, and Yeq falls off as e−x. The actual abundance tracks this decline only as long as the annihilation rate Γ = nχ〈σvrel〉exceeds the Hubble rate H; once Γ drops below H, annihilations can no longer keep up with expansion, Y moves away from Yeq, and the comoving abundance plateaus at its asymptotic value Y∞. For a weakly interacting candidate at the electroweak scale, this freeze-out happens at Tfo ∼Mχ/(20–25) — already non-relativistic, but well before the present epoch."
+ },
+ {
+  "page": 19,
+  "note": "specifica number density, non numbers",
+  "dist": 12.0,
+  "para": "eq is the inverse process, in which χ pairs are recreated from the thermal bath at the rate dictated by detailed balance. It is convenient to factor out the trivial expansion dilution by passing from nχ to the comoving abundance Y ≡nχ/s, where s is the entropy density. Because the total entropy in a comoving volume is conserved during adiabatic expansion, Y remains constant whenever the dark-matter number per comoving volume is also conserved; variations of Y thus track only annihilation and creation, rather than the cosmological dilution shared by every species."
+ },
+ {
+  "page": 19,
+  "note": "footnote con le approsimazioni",
+  "dist": 0.0,
+  "para": "� , (1.2.1)"
+ },
+ {
+  "page": 20,
+  "note": "sotto ipotesi di s wave",
+  "dist": 0.0,
+  "para": "0.12 ≈2.2×10−26 cm3/s 〈σvrel〉 , (1.2.2)"
+ },
+ {
+  "page": 20,
+  "note": "cancella la curva verde, non serve a nulla",
+  "dist": 44.4,
+  "para": "〈σv〉em"
+ },
+ {
+  "page": 20,
+  "note": "spiegare s wave prima di questa parte",
+  "dist": 26.9,
+  "para": "Solving Eq. (1.2.1) through the freeze-out transition, in the limit of s-wave annihilation and weak-scale parameters, yields [5, 6]:"
+ },
+ {
+  "page": 20,
+  "note": "riaggiungere la parte con la connesione tra omega e n",
+  "dist": 71.9,
+  "para": "Solving Eq. (1.2.1) through the freeze-out transition, in the limit of s-wave annihilation and weak-scale parameters, yields [5, 6]:"
+ },
+ {
+  "page": 21,
+  "note": "togliere o modificare la parte model building, é sotto l'assunzione s-wave",
+  "dist": 3.7,
+  "para": "χ. Plugging in the weak-interaction value α ∼αweak ∼0.03 and demanding a match to 〈σv〉cosmo returns a mass Mχ of order a few hundred GeV to a few TeV — the electroweak scale, recovered without any input from particle-physics model- building. This result is known as the WIMP miracle: a stable particle with mass and coupling strength at the electroweak scale, produced thermally in the early Universe, naturally yields a relic abundance consistent with the observed dark matter density [5, 6]. The inverse relation of Eq. (1.2.2) is illustrated in Figure 1.7: the orange band marks the cross section that reproduces the measured abundance, while smaller (larger) values freeze out too early (too late) and overproduce (underproduce) dark matter."
+ },
+ {
+  "page": 21,
+  "note": "magari spostare la parte sulla s-wave prima, perché é utile",
+  "dist": 22.0,
+  "para": "In this section we explore the viable mass range for WIMPs. Consider first a particle that interacts with the Standard Model only through the weak interaction, with no dark mediator of its own. At freeze-out energies the annihilation cross section for such a particle, dominated by exchange"
+ },
+ {
+  "page": 21,
+  "note": "countours",
+  "dist": 8.8,
+  "para": "Fig. 1.7. Dark matter freeze-out abundance ΩDMh2 as a function of DM mass and annihilation cross-section 〈σv〉for Majorana dark matter. The measured cosmological abundance ΩDMh2 = 0.120 ± 0.001 is reproduced within the orange band at 3σ. For smaller (larger) annihilation cross-sections — i.e. in the lower (upper) part of the plot — the freeze-out happens too early (too late) and therefore the DM relic abundance is too high (too low). Credit: Cirelli et al. [5]."
+ },
+ {
+  "page": 22,
+  "note": "controlla questa frase, perché m^2 vale per fermi interactions",
+  "dist": 6.5,
+  "para": "χ/2π, where GF is the Fermi constant [61]. This is an s-wave process, meaning the cross section is independent of the relative velocity — a noteworthy property, since it distinguishes whether or not the same 〈σv〉that fixes the relic abundance also drives present-day annihilations in galactic halos. Because σ0 scales as M2"
+ },
+ {
+  "page": 22,
+  "note": "credo che servisse per il lee-weinberg, ma la sigmav effettiva va come 1/M^2",
+  "dist": 6.5,
+  "para": "χ/2π, where GF is the Fermi constant [61]. This is an s-wave process, meaning the cross section is independent of the relative velocity — a noteworthy property, since it distinguishes whether or not the same 〈σv〉that fixes the relic abundance also drives present-day annihilations in galactic halos. Because σ0 scales as M2"
+ },
+ {
+  "page": 22,
+  "note": "in approximation of fermi interaction",
+  "dist": 0.0,
+  "para": "χ/2π, where GF is the Fermi constant [61]. This is an s-wave process, meaning the cross section is independent of the relative velocity — a noteworthy property, since it distinguishes whether or not the same 〈σv〉that fixes the relic abundance also drives present-day annihilations in galactic halos. Because σ0 scales as M2"
+ },
+ {
+  "page": 23,
+  "note": "cambiare titolo, perché effettivamente velocity dependance é sempre freeze-out",
+  "dist": 11.7,
+  "para": "Velocity-dependent cross sections. The bounds derived in Section 1.2.3 assumed the sim- plest possible freeze-out scenario: a single stable species, two-body s-wave annihilation with velocity-independent cross section, and weak-scale couplings. Several physically motivated effects modify this picture and, more importantly, alter the mapping between the cosmological cross section 〈σv〉cosmo that fixes the relic abundance and the present-day annihilation rate probed by indirect detection. Non-relativistic two-body annihilation admits the partial-wave expansion"
+ },
+ {
+  "page": 23,
+  "note": "scrivere s-wave dominant",
+  "dist": 7.4,
+  "para": "Velocity-dependent cross sections. The bounds derived in Section 1.2.3 assumed the sim- plest possible freeze-out scenario: a single stable species, two-body s-wave annihilation with velocity-independent cross section, and weak-scale couplings. Several physically motivated effects modify this picture and, more importantly, alter the mapping between the cosmological cross section 〈σv〉cosmo that fixes the relic abundance and the present-day annihilation rate probed by indirect detection. Non-relativistic two-body annihilation admits the partial-wave expansion"
+ },
+ {
+  "page": 23,
+  "note": "connettere emglio con il paper dei sottoaloni",
+  "dist": 18.1,
+  "para": "Sommerfeld enhancement. A second class of corrections arises when dark matter couples to a mediator with mass MV ≪Mχ. The long-range attractive force distorts the incoming-pair wave function and enhances the annihilation probability at low velocities, a non-perturbative effect known as the Sommerfeld enhancement [69, 70]. The enhancement factor S scales as S ∝1/vrel in the Coulomb regime vrel ≪παg, saturates at vrel ∼MV/Mχ for Yukawa mediators, and can exhibit resonant peaks at specific mass ratios where a zero-energy bound state appears in the dark-sector potential. Halo velocities vrel ∼10−3 c therefore probe a regime in which S can reach O(102–103) [69], while freeze-out velocities vrel ∼0.2 c see only moderate enhancement. The Sommerfeld effect is essential for heavy electroweak WIMPs — the pure wino at Mχ ∼3TeV, the higgsino near Mχ ∼1.1TeV, and Minimal Dark Matter candidates more generally — where it shifts the thermal-relic mass from hundreds of GeV to multi-TeV scales. We return to this point in Section 1.4 when discussing J-factors and the loop-suppressed channels of Minimal Dark Matter. For the pure wino in particular, the enhanced halo rate at vrel ∼10−3 c is large enough that current gamma-ray constraints effectively rule the candidate out for cuspy halo profiles. For the GeV-scale candidates relevant to the Galactic Center excess analyzed in Chapter 4, by contrast, the standard thermal cross section fits the observed signal without invoking Sommerfeld enhancement, as Daylan et al. [71] showed explicitly for a ∼30–50GeV WIMP annihilating at 〈σv〉≈(1–3)×10−26 cm3/s."
+ },
+ {
+  "page": 23,
+  "note": "controlla la definizione del culomb regime",
+  "dist": 0.0,
+  "para": "Sommerfeld enhancement. A second class of corrections arises when dark matter couples to a mediator with mass MV ≪Mχ. The long-range attractive force distorts the incoming-pair wave function and enhances the annihilation probability at low velocities, a non-perturbative effect known as the Sommerfeld enhancement [69, 70]. The enhancement factor S scales as S ∝1/vrel in the Coulomb regime vrel ≪παg, saturates at vrel ∼MV/Mχ for Yukawa mediators, and can exhibit resonant peaks at specific mass ratios where a zero-energy bound state appears in the dark-sector potential. Halo velocities vrel ∼10−3 c therefore probe a regime in which S can reach O(102–103) [69], while freeze-out velocities vrel ∼0.2 c see only moderate enhancement. The Sommerfeld effect is essential for heavy electroweak WIMPs — the pure wino at Mχ ∼3TeV, the higgsino near Mχ ∼1.1TeV, and Minimal Dark Matter candidates more generally — where it shifts the thermal-relic mass from hundreds of GeV to multi-TeV scales. We return to this point in Section 1.4 when discussing J-factors and the loop-suppressed channels of Minimal Dark Matter. For the pure wino in particular, the enhanced halo rate at vrel ∼10−3 c is large enough that current gamma-ray constraints effectively rule the candidate out for cuspy halo profiles. For the GeV-scale candidates relevant to the Galactic Center excess analyzed in Chapter 4, by contrast, the standard thermal cross section fits the observed signal without invoking Sommerfeld enhancement, as Daylan et al. [71] showed explicitly for a ∼30–50GeV WIMP annihilating at 〈σv〉≈(1–3)×10−26 cm3/s."
+ },
+ {
+  "page": 23,
+  "note": "sommerfield é sempre una apprissimazione, no narrivi davvero al bound state",
+  "dist": 14.4,
+  "para": "Sommerfeld enhancement. A second class of corrections arises when dark matter couples to a mediator with mass MV ≪Mχ. The long-range attractive force distorts the incoming-pair wave function and enhances the annihilation probability at low velocities, a non-perturbative effect known as the Sommerfeld enhancement [69, 70]. The enhancement factor S scales as S ∝1/vrel in the Coulomb regime vrel ≪παg, saturates at vrel ∼MV/Mχ for Yukawa mediators, and can exhibit resonant peaks at specific mass ratios where a zero-energy bound state appears in the dark-sector potential. Halo velocities vrel ∼10−3 c therefore probe a regime in which S can reach O(102–103) [69], while freeze-out velocities vrel ∼0.2 c see only moderate enhancement. The Sommerfeld effect is essential for heavy electroweak WIMPs — the pure wino at Mχ ∼3TeV, the higgsino near Mχ ∼1.1TeV, and Minimal Dark Matter candidates more generally — where it shifts the thermal-relic mass from hundreds of GeV to multi-TeV scales. We return to this point in Section 1.4 when discussing J-factors and the loop-suppressed channels of Minimal Dark Matter. For the pure wino in particular, the enhanced halo rate at vrel ∼10−3 c is large enough that current gamma-ray constraints effectively rule the candidate out for cuspy halo profiles. For the GeV-scale candidates relevant to the Galactic Center excess analyzed in Chapter 4, by contrast, the standard thermal cross section fits the observed signal without invoking Sommerfeld enhancement, as Daylan et al. [71] showed explicitly for a ∼30–50GeV WIMP annihilating at 〈σv〉≈(1–3)×10−26 cm3/s."
+ },
+ {
+  "page": 23,
+  "note": "specificare dylan \"per la prima volta\"",
+  "dist": 0.0,
+  "para": "Sommerfeld enhancement. A second class of corrections arises when dark matter couples to a mediator with mass MV ≪Mχ. The long-range attractive force distorts the incoming-pair wave function and enhances the annihilation probability at low velocities, a non-perturbative effect known as the Sommerfeld enhancement [69, 70]. The enhancement factor S scales as S ∝1/vrel in the Coulomb regime vrel ≪παg, saturates at vrel ∼MV/Mχ for Yukawa mediators, and can exhibit resonant peaks at specific mass ratios where a zero-energy bound state appears in the dark-sector potential. Halo velocities vrel ∼10−3 c therefore probe a regime in which S can reach O(102–103) [69], while freeze-out velocities vrel ∼0.2 c see only moderate enhancement. The Sommerfeld effect is essential for heavy electroweak WIMPs — the pure wino at Mχ ∼3TeV, the higgsino near Mχ ∼1.1TeV, and Minimal Dark Matter candidates more generally — where it shifts the thermal-relic mass from hundreds of GeV to multi-TeV scales. We return to this point in Section 1.4 when discussing J-factors and the loop-suppressed channels of Minimal Dark Matter. For the pure wino in particular, the enhanced halo rate at vrel ∼10−3 c is large enough that current gamma-ray constraints effectively rule the candidate out for cuspy halo profiles. For the GeV-scale candidates relevant to the Galactic Center excess analyzed in Chapter 4, by contrast, the standard thermal cross section fits the observed signal without invoking Sommerfeld enhancement, as Daylan et al. [71] showed explicitly for a ∼30–50GeV WIMP annihilating at 〈σv〉≈(1–3)×10−26 cm3/s."
+ },
+ {
+  "page": 24,
+  "note": "valutare se comprimere in 1 mini sezione",
+  "dist": 18.5,
+  "para": "The same coupling that governs dark matter annihilation in the early universe also mediates scattering off nuclei in underground detectors and pair-production at particle colliders. We therefore explore three complementary strategies for detecting dark matter: direct detection, collider searches, and indirect detection."
+ },
+ {
+  "page": 25,
+  "note": "mettere proporzionale, non ~, perché ci sarebbe un fattore angolare (1-cos theta)",
+  "dist": 0.0,
+  "para": "Direct detection experiments search for the faint recoil produced when a dark matter particle from the galactic halo scatters off an atomic nucleus inside an underground detector. We restrict the discussion to WIMP–nucleus scattering, being the channel most relevant to this thesis. A WIMP with mass Mχ and velocity v ∼10−3 c strikes a target nucleus of mass mA essentially at rest, transferring a recoil energy ER ∼µ2"
+ },
+ {
+  "page": 25,
+  "note": "mettere proporzionale",
+  "dist": 0.0,
+  "para": "Av2/mA, where µA = MχmA/(Mχ + mA) is the reduced mass of the system [73]. For a WIMP and a xenon nucleus of comparable mass (Mχ ∼mA ∼ 100 GeV), this yields ER ∼20 keV — small enough that detecting it requires highly sensitive instruments, but large enough to be within reach of modern technology. In addition to the recoil energy spectrum, the Earth’s orbital motion around the Sun modulates the WIMP flux by ∼5% annually (peaking around June 2), providing a distinctive time-dependent signature [74]. The DAMA/LIBRA experiment has observed a persistent annual modulation signal in NaI(Tl) crystals over more than two decades [75], but its interpretation as WIMPs is in strong tension with null results from other experiments using different target materials, and the claimed signal remains controversial [76]."
+ },
+ {
+  "page": 25,
+  "note": "controlla dove compare, forse manca la referenza",
+  "dist": 19.4,
+  "para": "Fig. 1.8. The detection triangle: three complementary strategies for detecting dark matter, each corresponding to a different reading of the same underlying interaction vertex. Left: direct detection — dark matter scatters off a Standard Model target in a laboratory. Center: indirect detection — dark matter annihilates into Standard Model particles in astrophysical environments. Right: collider production — Standard Model particles produce dark matter at accelerators. Figure from Cirelli et al. [5]."
+ },
+ {
+  "page": 25,
+  "note": "capire meglio la figura, perché c'é il dashed?",
+  "dist": 26.5,
+  "para": "��"
+ },
+ {
+  "page": 25,
+  "note": "dm annihilates or decay in SM particles",
+  "dist": 0.0,
+  "para": "Fig. 1.8. The detection triangle: three complementary strategies for detecting dark matter, each corresponding to a different reading of the same underlying interaction vertex. Left: direct detection — dark matter scatters off a Standard Model target in a laboratory. Center: indirect detection — dark matter annihilates into Standard Model particles in astrophysical environments. Right: collider production — Standard Model particles produce dark matter at accelerators. Figure from Cirelli et al. [5]."
+ },
+ {
+  "page": 25,
+  "note": "come mai c'é il dashed? se nnò rifare la figura",
+  "dist": 0.3,
+  "para": "Fig. 1.8. The detection triangle: three complementary strategies for detecting dark matter, each corresponding to a different reading of the same underlying interaction vertex. Left: direct detection — dark matter scatters off a Standard Model target in a laboratory. Center: indirect detection — dark matter annihilates into Standard Model particles in astrophysical environments. Right: collider production — Standard Model particles produce dark matter at accelerators. Figure from Cirelli et al. [5]."
+ },
+ {
+  "page": 26,
+  "note": "specificare che lo scaling é lineare con la massa",
+  "dist": 13.7,
+  "para": "powerful discrimination between nuclear recoils (the expected dark matter signal) and electron recoils (the dominant background). Three experiments lead the field: LZ (LUX-ZEPLIN) [78] in the United States, XENONnT [79] at the Gran Sasso laboratory in Italy, and PandaX-4T [80] in China. Together, they have pushed the upper limit on the SI WIMP–nucleon cross-section down to σSI ≲10−47 cm2 at Mχ ∼30 GeV [78–80]. At higher masses (Mχ ∼100 GeV), the limits relax to ∼10−46 cm2 as the local number density of dark matter particles decreases [81]. Beyond these noble liquid TPCs, a complementary program of cryogenic bolometers (SuperCDMS [82], CRESST- III [83]) and semiconductor-based detectors (SENSEI [65], DAMIC [66]) extends sensitivity to sub-GeV dark matter [5]."
+ },
+ {
+  "page": 26,
+  "note": "chiarire che raggiungono la neutrino fog",
+  "dist": 0.0,
+  "para": "signal; this irreducible background is known as the neutrino fog (or neutrino floor). The question of whether it would ever show up in data was settled in 2021, when XENON1T recorded the first observation of solar 8B coherent elastic neutrino-nucleus scattering (CEνNS) in a dark matter detector [84]. PandaX-4T and XENONnT have since reported independent indications at roughly 2.6σ and 2.7σ, consistent with the expected solar rate [85, 86]; XENONnT also ran the first dedicated dark matter search inside the fog [86], and LZ set the world-best spin-independent WIMP bound while reporting its own 8B indications [81]. What this means practically is that the fog is already a feature of current data: sensitivity gains slow from here, scaling as the inverse square root of accumulated exposure rather than inversely [87], and the next generation of detectors — notably the DARWIN/XLZD program [88] — will reach multi-ton xenon exposures designed to operate within the fog rather than to avoid it. Pushing substantially beyond it will likely require directional detectors capable of resolving the apparent “dark matter wind” from the Cygnus constellation against the isotropic neutrino background."
+ },
+ {
+  "page": 26,
+  "note": "smorzare, esiste DM elettricamente carica",
+  "dist": 10.6,
+  "para": "If dark matter couples to quarks or gluons, it can be pair-produced in high-energy collisions at the Large Hadron Collider. The challenge is detection: dark matter particles carry no electric or color charge and escape the detector without leaving a trace, just as neutrinos do [5, 77]. For this reason, they have to be searched for by looking at the missing transverse energy (Emiss"
+ },
+ {
+  "page": 27,
+  "note": "mancano contraints da CMB, vedi 1303.5094",
+  "dist": 23.7,
+  "para": "Among these three strategies, direct detection and collider searches constrain the scattering cross-section, but neither directly measures the annihilation cross-section 〈σvrel〉that determines the thermal relic abundance. Because indirect detection is the approach pursued throughout this thesis, we devote the next section entirely to it."
+ },
+ {
+  "page": 27,
+  "note": "al posto di 2, metti un eta e scrivi eta=1 o2 etc",
+  "dist": 0.0,
+  "para": ", (1.4.1)"
+ },
+ {
+  "page": 27,
+  "note": "chiarire megli oche stiamo cercando hint della natura particellare",
+  "dist": 26.2,
+  "para": "Indirect detection via gamma-rays directly probes the annihilation cross-section — the quantity that governs the thermal relic abundance and the one quantity that underground laboratories cannot access. This section derives the relevant equations for the gamma-rays flux, which is key to every analysis presented in this thesis."
+ },
+ {
+  "page": 29,
+  "note": "bb perché sono quelli che ti danno il segnale più facilmente misurabile per le wimps, tau tau perché sono un canale generalmente puluto, ma con meno statistica",
+  "dist": 0.0,
+  "para": "The more hadrons produced in the cascade, the softer the spectrum, because the available energy is shared among a larger multiplicity of pions. Channels that produce fewer, more energetic particles yield harder spectra with sharper features. In practice, the distinction between the b ¯b and τ+τ−benchmarks brackets the range of spectral shapes relevant for most thermal relic models [77]. These qualitative differences are illustrated in Figure 1.9."
+ },
+ {
+  "page": 30,
+  "note": "la caption non c'entra nulla con la figura, cosa volevo dire?",
+  "dist": 22.0,
+  "para": "Fig. 1.10. Notable sharp gamma-ray spectral features from dark matter annihilation. From left to right: the monochromatic line from χχ →γγ, the “saw-tooth” shape of virtual internal bremsstrahlung (VIB), the “top-hat” (box-shaped) spectrum from cascade decays χχ →X X → γγγγ, and the single saw-tooth from χχ →X X →γνγν. Unlike the case for charged cosmic rays, these sharp features propagate intact to the detector and can be searched for directly. Credit: Cirelli et al. [5]."
+ },
+ {
+  "page": 30,
+  "note": "ci sono anche i sommerfield enhancements, ma ci sono nel codice pppc ? non so",
+  "dist": 0.0,
+  "para": "These spectral features are illustrated schematically in Figure 1.10. Electroweak corrections. When the dark matter mass lies far above the electroweak scale (mχ ≫MW), the annihilation products are energetic enough to radiate W and Z bosons readily — much as a fast-moving charge emits photons — and this radiation can no longer be neglected for heavy candidates [5, 99]. Its effect is twofold. First, the subsequent decays of the radiated bosons smear sharp features such as monochromatic lines and add a soft continuum of lower-energy gamma-rays. Second, they feed final states that would otherwise be absent, so that even purely leptonic channels (χχ →e+e−, µ+µ−) end up producing antiprotons and every annihilation channel contributes to every messenger [5]."
+ },
+ {
+  "page": 31,
+  "note": "includere synchrotron radiation, manca tra i processi, controlla e trova referenze. notare che produce radio",
+  "dist": 11.2,
+  "para": "when deflected by the electric fields of interstellar gas nuclei, a process that dominates their energy losses in the 1–10 GeV range near the Galactic plane where gas densities are highest [96, 101]. These processes produce secondary gamma-ray emission that is spatially extended and spectrally softer than the prompt component, and whose morphology depends on the magnetic field structure, gas distribution, and radiation fields of the host galaxy [77, 102]. Secondary emission therefore depends not only on the dark matter distribution but also on the astrophysical environment — magnetic fields, radiation fields, gas densities — that reprocesses the primary electrons and positrons. Despite this additional layer of modelling uncertainty, secondary emission plays a central role in the interpretation of the Galactic Center excess discussed in Chapter 4, where the identification of the signal relies on subtracting the diffuse gamma-ray background dominated by cosmic-ray ICS and bremsstrahlung in the dense inner Galaxy [77]."
+ },
+ {
+  "page": 31,
+  "note": "tension non é una buona parola, controlla",
+  "dist": 19.9,
+  "para": "The standard profiles come from cosmological N-body simulations which follow the gravi- tational collapse of billions of dark matter particles from primordial density perturbations to the present-day cosmic web [5]. These simulations show that the spherically averaged density ρ(r) of collapsed halos follows a logarithmic slope s(r) ≡dlnρ/dlnr that steepens with radius, converging to s ≈−3 in the outskirts [5]. The behaviour in the inner region, by contrast, remains an open question — the cusp–core problem discussed below — with different profiles predicting central slopes that range from a steep cusp to a constant-density core (Figure 1.11). These results can be captured by several fitting functions, each with a characteristic density ρs and a scale radius rs."
+ },
+ {
+  "page": 31,
+  "note": "mettere data del NFW",
+  "dist": 6.7,
+  "para": "NFW (Navarro–Frenk–White). The most widely adopted benchmark has a density that diverges as ρ ∝r−1 toward the center (a “cusp”) and falls off as ρ ∝r−3 in the outer halo [103]:"
+ },
+ {
+  "page": 32,
+  "note": "colori sbagliati!!!!",
+  "dist": 9.9,
+  "para": "Fig. 1.11. Dark matter density profiles for the Milky Way: NFW (red), Einasto (blue), Burkert (green), and Isothermal (purple) as a function of galactocentric distance. The profiles are normal- ized to agree at r ∼r⊙but diverge by orders of magnitude in the inner kiloparsec. Credit: Cirelli et al. [5]."
+ },
+ {
+  "page": 33,
+  "note": "quando metti nelle simulazioni i barioni (baryonic feedback) la tensione si rilassa",
+  "dist": 7.7,
+  "para": "The disagreement between cuspy simulations and cored observations is known as the cusp– core problem [5, 21]. Dark matter–only N-body simulations consistently produce cusps with inner slopes γ ≈1–1.5, while rotation curve measurements — particularly in dwarf galaxies — often favour constant-density cores (γ ≈0–0.5) [21]. Several solutions to this discrepancy have been proposed. From the particle physics side, self-interacting dark matter (with σ/m ≈0.5– 10 cm2/g) transfers heat to halo centers and produces cores of the observed size [21, 57, 58], while ultralight “fuzzy” dark matter generates solitonic cores through quantum pressure on scales comparable to the de Broglie wavelength [5, 32]. From the astrophysical side, modern hydrodynamical simulations show that repeated bursts of supernova-driven outflows can rapidly alter the central gravitational potential, pushing dark matter outward and flattening a primordial cusp into a core [5, 21]."
+ },
+ {
+  "page": 35,
+  "note": "for a given dark matter model",
+  "dist": 0.0,
+  "para": "Second, even for velocity-independent cross-sections, the J-factor depends quadratically on the density profile, making it extremely sensitive to the uncertainties discussed in Section 1.4.3. For the Galactic Center, the J-factor computed with an NFW profile can exceed the Burkert value by orders of magnitude [5]; even within the NFW paradigm, varying the inner slope from γ = 0.7 to γ = 1.3 changes the predicted flux by more than an order of magnitude [77]. The astrophysical factor is therefore the dominant systematic uncertainty in annihilation searches."
+ },
+ {
+  "page": 35,
+  "note": "aggiungere J factor e valore del GCE",
+  "dist": 26.2,
+  "para": "The Galactic Center. The center of the Milky Way offers the largest J-factor of any astronomical source, owing to its proximity (∼8 kpc) and the expected steep rise of the dark matter density at small radii [77]. For an NFW profile with γ = 1 and a local density ρ⊙= 0.4 GeV/cm3, the predicted flux from the inner 10◦exceeds that from any individual dwarf galaxy by more than three orders of magnitude [77]. If a steeper inner slope (γ ≈1.3) is assumed, the flux increases by an additional factor of ∼5; for a shallower slope (γ ≈0.7) it decreases by ∼3 [77]. In either case, the Galactic Center remains the brightest expected source of dark matter annihilation products on the sky."
+ },
+ {
+  "page": 36,
+  "note": "ci sono troppe citazione a Cirelli, si potrebbe dire semplicemente che si fa riferimento al testo in un posto specifico e non citare più di tanto",
+  "dist": 19.6,
+  "para": "Despite these difficulties, the Fermi-LAT has detected a statistically significant excess of gamma-rays from the inner Galaxy at energies between ∼0.5 and 5 GeV — the so-called Galactic Center excess (GCE) [5, 71, 118, 119]. The spectrum and approximately spherical morphology of this excess are consistent with the predictions for a ∼40–70 GeV dark matter particle annihilating into b ¯b quarks at a rate close to the thermal relic value [5, 71]. The dark matter interpretation is compelling, but an unresolved population of millisecond pulsars in the Galactic bulge provides an equally plausible astrophysical explanation [5, 100]. Multiple statistical analyses have investigated the point-source versus diffuse origin of the excess, reaching contradictory conclusions [5]. The morphological debate — whether the excess traces a spherical dark matter halo or the stellar distribution of the Galactic bulge — remains unresolved [5]. This persistent ambiguity motivates the dedicated analysis in Chapter 4, which examines the millisecond pulsar hypothesis by constraining the pulsar luminosity function from globular cluster observations."
+ },
+ {
+  "page": 37,
+  "note": "magari smorzare",
+  "dist": 11.2,
+  "para": "Dark subhalos. ΛCDM simulations predict far more gravitationally bound subhalos within the Milky Way’s halo than the ∼50 known satellite galaxies can account for [5]. Most of these subhalos are expected to be entirely dark — devoid of stars and gas — yet sufficiently massive to produce a detectable gamma-ray flux if the annihilation cross-section is near the thermal relic value [5]. Such dark subhalos would appear in the Fermi-LAT data as unassociated point sources with no counterpart at other wavelengths. Their positions are unknown a priori, turning the search into a classification problem: distinguishing rare dark matter subhalos from the much larger population of unidentified astrophysical sources (primarily pulsars and faint blazars). This challenge is addressed in Chapter 5, where machine learning methods are applied to classify unassociated Fermi-LAT sources in the presence of dataset shift between simulations and real data."
+ },
+ {
+  "page": 37,
+  "note": "non ripetere la stessa citazione ovunque nel paragrafo, metterla solo una volta",
+  "dist": 16.4,
+  "para": "Because the dark matter signal is buried beneath dominant astrophysical foregrounds, its extraction requires methods that go beyond the energy spectrum alone. The angular anisotropies of the UGRB carry additional information: different source classes imprint different patterns of spatial fluctuations, reflecting their distinct clustering properties, redshift distributions, and luminosity functions [123]. Cross-correlating these anisotropies with independent gravitational tracers of the large-scale structure — galaxy catalogs, cosmic shear from weak lensing surveys, or 21cm intensity mapping of neutral hydrogen — can isolate the component that traces the dark matter distribution [5, 100, 123]. The approach is particularly powerful because dark matter annihilation scales as ρ2 and has a redshift evolution distinct from that of astrophysical gamma-ray emitters, providing a spectral and tomographic handle for separation [100]. This cross-correlation technique forms the basis of the analysis in Chapter 8, where the sensitivity of next-generation instruments to the dark matter cross-correlation signal is forecast."
+ },
+ {
+  "page": 37,
+  "note": "smorzare, dire would, non certezza",
+  "dist": 14.6,
+  "para": "We argued that dark matter annihilation and decay could produce stable Standard Model particles, not only gamma-rays. Each messenger opens a complementary window onto the dark sector, with its own advantages and limitations."
+ },
+ {
+  "page": 38,
+  "note": "questo deve essere spostato nella parte di direct vs collider",
+  "dist": 12.3,
+  "para": "An independent and increasingly powerful constraint comes from the CMB: dark matter annihilation during and after recombination injects energy into the photon–baryon plasma, distorting the CMB temperature and polarisation anisotropies in a way that is tightly bounded by Planck data [5, 127]. For s-wave annihilation, these bounds exclude the thermal relic cross- section for masses below ∼44 GeV in the e+e−channel and below ∼16 GeV in the b ¯b channel [127] — limits that are largely independent of astrophysical modelling and therefore highly complementary to gamma-ray searches."
+ },
+ {
+  "page": 38,
+  "note": "da mo;lto più di 10 anni",
+  "dist": 8.4,
+  "para": "Despite more than a decade of increasingly sensitive searches across all three detection strategies, no unambiguous signal of dark matter has been found [5]. The current status is best summarized as a set of progressively tightening bounds on the annihilation cross-section and decay lifetime, with a few anomalies whose dark matter interpretations have been challenged by plausible astrophysical alternatives."
+ },
+ {
+  "page": 38,
+  "note": "cross section in generale, pensa a collider, anche coupling con lo SM",
+  "dist": 3.2,
+  "para": "Despite more than a decade of increasingly sensitive searches across all three detection strategies, no unambiguous signal of dark matter has been found [5]. The current status is best summarized as a set of progressively tightening bounds on the annihilation cross-section and decay lifetime, with a few anomalies whose dark matter interpretations have been challenged by plausible astrophysical alternatives."
+ },
+ {
+  "page": 21,
+  "note": "dire qualcosa di pi≤u su questo plot",
+  "dist": 45.0,
+  "para": "0.3 ΩDMh2 = 0.5"
+ },
+ {
+  "page": 40,
+  "note": "pensare se togliere",
+  "dist": 29.7,
+  "para": "1.5 Summary"
+ },
+ {
+  "page": 40,
+  "note": "togliere mathematical framework phrase",
+  "dist": 19.9,
+  "para": "The J-factor and D-factor formalism developed in this chapter factorizes the predicted gamma-ray flux into a particle physics term and an astrophysical term, providing the mathemati- cal framework that underpins every analysis in this thesis. The current null results of WIMP searches — with Fermi-LAT constraints from dwarf galaxies already excluding the thermal relic cross-section for masses below ∼100 GeV in the b ¯b channel — demonstrate that the era of simple signal-over-background searches is reaching its limits. Extracting weaker signals from noise-dominated data demands the statistical and machine learning methods developed in the remainder of this thesis. The next chapter introduces the instrument that collects the data: the Fermi Large Area Telescope and the astrophysical gamma-ray sky that constitutes both the observational setting and the primary source of systematic uncertainty for the analyses that follow."
+ },
+ {
+  "page": 39,
+  "note": "le simulazioni di cdm non predicono bene le small scale structures, poiu cé il problema del sup vs core",
+  "dist": 19.1,
+  "para": "Unresolved anomalies. Several persistent anomalies keep the possibility of discovery alive. The Galactic Center gamma-ray excess — a signal first reported in 2009 and consistent with a ∼40–70 GeV dark matter particle annihilating into b ¯b at the thermal cross-section — remains the most debated [5, 71, 77]. Chapter 4 of this thesis contributes directly to this debate by challenging the leading astrophysical interpretation of the excess as an unresolved population of millisecond pulsars, further highlighting the complexity of the issue. Other excesses, by contrast, admit a more satisfying astrophysical explanation. The charged cosmic-ray anomalies discussed in Section 1.4.6 — the AMS-02 antiproton signal and the rise in the positron fraction — remain consistent with conventional astrophysical sources once systematic uncertainties are"
+ },
+ {
+  "page": 39,
+  "note": "SIDM",
+  "dist": 19.1,
+  "para": "Unresolved anomalies. Several persistent anomalies keep the possibility of discovery alive. The Galactic Center gamma-ray excess — a signal first reported in 2009 and consistent with a ∼40–70 GeV dark matter particle annihilating into b ¯b at the thermal cross-section — remains the most debated [5, 71, 77]. Chapter 4 of this thesis contributes directly to this debate by challenging the leading astrophysical interpretation of the excess as an unresolved population of millisecond pulsars, further highlighting the complexity of the issue. Other excesses, by contrast, admit a more satisfying astrophysical explanation. The charged cosmic-ray anomalies discussed in Section 1.4.6 — the AMS-02 antiproton signal and the rise in the positron fraction — remain consistent with conventional astrophysical sources once systematic uncertainties are"
+ },
+ {
+  "page": 39,
+  "note": "hydro sym",
+  "dist": 19.1,
+  "para": "Unresolved anomalies. Several persistent anomalies keep the possibility of discovery alive. The Galactic Center gamma-ray excess — a signal first reported in 2009 and consistent with a ∼40–70 GeV dark matter particle annihilating into b ¯b at the thermal cross-section — remains the most debated [5, 71, 77]. Chapter 4 of this thesis contributes directly to this debate by challenging the leading astrophysical interpretation of the excess as an unresolved population of millisecond pulsars, further highlighting the complexity of the issue. Other excesses, by contrast, admit a more satisfying astrophysical explanation. The charged cosmic-ray anomalies discussed in Section 1.4.6 — the AMS-02 antiproton signal and the rise in the positron fraction — remain consistent with conventional astrophysical sources once systematic uncertainties are"
+ },
+ {
+  "page": 39,
+  "note": "mathematical framework é troppo forte, rifrasa",
+  "dist": 14.7,
+  "para": "The Galactic Center excess demands careful modelling of the interstellar emission and the unresolved point-source population — distinguishing dark matter annihilation from millisecond pulsars requires statistical tools, not a single spectral fit (Chapter 4). Individual dark matter subhalos among the Fermi-LAT unassociated sources cannot be identified by classification alone; a fully probabilistic model that accounts for both covariate and prior probability shifts between associated and unassociated sources is needed to derive statistically rigorous constraints (Chapter 5). Below the point-source detection threshold, deep learning applied to gamma-ray sky maps can recover the source-count distribution of faint populations down to fluxes a factor of 50 below the Fermi-LAT sensitivity limit, while probabilistic catalogues extend spatial source information into the sub-threshold regime (Chapters 6 and 7). Finally, at the largest scales, the dark matter contribution to the unresolved gamma-ray background can potentially be isolated through its cross-correlation with independent tracers of the large-scale structure (Chapter 8)."
+ },
+ {
+  "page": 38,
+  "note": "aggiungere and scope of the thesis",
+  "dist": 8.8,
+  "para": "Despite more than a decade of increasingly sensitive searches across all three detection strategies, no unambiguous signal of dark matter has been found [5]. The current status is best summarized as a set of progressively tightening bounds on the annihilation cross-section and decay lifetime, with a few anomalies whose dark matter interpretations have been challenged by plausible astrophysical alternatives."
+ },
+ {
+  "page": 42,
+  "note": "mettere leading, not only 2",
+  "dist": 6.0,
+  "para": "This section reviews the standard gamma-ray production mechanisms. These processes fall into two broad categories: hadronic interactions involving cosmic-ray nucleons colliding with interstellar gas, and leptonic interactions involving energetic electrons and positrons scattering off radiation fields and gas. Operating in different energy regimes and tracing distinct target environments, they combine to produce the macroscopic Galactic Diffuse Emission that dominates the observed gamma-ray sky."
+ },
+ {
+  "page": 42,
+  "note": "spiegare meglio cos'é l'interstella medium",
+  "dist": 25.4,
+  "para": "The reaction is subject to a strict kinematic threshold. A cosmic-ray proton colliding with a stationary target proton must have a total energy of at least E p > mp +2mπ + m2"
+ },
+ {
+  "page": 52,
+  "note": "cercare se c'é una figura con i quantili della PSF da aggiungere a lato",
+  "dist": 117.1,
+  "para": "CHAPTER 2. THE GAMMA-RAY SKY AND FERMI-LAT"
+ },
+ {
+  "page": 52,
+  "note": "specificare meglio la caption, bryan pensava che la dashed fosse la PSF al 60%",
+  "dist": 8.6,
+  "para": "Fig. 2.6. The 68% containment radius of the Point Spread Function as a function of energy at normal incidence (solid) and at 60◦off-axis (dashed), for photons converting in the thin front section of the tracker. Photons converting in the thick back section have a PSF approximately twice as wide at 1 GeV. Credit: Figure 17 from [136]."
+ },
+ {
+  "page": 47,
+  "note": "gamma ray sources",
+  "dist": 18.8,
+  "para": "2.2 The Astrophysical Gamma-Ray Sky"
+ },
+ {
+  "page": 46,
+  "note": "spiegare cosa é b",
+  "dist": 71.5,
+  "para": "MF1"
+ },
+ {
+  "page": 46,
+  "note": "non é chiaro il collegamento con ICS, e come questa figura rientri nella discussione",
+  "dist": 35.6,
+  "para": "MF1"
+ },
+ {
+  "page": 45,
+  "note": "modulo DM",
+  "dist": 0.0,
+  "para": "These three leptonic processes, together with the hadronic pion-decay mechanism described in the preceding section, constitute the main set of fundamental interactions that generate the diffuse gamma-ray sky. The following section describes how these individual components are combined into a global model of the Galactic Diffuse Emission."
+ },
+ {
+  "page": 45,
+  "note": "one of... c'é anche dragon",
+  "dist": 8.4,
+  "para": "To model this complex, spatially structured foreground, astrophysicists rely on numerical cosmic-ray propagation codes, of which GALPROP is the most established [102]. Starting from a set of assumptions about cosmic-ray source distributions (primarily supernova remnants), injection spectra, and diffusion parameters, GALPROP solves the steady-state diffusion-loss equation for all relevant cosmic-ray species as they propagate through the Galactic magnetic field and interstellar medium. The output is a set of sky maps predicting the gamma-ray intensity from each emission component: a π0-decay map that traces the gas column density (dominated along the Galactic Plane), an inverse Compton map that traces the interstellar radiation field (producing an extended halo at high latitudes), and a bremsstrahlung map that follows the gas distribution but with a different spectral shape."
+ },
+ {
+  "page": 45,
+  "note": "capire dove parlare meglio delle fermi bubbles",
+  "dist": 32.1,
+  "para": "To model this complex, spatially structured foreground, astrophysicists rely on numerical cosmic-ray propagation codes, of which GALPROP is the most established [102]. Starting from a set of assumptions about cosmic-ray source distributions (primarily supernova remnants), injection spectra, and diffusion parameters, GALPROP solves the steady-state diffusion-loss equation for all relevant cosmic-ray species as they propagate through the Galactic magnetic field and interstellar medium. The output is a set of sky maps predicting the gamma-ray intensity from each emission component: a π0-decay map that traces the gas column density (dominated along the Galactic Plane), an inverse Compton map that traces the interstellar radiation field (producing an extended halo at high latitudes), and a bremsstrahlung map that follows the gas distribution but with a different spectral shape."
+ },
+ {
+  "page": 45,
+  "note": "\"latest version\", e aggiungere link al v7",
+  "dist": 4.9,
+  "para": "When analyzing Fermi-LAT data, the standard procedure is to model the observed sky through template decomposition [130]. The total photon counts in each spatial and energy bin are fit to a linear combination of: the GALPROP-derived π0-decay, ICS, and bremsstrahlung templates; a catalog of individually resolved point sources; spatial templates for large-scale structures such as Loop I and the Fermi Bubbles; and a spatially uniform isotropic component representing the combined extragalactic background and residual instrumental contamination. The normalizations of these Galactic templates are typically left as free parameters and fitted independently in each energy bin, allowing the data to correct for imperfections in the GALPROP predictions. The Fermi collaboration applies precisely this procedure to produce the official Galactic interstellar emission model gll_iem_v07, which serves as the standard foreground template in Fermi-LAT analyses. Despite the physical sophistication of GALPROP and the flexibility of the template-fitting procedure, the GDE cannot be modeled perfectly. Imperfect modeling of the interstellar emission remains the largest single source of systematic uncertainty"
+ },
+ {
+  "page": 44,
+  "note": "valutare se togliere la figura",
+  "dist": 80.2,
+  "para": "1 GeV 10 GeV 100 GeV 1 TeV 10 TeV"
+ },
+ {
+  "page": 43,
+  "note": "sostituirla con la vera figura, questa non é un gran che",
+  "dist": 37.9,
+  "para": "Geant 4 Pythia 8 SIBYLL QGSJET"
+ },
+ {
+  "page": 41,
+  "note": "chiarire che qua mi riferisco al diffuse grb",
+  "dist": 14.0,
+  "para": "2.1 Gamma-Ray Production Mechanisms"
+ },
+ {
+  "page": 51,
+  "note": "questo paragrafo é molto denso, una figura sarebbe utile",
+  "dist": 26.6,
+  "para": "Not every gamma ray that enters the LAT produces a usable event: some pass through with- out converting, others are rejected during background filtering. The effective area captures this by expressing the instrument’s photon-collecting power as the area of an ideal, perfectly efficient detector that would record the same number of events. At normal incidence, it rises steeply from ∼100 cm2 at 20 MeV to a broad plateau of ∼8,000–9,500 cm2 between 1 GeV and several hundred GeV, before declining at the highest energies [136]. For comparison, the LAT’s overall footprint is 1.8×1.8 m2; the peak effective area of ∼9,500 cm2—roughly a third of the geometric area—reflects the compounded probabilities of pair conversion in the tungsten, successful track reconstruction, and survival of background-rejection cuts. For a survey instrument, however, the relevant figure of merit is not the on-axis effective area alone, but the acceptance—the effective area integrated over all incident directions. While the effective area quantifies the detection efficiency for photons arriving from a single direction, the acceptance captures the instrument’s total photon-collecting power across the full field of view simultaneously. The LAT’s acceptance peaks at ∼2.5 m2 sr above 1 GeV [136], a direct consequence of the large 2.4 sr field of view enabled by the tracker’s"
+ },
+ {
+  "page": 52,
+  "note": "catalog of sources",
+  "dist": 29.8,
+  "para": "With the IRFs established, we now turn to how the LAT data are translated into astrophysical catalogs. Converting raw photon events into measurements of individual sources requires disen- tangling point-like objects from the structured diffuse backgrounds. The Fermi-LAT collaboration achieves this through a maximum likelihood framework [139, 140]. The observed sky is modeled as a linear combination of spatial and spectral templates: the highly structured Galactic diffuse"
+ },
+ {
+  "page": 52,
+  "note": "non tutte puntiformi, magari espandere",
+  "dist": 29.8,
+  "para": "With the IRFs established, we now turn to how the LAT data are translated into astrophysical catalogs. Converting raw photon events into measurements of individual sources requires disen- tangling point-like objects from the structured diffuse backgrounds. The Fermi-LAT collaboration achieves this through a maximum likelihood framework [139, 140]. The observed sky is modeled as a linear combination of spatial and spectral templates: the highly structured Galactic diffuse"
+ },
+ {
+  "page": 53,
+  "note": "ho dimenticato il meno, forse, controlla la notazione",
+  "dist": 6.6,
+  "para": ","
+ },
+ {
+  "page": 53,
+  "note": "by assuming...",
+  "dist": 0.0,
+  "para": "where L1 is the maximum likelihood of the model with the candidate source included and L0 is the maximum likelihood of the null hypothesis without it [139]. By Wilks’ theorem, TS is approximately distributed as χ2 with a number of degrees of freedom equal to the additional free parameters of the source model. For a point source with four free parameters (two spatial and two spectral), the catalog detection threshold of TS > 25 corresponds to a significance of just over 4σ [140, 141]. As a practical rule of thumb, for an isolated source with known position (one spectral degree of freedom), the significance is well approximated by"
+ },
+ {
+  "page": 53,
+  "note": "mettere la formula dello spettro",
+  "dist": 14.7,
+  "para": "where L1 is the maximum likelihood of the model with the candidate source included and L0 is the maximum likelihood of the null hypothesis without it [139]. By Wilks’ theorem, TS is approximately distributed as χ2 with a number of degrees of freedom equal to the additional free parameters of the source model. For a point source with four free parameters (two spatial and two spectral), the catalog detection threshold of TS > 25 corresponds to a significance of just over 4σ [140, 141]. As a practical rule of thumb, for an isolated source with known position (one spectral degree of freedom), the significance is well approximated by"
+ },
+ {
+  "page": 53,
+  "note": "chiarire meglio per non confonderci con il capitolo 5",
+  "dist": 8.6,
+  "para": "The association procedure matches each gamma-ray source against catalogs at radio, infrared, optical, and X-ray wavelengths using Bayesian and likelihood-ratio methods. Sources receiving a high-confidence match are labeled as “associated”; those with firm identification through periodicity, correlated variability, or resolved angular extent are labeled as “identified.” In the 4FGL-DR4, 4021 sources are identified or associated with extragalactic objects and 593 with Galactic source classes. However, a substantial fraction—2577 sources—lacks any plausible multi-wavelength counterpart and remains unassociated [142]. These unassociated sources are concentrated along the Galactic plane, where the dense background complicates counterpart searches, and at high latitudes, where their average spectral properties resemble those of blazars of unknown type."
+ },
+ {
+  "page": 54,
+  "note": "controlla se l'ho scritto nel 1 o nel 5",
+  "dist": 14.0,
+  "para": "wavelength surveys, it also constitutes the primary search pool for exotic gamma-ray emitters such as dark matter subhalos. As discussed in Chapter 1, ΛCDM cosmology predicts the existence of thousands of Galactic subhalos below ∼107 M⊙—too low in mass to retain gas or form stars, and therefore invisible at all wavelengths except gamma rays, where WIMP annihilation could produce a faint, spectrally soft signal closely resembling an unassociated Fermi-LAT point source [5, 106]. Separating such candidates from the astrophysical contaminants within the 4FGL catalog is the central challenge addressed in Chapter 5, where machine learning techniques are used to search for dark matter subhalo candidates among the unassociated sources."
+ },
+ {
+  "page": 53,
+  "note": "controlla i numeri, forse sono per il DR3, mettere DR4",
+  "dist": 8.6,
+  "para": "The association procedure matches each gamma-ray source against catalogs at radio, infrared, optical, and X-ray wavelengths using Bayesian and likelihood-ratio methods. Sources receiving a high-confidence match are labeled as “associated”; those with firm identification through periodicity, correlated variability, or resolved angular extent are labeled as “identified.” In the 4FGL-DR4, 4021 sources are identified or associated with extragalactic objects and 593 with Galactic source classes. However, a substantial fraction—2577 sources—lacks any plausible multi-wavelength counterpart and remains unassociated [142]. These unassociated sources are concentrated along the Galactic plane, where the dense background complicates counterpart searches, and at high latitudes, where their average spectral properties resemble those of blazars of unknown type."
+ },
+ {
+  "page": 59,
+  "note": "magari spostare nella parte frequentista",
+  "dist": 14.7,
+  "para": "Credible intervals versus confidence intervals. In the Bayesian framework, uncertainty is quantified through credible intervals: a 95% credible interval is a region of parameter space containing 95% of the posterior probability. This contrasts with the frequentist confidence interval, which guarantees that 95% of intervals constructed from repeated experiments will contain the true parameter value. The distinction is subtle in practice—for well-constrained problems, the two often agree numerically—but the conceptual difference matters: a credible interval makes a direct probability statement about the parameter given the data, while a confidence interval makes a statement about the procedure."
+ },
+ {
+  "page": 58,
+  "note": "aggiungere stima delle incertrzze anche in modo frequentista. bootstrap, confidence intervals",
+  "dist": 26.2,
+  "para": "Application preview. The frequentist framework developed above is used extensively in this thesis:"
+ },
+ {
+  "page": 57,
+  "note": "specifica cosa vuol dire nested hypothesis",
+  "dist": 9.9,
+  "para": "Hypothesis testing and the Test Statistic. To compare competing hypotheses—for instance, whether a gamma-ray source exists at a given position—one generally constructs a likelihood- ratio test statistic (TS):"
+ },
+ {
+  "page": 57,
+  "note": "questa parte mischia in modo troppo fluido likelihood ratio, AIC e KS. separare meglio i test, perché e a cosa servono",
+  "dist": 16.5,
+  "para": "The likelihood-ratio test relies on nested hypotheses and on the regularity conditions under- lying Wilks’ theorem. When these assumptions do not hold—in particular, when the hypotheses are non-nested, or when one wishes to assess the absolute compatibility of the data with a single model—other frequentist tools are available. The Kolmogorov–Smirnov test [147] addresses the latter case by taking as test statistic the supremum of the absolute difference between the empirical cumulative distribution function of the data and that predicted by the model. Its null distribution is independent of the underlying distribution, which makes it a common diagnostic for goodness-of-fit when no specific alternative is being tested. For comparing models that are not nested, information criteria offer a complementary approach. The Akaike Information Criterion [148] is defined as"
+ },
+ {
+  "page": 57,
+  "note": "aggiungere anche chi2 test",
+  "dist": 16.5,
+  "para": "The likelihood-ratio test relies on nested hypotheses and on the regularity conditions under- lying Wilks’ theorem. When these assumptions do not hold—in particular, when the hypotheses are non-nested, or when one wishes to assess the absolute compatibility of the data with a single model—other frequentist tools are available. The Kolmogorov–Smirnov test [147] addresses the latter case by taking as test statistic the supremum of the absolute difference between the empirical cumulative distribution function of the data and that predicted by the model. Its null distribution is independent of the underlying distribution, which makes it a common diagnostic for goodness-of-fit when no specific alternative is being tested. For comparing models that are not nested, information criteria offer a complementary approach. The Akaike Information Criterion [148] is defined as"
+ },
+ {
+  "page": 59,
+  "note": "correggere la questione incertezze, perché il bootstrap é sempre una possibilità nel caso frequentista",
+  "dist": 13.3,
+  "para": "For most inference tasks encountered in practice—parameter estimation, upper-limit setting, model comparison—both the frequentist and Bayesian frameworks can reach the same scientific conclusion. The choice between them is usually pragmatic rather than fundamental, driven by the scientific question at hand, computational considerations, and the conventions of the relevant research community. Community practice already carries considerable weight: high- energy particle physics and the Fermi-LAT collaboration have traditionally favored frequentist methods—source detection via the TS, upper limits via the profile likelihood and Wilks’ theorem, catalog pipelines built on maximum-likelihood fitting [139]—while cosmology and large-scale- structure analyses have largely adopted Bayesian Markov Chain Monte Carlo (MCMC) methods [145]. Neither convention reflects a judgment on the foundations of probability; both reflect what works well for the typical dimensionality and structure of the problems each field encounters most often."
+ },
+ {
+  "page": 59,
+  "note": "rimuovere la questione del poor mizing",
+  "dist": 15.3,
+  "para": "For most inference tasks encountered in practice—parameter estimation, upper-limit setting, model comparison—both the frequentist and Bayesian frameworks can reach the same scientific conclusion. The choice between them is usually pragmatic rather than fundamental, driven by the scientific question at hand, computational considerations, and the conventions of the relevant research community. Community practice already carries considerable weight: high- energy particle physics and the Fermi-LAT collaboration have traditionally favored frequentist methods—source detection via the TS, upper limits via the profile likelihood and Wilks’ theorem, catalog pipelines built on maximum-likelihood fitting [139]—while cosmology and large-scale- structure analyses have largely adopted Bayesian Markov Chain Monte Carlo (MCMC) methods [145]. Neither convention reflects a judgment on the foundations of probability; both reflect what works well for the typical dimensionality and structure of the problems each field encounters most often."
+ },
+ {
+  "page": 60,
+  "note": "smorzare la parte di local models",
+  "dist": 32.5,
+  "para": "trapping in local modes. Frequentist point estimation can remain tractable in the same regime through gradient-based optimization or iterative algorithms such as EM (Section 3.3.3), which converge efficiently without exploring the full parameter space—but at the cost of forgoing the posterior structure that motivates the Bayesian approach in the first place. When a one- dimensional confidence interval or upper limit is the target, as in standard source detection or cross-section bounds, the frequentist route is typically more direct."
+ },
+ {
+  "page": 60,
+  "note": "rivedere la questa parte sulla questione convergenza, gradient based",
+  "dist": 20.3,
+  "para": "trapping in local modes. Frequentist point estimation can remain tractable in the same regime through gradient-based optimization or iterative algorithms such as EM (Section 3.3.3), which converge efficiently without exploring the full parameter space—but at the cost of forgoing the posterior structure that motivates the Bayesian approach in the first place. When a one- dimensional confidence interval or upper limit is the target, as in standard source detection or cross-section bounds, the frequentist route is typically more direct."
+ },
+ {
+  "page": 61,
+  "note": "essere coerente, usa o x o d",
+  "dist": 0.0,
+  "para": "� p(x,z|θ)dz, (3.2.1)"
+ },
+ {
+  "page": 60,
+  "note": "scrivere che i dat isimulati sono ofrmalmente samples della likelihood",
+  "dist": 19.4,
+  "para": "The inference methods presented in Section 3.1 share a common requirement: the ability to evaluate the likelihood function p(x|θ) for a given set of parameters. In many problems of interest, however, the data-generating process is described by a complex computer simulation rather than by an analytically tractable probability distribution. Such models are known as implicit models, in contrast to prescribed models for which the likelihood can be written in closed form [143, 150]."
+ },
+ {
+  "page": 61,
+  "note": "aggiungere esempi di latent variables",
+  "dist": 18.0,
+  "para": "The source of the difficulty is straightforward to state. A typical simulator takes as input a vector of physical parameters θ, samples a series of internal stochastic states or latent vari- ables zi, and produces synthetic data x as output. The exact likelihood of this output requires marginalizing over the joint density of data and latent variables:"
+ },
+ {
+  "page": 61,
+  "note": "scrivere latent variables",
+  "dist": 0.0,
+  "para": "where the integral runs over every possible execution trace of the simulator [143]. For realistic simulations involving billions of latent variables, such as particle transport through a detector, the stochastic evolution of astrophysical populations, or the formation of large-scale structure, this high-dimensional integral is computationally intractable."
+ },
+ {
+  "page": 62,
+  "note": "and or its samples",
+  "dist": 0.0,
+  "para": "Neural Posterior Estimation (NPE) trains a conditional density estimator—typically a nor- malizing flow [151], though a Laplace approximation can serve a similar role as in Chapter 6—to directly approximate the posterior distribution p(θ|x) [152]. By conditioning the density estimator on the observed data x, the network learns to output the posterior density for any input observa- tion. Because NPE directly provides the posterior, it is the most straightforward approach for Bayesian inference. However, because the prior enters the training, changing the prior requires retraining. The mathematical details of normalizing flow architectures are deferred to Chapters 6 and 9."
+ },
+ {
+  "page": 62,
+  "note": "si può fare anche on VI",
+  "dist": 0.0,
+  "para": "Neural Likelihood Estimation (NLE) instead approximates the likelihood function p(x|θ), conditioning the density estimator on θ rather than on x [143]. Once the likelihood surrogate is trained, Bayesian inference proceeds through standard MCMC sampling with any choice of prior. This separation of the likelihood from the prior provides additional flexibility, at the cost of an extra sampling step."
+ },
+ {
+  "page": 62,
+  "note": "NRE é promettente, poerche fare un classifire é facile, il problema é poi il sampling. chiarirlo",
+  "dist": 0.0,
+  "para": "Neural Ratio Estimation (NRE) takes a different approach altogether: rather than learning a probability density, a classifier is trained via supervised learning to discriminate between synthetic datasets generated at different parameter points. The classifier output can be converted into the likelihood-to-evidence ratio r(x,θ) = p(x|θ)/p(x), which is proportional to the posterior up to a normalizing constant [143]. A key advantage of NRE is its ability to target arbitrary low-dimensional marginal posteriors directly, without first estimating the full joint posterior [143, 153]. This makes the approach particularly attractive when one- and two-dimensional marginals suffice, as is common in cosmological and astrophysical parameter estimation. Evaluating the marginal posterior density at any point is fast once the classifier is trained; however, drawing samples from the learned posterior still requires MCMC, making full posterior sampling more expensive than for NPE."
+ },
+ {
+  "page": 62,
+  "note": "non servono altre sim",
+  "dist": 0.0,
+  "para": "All three strategies provide amortized inference: the computationally expensive simulation and training steps are performed once upfront, after which posterior evaluation for new observed data is nearly instantaneous [143]. The neural network also implicitly marginalizes over the vast latent space of the simulator, so that the trained surrogate preserves information that hand-crafted summary statistics would discard."
+ },
+ {
+  "page": 62,
+  "note": "rifrasare, se uno potesse ,lo farebbe anche con MCMC, SBi lo rende possibile",
+  "dist": 13.9,
+  "para": "The standard validation framework is simulation-based calibration (SBC), introduced by Talts et al. [154]. The procedure is conceptually simple. One samples parameters θ∗from the prior, generates synthetic data x∗∼p(x|θ∗) using the simulator, and then applies the trained estimator to obtain the approximate posterior ˆp(θ|x∗). Because the true parameters are known by"
+ },
+ {
+  "page": 63,
+  "note": "perfectly, not well calibrated",
+  "dist": 8.9,
+  "para": "construction, one can check whether the posterior places the correct amount of probability mass around θ∗. Repeating this test across hundreds or thousands of independent simulations yields a statistical picture of the estimator’s calibration: if the (1 −α) credible intervals contain the true parameters in exactly a fraction (1−α) of trials, the estimator is well-calibrated. Systematic deviations indicate over- or underdispersion of the posterior [143, 154]."
+ },
+ {
+  "page": 63,
+  "note": "aggiungere PCC",
+  "dist": 13.4,
+  "para": "In practice, many SBI analyses supplement these general calibration checks with problem- specific diagnostics. In Chapter 6, the internally estimated Bayesian uncertainties are cross- checked against frequentist error bars derived from the distribution of residuals over the val- idation set (see also Section 3.1.4). The close agreement between the two independent error estimates provides confidence in the reliability of the uncertainty quantification."
+ },
+ {
+  "page": 64,
+  "note": "dire che 5 e 6 sono density estimation, poi vengono reinterpretati per fare anche classification e regression. metti density estimation come primo, e poi metti gli altri dopo",
+  "dist": 25.0,
+  "para": "The first is classification: assigning a discrete label to an input based on its observed features. In the gamma-ray context, this amounts to determining the astrophysical nature of a detected source. Roughly one-third of the sources in Fermi-LAT catalogs lack firm multi- wavelength associations [155], and supervised classification algorithms—trained on populations of identified AGNs and pulsars—are used to predict the class membership of these unassociated objects. The input features are quantities derived from the gamma-ray signal itself: spectral curvature significance, variability index, hardness ratios, and energy flux [155]. In Chapter 5, this paradigm is extended beyond standard source classes through a generative mixture model that accommodates an entirely new population—dark matter subhalos—among the unassociated sources."
+ },
+ {
+  "page": 65,
+  "note": "l'entropia é solo int q log q",
+  "dist": 0.0,
+  "para": "i )2 penalises deviations between predictions and targets uniformly and coincides, up to constants, with the negative log-likelihood of the targets under a homoscedastic Gaussian noise model. For classification, the cross-entropy loss measures the divergence between predicted class probabilities and one-hot labels and is equivalently the negative log-likelihood of the observed labels under a categorical model. Density estimation is most commonly cast as minimising the forward Kullback–Leibler divergence between the data distribution and a parametric model; because the data-side entropy is independent of the model parameters, this minimisation reduces to maximising the log-likelihood of the data—or, for latent-variable models in which the marginal likelihood is intractable, the evidence lower bound (ELBO). When the noise level varies across the output space, the Gaussian variance can itself be parameterised as a network output, yielding the heteroscedastic Gaussian negative log-likelihood [156]; the formalism is presented in Section 6.5.3.4, where Chapter 6 puts it to use."
+ },
+ {
+  "page": 65,
+  "note": "questa parte é da riscrivere",
+  "dist": 0.0,
+  "para": "i )2 penalises deviations between predictions and targets uniformly and coincides, up to constants, with the negative log-likelihood of the targets under a homoscedastic Gaussian noise model. For classification, the cross-entropy loss measures the divergence between predicted class probabilities and one-hot labels and is equivalently the negative log-likelihood of the observed labels under a categorical model. Density estimation is most commonly cast as minimising the forward Kullback–Leibler divergence between the data distribution and a parametric model; because the data-side entropy is independent of the model parameters, this minimisation reduces to maximising the log-likelihood of the data—or, for latent-variable models in which the marginal likelihood is intractable, the evidence lower bound (ELBO). When the noise level varies across the output space, the Gaussian variance can itself be parameterised as a network output, yielding the heteroscedastic Gaussian negative log-likelihood [156]; the formalism is presented in Section 6.5.3.4, where Chapter 6 puts it to use."
+ },
+ {
+  "page": 64,
+  "note": "dire solo o altre funzioni di attivazione",
+  "dist": 0.0,
+  "para": "A neural network is a parametric function fw : Rn →Rm composed of a sequence of affine transformations, each followed by a non-linear activation function. In a network with L layers, the output of layer ℓis h(ℓ) = σ(W(ℓ)h(ℓ−1)+b(ℓ)), where W(ℓ) and b(ℓ) are trainable weight matrices and bias vectors, and σ is a non-linear function such as the rectified linear unit ReLU(x) = max(0,x). Other activations have been used historically—sigmoid and hyperbolic tangent were standard in earlier architectures—while GELU has become widespread in modern transformer-based models. Given a sufficiently large number of parameters, neural networks can approximate any continuous function to arbitrary accuracy [144, 157]."
+ },
+ {
+  "page": 65,
+  "note": "rimuovere, meglio, é confuso",
+  "dist": 0.0,
+  "para": "Beyond a point estimate, predictions carry two distinct sources of error: aleatoric uncertainty, intrinsic to the data (irreducible noise that more training data cannot remove), and epistemic uncertainty, reflecting the model’s ignorance about which parameter values best describe the data (reducible in the limit of infinite data and capacity). Bayesian neural networks aim to recover both jointly by treating the network weights as random variables rather than fixed parameters, in the same spirit as the simulation-based inference framework of Section 3.2. Chapter 6 presents one practical realisation of this idea, in which MC dropout and a heteroscedastic Gaussian likelihood are combined to produce per-output mean and variance estimates; the technical formalism is detailed there (Section 6.5.3.4). Gal and Ghahramani [161] showed that a neural network with dropout applied before every weight layer is mathematically equivalent to approximate variational inference in a deep Gaussian process; at test time, T stochastic forward passes with dropout active yield a sample mean as the predictive estimate and a sample variance as the epistemic uncertainty."
+ },
+ {
+  "page": 65,
+  "note": "in questo paragrafo ci sono troppi concetti che non vengono definiti in altri posti, capire se si può mettere dei link al paper",
+  "dist": 19.8,
+  "para": "Beyond a point estimate, predictions carry two distinct sources of error: aleatoric uncertainty, intrinsic to the data (irreducible noise that more training data cannot remove), and epistemic uncertainty, reflecting the model’s ignorance about which parameter values best describe the data (reducible in the limit of infinite data and capacity). Bayesian neural networks aim to recover both jointly by treating the network weights as random variables rather than fixed parameters, in the same spirit as the simulation-based inference framework of Section 3.2. Chapter 6 presents one practical realisation of this idea, in which MC dropout and a heteroscedastic Gaussian likelihood are combined to produce per-output mean and variance estimates; the technical formalism is detailed there (Section 6.5.3.4). Gal and Ghahramani [161] showed that a neural network with dropout applied before every weight layer is mathematically equivalent to approximate variational inference in a deep Gaussian process; at test time, T stochastic forward passes with dropout active yield a sample mean as the predictive estimate and a sample variance as the epistemic uncertainty."
+ },
+ {
+  "page": 65,
+  "note": "non menzionare il dropout, al posto dell'ultimo paragrafo puntare al paper per i dettagli",
+  "dist": 19.8,
+  "para": "Beyond a point estimate, predictions carry two distinct sources of error: aleatoric uncertainty, intrinsic to the data (irreducible noise that more training data cannot remove), and epistemic uncertainty, reflecting the model’s ignorance about which parameter values best describe the data (reducible in the limit of infinite data and capacity). Bayesian neural networks aim to recover both jointly by treating the network weights as random variables rather than fixed parameters, in the same spirit as the simulation-based inference framework of Section 3.2. Chapter 6 presents one practical realisation of this idea, in which MC dropout and a heteroscedastic Gaussian likelihood are combined to produce per-output mean and variance estimates; the technical formalism is detailed there (Section 6.5.3.4). Gal and Ghahramani [161] showed that a neural network with dropout applied before every weight layer is mathematically equivalent to approximate variational inference in a deep Gaussian process; at test time, T stochastic forward passes with dropout active yield a sample mean as the predictive estimate and a sample variance as the epistemic uncertainty."
+ },
+ {
+  "page": 65,
+  "note": "togliere anche, c'é troppo",
+  "dist": 0.0,
+  "para": "Overparameterised models can memorise the training set; regularisation keeps them honest. In practice, several complementary techniques are typically used in combination: weight decay (an L2 penalty on the weights), dropout—which randomly zeros a fraction of activations during training—batch and layer normalisation [162], data augmentation, and early stopping. Dropout doubles as an uncertainty quantifier when left active at test time, as described above, and its self-tuning variant concrete dropout [163] replaces the discrete Bernoulli mask with a continuous relaxation that makes the drop probability differentiable, so that the optimal rate for each layer is learned jointly with the network weights during training. Chapter 6 adopts concrete dropout as its regularisation and uncertainty calibration strategy, to which we defer the details of the implementation."
+ },
+ {
+  "page": 66,
+  "note": "definisci i e j, sono i pixel",
+  "dist": 11.7,
+  "para": "(f ∗g)[i, j] ="
+ },
+ {
+  "page": 67,
+  "note": "in this thesis, o chiamalo KDE",
+  "dist": 6.7,
+  "para": "3.3.4 Density Estimation"
+ },
+ {
+  "page": 68,
+  "note": "rifrasare in modelli generativi vs modelli probabilistici,  che é la differenza tra classificazione e density estimation",
+  "dist": 23.0,
+  "para": "Given a set of N observed data points {x1,...,xN} drawn from an unknown distribution, the goal is to estimate the probability density function p(x) that generated them. Unlike classification, which learns a decision boundary in feature space, density estimation reconstructs the full probability distribution and can therefore reveal populations that were absent from the training set. A non-parametric approach to this problem is provided by Kernel Density Estimation (KDE); we refer the interested reader to Section 2.5.1 of [144] for a comprehensive treatment. Given N samples, the KDE approximation to the density at a point x is"
+ },
+ {
+  "page": 68,
+  "note": "spsota paragrafo del KDE nella parte successifa, e elimina il resto",
+  "dist": 26.3,
+  "para": "where Kh is a kernel function with bandwidth h. For a Gaussian kernel, Kh(u) ∝exp(−∥u∥2/2h2), and the bandwidth controls the trade-off between bias and variance: too small a bandwidth overfits the sample, while too large a bandwidth oversmooths the underlying structure. The optimal bandwidth is determined through cross-validation, selecting the value that maximises the model likelihood on held-out data. Separate KDE models are computed independently for each source class (Galactic and extragalactic), yielding the class-conditional densities passoc(x|k) that form the building blocks of the mixture model described below."
+ },
+ {
+  "page": 67,
+  "note": "o non so, pensaci",
+  "dist": 0.0,
+  "para": "3.3.4 Density Estimation"
+ },
+ {
+  "page": 69,
+  "note": "specificare che questo é un problema di ogni task di ML",
+  "dist": 7.9,
+  "para": "The machine learning classification methods introduced in Section 3.3 are built on the implicit assumption that the training data faithfully represent the conditions under which the model will be deployed. When this assumption breaks down—as it does for several astrophysical classifi- cation tasks—the standard approaches described in the previous sections require modification. We now turn to the problem of dataset shift, a systematic mismatch between training and target distributions that, if left unaddressed, can bias inference results. We first formalize the problem (Section 3.4.1) and then describe its principal types and the strategies used to correct them (Section 3.4.2)."
+ },
+ {
+  "page": 70,
+  "note": "scfriverlo con p(x|k) diverso, l'altra é una cosa che può succedere",
+  "dist": 0.0,
+  "para": "ptrain(k|x) = ptarget(k|x), (3.4.3)"
+ },
+ {
+  "page": 74,
+  "note": "riaggiungi indice i, o dire che ho fisitta il bin energetico",
+  "dist": 23.8,
+  "para": "where fsky is the observed sky fraction, Cγγ"
+ },
+ {
+  "page": 75,
+  "note": "for a given mass",
+  "dist": 0.0,
+  "para": "To assess the sensitivity to a dark matter signal specifically, we perform a nested-model comparison in the spirit of Wilks’ theorem [181]. The null hypothesis includes only astrophysical sources, while the alternative hypothesis adds a dark matter component parameterized by a single additional degree of freedom—the annihilation cross section 〈σv〉or, in the decay case, the lifetime τχ. The test statistic is"
+ },
+ {
+  "page": 75,
+  "note": "manca Cp nella formula",
+  "dist": 1.3,
+  "para": ", (3.5.10)"
+ },
+ {
+  "page": 75,
+  "note": "eliminare forse il summary",
+  "dist": 25.1,
+  "para": "This chapter has established the statistical and computational framework referenced throughout the remainder of this thesis. The presentation has been deliberately conceptual: each method was introduced with its definitions, key equations, and standard examples, while the full technical implementations are deferred to the chapters where they are first applied."
+ },
+ {
+  "page": 78,
+  "note": "with different levels of significance",
+  "dist": 0.0,
+  "para": "Since 2009, analyses of Fermi-LAT data have consistently revealed a bright, statistically significant excess of gamma-ray emission from the region surrounding the Galactic Center [71, 118, 119, 190]. This signal peaks at energies between roughly 1 and 3 GeV, extends out to at least 10 degrees from Sgr A∗, and persists across all existing models of the astrophysical diffuse emission [190]. Its spectrum, angular distribution, and overall intensity are each consistent with the signal predicted from the annihilation of ∼40–70 GeV dark matter particles distributed according to a contracted Navarro–Frenk–White profile [5, 71]. The best-fit annihilation cross section, 〈σv〉∼(1–2)×10−26 cm3/s, is compatible with the canonical thermal relic value [71]."
+ },
+ {
+  "page": 78,
+  "note": "citare il mio paper",
+  "dist": 0.0,
+  "para": "After more than fifteen years, the origin of the GCE remains an open question. This chapter traces the observational history of the excess and its consistency with dark matter annihilation (Section 4.1), examines the millisecond pulsar hypothesis and its challenges (Section 4.2), and describes the systematics-driven impasse that has stalled progress (Section 4.3). We then moti- vate an independent, orthogonal approach: constraining the MSP luminosity function through observations of the Milky Way’s globular cluster system (Section 4.4). Section 4.5 then presents this analysis in full, reproducing the published study of MSP gamma-ray luminosity functions in globular clusters and its implications for the GCE."
+ },
+ {
+  "page": 81,
+  "note": "aggiungere link al pannello della figura sul GCE",
+  "dist": 13.2,
+  "para": "The spectrum of the GCE displays a pronounced peak at energies of 1–3 GeV. Below the peak, the emission rises steeply, with a spectral index harder than ∼2 down to the lowest energies accessible to the analysis (∼300 MeV), though the precise shape of this sub-GeV component depends on the adopted diffuse model [190]. Above the peak, the spectrum follows a power-law tail with index ∼−2.7 [71, 190]. The behavior at energies above ∼10 GeV remains the subject of some debate: early analyses suggested that the spectrum might drop sharply to zero at these energies, but the systematic study by Calore, Cholis, and Weniger [190] showed that this conclusion was not robust, and that a finite, model-dependent flux persists into the tens-of-GeV range. The behavior of the spectrum above 10 GeV would later become relevant to distinguishing between astrophysical and dark matter interpretations, as discussed in Section 4.1.4."
+ },
+ {
+  "page": 80,
+  "note": "chiarire che é stato fittato",
+  "dist": 0.0,
+  "para": "described by the annihilation of a relatively light dark matter particle with mass mχ ≈25–30 GeV, annihilating primarily into b ¯b quarks. The required halo profile was a Navarro–Frenk–White distribution with a mildly steepened inner slope, ρ(r) ∝r−γ with γ = 1.1, consistent with the adiabatic contraction expected from baryonic dynamics in the inner Galaxy (see Section 1.4.3). The corresponding annihilation cross section, 〈σv〉≈9 ×10−26 cm3/s, was within a factor of a few of the value predicted for a thermally produced relic. A subsequent, refined analysis by Hooper and Goodenough [119], incorporating additional data and improved background modeling, confirmed these findings and sharpened the parameter estimates."
+ },
+ {
+  "page": 80,
+  "note": "se lo trovi, metti un plot della significatività del GCE al variare di qualcosa",
+  "dist": 20.5,
+  "para": "described by the annihilation of a relatively light dark matter particle with mass mχ ≈25–30 GeV, annihilating primarily into b ¯b quarks. The required halo profile was a Navarro–Frenk–White distribution with a mildly steepened inner slope, ρ(r) ∝r−γ with γ = 1.1, consistent with the adiabatic contraction expected from baryonic dynamics in the inner Galaxy (see Section 1.4.3). The corresponding annihilation cross section, 〈σv〉≈9 ×10−26 cm3/s, was within a factor of a few of the value predicted for a thermally produced relic. A subsequent, refined analysis by Hooper and Goodenough [119], incorporating additional data and improved background modeling, confirmed these findings and sharpened the parameter estimates."
+ },
+ {
+  "page": 82,
+  "note": "chiarire morfologia (pubntiforme vs diffuso)",
+  "dist": 17.2,
+  "para": "This minimal model succeeds on all three fronts. The GCE spectrum, morphology, and spatial extent are each independently consistent with annihilation of a ∼30–50 GeV WIMP into b ¯b final states, distributed according to a contracted NFW profile with inner slope γ ≈1.1–1.3 (Section 4.1.2 for the spectral fits; Section 4.1.3 for the morphological characterization). No tuning of separate parameters is required to accommodate different observables: the same mass and channel that fit the spectrum also predict the correct spatial distribution, and the same halo profile that matches the morphology yields the observed flux level."
+ },
+ {
+  "page": 86,
+  "note": "non essere troppo biassato sulla DM, é un problema completamente aperto",
+  "dist": 22.5,
+  "para": "The exchange exposed a fundamental tension: the NPTF results depend sensitively on anal- ysis choices that remain debatable. The preference for point sources can be made to appear or vanish depending on the diffuse model, the treatment of spatial asymmetries, and the param- eterization of the source-count function at the faint end. No analysis to date has achieved a resolution that all groups accept, and the community consensus has shifted accordingly: the NPTF, as currently implemented, cannot robustly distinguish between smooth and point-source emission in the inner Galaxy."
+ },
+ {
+  "page": 84,
+  "note": "aggiungere che questi challenge sono basati su assunzioni",
+  "dist": 11.0,
+  "para": "The first constraint comes from scaling the observed relationship between low-mass X-ray binaries (LMXBs) and MSPs. Because MSPs evolve directly from LMXBs, stellar populations of similar age should contain a predictable ratio between the two classes. Cholis, Hooper & Linden exploited this connection by measuring the gamma-ray output of 16 Fermi-detected globular clusters hosting a total of 5 bright (L > 1036 erg/s) LMXBs, finding that their combined luminosity amounts to only 4.8% of the GCE flux within the inner 5◦[205]. If MSPs were responsible for the entire excess, the inner Galaxy should contain ∼100 bright LMXBs; INTEGRAL observations have detected only 7 candidates in this region. Even without correcting for selection biases that inflate the globular cluster gamma-ray yield, this comparison limits the MSP contribution to ∼4–11% of the GCE. After accounting for these biases, the authors estimated that only ∼1–5% of the excess can reasonably be attributed to unresolved MSPs [205]."
+ },
+ {
+  "page": 86,
+  "note": "morfologia é una parola un po' vaga, devo uniformare come parlo di cosa ll-interno della tesi",
+  "dist": 11.9,
+  "para": "Beyond the statistical question of smooth versus point-source emission, the spatial morphology of the GCE itself has become a second axis of contention. As discussed in Section 4.1.3, the excess was initially characterized as approximately spherically symmetric, centered on Sgr A∗, and"
+ },
+ {
+  "page": 87,
+  "note": "capire se si può eliminare o fare un fold in",
+  "dist": 30.9,
+  "para": "The significance of this claim, however, depends sensitively on the analysis setup. Whether the GCE prefers an NFW or bulge morphology can shift depending on the interstellar emission model adopted, the masking procedure applied to the Galactic plane and known point sources, and how the Fermi Bubbles emission is treated at low latitudes [5, 203]. Because the true diffuse background in the inner Galaxy is not known to the precision required, the template fitting procedure is inherently subject to systematic uncertainties that propagate directly into the morphological inference. Different groups, using equally defensible analysis choices, have reached opposite conclusions: some find a strong preference for the bulge template, while others recover a spherically symmetric signal fully consistent with dark matter. No interstellar emission model achieves statistical fluctuation-level agreement with the data in the inner Galaxy; persistent large-scale residuals remain regardless of the morphological template adopted for the GCE. As a result, all morphological conclusions drawn from current analyses should be regarded as provisional."
+ },
+ {
+  "page": 87,
+  "note": "alla ifne c'é l'incertezza sulal strututra (diffuso o puntiforme) e l-energia (energy spectrum)",
+  "dist": 30.9,
+  "para": "The significance of this claim, however, depends sensitively on the analysis setup. Whether the GCE prefers an NFW or bulge morphology can shift depending on the interstellar emission model adopted, the masking procedure applied to the Galactic plane and known point sources, and how the Fermi Bubbles emission is treated at low latitudes [5, 203]. Because the true diffuse background in the inner Galaxy is not known to the precision required, the template fitting procedure is inherently subject to systematic uncertainties that propagate directly into the morphological inference. Different groups, using equally defensible analysis choices, have reached opposite conclusions: some find a strong preference for the bulge template, while others recover a spherically symmetric signal fully consistent with dark matter. No interstellar emission model achieves statistical fluctuation-level agreement with the data in the inner Galaxy; persistent large-scale residuals remain regardless of the morphological template adopted for the GCE. As a result, all morphological conclusions drawn from current analyses should be regarded as provisional."
+ },
+ {
+  "page": 117,
+  "note": "aggiungere una discussione sul percheé dark subhalos son ocomplementari",
+  "dist": 30.0,
+  "para": "The analysis proceeds in two stages. First, we ask whether the observed population of unassociated Fermi-LAT sources is better described by a model that includes a dark matter subhalo component or by one containing only known astrophysical source classes. If no statistically significant subhalo contribution is found, the profile likelihood is used to set 95% confidence upper bounds on 〈σv〉as a function of mDM. Both possible outcomes are scientifically informative: a positive detection would provide direct evidence for annihilating dark matter in the ΛCDM substructure, while a null result constrains 〈σv〉and provides an independent cross-check of the limits obtained from dwarf spheroidal galaxies [122]. Dark subhalos are, in this respect, exceptionally clean targets: unlike the Galactic Center (Chapter 4), a subhalo below ∼108 M⊙"
+ },
+ {
+  "page": 118,
+  "note": "rendere meno forte",
+  "dist": 29.3,
+  "para": "[AA: this is a strong statement, review it and maybe tone it down or better scope it] All prior searches for dark matter subhalos among Fermi-LAT unassociated sources share a common strategy, referred to as classify-and-count: a set of DM subhalo candidates is selected from the unassociated population based on their gamma-ray properties, and upper limits on 〈σv〉are derived under the assumption that the number of true subhalos cannot exceed the candidate count [252–269]. Early analyses relied on hand-crafted spectral and spatial cuts applied to successive catalog releases [255–258, 262, 263, 265], with some studies emphasizing spatial"
+ },
+ {
+  "page": 119,
+  "note": "smorzare questa frase, anche il nostro paper non ha vere DM class",
+  "dist": 5.5,
+  "para": "The classify-and-count approach, whether implemented with hand-crafted cuts or ML clas- sifiers, suffers from three interrelated problems that compromise the statistical rigor of the resulting constraints. First, no dark matter subhalo has ever been identified, so the “DM” class used in supervised classification has no empirical anchor and the resulting classification proba- bilities cannot be calibrated against reality. [AA: review this statement] Second, the posterior probability p(k|x) produced by any discriminative classifier absorbs the class prevalences of its training set (Section 3.4.2). When classifiers are trained on balanced datasets—with artificially equal fractions of AGNs, pulsars, and simulated DM sources—the resulting predictions reflect these imposed priors rather than the true composition of the gamma-ray sky. The same prior shift problem arises when a model trained on associated sources, where extragalactic objects dominate, is applied to the unassociated population, which has a substantially higher Galactic fraction. Correcting this bias requires a realistic testing set that mirrors the target population, but in the classify-and-count framework such a set cannot be constructed: the true class prevalences among unassociated sources are unknown, and for the DM class no confirmed example exists at all. Third, the number of DM candidates depends on an ad hoc probability threshold pDM > pthreshold whose value carries no statistical justification: different thresholds yield candidate counts that can differ by an order of magnitude and, consequently, different physical bounds on 〈σv〉. The resulting up- per limits lack a well-defined confidence level—they represent an assumption (NDM ≤Ncandidates) rather than a statistical inference."
+ },
+ {
+  "page": 119,
+  "note": "un modello generativo ha un output più ricco. un modello di classificazione non é male a prescindere",
+  "dist": 8.8,
+  "para": "The classify-and-count approach, whether implemented with hand-crafted cuts or ML clas- sifiers, suffers from three interrelated problems that compromise the statistical rigor of the resulting constraints. First, no dark matter subhalo has ever been identified, so the “DM” class used in supervised classification has no empirical anchor and the resulting classification proba- bilities cannot be calibrated against reality. [AA: review this statement] Second, the posterior probability p(k|x) produced by any discriminative classifier absorbs the class prevalences of its training set (Section 3.4.2). When classifiers are trained on balanced datasets—with artificially equal fractions of AGNs, pulsars, and simulated DM sources—the resulting predictions reflect these imposed priors rather than the true composition of the gamma-ray sky. The same prior shift problem arises when a model trained on associated sources, where extragalactic objects dominate, is applied to the unassociated population, which has a substantially higher Galactic fraction. Correcting this bias requires a realistic testing set that mirrors the target population, but in the classify-and-count framework such a set cannot be constructed: the true class prevalences among unassociated sources are unknown, and for the DM class no confirmed example exists at all. Third, the number of DM candidates depends on an ad hoc probability threshold pDM > pthreshold whose value carries no statistical justification: different thresholds yield candidate counts that can differ by an order of magnitude and, consequently, different physical bounds on 〈σv〉. The resulting up- per limits lack a well-defined confidence level—they represent an assumption (NDM ≤Ncandidates) rather than a statistical inference."
+ },
+ {
+  "page": 157,
+  "note": "aggiungi S",
+  "dist": 0.0,
+  "para": "The analysis of the unresolved gamma-ray sky begins with a single observable: the differential source-count distribution, dN/dS. This function describes how many point sources exist at each flux level and provides the most direct statistical characterization of the populations that contribute to the unresolved gamma-ray background. Its reconstruction below the telescope detection threshold — where individual sources can no longer be identified — is the central inference problem addressed in this chapter."
+ },
+ {
+  "page": 158,
+  "note": "scrivere esplicitamente qual é la luminosity function, non solo a parole",
+  "dist": 24.1,
+  "para": "where Γ is a parameter that characterizes the energy spectrum shape of the source, dV/(dz dΩ) is the comoving volume element per unit redshift and solid angle, and dLγ/dS is the Jacobian relating luminosity to observed flux through the luminosity distance DL(z). The integrand dN/(dV dLγ dΓ) — the comoving density of sources per unit luminosity and spectral index — is the luminosity function itself, which encodes the intrinsic abundance of sources at each cosmic epoch."
+ },
+ {
+  "page": 159,
+  "note": "cercare un plot per questo",
+  "dist": 14.6,
+  "para": "limit, produce multiple photons during the observation period; because these photons are spatially correlated, they populate pixels with moderately large photon counts, generating non-Poissonian tails in the distribution. By contrast, faint but numerous sources, such as star-forming galaxies, contribute on average far less than one photon each; their combined signal is statistically indistinguishable from a smooth Poissonian background [308]. The departures from Poisson statistics therefore encode information about the sub-threshold source population and its dN/dS. This connection is made rigorous through a generating-function formalism [123, 308] in which the total photon-count probability factorises into independent contributions from point sources, Galactic foreground, and isotropic background, and the parameters of dN/dS are obtained by fitting the predicted pixel histogram to data via maximum likelihood."
+ },
+ {
+  "page": 159,
+  "note": "aggiungere un paragrafo parlando della robustness della metodologia",
+  "dist": 15.3,
+  "para": "limit, produce multiple photons during the observation period; because these photons are spatially correlated, they populate pixels with moderately large photon counts, generating non-Poissonian tails in the distribution. By contrast, faint but numerous sources, such as star-forming galaxies, contribute on average far less than one photon each; their combined signal is statistically indistinguishable from a smooth Poissonian background [308]. The departures from Poisson statistics therefore encode information about the sub-threshold source population and its dN/dS. This connection is made rigorous through a generating-function formalism [123, 308] in which the total photon-count probability factorises into independent contributions from point sources, Galactic foreground, and isotropic background, and the parameters of dN/dS are obtained by fitting the predicted pixel histogram to data via maximum likelihood."
+ },
+ {
+  "page": 159,
+  "note": "includi paragrafo sui test con il dNdS flat",
+  "dist": 15.3,
+  "para": "limit, produce multiple photons during the observation period; because these photons are spatially correlated, they populate pixels with moderately large photon counts, generating non-Poissonian tails in the distribution. By contrast, faint but numerous sources, such as star-forming galaxies, contribute on average far less than one photon each; their combined signal is statistically indistinguishable from a smooth Poissonian background [308]. The departures from Poisson statistics therefore encode information about the sub-threshold source population and its dN/dS. This connection is made rigorous through a generating-function formalism [123, 308] in which the total photon-count probability factorises into independent contributions from point sources, Galactic foreground, and isotropic background, and the parameters of dN/dS are obtained by fitting the predicted pixel histogram to data via maximum likelihood."
+ },
+ {
+  "page": 160,
+  "note": "chiarire meglio questa parte, non é precisa",
+  "dist": 13.6,
+  "para": "Absence of amortization. Each evaluation of the likelihood requires a fresh computation of the generating function at every pixel, which is computationally expensive. Exploring high- dimensional posterior distributions over the dN/dS parameters and nuisance parameters (such as the Galactic foreground normalization) demands large numbers of these evaluations, making the inference slow and scaling poorly with the number of energy bins or model parameters."
+ },
+ {
+  "page": 160,
+  "note": "da riveredere bene",
+  "dist": 13.2,
+  "para": "The limitations identified above share a common root: the 1pPDF relies on an analytic likelihood that incorporates only a subset of the information contained in the photon-count map. An alternative is to bypass the likelihood entirely and employ simulation-based inference (SBI), the general framework introduced in Section 3.2."
+ },
+ {
+  "page": 200,
+  "note": "valutare se riassumere, o come",
+  "dist": 29.7,
+  "para": "The framework outlined in the previous section is entirely frequentist. The dN/dS enters as a generative model for the synthetic skies, not as a Bayesian prior to be updated. Three quantities define the statistical procedure."
+ },
+ {
+  "page": 214,
+  "note": "magari specificare DM galattica in 4-5",
+  "dist": 19.8,
+  "para": "The preceding chapters looked for localized dark matter signatures: the concentrated gamma-ray emission expected from the Galactic Center — where the dark matter density reaches its peak — and from individual subhalos that remain unresolved among the unassociated sources detected by the Fermi Large Area Telescope. Neither strategy returned a definitive signal. The Galactic Center excess persists, but a decade of increasingly sophisticated analyses has not resolved the fundamental degeneracy between a dark matter annihilation origin and a population of unresolved millisecond pulsars [71, 193, 194, 209]. The search for dark matter subhalos among unassociated sources [243] found no significant evidence for an anomalous population at current sensitivity levels, consistent with theoretical expectations — a result that establishes competitive constraints but does not close the door. We then moved to studying the unresolved gamma-ray sky. At the population level, the source-count distribution and probabilistic catalog constructed in Chapters 6 and 7 mapped the unresolved gamma-ray sky to fluxes roughly 50 times below the detection threshold [307, 309, 343], characterizing the astrophysical landscape in which any dark matter contribution must reside, but without working on isolating a signal."
+ },
+ {
+  "page": 215,
+  "note": "chiarire meglio che adesso parliamo di DM extragalattica",
+  "dist": 10.4,
+  "para": "If dark matter is a particle that annihilates, it could do so not just in our galaxy, but also inside every gravitationally bound structure across the universe. As such, to qualify a potential gamma-ray signal from dark matter, we need to first understand how matter is distributed in our universe."
+ },
+ {
+  "page": 216,
+  "note": "aggiungere link alla sezione delle W",
+  "dist": 11.8,
+  "para": "γ (z), which de- scribes the redshift distribution of the gamma-ray emission, is sharply peaked at z < 0.1 due to the ρ2 density scaling of the annihilation rate. Local galaxy catalogs such as 2MASS, covering"
+ },
+ {
+  "page": 217,
+  "note": "non dire che peaks sharply riferito a W",
+  "dist": 18.9,
+  "para": "ℓ introduced in Section 3.5 measures the correlation between intensity fluctuations in the gamma-ray intensity field and in the galaxy number counts. Under the Limber approximation (Eq. 3.5.4), this is a single integral over comoving distance, weighted by the product of the gamma-ray and galaxy window functions Wγ(χ) and Wg(χ). Note that Cγg"
+ },
+ {
+  "page": 218,
+  "note": "scrivere CTAO per lungo",
+  "dist": 8.8,
+  "para": "The auto-correlation variance (Eq. 3.5.9) is qualitatively different. Here the photon noise enters quadratically and adds directly to the gamma-ray auto-power spectrum. For a ground- based instrument like CTAO, the cosmic-ray rejection rate is never perfect, so CN is dominated by the irreducible cosmic-ray background rather than by photon statistics alone, making it very large. Any attempt to extract a DM signal from Cγγ"
+ },
+ {
+  "page": 220,
+  "note": "togliere continental scale",
+  "dist": 20.8,
+  "para": "The extension to TeV energies opens a qualitatively new window for dark matter searches. Heavy WIMP candidates with masses mχ ≳1 TeV produce gamma rays predominantly in the"
+ },
+ {
+  "page": 220,
+  "note": "CTAO, plan to consist of 2 observatories etc, non will",
+  "dist": 43.5,
+  "para": "The extension to TeV energies opens a qualitatively new window for dark matter searches. Heavy WIMP candidates with masses mχ ≳1 TeV produce gamma rays predominantly in the"
+ }
+]
