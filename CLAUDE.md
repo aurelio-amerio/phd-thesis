@@ -68,7 +68,7 @@ Skills live in `.agent/skills/` (antigravity) and `.claude/skills/` (Claude Code
 
 - `\aure{...}` — orange highlighted author comment/annotation
 - `\be` / `\ee` — begin/end equation (shorthand)
-- `\ben` / `\een` — begin/end equation with no number
+- `\ben` / `\een` — begin/end enumerate (paper 4 macro; NOT an equation environment — use `\[...\]` for unnumbered displays)
 - `\dnds`, `\dNdS` — source-count distribution notation
 - `\Fermi`, `\fermi` — Fermi-LAT references
 - `\gsim`, `\lsim` — approximate ≳ ≲ comparisons
