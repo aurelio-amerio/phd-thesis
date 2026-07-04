@@ -16,8 +16,9 @@ It is the fundamental observable that describes how point sources are distribute
 For sources bright enough to be individually cataloged, $dN/dS$ is measured by simply counting objects in the catalog as a function of their flux (see also Section~\ref{sec:astro_sky}). The 4FGL-DR3 catalog \cite{Fermi-LAT:2022byn}, based on 12 years of Fermi-LAT data, contains 6658 resolved sources and provides a direct measurement of the source-count distribution in the resolved regime \cite{Amerio:2023uet}.
 Above the flux threshold where the catalog detection efficiency reaches 100\%, this measurement is straightforward.
 Below this threshold, the detection efficiency degrades, and direct counting must be supplemented by Monte Carlo corrections to reconstruct the true underlying distribution.
-Further below --- in the unresolved regime, where individual sources are too faint to be detected at all --- the cumulative emission of these sources forms the unresolved gamma-ray background (UGRB), and the $dN/dS$ must be inferred from the statistical properties of the photon-count map.
-This reconstruction is the central challenge addressed by this chapter.
+% Further below --- in the unresolved regime, where individual sources are too faint to be detected at all --- the cumulative emission of these sources forms the unresolved gamma-ray background (UGRB), and the $dN/dS$ must be inferred from the statistical properties of the photon-count map.
+\blue{Further below --- in the unresolved regime, where individual sources are too faint to be detected at all --- the sources merge into the UGRB (Section~\ref{sec:6.1.2}), and $dN/dS$ must be inferred statistically from the photon-count map.}
+% This reconstruction is the central challenge addressed by this chapter.
 
 The source-count distribution is the observational projection of a more fundamental quantity: the luminosity function.
 The gamma-ray luminosity function, $\Phi_\gamma(z, L_\gamma)$, gives the comoving number density of sources per unit luminosity $L_\gamma$ as a function of redshift $z$.
@@ -33,10 +34,11 @@ The integrand $dN/(dV \, dL_\gamma \, d\Gamma)$ --- the comoving density of sour
 This integral makes precise the physical content of $dN/dS$: it takes the intrinsic distribution of sources in luminosity and redshift, projects it through the flux--distance relation, and integrates over all redshifts and spectral shapes to produce the observed flux distribution.
 In other words, $dN/dS$ can be interpreted as the integral along the line of sight of the gamma-ray luminosity function. It is what we observe when we look at the sky, while the luminosity function is the astrophysical quantity we ultimately want to constrain.
 
-The source-count distribution therefore bridges two distinct observational regimes.
-At the bright end, it is anchored by direct measurements from the Fermi-LAT catalog, which shows a flux distribution broadly compatible with an $S^{-2}$ power law (shallower than the Euclidean expectation $S^{-5/2}$) across most of the resolved range \cite{Amerio:2023uet}.
-At the faint end, below the detection threshold of approximately $S_\mathrm{th} \sim 2 \times 10^{-10}$~cm$^{-2}$~s$^{-1}$ in the 1--10 GeV band, the $dN/dS$ must be reconstructed statistically from the collective imprint of unresolved sources on the photon-count map.
-The techniques for performing this reconstruction --- and for extending the $dN/dS$ well below the Fermi-LAT threshold --- are the subject of the following subsections.
+% The source-count distribution therefore bridges two distinct observational regimes.
+% At the bright end, it is anchored by direct measurements from the Fermi-LAT catalog, which shows a flux distribution broadly compatible with an $S^{-2}$ power law (shallower than the Euclidean expectation $S^{-5/2}$) across most of the resolved range \cite{Amerio:2023uet}.
+% At the faint end, below the detection threshold of approximately $S_\mathrm{th} \sim 2 \times 10^{-10}$~cm$^{-2}$~s$^{-1}$ in the 1--10 GeV band, the $dN/dS$ must be reconstructed statistically from the collective imprint of unresolved sources on the photon-count map.
+% The techniques for performing this reconstruction --- and for extending the $dN/dS$ well below the Fermi-LAT threshold --- are the subject of the following subsections.
+\blue{Quantitatively, the two regimes meet near the catalog detection threshold $S_\mathrm{th} \sim 2 \times 10^{-10}$~cm$^{-2}$~s$^{-1}$ (1--10 GeV band): above it, the resolved catalog measurement follows a flux distribution broadly compatible with an $S^{-2}$ power law, shallower than the Euclidean expectation $S^{-5/2}$ \cite{Amerio:2023uet}; below it, $dN/dS$ can only be recovered statistically. The techniques for extending it well below the threshold are the subject of the following subsections.}
 
 \aure{maybe add a nothe on that $S^{-5/2}$, where it comes from and why, it can be a footnote as that's a question that pops up often in talks: why do we get $S^{-2}$ and do we expect that?}
 
