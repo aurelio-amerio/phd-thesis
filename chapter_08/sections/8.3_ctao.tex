@@ -18,15 +18,18 @@ This ceiling in collecting area, combined with the falling flux of gamma rays at
 The \CTAO design is well suited to overcome exactly this limitation~\cite{CTAConsortium:2017dvg}.
 Ground-based imaging atmospheric Cherenkov telescopes (IACTs) reconstruct very-high-energy gamma rays from the brief flashes of Cherenkov light produced when an incident photon strikes the upper atmosphere and initiates an electromagnetic shower.
 By observing this shower at ground level, \CTAO effectively uses the atmosphere as a calorimeter, achieving effective areas orders of magnitude larger than any space-based detector.
-\blue{The observatory is planned as two arrays}, one in the northern hemisphere and one in the south, built from three types of telescopes tailored to different energy regimes: the Large-Sized Telescopes (LSTs, sensitive at lower energies, field of view $4.3^\circ$), the Medium-Sized Telescopes (MSTs, field of view $7.5^\circ$--$7.7^\circ$), and the Small-Sized Telescopes (SSTs, fields of view $8.8^\circ$, deployed only in the south where Galactic observations are prioritized).
+% \blue{The observatory is planned as two arrays}, one in the northern hemisphere and one in the south, built from three types of telescopes tailored to different energy regimes: the Large-Sized Telescopes (LSTs, sensitive at lower energies, field of view $4.3^\circ$), the Medium-Sized Telescopes (MSTs, field of view $7.5^\circ$--$7.7^\circ$), and the Small-Sized Telescopes (SSTs, fields of view $8.8^\circ$, deployed only in the south where Galactic observations are prioritized).
+\blue{The observatory is planned as two arrays, one in the northern hemisphere and one in the south, built from three telescope classes tailored to different energy regimes: the Large-Sized Telescopes (LSTs) at lower energies, the Medium-Sized Telescopes (MSTs) in the core range, and the Small-Sized Telescopes (SSTs) at the highest energies, deployed only in the south where Galactic observations are prioritized (telescope fields of view are detailed in Section~\ref{sec:CTA}).}
 Across these three telescope classes, \CTAO covers a broad energy range from 20~GeV up to 300~TeV, with an angular resolution and sensitivity that improve by an order of magnitude over current-generation IACTs, such as HESS, MAGIC, and VERITAS~\cite{CTAConsortium:2017dvg}.
 
 The extension to TeV energies opens a qualitatively new window for dark matter searches.
 Heavy WIMP candidates with masses $m_\chi \gtrsim 1$~TeV could produce gamma rays predominantly in the TeV band, a range where Fermi-LAT has negligible sensitivity.
-More importantly for cross-correlation studies, EBL absorption becomes significant above $\sim 1$~TeV, attenuating photons from sources at $z \gtrsim 0.1$--$0.2$ and \blue{effectively suppressing the astrophysical background from more distant sources}.
+% More importantly for cross-correlation studies, EBL absorption becomes significant above $\sim 1$~TeV, attenuating photons from sources at $z \gtrsim 0.1$--$0.2$ and \blue{effectively suppressing the astrophysical background from more distant sources}.
+\blue{More importantly for cross-correlation studies, EBL absorption above $\sim 1$~TeV suppresses the astrophysical background from more distant sources (cf. Section~\ref{sec:8.2.1}).}
 The LST and MST telescopes, built in both hemispheres, are optimised for extragalactic observations, where the unresolved emission receives its dominant DM contribution from structures at $z \lesssim 0.1$.
-\blue{At energies above 20~GeV and increasingly toward the TeV regime, star-forming galaxies and misaligned AGN contribute negligibly to the unresolved background. Blazars, both High-Synchrotron-Peaked (HSP) and Low-to-Intermediate-Synchrotron-Peaked (LISP), contitute the main astrophysical background component.
-EBL attenuation pushes their window functions, which peak at $z \sim 0.3$--$0.4$ at 50~GeV, down to $z \sim 0.1$--$0.2$ above 1~TeV, increasing their overlap with the DM-dominated window at $z \lesssim 0.1$ (cf. Section~\ref{sec:8.2.3}). Thus, even at TeV energies, blazars remain an important background for the cross-correlation.}
+\blue{At energies above 20~GeV and increasingly toward the TeV regime, star-forming galaxies and misaligned AGN contribute negligibly to the unresolved background. Blazars, both High-Synchrotron-Peaked (HSP) and Low-to-Intermediate-Synchrotron-Peaked (LISP), contitute the main astrophysical background component.}
+% EBL attenuation pushes their window functions, which peak at $z \sim 0.3$--$0.4$ at 50~GeV, down to $z \sim 0.1$--$0.2$ above 1~TeV, increasing their overlap with the DM-dominated window at $z \lesssim 0.1$ (cf. Section~\ref{sec:8.2.3}). Thus, even at TeV energies, blazars remain an important background for the cross-correlation.}
+\blue{EBL attenuation pushes the blazar window functions down toward the DM-dominated window at $z \lesssim 0.1$ (cf. Section~\ref{sec:8.2.1}); thus, even at TeV energies, blazars remain an important background for the cross-correlation.}
 
 \subsection{The Extragalactic Survey}
 \label{sec:8.3.2}
@@ -36,17 +39,22 @@ A pointed instrument with irregular coverage would introduce instrumental variat
 For CTAO, this requirement is met by the Extragalactic Survey (EGAL), one of the observatory's designated Key Science Projects~\cite{CTAConsortium:2017dvg}.
 
 The EGAL survey targets \blue{about} a quarter of the sky, covering the region defined by $-90^\circ < l < 90^\circ$ and $|b| > 5^\circ$ in Galactic coordinates.
-The survey is planned over three years of operations, split between the two array sites: the Southern array will observe 15\% of the sky with 400 hours, while the Northern array will cover the remaining 10\% with 600 hours, for a total observation time of approximately 1000 hours~\cite{CTAConsortium:2017dvg}.
-The default observing strategy is a grid of telescope pointings spaced by approximately $3^\circ$ across the survey area.
-Individual pointings are observed for 0.51 hours in the south and 1.11 hours in the north, yielding an effective average exposure of approximately 3 hours per point within the survey boundary~(see Section~\ref{sec:CTA}).
-The wide fields of view of the individual telescopes --- up to $8.8^\circ$ for the SSTs and $7.5^\circ$--$7.7^\circ$ for the MSTs --- create deliberate overlaps between adjacent pointings.
-These overlaps smooth out the exposure variations that inevitably arise when stitching together individual observations, keeping the relative fluctuations in the exposure map to approximately 10\% within the survey region~(see Section~\ref{sec:CTA}).
+% The survey is planned over three years of operations, split between the two array sites: the Southern array will observe 15\% of the sky with 400 hours, while the Northern array will cover the remaining 10\% with 600 hours, for a total observation time of approximately 1000 hours~\cite{CTAConsortium:2017dvg}.
+% The default observing strategy is a grid of telescope pointings spaced by approximately $3^\circ$ across the survey area.
+% Individual pointings are observed for 0.51 hours in the south and 1.11 hours in the north, yielding an effective average exposure of approximately 3 hours per point within the survey boundary~(see Section~\ref{sec:CTA}).
+\blue{Planned over three years and split between the two array sites, the survey delivers an approximately uniform effective exposure of about three hours per pointing across the footprint; the full pointing grid, per-site observing times, and total exposure budget are specified in Section~\ref{sec:CTA}.}
+% The wide fields of view of the individual telescopes --- up to $8.8^\circ$ for the SSTs and $7.5^\circ$--$7.7^\circ$ for the MSTs --- create deliberate overlaps between adjacent pointings.
+\blue{The wide, overlapping telescope fields of view (Section~\ref{sec:CTA}) create deliberate overlaps between adjacent pointings.}
+% These overlaps smooth out the exposure variations that inevitably arise when stitching together individual observations, keeping the relative fluctuations in the exposure map to approximately 10\% within the survey region~(see Section~\ref{sec:CTA}).
+\blue{These overlaps smooth out the exposure variations that arise when stitching together individual observations, keeping the exposure map approximately uniform across the survey region~(see Section~\ref{sec:CTA}).}
 
 % A second observation scenario considered in the paper appears from
 
 \blue{Another series of observations that can be exploited for cross-correlation studies is
 the accumulated off-source data collected through years of CTAO pointed observations across the extragalactic sky.}
-In the most optimistic projection, these off-source data sum to an effective exposure of approximately 50 hours per sky location --- roughly 25 times larger than the nominal EGAL exposure --- yielding a factor of $\sim 4$ improvement in sensitivity compared to the 3-hour scenario~(see Appendix~\ref{app:expo}).
+% In the most optimistic projection, these off-source data sum to an effective exposure of approximately 50 hours per sky location --- roughly 25 times larger than the nominal EGAL exposure --- yielding a factor of $\sim 4$ improvement in sensitivity compared to the 3-hour scenario~(see Appendix~\ref{app:expo}).
+\blue{In the most optimistic projection, these off-source data accumulate a substantially deeper effective exposure per sky location, improving the sensitivity over the nominal EGAL scenario (see Appendix~\ref{app:expo}).}
+\aure{Paper source \texttt{sensitivity\_forecast.tex} L110 reads ``5 hrs'' where ``50 hrs'' is intended (cf. the 50 h off-source scenario) --- likely a typo to fix upstream in the paper.}
 These observations are not associated to a specifc and dedicated survey, making them a practically relevant complement to the EGAL Key Science Project.
 
 The angular power spectrum $C_\ell$ is computed from a masked, pixelised sky map, and anisotropies in the instrumental exposure cannot be distinguished from intrinsic anisotropies in the gamma-ray background without careful masking and exposure correction.
@@ -54,6 +62,7 @@ At the multipoles $\ell \sim 10$--$100$ relevant for the DM cross-correlation si
 The EGAL strategy's uniform grid, combined with the broad telescope fields of view, is designed to minimise this systematic effect.
 
 % The combination of the EGAL survey's uniform sky coverage, CTAO's order-of-magnitude gains in angular resolution and collecting area, and the cross-correlation formalism developed in Section~\ref{sec:8.2} provides the ingredients for a quantitative assessment of CTAO's reach.
-The section that follows -- based on~\cite{Pinetti:2025hgd} -- applies this framework, forecasting the sensitivity to dark matter annihilation and decay through cross-correlations between the CTAO extragalactic survey and the 2MASS galaxy catalog, and benchmarking the results against complementary search strategies.
+% The section that follows -- based on~\cite{Pinetti:2025hgd} -- applies this framework, forecasting the sensitivity to dark matter annihilation and decay through cross-correlations between the CTAO extragalactic survey and the 2MASS galaxy catalog, and benchmarking the results against complementary search strategies.
+\blue{The section that follows~\cite{Pinetti:2025hgd} applies this framework to forecast CTAO's sensitivity to dark matter annihilation and decay, benchmarking the results against complementary search strategies.}
 
 \aure{follows the paper}
