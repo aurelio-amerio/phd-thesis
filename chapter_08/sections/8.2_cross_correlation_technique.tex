@@ -17,15 +17,17 @@ This is the essence of the tomographic approach~\cite{xia2015tomography,DGRB-rev
 
 The window function $W_\gamma(z)$ encodes the redshift distribution of the gamma-ray emission.
 For unresolved astrophysical sources such as blazars, $W_\gamma$ depends on the luminosity function and the spectral energy distribution of the source class, modulated by EBL absorption at high energies.
-For dark matter annihilation, it is proportional to $\langle\sigma v\rangle\,\Delta^2(z)\,\left(\Omega_\mathrm{DM}\rho_c/m_\chi\right)^2\,(1+z)^3\,e^{-\tau(E,z)}$, where $\Delta^2(z)$ is the flux multiplier that captures the enhancement from DM clustering and substructures (see Section~\ref{sec:1.4}).
+% For dark matter annihilation, it is proportional to $\langle\sigma v\rangle\,\Delta^2(z)\,\left(\Omega_\mathrm{DM}\rho_c/m_\chi\right)^2\,(1+z)^3\,e^{-\tau(E,z)}$, where $\Delta^2(z)$ is the flux multiplier that captures the enhancement from DM clustering and substructures (see Section~\ref{sec:1.4}).
+\blue{For dark matter annihilation, it is proportional to $\langle\sigma v\rangle\,\Delta^2(z)/m_\chi^2$, where $\Delta^2(z)$ is the flux multiplier that captures the enhancement from DM clustering and substructures (full expression in Appendix~\ref{app:WDM}).}
 The $\rho^2$ scaling makes the signal dominated by the late-time collapse of matter into dense halos and subhalos, whose clustering $\Delta^2(z)$ peaks in the local universe and outweighs the smoother high-redshift background.
-As a result, $W_\gamma^\mathrm{DM}$ peaks sharply at $z \lesssim 0.1$ and decays rapidly thereafter, regardless of the DM mass or annihilation channel.
+As a result, $W_\gamma^\mathrm{DM}$ peaks sharply at $z \lesssim 0.1$ and decays rapidly thereafter, regardless of the DM mass or annihilation channel~\blue{(cf. Section~\ref{sec:8.1})}.
 
 Astrophysical backgrounds present a very different behaviour.
 Unresolved blazars\footnote{High-synchrotron-peaked BL Lacertae objects are often denoted HSP, while low and intermediate-synchrotron-peaked BL Lacs are often grouped together and denoted LISP.} have their emission peak at $z \sim 0.3$--$0.5$ at $50\,\mathrm{GeV}$.
 At higher energies, EBL absorption progressively shrinks the gamma-ray horizon: above ${\sim}\,1\,\mathrm{TeV}$, the observable volume contracts to $z \lesssim 0.1$--$0.2$, irrespective of source type.
 Star-forming galaxies trace the cosmic star-formation rate and dominate at much higher redshifts, $z \sim 1$--$3$.
-Figure~\ref{fig:window_main} illustrates this feature quantitatively for the benchmark scenario considered in the analysis of this chapter: the DM window functions are confined to low redshift, while blazar contributions extend to $z \sim 0.4$--$0.5$ at 50 GeV.
+% Figure~\ref{fig:window_main} illustrates this feature quantitatively for the benchmark scenario considered in the analysis of this chapter: the DM window functions are confined to low redshift, while blazar contributions extend to $z \sim 0.4$--$0.5$ at 50 GeV.
+\blue{Figure~\ref{fig:window_main} illustrates this feature quantitatively for the benchmark scenario considered in the analysis of this chapter: the DM window functions are confined to low redshift, while the blazar contributions extend to higher redshift.}
 
 The galaxy catalog window function $W_g(z) = dN_g/dz$, normalized to unity, represents the redshift distribution of the galaxies in the sample.
 A dense, shallow catalog covering $z \lesssim 0.1$ such as the Two Micron All-Sky Survey (2MASS) overlaps nicely with the DM annihilation window function, which benefits
@@ -94,6 +96,7 @@ A non-zero DM contribution was allowed by the data but degenerate with the astro
 % Camera et al.~\cite{Camera:2012cj} showed theoretically that the shear window function overlaps well with the DM annihilation window function, making this combination particularly clean from an astrophysical foreground perspective.
 % The main practical challenge is the much larger noise of current weak-lensing surveys compared with galaxy number counts.
 
-\blue{In the context of cross-correlation with CTAO, the case for 2MASS and 2MRS is even stronger than in the Fermi-LAT analyses discussed above.
-These shallow surveys trace the local universe at $z \lesssim 0.1$, precisely where the DM annihilation signal peaks, since it is dominated by the halo and subhalos of our own Galaxy together with nearby structures.
-At TeV energies this overlap is reinforced by a second effect: above roughly $1\,\mathrm{TeV}$, pair production on the EBL shrinks the gamma-ray horizon to $z \lesssim 0.1$--$0.2$, exponentially attenuating distant blazars while the local dark matter photons arrive essentially unabsorbed.}
+% \blue{In the context of cross-correlation with CTAO, the case for 2MASS and 2MRS is even stronger than in the Fermi-LAT analyses discussed above.
+% These shallow surveys trace the local universe at $z \lesssim 0.1$, precisely where the DM annihilation signal peaks, since it is dominated by the halo and subhalos of our own Galaxy together with nearby structures.
+% At TeV energies this overlap is reinforced by a second effect: above roughly $1\,\mathrm{TeV}$, pair production on the EBL shrinks the gamma-ray horizon to $z \lesssim 0.1$--$0.2$, exponentially attenuating distant blazars while the local dark matter photons arrive essentially unabsorbed.}
+\blue{In the context of cross-correlation with CTAO, the case for 2MASS and 2MRS is even stronger: at TeV energies the EBL horizon (Section~\ref{sec:8.2.1}) removes the distant blazars while local dark matter photons arrive essentially unabsorbed.}
