@@ -14,6 +14,20 @@ Generated per the plan
 fresh-context subagent per chapter (per CLAUDE.md's "review in fresh context"
 rule).
 
+**Verification pass (2026-07-03).** Every report was independently re-verified
+by a second round of fresh-context subagents: each claimed occurrence was
+located in the current `.tex` sources, severities were re-judged, and each
+recommendation was stress-tested against a *balanced* de-duplication philosophy
+(each section should still stand alone with a one-line recap + cross-reference;
+neither gut a section nor leave near-verbatim duplication). Reports were
+updated in place: entries carry `Verification:` verdicts
+(CONFIRMED / PARTIAL / FALSE-POSITIVE), revised recommendations are marked, new
+overlaps found during the sweep were appended as new entries, and false
+positives are struck through but retained for the record. Each report opens
+with a summary of what changed. Non-repetition defects surfaced during
+verification (wrong cross-references, numeric inconsistencies, stale wrapper
+comments) are recorded in the C-sections.
+
 ## Report structure
 
 Each `chapter_0X_overlaps.md` contains:
