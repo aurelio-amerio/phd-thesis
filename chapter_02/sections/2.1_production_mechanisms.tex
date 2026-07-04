@@ -4,11 +4,16 @@
 \section{Gamma-Ray Production Mechanisms}
 \label{sec:production_mechanisms}
 
-Before cataloging individual point sources or attempting to extract information from the faint extragalactic emission, one must understand the physical processes that generate \blue{the intense Galactic foreground introduced above}.
+% Before cataloging individual point sources or attempting to extract information from the faint extragalactic emission, one must understand the physical processes that generate \blue{the intense Galactic foreground introduced above}.
 
-This section reviews the standard gamma-ray production mechanisms.
-These processes fall into two broad categories: hadronic interactions involving cosmic-ray nucleons colliding with interstellar gas, and leptonic interactions involving energetic electrons and positrons scattering off radiation fields and gas.
-Operating in different energy regimes and tracing distinct target environments, they combine to produce the macroscopic Galactic Diffuse Emission that dominates the observed gamma-ray sky.
+This section reviews the standard gamma-ray production mechanisms responsible for the Galactic diffuse gamma-ray emission.
+These processes fall mainly into two broad categories: hadronic interactions involving cosmic-ray nucleons colliding with interstellar gas, and leptonic interactions involving energetic electrons and positrons scattering off radiation fields and gas.
+% Operating in different energy regimes and tracing distinct target environments, they combine to produce the macroscopic Galactic Diffuse Emission that dominates the observed gamma-ray sky.
+
+\blue{Both families of processes operate within the \emph{interstellar medium} (ISM), the mix of gas, dust, radiation, magnetic fields, and cosmic rays that fills the space between stars.
+The ISM is mainly made of gas---roughly three-quarters hydrogen and one-quarter helium, with heavier elements and dust particles together contributing less than a percent. }
+% It is organized into several coexisting phases spanning a wide range of temperature and density: cold molecular clouds in which hydrogen is bound into H$_2$; a neutral atomic medium traced by the 21 cm line of H\,\textsc{i}; and ionized phases (H\,\textsc{ii}), photoionized by stellar radiation and shock-heated by supernovae.
+\blue{This gas supplies the collision targets for the hadronic interactions and bremsstrahlung discussed below, while the \emph{interstellar radiation field}---starlight, infrared emission, and the CMB---provides the seed photons for inverse Compton scattering.	}
 
 \subsection{Hadronic Emission}
 \label{sec:hadronic}
@@ -26,12 +31,13 @@ Because a significant fraction of the proton's kinetic energy is transferred in 
 \begin{figure}[t]
 	\centering
 	% Note: Using Kafexhiu et al. (2014) Figure 13 (right panel) as CC-licensed replacement
-	\includegraphics[width=0.7\columnwidth]{figures/pp_cross_section.pdf}
-	\caption{Inclusive $\pi^0$ production cross section for inelastic proton-proton collisions as a function of the incident proton energy.
-		Different theoretical models (Geant4, Pythia8, QGSJET, SIBYLL) diverge at extremely high energies but provide consistent predictions across the primary cosmic-ray regime.
-		Credit: Figure 13 from Kafexhiu et al.\ (2014) \cite{Kafexhiu:2014cua}.
-		\aure{replace this with a pp cross section to show the pion bump, maybe}
-	}
+	\includegraphics[width=0.7\columnwidth]{figures/sigma_pp.pdf}
+	% \caption{Inclusive $\pi^0$ production cross section for inelastic proton-proton collisions as a function of the incident proton energy.
+	% 	Different theoretical models (Geant4, Pythia8, QGSJET, SIBYLL) diverge at extremely high energies but provide consistent predictions across the primary cosmic-ray regime.
+	% 	Credit: Figure 13 from Kafexhiu et al.\ (2014) \cite{Kafexhiu:2014cua}.
+	% 	\aure{replace this with a pp cross section to show the pion bump, maybe}
+	% }
+	\caption{\blue{Measurements of the total and inelastic proton-proton cross section, where the so-called pion bump is clearly visible. Adapted from \cite{ParticleDataGroup:2022pth}.}}
 	\label{fig:pp_cross_section}
 \end{figure}
 
@@ -42,8 +48,8 @@ While charged pions ($\pi^\pm$) decay into muons and neutrinos, neutral pions de
 In the rest frame of the $\pi^0$, this decay produces two photons of equal energy $E_\gamma = m_{\pi^0}/2 \approx 67.5$ MeV.
 In the laboratory frame, however, a pion moving with energy $E_\pi$ generates a gamma-ray spectrum that is flat between the kinematic bounds $(E_\pi - \sqrt{E_\pi^2 - m_\pi^2})/2$ and $(E_\pi + \sqrt{E_\pi^2 - m_\pi^2})/2$, and vanishes outside this interval \cite{Hooper:2024}.
 This flat distribution has a remarkable consequence: regardless of the spectral shape of the parent pion population, the resulting gamma-ray spectrum---when plotted as $E^2 \, dN/dE$---always peaks at $m_{\pi^0}/2 \approx 67.5$ MeV.
-This universal spectral feature, known as the \emph{pion bump}, is the definitive spectral signature of hadronic cosmic-ray interactions with gas and has been conclusively observed in both supernova remnants and the Galactic Plane emission \cite{Fermi-LAT:2013iui}.
-Figure~\ref{fig:pp_cross_section} shows the inclusive $\pi^0$ production cross section as a function of proton energy across the primary cosmic-ray regime; the parametrization of Kafexhiu et al.\ \cite{Kafexhiu:2014cua} is widely adopted in current gamma-ray analyses.
+This universal spectral feature, known as the \emph{pion bump}, is the definitive spectral signature of hadronic cosmic-ray interactions with gas and has been conclusively observed in both supernova remnants and the Galactic Plane emission \cite{Fermi-LAT:2013iui}, see Figure~\ref{fig:pp_cross_section}.
+% Figure~\ref{fig:pp_cross_section} shows the inclusive $\pi^0$ production cross section as a function of proton energy across the primary cosmic-ray regime; the parametrization of Kafexhiu et al.\ \cite{Kafexhiu:2014cua} is widely adopted in current gamma-ray analyses.
 
 Hadronic emission dominates the Galactic Diffuse Emission along the Galactic Plane, where the column density of interstellar gas is highest.
 As a result, it constitutes the primary astrophysical background for any dark matter search targeting the inner Galaxy\blue{, with consequences we quantify in Section~\ref{sec:gde_model}}.
@@ -88,7 +94,7 @@ At higher electron energies, Klein-Nishina suppression progressively reduces the
 \textbf{Bremsstrahlung.}
 In gas-rich regions of the interstellar medium, electrons undergo
 bremsstrahlung as they decelerate in the Coulomb fields of neutral and ionized atomic gas.
-The bremsstrahlung cross section scales with the square of the target nuclear charge ($\propto Z^2$), making hydrogen and helium the dominant targets in the ISM.
+The bremsstrahlung cross section scales with the square of the target nuclear charge ($\propto Z^2$), and hydrogen and helium are the dominant targets in the ISM.
 A distinctive feature of bremsstrahlung is that its energy loss rate scales linearly with the electron energy at leading order ($b_\text{brem} \propto E_e$) \cite{Pinetti:2021jjs}, resulting in an energy loss timescale that is effectively independent of $E_e$.
 As a consequence, the gamma-ray spectrum produced through bremsstrahlung closely mirrors the spectral shape of the parent electron population \cite{Hooper:2024}.
 This process serves as the dominant cooling mechanism for cosmic-ray electrons in the MeV to GeV range in gas-dense environments such as the Galactic Plane, though it is broadly subdominant to hadronic emission in the same regions.
@@ -101,7 +107,7 @@ Which of the two mechanisms dominates depends on the local ratio of magnetic fie
 At the highest electron energies, Klein-Nishina suppression of ICS breaks this symmetry: the ICS loss rate falls below its Thomson-regime prediction, leaving synchrotron radiation as the primary cooling channel for the most energetic cosmic-ray electrons \cite{Hooper:2024}.
 
 These three leptonic processes, together with the hadronic pion-decay mechanism described in the preceding section, constitute the main set of fundamental interactions that generate the diffuse gamma-ray sky.
-The following section describes how these individual components are combined into a global model of the Galactic Diffuse Emission.
+The following section describes how these individual components are combined into a global model of the astrophysical Galactic Diffuse Emission.
 
 \subsection{The Galactic Diffuse Emission Model}
 \label{sec:gde_model}
@@ -109,7 +115,7 @@ The following section describes how these individual components are combined int
 The individual production mechanisms described in the preceding sections combine to produce the Galactic Diffuse Emission (GDE)---the brightest feature in the gamma-ray sky, accounting for roughly 80\% of all photons detected by the \textit{Fermi}-LAT \cite{Fermi-LAT:2014ryh,DGRB-review}.
 This emission arises from the integrated interactions of propagating cosmic rays with the interstellar gas and radiation fields of the Milky Way.
 
-To model this complex, spatially structured foreground, astrophysicists rely on numerical cosmic-ray propagation codes, of which GALPROP is the most established \cite{Strong:2007nh}.
+To model this complex, spatially structured foreground, astrophysicists rely on numerical cosmic-ray propagation codes, of which GALPROP is one of the most established \cite{Strong:2007nh}.
 Starting from a set of assumptions about cosmic-ray source distributions (primarily supernova remnants), injection spectra, and diffusion parameters, GALPROP solves the steady-state diffusion-loss equation for all relevant cosmic-ray species as they propagate through the Galactic magnetic field and interstellar medium.
 The output is a set of sky maps predicting the gamma-ray intensity from each emission component: a $\pi^0$-decay map that traces the gas column density (dominated along the Galactic Plane), an inverse Compton map that traces the interstellar radiation field (producing an extended halo at high latitudes), and a bremsstrahlung map that follows the gas distribution but with a different spectral shape.
 
@@ -117,23 +123,25 @@ The resulting spatial and spectral morphology is highly structured and energy-de
 Along the Galactic Plane, where atomic and molecular gas is dense, hadronic pion decay dominates the high-energy emission, while bremsstrahlung and ionization govern the cooling of low-energy cosmic-ray electrons.
 At high Galactic latitudes, the gas density drops while the interstellar radiation field remains significant.
 There, inverse Compton scattering overtakes bremsstrahlung as the dominant energy-loss mechanism for electrons above a few tens of MeV, producing an extended, diffuse gamma-ray glow \cite{Pinetti:2021jjs}.
-The energy- and position-dependent balance between these loss channels is shown in Figure~\ref{fig:energy_loss_coefficients}.
+% The energy- and position-dependent balance between these loss channels is shown in Figure~\ref{fig:energy_loss_coefficients}.
 
-\begin{figure}[t]
-	\centering
-	\includegraphics[width=0.7\columnwidth]{figures/energy_loss_coefficients.pdf}
-	\caption{Energy loss coefficient function for electrons and positrons in the Milky Way's galactic disk at various radial distances from the Galactic Center.
-		In the gas-rich Plane, ionization and bremsstrahlung dominate at low energies; at higher energies, inverse Compton scattering and synchrotron radiation become the primary loss channels. The transition to the Klein-Nishina regime suppresses the ICS efficiency at the highest energies, causing deviations from the Thomson approximation.
-		Credit: Figure 7.1 from Cirelli et al.\ (2024) \cite{Cirelli:2024ssz}.
-	}
-	\label{fig:energy_loss_coefficients}
-\end{figure}
+% \begin{figure}[t]
+% 	\centering
+% 	\includegraphics[width=0.7\columnwidth]{figures/energy_loss_coefficients.pdf}
+% 	\caption{Energy loss coefficient function for electrons and positrons in the Milky Way's galactic disk at various radial distances from the Galactic Center.
+% 		In the gas-rich Plane, ionization and bremsstrahlung dominate at low energies; at higher energies, inverse Compton scattering and synchrotron radiation become the primary loss channels. The transition to the Klein-Nishina regime suppresses the ICS efficiency at the highest energies, causing deviations from the Thomson approximation.
+% 		Credit: Figure 7.1 from Cirelli et al.\ (2024) \cite{Cirelli:2024ssz}.
+% 	}
+% 	\label{fig:energy_loss_coefficients}
+% \end{figure}
 
 When analyzing \textit{Fermi}-LAT data, the standard procedure is to model the observed sky through template decomposition \cite{Fermi-LAT:2014ryh}.
 The total photon counts in each spatial and energy bin are fit to a linear combination of: the GALPROP-derived $\pi^0$-decay, ICS, and bremsstrahlung templates; a catalog of individually resolved point sources; spatial templates for large-scale structures such as Loop I and the Fermi Bubbles; and a spatially uniform isotropic component representing the combined extragalactic background and residual instrumental contamination.
 The normalizations of these Galactic templates are typically left as free parameters and fitted independently in each energy bin, allowing the data to correct for imperfections in the GALPROP predictions.
-The Fermi collaboration applies precisely this procedure to produce the official Galactic interstellar emission model \texttt{gll\_iem\_v07}, which serves as the standard foreground template in Fermi-LAT analyses.
-Despite the physical sophistication of GALPROP and the flexibility of the template-fitting procedure, the GDE cannot be modeled perfectly.
+The Fermi collaboration applies precisely this procedure to produce the \blue{latest} official Galactic interstellar emission model \texttt{gll\_iem\_v07}, which serves as the standard foreground template in Fermi-LAT analyses.
+\blue{One subtlety is worth flagging: in \texttt{gll\_iem\_v07} the Fermi Bubbles and Loop~I are not modeled from dedicated physical templates but absorbed into an \emph{ad hoc} component---the \emph{patch}---built by smoothing the large-scale residuals left over after the physical templates are fit, and adding them back into the model \cite{Fermi-LAT:2019yla,Fermi-LAT:2022byn}.
+Since the patch soaks up any extended residual, including the Galactic Center Excess, the official Pass~8 models are by construction ill-suited to extended-emission studies---a caveat we return to in Chapter~\ref{ch:4}.}
+Despite the physical sophistication of GALPROP and the flexibility of the template-fitting procedure, the GDE cannot currently be modeled perfectly.
 Imperfect modeling of the interstellar emission remains the largest single source of systematic uncertainty in gamma-ray astrophysics, introducing errors between 15\% and 30\% depending on the energy range \cite{Fermi-LAT:2014ryh,DGRB-review}.
 Uncertainties in the gas column densities (particularly the conversion from CO emission to molecular hydrogen), the interstellar radiation field, and the cosmic-ray propagation parameters all contribute.
 Handling the Galactic foreground properly is a necessary condition for any analysis of the gamma-ray sky: without adequate foreground control, both spectral characterization and source detection are biased.
