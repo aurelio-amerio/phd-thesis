@@ -41,7 +41,8 @@ Decay, by contrast, is a single-particle process with a rate proportional to the
 \end{equation}
 %
 where $\tau$ is the dark matter lifetime \cite{Hooper:2024}.
-Current gamma-ray observations constrain $\tau \gtrsim 10^{28}$ s \cite{Cohen:2016uyg,Blanco_2019}, far exceeding the age of the universe --- making decay an intrinsically rare process whose detection requires enormous integrated exposures.
+% Current gamma-ray observations constrain $\tau \gtrsim 10^{28}$ s \cite{Cohen:2016uyg,Blanco_2019}, far exceeding the age of the universe --- making decay an intrinsically rare process whose detection requires enormous integrated exposures.
+\blue{Current gamma-ray constraints place $\tau$ some ten orders of magnitude beyond the age of the universe (the numbers are collected in Section~\ref{sec:status}), making decay an intrinsically rare process whose detection requires enormous integrated exposures.}
 The $\rho^2$ versus $\rho$ distinction has direct observational consequences: annihilation signals are sharply concentrated in the densest regions of a halo --- the inner kiloparsec of the Galactic Center, or the cores of dwarf galaxies --- while decay signals are spread diffusely across the entire halo volume, producing a much flatter angular profile.
 This morphological difference provides a powerful diagnostic: an excess that tracks the $\rho^2$ profile of the inner Galaxy but vanishes at high latitudes points toward annihilation, while a persistent, broadly distributed signal favours decay.
 
@@ -188,20 +189,21 @@ At large radii (around $r_\odot$) all profiles agree, but they diverge by orders
 	\label{fig:dm_profiles}
 \end{figure}
 
-When fit to the Milky Way, the parameters of these profiles are fixed by requiring consistency with the total Galactic mass ($\sim 4.7 \times 10^{11}\, M_\odot$) and the local dark matter density at the Sun's position ($r_\odot \simeq 8.12$ kpc) \cite{Cirelli:2024ssz,Pinetti:2021jjs}.
+When fit to the Milky Way, the parameters of these profiles are fixed by requiring consistency with the total Galactic mass ($\sim 4.7 \times 10^{11}\, M_\odot$) and the local dark matter density at the Sun's position ($r_\odot \simeq \blue{8.33}$ kpc) \cite{Cirelli:2024ssz,Pinetti:2021jjs}.
 The most recent determinations place the local density at $\rho_\odot \approx 0.40 \pm 0.10$ GeV/cm$^3$ \cite{Cirelli:2024ssz}, though many analyses continue to use the historical benchmark of 0.3 GeV/cm$^3$.
 Characteristic Milky Way parameters are $r_s \approx 14.5$ kpc and $\rho_s \approx 0.57$ GeV/cm$^3$ for NFW, and $r_s \approx 13.6$ kpc with $\rho_s \approx 0.15$ GeV/cm$^3$ for Einasto \cite{Cirelli:2024ssz}.
 
 At the solar radius, all three profiles agree by construction.
 They differ sharply in the inner kiloparsec, where no direct observational data constrain the dark matter profile and the resolution of current simulations reaches its limit (roughly a fraction of a kiloparsec for a Milky Way--sized halo) \cite{Cirelli:2024ssz,Navarro:1996gj,Bullock:2017xww}.
 The NFW and Einasto profiles predict densities at $r \sim 100$ pc that exceed the Burkert core prediction by one to two orders of magnitude \cite{Cirelli:2024ssz}. 
-This is one of the main sources of uncertainty in indirect detection, and the choice of profile is therefore often treated as a systematic.
+% This is one of the main sources of uncertainty in indirect detection, and the choice of profile is therefore often treated as a systematic.
+\blue{This is one of the main sources of uncertainty in indirect detection, and the choice of profile propagates directly into the predicted flux, as quantified in Section~\ref{sec:jfactor}.}
 % This discrepancy propagates directly into the $J$-factor: the predicted gamma-ray flux from the Galactic Center can vary by orders of magnitude depending on whether one assumes a cusp or a core.
 
 The disagreement between cuspy simulations and cored observations is known as the \textbf{cusp--core problem} \cite{Cirelli:2024ssz,Bullock:2017xww}.
 Dark matter--only $N$-body simulations consistently produce cusps with inner slopes $\gamma \approx 1$--$1.5$, while rotation curve measurements --- particularly in dwarf galaxies --- often favour constant-density cores ($\gamma \approx 0$--$0.5$) \cite{Bullock:2017xww}.
 Several solutions to this discrepancy have been proposed.
-From the particle physics side, self-interacting dark matter (with $\sigma/m \approx 0.5$--$10$ cm$^2$/g) transfers heat to halo centers and produces cores of the observed size \cite{Spergel:1999mh,Tulin:2017ara,Bullock:2017xww}, while ultralight ``fuzzy'' dark matter generates solitonic cores through quantum pressure on scales comparable to the de Broglie wavelength \cite{Hu:2000ke,Cirelli:2024ssz}.
+From the particle physics side, self-interacting dark matter \blue{(introduced in Section~\ref{sec:1.2.1})}, with $\sigma/m \approx 0.5$--$10$ cm$^2$/g, transfers heat to halo centers and produces cores of the observed size \cite{Spergel:1999mh,Tulin:2017ara,Bullock:2017xww}, while ultralight ``fuzzy'' dark matter generates solitonic cores through quantum pressure on scales comparable to the de Broglie wavelength \cite{Hu:2000ke,Cirelli:2024ssz}.
 From the astrophysical side, modern hydrodynamical simulations show that repeated bursts of supernova-driven outflows can rapidly alter the central gravitational potential, pushing dark matter outward and flattening a primordial cusp into a core \cite{Cirelli:2024ssz,Bullock:2017xww}.
 
 The effectiveness of baryonic feedback depends non-monotonically on the stellar-to-halo mass ratio $M_\star / M_\text{vir}$: core formation peaks at intermediate ratios ($M_\star / M_\text{vir} \approx 5 \times 10^{-3}$, the regime of bright dwarfs), where supernovae are frequent enough to redistribute dark matter, but is negligible in ultrafaint dwarfs (too few stars) and in massive galaxies where adiabatic contraction recreates a cusp \cite{Cirelli:2024ssz,Bullock:2017xww}.
@@ -286,7 +288,8 @@ For comparing different targets, one typically quotes the $J$-factor integrated 
 
 For dwarf spheroidal galaxies observed by Fermi-LAT, typical integrated $J$-factors (within $\theta_\star = 0.5^\circ$) range from $\sim 10^{16}$ to $\sim 10^{19.5}$ GeV$^2$ cm$^{-5}$, depending on the system's mass, distance, and the quality of the kinematic data used to reconstruct its density profile \cite{Hooper:2024,Cirelli:2024ssz,Bonnivard:2015xpq}.
 The choice of integration angle reflects the angular extent of the target: dSphs are resolved by Fermi-LAT and extended emission can be recovered within $\sim 0.5^\circ$, while dark matter subhalos at typical Galactic distances are unresolved and effectively point-like, so their $J$-factors are integrated within $\theta_\star \sim 0.1^\circ$, matching the instrument's point-spread function.
-These values are orders of magnitude smaller than the Galactic Center $J$-factor, but the absence of astrophysical backgrounds in dwarfs compensates for the reduced signal.
+% These values are orders of magnitude smaller than the Galactic Center $J$-factor, but the absence of astrophysical backgrounds in dwarfs compensates for the reduced signal.
+\blue{These values are orders of magnitude smaller than the Galactic Center $J$-factor (cf.\ the signal-versus-background comparison in Section~\ref{sec:targets}).}
 
 Several caveats affect the simple factorization above.
 First, it assumes a \textit{velocity-independent} annihilation cross-section.
@@ -324,16 +327,19 @@ This persistent ambiguity motivates the dedicated analysis in Chapter~\ref{ch:4}
 
 \textbf{Dwarf spheroidal galaxies.}
 The Milky Way's satellite dwarf galaxies occupy the opposite end of the signal-versus-background trade-off.
-Dwarf spheroidals are among the most dark matter--dominated objects known: their shallow gravitational potential wells allowed early supernova feedback to expel most of the baryonic gas, halting star formation and leaving behind systems with mass-to-light ratios ranging from tens of $M_\odot/L_\odot$ for classical dwarfs like Sculptor to thousands for ultrafaint dwarfs such as Segue~1 \cite{Cirelli:2024ssz}.
+% Dwarf spheroidals are among the most dark matter--dominated objects known: their shallow gravitational potential wells allowed early supernova feedback to expel most of the baryonic gas, halting star formation and leaving behind systems with mass-to-light ratios ranging from tens of $M_\odot/L_\odot$ for classical dwarfs like Sculptor to thousands for ultrafaint dwarfs such as Segue~1 \cite{Cirelli:2024ssz}.
+\blue{Dwarf spheroidals are among the most dark matter--dominated objects known (Section~\ref{sec:1.1.1}): their shallow gravitational potential wells allowed early supernova feedback to expel most of the baryonic gas, halting star formation and leaving behind systems with extreme mass-to-light ratios \cite{Cirelli:2024ssz}.}
 The scarcity of stars, gas, and other active astrophysical objects means that their gamma-ray backgrounds are subdominant \cite{Cirelli:2024ssz}.
-The expected dark matter flux from any individual dwarf is far smaller than from the Galactic Center --- roughly three orders of magnitude lower for a typical system \cite{Hooper:2024} --- but the absence of competing emission makes them the cleanest targets available.
+% The expected dark matter flux from any individual dwarf is far smaller than from the Galactic Center --- roughly three orders of magnitude lower for a typical system \cite{Hooper:2024} --- but the absence of competing emission makes them the cleanest targets available.
+\blue{The expected dark matter flux from any individual dwarf is far smaller than from the Galactic Center, as quantified above, but the absence of competing emission makes them the cleanest targets available.}
 
 Eight ``classical'' dwarf spheroidals (Sculptor, Fornax, Leo I and II, Ursa Minor, Draco, Carina, and Sextans) have been known since before the 1990s \cite{Cirelli:2024ssz}.
 The advent of digital surveys --- SDSS, DES, and Gaia --- has brought the total to about fifty confirmed ultrafaint dwarfs, with roughly ten more candidates awaiting spectroscopic confirmation \cite{Cirelli:2024ssz,Pace:2024sys}.
 This growing census is expected to continue with the Rubin Observatory.
 
 By combining observations of dozens of these systems in a stacked analysis, the Fermi-LAT collaboration has derived some of the tightest constraints on the annihilation cross-section to date \cite{Fermi-LAT:2015att,2024PhRvD.109f3024M,Hooper:2024}.
-The original combined analysis of 15 kinematically confirmed dSphs excluded the thermal relic cross-section ($\langle \sigma v_\text{rel} \rangle \simeq 2.2 \times 10^{-26}$ cm$^3$/s) for dark matter masses below $\sim 100$ GeV in the $b\bar{b}$ channel \cite{Fermi-LAT:2015att}; the most recent legacy analysis extends this to 50 dSphs with 14 years of data, yielding slightly tighter constraints in the 20--100 GeV mass range while confirming the earlier exclusion \cite{2024PhRvD.109f3024M}.
+% The original combined analysis of 15 kinematically confirmed dSphs excluded the thermal relic cross-section ($\langle \sigma v_\text{rel} \rangle \simeq 2.2 \times 10^{-26}$ cm$^3$/s) for dark matter masses below $\sim 100$ GeV in the $b\bar{b}$ channel \cite{Fermi-LAT:2015att}; the most recent legacy analysis extends this to 50 dSphs with 14 years of data, yielding slightly tighter constraints in the 20--100 GeV mass range while confirming the earlier exclusion \cite{2024PhRvD.109f3024M}.
+\blue{These stacked analyses exclude the thermal relic cross-section for $b\bar{b}$ masses below $\sim 100$ GeV; the current numbers, and their evolution from 15 to 50 dwarfs, are collected in Section~\ref{sec:status} \cite{Fermi-LAT:2015att,2024PhRvD.109f3024M}.}
 The dominant systematic uncertainty lies in the $J$-factors themselves, which must be inferred from the kinematics of the dwarfs' constituent stars.
 For ultrafaint systems, the number of kinematic tracers can be extremely small, and removing or adding a single star from the sample can shift the reconstructed $J$-factor by orders of magnitude \cite{Cirelli:2024ssz}.
 Additional systematics arise from the cusp--core ambiguity in the inner density profile and from the choice of integration angle $\theta_\star$ \cite{Cirelli:2024ssz}.
@@ -402,13 +408,14 @@ Constraints on the dark matter lifetime, derived primarily from the isotropic ga
 
 \textbf{Direct detection and collider constraints.}
 % The tightening of parameter space is not confined to indirect searches.
-The current generation of dual-phase liquid xenon detectors --- LZ, XENONnT, and PandaX-4T --- has pushed the spin-independent WIMP--nucleon cross-section below $10^{-46}$ cm$^2$ for masses near the electroweak scale \cite{Cirelli:2024ssz,Hooper:2024}.
+The current generation of dual-phase liquid xenon detectors --- LZ, XENONnT, and PandaX-4T --- has pushed the spin-independent WIMP--nucleon cross-section below $10^{-46}$ cm$^2$ for masses near the electroweak scale \blue{(see Section~\ref{sec:1.3} for the experiments and bounds)} \cite{Cirelli:2024ssz,Hooper:2024}.
 At the LHC, mono-jet and mono-photon searches have found no evidence for new physics, excluding strongly interacting superpartners (squarks, gluinos) up to masses of 1--2 TeV and charged superpartners up to several hundred GeV \cite{Cirelli:2024ssz,Hooper:2024}.
 The theoretical basis of the most popular WIMP candidate --- the supersymmetric neutralino --- has been substantially weakened by the absence of supersymmetry at collider energies \cite{Cirelli:2024ssz}.
 
 \textbf{Unresolved anomalies.}
 Several persistent anomalies keep the possibility of discovery alive.
-The Galactic Center gamma-ray excess --- a signal first reported in 2009 and consistent with a $\sim$40--70 GeV dark matter particle annihilating into $b\bar{b}$ at the thermal cross-section --- remains the most debated \cite{Daylan:2014rsa,Cirelli:2024ssz,Hooper:2024}.
+% The Galactic Center gamma-ray excess --- a signal first reported in 2009 and consistent with a $\sim$40--70 GeV dark matter particle annihilating into $b\bar{b}$ at the thermal cross-section --- remains the most debated \cite{Daylan:2014rsa,Cirelli:2024ssz,Hooper:2024}.
+\blue{The Galactic Center excess, first reported in 2009, remains the most debated of these anomalies (its spectrum and morphology are described in Section~\ref{sec:targets}) \cite{Daylan:2014rsa,Cirelli:2024ssz,Hooper:2024}.}
 % Its leading astrophysical competitor, an unresolved population of millisecond pulsars in the Galactic bulge, has been alternately supported and challenged by photon-count statistics, morphological analyses, and luminosity function arguments \cite{Cirelli:2024ssz}.
 Chapter~\ref{ch:4} of this thesis contributes directly to this debate by challenging the leading astrophysical interpretation of the excess as an unresolved population of millisecond pulsars, further highlighting the complexity of the issue.
 Other excesses, by contrast, admit a more satisfying astrophysical explanation.

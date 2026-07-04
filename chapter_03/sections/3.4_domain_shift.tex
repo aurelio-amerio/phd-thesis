@@ -20,7 +20,7 @@ A mismatch between the training and target distributions---known as \textit{data
 
 This problem is directly relevant for astrophysical source classification.
 In the Fermi-LAT catalogs, sources are divided into \textit{associated} and \textit{unassociated} categories based on whether a counterpart at other wavelengths has been identified.
-Machine learning classifiers are typically trained on associated sources---whose class labels (e.g., pulsar or active galactic nucleus) are known from their multi-wavelength counterparts---and then applied to unassociated sources to infer their nature.
+Machine learning classifiers are typically trained on associated sources---whose class labels (e.g., pulsar or active galactic nucleus) are known from their multi-wavelength counterparts---and then applied to unassociated sources to infer their nature \blue{(cf.\ Section~\ref{sec:3.3.1})}.
 However, several observational biases break the equal-distribution assumption.
 Bright sources at high Galactic latitudes are easier to associate with known counterparts, so the associated sample is not a representative subsample of the full source population \cite{2023RASTI...2..735M}.
 As a consequence, the spectral parameter distributions---flux, spectral index $\alpha$, and spectral curvature $\beta$---differ measurably between associated and unassociated sources, as illustrated in Figure~\ref{fig:assoc_unas_distributions} (see Chapter~\ref{ch:5} for the full analysis).
@@ -61,7 +61,9 @@ The class-conditional relationship between features and labels is preserved, but
 Covariate shift typically arises from selection effects or observational biases that influence which data points enter the training sample.
 In the Fermi-LAT context, the association procedure preferentially identifies sources in low-background regions far from the Galactic plane, where multi-wavelength counterparts are easier to match.
 Proximity to the Galactic plane is, in fact, the dominant source of association bias: the high density of overlapping sources and diffuse emission near the plane causes multi-wavelength identification methods to fail more frequently \cite{2023RASTI...2..735M}.
-As a result, the associated sample is biased toward high-latitude, brighter sources relative to the full population.
+% [C-note dedup] recap clause removed; the high-latitude/brighter-source bias is
+% already established at line 25 and in the two preceding sentences (lines 62--63).
+% As a result, the associated sample is biased toward high-latitude, brighter sources relative to the full population.
 The ratio $C(\mathbf{x}) = p_{\text{target}}(\mathbf{x})/p_{\text{train}}(\mathbf{x})$ between the target and training feature distributions characterizes the covariate shift \cite{MorenoTorres2012AUV}.
 When this ratio is known or can be modeled, the training-set predictions can be corrected by importance weighting.
 
@@ -100,8 +102,10 @@ Neither gives the correct answer when both effects are present.
 
 Addressing this challenge requires a model that treats both effects simultaneously.
 In Chapter~\ref{ch:5}, we construct the first such statistical model for Fermi-LAT sources.
-The unassociated source distribution is modeled as a mixture of Galactic and extragalactic astrophysical components---whose class-conditional densities $p_{\text{assoc}}(\mathbf{x}|k)$ are estimated from the associated sources via kernel density estimation---plus a possible dark matter subhalo component derived from Monte Carlo simulations.
+% The unassociated source distribution is modeled as a mixture of Galactic and extragalactic astrophysical components---whose class-conditional densities $p_{\text{assoc}}(\mathbf{x}|k)$ are estimated from the associated sources via kernel density estimation---plus a possible dark matter subhalo component derived from Monte Carlo simulations.
+The unassociated source distribution is modeled as a mixture of Galactic and extragalactic astrophysical components, \blue{$p(\mathbf{x}) = \sum_{k}\pi_k\,p(\mathbf{x}\,|\,k)$}, whose class-conditional densities $p_{\text{assoc}}(\mathbf{x}|k)$ are estimated from the associated sources via kernel density estimation, plus a possible dark matter subhalo component derived from Monte Carlo simulations.
 The prior shift is handled by fitting the class prevalences $\pi_k$ to the unassociated data, while the covariate shift is corrected by the sigmoid modulation functions $\tilde{C}(\mathbf{x};\boldsymbol{\theta}_{\text{cov}})$ described above.
-All parameters are optimized simultaneously using the Expectation-Maximization algorithm (Section~\ref{sec:3.3.3}).
+% All parameters are optimized simultaneously using the Expectation-Maximization algorithm (Section~\ref{sec:3.3.3}).
+All parameters are optimized simultaneously using the Expectation-Maximization algorithm \blue{(Chapter~\ref{ch:5})}.
 This approach draws on the classical dataset shift taxonomy of Moreno-Torres et al.~\cite{MorenoTorres2012AUV} and the quantification learning methods developed by Gonz\'alez et al.~\cite{10.1145/3117807_Gonzalez_quantification} and Moreo et al.~\cite{2024arXiv240100490M}, combining them into a unified framework that can be used both for the probabilistic classification of unassociated sources---its primary astrophysical application---and for setting statistically rigorous upper bounds on the dark matter annihilation cross-section.
 The full analysis is presented in Chapter~\ref{ch:5}.

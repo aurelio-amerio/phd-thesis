@@ -2,12 +2,14 @@
 % Funnel structure: dN/dS gap → simulated-sky comparison → chapter roadmap → bridge to Ch. 8
 % --* ti
 The previous chapter demonstrated that the source-count distribution of faint gamma-ray emitters can be recovered from the photon-count statistics of the \textit{Fermi}-LAT sky using simulation-based inference and deep learning.
-The resulting $dN/dS$ extends as $\sim S^{-2}$ down to fluxes roughly 50 times below the nominal detection threshold, capturing a population of sub-threshold point sources --- blazars, star-forming galaxies, misaligned active galactic nuclei --- that contribute to the isotropic diffuse emission but remain individually undetected.
+% The resulting $dN/dS$ extends as $\sim S^{-2}$ down to fluxes roughly 50 times below the nominal detection threshold, capturing a population of sub-threshold point sources --- blazars, star-forming galaxies, misaligned active galactic nuclei --- that contribute to the isotropic diffuse emission but remain individually undetected.
+\blue{The resulting $dN/dS$ extends as $\sim S^{-2}$ well below the nominal detection threshold, capturing a population of sub-threshold point sources --- blazars, star-forming galaxies, misaligned active galactic nuclei --- that contribute to the isotropic diffuse emission but remain individually undetected.}
 Yet the $dN/dS$ is a one-dimensional flux distribution: it tells us \emph{how many} sources exist at each flux, but it says nothing about \emph{where} any specific source is located.
 The challenge, then, is whether this population-level statistical knowledge can be turned into spatial information.
 
 This chapter takes the next step by complementing the source-count distribution with positional identifications.
-The core idea is to use the recovered $dN/dS$ as a generative model for ensembles of synthetic skies, enabling a frequentist statistical comparison that identifies candidate source directions below the detection threshold.
+% The core idea is to use the recovered $dN/dS$ as a generative model for ensembles of synthetic skies, enabling a frequentist statistical comparison that identifies candidate source directions below the detection threshold.
+\blue{The core idea is to turn the recovered $dN/dS$ into spatial information through a frequentist comparison of the real sky against ensembles of synthetic skies, flagging candidate source directions below the detection threshold.}
 
 Section~\ref{sec:threshold_limits} examines why the standard fixed-threshold cataloging paradigm discards useful information and produces a spatially inconsistent detection scale.
 Section~\ref{sec:pop_to_spatial} describes the conceptual framework for converting the $dN/dS$ into spatial source candidates through simulated-sky comparison, and introduces the frequentist meta-parameters that control the depth and purity of the resulting catalog.

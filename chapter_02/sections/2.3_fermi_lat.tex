@@ -103,7 +103,7 @@ Subsequent iterations, most notably the P8R3 release \cite{Bruel:2018lac}, furth
 With the IRFs established, we now turn to how the LAT data are translated into astrophysical catalogs.
 Converting raw photon events into measurements of individual sources requires disentangling point-like objects from the structured diffuse backgrounds.
 The \textit{Fermi}-LAT collaboration achieves this through a maximum likelihood framework \cite{Mattox:1996zz,Fermi-LAT:2019yla}.
-The observed sky is modeled as a linear combination of spatial and spectral templates: the highly structured Galactic diffuse emission, a spatially uniform isotropic component capturing the extragalactic background and residual instrumental noise, and individual point sources each parametrized by a position and spectral model.
+\blue{The observed sky is modeled through the template decomposition introduced in Section~\ref{sec:gde_model}---the structured Galactic diffuse emission plus a spatially uniform isotropic component---augmented with individual point sources, each parametrized by a position and a spectral model.}
 The normalizations and spectral parameters of all components are simultaneously adjusted to maximize the Poisson likelihood function against the observed photon counts across the sky.
 
 To evaluate the significance of a candidate point source, the framework computes the Test Statistic (TS), defined as \[ TS = 2\ln\frac{\mathcal{L}_1}{\mathcal{L}_0}, \] where $\mathcal{L}_1$ is the maximum likelihood of the model with the candidate source included and $\mathcal{L}_0$ is the maximum likelihood of the null hypothesis without it \cite{Mattox:1996zz}.

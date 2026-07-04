@@ -7,7 +7,8 @@ In practice, the data that these methods must process arrive at one of two level
 The two approaches are complementary: field-level methods retain more information at the cost of architectural complexity, while summary statistics trade information content for a simpler, lower-dimensional input space.
 Both appear in this thesis: Chapter~\ref{ch:6} works at the field level, feeding gamma-ray sky maps into a convolutional network to reconstruct the source-count distribution, while Chapter~\ref{ch:5} operates on spectral and variability features to search for a dark matter subhalo population among unassociated Fermi-LAT sources.
 
-This section introduces the machine-learning concepts and architectures that underpin both analyses: the canonical learning tasks (Section~\ref{sec:3.3.1}); neural networks, their training, and uncertainty estimation (Section~\ref{sec:3.3.2}); convolutional architectures and their spherical extensions for sky-map data (Section~\ref{sec:3.3.3}); and classical non-parametric density estimation for population-level inference on feature vectors (Section~\ref{sec:3.3.4}).
+% This section introduces the machine-learning concepts and architectures that underpin both analyses: the canonical learning tasks (Section~\ref{sec:3.3.1}); neural networks, their training, and uncertainty estimation (Section~\ref{sec:3.3.2}); convolutional architectures and their spherical extensions for sky-map data (Section~\ref{sec:3.3.3}); and classical non-parametric density estimation for population-level inference on feature vectors (Section~\ref{sec:3.3.4}).
+\blue{This section introduces the machine-learning concepts and architectures that underpin both analyses: the canonical learning tasks (Section~\ref{sec:3.3.1}); neural networks, their training, and uncertainty estimation (Section~\ref{sec:3.3.2}); and convolutional architectures and their spherical extensions for sky-map data (Section~\ref{sec:3.3.3}).}
 
 \subsection{Learning Tasks}
 \label{sec:3.3.1}
@@ -28,7 +29,8 @@ By adopting a heteroscedastic loss function (described in Section~\ref{sec:3.3.2
 The third task is \textit{density estimation}: approximating the probability distribution from which observed source features are drawn.
 While classification asks ``what class is this source?'', density estimation asks the complementary question ``what does the overall population look like?''
 This shift from individual classification to population-level inference underpins the generative mixture model developed in Chapter~\ref{ch:5}, where Kernel Density Estimation---used to model the feature distributions of associated sources---is combined with mixture model fitting to infer the energy spectrum composition of the unassociated gamma-ray sources.
-Section~\ref{sec:3.3.4} returns to this task with classical non-parametric methods, complementing the neural surrogate approaches introduced in Section~\ref{sec:3.2}.
+% Section~\ref{sec:3.3.4} returns to this task with classical non-parametric methods, complementing the neural surrogate approaches introduced in Section~\ref{sec:3.2}.
+\blue{Because it reconstructs the full distribution rather than a decision boundary, density estimation can reveal populations absent from the training set---the property exploited in the subhalo search. The classical non-parametric methods this requires are developed in Chapter~\ref{ch:5}, complementing the neural surrogate approaches introduced in Section~\ref{sec:3.2}.}
 
 \subsection{Neural Networks and Deep Learning}
 \label{sec:3.3.2}
@@ -128,35 +130,39 @@ More recently, \texttt{HEAL-SWIN}~\cite{carlsson2024healswin} adapted the Swin V
 
 Chapter~\ref{ch:6} combines the \texttt{map2patch} tiling with concrete dropout and a heteroscedastic Gaussian negative log-likelihood to produce both the reconstructed source-count distribution and calibrated uncertainty estimates; the full architecture and loss formulation are presented in Section~\ref{sec:bayesian-error}.
 
-\subsection{Density Estimation}
-\label{sec:3.3.4}
-
-Having introduced the convolutional architectures used for image-domain inference in Chapter~\ref{ch:6}, we now turn to the tools underlying the summary-statistic approach of Chapter~\ref{ch:5}.
-The simulation-based inference framework of Section~\ref{sec:3.2} relies on neural density estimators---normalising flows, score-based diffusion models, and flow matching~\cite{Papamakarios:2021,Song:2021zrs,Lipman:2023hef}---that are well suited to high-dimensional or complex distributions~\cite{Cranmer:2020}.
-For low-dimensional, well-defined feature spaces, classical non-parametric methods such as Kernel Density Estimation and mixture models with Expectation-Maximisation are sufficient and often preferable.
-Chapter~\ref{ch:5} sits squarely in this regime: the input features are a handful of spectral and variability quantities per source, and the rest of this subsection introduces the classical tools used there.
-
-Given a set of $N$ observed data points $\{\mathbf{x}_1, \ldots, \mathbf{x}_N\}$ drawn from an unknown distribution, the goal is to estimate the probability density function $p(\mathbf{x})$ that generated them.
-Unlike classification, which learns a decision boundary in feature space, density estimation reconstructs the full probability distribution and can therefore reveal populations that were absent from the training set.
-A non-parametric approach to this problem is provided by Kernel Density Estimation (KDE); we refer the interested reader to Section~2.5.1 of~\cite{bishop} for a comprehensive treatment.
-Given $N$ samples, the KDE approximation to the density at a point $\mathbf{x}$ is
-\begin{equation}
-	\hat{p}(\mathbf{x}) = \frac{1}{N} \sum_{i=1}^{N} K_h(\mathbf{x} - \mathbf{x}_i),
-	\label{eq:kde}
-\end{equation}
-where $K_h$ is a kernel function with bandwidth $h$.
-For a Gaussian kernel, $K_h(\mathbf{u}) \propto \exp(-\|\mathbf{u}\|^2 / 2h^2)$, and the bandwidth controls the trade-off between bias and variance: too small a bandwidth overfits the sample, while too large a bandwidth oversmooths the underlying structure.
-The optimal bandwidth is determined through cross-validation, selecting the value that maximises the model likelihood on held-out data.
-Separate KDE models are computed independently for each source class (Galactic and extragalactic), yielding the class-conditional densities $p_\mathrm{assoc}(\mathbf{x}|k)$ that form the building blocks of the mixture model described below.
-
-When the observed data arise from multiple overlapping populations, the total density can be written as a mixture model,
-\begin{equation}
-	p(\mathbf{x}) = \sum_{k=1}^{K} \pi_k \, p(\mathbf{x}|k),
-	\label{eq:mixture_model}
-\end{equation}
-where $\pi_k$ are the mixing weights (class prevalences) satisfying $\sum_k \pi_k = 1$, and $p(\mathbf{x}|k)$ is the class-conditional density.
-The mixing weights and any free parameters of the component densities are typically determined by the Expectation-Maximisation (EM) algorithm~\cite{Dempster:1977}: an iterative procedure that alternates between computing the posterior class responsibilities $\gamma_{ik} = p(k | \mathbf{x}_i)$ for each data point (the E-step), and updating the model parameters to maximise the expected log-likelihood under those responsibilities (the M-step); a detailed derivation, including the general formulation of EM and its application to Gaussian mixtures, is given in Chapter~9 of~\cite{bishop}.
-For the mixing weights, the M-step admits a closed-form solution: $\pi_k^\mathrm{new} = N^{-1}\sum_i \gamma_{ik}$, i.e., each weight is updated as the average posterior responsibility over the dataset.
-
-In Chapter~\ref{ch:5}, this framework is extended to search for dark matter subhalos among the unassociated Fermi-LAT sources.
-The mixture model combines astrophysical class-conditional densities with a covariate shift correction (Section~\ref{sec:3.4}) and a possible dark matter component, with class prevalences determined via the EM algorithm following the approach of Saerens et al.~\cite{10.1162/089976602753284446_Saerens}.
+% [A2 dedup] "Density Estimation" subsection dissolved: KDE, mixture models, and
+% the EM algorithm are developed explicitly in Chapter 5 (Sec. 5.4, the mixture
+% paper section, and the dedicated EM appendix). The surviving conceptual hook is
+% relocated into the density-estimation task paragraph of Sec. 3.3.1 above.
+% \subsection{Density Estimation}
+% \label{sec:3.3.4}
+% 
+% Having introduced the convolutional architectures used for image-domain inference in Chapter~\ref{ch:6}, we now turn to the tools underlying the summary-statistic approach of Chapter~\ref{ch:5}.
+% The simulation-based inference framework of Section~\ref{sec:3.2} relies on neural density estimators---normalising flows, score-based diffusion models, and flow matching~\cite{Papamakarios:2021,Song:2021zrs,Lipman:2023hef}---that are well suited to high-dimensional or complex distributions~\cite{Cranmer:2020}.
+% For low-dimensional, well-defined feature spaces, classical non-parametric methods such as Kernel Density Estimation and mixture models with Expectation-Maximisation are sufficient and often preferable.
+% Chapter~\ref{ch:5} sits squarely in this regime: the input features are a handful of spectral and variability quantities per source, and the rest of this subsection introduces the classical tools used there.
+% 
+% Given a set of $N$ observed data points $\{\mathbf{x}_1, \ldots, \mathbf{x}_N\}$ drawn from an unknown distribution, the goal is to estimate the probability density function $p(\mathbf{x})$ that generated them.
+% Unlike classification, which learns a decision boundary in feature space, density estimation reconstructs the full probability distribution and can therefore reveal populations that were absent from the training set.
+% A non-parametric approach to this problem is provided by Kernel Density Estimation (KDE); we refer the interested reader to Section~2.5.1 of~\cite{bishop} for a comprehensive treatment.
+% Given $N$ samples, the KDE approximation to the density at a point $\mathbf{x}$ is
+% \begin{equation}
+% 	\hat{p}(\mathbf{x}) = \frac{1}{N} \sum_{i=1}^{N} K_h(\mathbf{x} - \mathbf{x}_i),
+% 	\label{eq:kde}
+% \end{equation}
+% where $K_h$ is a kernel function with bandwidth $h$.
+% For a Gaussian kernel, $K_h(\mathbf{u}) \propto \exp(-\|\mathbf{u}\|^2 / 2h^2)$, and the bandwidth controls the trade-off between bias and variance: too small a bandwidth overfits the sample, while too large a bandwidth oversmooths the underlying structure.
+% The optimal bandwidth is determined through cross-validation, selecting the value that maximises the model likelihood on held-out data.
+% Separate KDE models are computed independently for each source class (Galactic and extragalactic), yielding the class-conditional densities $p_\mathrm{assoc}(\mathbf{x}|k)$ that form the building blocks of the mixture model described below.
+% 
+% When the observed data arise from multiple overlapping populations, the total density can be written as a mixture model,
+% \begin{equation}
+% 	p(\mathbf{x}) = \sum_{k=1}^{K} \pi_k \, p(\mathbf{x}|k),
+% 	\label{eq:mixture_model}
+% \end{equation}
+% where $\pi_k$ are the mixing weights (class prevalences) satisfying $\sum_k \pi_k = 1$, and $p(\mathbf{x}|k)$ is the class-conditional density.
+% The mixing weights and any free parameters of the component densities are typically determined by the Expectation-Maximisation (EM) algorithm~\cite{Dempster:1977}: an iterative procedure that alternates between computing the posterior class responsibilities $\gamma_{ik} = p(k | \mathbf{x}_i)$ for each data point (the E-step), and updating the model parameters to maximise the expected log-likelihood under those responsibilities (the M-step); a detailed derivation, including the general formulation of EM and its application to Gaussian mixtures, is given in Chapter~9 of~\cite{bishop}.
+% For the mixing weights, the M-step admits a closed-form solution: $\pi_k^\mathrm{new} = N^{-1}\sum_i \gamma_{ik}$, i.e., each weight is updated as the average posterior responsibility over the dataset.
+% 
+% In Chapter~\ref{ch:5}, this framework is extended to search for dark matter subhalos among the unassociated Fermi-LAT sources.
+% The mixture model combines astrophysical class-conditional densities with a covariate shift correction (Section~\ref{sec:3.4}) and a possible dark matter component, with class prevalences determined via the EM algorithm following the approach of Saerens et al.~\cite{10.1162/089976602753284446_Saerens}.
