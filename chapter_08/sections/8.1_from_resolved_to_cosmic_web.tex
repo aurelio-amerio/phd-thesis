@@ -37,7 +37,8 @@
 % \subsection{Dark Matter in the Cosmic Web}
 % \label{sec:8.1.2}
 
-If dark matter is a particle that annihilates, it could do so not just in our galaxy, but also inside every gravitationally bound structure across the universe.
+% If dark matter is a particle that annihilates, it could do so not just in our galaxy, but also inside every gravitationally bound structure across the universe.
+\blue{If dark matter is a particle that annihilates, it does so not only in our own Galaxy but throughout the cosmic web of collapsed structures that fills the universe.}
 % Understanding how much gamma-ray emission this process produces at cosmological distances, and how that emission is distributed across the sky, requires first understanding how dark matter structures are arranged in space.
 As such, to qualify a potential gamma-ray signal from dark matter, we need to first understand how matter is distributed in our universe.
 
@@ -48,7 +49,8 @@ This hierarchical web of halos and subhalos, distributed across the universe, is
 
 The gamma-ray flux from dark matter annihilation is proportional to the square of the local dark matter density.
 Dense, compact structures are therefore the dominant contributors to the total signal, and the cumulative emission from all unresolved halos and subhalos across all redshifts produces a diffuse background.
-This is the dark matter component of the \UGRB whose total energy spectrum between 100 MeV and 820 GeV has been measured by the \textit{Fermi}-LAT~\cite{Fermi-LAT:2014ryh}. Astrophysical source populations contribute their own guaranteed fraction to the UGRB as well: unresolved blazars dominate at high energies and account for about 20--30\% of the total intensity, while star-forming galaxies, misaligned AGNs, and millisecond pulsars add further contributions across the full energy range~\cite{DGRB-review}.
+% This is the dark matter component of the \UGRB whose total energy spectrum between 100 MeV and 820 GeV has been measured by the \textit{Fermi}-LAT~\cite{Fermi-LAT:2014ryh}. Astrophysical source populations contribute their own guaranteed fraction to the UGRB as well: unresolved blazars dominate at high energies and account for about 20--30\% of the total intensity, while star-forming galaxies, misaligned AGNs, and millisecond pulsars add further contributions across the full energy range~\cite{DGRB-review}.
+This is the dark matter component of the \UGRB whose total energy spectrum between 100 MeV and 820 GeV has been measured by the \textit{Fermi}-LAT~\cite{Fermi-LAT:2014ryh}. \blue{Astrophysical source populations contribute their own guaranteed fraction to the UGRB as well: unresolved blazars dominate at high energies (their contribution is quantified in Section~\ref{sec:8.2.3}), while star-forming galaxies, misaligned AGNs, and millisecond pulsars add further contributions across the full energy range~\cite{DGRB-review}.}
 Because the exact composition of the UGRB is unknown, any dark matter signal must compete with and be separated from these astrophysical backgrounds.
 
 The key challenge is spectral degeneracy.
@@ -60,22 +62,25 @@ A purely spectral analysis of the UGRB therefore constrains combinations of part
 Spatial anisotropies provide a handle to distinguish the contributions.
 The UGRB is not perfectly isotropic: each contributing population imprints spatial fluctuations whose statistical properties can be studied by the clustering of the sources and their redshift distribution.
 Dark matter annihilation traces the squared density field of the cosmic web, which is more clustered on small angular scales and at lower redshifts than the blazars that constitute most of the astrophysical background~\cite{Ando:2005xg,Fermi-LAT:2012pez}. The \textit{Fermi}-LAT Collaboration provided the first measurement of the UGRB angular power spectrum, detecting an approximately scale-invariant (Poisson) component consistent with unresolved point sources, but without clear evidence for a dark matter contribution~\cite{Fermi-LAT:2012pez}.
-The auto-correlation power spectrum, however, suffers from a fundamental limitation: the signal from dark matter is always mixed with the shot noise and correlated fluctuations of astrophysical sources that contribute at the same angular scales.
-Furthermore, the \textit{measured} angular power spectrum --- a single number per multipole $\ell$ constructed from the 2D projected gamma-ray sky --- is a line-of-sight integral over all redshifts and therefore carries no redshift resolution.
-While the theoretical model for $C_\ell$ is built from window functions $W_\gamma(z)$ that encode the redshift distribution of each source class (as developed in Section~\ref{sec:cross_correlations}), this information is observationally inaccessible from gamma-ray data alone as it is not possible to decompose the measured $C_\ell$ into contributions from different redshifts.
+% The auto-correlation power spectrum, however, suffers from a fundamental limitation: the signal from dark matter is always mixed with the shot noise and correlated fluctuations of astrophysical sources that contribute at the same angular scales.
+% Furthermore, the \textit{measured} angular power spectrum --- a single number per multipole $\ell$ constructed from the 2D projected gamma-ray sky --- is a line-of-sight integral over all redshifts and therefore carries no redshift resolution.
+% While the theoretical model for $C_\ell$ is built from window functions $W_\gamma(z)$ that encode the redshift distribution of each source class (as developed in Section~\ref{sec:cross_correlations}), this information is observationally inaccessible from gamma-ray data alone as it is not possible to decompose the measured $C_\ell$ into contributions from different redshifts.
+\blue{The auto-correlation power spectrum, however, suffers from two limitations. First, the dark matter signal is always mixed with the shot noise and correlated fluctuations of astrophysical sources at the same angular scales; second, the measured $C_\ell$ is a line-of-sight integral over all redshifts and therefore carries no redshift resolution, since it cannot be decomposed into contributions from different distances (developed in Section~\ref{sec:8.2.2}).}
 Cross-correlating the gamma-ray map with an external gravitational tracer resolves both limitations at once --- the entanglement of the dark matter signal with astrophysical noise at the same angular scales, and the absence of redshift information in the projected sky.
 A galaxy catalog provides a redshift-dependent map of the large-scale structure that correlates with the dark matter distribution at specific cosmic distances.
-Any source population that does not cluster with the selected galaxies cancels out of the cross-power spectrum, leaving only the gamma-ray emission that traces the same structures.
+Any source population that does not cluster with the selected galaxies cancels out of the cross-power spectrum, leaving only the gamma-ray emission that traces the same structures~\blue{(developed quantitatively in Section~\ref{sec:8.2.2})}.
 This noise cancellation is what makes cross-correlation a powerful probe for dark matter indirect detection~\cite{Fornengo:2013rga,Camera:2012cj}.
-The dark matter annihilation signal peaks at low redshift (because the flux is proportional to $\rho^2$ and thus weights dense, nearby structures more heavily), precisely where a catalog of local galaxies has the highest completeness.
+% The dark matter annihilation signal peaks at low redshift (because the flux is proportional to $\rho^2$ and thus weights dense, nearby structures more heavily), precisely where a catalog of local galaxies has the highest completeness.
+\blue{The dark matter annihilation signal peaks at low redshift, precisely where a catalog of local galaxies has the highest completeness.}
 With a catalog selected at $z \lesssim 0.1$, the dark matter window function overlaps substantially with the galaxy window function, while the blazar window function --- whose redshift distribution peaks at $z \sim 0.3$--0.4 --- mostly does not.
 The angular cross-power spectrum developed formally in Section~\ref{sec:cross_correlations} is the mathematical realization of this strategy.
 
-Figure~\ref{fig:window_main} illustrates the core idea.
-The dark matter window function $W_\gamma^\mathrm{DM}(z)$, which describes the redshift distribution of the gamma-ray emission, is sharply peaked at $z < 0.1$ due to the $\rho^2$ density scaling of the annihilation rate.
-Local galaxy catalogs such as 2MASS, covering $z \lesssim 0.1$--0.2, have window functions that follow this peak.
+% Figure~\ref{fig:window_main} illustrates the core idea.
+% The dark matter window function $W_\gamma^\mathrm{DM}(z)$, which describes the redshift distribution of the gamma-ray emission, is sharply peaked at $z < 0.1$ due to the $\rho^2$ density scaling of the annihilation rate.
+% Local galaxy catalogs such as 2MASS, covering $z \lesssim 0.1$--0.2, have window functions that follow this peak.
 % In contrast, blazars at energies below 100 GeV are distributed over $z \sim 0.1$--0.4, and at 1 TeV they are further suppressed at high redshift by extragalactic background light (EBL) absorption, but still do not overlap strongly with the very local galaxy distribution.
 % The cross-correlation signal between the gamma-ray sky and local galaxies is therefore dominated by whatever gamma-ray emission originates in the same volume as the galaxies --- precisely the regime where dark matter is the dominant cosmological source.
-The unresolved blazars that dominate the astrophysical background, by contrast, are typically fainter and lie at higher redshifts, spread over $z \sim 0.1$--0.4 with only a modest tail into the very local volume.
-Because the cross-correlation with a local catalog retains only the gamma-ray emission that traces the same nearby structures, it preferentially selects the redshift range where dark matter contributes and suppresses the bulk of the blazar population, which is distributed elsewhere along the line of sight.
-Adding redshift information through the galaxy catalog can thus help disentangle the two contributions and enhances the dark matter signal relative to the blazar background.
+% The unresolved blazars that dominate the astrophysical background, by contrast, are typically fainter and lie at higher redshifts, spread over $z \sim 0.1$--0.4 with only a modest tail into the very local volume.
+% Because the cross-correlation with a local catalog retains only the gamma-ray emission that traces the same nearby structures, it preferentially selects the redshift range where dark matter contributes and suppresses the bulk of the blazar population, which is distributed elsewhere along the line of sight.
+% Adding redshift information through the galaxy catalog can thus help disentangle the two contributions and enhances the dark matter signal relative to the blazar background.
+\blue{Dark matter emission is local while the blazar background is not, so cross-correlating the gamma-ray sky with a catalog of nearby galaxies selects the redshift window where dark matter dominates and suppresses the bulk of the blazar population. Section~\ref{sec:8.2.1} makes this argument quantitative (Fig.~\ref{fig:window_main}).}
