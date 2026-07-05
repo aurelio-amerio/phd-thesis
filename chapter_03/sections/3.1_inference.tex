@@ -76,20 +76,20 @@ To compare competing hypotheses---for instance, whether a gamma-ray source exist
 where $\mathcal{L}_0$ is the likelihood under the null hypothesis and $\mathcal{L}_1$ the likelihood under the alternative (or, more commonly, the globally maximized likelihood) \cite{Mattox:1996zz}.
 By Wilks' theorem, under mild regularity conditions the TS is asymptotically distributed as a $\chi^2$ random variable with degrees of freedom equal to the difference in free parameters between the two hypotheses \cite{Wilks:1938}, which lets us convert a TS value into a statistical significance without resorting to explicit Monte Carlo simulations.
 The same asymptotic result underpins the construction of confidence intervals, understood as the inverted test: rather than fixing a single threshold and asking whether the null is rejected, we scan the parameter of interest and retain the range over which the profile-likelihood TS stays below the appropriate $\chi^2$ quantile.
-For a one-sided 95\% confidence-level upper bound on a single parameter, this reduces to identifying the value at which $\mathrm{TS} = 3.84$.
+For a 95\% confidence-level upper bound on a single parameter, the conventional choice is to identify the value at which $\mathrm{TS} = 3.84$---the 95\% quantile of $\chi^2_1$, which is conservative for a one-sided bound.
 Hypothesis testing and interval estimation are thus two uses of the same construction: the same test statistic and the same quantile quantify a detection significance and delimit a confidence interval.
 
 \paragraph{Bootstrap confidence intervals.}
 
-The $\chi^2$ calibration of the TS rests on the regularity conditions of Wilks' theorem, and these can fail in situations that recur in gamma-ray analyses: when a parameter lies on a physical boundary---a flux or a cross-section that cannot be negative---when the sample is small enough that the asymptotic regime has not yet set in, or when the competing hypotheses are non-nested.
+The $\chi^2$ calibration of the TS rests on the regularity conditions of Wilks' theorem, and these can fail in situations that recur in gamma-ray analyses: when a parameter lies on a physical boundary---a flux or a cross-section that cannot be negative---or when the sample is small enough that the asymptotic regime has not yet set in.
 In such cases the bootstrap provides a general-purpose remedy \cite{Efron:1979}: we repeatedly refit the estimator, either on datasets resampled from the observed data (the \emph{nonparametric} bootstrap) or on synthetic datasets drawn from the fitted model (the \emph{parametric} bootstrap), and read the confidence interval directly from the spread of the re-fitted estimates---the containment interval of their empirical distribution.
-In Chapter~\ref{ch:5}, the uncertainty band on the dark matter annihilation cross-section bounds is obtained in exactly this way: for each dark matter mass we sample 100 synthetic datasets from the best-fit mixture model, re-derive the bound on $\langle \sigma v \rangle$ on each of them, and take the 95\% containment interval of the resulting distribution of bounds as the band.
+In Chapter~\ref{ch:5}, the uncertainty band on the dark matter annihilation cross-section bounds is obtained in exactly this way: for each dark matter mass we sample 100 synthetic datasets from the best-fit mixture model, re-derive the bound on $\langle \sigma v \rangle$ on each of them, and take the 95\% containment interval of the resulting distribution of bounds as the band, with its upper edge further adjusted to conservatively account for systematics associated with the presence of 4FGL sources.
 
 \paragraph{Goodness of fit.}
 
 A different question arises when we wish to assess the absolute compatibility of the data with a single model, without testing it against any specific alternative.
 The Kolmogorov--Smirnov test \cite{KS_test} addresses this goodness-of-fit question by taking as its test statistic the supremum of the absolute difference between the empirical cumulative distribution function of the data and the cumulative distribution predicted by the model.
-Its null distribution does not depend on the underlying distribution, which makes it a convenient distribution-free diagnostic whenever no particular alternative hypothesis is in play.
+When the null model is fully specified, the distribution of this statistic does not depend on the underlying distribution, which makes it a convenient distribution-free diagnostic whenever no particular alternative hypothesis is in play.
 
 \paragraph{Non-nested model comparison.}
 
@@ -172,7 +172,8 @@ Neither convention reflects a judgment on the foundations of probability; both r
 Beyond community defaults, the central question is whether the analysis requires a full characterization of uncertainty or whether a point estimate with a simple error bar suffices.
 When the posterior structure matters---correlations between parameters, degeneracies, multi-modality, or the marginalization of many nuisance parameters---the Bayesian framework provides this information as its default output (Section~\ref{sec:3.1.3}).
 In high-dimensional parameter spaces, however, MCMC itself becomes expensive.
-Frequentist point estimation can remain tractable in the same regime through gradient-based optimization or iterative algorithms such as EM \blue{(Chapter~\ref{ch:5})}, which converge efficiently without exploring the full parameter space---and what is given up is the posterior structure itself, not uncertainty quantification: confidence intervals remain available through the bootstrap (Section~\ref{sec:3.1.2}), at the cost of repeated refitting.
+Frequentist point estimation can remain tractable in the same regime through gradient-based optimization or iterative algorithms such as expectation--maximization (EM) \blue{(Chapter~\ref{ch:5})}, which converge efficiently without exploring the full parameter space.
+What is given up is the posterior structure itself, not uncertainty quantification: confidence intervals remain available through the bootstrap (Section~\ref{sec:3.1.2}), at the cost of repeated refitting.
 When a one-dimensional confidence interval or upper limit is the target, as in standard source detection or cross-section bounds, the frequentist route is typically more direct.
 
 A second discriminating factor is the role of external information.
