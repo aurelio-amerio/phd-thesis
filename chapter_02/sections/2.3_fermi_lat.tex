@@ -9,7 +9,6 @@ Launched in 2008, the \textit{Fermi} Large Area Telescope (LAT) has provided the
 While the detailed pipelines for data extraction and analysis are discussed directly within the subsequent chapters, it is necessary to establish the basic instrumental parameters and data products that define the practical limits of current observations.
 In this section, we review the fundamental design of the LAT, the energy-dependent instrumental response functions that govern its spatial and energy resolution, and the resulting catalogs of point sources that serve as the foundation for both individual target searches and statistical population studies.
 
-\aure{stopped here}
 
 \subsection{Instrument Overview}
 \label{sec:fermi_lat}
@@ -60,17 +59,19 @@ Three IRF components are particularly relevant for the analyses in this thesis: 
 
 The Point Spread Function (PSF) describes the angular resolution of the telescope, quantifying the probability distribution of reconstructed directions around the true source position.
 At energies below a few GeV, the resolution is dominated by the multiple Coulomb scattering of the newly produced electron-positron pair as it traverses the tungsten conversion foils.
-Consequently, the PSF is strongly energy-dependent, as shown in Figure~\ref{fig:lat_psf}: at 100~MeV, the 68\% containment radius spans approximately $3.5^\circ$ to $5^\circ$; it tightens to roughly $0.6^\circ$ at 1~GeV and reaches an asymptotic limit of less than $0.15^\circ$ above 10~GeV \cite{Atwood:2009ez}.
-Off-axis, the containment radius degrades by up to a factor of 1.7 at $55^\circ$ incidence.
+Consequently, the PSF is strongly energy-dependent, as shown in Figure~\ref{fig:lat_psf}: at 100~MeV, the 68\% containment angle spans approximately $3.5^\circ$ to $5^\circ$; it tightens to roughly $0.6^\circ$ at 1~GeV and reaches an asymptotic limit of less than $0.15^\circ$ above 10~GeV \cite{Atwood:2009ez}.
+Off-axis, the containment angle degrades by up to a factor of 1.7 at $55^\circ$ incidence.
 The broad PSF at lower energies creates a severe source confusion limit: because the spatial profiles of nearby point sources overlap with each other and with the intense Galactic diffuse emission, it becomes statistically difficult to disentangle individual faint objects.
 This confusion directly limits the depth of point-source catalogs and motivates the use of statistical population methods---such as those developed in Chapters~\ref{ch:6} and~\ref{ch:7}---rather than standard source-by-source extraction.
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.5\columnwidth, angle=90]{chapter_02/figures/lat_psf.pdf}
-	\caption{The 68\% containment radius of the Point Spread Function as a function of energy at normal incidence (solid) and at $60^\circ$ off-axis (dashed), for photons converting in the thin \textit{front} section of the tracker.
+	\includegraphics[height=0.49\textwidth, angle=90]{chapter_02/figures/lat_psf.pdf}
+	\includegraphics[width=0.49\textwidth]{chapter_02/figures/gPsfAve68Energy_P8R3_SOURCE_V3psf.png}
+	\caption{\textit{Left}: The 68\% containment angle of the Point Spread Function as a function of energy at normal incidence (solid) and at a $60^\circ$ off-axis incidence angle (dashed), for photons converting in the thin \textit{front} section of the tracker.
 	Photons converting in the thick \textit{back} section have a PSF approximately twice as wide at 1~GeV.
-	Credit: Figure 17 from \cite{Atwood:2009ez}.
+	\textit{Right}: the 68\% containment angle of the PSF as a function of energy for the four PSF event types (PSF0--PSF3, from broadest to narrowest).
+	Credit: Left from \cite{Atwood:2009ez} and right from~\cite{Ajello_2021}.
 	}
 	\label{fig:lat_psf}
 \end{figure}
@@ -83,12 +84,25 @@ For most analyses in this thesis, the energy resolution is sufficiently precise 
 
 Not every gamma ray that enters the LAT produces a usable event: some pass through without converting, others are rejected during background filtering.
 The effective area captures this by expressing the instrument's photon-collecting power as the area of an ideal, perfectly efficient detector that would record the same number of events.
-At normal incidence, it rises steeply from $\sim$100~cm$^2$ at 20~MeV to a broad plateau of $\sim$8,000--9,500~cm$^2$ between 1~GeV and several hundred GeV, before declining at the highest energies \cite{Atwood:2009ez}.
+At normal incidence, it rises steeply from $\sim$100~cm$^2$ at 20~MeV to a broad plateau of $\sim$8,000--9,500~cm$^2$ between 1~GeV and several hundred GeV, before declining at the highest energies \cite{Atwood:2009ez}. See Figure~\ref{fig:effective_area} for the energy and incidence angle dependence of the effective area.
 For comparison, the LAT's overall footprint is $1.8 \times 1.8~\mathrm{m}^2$; the peak effective area of $\sim$9,500~cm$^2$---roughly a third of the geometric area---reflects the compounded probabilities of pair conversion in the tungsten, successful track reconstruction, and survival of background-rejection cuts.
 For a survey instrument, however, the relevant figure of merit is not the on-axis effective area alone, but the \emph{acceptance}---the effective area integrated over all incident directions.
 While the effective area quantifies the detection efficiency for photons arriving from a single direction, the acceptance captures the instrument's total photon-collecting power across the full field of view simultaneously.
 The LAT's acceptance peaks at $\sim$2.5~m$^2$~sr above 1~GeV \cite{Atwood:2009ez}, a direct consequence of the large 2.4~sr field of view enabled by the tracker's compact aspect ratio.
 Combined with the scanning survey mode described in Section~\ref{sec:fermi_lat}, this large acceptance allows the LAT to achieve nearly uniform full-sky exposure every three hours, operating as a continuous all-sky monitor rather than a pointed observatory.
+
+
+%% figure here 
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.49\textwidth]{chapter_02/figures/gAeffEnergy_P8R3_SOURCE_V3fb.png}
+	\includegraphics[width=0.49\textwidth]{chapter_02/figures/gAeffTheta_10GeV_P8R3_SOURCE_V3fb.png}
+	\caption{\textit{Left}: Effective area as a function of the energy of the incident photon. \textit{Right}: Effective area at 10 GeV as a function of the angle of incidence.
+	Credit: Fermi-LAT collaboration~\cite{Ajello_2021}.
+	}
+	\label{fig:effective_area}
+\end{figure}
+
 
 The accuracy of the IRFs relies directly on the underlying event reconstruction algorithms.
 The Pass~8 analysis framework represents a comprehensive overhaul of the LAT event-level reconstruction, designed to maximize the scientific return of the data \cite{Fermi-LAT:2013jgq}.
@@ -102,8 +116,8 @@ Subsequent iterations, most notably the P8R3 release \cite{Bruel:2018lac}, furth
 
 \subsection{Data Products and Catalogs}
 \label{sec:data_products}
-With the IRFs established, we now turn to how the LAT data are translated into astrophysical catalogs.
-Converting raw photon events into measurements of individual sources requires disentangling point-like objects from the structured diffuse backgrounds.
+With the IRFs established, we now turn to how the LAT data are translated into astrophysical catalogs of gamma-ray sources.
+Converting raw photon events into measurements of individual sources requires disentangling \blue{finite} objects from the structured diffuse backgrounds.
 The \textit{Fermi}-LAT collaboration achieves this through a maximum likelihood framework \cite{Mattox:1996zz,Fermi-LAT:2019yla}.
 \blue{The observed sky is modeled through the template decomposition introduced in Section~\ref{sec:gde_model}---the structured Galactic diffuse emission plus a spatially uniform isotropic component---augmented with individual point sources, each parametrized by a position and a spectral model.}
 The normalizations and spectral parameters of all components are simultaneously adjusted to maximize the Poisson likelihood function against the observed photon counts across the sky.
@@ -131,4 +145,4 @@ These unassociated sources are concentrated along the Galactic plane, where the 
 
 This large population of unassociated sources is scientifically important for multiple reasons.
 Beyond its likely composition of faint blazars and pulsars below the sensitivity of current multi-wavelength surveys, it also constitutes the primary search pool for exotic gamma-ray emitters such as dark matter subhalos.
-As discussed in Chapter~1, $\Lambda$CDM cosmology predicts the existence of thousands of Galactic subhalos below $\sim 10^7\,M_\odot$---too low in mass to retain gas or form stars, and therefore invisible at all wavelengths except gamma rays, where WIMP annihilation could produce a faint, spectrally soft signal closely resembling an unassociated \textit{Fermi}-LAT point source \cite{Cirelli:2024ssz,Springel:2008cc}. Separating such candidates from the astrophysical contaminants within the 4FGL catalog is the central challenge addressed in Chapter~\ref{ch:5}, where machine learning techniques are used to search for dark matter subhalo candidates among the unassociated sources.
+\blue{As mentioned in Chapter~\ref{ch:1} and detailed further in Chapter~\ref{ch:5}, $\Lambda$CDM cosmology predicts a large population of low-mass Galactic subhalos that are too low in mass to retain gas or form stars, and are therefore invisible at all wavelengths except gamma rays, where WIMP annihilation could produce a faint, spectrally soft signal closely resembling an unassociated \textit{Fermi}-LAT point source. Separating such candidates from the astrophysical sources within the 4FGL catalog is the central challenge addressed in Chapter~\ref{ch:5}.}
