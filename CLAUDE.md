@@ -17,9 +17,11 @@ Compiled with `pdflatex` + BibTeX (JHEP style). The main entry point is `main.te
 ```
 main.tex              # Root document (memoir class + dinostyle.sty)
 macros.tex            # Shared macros (\be \ee \dnds \aure{} etc.)
-acronyms.tex          # Glossary entries (30+ acronyms)
-bibliography.bib      # 542 BibTeX entries, JHEP style
+acronyms.tex          # Glossary entries (custom \newacro command)
+bibliography.bib      # 500+ BibTeX entries, JHEP style
 dinostyle.sty         # Custom thesis style package
+docs/superpowers/specs/  # Design & revision plans (specs)
+.revisions/           # Supervisor feedback inputs (never write specs here)
 chapter_0X/           # Chapters 01–08
   chapter_X.tex       # Chapter wrapper (\input{sections/...})
   chapter_outline.md  # Detailed section-by-section outline
@@ -57,6 +59,9 @@ These are the primary ways to drive thesis writing. Invoke via Claude Code:
 | `/chapter N` | Generate detailed chapter outline for chapter N |
 | `/draft X.Y` or `/draft X.Y.Z` | Write prose for a section or subsection |
 | `/referee X.Y` or `/referee X` | Critical review of a section or full chapter |
+| `/acronyms [file]` | Convert literal acronyms to glossary macros, extend acronyms.tex |
+| `/citecheck <file>` / `/citecheck-deep <file>` | Score / deep-verify \cite pertinence (plugin) |
+| `/knowledge` | Save or retrieve cross-session insights |
 
 The `/draft` workflow runs a three-layer writing pipeline: `scientific-writing` → `humanizer` → personal style adaptation. It automatically performs a review pass at the end.
 
@@ -67,6 +72,7 @@ Skills live in `.agent/skills/` (antigravity) and `.claude/skills/` (Claude Code
 ## Key Macros
 
 - `\aure{...}` — orange highlighted author comment/annotation
+- `\blue{...}` — blue text marking new/revised prose during revision passes, so the author and supervisor can see what changed; wrap all newly drafted or reworded fragments (including reworded headings and swapped citations) until the revision is accepted
 - `\be` / `\ee` — begin/end equation (shorthand)
 - `\ben` / `\een` — begin/end enumerate (paper 4 macro; NOT an equation environment — use `\[...\]` for unnumbered displays)
 - `\dnds`, `\dNdS` — source-count distribution notation
@@ -77,9 +83,9 @@ Skills live in `.agent/skills/` (antigravity) and `.claude/skills/` (Claude Code
 
 - Physics drives the narrative — ML/statistical methods are introduced in the chapter where they first solve a problem, not in a standalone toolbox chapter.
 - Each chapter starts from a physics problem and motivates its methodological contribution.
-- `chapter_outline.md` per chapter is the authoritative section-level specification.
+- `chapter_outline.md` per chapter is the section-level roadmap — indicative, not prescriptive. Outlines were first-pass indications; do not over-constrain new drafts to them.
 - `outline.md` is the master thesis-level narrative document.
-- The `.revisions/` directory contains revision directives from supervisor feedback.
+- The `.revisions/` directory contains supervisor feedback inputs only. All design and revision plans (specs) go in `docs/superpowers/specs/` — never in `.revisions/`.
 - **Never create BibTeX entries manually.** Only add bib entries fetched from InspireHEP or arXiv. For papers not found on these platforms, list them in an MD artifact (authors, year, title, journal) so the author can add them via Google Scholar. Use `\aure{}` placeholders in the LaTeX for the missing cite keys.
 - **Figures from external papers.** Always download figures from the original arXiv TeX source using `python arxiv_downloader.py <arxiv_id>` to extract publication-quality vector PDFs. InspireHEP figure API images are low-resolution rasters — acceptable as temporary placeholders during drafting, but must be replaced with originals from the arXiv source before the final version. When adding a figure placeholder, mark it with `\aure{replace with original PDF from arXiv source: <arxiv_id>}`.
 
@@ -90,9 +96,13 @@ The voice is consistent across hand-written and paper-integrated chapters. Match
 **Voice and person.** First-person plural ("we", "our analysis"). The author takes positions: names competing camps, summarizes community consensus, calls open questions open. Avoid effacing constructs ("the present author") and false neutrality on contested issues.
 
 **Sentence and paragraph rhythm.**
-- Long, multi-clause sentences. Em dashes for parenthetical inserts; colons and semicolons to chain related ideas.
+- Moderately long sentences are fine. Em dashes for parenthetical inserts; colons and semicolons to chain related ideas. But there is a hard ceiling: never stack a colon enumeration, an em-dash insert, and a trailing clause in one sentence (roughly 40+ words / 3+ clauses). When in doubt, split — one idea per sentence, especially in comparative or argumentative passages; reserve the longer form for descriptive scene-setting.
 - Paragraphs are **long** (typically 6–12 sentences) and self-contained: topic sentence → development → implication/transition.
 - **No bullet points in narrative prose.** Numbered enumerations only when comparing alternatives or stating discrete hypotheses (cf. the five MSP-scaling hypotheses in §4.5.2).
+
+**Physical picture first.** Open every section and subsection with the qualitative physical picture — what is happening and why — before any equation. Equations quantify a story already told; they never open a section (unless the formula IS the punchline, which is rare). Drop intermediate bookkeeping algebra that carries no conceptual weight; keep equations that are punchlines (relic-abundance formula, master flux equation). Write "we describe/review/present" rather than "we derive" when no derivation actually occurs — introductory chapters (1–3) review, the paper chapters (4–8) derive.
+
+**Vetoed vocabulary.** The author rejects stilted AI-academic register; prefer plain verbs. Known vetoes: "posit" → "assume". Check drafts for these before presenting, and extend this list when the author vetoes a word.
 
 **Section openings.** Each chapter and major section opens with (1) a broad-scene paragraph ("The gamma-ray sky is rich and complex..."), (2) why standard methods fall short, and (3) what this chapter contributes — with an explicit roadmap: *"Section 2.1 reviews..., Section 2.2 surveys..., Finally, Section 2.3 describes..."*
 

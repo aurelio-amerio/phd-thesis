@@ -66,40 +66,35 @@ An alternative approach is to integrate over the nuisance parameters within the 
 where $g(\boldsymbol{\eta})$ is a weight function derived from independent auxiliary measurements or physical constraints on the nuisance parameters.
 Although this resembles Bayesian marginalization in form, the integrated likelihood is interpreted differently: it is a tool for removing $\boldsymbol{\eta}$ from the likelihood rather than a posterior probability statement about $\boldsymbol{\psi}$.
 
-\paragraph{\blue{Hypothesis testing and confidence intervals.}}
+\paragraph{Hypothesis testing and confidence intervals.}
 
-To compare competing hypotheses---for instance, whether a gamma-ray source exists at a given position---\blue{we construct} a likelihood-ratio test statistic (TS):
+To compare competing hypotheses---for instance, whether a gamma-ray source exists at a given position---we construct a likelihood-ratio test statistic (TS):
 \begin{equation}
 	\mathrm{TS} = -2 \ln \frac{\mathcal{L}_0}{\mathcal{L}_1},
 	\label{eq:ts}
 \end{equation}
 where $\mathcal{L}_0$ is the likelihood under the null hypothesis and $\mathcal{L}_1$ the likelihood under the alternative (or, more commonly, the globally maximized likelihood) \cite{Mattox:1996zz}.
-By Wilks' theorem, under \blue{mild} regularity conditions the TS is asymptotically distributed as a $\chi^2$ random variable with degrees of freedom equal to the difference in free parameters between the two hypotheses \cite{Wilks:1938}\blue{, which lets us convert a TS value into a statistical significance without resorting to explicit Monte Carlo simulations}.
-\blue{The same asymptotic result can be used for the construction of confidence intervals, understood as the inverted test. Rather than fixing a single threshold and asking whether the null is rejected, we scan the parameter of interest and retain the range over which the profile-likelihood TS stays below the appropriate $\chi^2$ quantile.}
-% \blue{For a 95\% confidence-level upper bound on a single parameter, the conventional choice is to identify the value at which $\mathrm{TS} = 3.84$---the 95\% quantile of $\chi^2_1$, which is conservative for a one-sided bound.}
-\blue{Hypothesis testing and interval estimation are thus two uses of the same construction: the same test statistic and the same quantile quantify a detection significance and delimit a confidence interval.}
+By Wilks' theorem, under mild regularity conditions the TS is asymptotically distributed as a $\chi^2$ random variable with degrees of freedom equal to the difference in free parameters between the two hypotheses \cite{Wilks:1938}, which lets us convert a TS value into a statistical significance without resorting to explicit Monte Carlo simulations.
+The same asymptotic result underpins the construction of confidence intervals, understood as the inverted test: rather than fixing a single threshold and asking whether the null is rejected, we scan the parameter of interest and retain the range over which the profile-likelihood TS stays below the appropriate $\chi^2$ quantile.
+For a 95\% confidence-level upper bound on a single parameter, the conventional choice is to identify the value at which $\mathrm{TS} = 3.84$---the 95\% quantile of $\chi^2_1$, which is conservative for a one-sided bound.
+Hypothesis testing and interval estimation are thus two uses of the same construction: the same test statistic and the same quantile quantify a detection significance and delimit a confidence interval.
 
-\paragraph{\blue{Bootstrap confidence intervals.}}
+\paragraph{Bootstrap confidence intervals.}
 
-\blue{The $\chi^2$ calibration of the TS rests on the regularity conditions of Wilks' theorem, and these can fail in situations that recur in gamma-ray analyses: when a parameter lies on a physical boundary---a flux or a cross-section that cannot be negative---or when the sample is small enough that the asymptotic regime has not yet set in.}
-\blue{In such cases the bootstrap provides a general-purpose strategy \cite{Efron:1979}: we repeatedly refit the estimator, either on datasets resampled from the observed data (the \emph{nonparametric} bootstrap) or on synthetic datasets drawn from the fitted model (the \emph{parametric} bootstrap), and read the confidence interval directly from the spread of the re-fitted estimates---the containment interval of their empirical distribution.}
-\blue{In Chapter~\ref{ch:5}, the uncertainty band on the dark matter annihilation cross-section bounds is obtained in exactly this way.}
+The $\chi^2$ calibration of the TS rests on the regularity conditions of Wilks' theorem, and these can fail in situations that recur in gamma-ray analyses: when a parameter lies on a physical boundary---a flux or a cross-section that cannot be negative---or when the sample is small enough that the asymptotic regime has not yet set in.
+In such cases the bootstrap provides a general-purpose remedy \cite{Efron:1979}: we repeatedly refit the estimator, either on datasets resampled from the observed data (the \emph{nonparametric} bootstrap) or on synthetic datasets drawn from the fitted model (the \emph{parametric} bootstrap), and read the confidence interval directly from the spread of the re-fitted estimates---the containment interval of their empirical distribution.
+In Chapter~\ref{ch:5}, the uncertainty band on the dark matter annihilation cross-section bounds is obtained in exactly this way: for each dark matter mass we sample 100 synthetic datasets from the best-fit mixture model, re-derive the bound on $\langle \sigma v \rangle$ on each of them, and take the 95\% containment interval of the resulting distribution of bounds as the band, with its upper edge further adjusted to conservatively account for systematics associated with the presence of 4FGL sources.
 
-\paragraph{\blue{Goodness of fit.}}
+\paragraph{Goodness of fit.}
 
-\blue{A different question arises when we wish to assess the absolute compatibility of the data with a single model, without testing it against any specific alternative.}
-\blue{Goodness-of-fit tests designed for this purpose come in parametric and nonparametric forms \cite{Cowan:1998ji}.}
-\blue{Parametric tests assume a sampling distribution for a summary of the data; the classic example is Pearson's $\chi^2$ test, which compares binned counts with model expectations and refers the sum of squared normalized residuals to a $\chi^2$ distribution.}
-\blue{Nonparametric tests instead compare data and model directly at the level of their distribution functions, without assuming a functional form for the discrepancy.}
-\blue{Among the many nonparametric options, one which is employed in this thesis is the Kolmogorov--Smirnov (KS) test \cite{KS_test}.}
-\blue{Its test statistic is the supremum of the absolute difference between the empirical cumulative distribution function of the data and the cumulative distribution predicted by the model.}
-\blue{When the null model is fully specified, the null distribution of this statistic does not depend on the model being tested.}
-\blue{The KS test is therefore a convenient distribution-free diagnostic when no specific alternative is preferred.}
+A different question arises when we wish to assess the absolute compatibility of the data with a single model, without testing it against any specific alternative.
+The Kolmogorov--Smirnov test \cite{KS_test} addresses this goodness-of-fit question by taking as its test statistic the supremum of the absolute difference between the empirical cumulative distribution function of the data and the cumulative distribution predicted by the model.
+When the null model is fully specified, the distribution of this statistic does not depend on the underlying distribution, which makes it a convenient distribution-free diagnostic whenever no particular alternative hypothesis is in play.
 
-\paragraph{\blue{Non-nested model comparison.}}
+\paragraph{Non-nested model comparison.}
 
-\blue{The Wilks' likelihood-ratio test presumes that the two hypotheses are nested, with one model recovered as a special case of the other; when this is not so, we need a criterion able to rank models of different structure.}
-\blue{Information criteria fill this gap.}
+The likelihood-ratio test presumes that the two hypotheses are nested, with one model recovered as a special case of the other; when this is not so, we need a criterion able to rank models of different structure.
+Information criteria fill this gap.
 The Akaike Information Criterion \cite{Akaike:1974} is defined as
 \begin{equation}
 	\mathrm{AIC} = -2 \ln \mathcal{L}_{\max} + 2k,
@@ -114,7 +109,7 @@ Model selection then proceeds by minimising the AIC across the candidates; \blue
 The frequentist framework developed above is used extensively in this thesis:
 \begin{itemize}
 	\item In Chapter~\ref{ch:4}, the MSP luminosity function is constrained via MLE applied to an integrated likelihood, and model comparison is performed through $-2\Delta\ln\mathcal{L}$ values.
-	\item In Chapter~\ref{ch:5}, a profile likelihood test statistic is used with Wilks' theorem to set 95\% CL upper bounds on the dark matter annihilation cross-section\blue{, with the uncertainty band on those bounds derived from a parametric bootstrap}; the AIC is additionally used to compare competing models for the unassociated source population.
+	\item In Chapter~\ref{ch:5}, a profile likelihood test statistic is used with Wilks' theorem to set 95\% CL upper bounds on the dark matter annihilation cross-section, with the uncertainty band on those bounds derived from a parametric bootstrap; the AIC is additionally used to compare competing models for the unassociated source population.
 	\item In Chapter~\ref{ch:7}, a two-sample KS test compares the cumulative pixel-wise TS distributions of the real \Fermi-LAT sky against synthetic realizations drawn from the source-count distribution, providing the statistical criterion that defines sub-threshold source candidates.
 	\item In Chapter~\ref{ch:8}, a $\Delta\chi^2$ test statistic compares astrophysical-only and astrophysical-plus-DM hypotheses for the cross-correlation angular power spectrum.
 \end{itemize}
@@ -166,25 +161,29 @@ In Chapter~\ref{ch:6}, the Bayesian framework is implemented via simulation-base
 
 %% --- 3.1.4 ---
 
-\subsection{\blue{Frequentist versus Bayesian}}
+\subsection{When to Use Which}
 \label{sec:3.1.4}
 
-For most inference tasks encountered in practice---parameter estimation, upper-limit setting, model comparison---both the frequentist and Bayesian frameworks can reach similar scientific conclusions.
-\blue{Neither is inherently superior to the other.}
-\blue{Both provide uncertainty quantification---confidence intervals constructed via the profile likelihood or the bootstrap on one side, posterior credible intervals on the other.}
-\blue{Both can incorporate external constraints.}
-\blue{In the Bayesian framework these enter through the prior---restricting fluxes to non-negative values, for example, or spectral indices to physically motivated ranges.}
-\blue{A frequentist analysis imposes the same requirements through bounded parameter ranges or constrained fits.}
-\blue{The choice between them is therefore pragmatic rather than fundamental, driven by the structure of the problem, computational considerations, and---above all---the conventions of the relevant research community.}
-High-energy particle physics and the Fermi-LAT collaboration have traditionally favored frequentist methods: source detection via the TS, upper limits via the profile likelihood and Wilks' theorem, catalog pipelines built on maximum-likelihood fitting \cite{Mattox:1996zz}.
-\blue{Cosmology and large-scale-structure analyses, by contrast,} have largely adopted Bayesian Markov Chain Monte Carlo (MCMC) methods \blue{\cite{Trotta:2008qt}}.
+For most inference tasks encountered in practice---parameter estimation, upper-limit setting, model comparison---both the frequentist and Bayesian frameworks can reach the same scientific conclusion.
+The choice between them is usually pragmatic rather than fundamental, driven by the scientific question at hand, computational considerations, and the conventions of the relevant research community.
+Community practice already carries considerable weight: high-energy particle physics and the Fermi-LAT collaboration have traditionally favored frequentist methods---source detection via the TS, upper limits via the profile likelihood and Wilks' theorem, catalog pipelines built on maximum-likelihood fitting \cite{Mattox:1996zz}---while cosmology and large-scale-structure analyses have largely adopted Bayesian Markov Chain Monte Carlo (MCMC) methods \cite{Hastie:2009}.
 Neither convention reflects a judgment on the foundations of probability; both reflect what works well for the typical dimensionality and structure of the problems each field encounters most often.
-\blue{In this thesis, we follow the convention of the community relevant to each analysis.}
 
-In the limit of abundant, constraining data, \blue{the distinction fades altogether}: the likelihood dominates any reasonable prior, and Bayesian credible intervals coincide numerically with frequentist confidence intervals.
+Beyond community defaults, the central question is whether the analysis requires a full characterization of uncertainty or whether a point estimate with a simple error bar suffices.
+When the posterior structure matters---correlations between parameters, degeneracies, multi-modality, or the marginalization of many nuisance parameters---the Bayesian framework provides this information as its default output (Section~\ref{sec:3.1.3}).
+In high-dimensional parameter spaces, however, MCMC itself becomes expensive.
+Frequentist point estimation can remain tractable in the same regime through gradient-based optimization or iterative algorithms such as expectation--maximization (EM) \blue{(Chapter~\ref{ch:5})}, which converge efficiently without exploring the full parameter space.
+What is given up is the posterior structure itself, not uncertainty quantification: confidence intervals remain available through the bootstrap (Section~\ref{sec:3.1.2}), at the cost of repeated refitting.
+When a one-dimensional confidence interval or upper limit is the target, as in standard source detection or cross-section bounds, the frequentist route is typically more direct.
+
+A second discriminating factor is the role of external information.
+Bayesian inference provides a coherent mechanism for incorporating physical constraints---positivity of fluxes, calibration ranges from auxiliary measurements, results from complementary experiments---through the prior.
+Frequentist methods are preferred when the goal is to present a result with minimal sensitivity to external assumptions, particularly in the data-sparse regime where the prior can considerably shape the posterior.
+This prior dependence extends to model comparison: the Bayes factor offers a principled comparison between arbitrary model pairs but is sensitive to the prior volume, especially when priors are vague or the models differ substantially in complexity \cite{Kass:1995}; the frequentist likelihood-ratio test (Section~\ref{sec:3.1.2}) is prior-free but restricted to nested hypotheses; information criteria such as the AIC apply more broadly but produce only relative rankings without significance levels.
+
+In the limit of abundant, constraining data, these distinctions fade: the likelihood dominates any reasonable prior, and Bayesian credible intervals coincide numerically with frequentist confidence intervals.
 The choice becomes consequential precisely when data are sparse, priors are informative, or the parameter space is high-dimensional.
 In the analyses presented in this thesis, both paradigms are used, and in some cases they are applied to the same problem as independent cross-checks.
-In Chapter~\ref{ch:6}, a simulation-based inference approach provides Bayesian posterior estimates on the reconstructed $dN/dS$.
-\blue{These are validated against} a frequentist analysis of the same data\blue{, in which} confidence intervals are extracted from the empirical distribution of residuals across the validation set.
-% The frequentist cross-check also provides a formal estimate of the model's bias, which is found to be negligible across the flux range of interest.
-% The compatibility of the two independent error estimates provides confidence that the uncertainty quantification is robust.
+In Chapter~\ref{ch:6}, a simulation-based inference approach provides Bayesian posterior estimates on the reconstructed $dN/dS$, which are validated against a frequentist analysis of the same data where confidence intervals are extracted from the empirical distribution of residuals across the validation set.
+The frequentist cross-check also provides a formal estimate of the model's bias, which is found to be negligible across the flux range of interest.
+The compatibility of the two independent error estimates provides confidence that the uncertainty quantification is robust.
