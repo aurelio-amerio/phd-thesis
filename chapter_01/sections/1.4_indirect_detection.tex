@@ -4,14 +4,15 @@
 \section{Indirect Detection via Gamma-Rays}
 \label{sec:1.4}
 
+\blue{In our efforts to better understand the potential particle nature of dark matter, we now steer our attention towards indirect detection searches.}
 Indirect detection via gamma-rays directly probes the annihilation cross-section --- the quantity that governs the thermal relic abundance and the one quantity that underground laboratories cannot access.
 This section derives the relevant equations for the gamma-rays flux, which is key to every analysis presented in this thesis.
 % This section develops the underlying formalism.
 % We follow the signal from particle physics --- the annihilation and decay rates, the spectra they produce --- through astrophysics --- the density profiles that determine where the dark matter sits --- to derive the equations that predict the gamma-ray flux from any given target.
 % These expressions, and the assumptions that enter them, provide the quantitative foundation for every analysis presented in this thesis.
 
-The development begins with the microphysics of annihilation and decay and the gamma-ray spectra they produce (\S\ref{sec:ann_decay}--\S\ref{sec:spectral_features}), then introduces the dark matter density profiles that determine how the signal varies across the sky (\S\ref{sec:density_profiles}).
-These ingredients combine into the $J$-factor and $D$-factor formalism, which factorizes the predicted flux into a particle-physics term and an astrophysical term (\S\ref{sec:jfactor}). We then survey the observational targets that define the thesis programme (\S\ref{sec:targets}--\S\ref{sec:status}).
+\blue{We first consider the microphysics of annihilation and decay and the gamma-ray spectra they produce (\S\ref{sec:ann_decay}--\S\ref{sec:spectral_features}), then introduce the dark matter density profiles that determine how the signal varies across the sky (\S\ref{sec:density_profiles}).
+These ingredients combine into the $J$-factor and $D$-factor formalism, which factorizes the predicted flux into a particle-physics term and an astrophysical term (\S\ref{sec:jfactor}). We then survey the observational targets that define the thesis programme (\S\ref{sec:targets}--\S\ref{sec:status}).}
 
 \subsection{Annihilation and Decay Physics}
 \label{sec:ann_decay}
@@ -19,7 +20,7 @@ These ingredients combine into the $J$-factor and $D$-factor formalism, which fa
 In the $\Lambda$CDM framework, structure forms hierarchically from cold, non-relativistic dark matter, and the particles that populate present-day galactic halos retain typical velocities of order $v \sim 10^{-3}\, c$ \cite{Hooper:2024}.
 They therefore annihilate or decay essentially at rest.
 This kinematic fact has two immediate consequences.
-First, the total center-of-mass energy available in an annihilation event is simply $\sqrt{s} = 2 m_\chi$, so the most energetic photon that can be produced carries energy $E_\gamma = m_\chi$.
+First, the total center-of-mass energy available in an annihilation event \blue{today is roughly} $\sqrt{s} = 2 m_\chi$, so the most energetic photon that can be produced carries energy $E_\gamma = m_\chi$.
 For decay, the available energy is instead $m_\chi$, and momentum conservation among at least two daughter particles limits the maximum photon energy to $E_\gamma = m_\chi / 2$.
 These hard kinematic endpoints are among the most distinctive features of a dark matter signal, since known astrophysical gamma-ray sources do not generically produce spectra with such a sharp cutoff tied to a single mass scale.
 
@@ -48,14 +49,14 @@ This morphological difference provides a powerful diagnostic: an excess that tra
 
 The stable particles emerging from an annihilation or decay event --- photons, neutrinos, electrons,
 protons, antimatter --- are determined by the primary channel into which the dark matter annihilates.
-In a model-independent analysis, one parametrizes the annihilation as $\chi\chi \to f\bar{f}$ for a specific Standard Model final state $f$ (quarks, leptons, or gauge bosons), and the total gamma-ray spectrum is given by a sum over channels weighted by branching ratios \cite{Cirelli:2024ssz,Cirelli:2010xx,Arina:2023eic}:
+In \blue{general}, one parametrizes the annihilation as $\chi\chi \to f\bar{f}$ for a specific Standard Model final state $f$ (quarks, leptons, or gauge bosons), and the total gamma-ray spectrum is given by a sum over channels weighted by branching ratios \cite{Cirelli:2024ssz,Cirelli:2010xx,Arina:2023eic}:
 
 \begin{equation}
 	\frac{dN_\gamma}{dE} = \sum_f \text{BR}_f \, \frac{dN_\gamma^{(f)}}{dE} \,.
 	\label{eq:spectrum_sum}
 \end{equation}
 
-In practice, limits are derived for one channel at a time --- setting $\text{BR}_f = 1$ for a chosen final state --- so each "benchmark channel" maps to a distinctive spectral shape.
+\blue{Quite often}, limits are derived for one channel at a time --- setting $\text{BR}_f = 1$ for a chosen final state --- so each "benchmark channel" maps to a distinctive spectral shape.
 The spectra $dN_\gamma^{(f)}/dE$ for each channel are computed using Monte Carlo event generators such as Pythia, with the results tabulated in standard libraries such as PPPC 4 DM ID \cite{Cirelli:2010xx} or the more recent CosmiXs \cite{Arina:2023eic}.
 These spectra exhibit qualitatively different shapes depending on $f$.
 In hadronic channels such as $b\bar{b}$ or $t\bar{t}$, the quarks hadronize into jets containing many neutral pions, which decay almost instantly via $\pi^0 \to \gamma\gamma$.
@@ -69,7 +70,7 @@ Gauge boson channels ($W^+W^-$, $ZZ$) produce a combination of both behaviours: 
 
 The more hadrons produced in the cascade, the softer the spectrum, because the available energy is shared among a larger multiplicity of pions.
 Channels that produce fewer, more energetic particles yield harder spectra with sharper features.
-In practice, the distinction between the $b\bar{b}$ and $\tau^+\tau^-$ benchmarks brackets the range of spectral shapes relevant for most thermal relic models \cite{Hooper:2024}.
+In practice, the distinction between the $b\bar{b}$ and $\tau^+\tau^-$ benchmarks brackets the range of spectral shapes relevant for most thermal relic models \cite{Hooper:2024}, \blue{and are often used for reference.}
 These qualitative differences are illustrated in Figure~\ref{fig:spectra_per_channel}.
 
 \begin{figure}[t]
@@ -104,9 +105,9 @@ These spectral features are illustrated schematically in Figure~\ref{fig:spectra
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.42\textwidth]{figures/IndirectDetectionSpectrumCartoonNew.pdf}
-	\caption{Notable sharp gamma-ray spectral features from dark matter annihilation.
-		From left to right: the monochromatic line from $\chi\chi \to \gamma\gamma$, the ``saw-tooth'' shape of virtual internal bremsstrahlung (VIB), the ``top-hat'' (box-shaped) spectrum from cascade decays $\chi\chi \to XX \to \gamma\gamma\gamma\gamma$, and the single saw-tooth from $\chi\chi \to XX \to \gamma\nu\gamma\nu$.
+	\includegraphics[width=0.85\textwidth]{figures/DMphotonSpectra.pdf}
+	\caption{Notable sharp gamma-ray spectral features from dark matter annihilation, as a function of the fractional energy carried by the photon, $x = E_\gamma/m_\chi$.
+		From left to right: the single saw-tooth from $\chi\chi \to XX \to \gamma\nu\gamma\nu$ (red), the ``top-hat'' (box-shaped) spectrum from cascade decays $\chi\chi \to XX \to \gamma\gamma\gamma\gamma$ (blue), the ``saw-tooth'' shape of virtual internal bremsstrahlung (VIB, green), and the monochromatic line from $\chi\chi \to \gamma\gamma$ at $E_\gamma = m_\chi$ (black).
 		Unlike the case for charged cosmic rays, these sharp features propagate intact to the detector and can be searched for directly.
 		Credit: Cirelli et al.~\cite{Cirelli:2024ssz}.
 	}
@@ -118,6 +119,9 @@ When the dark matter mass lies far above the electroweak scale ($m_\chi \gg M_W$
 Its effect is twofold.
 First, the subsequent decays of the radiated bosons smear sharp features such as monochromatic lines and add a soft continuum of lower-energy gamma-rays.
 Second, they feed final states that would otherwise be absent, so that even purely leptonic channels ($\chi\chi \to e^+e^-$, $\mu^+\mu^-$) end up producing antiprotons and every annihilation channel contributes to every messenger~\cite{Cirelli:2024ssz}.
+\blue{These are corrections to the \emph{final state}, reshaping the spectrum produced per annihilation.
+They should not be confused with the Sommerfeld enhancement of Section~\ref{sec:1.2.4}, which in this regime is likewise of electroweak origin: for $m_\chi \gg M_W$, the $W$ and $Z$ mediate a long-range force between the slow incoming pair~\cite{Cirelli:2024ssz}.
+That effect, however, acts on the initial state and scales the annihilation rate rather than the spectrum.}
 
 \textbf{Prompt versus secondary emission.}
 The gamma-ray production mechanisms discussed so far --- pion decay, final-state radiation, lines, VIB --- all occur promptly after their parent annihilation or decay event, and are thus referred to as \textit{prompt emission} \cite{Cirelli:2024ssz,Pinetti:2021jjs}.
@@ -129,6 +133,7 @@ The target photon field --- the interstellar radiation field (ISRF) --- consists
 As a representative example, a 1 TeV electron upscatters a CMB photon to $\sim 1.5$ GeV, or a UV starlight photon to $\sim 150$ GeV \cite{Cirelli:2024ssz}.
 The propagating $e^\pm$ also emit \textit{bremsstrahlung} radiation when deflected by the electric fields of interstellar gas nuclei, a process that dominates their energy losses in the 1--10 GeV range near the Galactic plane where gas densities are highest \cite{Blumenthal:1970gc,Dermer:2009zz}.
 These processes produce \textit{secondary} gamma-ray emission that is spatially extended and spectrally softer than the prompt component, and whose morphology depends on the magnetic field structure, gas distribution, and radiation fields of the host galaxy \cite{Strong:2007nh,Hooper:2024}.
+\blue{The same $e^\pm$ population also emits \textit{synchrotron} radiation as it gyrates in the Galactic magnetic field, but for weak-scale dark matter candidates this component peaks at radio and microwave frequencies --- a 10 GeV electron in the local $\sim 5\,\mu$G field radiates near 8 GHz \cite{Cirelli:2024ssz} --- and therefore does not contribute directly to gamma-ray searches.}
 Secondary emission therefore depends not only on the dark matter distribution but also on the astrophysical environment --- magnetic fields, radiation fields, gas densities --- that reprocesses the primary electrons and positrons.
 Despite this additional layer of modelling uncertainty, secondary emission plays a central role in the interpretation of the Galactic Center excess discussed in Chapter~\ref{ch:4}, where the identification of the signal relies on subtracting the diffuse gamma-ray background dominated by cosmic-ray ICS and bremsstrahlung in the dense inner Galaxy \cite{Hooper:2024}.
 
