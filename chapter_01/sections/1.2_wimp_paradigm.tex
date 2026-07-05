@@ -214,16 +214,16 @@ This connection between cosmological abundance and indirect-detection signals fu
 %
 In this section we explore the viable mass range for \glspl{WIMP_}.
 Consider first a particle that interacts with the Standard Model only through the weak interaction, with no dark mediator of its own.
-At freeze-out energies the annihilation cross section for such a particle, dominated by exchange of $W$ and $Z$ bosons, scales as $\sigma_0 \approx G_F^2 M_\chi^2 / 2\pi$, where $G_F$ is the Fermi constant~\cite{Bertone:2004pz}.
+At freeze-out energies, using the Fermi approximation, the annihilation cross section for such a particle, dominated by exchange of $W$ and $Z$ bosons, scales as $\sigma_0 \approx G_F^2 M_\chi^2 / 2\pi$, where $G_F$ is the Fermi constant~\cite{Bertone:2004pz}.
 This is an \emph{$s$-wave} process \blue{(cf.~Eq.~\eqref{eq:partial_wave})}, meaning the cross section is independent of the relative velocity --- a noteworthy property, since it distinguishes whether or not the same $\sigmav$ that fixes the relic abundance also drives present-day annihilations in galactic halos.
-Because $\sigma_0$ scales as $M_\chi^2$, lowering the candidate mass reduces the annihilation cross section quadratically; combined with the inverse dependence of the relic abundance on $\sigmav$ in Eq.~\eqref{eq:relic_abundance}, this means a sufficiently light particle annihilates too weakly to thin itself out and ends up overproducing dark matter.
+Because $\sigma_0$ scales as $M_\chi^2$ \blue{in this approximation}, lowering the candidate mass reduces the annihilation cross section quadratically; combined with the inverse dependence of the relic abundance on $\sigmav$ in Eq.~\eqref{eq:relic_abundance}, this means a sufficiently light particle annihilates too weakly to thin itself out and ends up overproducing dark matter.
 The original Lee--Weinberg analysis~\cite{Lee:1977ua}, contemporaneous with the closely related arguments of Hut~\cite{Hut:1977zn} and Vysotsky, Dolgov, and Zeldovich~\cite{Vysotsky:1977pe}, obtained $M_\chi \gtrsim 2$~GeV for a heavy Dirac neutrino. Modern evaluations with updated effective-degree-of-freedom counts give~\cite{Cirelli:2024ssz,Bertone:2004pz}
 \begin{equation}
 	M_\chi \gtrsim 3~\mathrm{GeV} \qquad \text{(Lee--Weinberg bound)}\,,
 	\label{eq:lee_weinberg}
 \end{equation}
 below which a thermal relic coupled to the Standard Model weak interaction is cosmologically forbidden.
-This GeV-scale floor is specific to weak-mediated annihilation. When that assumption is dropped, the much weaker \BBN bound discussed below takes over, extending the allowed lower edge into the MeV regime.
+This GeV-scale floor is specific to annihilation mediated by W and Z bosons. When that assumption is dropped, the much weaker \BBN bound discussed below takes over, extending the allowed lower edge into the MeV regime.
 
 It is important to stress the coupling with the Standard Model weak interaction.
 The Lee--Weinberg bound says nothing about models in which a new mediator --- a dark photon, a light scalar, or a hidden-sector gauge boson --- carries the annihilation.
@@ -259,7 +259,7 @@ Within this window the thermal benchmark $\langle \sigma v \rangle_\mathrm{cosmo
 The Fermi Large Area Telescope already reaches the benchmark in the $b\bar b$ channel up to masses of several tens of GeV looking at \glspl{dSph_}, an analysis we revisit in \blue{Chapter~\ref{ch:5}} when studying dark matter subhalos. The Cherenkov Telescope Array Observatory, with its larger collection area and lower energy threshold relative to current imaging atmospheric Cherenkov arrays, will extend indirect-detection sensitivity into the TeV domain, which is the subject of Chapter~\ref{ch:8}.
 % We close with a caveat: the bounds derived here assume the simplest freeze-out scenario --- a single stable species annihilating through a velocity-independent $s$-wave amplitude --- and several physically motivated effects can shift the mapping between $\langle \sigma v \rangle_\mathrm{cosmo}$ and the present-day indirect-detection signal in either direction. We briefly survey alternative freeze-out scenarios in the next subsection.
 
-\subsection{Beyond Standard Freeze-out}
+\subsection{\blue{Beyond s-wave annihilation}}
 \label{sec:1.2.4}
 
 The bounds derived in Section~\ref{sec:1.2.3} assumed the simplest possible freeze-out scenario: a single stable species, \blue{$s$-wave--dominated two-body annihilation}, and weak-scale couplings.
@@ -274,19 +274,18 @@ When the leading contribution is $p$-wave, in contrast, the present-day rate is 
 \paragraph{Sommerfeld enhancement.}
 A second class of corrections arises when dark matter couples to a mediator with mass $M_V \ll M_\chi$.
 The long-range attractive force distorts the incoming-pair wave function and enhances the annihilation probability at low velocities, a non-perturbative effect known as the \emph{Sommerfeld enhancement}~\cite{Hisano:2004ds,ArkaniHamed:2008qn}.
-The enhancement factor $S$ scales as $S\propto 1/v_\mathrm{rel}$ in the Coulomb regime $v_\mathrm{rel} \ll \pi\alpha_g$, saturates at $v_\mathrm{rel}\sim M_V/M_\chi$ for Yukawa mediators, and can exhibit resonant peaks at specific mass ratios where a zero-energy bound state appears in the dark-sector potential.
-Halo velocities $v_\mathrm{rel}\sim 10^{-3}\,c$ therefore probe a regime in which $S$ can reach $\mathcal{O}(10^2\text{--}10^3)$~\cite{Hisano:2004ds}, while freeze-out velocities $v_\mathrm{rel}\sim 0.2\,c$ see only moderate enhancement.
+\blue{The enhancement factor $S$ grows as the relative velocity falls, roughly as $S\propto 1/v_\mathrm{rel}$, and can be resonantly amplified for particular mediator-to-dark-matter mass ratios.
+Halo velocities $v_\mathrm{rel}\sim 10^{-3}\,c$ therefore probe a regime in which $S$ can reach $\mathcal{O}(10^2\text{--}10^3)$~\cite{Hisano:2004ds}, while at freeze-out velocities $v_\mathrm{rel}\sim 0.2\,c$ the enhancement is only moderate.}
 The Sommerfeld effect is essential for heavy electroweak \glspl{WIMP_} --- the pure wino at $M_\chi\sim 3\,\mathrm{TeV}$, the higgsino near $M_\chi\sim 1.1\,\mathrm{TeV}$, and Minimal Dark Matter candidates more generally --- where it shifts the thermal-relic mass from hundreds of GeV to multi-TeV scales. We return to this point in Section~\ref{sec:1.4} when discussing $J$-factors and the loop-suppressed channels of Minimal Dark Matter.
 For the pure wino in particular, the enhanced halo rate at $v_\mathrm{rel}\sim 10^{-3}\,c$ is large enough that current gamma-ray constraints effectively rule the candidate out for cuspy halo profiles.
 For the GeV-scale candidates relevant to the Galactic Center excess analyzed in Chapter~\ref{ch:4}, by contrast, the standard thermal cross section fits the observed signal without invoking Sommerfeld enhancement, as Daylan et al.~\cite{Daylan:2014rsa} showed explicitly for a $\sim \blue{36}$--$\blue{51}\,\mathrm{GeV}$ \WIMP annihilating at $\langle\sigma v\rangle \approx (1$--$3)\times 10^{-26}\,\mathrm{cm}^3/\mathrm{s}$.
 
 \paragraph{Co-annihilation and resonance.}
-Two further refinements deserve mention because they directly affect the indirect detection prospects.
-The first is \emph{co-annihilation}: if the dark sector contains additional particles whose masses satisfy $M' - M_\chi \lesssim$ a few$\,\times T_\mathrm{fo}$, where $T_\mathrm{fo}$ is the freeze-out temperature, the heavier partners remain Boltzmann-abundant during freeze-out and contribute to depleting the dark-matter density through both their own annihilations and $\chi$-partner co-annihilation processes~\cite{Ellis:1983ew,Griest:1990kh}.
-After freeze-out the heavier states decay into $\chi$, so that only the lightest species remains in the present-day halo; its annihilation cross section is then smaller than the effective freeze-out value, often by a substantial margin when the co-annihilating partners carry stronger couplings, and the link between $\Omega_\chi h^2$ and the indirect-detection signal is correspondingly weakened.
-The second is \emph{resonant annihilation}: when dark matter annihilates through an $s$-channel mediator whose mass lies near the threshold $m_\mathrm{med}\approx 2 M_\chi$, the cross section follows a Breit--Wigner form with sharp velocity dependence~\cite{Griest:1990kh,Gondolo:1990dk}.
-Whether the present-day rate is enhanced or suppressed relative to the freeze-out value depends on whether the resonance is accessed at thermal velocities, at halo velocities, or sits between them.
-Both effects introduce model dependence into the mapping from $\langle\sigma v\rangle_\mathrm{cosmo}$ to the observable annihilation rate.
+\blue{Two further refinements deserve mention because they directly affect the indirect detection prospects.
+The first is \emph{co-annihilation}: if the dark sector contains partner particles nearly degenerate with $\chi$, they stay abundant during freeze-out and help deplete the dark-matter density~\cite{Ellis:1983ew,Griest:1990kh}.
+Since these partners later decay into $\chi$, the present-day annihilation cross section of the surviving species can differ substantially from the effective freeze-out value, weakening the link between $\Omega_\chi h^2$ and the indirect-detection signal.
+The second is \emph{resonant annihilation}: when dark matter annihilates through an $s$-channel mediator with mass near threshold, $m_\mathrm{med}\approx 2 M_\chi$, the cross section acquires a sharp velocity dependence of Breit--Wigner form~\cite{Griest:1990kh,Gondolo:1990dk}, so the present-day rate may be either enhanced or suppressed relative to freeze-out.
+Both effects introduce model dependence into the mapping from $\langle\sigma v\rangle_\mathrm{cosmo}$ to the observable annihilation rate.}
 
 These refinements lead to several distinct theoretical scenarios, of which the standard case --- $s$-wave annihilation --- is the simplest and the least model-dependent.
 In that case, the freeze-out cross section also fixes the galactic-halo annihilation rate \blue{(Section~\ref{sec:1.2.2})}, providing the cleanest target for indirect-detection experiments.
