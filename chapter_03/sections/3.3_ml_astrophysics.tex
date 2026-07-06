@@ -103,7 +103,7 @@ This hierarchy of local-to-global features allows CNNs to capture information di
 \end{figure}
 
 Modern CNNs build on a few architectural ideas: VGG-style stacks of small convolutions~\cite{Simonyan:2014cmh} and the residual connections introduced by ResNet~\cite{he2015deep}, which enabled training of networks hundreds of layers deep.
-Contemporary computer-vision architectures often combine convolutional building blocks with attention mechanisms borrowed from transformers, as in vision transformers~\cite{Dosovitskiy:2020qjv} and hybrid models.
+Contemporary computer-vision architectures often combine convolutional building blocks with attention mechanisms borrowed from transformers~\cite{vaswani2023}, as in vision transformers~\cite{Dosovitskiy:2020qjv} and hybrid models.
 
 A specific challenge arises when the data live on the sphere rather than on a flat grid.
 Sky maps live on $S^2$, not $\mathbb{R}^2$: standard CNNs assume Euclidean translation symmetry, whereas the sphere has rotational symmetry instead, and any flat parametrisation introduces distortion that breaks weight sharing.
