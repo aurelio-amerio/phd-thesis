@@ -3,66 +3,74 @@
 
 \aure{stopped here}
 
-Section~\ref{sec:3.2} introduced simulation-based inference as a framework for problems with intractable likelihoods; this section presents the concrete machine-learning architectures and techniques that implement it, and that underpin data-driven inference in astrophysics and cosmology more broadly.
+Section~\ref{sec:3.2} introduced simulation-based inference as a framework for problems with intractable likelihoods; this section presents the concrete machine-learning architectures and techniques that implement it, and that \blue{support} data-driven inference in astrophysics and cosmology more broadly.
 In practice, the data that these methods must process arrive at one of two levels.
 \emph{Field-level data}---images, sky maps of photon counts, light curves---preserve the full spatial or temporal structure of the signal and call for architectures that can exploit that structure directly.
 \emph{Summary statistics}---energy spectra, variability indicators, flux ratios---compress the raw signal into a low-dimensional feature set that is easier to model but inevitably discards some information in the process.
-The two approaches are complementary: field-level methods retain more information at the cost of architectural complexity, while summary statistics trade information content for a simpler, lower-dimensional input space.
+The two approaches are complementary: field-level methods retain more information at the cost of architectural complexity, while summary statistics trade \blue{some information content for a more informative and physically-motivated lower-dimensional input space.}
 Both appear in this thesis: Chapter~\ref{ch:6} works at the field level, feeding gamma-ray sky maps into a convolutional network to reconstruct the source-count distribution, while Chapter~\ref{ch:5} operates on spectral and variability features to search for a dark matter subhalo population among unassociated Fermi-LAT sources.
 
 % This section introduces the machine-learning concepts and architectures that underpin both analyses: the canonical learning tasks (Section~\ref{sec:3.3.1}); neural networks, their training, and uncertainty estimation (Section~\ref{sec:3.3.2}); convolutional architectures and their spherical extensions for sky-map data (Section~\ref{sec:3.3.3}); and classical non-parametric density estimation for population-level inference on feature vectors (Section~\ref{sec:3.3.4}).
-\blue{This section introduces the machine-learning concepts and architectures that underpin both analyses: the canonical learning tasks (Section~\ref{sec:3.3.1}); neural networks, their training, and uncertainty estimation (Section~\ref{sec:3.3.2}); and convolutional architectures and their spherical extensions for sky-map data (Section~\ref{sec:3.3.3}).}
+\blue{This section introduces the machine-learning concepts and architectures underlying both analyses: the canonical learning tasks (Section~\ref{sec:3.3.1}); neural networks, their training, and uncertainty estimation (Section~\ref{sec:3.3.2}); and convolutional architectures and their spherical extensions for sky-map data (Section~\ref{sec:3.3.3}).}
 
 \subsection{Learning Tasks}
 \label{sec:3.3.1}
 
-Machine learning provides tools for extracting information from data when explicit physical models are either unavailable or computationally intractable~\cite{bishop,Hastie:2009}.
-The problems addressed in this thesis fall into three canonical learning tasks.
+Machine learning provides \blue{additional} tools for extracting information from data when explicit physical models are either unavailable or computationally intractable~\cite{bishop,Hastie:2009}.
+\blue{Machine learning problems are conventionally divided into three canonical learning tasks.}
 
-The first is \textit{classification}: assigning a discrete label to an input based on its observed features.
-In the gamma-ray context, this amounts to determining the astrophysical nature of a detected source.
+\blue{The first is \textit{density estimation}: approximating the probability distribution from which the observed data are drawn.
+Rather than answering a single question about each input, a density estimator reconstructs the distribution as a whole---``what does the overall population look like?''---and any quantity of interest can then be computed from it.
+Two analyses in this thesis rely on this methodology explicitly.
+In Chapter~\ref{ch:5}, Kernel Density Estimation models the feature distributions of associated gamma-ray sources, and a generative mixture model built on these densities infers the energy spectrum composition of the unassociated Fermi-LAT population.
+Because the method reconstructs full distributions rather than decision boundaries, it can accommodate populations absent from the training set---a property the dark matter subhalo search exploits.
+In Chapter~\ref{ch:6}, density estimation appears in its neural, conditional form: the neural posterior estimation framework of Section~\ref{sec:3.2}, in which a network approximates the posterior distribution of the source-count parameters given a gamma-ray sky map.}
+
+The \blue{second} is \textit{classification}: assigning a discrete label to an input based on its observed features.
+In the gamma-ray context, this amounts to determining the astrophysical nature of a detected source\blue{---``what class is this source?''---rather than characterising the population as a whole}.
 Roughly one-third of the sources in Fermi-LAT catalogs lack firm multi-wavelength associations~\cite{Bhat:2022}, and supervised classification algorithms---trained on populations of identified AGNs and pulsars---are used to predict the class membership of these unassociated objects.
 The input features are quantities derived from the gamma-ray signal itself: spectral curvature significance, variability index, hardness ratios, and energy flux~\cite{Bhat:2022}.
-In Chapter~\ref{ch:5}, this paradigm is extended beyond standard source classes through a generative mixture model that accommodates an entirely new population---dark matter subhalos---among the unassociated sources.
+% In Chapter~\ref{ch:5}, this paradigm is extended beyond standard source classes through a generative mixture model that accommodates an entirely new population---dark matter subhalos---among the unassociated sources.
 
-The second task is \textit{regression}: predicting a continuous quantity from observational data.
-In Chapter~\ref{ch:6}, a convolutional neural network estimates the source-count distribution $dN/dS$ directly from gamma-ray sky maps.
-By adopting a heteroscedastic loss function (described in Section~\ref{sec:3.3.2}), the network simultaneously performs regression on both the $dN/dS$ values and their associated uncertainties, predicting the variance of each output alongside its mean~\cite{heteroscedastic-error}.
+The \blue{third} task is \textit{regression}: predicting a continuous quantity from observational data.
+\blue{Although the analysis of Chapter~\ref{ch:6} is best understood as neural posterior estimation, a network similar to the one adopted there can be used for a regression task, mapping gamma-ray sky maps directly to the maximum likelihood estimation of the source-count distribution $dN/dS$.}
 
-The third task is \textit{density estimation}: approximating the probability distribution from which observed source features are drawn.
-While classification asks ``what class is this source?'', density estimation asks the complementary question ``what does the overall population look like?''
-This shift from individual classification to population-level inference underpins the generative mixture model developed in Chapter~\ref{ch:5}, where Kernel Density Estimation---used to model the feature distributions of associated sources---is combined with mixture model fitting to infer the energy spectrum composition of the unassociated gamma-ray sources.
-% Section~\ref{sec:3.3.4} returns to this task with classical non-parametric methods, complementing the neural surrogate approaches introduced in Section~\ref{sec:3.2}.
-\blue{Because it reconstructs the full distribution rather than a decision boundary, density estimation can reveal populations absent from the training set---the property exploited in the subhalo search. The classical non-parametric methods this search requires are developed in Chapter~\ref{ch:5}, complementing the neural surrogate approaches introduced in Section~\ref{sec:3.2}.}
+\blue{It is important to note that when the full distribution is accessible, the other two tasks can be performed as special cases.
+Class labels can be assigned by comparing the estimated densities of the candidate populations, which is explored as a secondary result in Chapter~\ref{ch:5}.
+A point prediction can likewise be read off as a summary of the distribution---its mean, for instance--- which is what we do in Chapter~\ref{ch:6} when deriving the frequentist confidence intervals.
+In this sense, density estimation is arguably the more general of the three tasks: it retains the richest description of the data, from which discrete labels and point estimates can be derived, when needed.
+This generality has a cost---estimating a full distribution is harder than answering a single question about each input---so direct classification or regression remains the practical choice for many applications when a solid understanding of the uncertainties is not required.}
 
 \subsection{Neural Networks and Deep Learning}
 \label{sec:3.3.2}
 
 A neural network is a parametric function $f_{\boldsymbol{w}}: \mathbb{R}^n \to \mathbb{R}^m$ composed of a sequence of affine transformations, each followed by a non-linear activation function.
-In a network with $L$ layers, the output of layer $\ell$ is $\mathbf{h}^{(\ell)} = \sigma(\mathbf{W}^{(\ell)}\mathbf{h}^{(\ell-1)} + \mathbf{b}^{(\ell)})$, where $\mathbf{W}^{(\ell)}$ and $\mathbf{b}^{(\ell)}$ are trainable weight matrices and bias vectors, and $\sigma$ is a non-linear function such as the rectified linear unit $\mathrm{ReLU}(x) = \max(0, x)$.
-Other activations have been used historically---sigmoid and hyperbolic tangent were standard in earlier architectures---while GELU has become widespread in modern transformer-based models.
+In a network with $L$ layers, the output of layer $\ell$ is $\mathbf{h}^{(\ell)} = \sigma(\mathbf{W}^{(\ell)}\mathbf{h}^{(\ell-1)} + \mathbf{b}^{(\ell)})$, where $\mathbf{W}^{(\ell)}$ and $\mathbf{b}^{(\ell)}$ are trainable weight matrices and bias vectors, and $\sigma$ is a non-linear function such as the rectified linear unit $\mathrm{ReLU}(x) = \max(0, x)$, among others.
 Given a sufficiently large number of parameters, neural networks can approximate any continuous function to arbitrary accuracy~\cite{bishop,Goodfellow:2016dlbook}.
 
-Training consists of adjusting the weights $\boldsymbol{w}$ to minimize a cost function $\mathcal{J}(\boldsymbol{w})$ using gradient-based optimisation.
+Training consists of adjusting the weights $\boldsymbol{w} = (\mathbf{W}^{(1)}, \mathbf{b}^{(1)}, \ldots, \mathbf{W}^{(L)}, \mathbf{b}^{(L)})$ to minimize a cost function $\mathcal{J}(\boldsymbol{w})$ using gradient-based optimisation.
 Backpropagation provides the necessary gradients by applying the chain rule recursively through the network layers, yielding the partial derivative of $\mathcal{J}$ with respect to every weight in a single backward pass.
-In practice, gradients are estimated from mini-batches rather than the full dataset, giving rise to stochastic gradient descent (SGD) and its modern adaptive variants such as Adam and AdamW~\cite{Loshchilov:2017bsp}, which maintain per-parameter learning rates and momentum estimates.
+In practice, gradients are estimated from mini-batches (typically 32 to 128 samples from the dataset, but sometimes even higher) rather than the full dataset, giving rise to stochastic gradient descent (SGD) and its modern adaptive variants such as Adam and AdamW~\cite{Loshchilov:2017bsp}.
 The empirical success of deep learning over the past decade rests on algorithmic advances together with network depth, large datasets, and GPU-accelerated compute~\cite{LeCun:2015pmr}.
 
-The choice of cost function determines what the network learns, and all of the losses used in this thesis are best understood as instances of maximum-likelihood estimation under an appropriate probabilistic model~\cite{bishop,Murphy:2022pml}.
-For a standard regression problem, the mean squared error $\mathcal{J} = \sum_i (y_i^\mathrm{true} - y_i^\mathrm{pred})^2$ penalises deviations between predictions and targets uniformly and coincides, up to constants, with the negative log-likelihood of the targets under a homoscedastic Gaussian noise model.
+The choice of cost function determines what and how the network learns. 
+% and all of the losses used in this thesis are best understood as instances of maximum-likelihood estimation under an appropriate probabilistic model~\cite{bishop,Murphy:2022pml}.
+For example, for a standard regression problem, the mean squared error $\mathcal{J} = \sum_i (y_i^\mathrm{true} - y_i^\mathrm{pred})^2$ penalises deviations between predictions and targets uniformly and coincides, up to constants, with the negative log-likelihood of the targets under a homoscedastic Gaussian noise model.
 For classification, the cross-entropy loss measures the divergence between predicted class probabilities and one-hot labels and is equivalently the negative log-likelihood of the observed labels under a categorical model.
-Density estimation is most commonly cast as minimising the forward Kullback--Leibler divergence between the data distribution and a parametric model; because the data-side entropy is independent of the model parameters, this minimisation reduces to maximising the log-likelihood of the data---or, for latent-variable models in which the marginal likelihood is intractable, the evidence lower bound (ELBO).
+\blue{Density estimation in machine learning is often cast as minimising the Kullback--Leibler (KL) divergence, in its forward or reverse form, although alternative objectives are also common (see for example \cite{Lipman:2023hef}). The KL divergence quantifies the mismatch between the data distribution and the parametric model: it is non-negative and vanishes only when the two distributions coincide, so smaller values indicate a better fit.}
+
+% because the data-side entropy is independent of the model parameters, this minimisation reduces to maximising the log-likelihood of the data---or, for latent-variable models in which the marginal likelihood is intractable, the evidence lower bound (ELBO).
 When the noise level varies across the output space, the Gaussian variance can itself be parameterised as a network output, yielding the heteroscedastic Gaussian negative log-likelihood~\cite{heteroscedastic-error}; the formalism is presented in Section~\ref{sec:bayesian-error}, where Chapter~\ref{ch:6} puts it to use.
 
-Beyond a point estimate, predictions carry two distinct sources of error: \textit{aleatoric} uncertainty, intrinsic to the data (irreducible noise that more training data cannot remove), and \textit{epistemic} uncertainty, reflecting the model's ignorance about which parameter values best describe the data (reducible in the limit of infinite data and capacity).
-Bayesian neural networks aim to recover both jointly by treating the network weights as random variables rather than fixed parameters, in the same spirit as the simulation-based inference framework of Section~\ref{sec:3.2}.
-Chapter~\ref{ch:6} presents one practical realisation of this idea, in which MC dropout and a heteroscedastic Gaussian likelihood are combined to produce per-output mean and variance estimates; the technical formalism is detailed there (Section~\ref{sec:bayesian-error}).
-Gal and Ghahramani~\cite{mcdropout} showed that a neural network with dropout applied before every weight layer is mathematically equivalent to approximate variational inference in a deep Gaussian process; at test time, $T$ stochastic forward passes with dropout active yield a sample mean as the predictive estimate and a sample variance as the epistemic uncertainty.
+Beyond a point estimate, predictions carry two distinct sources of error: \textit{aleatoric} (statistical)uncertainty, intrinsic to the data (irreducible noise that more training data cannot remove), and \textit{epistemic} (broadly speaking systematic) uncertainty, reflecting the model's ignorance about which parameter values best describe the data (reducible in the limit of infinite data and capacity).
+% Bayesian neural networks aim to recover both jointly by treating the network weights \blue{or the neural network output} as random variables rather than fixed parameters, in the same spirit as the simulation-based inference framework of Section~\ref{sec:3.2}.
+Chapter~\ref{ch:6} presents one practical solution to model both undertainties, in which MC dropout and a Gaussian distribution are combined to produce per-output mean and variance estimates; the technical formalism is detailed there (Section~\ref{sec:bayesian-error}).
+% Gal and Ghahramani~\cite{mcdropout} showed that a neural network with dropout applied before every weight layer is mathematically equivalent to approximate variational inference in a deep Gaussian process; at test time, $T$ stochastic forward passes with dropout active yield a sample mean as the predictive estimate and a sample variance as the epistemic uncertainty.
 
-Overparameterised models can memorise the training set; regularisation keeps them honest.
-In practice, several complementary techniques are typically used in combination: weight decay (an $L_2$ penalty on the weights), dropout---which randomly zeros a fraction of activations during training---batch and layer normalisation~\cite{batchnorm}, data augmentation, and early stopping.
-Dropout doubles as an uncertainty quantifier when left active at test time, as described above, and its self-tuning variant \textit{concrete dropout}~\cite{concrete-dropout} replaces the discrete Bernoulli mask with a continuous relaxation that makes the drop probability differentiable, so that the optimal rate for each layer is learned jointly with the network weights during training.
-Chapter~\ref{ch:6} adopts concrete dropout as its regularisation and uncertainty calibration strategy, to which we defer the details of the implementation.
+% Overparameterised models can memorise the training set; regularisation keeps them honest.
+% In practice, several complementary techniques are typically used in combination: weight decay (an $L_2$ penalty on the weights), dropout---which randomly zeros a fraction of activations during training---batch and layer normalisation~\cite{batchnorm}, data augmentation, and early stopping.
+% Dropout doubles as an uncertainty quantifier when left active at test time, as described above, and its self-tuning variant \textit{concrete dropout}~\cite{concrete-dropout} replaces the discrete Bernoulli mask with a continuous relaxation that makes the drop probability differentiable, so that the optimal rate for each layer is learned jointly with the network weights during training.
+% Chapter~\ref{ch:6} adopts concrete dropout as its regularisation and uncertainty calibration strategy, to which we defer the details of the implementation.
 
 \subsection{Convolutional Neural Networks}
 \label{sec:3.3.3}
@@ -72,7 +80,7 @@ CNNs have been applied to astrophysical problems such as galaxy morphology class
 In this thesis, Chapter~\ref{ch:6} adopts a CNN to reconstruct the source-count distribution from gamma-ray sky maps.
 
 A convolutional layer applies a set of learnable filters (kernels) to local patches of the input, producing feature maps that respond to spatial patterns at specific scales.
-For a two-dimensional input, the discrete convolution of a filter $g$ with an input $f$ is
+For a two-dimensional input with pixels identified by indices $(i,j)$, the discrete convolution of a filter $g$ with an input $f$ is
 \begin{equation}
 	(f * g)[i,j] = \sum_{m}\sum_{n} f[m,n]\, g[i-m, j-n].
 	\label{eq:conv2d}
@@ -81,13 +89,16 @@ Because the same filter is applied everywhere across the input, the number of pa
 
 Stacking convolutional layers builds progressively larger receptive fields: shallow layers detect local features such as edges and peaks, while deeper layers combine these into more abstract representations.
 Pooling operations (max or average over local windows) downsample the feature maps between successive convolutional stages, providing approximate translation invariance at the cost of spatial resolution~\cite{Goodfellow:2016dlbook,LeCun:2015pmr}.
-This hierarchy of local-to-global features allows CNNs to capture information distributed across spatial scales.
+This hierarchy of local-to-global features allows CNNs to capture information distributed across spatial scales, and is summarized in Figure~\ref{fig:cnn-architecture}.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.85\textwidth]{example-image-a}
+  \includegraphics[width=0.65\textwidth]{chapter_03/figures/1dcnn.pdf}
+  \includegraphics[width=0.70\textwidth]{chapter_03/figures/CNN2dv3.pdf}
   %\includegraphics[width=0.85\textwidth]{chapter_03/figures/cnn_architecture}
-  \caption{\aure{TODO: need to make this figure, or find a good one} Generic convolutional neural network architecture: a kernel slides over the input image producing feature maps; successive convolution and pooling layers reduce spatial extent while increasing channel depth, before a fully connected head maps the learned features to the output.}
+  \caption{\textit{Upper}: Generic (1D) convolutional neural network architecture: a kernel slides over the input image producing feature maps; successive convolution and pooling layers reduce spatial extent while increasing channel depth, before a fully connected head maps the learned features to the output. 
+  \textit{Lower}: schematic portraying how a 3x3 kernel slides over a 2D input image to produce a feature map.
+  Credit: Younesi et al. \cite{younesi2024}}
   \label{fig:cnn-architecture}
 \end{figure}
 
