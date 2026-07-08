@@ -5,14 +5,19 @@
 
 ## Scope
 
-- **In scope:** chapters 4, 5, 6, 7, 8 (the paper-integrated chapters), including their `paper_*/` subdirectories, tables, and figure captions.
-- **Out of scope:** chapters 1–3, introduction, conclusion (hand-written review material with no reproduced paper). Do not touch.
+- **In scope (full rewrite pass):** chapters 4, 5, 6, 7, 8 (the paper-integrated chapters), including their `paper_*/` subdirectories, tables, and figure captions.
+- **In scope (audit-only pass):** chapters 1, 2, 3 — hand-written review chapters with no reproduced paper, but they may cross-reference later chapters' content as "the paper" (e.g. "as shown in the paper of chapter 6"). Scan for and fix any such reference; otherwise leave untouched.
+- **Out of scope:** introduction, conclusion.
 
 ## Execution model
 
-Five **parallel Sonnet 5 subagents**, one per chapter. Each reads its **entire chapter** into context (the 1M window fits a full chapter comfortably) rather than doing a keyword grep, so it judges every self-reference with full context and catches implicit standalone-document framing a filter scan would miss.
+Two waves of parallel subagents, then a final review:
 
-The orchestrator collects the five reports into one consolidated summary. The author reviews the `\blue{}` diff in the compiled PDF.
+1. **Wave 1 — rewrite (5 × Sonnet 5):** one agent per chapter 4–8. Each reads its **entire chapter** into context (the 1M window fits a full chapter comfortably) rather than doing a keyword grep, so it judges every self-reference with full context and catches implicit standalone-document framing a filter scan would miss.
+2. **Wave 1 — audit (1 × Sonnet 5):** one agent reads chapters 1–3 and fixes any place that refers to a later chapter's reproduced content as "the paper"/"a paper" (same `\blue{}` marking and third-party exclusions apply). Runs in parallel with the rewrite agents.
+3. **Wave 2 — final review (1 × Fable 5):** after all agent findings are in and the orchestrator has applied/reconciled every edit, a Fable 5 subagent reviews the complete `git diff` of the pass to verify each modification is proper — correct word choice, `\blue{}` wrapping intact, no third-party reference wrongly altered, no broken LaTeX, bridge sentences well-formed with the right keys. It reports any problems for correction before the pass is declared done.
+
+The orchestrator collects the wave-1 reports into one consolidated summary. The author reviews the `\blue{}` diff in the compiled PDF.
 
 ## What each agent does
 
