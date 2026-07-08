@@ -50,9 +50,9 @@ Each simulation is fast (around 0.1s) and faithful to the known instrumental and
 A convolutional neural network (CNN) is then trained on an ensemble of such simulated maps to learn the mapping from a photon-count sky to the underlying $dN/dS$, using the architecture and training methodology detailed in Section~\ref{sec:3.3}.
 % The specific configuration adopted for the $dN/dS$ problem discretizes the output into 20 flux bins spanning $[5 \times 10^{-12},\, 10^{-7}]$~cm$^{-2}$~s$^{-1}$, plus the isotropic background level $F_\mathrm{iso}$, yielding 21 output parameters.
 % An ensemble of $9 \times 10^5$ synthetic maps is generated for training.
-\blue{The configuration adopted for the $dN/dS$ problem discretizes the output into a set of flux bins plus the isotropic background level $F_\mathrm{iso}$; the exact binning, flux range, and training-ensemble size are specified in the paper body (Section~\ref{sec:architechture-and-training}).}
+\blue{The configuration adopted for the $dN/dS$ problem discretizes the output into a set of flux bins plus the isotropic background level $F_\mathrm{iso}$; the exact binning, flux range, and training-ensemble size are specified later in this chapter (Section~\ref{sec:architechture-and-training}).}
 % The discretized representation is critical: unlike the parametric power-law adopted by the 1pPDF, it allows the CNN to reconstruct the $dN/dS$ non-parametrically, without assuming a fixed functional form.
-The network employs the heteroscedastic Gaussian cost function and concrete dropout regularisation to estimate both the $dN/dS$ and its uncertainties; the full formalism is presented in the paper body (Section~\ref{sec:bayesian-error}). A frequentist cross-check using the distribution of residuals on held-out validation maps confirms that the Bayesian error bands are well calibrated (Section~\ref{sec:bias}).
+The network employs the heteroscedastic Gaussian cost function and concrete dropout regularisation to estimate both the $dN/dS$ and its uncertainties; the full formalism is presented \blue{later in this chapter} (Section~\ref{sec:bayesian-error}). A frequentist cross-check using the distribution of residuals on held-out validation maps confirms that the Bayesian error bands are well calibrated (Section~\ref{sec:bias}).
 
 This framework addresses the four limitations identified in Section~\ref{sec:6.3.1}: inter-pixel PSF correlations are captured implicitly by the convolutional architecture, the $dN/dS$ is recovered non-parametrically, inference is amortized (additionally a trained network produces predictions in milliseconds), and the pipeline extends naturally to multiple energy bins by adding input channels.
 
@@ -66,4 +66,4 @@ This approach preserves the area and information content of each pixel without s
 
 A fully spherical cross-check using the NNHealpix architecture \cite{Krachmalnicoff:2019} yields compatible results, confirming that the map2patches approximation is reliable for the isotropic, small-scale signal of interest.
 The map2patches implementation is approximately an order of magnitude faster, enabling efficient generation of the large training ensembles required by the SBI framework.
-Full architectural details are presented in the paper body (Section~\ref{sec:architechture-and-training}).
+Full architectural details are presented \blue{later in this chapter} (Section~\ref{sec:architechture-and-training}).
