@@ -22,8 +22,7 @@ This contrasts with Galactic source populations, which concentrate along the Gal
 The spectral properties introduced above therefore become the primary discriminant: the combination of isotropic spatial distribution and spectral homogeneity provides the statistical foundation for the population-level search.
 
 The expected number of Fermi-LAT--detectable subhalos spans several orders of magnitude, depending on the assumed annihilation cross section, the J-factor model, and the survival rate of low-mass subhalos in the presence of baryonic tidal effects~\cite{2019JCAP...07..020C,2019JCAP...11..045C,2019Galax...7...90C}.
-Published predictions range from zero to several tens of detectable objects.
-This wide spread is not a weakness but a motivation: it defines the parameter space that a data-driven search must explore.
+Published predictions range from zero to several tens of detectable objects\blue{, defining a wide parameter space that a data-driven search could explore.}
 The quantitative J-factor distributions and the detection pipeline are presented in the paper body (Section~\ref{sec:sim-jfactor} and Section~\ref{sec:DM_model}).
 
 The analysis proceeds in two stages.
@@ -32,3 +31,20 @@ If no statistically significant subhalo contribution is found, the profile likel
 Both possible outcomes are scientifically informative: a positive detection would provide direct evidence for annihilating dark matter in the $\Lambda$CDM substructure, while a null result constrains $\langle\sigma v\rangle$ and provides an independent cross-check of the limits obtained from dwarf spheroidal galaxies~\cite{2024PhRvD.109f3024M}.
 % Dark subhalos are, in this respect, exceptionally clean targets: unlike the Galactic Center (Chapter~\ref{ch:4}), a subhalo below $\sim 10^8\,M_\odot$ contains no stars or gas, and any detected gamma-ray emission would originate entirely from dark matter annihilation.
 \blue{Dark subhalos are, in this respect, exceptionally clean targets: unlike the Galactic Center (Chapter~\ref{ch:4}), they host no baryonic content (Section~\ref{sec:5.2.2}), so any detected gamma-ray emission would originate entirely from dark matter annihilation.}
+
+\paragraph{\blue{Complementarity with dwarf spheroidal searches.}}
+\blue{The search for annihilation signals among the unassociated sources of the Fermi-LAT catalogs complements the established program of targeted observations of dwarf spheroidal galaxies, since the two strategies probe different slices of the same $\Lambda$CDM substructure population.
+Every dSph observed by \Fermi-LAT was first identified in wide-field optical surveys---SDSS, DES, and their successors---as an overdensity of resolved stars, and later confirmed through stellar-kinematic follow-up~\cite{Fermi-LAT:2015att,Fermi-LAT:2016uux}.
+No dSph has yet been discovered through its gamma-ray emission.
+The LAT analyses are therefore pointed observations at known coordinates, and an unassociated source is unlikely to be an undiscovered dwarf, whose stellar counterpart would in most cases already appear in optical catalogs.
+Rather than the optically luminous satellites, the unassociated-source search most plausibly probes the purely dark subhalos that lie below the threshold for star formation (Section~\ref{sec:5.2.2}), a population that targeted dSph studies cannot access by construction.
+The two probes also differ in how their J-factors are determined.
+For dSphs, the J-factor is measured directly from stellar kinematics, with uncertainties that grow for fainter systems~\cite{Bonnivard:2015xpq}; the best targets reach $J \approx 3\times10^{19} \, \mathrm{GeV}^2\,\mathrm{cm}^{-5}$.
+For dark subhalos, the J-factor distribution must instead be derived from $N$-body simulations.
+Its bright end is dominated by rare, nearby objects, so whether the Milky Way happens to host a bright subhalo is subject to statistical fluctuations---and this possibility is itself a strong motivation for the search.
+A subhalo with a sufficiently large J-factor, up to $\approx 3$--$5\times10^{19} \, \mathrm{GeV}^2\,\mathrm{cm}^{-5}$, would be detectable as a point-like gamma-ray source, on par with the best dwarfs.
+Larger J-factors require the subhalo to be closer still, in which case it would appear spatially extended.
+Whereas dSphs are effectively point-like for the LAT~\cite{DiMauro:2022hue}, such a nearby subhalo could show a detectable extension of a few tenths of a degree, providing an additional discriminant against point-like astrophysical sources~\cite{2022PhRvD.105h3006C}.
+In this resolved regime the J-factor can reach $\approx 10^{21} \, \mathrm{GeV}^2\,\mathrm{cm}^{-5}$, exceeding that of any known dwarf~\cite{2024MNRAS.530.2496A}.
+Taken together, the two searches act as complementary probes of the substructure population: the dSph program delivers robust constraints from well-characterized targets, while the unassociated-source search opens a discovery space that targeted observations cannot reach.}
+
