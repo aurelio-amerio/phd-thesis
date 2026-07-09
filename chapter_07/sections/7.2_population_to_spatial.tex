@@ -34,13 +34,13 @@ As one moves to lower TS values, the simulated distributions eventually diverge 
 The threshold at which this divergence becomes statistically significant determines how deep below the nominal catalog limit the method can reliably probe.
 Pixels in the real sky whose TS exceeds this threshold are labeled ``firing pixels'' --- candidate directions that are likely to host a genuine point source.
 
-\aure{idk if I want to keep this part}
-This approach differs from earlier efforts at probabilistic gamma-ray cataloging.
-The Bayesian framework PCAT~\cite{Daylan:2016tia} samples posterior distributions of full catalogs --- including source positions, fluxes, and spectra --- using transdimensional Markov Chain Monte Carlo.
-While PCAT provides a complete probabilistic description of the source population in a given region of interest, its computational cost scales roughly as the square of the number of modeled sources, which limits its applicability to restricted sky areas.
-In its original implementation, PCAT was applied to a $40^\circ \times 40^\circ$ patch around the North Galactic Pole, requiring approximately 250~CPU hours for a single inference run~\cite{Daylan:2016tia}. Machine learning approaches to probabilistic cataloging have also been explored~\cite{Bhat:2022}, though these too have been applied to localized regions rather than to the full high-latitude sky.
+% This approach differs from earlier efforts at probabilistic gamma-ray cataloging.
+% The Bayesian framework PCAT~\cite{Daylan:2016tia} samples posterior distributions of full catalogs --- including source positions, fluxes, and spectra --- using transdimensional Markov Chain Monte Carlo.
+% While PCAT provides a complete probabilistic description of the source population in a given region of interest, its computational cost scales roughly as the square of the number of modeled sources, which limits its applicability to restricted sky areas.
+% In its original implementation, PCAT was applied to a $40^\circ \times 40^\circ$ patch around the North Galactic Pole, requiring approximately 250~CPU hours for a single inference run~\cite{Daylan:2016tia}. Machine learning approaches to probabilistic cataloging have also been explored~\cite{Bhat:2022}, though these too have been applied to localized regions rather than to the full high-latitude sky.
 
-The simulated-sky comparison framework adopted here takes a different route.
+% The simulated-sky comparison framework adopted here takes a different route.
+\blue{The simulated-sky comparison framework adopted here takes an alternative route from previous probabilistic-cataloging studies~\cite{Daylan:2016tia,Bhat:2022}.}
 Rather than sampling the full catalog posterior, it reduces the problem to a comparison of one-dimensional TS distributions, which is computationally inexpensive and naturally scalable to the entire high-latitude sky.
 The price for this simplification is that the method does not return individual source parameters (flux, spectrum, position uncertainty); its output is a map of candidate firing pixels at a chosen pixel resolution.
 This is sufficient for the downstream application we have in mind --- cross-correlation studies (Chapter~\ref{ch:8}) --- where the relevant quantity is the number and angular distribution of candidate source directions, not the properties of individual sources.
@@ -62,9 +62,8 @@ A Kolmogorov--Smirnov test then compares the cumulative TS distributions of the 
 % At high $\mathrm{TS}^\star$, where bright sources dominate, the distributions agree; as $\mathrm{TS}^\star$ is lowered, background systematics cause them to diverge, setting the depth to which the method can probe.
 \blue{The value of $\mathrm{TS}^\star$ at which the distributions cease to agree (cf.\ Section~\ref{sec:simulated_sky}) sets the depth to which the method can probe.}
 
-\aure{check again the definition of the QF}
 % Finally, a Quality Factor (QF) --- the fraction of the 5000 synthetic realizations passing the KS test at a given $\mathrm{TS}^\star$ and significance level $\alpha$ --- controls the purity of the selection.
-\blue{Finally, a Quality Factor (QF) --- the fraction of synthetic realizations statistically consistent with the real sky at a given $\mathrm{TS}^\star$ --- controls the purity of the selection; its precise definition and the significance grid $\alpha$ are given later in this chapter.}
+\blue{Finally, a Quality Factor (QF) is defined as the fraction of synthetic realizations passing the KS test at a given $\mathrm{TS}^\star$ and significance level $\alpha$.}
 A high QF yields a conservative set of firing pixels; a lower QF extends coverage deeper into the sub-threshold regime at the cost of more spurious directions.
 The pair $(\alpha, \mathrm{QF})$ sets the operating point, and both can be tuned to the downstream application.
 
@@ -75,4 +74,4 @@ Two features of this framework are worth noting.
 % The method's output is therefore a map of firing pixels, not a traditional source catalog.
 \blue{Second, because PSF spreading lets a single source fire several adjacent pixels while several faint sources can share one, the deliverable is a map of firing pixels rather than a traditional source list --- a distinction quantified later in this chapter at the adopted pixel resolution.}
 
-\blue{What follows covers the data selection, the detailed statistical procedure, the results for different $(\alpha, \mathrm{QF})$ operating points, and the validation against the 4FGL-DR3 catalog.}
+\blue{The remainder of this chapter is based on~\cite{Amerio:2023rjn} and presents the analysis in full: the data selection, the detailed statistical procedure, the results for different $(\alpha, \mathrm{QF})$ operating points, and the validation against the 4FGL-DR3 catalog.}
