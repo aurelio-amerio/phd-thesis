@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt,oneside,oldfontcommands]{memoir}
+\documentclass[a4paper,11pt,twoside,oldfontcommands]{memoir}
 \RequirePackage[l2tabu]{nag}
 
 % ---------------------------------------------------------------
@@ -34,10 +34,26 @@
 % ========================
 \frontmatter
 \import{frontmatter/}{title_page.tex}
+\clearemptydoublepage
+
+\pagenumbering{roman}
+
 \import{frontmatter/}{certification.tex}
 \import{frontmatter/}{copyright.tex}
 \clearemptydoublepage
-\pagenumbering{roman}
+\import{frontmatter/}{aknowledgements.tex}
+\clearemptydoublepage
+
+\import{frontmatter/}{abstract_en.tex}
+\clearemptydoublepage
+\import{frontmatter/}{abstract_es.tex}
+\clearemptydoublepage
+\import{frontmatter/}{abstract_vlc.tex}
+\clearemptydoublepage
+
+
+\import{frontmatter/}{publications.tex}
+\clearemptydoublepage
 
 \renewcommand{\contentsname}{Table of Contents}
 \maxtocdepth{subsection}
@@ -46,17 +62,7 @@
 \egroup
 \renewcommand*{\arraystretch}{0.5}
 
-\import{frontmatter/}{publications.tex}
-\clearemptydoublepage
 
-\import{frontmatter/}{aknowledgements.tex}
-\clearemptydoublepage
-
-% \import{frontmatter/}{abstract.tex}
-% \clearemptydoublepage
-
-% \import{introduction/}{introduction.tex}
-% \clearemptydoublepage
 
 % ========================
 %  MAIN MATTER
@@ -127,5 +133,7 @@
 % Bibliography
 \bibliographystyle{JHEP}
 \bibliography{bibliography}
+
+\import{resumen/}{resumen_en.tex}  % TODO: swap back to resumen.tex once the Spanish translation is done
 
 \end{document}
