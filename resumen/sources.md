@@ -184,9 +184,10 @@ Verified facts for the English summary (`resumen_en.tex`). Every fact carries it
 - NOTE: the chapter does not use the literal phrase "two blind spots"; treat as a framing device, not a quote.
 
 ### Allowed cite keys for Gamma sky section
-- `Atwood:2009ez` (LAT instrument)
-- `Ballet:2023qzs` (4FGL-DR4)
-- `Fermi-LAT:2019yla` (4FGL)
+- `Atwood:2009ez` (LAT instrument) — bib:6519
+- `Ballet:2023qzs` (4FGL-DR4) — bib:6897
+- `Fermi-LAT:2019yla` (4FGL) — bib:6963
+- `Fermi-LAT:2014ryh` (UGRB measurement; used for the UGRB definition sentence) — bib:7063
 
 ## Results-MSP
 
