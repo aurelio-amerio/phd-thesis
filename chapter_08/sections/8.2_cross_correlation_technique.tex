@@ -20,7 +20,7 @@ For unresolved astrophysical sources such as blazars, $W_\gamma$ depends on the 
 % For dark matter annihilation, it is proportional to $\langle\sigma v\rangle\,\Delta^2(z)\,\left(\Omega_\mathrm{DM}\rho_c/m_\chi\right)^2\,(1+z)^3\,e^{-\tau(E,z)}$, where $\Delta^2(z)$ is the flux multiplier that captures the enhancement from DM clustering and substructures (see Section~\ref{sec:1.4}).
 \blue{For dark matter annihilation, it is proportional to $\langle\sigma v\rangle\,\Delta^2(z)/m_\chi^2$, where $\Delta^2(z)$ is the flux multiplier that captures the enhancement from DM clustering and substructures (full expression in Appendix~\ref{app:WDM}).}
 The $\rho^2$ scaling makes the signal dominated by the late-time collapse of matter into dense halos and subhalos, whose clustering $\Delta^2(z)$ peaks in the local universe and outweighs the smoother high-redshift background.
-As a result, $W_\gamma^\mathrm{DM}$ peaks sharply at $z \lesssim 0.1$ and decays rapidly thereafter, regardless of the DM mass or annihilation channel~\blue{(cf. Section~\ref{sec:8.1})}.
+As a result, $W_\gamma^\mathrm{DM}$ \blue{is maximal at $z \lesssim 0.1$ and decays rapidly at higher redshift}, regardless of the DM mass or annihilation channel~\blue{(cf. Section~\ref{sec:8.1})}.
 
 Astrophysical backgrounds present a very different behaviour.
 Unresolved blazars\footnote{High-synchrotron-peaked BL Lacertae objects are often denoted HSP, while low and intermediate-synchrotron-peaked BL Lacs are often grouped together and denoted LISP.} have their emission peak at $z \sim 0.3$--$0.5$ at $50\,\mathrm{GeV}$.
@@ -28,6 +28,9 @@ At higher energies, EBL absorption progressively shrinks the gamma-ray horizon: 
 Star-forming galaxies trace the cosmic star-formation rate and dominate at much higher redshifts, $z \sim 1$--$3$.
 % Figure~\ref{fig:window_main} illustrates this feature quantitatively for the benchmark scenario considered in the analysis of this chapter: the DM window functions are confined to low redshift, while blazar contributions extend to $z \sim 0.4$--$0.5$ at 50 GeV.
 \blue{Figure~\ref{fig:window_main} illustrates this feature quantitatively for the benchmark scenario considered in the analysis of this chapter: the DM window functions are confined to low redshift, while the blazar contributions extend to higher redshift.}
+\blue{Following standard usage in the cross-correlation literature~\cite{Fornengo:2013rga,Cuoco:2015rfa}, we describe this behaviour by saying that the DM window function \emph{peaks} at low redshift.
+The term deserves a caveat: as Figure~\ref{fig:window_main} shows, the annihilation kernel does not exhibit a narrow maximum but rather a broad plateau, approximately flat up to $z \sim 0.1$--$0.2$ before a rapid decay sets in.
+Peaking at low redshift therefore means that the window function is maximal in the local universe, in contrast with the astrophysical windows, which display a genuine maximum at intermediate redshift.}
 
 The galaxy catalog window function $W_g(z) = dN_g/dz$, normalized to unity, represents the redshift distribution of the galaxies in the sample.
 A dense, shallow catalog covering $z \lesssim 0.1$ such as the Two Micron All-Sky Survey (2MASS) overlaps nicely with the DM annihilation window function, which benefits
@@ -41,6 +44,7 @@ The DM signal, by contrast, overlaps strongly in redshift, and the cross-correla
 
 \subsection{Advantages of Cross-Correlation Surveys}
 \label{sec:8.2.2}
+\aure{@Bryan I have rewritten this section almost entirely}
 For a cross-correlation survey, the variance of the cross-power spectrum (Eq.~\ref{eq:variance_cross}) contains the product of the gamma-ray noise term $(C_\ell^{\gamma\gamma} + C_N/B_\ell^2)$ and the galaxy noise term $(C_\ell^{gg} + C_{N_g})$.
 The photon noise $C_N$ in the gamma-ray map and the galaxy shot noise $C_{N_g}$ are physically independent: their cross-noise vanishes on average.
 The noise therefore inflates the error bars on $C_\ell^{\gamma g}$ but does not add a systematic offset to the signal itself.

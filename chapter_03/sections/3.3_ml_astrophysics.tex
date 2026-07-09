@@ -117,7 +117,7 @@ Rather than operating on the curved manifold directly, these methods project sph
 Icosahedral projections~\cite{eder2019convolutions} decompose the sphere into 20 equilateral triangular faces that cover it nearly uniformly, limiting the distortion inherent in any flat projection.
 
 The third strategy, and the one most directly relevant to this thesis, operates on the HEALPix pixelisation itself.
-\texttt{NNHealpix}~\cite{Krachmalnicoff:2019} exploits the fixed neighbourhood structure of HEALPix pixels by unrolling each pixel and its eight nearest neighbours into a nine-element vector and applying standard 1D convolutions with stride nine (Fig.~\ref{fig:nnhealpix-scheme}).
+\texttt{NNHealpix}~\cite{Krachmalnicoff:2019} exploits the fixed neighbourhood structure of HEALPix pixels by unrolling each pixel and its eight nearest neighbours into a nine-element vector and applying standard 1D convolutions with stride nine (Figure~\ref{fig:nnhealpix-scheme}).
 This preserves the full topology of the sphere at the cost of higher computational overhead and sensitivity to the orientation of pixel neighbourhoods.
 The \texttt{map2patch} algorithm developed in Chapter~\ref{ch:6} subdivides the sphere into the 12 equal-area base pixels of the HEALPix scheme and processes them jointly as a stack of flat tiles, exploiting the exact equal-area property of the base faces so that standard 2D convolutions apply without resampling distortion.
 The spherical topology is preserved across patch boundaries through a padding scheme that borrows pixels from the adjacent base faces, so that no spatial information is lost where neighbouring tiles meet.
