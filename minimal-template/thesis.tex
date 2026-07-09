@@ -1,0 +1,575 @@
+%%%%%%%%%%%%%% PRINT %%%%%%%%%%%%%%
+%stef, print setup;
+% all changes are flagged with the comment: " %stef, print steup; "
+% Changed: 
+% Link colors to black
+% Github color to black
+% For printed version deleted white page just before table of content
+% For printed version deleted white page just before Danksagungen 
+% added various \cleardoublepage and \afterpage{\blankpage}; changes can be found in this tex file (thesis.tex) and also in resum_valencia.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% ----------------------------------------------------------------
+%% Thesis.tex -- MAIN FILE (the one that you compile with LaTeX)
+%% ---------------------------------------------------------------- 
+
+% Set up the document
+\documentclass[a4paper, 11pt, oneside]{Thesis}  % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
+\graphicspath{figures/}  % Location of the graphics files (set up for graphics to be in PDF format)
+
+% Include any extra LaTeX packages required
+\usepackage[square, numbers, comma, sort&compress]{natbib}  % Use the "Natbib" style for the references in the Bibliography
+\usepackage{verbatim}  % Needed for the "comment" environment to make LaTeX comments
+\usepackage{vector}  % Allows "\bvec{}" and "\buvec{}" for "blackboard" style bold vectors in maths
+
+\usepackage[titletoc]{appendix}
+
+\usepackage{babel}
+
+
+\usepackage{epigraph}
+\setlength\epigraphwidth{.55\textwidth}
+
+\usepackage{braket}
+
+\usepackage{enumitem}
+
+\usepackage{mathrsfs}
+
+\usepackage{lastpage}
+
+\usepackage{dsfont}
+
+
+%%%%% New commands
+% Comments
+\newcommand{\stef}[1]{{ \color{red}{[#1]}}}
+\newcommand{\NR}[1]{{ \color{blue}{[#1]}}}
+% Lagrangian
+\newcommand{\lag}{\mathcal{L}}
+% units
+\newcommand{\myunit}[1]{{\mathrm{#1}}}
+% table nufit
+\usepackage{afterpage}
+\usepackage{multirow}
+\usepackage{rotating}
+\newcommand{\Dmq}{\Delta m^2}
+\newcommand{\dCP}{\delta_\mathrm{CP}}
+\newcommand{\eVq}{\ensuremath{\text{eV}^2}}
+% new paragraph
+\newcommand{\newparagraph}{\vspace{-0.3 cm}}
+\newcommand{\newlistparagraph}{\vspace{-4pt}}
+
+
+
+% double phantom sub / super index alignment
+\newcommand{\phantomalign}{\ensuremath{\hspace{-0.12 cm}}}
+\newcommand{\phdag}{\ensuremath{\phantom{\dagger}}}
+
+% nubb
+\usepackage{tikz}
+\newcommand{\Qbb}{\ensuremath{Q_{\beta\beta}}}
+
+\usepackage{fontawesome5}
+%github
+%stef, print setup; all git links black
+\definecolor{color_git}{rgb}{0.098, 0.160, 0.345}
+%\definecolor{color_git}{rgb}{0, 0, 0}
+\newcommand{\gitMiguel}{\href{https://github.com/MiguelEA/nudec_BSM}{\textsc{g}it\textsc{h}ub~{\large\color{color_git}\faGithub}}}
+\newcommand{\gitMajoron}{\href{https://github.com/stefanmarinus/CLASS_neutrinophilic}{\textsc{g}it\textsc{h}ub~{\large\color{color_git}\faGithub}}}
+\newcommand{\gitAmiqs}{\href{https://github.com/stefanmarinus/amiqs}{\textsc{g}it\textsc{h}ub~{\large\color{color_git}\faGithub}}}
+\newcommand{\gitStef}{\href{https://github.com/stefanmarinus}{\textsc{g}it\textsc{h}ub~{\large\color{color_git}\faGithub}}}
+\newcommand{\montepython}{\href{https://github.com/brinckmann/montepython_public}{\tt MontePython}~\cite{Brinckmann:2018cvx, Audren:2012wb}}
+\newcommand{\getdist}{\href{https://github.com/cmbant/getdist/tree/master}{\tt GetDist}~\cite{Lewis:2019xzd}}
+\newcommand{\classcode}{\href{https://github.com/lesgourg/class_public}{\tt CLASS}~\cite{Lesgourgues:2011re, Blas:2011rf}}
+\newcommand{\recfast}{\href{https://www.astro.ubc.ca/people/scott/recfast.html}{\tt RECFAST}~\cite{Seager:1999bc}}
+\newcommand{\feyncalc}{\href{https://feyncalc.github.io/}{\tt FeynCalc}~\cite{Shtabovenko:2016sxi, Shtabovenko:2020gxv}}
+
+% tick things done
+\definecolor{tabgreen}{rgb}{0.17, 0.63, 0.17}
+\newcommand{\done}[1]{{\color{tabgreen}{\faCheck \,\, -- \,\, [#1]}}}
+
+
+\newcommand{\lesezeichen}{{\color{red}{\faTimes \,\, -------------- \,\,LESEZEICHEN\,\, --------------}}}
+
+% lepto
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+
+% Figure caption left aligned
+% https://www.namsu.de/Extra/pakete/Caption.html
+\captionsetup{justification=justified}
+
+% Change colors of links
+\usepackage{xcolor}
+\definecolor{tabred}{rgb}{0.8392156862745098, 0.15294117647058825, 0.1568627450980392}
+\definecolor{tabblue}{rgb}{0.12156862745098039, 0.4666666666666667, 0.7058823529411765}
+\makeatletter
+\renewcommand\@makefnmark{\hbox{\@textsuperscript{\normalfont\color{tabred}\@thefnmark}}}
+\makeatother
+\usepackage{hyperref}
+%stef, print setups; all links black
+\hypersetup{colorlinks=true, linkcolor={tabred}, citecolor={tabblue}, urlcolor={tabblue}} 
+%\hypersetup{colorlinks=true, linkcolor={black}, citecolor={black}, urlcolor={black}} 
+
+%stef, print setups; all links black
+\renewcommand\thefootnote{\textcolor{tabgreen}{\arabic{footnote}}}
+%\renewcommand\thefootnote{\textcolor{black}{\arabic{footnote}}}
+
+
+
+
+
+%% ----------------------------------------------------------------
+\begin{document}
+
+\renewcommand{\contentsname}{Table of Contents}
+\renewcommand{\listfigurename}{List of Figures}
+\renewcommand{\listtablename}{List of Tables}
+\renewcommand{\appendixname}{Appendix}
+\renewcommand{\chaptername}{Chapter}
+% \renewcommand{\sectionname}{Section}
+\renewcommand{\bibname}{Bibliography}
+\renewcommand{\figurename}{Figure}
+\renewcommand{\tablename}{Table}
+
+
+
+
+%%%%%%%%%% TO DO %%%%%%%%%%%%%%%%
+% \input{__todo__/todo.tex}
+
+
+
+
+
+
+
+
+\begin{titlepage}
+\noindent\begin{minipage}[t]{\textwidth}
+      \includegraphics[height=2cm] {figures/logo/ific_logo_bw.pdf} 
+      \hfill
+      %stef, print steup; for printing put Black and White logo
+       \includegraphics[height=2cm]{figures/logo/uv.jpg}
+       %\includegraphics[height=2cm]{figures/logo/uv_bw.jpg}
+       %\hfill
+       %\includegraphics[height=2cm]{figures/logo/csic.png}
+\end{minipage}\par
+\vspace{0.5cm}
+   \vspace*{0.5cm}
+   \centering
+  {\Large \textbf{Tesi Doctoral}\\ \rule{1.0\textwidth}{0.4pt}\\ [1cm]}
+  {\LARGE \textbf{Lattice and Topology}}\\[1.5cm]
+%
+\includegraphics[height= 8 cm]{figures/logo/Escudo03.jpg}
+%
+\vspace{1cm}
+\\preparada per\\[0.5cm]
+{\large \textbf{David Albandea Jordán}}\\[0.3cm]
+IFIC (Universitat de Val\`encia -- CSIC) \\[0.15cm]
+Departament de F\'isica Te\`orica \\[0.15cm]
+Programa de Doctorat en Física -- 3126 \\ [0.3cm]
+Val\`encia, Juliol 2023
+%\vspace{4cm}
+
+\vspace{1.0cm}
+\begin{tabular}{ll}
+% \textbf{Supervisor:}& \underline{\smash{Dr. Jacobo L\' opez-Pav\'on} } \, \& \, \underline{\smash{Prof. Dr. Nuria Rius} }
+\textbf{Directors:}& \smash{Prof. Pilar Hernández Gamazo}  \, \& \, \smash{Dr. Alberto
+Ramos Martínez} 
+\end{tabular}
+
+\end{titlepage}
+
+
+
+%% Ab hier 1 1/2 facher Zeilenabstand (durch setspace-Paket)
+\onehalfspacing
+\setcounter{page}{0}
+\newpage
+
+
+
+\frontmatter      % Begin Roman style (i, ii, iii, iv...) page numbering
+
+
+\setstretch{1.3}  % It is better to have smaller font and larger line spacing than the other way round
+
+% Define the page headers using the FancyHdr package and set up for one-sided printing
+\fancyhead{}  % Clears all page headers and footers
+%stef, print steup; switch from \rhead{\thepage } to \cfoot{\thepage}
+\rhead{}  % Sets the right side header to show the page number
+\lhead{}  % Clears the left side page header
+\rhead{\thepage }
+%\cfoot{\thepage}
+
+\pagestyle{fancy}  % Finally, use the "fancy" page style to implement the FancyHdr headers
+
+
+
+%% ----------------------------------------------------------------
+% The "Quote Page"
+\pagestyle{empty}  % No headers or footers for the following pages
+\cleardoublepage
+~\newpage
+\epigraph{
+Ich ging im Walde 
+So f\"ur mich hin, \\
+Und nichts zu suchen, 
+Das war mein Sinn.\\
+[0.15cm]
+Im Schatten sah ich 
+Ein Blümchen stehn, \\
+Wie Sterne leuchtend, 
+Wie \"Auglein schön.\\
+[0.15cm]
+Ich wollt es brechen, 
+Da sagt es fein: \\
+Soll ich zum Welken 
+Gebrochen sein?\\
+[0.15cm]
+Ich grub's mit allen 
+Den Würzlein aus. \\
+Zum Garten trug ich's 
+Am h\"ubschen Haus. \\
+[0.15cm]
+Und pflanzt es wieder 
+Am stillen Ort; \\
+Nun zweigt es immer 
+Und bl\"uht so fort.
+}
+{\textbf{J. W. von Goethe}}
+
+%
+\vfill\vfill\vfill\vfill\vfill\vfill\null
+\clearpage  % Quote page ended, start a new page
+%% ----------------------------------------------------------------
+
+\newpage
+
+\afterpage{\blankpage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+\cleardoublepage
+\thispagestyle{empty}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CERTIFICATION PAGE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{empty}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\begin{minipage}[t]{\textwidth}
+    %stef, print steup; for printing put the logo in Black and White
+      \includegraphics[height=2cm] {figures/logo/fisica_1line.jpg} 
+      %\includegraphics[height=2cm] {figures/logo/fisica_1line_bw.jpg}
+      %\hfill
+       %\includegraphics[height=2cm]{figures/logo/uv.jpg}
+       %\hfill
+       %\includegraphics[height=2cm]{figures/logo/csic.png}
+\end{minipage}\par
+
+\vspace*{2cm}
+%
+\noindent \textbf{Alberto Ramos Martínez}, investigador distingit (CIDEGENT) de la Universitat de Val\`encia, i
+\textbf{Pilar Hernández Gamazo}, catedr\`atica de la Universitat de Val\`encia, 
+%
+%
+\textbf{certifiquen}:\\[2ex]
+%
+\noindent
+que la present mem\`oria \textbf{Lattice and Topology} ha sigut realitzada sota
+la seua direcci\'o a l’Institut de F\'isica Corpuscular, centre mixt de la
+Universitat de Val\`encia i del CSIC, per \textbf{David Albandea Jordán} i
+constitueix la seua Tesi per a optar al grau de Doctor en F\'isica.
+
+\noindent
+I perqu\`e aix\'i conste, en compliment de la legislaci\'o vigent, presenten en el Departament de F\'isica Te\'orica de la Universitat de Val\`encia la referida Tesi Doctoral, i firmen el present certificat.
+
+%\noindent Que la presente memoria,  ha sido realizada bajo su direcci\'on en el Instituto de F\'isica Corpuscular, centro mixto de la Universidad de Valencia y del CSIC, por  , y constituye su Tesis para optar al grado de Doctor en Ciencias Físicas.\\[2ex]
+%
+%\noindent Y para que as\'i conste, en cumplimiento de la legislaci\'on vigente, presenta en el Departamento de F\'isica Te\'orica de la Universidad de Valencia la referida Tesis Doctoral, y firman el presente certificado.\\[4ex]
+%
+\noindent Val\`encia, a 28 de Juliol del 2023,\\[16ex]
+%
+\noindent \hspace{1cm}  Jacobo L\' opez Pav\'on
+\noindent \hspace{4cm}  Nuria Rius Dionis
+
+
+
+\newpage
+\thispagestyle{empty}
+$$ $$
+\newpage
+\thispagestyle{empty}
+
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%   ABSTRACT %%%%%%%%%%%%%%%%%%%%%%%% 
+
+\chapter*{Preface}
+\addcontentsline{toc}{chapter}{Preface}  
+%
+%
+%
+
+\newpage
+
+%\afterpage{\blankpage}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LIST OF PUBLICATIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\input{chapters/publications.tex}
+
+
+%%%%%%%%%%%%%%%%%%   NOTATION %%%%%%%%%%%%%%%%%%%%%%%% 
+
+
+
+\input{chapters/notation.tex}
+
+
+%%%%%%%%%%%%%%%%%%   ABBREVIATIONS %%%%%%%%%%%%%%%%%%%%%%%% 
+
+
+\input{chapters/abbreviations.tex}
+
+
+\newpage
+
+%stef, print steup; no white page for printing
+%\afterpage{\blankpage}
+
+%% ----------------------------------------------------------------
+
+
+
+\pagestyle{fancy}  %The page style headers have been "empty" all this time, now use the "fancy" headers as defined before to bring them back
+
+
+%% ----------------------------------------------------------------
+
+
+% command for automatic table of content
+
+%stef, print steup; no white page for printing
+\cleardoublepage
+\afterpage{\blankpage}
+\setcounter{page}{9}
+
+{
+\lhead{Table of contents}  % Set the left side page header to "Contents"
+  \hypersetup{linkcolor=black}
+  \tableofcontents
+}
+% \tableofcontents  % Write out the Table of Contents
+
+
+
+
+%% ----------------------------------------------------------------
+\lhead{List of figures}  % Set the left side page header to "List of Figures"
+{
+  \hypersetup{linkcolor=black}
+    \listoffigures  % Write out the List of Figures
+}
+%\listoffigures  % Write out the List of Figures
+
+%% ----------------------------------------------------------------
+\lhead{List of tables}  % Set the left side page header to "List of Tables"
+{
+  \hypersetup{linkcolor=black}
+    \listoftables  % Write out the List of Tables
+}
+% \listoftables  % Write out the List of Tables
+
+%% ----------------------------------------------------------------
+\setstretch{1.3}  % Set the line spacing to 1.5, this makes the following tables easier to read
+
+
+
+\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+
+
+% command for important externall, manual table of content
+%% ----------------------------------------------------------------
+% \lhead{\emph{Contents}}  % Set the left side page header to "Contents"
+%\cleardoublepage 
+%\input{__thesis__TOC_modified.toc}
+%\cleardoublepage 
+
+
+\lhead{Lattice and Topology}
+
+
+%% ----------------------------------------------------------------
+\mainmatter	  % Begin normal, numeric (1,2,3...) page numbering
+\pagestyle{fancy}  % Return the page headers back to the "fancy" style
+
+
+
+
+%%%%%%%%%%%%%%%%%%% 1. part %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% Thesis introduction %%%%%%%%%%%%%%%%%%%
+\part{Thesis} 
+\label{part:thesis}
+\addtocontents{toc}{\vspace{1.0em}}  % Add a gap in the Contents, for aesthetics
+
+%stef, print steup; include \cleardoublepage
+\cleardoublepage
+\afterpage{\blankpage}
+
+
+%%%%%%%%%% INTRO %%%%%%%%%%%%%%%%
+\setcounter{page}{3}
+\input{chapters/Introduction}
+
+
+
+
+%%%%%%%%%% SUMMARY %%%%%%%%%%%%%%%%
+\input{chapters/Summary.tex}
+
+
+
+
+
+%% ----------------------------------------------------------------
+
+\addtocontents{toc}{\vspace{0.75em}} % Add a gap in the Contents, for aesthetics
+
+% \appendix 
+
+\begin{appendices}
+%%%%%%%%%% APPENDIX neutrino decay rates %%%%%%%%%%%%%%%%
+% \input{appendix/nudecay_rates.tex}
+
+
+
+
+\end{appendices}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%% BIB %%%%%%%%%%%%%%%%%%%
+\addtocontents{toc}{\vspace{1.0em}}  % Add a gap in the Contents, for aesthetics
+\backmatter
+
+\label{Bibliography}
+\lhead{Bibliography}
+
+
+\bibliographystyle{JHEP}
+\bibliography{biblio}{}
+
+\newpage
+%stef, print steup; include \cleardoublepage and \afterpage{\blankpage}
+\cleardoublepage
+\newpage
+\afterpage{\blankpage}
+
+
+%%%%%%%%%%%%%%%%%%% 2. part %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% Scientific research %%%%%%%%%%%%%%%%%%%
+
+%\addtocontents{toc}{\vspace{1.0em}}  % Add a gap in the Contents, for aesthetics
+%\part{Scientific research} 
+%\addtocontents{toc}{\vspace{1.0em}}  % Add a gap in the Contents, for aesthetics
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%% 3. part %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% Resumen de la tesis %%%%%%%%%%%%%%%%%%%
+\mainmatter	  % Begin normal, numeric (1,2,3...) page numbering
+\setcounter{page}{259}
+% \setcounter{prevpage}{\value{page}}
+%\appendix
+%\printbibliography[
+%heading=bibintoc,
+%title={}
+%]
+%\pagestyle{fancy}  % Return the page headers back to the "fancy" style
+
+
+\lhead{Resum de la tesi}
+\part{Resum de la tesi} 
+\label{part:resum}
+\addtocontents{toc}{\vspace{1.0em}}  % Add a gap in the Contents, for aesthetics
+
+
+%%%%%%%%%% RESUM %%%%%%%%%%%%%%%%
+%\renewcommand{\theequation}{R\arabic{equation}}
+%\renewcommand{\thefigure}{R\arabic{figure}}
+%\renewcommand{\thetable}{R\arabic{table}}
+% \renewcommand{\thesection}{R.\arabic{chapter}.\arabic{section}}
+% \renewcommand{\thechapter}{R.\arabic{chapter}}
+
+\renewcommand{\appendixname}{Resum}
+
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Taula}
+
+\appendix
+
+\setcounter{chapter}{0}
+\setcounter{section}{0}
+\setcounter{equation}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+
+
+\input{resum/resum.tex}
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%% Acknowledgement %%%%%%%%%%%%%%%%%%%
+%\backmatter
+\addtocontents{toc}{\vspace{1.0em}}  % Add a gap in the Contents, for aesthetics
+% \renewcommand{\thechapter}{}
+
+
+\newpage
+
+%stef, print steup; include \cleardoublepage and \afterpage{\blankpage}
+\cleardoublepage
+\afterpage{\blankpage}
+
+
+%stef, print setup; no white page for printing
+%\afterpage{\blankpage}
+
+\thispagestyle{empty}
+
+\chapter*{Agradecimientos, Agraïments, Acknowledgments, Danksagungen}
+\addcontentsline{toc}{chapter}{Agradecimientos, Agraïments, Acknowledgments, Danksagungen}  
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%% END %%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}  

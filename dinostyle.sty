@@ -84,6 +84,11 @@
 \newcommand{\thesisadvisorone}{Advisor One}
 \newcommand{\thesisadvisortwo}{Advisor Two}
 
+% Author annotation marker — available document-wide (incl. frontmatter),
+% since macros.tex is only loaded in \mainmatter. macros.tex re-provides it
+% for standalone paper builds that do not load dinostyle.
+\providecommand{\aure}[1]{\textcolor{orange}{[AA: #1]}}
+
 \RequirePackage{url}
 \RequirePackage[hidelinks,
                 colorlinks=true,

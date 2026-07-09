@@ -12,9 +12,7 @@
 % ========================
 \renewcommand{\thesisauthor}{Aurelio Amerio}
 \renewcommand{\thesistitle}{Probing the Dark Universe: Machine Learning and Statistical Approaches to Gamma-Ray Dark Matter Searches}
-\renewcommand{\thesisadvisorone}{Prof. Bryan Zaldivar Montero}
-% \renewcommand{\thesisadvisortwo}{Dr. Biggus Brainus Maximus (lol)}
-\renewcommand{\thesisadvisortwo}{Mr. Claude Opus Quartus Sextus}
+\renewcommand{\thesisadvisorone}{Dr. Bryan Zaldivar Montero}
 
 % Glossary entries
 \makeglossaries
@@ -36,6 +34,7 @@
 % ========================
 \frontmatter
 \import{frontmatter/}{title_page.tex}
+\import{frontmatter/}{certification.tex}
 \import{frontmatter/}{copyright.tex}
 \clearemptydoublepage
 \pagenumbering{roman}
@@ -46,6 +45,9 @@
 \tableofcontents*
 \egroup
 \renewcommand*{\arraystretch}{0.5}
+
+\import{frontmatter/}{publications.tex}
+\clearemptydoublepage
 
 \import{frontmatter/}{aknowledgements.tex}
 \clearemptydoublepage
