@@ -1,4 +1,148 @@
-\chapter{Summary and Outlook}
+\chapter*{Conclusions and Future Directions}
 \label{chap:outlook}
+\addcontentsline{toc}{chapter}{Conclusions and Future Directions}
+\markboth{Conclusions and Future Directions}{Conclusions and Future Directions}
 
-\initial{I}n this thesis...
+The particle nature of dark matter remains unknown, even as its
+gravitational imprint is written across every scale of the Universe. Gamma
+rays are among the cleanest messengers we have to look for the non-gravitational
+signatures of that dark sector, since an annihilation or decay signal would
+add photons to a sky whose astrophysical backgrounds we can model and subtract.
+The difficulty is that these backgrounds are bright, structured, and imperfectly
+known, so any dark matter component we are after is faint and often mimicked by
+them.
+This thesis followed a common thread through that problem: recovering signals in
+noise-dominated regimes, where simple thresholding fails, requires statistical
+and machine-learning methods matched to each regime. We organized the work along
+that thread, tracking the expected signal from the Galactic Center Excess into
+progressively lower signal-to-noise, down to the cross-correlation forecasts for
+the next generation of instruments. To this end, we drew on traditional
+statistical inference, generative modeling, simulation-based inference, and deep
+learning.
+
+Along the way we measured the gamma-ray luminosity function of millisecond
+pulsars in Milky Way globular clusters with 15.8 years of Fermi-LAT data, and
+found that a pulsar interpretation of the Galactic Center Excess should already
+have produced resolved sources that are not observed~\cite{Amerio:2024qor}
+(Chapter~\ref{ch:4}). We built what is, to our knowledge, the first
+probabilistic mixture model of the high-latitude unassociated Fermi-LAT
+sources, found no significant dark matter subhalo population, and set $95\%$
+confidence upper limits on $\langle\sigma v\rangle$ in the $b\bar{b}$ channel
+for dark matter masses between $10$~GeV and $1$~TeV~\cite{Amerio:2025fhz}
+(Chapter~\ref{ch:5}). We trained a convolutional network on roughly $10^{6}$
+synthetic maps to reconstruct the extragalactic source-count distribution
+\dnds down to fluxes a factor of fifty below the catalog
+threshold~\cite{Amerio:2023uet} (Chapter~\ref{ch:6}), and used the
+reconstructed \dnds as a generative model to build the public gPCS
+(gamma-ray Photon Count Statistics) probabilistic catalog, which identifies
+about $50\%$ more candidate source directions than 4FGL-DR3
+alone~\cite{Amerio:2023rjn} (Chapter~\ref{ch:7}). Finally, we forecast that the
+cross-correlation of the anisotropic gamma-ray sky with low-redshift galaxy
+catalogs will let CTAO probe $\langle\sigma v\rangle$ down to
+$\sim 10^{-23}\,\mathrm{cm^{3}\,s^{-1}}$ with modest
+exposure~\cite{Pinetti:2025hgd} (Chapter~\ref{ch:8}).
+
+No search in this thesis ended in a dark matter detection. Each, however, sharpened the way
+the question is asked, and each leaves a natural set of next steps. In light of
+these findings, several directions can be pursued, one per research line
+developed in this thesis.
+
+\begin{itemize}
+    \item \textbf{The millisecond pulsar hypothesis for the Galactic Center
+    Excess:} Our constraint is conditional: if the pulsars in the Inner Galaxy
+    share the luminosity function we measured in surviving globular clusters,
+    Fermi-LAT should already have resolved $17$--$37$ of them, whereas only
+    three candidates are known~\cite{Amerio:2024qor}. This tension converges
+    with independent analyses of the excess's energy
+    distribution~\cite{List:2025qbx}. The main open uncertainty is how the
+    pulsars reached the Inner Galaxy in the first place. If they arrived with
+    globular clusters that spiraled in through dynamical friction and were
+    tidally disrupted~\cite{Gnedin:2013cda,Brandt:2015ula,Fragione:2017rsp},
+    they might be older than the pulsars in surviving clusters, whose dense
+    cores continue to recycle new, bright millisecond pulsars today. An older
+    population could be fainter, but exactly how much this would affect the
+    constraints we set remains an open question. Progress will require a better
+    understanding of this formation and delivery history, along with deeper
+    radio and multi-wavelength characterization of the unassociated Fermi-LAT
+    sources that could hide the missing pulsars.
+
+    \item \textbf{Dark matter subhalos among unassociated sources:} We
+    constrained the subhalo contribution to the unassociated sources by maximum
+    likelihood, using quantification learning to handle the covariate and prior
+    shift between the associated sources used for training and the unassociated
+    targets, and we found no significant excess~\cite{Amerio:2025fhz}. A natural extension is to velocity-dependent
+    annihilation, such as Sommerfeld enhancement~\cite{ArkaniHamed:2008qn}:
+    the nearest small subhalos have velocity dispersions of a few
+    $\mathrm{km\,s^{-1}}$~\cite{2024MNRAS.530.2496A}, which could raise the
+    expected signal by a factor of a few relative to dwarf galaxies.
+    The method itself is not tied to
+    gamma-ray astronomy: it applies to anomaly searches in any unlabeled
+    dataset that exhibits covariate and prior shift. Closer to home, the same
+    framework could be applied to the unassociated sources near the Galactic
+    plane, to assess how many of them are consistent with a millisecond-pulsar
+    origin.
+
+    \item \textbf{The source-count distribution below threshold:} The network
+    recovered a \dnds{} compatible with an $S^{-2}$ scaling down to fluxes
+    roughly fifty times fainter than the catalog limit
+    \cite{Amerio:2023uet}. Extending the analysis to multiple energy bins would
+    give an energy-dependent \dnds{} and access to energy correlations,
+    sharpening the overall sensitivity of the method. It might also separate source
+    classes with distinct spectral shapes and expose features in the \dnds{}
+    that no known astrophysical population produces --- a possible imprint of
+    dark matter, complementary to the cross-correlation searches of
+    Chapter~\ref{ch:8}.
+
+    \item \textbf{Probabilistic cataloging of the gamma-ray sky:} Using the
+    reconstructed \dnds{} as a generative model, gPCS compares synthetic and
+    real skies pixel by pixel and flags candidate source directions
+    \cite{Amerio:2023rjn}. Its main application is in cross-correlation studies
+    with galaxy catalogs, along two routes. Cross-matching the candidate
+    directions with the positions of cataloged galaxies can promote some of
+    them into bona fide sources, an identification effort that machine-learning
+    classification of unassociated objects can support~\cite{Bhat:2022}.
+    Alternatively, the catalog can be used as a gamma-ray tracer in
+    cross-correlations with galaxy tracers of the large-scale structure, in the
+    spirit of Chapter~\ref{ch:8}: there, the statistical reach of a $50\%$
+    larger sample outweighs a sub-leading fraction of spurious directions, and
+    the resulting measurement could be more sensitive, for example, to a dark
+    matter component.
+
+    \item \textbf{Cross-correlations with the large-scale structure:} Our
+    forecast showed that cross-correlating the gamma-ray anisotropies with the
+    2MASS galaxy distribution lets CTAO reach $\langle\sigma v\rangle \sim
+    10^{-23}\,\mathrm{cm^{3}\,s^{-1}}$ and decay lifetimes of order
+    $10^{27}\,\mathrm{s}$ with about $50$~h of effective exposure, competitive
+    with dwarf and cluster analyses and roughly five times stronger than the
+    auto-correlation~\cite{Pinetti:2025hgd}. Deeper and more densely sampled
+    catalogs such as Euclid~\cite{2024arXiv240513491E} would tighten the
+    tomographic reconstruction, as would adding other large-scale-structure
+    tracers such as weak lensing. Finally, two steps lie ahead: updating these
+    forecasts as the construction of CTAO progresses and its survey strategy is
+    finalized, and carrying out the cross-correlation measurement itself once
+    real data become available.
+\end{itemize}
+
+Taken together, the five analyses tell a consistent story. No dark matter
+signal was found, which is itself informative: the parameter space where a
+gamma-ray signal would already have been obvious is shrinking. Progress in
+indirect detection rests on improving the instruments, the exposure they
+accumulate, and the statistical machinery that reads the resulting data --- and
+none can substitute for the others. The work presented here contributed to the
+third.
+We developed population-level models for source classes we cannot resolve one
+by one, inference schemes that remain reliable when the training sample does not
+perfectly match the data, probabilistic catalogs that keep track of what we do
+not know, and forecasts that show where the next instruments will be most
+sensitive.
+
+These methods are not only applicable to the problems that motivated them. The
+neural reconstruction of source-count distributions, the quantification-learning
+treatment in the presence of dataset shift, the probabilistic cataloging of
+sub-threshold sources, and the cross-correlation forecasting pipeline all carry
+over to other datasets and other messengers,
+and they will matter more as the Fermi-LAT exposure keeps growing and as CTAO
+comes online. The particle nature of dark matter is still an open question. The
+tools we have to interrogate it, though, are considerably sharper than when this
+work began, and that is the ground on which a future detection, or the next
+exclusion, will be built.

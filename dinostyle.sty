@@ -274,6 +274,9 @@
 % 14. PAGE STYLE
 % ============================================================
 \makepagestyle{myvf}
+% Headers already use \textsc; uppercasing marks would defeat the small caps
+% and breaks on titles containing \textcolor (color names get uppercased too).
+\nouppercaseheads
 \makeoddfoot{myvf}{}{\thepage}{}
 \makeevenfoot{myvf}{}{\thepage}{}
 \makeheadrule{myvf}{\textwidth}{\normalrulethickness}
