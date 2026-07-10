@@ -13,7 +13,12 @@
 % ============================================================
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
-\RequirePackage[english]{babel}
+% spanish loaded for the resumen, catalan for a future valencian resum;
+% english last = document default.
+% es-noshorthands keeps spanish babel from activating special characters
+% (quoting/decimal shorthands) that clash with math and existing macros.
+% (babel has no separate valencian option: hyph-ca covers both standards)
+\RequirePackage[spanish,es-noshorthands,catalan,english]{babel}
 % \RequirePackage[none]{hyphenat}          % disable hyphenation
 \RequirePackage{hyphenat}     
 
