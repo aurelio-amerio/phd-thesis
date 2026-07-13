@@ -59,17 +59,17 @@ However, because the prior enters the training, changing the prior requires retr
 Once the likelihood surrogate is trained, \blue{Bayesian inference proceeds through standard means, for example through MCMC sampling with any choice of prior.}
 This separation of the likelihood from the prior provides additional flexibility, at the cost of an extra sampling step.
 
-\emph{Neural Ratio Estimation} (NRE) takes a different approach altogether: rather than learning a probability density, a classifier is trained via supervised learning to discriminate between synthetic datasets generated at different parameter points. \blue{This is enticing, as it sometimes proves to be a more tractable learning problem than density estimation, especially in high-dimensional spaces.}
+\emph{Neural Ratio Estimation} (NRE) takes a different approach altogether: rather than learning a probability density, a classifier is trained via supervised learning to discriminate between synthetic datasets generated at different parameter points. \blue{This is attractive because classification is sometimes a more tractable learning problem than density estimation, especially in high-dimensional spaces.}
 The classifier output can be converted into the likelihood-to-evidence ratio $r(\mathbf{x},\boldsymbol{\theta}) = p(\mathbf{x}|\boldsymbol{\theta})/p(\mathbf{x})$, which is proportional to the posterior up to the prior~\cite{Cranmer:2020,Miller2021arxiv}.
 % A key advantage of NRE is its ability to target arbitrary low-dimensional marginal posteriors directly, without first estimating the full joint posterior~\cite{Cranmer:2020,Miller2021arxiv}.
 % This makes the approach particularly attractive when one- and two-dimensional marginals suffice, as is common in cosmological and astrophysical parameter estimation.
 % A key advantage of NRE is its ability to target arbitrary low-dimensional marginal posteriors directly, without first estimating the full joint posterior on both the parameters of interest and the nuisance parameters~\cite{Cranmer:2020,Miller2021arxiv}.
 Once the classifier is trained, evaluating the posterior density at any point is fast, but drawing samples still requires MCMC. \blue{This is possibly the main drawback of NRE, as full posterior sampling and calibration are significantly more expensive than in NPE.}
 
-\blue{All three strategies provide \emph{amortized inference}: the computationally expensive simulation are performed once. 
-Training a model does not require running the simulator for every new observation, and different model architechtures can be explored without additional calls to the simulator.
+\blue{All three strategies provide \emph{amortized inference}: the computationally expensive simulations are performed once. 
+Training a model does not require running the simulator for every new observation, and different model architectures can be explored without additional calls to the simulator.
 Once a model has been trained, it can be applied to sample the posterior for any new observed data, without additional calls to the simulator~\cite{Cranmer:2020}.
-It is important to notice that the neural network also implicitly marginalizes over the vast latent space of the simulator, thus the trained surrogate is likely to preserve information that hand-crafted summary statistics might discard, making SBI extremely interesting for field-level inference. }
+The neural network also implicitly marginalizes over the vast latent space of the simulator, so the trained surrogate is likely to preserve information that hand-crafted summary statistics would discard --- which makes SBI well suited to field-level inference. }
 
 \paragraph{Application preview.}
 

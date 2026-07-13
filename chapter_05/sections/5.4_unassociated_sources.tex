@@ -6,7 +6,7 @@
 \label{sec:5.4}
 
 Having established the theoretical grounds for dark matter subhalo searches in the previous sections, we now turn to the observational reality.
-The Fermi-LAT catalogs contain a large population of gamma-ray sources with no identified counterpart at other wavelengths, and these unassociated sources have long been recognized as the natural testing ground for DM subhalo searches.
+The Fermi-LAT catalogs contain a large population of gamma-ray sources with no identified counterpart at other wavelengths, and these unassociated sources \blue{are} the natural testing ground for DM subhalo searches.
 
 \subsection{Unassociated Sources in Fermi-LAT Catalogs}
 \label{sec:5.4.1}
@@ -84,7 +84,7 @@ This invariance is what makes the class-conditional densities learnable from the
 % A generative model, by contrast, characterizes each class through its feature distribution and then models the target data as a mixture of these distributions, $\tilde{p}_\mathrm{unas}(\mathbf{x}) = \sum_k \pi_k\, p(\mathbf{x}|k)$.
 % In this formulation, the class prevalences $\pi_k$ are free parameters determined by fitting the model to the data rather than imposed during training~\cite{10.1145/3117807_Gonzalez_quantification,2024arXiv240100490M}.
 % Maximizing the product likelihood over all unassociated sources simultaneously constrains every mixing fraction, naturally accommodates a new class (dark matter subhalos) whose prevalence was zero in the training set, and supports statistically rigorous confidence intervals through the profile likelihood~\cite{Amerio:2025fhz}.
-\blue{This inversion---from the posterior $p(k|\mathbf{x})$ to the class-conditional densities $p(\mathbf{x}|k)$---shifts the unit of analysis from the individual source to the population: a generative model characterizes each class by its feature distribution and describes the unassociated catalog as a mixture $\tilde{p}_\mathrm{unas}(\mathbf{x}) = \sum_k \pi_k\, p(\mathbf{x}|k)$, in which the class prevalences $\pi_k$ become free parameters fitted to the data rather than imposed during training~\cite{10.1145/3117807_Gonzalez_quantification,2024arXiv240100490M}.}
+\blue{This inversion---from the posterior $p(k|\mathbf{x})$ to the class-conditional densities $p(\mathbf{x}|k)$---shifts the unit of analysis from the individual source to the population. A generative model characterizes each class by its feature distribution and describes the unassociated catalog as a mixture $\tilde{p}_\mathrm{unas}(\mathbf{x}) = \sum_k \pi_k\, p(\mathbf{x}|k)$, in which the class prevalences $\pi_k$ become free parameters fitted to the data rather than imposed during training~\cite{10.1145/3117807_Gonzalez_quantification,2024arXiv240100490M}.}
 \blue{The mixture form naturally accommodates a new class---dark matter subhalos---whose prevalence is left free and fitted directly, and supports statistically rigorous confidence intervals through the profile likelihood~\cite{Amerio:2025fhz}.}
 
 % The formal machinery for this problem was introduced in Section~\ref{sec:3.4}: \textit{quantification learning} replaces the discriminative question ``what class does this source belong to?'' with the generative question ``what is the probability of observing features $\mathbf{x}$ given that the source belongs to class $k$?''
