@@ -25,7 +25,7 @@ These inelastic proton-proton collisions produce secondary particles, most notab
 \ee
 The reaction is subject to a strict kinematic threshold.
 A cosmic-ray proton colliding with a stationary target proton must have a total energy of at least $E_p > m_p + 2m_\pi + m_\pi^2 / 2m_p \approx 1.2$ GeV in order to produce one or more pions \cite{Hooper:2024}.
-Once this threshold is crossed, the total inelastic cross section increases only mildly with energy, rising from $\sigma_\text{inel}^{pp} \approx 30$--$40$ mb at $E_p \lesssim 10$ GeV to $\sigma_\text{inel}^{pp} \approx 100$ mb near $E_p \sim 1$ EeV \cite{Hooper:2024}.
+Once this threshold is crossed, the total inelastic cross section increases only mildly with energy, rising from $\sigma_\text{inel}^{pp} \approx 30$--$40$ mb at $E_p \lesssim 10$ GeV to $\sigma_\text{inel}^{pp} \approx 100$ mb near $E_p \sim 1$ EeV.
 Because a significant fraction of the proton's kinetic energy is transferred in each collision (inelasticity $K_{pp} \sim 0.5$), only a few successive interactions suffice to extract most of the cosmic ray's original energy \cite{Dermer:2009zz}.
 
 \begin{figure}[t]
@@ -71,7 +71,7 @@ In this regime, the ICS energy loss rate takes a form mathematically identical t
 \be
 	\left.\frac{dE_e}{dt}\right|_\text{ICS}^\text{Thomson} = -\frac{4}{3}\,\sigma_T\,\rho_\text{rad}\,\gamma_e^2\,c,
 \ee
-where $\rho_\text{rad}$ is the energy density of the target photon field \cite{Hooper:2024}.
+where $\rho_\text{rad}$ is the energy density of the target photon field.
 
 \begin{figure}[t]
 	\centering
@@ -89,7 +89,7 @@ Consequently, the scattered gamma rays carry away nearly all the incoming electr
 This transition from the Thomson to the Klein-Nishina regime is illustrated in Figure~\ref{fig:ics_cross_section}.
 
 In practice, cosmic-ray electrons scatter off starlight, infrared dust emission, and the CMB.
-At higher electron energies, Klein-Nishina suppression progressively reduces the efficiency of scattering off higher-frequency photons, shifting the dominant ICS target toward the CMB \cite{Hooper:2024}.
+At higher electron energies, Klein-Nishina suppression progressively reduces the efficiency of scattering off higher-frequency photons, shifting the dominant ICS target toward the CMB.
 
 \textbf{Bremsstrahlung.}
 In gas-rich regions of the interstellar medium, electrons undergo
@@ -104,7 +104,7 @@ In the presence of the Galactic magnetic field ($B \sim$ few $\mu$G), ultra-rela
 This process primarily generates photons in the radio and microwave bands, but it traces the same underlying electron populations that produce gamma rays via ICS and bremsstrahlung.
 The synchrotron energy loss rate scales as $b_\text{syn} \propto B^2 E_e^2$ \cite{Hooper:2024}, mirroring the $E_e^2$ dependence of Thomson-regime ICS.
 Which of the two mechanisms dominates depends on the local ratio of magnetic field energy density to radiation field energy density ($\rho_\text{mag}/\rho_\text{rad}$).
-At the highest electron energies, Klein-Nishina suppression of ICS breaks this symmetry: the ICS loss rate falls below its Thomson-regime prediction, leaving synchrotron radiation as the primary cooling channel for the most energetic cosmic-ray electrons \cite{Hooper:2024}.
+At the highest electron energies, Klein-Nishina suppression of ICS breaks this symmetry: the ICS loss rate falls below its Thomson-regime prediction, leaving synchrotron radiation as the primary cooling channel for the most energetic cosmic-ray electrons.
 
 These three leptonic processes, together with the hadronic pion-decay mechanism described in the preceding section, constitute the main set of fundamental interactions that generate the diffuse gamma-ray sky.
 The following section describes how these individual components are combined into a global model of the astrophysical Galactic Diffuse Emission.
@@ -115,7 +115,7 @@ The following section describes how these individual components are combined int
 The individual production mechanisms described in the preceding sections combine to produce the Galactic Diffuse Emission (GDE)---the brightest feature in the gamma-ray sky, accounting for roughly 80\% of all photons detected by the \textit{Fermi}-LAT \cite{Fermi-LAT:2014ryh,DGRB-review}.
 This emission arises from the integrated interactions of propagating cosmic rays with the interstellar gas and radiation fields of the Milky Way.
 
-To model this complex, spatially structured foreground, astrophysicists rely on numerical cosmic-ray propagation codes, of which GALPROP is one of the most established \cite{Strong:2007nh}.
+To model this complex, spatially structured foreground, astrophysicists rely on numerical cosmic-ray propagation codes, of which GALPROP \cite{Strong:2007nh} and DRAGON \cite{Evoli:2016xgn} are two of the most established.
 Starting from a set of assumptions about cosmic-ray source distributions (primarily supernova remnants), injection spectra, and diffusion parameters, GALPROP solves the steady-state diffusion-loss equation for all relevant cosmic-ray species as they propagate through the Galactic magnetic field and interstellar medium.
 The output is a set of sky maps predicting the gamma-ray intensity from each emission component: a $\pi^0$-decay map that traces the gas column density (dominated along the Galactic Plane), an inverse Compton map that traces the interstellar radiation field (producing an extended halo at high latitudes), and a bremsstrahlung map that follows the gas distribution but with a different spectral shape.
 

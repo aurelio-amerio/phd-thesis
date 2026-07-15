@@ -21,7 +21,7 @@ At high temperatures ($x \ll 1$) the species is relativistic and roughly as abun
 Once the temperature drops below the rest mass ($x \gtrsim 1$), however, only the exponential tail of the thermal bath carries enough energy to create a $\chi$ pair, and the equilibrium abundance collapses as $e^{-x}$.
 Were equilibrium maintained indefinitely, the dark matter would be exponentially wiped out; a relic population survives precisely because equilibrium eventually fails.}
 
-A quantitative description of this \blue{competition} follows the \blue{dark-matter} number density through a variation of the Boltzmann equation \blue{--- here in the reduced, number-density form}~\cite{Gondolo:1990dk,Cirelli:2024ssz},\footnote{\blue{Equation~\eqref{eq:boltzmann} rests on several simplifying assumptions~\cite{Gondolo:1990dk,Cirelli:2024ssz}. The Universe is treated as homogeneous --- primordial inhomogeneities are of order $10^{-5}$, so the number density carries no appreciable spatial dependence. Rapid elastic scattering off the thermal bath keeps the dark matter in kinetic equilibrium: its momentum distribution stays thermal, a single equation for the integrated density $n_\chi(t)$ suffices, and $\langle \sigma v_\mathrm{rel}\rangle$ is averaged over that distribution. The occupation numbers are Maxwell--Boltzmann, appropriate in the non-relativistic regime, and no particle--antiparticle asymmetry is present. Finally, a single species dominates, with $2\to 2$ annihilation as the only relevant process (co-annihilations are deferred to Section~\ref{sec:1.2.4}), and detailed balance fixes the creation term to $\langle \sigma v_\mathrm{rel}\rangle\, n_\mathrm{eq}^2$.}}
+A quantitative description of this \blue{competition} follows the \blue{dark-matter} number density through a variation of the Boltzmann equation \blue{--- here in the reduced, number-density form}~\cite{Gondolo:1990dk},\footnote{\blue{Equation~\eqref{eq:boltzmann} rests on several simplifying assumptions~\cite{Gondolo:1990dk}. The Universe is treated as homogeneous --- primordial inhomogeneities are of order $10^{-5}$, so the number density carries no appreciable spatial dependence. Rapid elastic scattering off the thermal bath keeps the dark matter in kinetic equilibrium: its momentum distribution stays thermal, a single equation for the integrated density $n_\chi(t)$ suffices, and $\langle \sigma v_\mathrm{rel}\rangle$ is averaged over that distribution. The occupation numbers are Maxwell--Boltzmann, appropriate in the non-relativistic regime, and no particle--antiparticle asymmetry is present. Finally, a single species dominates, with $2\to 2$ annihilation as the only relevant process (co-annihilations are deferred to Section~\ref{sec:1.2.4}), and detailed balance fixes the creation term to $\langle \sigma v_\mathrm{rel}\rangle\, n_\mathrm{eq}^2$.}}
 \begin{equation}
 	\dot n_\chi + 3 H n_\chi = -\langle \sigma v_\mathrm{rel} \rangle\, \bigl( n_\chi^2 - n_\mathrm{eq}^2 \bigr)\,,
 	\label{eq:boltzmann}
@@ -30,7 +30,7 @@ where $H$ is the Hubble expansion rate\blue{, $n_\chi$ the dark matter number de
 $3 H n_\chi$ is the dilution due to Hubble expansion;  $-\langle \sigma v_\mathrm{rel}\rangle\, n_\chi^2$ is the depletion of $\chi$ by annihilation into Standard Model final states; and $+\langle \sigma v_\mathrm{rel}\rangle\, n_\mathrm{eq}^2$ is the inverse process, in which $\chi$ pairs are recreated from the thermal bath at the rate dictated by detailed balance.
 \blue{The expansion rate $H$ is itself fixed by the Friedmann equation, which ties it to the total energy density of the Universe.
 During the radiation-dominated era that density is set by the relativistic species of the plasma, $\rho \propto g_*\, T^4$, with $g_*$ the effective number of relativistic degrees of freedom, so that $H \sim T^2/M_\mathrm{Pl}$.
-Chemical equilibrium persists only as long as the annihilation rate $\Gamma = n_\chi \langle \sigma v_\mathrm{rel}\rangle$ remains above this value.}
+Chemical equilibrium persists roughly as long as the annihilation rate $\Gamma = n_\chi \langle \sigma v_\mathrm{rel}\rangle$ remains above this value.}
 
 It is convenient to factor out the trivial expansion dilution by passing from $n_\chi$ to the \emph{comoving abundance} $Y \equiv n_\chi / s$, where \blue{$s = (2\pi^2/45)\, g_{*s}\, T^3$ is the entropy density of the thermal bath, with $g_{*s}$ the effective number of entropic degrees of freedom}.
 Because the total entropy in a comoving volume \blue{$s\,a^3$} is conserved during adiabatic expansion, $Y$ remains constant whenever the dark-matter number per comoving volume is also conserved; variations of $Y$ thus track only annihilation and creation, rather than the cosmological dilution shared by every species.
@@ -58,7 +58,7 @@ A particle that annihilates strongly enough stays in chemical equilibrium for a 
 Such a particle leaves behind few relics.
 A particle that annihilates weakly (\blue{uppermost curve}), by contrast, loses contact with the bath earlier, while its equilibrium abundance is still relatively large, and therefore freezes out at a higher residual density.
 In the thermal-relic context, the weakest particle wins.
-\blue{The relic abundance is thus set to first approximation by how little a candidate annihilates --- by the velocity-averaged annihilation cross section $\langle \sigma v_\mathrm{rel}\rangle$ --- while the mass enters only at second order, logarithmically, through the temperature at which decoupling occurs.}
+\blue{The relic abundance is thus set to first approximation by how much a candidate annihilates --- by the velocity-averaged annihilation cross section $\langle \sigma v_\mathrm{rel}\rangle$ --- while the mass enters only at second order, logarithmically, through the temperature at which decoupling occurs.}
 
 \blue{After freeze-out both annihilation and creation become negligible, and the comoving abundance retains its plateau value $Y_\infty$; the present-day mass density in dark matter is then $\rho_\chi = M_\chi\, s_0\, Y_\infty$, with $s_0$ the entropy density today.
 Dividing by the critical density gives the relic abundance
@@ -94,7 +94,7 @@ The surviving comoving abundance then scales as
 \]
 inversely proportional to the annihilation strength.
 The $p$-wave coefficient enters here as $3\sigma_1/x_\mathrm{fo}$, rather than the $6\sigma_1/x_\mathrm{fo}$ of the instantaneous thermal average: annihilations continue to deplete the abundance after freeze-out, so the velocity-dependent term is averaged over the subsequent evolution rather than sampled at $T_\mathrm{fo}$ alone.
-Inserting this into Eq.~\eqref{eq:omega_Y} yields the relic density in terms of the partial-wave coefficients~\cite{Steigman:2012nb,Cirelli:2024ssz},
+Inserting this into Eq.~\eqref{eq:omega_Y} yields the relic density in terms of the partial-wave coefficients~\cite{Steigman:2012nb},
 \begin{equation}
 	\frac{\Omega_\chi h^2}{0.12} \approx \frac{x_\mathrm{fo}}{25}\,\frac{2.2\times 10^{-26}~\mathrm{cm^3/s}}{\sigma_0 + 3\sigma_1/x_\mathrm{fo}}\,.
 	\label{eq:relic_general}
@@ -109,7 +109,7 @@ The numerator is the canonical \emph{thermal cross section}, $\langle \sigma v\r
 For an annihilation amplitude characterized by a coupling $g$, with $\alpha \equiv g^2/(4\pi)$, the natural size of the cross section is $\langle \sigma v\rangle \sim \alpha^2/M_\chi^2$.
 Plugging in the weak-interaction value $\alpha \sim \alpha_\mathrm{weak} \sim 0.03$ and demanding a match to $\langle \sigma v\rangle_\mathrm{cosmo}$ returns a mass $M_\chi$ of order a few hundred GeV to a few TeV --- the electroweak scale.
 % , recovered without any input from particle-physics model-building.
-This result is known as the \emph{\WIMP miracle}: a stable particle with mass and coupling strength at the electroweak scale, produced thermally in the early Universe, naturally yields a relic abundance consistent with the observed dark matter density~\cite{Cirelli:2024ssz,Steigman:2012nb}.
+This result is known as the \emph{\WIMP miracle}: a stable particle with mass and coupling strength at the electroweak scale, produced thermally in the early Universe, naturally yields a relic abundance consistent with the observed dark matter density~\cite{Steigman:2012nb}.
 \blue{The inverse relation of Eq.~\eqref{eq:relic_abundance} is illustrated in Figure~\ref{fig:thermal_relic}: the orange band marks the cross section that reproduces the measured abundance, while smaller (larger) values freeze out too early (too late) and overproduce (underproduce) dark matter.}
 
 \begin{figure}[t]
