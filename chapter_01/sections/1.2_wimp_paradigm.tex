@@ -32,7 +32,7 @@ The thermal-relic cross section, established by the freeze-out calculation, \blu
 	\includegraphics[width=0.95\textwidth]{chapter_01/figures/MDMscale-v2.pdf}
 	\caption{The dark-matter mass landscape: viable candidate masses span roughly ninety orders of magnitude, from ultra-light bosonic fields to macroscopic primordial black holes.
 		Each class is characterized by a distinct production mechanism and probed by a complementary set of experiments.
-		Credit: Cirelli et al.~\cite{Cirelli:2024ssz}. \aure{consider replacing with a custom figure for the final version}}
+		Credit: adapted from Cirelli et al.~\cite{Cirelli:2024ssz}.}
 	\label{fig:dm_mass_landscape}
 \end{figure}
 
@@ -42,7 +42,7 @@ from ultra-light bosonic fields near $10^{-22}$~eV, below which the de~Broglie w
 A separate, quantum-mechanical floor on fermionic candidates comes from the \emph{Tremaine--Gunn bound}~\cite{Tremaine:1979we,Boyarsky:2018tvu}: Pauli exclusion limits the phase-space density that a fermionic species can achieve, requiring $m \gtrsim 0.4$--$1$~keV to match the inner profiles observed in dwarf-spheroidal halos.
 \blue{Dark matter must therefore be a new, non-baryonic particle: either \emph{cold} (non-relativistic at decoupling, negligible free-streaming length) or at most \emph{warm} (semi-relativistic, free-streaming length intermediate between neutrino-like relics and cold candidates, suppressing small-scale structure without erasing it).}
 The open question is which microphysical realization Nature has chosen.
-\blue{We survey the main candidate classes in order of increasing mass, reading Figure~\ref{fig:dm_mass_landscape} from left to right, before turning to two classifications that cut across it.}
+\blue{We survey the main candidate classes in order of increasing mass, reading Figure~\ref{fig:dm_mass_landscape} from left to right, closing with the question of whether dark matter is truly cold and collisionless.}
 
 % Axions are among the most popular alternatives to \glspl{WIMP_}, and as direct-detection limits on \glspl{WIMP_} have tightened, they have drawn growing attention from the dark matter community.
 % The axion was originally proposed by Peccei and Quinn~\cite{Peccei:1977hh} as the pseudo-Nambu--Goldstone boson of a spontaneously broken global symmetry introduced to solve the strong CP problem of QCD~\cite{Weinberg:1977ma,Wilczek:1977pj}.
@@ -56,8 +56,12 @@ The phenomenologically viable range of axion masses is broad, spanning roughly $
 % Haloscope experiments such as ADMX search for the resonant conversion of the local axion field into microwave photons inside a tunable cavity threaded by a strong magnetic field; the Snowmass community white paper documents the breadth of the dedicated experimental program~\cite{Adams:2022pbo}.
 
 
-A separate keV-scale window is occupied by sterile (right-handed) neutrinos, which do not couple to the Standard Model weak interaction but mix with active neutrinos.
-Two production mechanisms are commonly considered: the Dodelson--Widrow scenario of non-resonant oscillations in the early Universe~\cite{Dodelson:1993je}, and the Shi--Fuller mechanism in which a primordial lepton asymmetry drives resonant oscillations and shifts the produced spectrum to colder momenta~\cite{Shi:1998km}.
+\blue{Not every candidate was ever in thermal contact with the primordial plasma (like in the freeze-out scenario).
+\Glspl{FIMP_} couple so weakly to the thermal bath that they never reach equilibrium~\cite{Hall:2009bx}.
+Their abundance is instead built up gradually through processes like rare decays and $2 \to 2$ scatterings, and the final relic density grows with the coupling rather than shrinking --- the inverse of the freeze-out logic described in Section~\ref{sec:1.2.2}.
+This production mechanism is known as \emph{freeze-in}.
+The viable \FIMP mass range is broad. Some realizations occupy the keV-scale window: for example sterile (right-handed) neutrinos, which do not couple to the Standard Model weak interaction but mix with active neutrinos.
+Two freeze-in production channels are commonly considered:} the Dodelson--Widrow scenario of non-resonant oscillations in the early Universe~\cite{Dodelson:1993je}, and the Shi--Fuller mechanism in which a primordial lepton asymmetry drives resonant oscillations and shifts the produced spectrum to colder momenta~\cite{Shi:1998km}.
 Resonant production is the more flexible of the two because it evades the most stringent free-streaming bounds from Lyman-$\alpha$ forest data and Milky Way satellite counts, which otherwise push the allowed mass above $20$--$30$~keV~\cite{Boyarsky:2018tvu}.
 Sterile neutrinos are quasi-stable but decay radiatively as $N \to \nu\gamma$, yielding a monochromatic X-ray line that provides a distinctive observational signature~\cite{Boyarsky:2018tvu,Drewes:2016upu}.
 
@@ -65,7 +69,7 @@ Sterile neutrinos are quasi-stable but decay radiatively as $N \to \nu\gamma$, y
 %%%%%%%%%%%%
 
 \blue{Several orders of magnitude heavier, in the GeV--TeV range, sit the \glspl{WIMP_} that are the primary focus of this thesis and one of the most popular cold dark matter candidates; they interact with Standard Model particles through weak-scale couplings.}
-They are produced through thermal freeze-out in the early Universe, a mechanism we describe in detail in Section~\ref{sec:1.2.2}.
+\blue{Unlike \glspl{FIMP_}, they reach full thermal equilibrium with the primordial plasma and are} produced through thermal freeze-out in the early Universe, a mechanism we describe in detail in Section~\ref{sec:1.2.2}.
 % The observation that a particle with weak-scale mass and coupling naturally yields the observed relic abundance --- the \WIMP miracle --- has made \glspl{WIMP_} one of the dominant paradigms in the dark matter field for over two decades.
 \blue{The \emph{\WIMP miracle} (Section~\ref{sec:1.2.2}) has kept them among the dominant paradigms in the field so far.}
 % Concrete realizations include the lightest neutralino of supersymmetric extensions of the Standard Model~\cite{Ellis:1983ew} and \emph{minimal dark matter} scenarios in which a single electroweak multiplet, stabilized by an accidental symmetry, yields the correct relic density without additional model building~\cite{Cirelli:2005uq}.
@@ -79,15 +83,11 @@ Because \glspl{PBH_} are not made of baryons after \BBN, they bypass the baryon-
 Microlensing surveys, dynamical bounds on wide stellar binaries and ultra-faint dwarfs, and \CMB spectral-distortion limits together exclude \glspl{PBH_} as the dominant dark-matter component across most of the mass range~\cite{Carr:2020xqk, bradley_j_kavanagh_2019_3538999}.
 The single surviving window for a monochromatic \PBH population to constitute all of the dark matter is the asteroid-mass range, $10^{-16}\,M_\odot \lesssim M \lesssim 3 \times 10^{-12}\,M_\odot$, where Hawking-evaporation bounds from below and microlensing limits from above leave a narrow gap that next-generation experiments aim to close. 
 
-\blue{Mass is only one way of organizing the candidate space. Two further distinctions cut across it and shape the phenomenology: how the relic abundance was produced, and whether dark matter is truly cold and collisionless. The first is illustrated by \emph{freeze-in}, in which \glspl{FIMP_} couple so weakly to the thermal bath that they never reach equilibrium~\cite{Hall:2009bx}.}
-Their abundance is built up gradually through processes like rare decays and $2 \to 2$ scatterings, and the final relic density grows with the coupling rather than shrinking --- the inverse of the freeze-out logic described in Section~\ref{sec:1.2.2}.
-% The viable \FIMP mass range is broad, and the extreme smallness of the couplings would make \glspl{FIMP_} difficult to probe in direct-detection experiments or through direct production at colliders, shifting much of the emphasis to cosmological and astrophysical signatures.
-
-\blue{The second distinction concerns whether dark matter departs from the cold, collisionless scenario on which $\Lambda$CDM is built.}
-Several persistent tensions at sub-galactic scales motivate this possibility: the cusp/core problem in dwarf galaxies~\cite{Flores:1994gz,Moore:1994yx}, the diversity of rotation curves at fixed maximum circular velocity~\cite{Oman:2015xda}, and the too-big-to-fail puzzle of the Milky Way satellites~\cite{Boylan-Kolchin:2011qkt,Boylan-Kolchin:2011lmk} all point to fewer dense, cuspy halos than collisionless $N$-body simulations predict~\cite{Bullock:2017xww}.
+\blue{A question independent of the specific candidate is whether dark matter departs at all from the cold, collisionless scenario on which $\Lambda$CDM is built.}
+Several persistent tensions at sub-galactic scales motivate this possibility: the cusp/core problem in dwarf galaxies~\cite{Flores:1994gz,Moore:1994yx}, the diversity of rotation curves at fixed maximum circular velocity~\cite{Oman:2015xda}, and the too-big-to-fail puzzle of the Milky Way satellites~\cite{Boylan-Kolchin:2011qkt,Boylan-Kolchin:2011lmk} all point to fewer dense, cuspy halos than collisionless $N$-body simulations predict~\cite{Bullock:2017xww} (see Section \ref{sec:status} for more information).
 One alternative is \emph{\WDM}, a kinematic classification encompassing any candidate with a free-streaming length intermediate between hot and cold relics; the resulting suppression of small-scale power softens these tensions while leaving the large-scale successes of $\Lambda$CDM intact.
 Resonantly produced keV sterile neutrinos are one concrete realization, but \WDM as a classification is broader, and the astrophysical tests that constrain it are reviewed in~\cite{Adhikari:2022sbh}.
-A second, orthogonal direction is \emph{self-interacting dark matter} (SIDM), originally proposed by Spergel and Steinhardt~\cite{Spergel:1999mh} to thermalize the inner regions of halos through elastic scattering and so produce cored rather than cuspy density profiles.
+A second possibility is \emph{self-interacting dark matter} (SIDM), originally proposed by Spergel and Steinhardt~\cite{Spergel:1999mh} to thermalize the inner regions of halos through elastic scattering and so produce cored rather than cuspy density profiles.
 % The relevant figure of merit is the cross section per unit mass: values of order $\sigma/M \sim 1~\mathrm{cm}^2/\mathrm{g}$ at dwarf-galaxy velocities produce a noticeable astrophysical effect, while bullet-cluster and cluster-scale observations require $\sigma/M \lesssim 1~\mathrm{cm}^2/\mathrm{g}$ globally and $\lesssim 0.1~\mathrm{cm}^2/\mathrm{g}$ at cluster velocities, motivating velocity-dependent SIDM models with a light mediator~\cite{Kaplinghat:2015aga}.
 The review of Tulin and Yu~\cite{Tulin:2017ara} summarizes the status of the program, and the ETHOS framework~\cite{Cyr-Racine:2015ihg} provides a systematic way to integrate non-standard dark-matter interactions into cosmological hydrodynamical simulations for direct comparison with dwarf-galaxy data.
 
@@ -173,11 +173,16 @@ The Sommerfeld effect is essential for heavy electroweak \glspl{WIMP_} --- the p
 For the pure wino in particular, the enhanced halo rate at $v_\mathrm{rel}\sim 10^{-3}\,c$ is large enough that current gamma-ray constraints effectively rule the candidate out for cuspy halo profiles.
 For the GeV-scale candidates relevant to the Galactic Center excess analyzed in Chapter~\ref{ch:4}, by contrast, the standard thermal cross section fits the observed signal without invoking Sommerfeld enhancement, as Daylan et al.~\cite{Daylan:2014rsa} showed explicitly for a $\sim \blue{35}$--$\blue{50}\,\mathrm{GeV}$ \WIMP annihilating at $\langle\sigma v\rangle \approx (1$--$3)\times 10^{-26}\,\mathrm{cm}^3/\mathrm{s}$.
 
+\paragraph{\blue{Bound-state formation.}}
+\blue{The same light mediator that produces the Sommerfeld enhancement supports a second non-perturbative effect: two dark matter particles can emit a mediator and fall into a bound state, in close analogy with hydrogen recombination~\cite{vonHarling:2014kha}.
+Because the constituents of the bound state annihilate rapidly, this capture process opens an additional depletion channel during freeze-out, which lowers the relic abundance and pushes the thermal mass of heavy candidates to larger values~\cite{Mitridate:2017izz}.
+At halo velocities the formation rate is enhanced much like the Sommerfeld factor, and the mediator emitted during capture carries away the binding energy, producing a sharp spectral feature that indirect searches can target~\cite{Baldes:2020hwx}.}
+
 \paragraph{Co-annihilation and resonance.}
 \blue{Two further refinements deserve mention because they directly affect the indirect detection prospects.
 The first is \emph{co-annihilation}: if the dark sector contains partner particles nearly degenerate with $\chi$, they stay abundant during freeze-out and help deplete the dark-matter density~\cite{Ellis:1983ew,Griest:1990kh}.
 Since these partners later decay into $\chi$, the present-day annihilation cross section of the surviving species can differ substantially from the effective freeze-out value, weakening the link between $\Omega_\chi h^2$ and the indirect-detection signal.
-The second is \emph{resonant annihilation}: when dark matter annihilates through an $s$-channel mediator with mass near threshold, $m_\mathrm{med}\approx 2 M_\chi$, the cross section acquires a sharp velocity dependence of Breit--Wigner form~\cite{Griest:1990kh,Gondolo:1990dk}, so the present-day rate may be either enhanced or suppressed relative to freeze-out.
+The second is \emph{resonant annihilation}: when dark matter annihilates through an $s$-channel mediator with mass near threshold, $m_\mathrm{med}\approx 2 M_\chi$, the cross section acquires a sharp velocity dependence of Breit--Wigner form~\cite{Griest:1990kh,Gondolo:1990dk}, so the present-day rate may be enhanced relative to freeze-out.
 Both effects introduce model dependence into the mapping from $\langle\sigma v\rangle_\mathrm{cosmo}$ to the observable annihilation rate.}
 
 These refinements lead to several distinct theoretical scenarios, of which the standard case --- $s$-wave annihilation --- is the simplest and the least model-dependent.
