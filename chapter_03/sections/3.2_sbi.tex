@@ -3,7 +3,8 @@
 
 The inference framework presented in Section~\ref{sec:3.1} assumes that the likelihood function can be evaluated explicitly.
 This assumption holds for many standard analyses, but it breaks down when the data-generating process involves a complex simulator whose internal stochastic structure prevents the likelihood from being written in closed form.
-Simulation-based inference (SBI) provides a principled alternative: \blue{when evaluating the likelihood analytically is impossible or impractical}, one trains machine learning models on simulated data to approximate the posterior, the likelihood, or their ratio.
+\blue{Such simulators are increasingly common in physics: as experiments gather ever richer data, the models built to describe detectors and observations have grown steadily in fidelity and complexity~\cite{Cranmer:2020}. At this level of complexity, simple approximate likelihoods no longer describe the simulator output faithfully.}
+Simulation-based inference (SBI) provides a principled alternative: \blue{rather than writing down an explicit approximation of the likelihood}, one trains machine learning models on simulated data to approximate the posterior, the likelihood, or the likelihood-to-evidence ratio.
 This section introduces the SBI paradigm, the neural estimation strategies \blue{behind} it, and the validation techniques required to ensure the reliability of the results.
 
 %% --- 3.2.1 ---
@@ -15,10 +16,10 @@ The inference methods presented in Section~\ref{sec:3.1} share a common requirem
 In many problems of interest, however, the data-generating process is described by a complex computer simulation, \blue{and the results of such simulations are formally samples from the implicit likelihood.}
 Such models are known as \emph{implicit models}, in contrast to \emph{prescribed models} for which the likelihood can be written in closed form~\cite{Cranmer:2020,Diggle:1984}.
 The resulting inference problem has historically been called \emph{likelihood-free inference}, although the term is somewhat misleading: these methods typically estimate the intractable likelihood rather than dispensing with it entirely.
-\blue{The more descriptive term \emph{implicit likelihood methods} is now preferred~\cite{Cranmer:2020}, and \emph{simulation-based inference} (SBI) is a term often used as an equally valid synonim. For convenience, and to align with the machine learning literature, we will refer to simulation-based inference throughout this thesis.}
+\blue{The more descriptive term \emph{implicit likelihood methods} is now preferred~\cite{Cranmer:2020}, and \emph{simulation-based inference} (SBI) is a term often used as an equally valid synonym. For convenience, and to align with the machine learning literature, we will refer to simulation-based inference throughout this thesis.}
 
 The source of the difficulty is straightforward to state.
-A typical simulator takes as input a vector of physical parameters $\boldsymbol{\theta}$, samples a series of internal stochastic states or latent variables $z_i$,\footnote{\blue{In the context of implicit likelihood methods, the latent variables $z_i$ represent the internal stochastic states of the simulator that are not directly observable. For example, in the context of the work of Chapter \ref{ch:6}, that would be the position of the indibidual gamma-ray sources.}} and produces synthetic data $\mathbf{x}$ as output.
+A typical simulator takes as input a vector of physical parameters $\boldsymbol{\theta}$, samples a series of internal stochastic states or latent variables $z_i$,\footnote{\blue{In the context of implicit likelihood methods, the latent variables $z_i$ represent the internal stochastic states of the simulator that are not directly observable. For example, in the context of the work of Chapter \ref{ch:6}, that would be the position of the individual gamma-ray sources.}} and produces synthetic data $\mathbf{x}$ as output.
 The exact likelihood of this output requires marginalizing over the joint density of data and latent variables:
 \begin{equation}
 	\label{eq:intractable_likelihood}
@@ -57,7 +58,7 @@ However, because the prior enters the training, changing the prior requires retr
 
 \emph{Neural Likelihood Estimation} (NLE) instead approximates the likelihood function $p(\mathbf{x}|\boldsymbol{\theta})$, conditioning the density estimator on $\boldsymbol{\theta}$ rather than on $\mathbf{x}$~\cite{Cranmer:2020}.
 Once the likelihood surrogate is trained, \blue{Bayesian inference proceeds through standard means, for example through MCMC sampling with any choice of prior.}
-This separation of the likelihood from the prior provides additional flexibility, at the cost of an extra sampling step.
+This separation of the likelihood from the prior provides additional flexibility. \blue{The downside is that approximating a high-dimensional likelihood is generally more expensive than targeting the posterior directly, and posterior samples are not immediately available: they must be drawn from the trained likelihood surrogate through the additional MCMC step.}
 
 \emph{Neural Ratio Estimation} (NRE) takes a different approach altogether: rather than learning a probability density, a classifier is trained via supervised learning to discriminate between synthetic datasets generated at different parameter points. \blue{This is attractive because classification is sometimes a more tractable learning problem than density estimation, especially in high-dimensional spaces.}
 The classifier output can be converted into the likelihood-to-evidence ratio $r(\mathbf{x},\boldsymbol{\theta}) = p(\mathbf{x}|\boldsymbol{\theta})/p(\mathbf{x})$, which is proportional to the posterior up to the prior~\cite{Cranmer:2020,Miller2021arxiv}.
@@ -66,10 +67,9 @@ The classifier output can be converted into the likelihood-to-evidence ratio $r(
 % A key advantage of NRE is its ability to target arbitrary low-dimensional marginal posteriors directly, without first estimating the full joint posterior on both the parameters of interest and the nuisance parameters~\cite{Cranmer:2020,Miller2021arxiv}.
 Once the classifier is trained, evaluating the posterior density at any point is fast, but drawing samples still requires MCMC. \blue{This is possibly the main drawback of NRE, as full posterior sampling and calibration are significantly more expensive than in NPE.}
 
-\blue{All three strategies provide \emph{amortized inference}: the computationally expensive simulations are performed once. 
-Training a model does not require running the simulator for every new observation, and different model architectures can be explored without additional calls to the simulator.
-Once a model has been trained, it can be applied to sample the posterior for any new observed data, without additional calls to the simulator~\cite{Cranmer:2020}.
-The neural network also implicitly marginalizes over the vast latent space of the simulator, so the trained surrogate is likely to preserve information that hand-crafted summary statistics would discard --- which makes SBI well suited to field-level inference. }
+\blue{All three strategies support \emph{amortized} variants: the computationally expensive simulations are performed once, and the trained model can then sample the posterior for any new observation without additional calls to the simulator~\cite{Cranmer:2020}.
+This reuse of the upfront simulation cost across arbitrarily many observations is what \emph{amortization} properly refers to; as an added practical benefit, the simulated dataset itself can also be reused to train multiple neural networks, which is particularly useful for hyperparameter tuning and model selection.
+A further advantage is that SBI implicitly marginalizes over the vast latent space of the simulator, so the trained surrogate can retain information that hand-crafted summary statistics would discard; this makes SBI well suited to field-level inference.}
 
 \paragraph{Application preview.}
 

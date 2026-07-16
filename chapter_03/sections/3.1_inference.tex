@@ -75,25 +75,24 @@ To compare competing hypotheses---for instance, whether a gamma-ray source exist
 \end{equation}
 where $\mathcal{L}_0$ is the likelihood under the null hypothesis and $\mathcal{L}_1$ the likelihood under the alternative (or, more commonly, the globally maximized likelihood) \cite{Mattox:1996zz}.
 By Wilks' theorem, under \blue{mild} regularity conditions the TS is asymptotically distributed as a $\chi^2$ random variable with degrees of freedom equal to the difference in free parameters between the two hypotheses \cite{Wilks:1938}\blue{, which lets us convert a TS value into a statistical significance without resorting to explicit Monte Carlo simulations}.
-\blue{The same asymptotic result can be used for the construction of confidence intervals, understood as the inverted test. Rather than fixing a single threshold and asking whether the null is rejected, we scan the parameter of interest and retain the range over which the profile-likelihood TS stays below the appropriate $\chi^2$ quantile.}
-% \blue{For a 95\% confidence-level upper bound on a single parameter, the conventional choice is to identify the value at which $\mathrm{TS} = 3.84$---the 95\% quantile of $\chi^2_1$, which is conservative for a one-sided bound.}
-\blue{Hypothesis testing and interval estimation are thus two uses of the same construction: the same test statistic and the same quantile quantify a detection significance and delimit a confidence interval.}
+\blue{Wilks' theorem is, strictly speaking, a result about hypothesis testing. In the context of this thesis, however, hypothesis testing mostly means setting confidence intervals or upper bounds on a parameter of interest. These are obtained by inverting the test: rather than fixing a single threshold and asking whether the null is rejected, we scan the parameter and retain the range over which the profile-likelihood TS stays below the appropriate $\chi^2$ quantile.}
 
 \paragraph{\blue{Bootstrap confidence intervals.}}
 
 \blue{The $\chi^2$ calibration of the TS rests on the regularity conditions of Wilks' theorem, and these can fail in situations that recur in gamma-ray analyses: when a parameter lies on a physical boundary---a flux or a cross-section that cannot be negative---or when the sample is small enough that the asymptotic regime has not yet set in.}
-\blue{In such cases the bootstrap provides a general-purpose strategy \cite{Efron:1979}: we repeatedly refit the estimator, either on datasets resampled from the observed data (the \emph{nonparametric} bootstrap) or on synthetic datasets drawn from the fitted model (the \emph{parametric} bootstrap), and read the confidence interval directly from the spread of the re-fitted estimates---the containment interval of their empirical distribution.}
-\blue{In Chapter~\ref{ch:5}, the uncertainty band on the dark matter annihilation cross-section bounds is obtained in exactly this way.}
+\blue{In such cases the bootstrap provides a general-purpose strategy \cite{Efron:1979}: we repeatedly refit the estimator, either on datasets resampled from the observed data (the \emph{nonparametric} bootstrap, or "with replacement") or on synthetic datasets drawn from the fitted model (the \emph{parametric} bootstrap), and read the confidence interval directly from the spread of the re-fitted estimates---the containment interval of their empirical distribution.}
+\blue{In Chapter~\ref{ch:5}, the uncertainty band on the dark matter annihilation cross-section bounds is obtained using a parametric bootstrap.}
 
 \paragraph{\blue{Goodness of fit.}}
 
 \blue{A different question arises when we wish to assess the absolute compatibility of the data with a single model, without testing it against any specific alternative.}
-\blue{Goodness-of-fit tests designed for this purpose come in parametric and nonparametric forms \cite{Cowan:1998ji}.}
-\blue{Parametric tests assume a sampling distribution for a summary of the data; the classic example is Pearson's $\chi^2$ test, which compares binned counts with model expectations and refers the sum of squared normalized residuals to a $\chi^2$ distribution.}
-\blue{Nonparametric tests instead compare data and model directly at the level of their distribution functions, without assuming a functional form for the discrepancy.}
-\blue{Among the many nonparametric options, one which is employed in this thesis is the Kolmogorov--Smirnov (KS) test \cite{KS_test}.}
-\blue{Its test statistic is the supremum of the absolute difference between the empirical cumulative distribution function of the data and the cumulative distribution predicted by the model.}
-\blue{When the null model is fully specified, the null distribution of this statistic does not depend on the model being tested.}
+\blue{Two general-purpose goodness-of-fit tests serve this purpose \cite{Cowan:1998ji}: Pearson's $\chi^2$ test and the Kolmogorov--Smirnov (KS) test \cite{KS_test}.}
+\blue{Pearson's $\chi^2$ test compares binned counts with model expectations and refers the sum of squared normalized residuals to a $\chi^2$ distribution.}
+\blue{The KS test instead compares data and model at the level of their cumulative distributions: its test statistic is the supremum of the absolute difference between the empirical cumulative distribution function of the data and the cumulative distribution predicted by the model.}
+\blue{Because it operates on the unbinned data directly, the KS test is additionally independent of any binning choice.}
+\blue{Moreover, when the null model is fully specified, the null distribution of its statistic does not depend on the model being tested.}
+\blue{In practice, the model prediction is often available only as a finite simulated sample rather than an analytic cumulative distribution.}
+\blue{The same statistic computed between the two empirical cumulative distribution functions is then known as the \emph{two-sample} form of the KS test.}
 \blue{The KS test is therefore a convenient distribution-free diagnostic when no specific alternative is preferred.}
 
 \paragraph{\blue{Non-nested model comparison.}}
@@ -175,6 +174,8 @@ For most inference tasks encountered in practice---parameter estimation, upper-l
 \blue{Both can incorporate external constraints.}
 \blue{In the Bayesian framework these enter through the prior---restricting fluxes to non-negative values, for example, or spectral indices to physically motivated ranges.}
 \blue{A frequentist analysis imposes the same requirements through bounded parameter ranges or constrained fits.}
+\blue{Bounding a parameter is not entirely free of subtleties, however: when the true value may lie close to the boundary, standard interval constructions can undercover or return empty intervals.}
+\blue{The unified approach of Feldman and Cousins \cite{Feldman:1997qc} resolves this by transitioning smoothly between upper limits and two-sided intervals while guaranteeing correct coverage.}
 \blue{The choice between them is therefore pragmatic rather than fundamental, driven by the structure of the problem, computational considerations, and---above all---the conventions of the relevant research community.}
 High-energy particle physics and the Fermi-LAT collaboration have traditionally favored frequentist methods: source detection via the TS, upper limits via the profile likelihood and Wilks' theorem, catalog pipelines built on maximum-likelihood fitting \cite{Mattox:1996zz}.
 \blue{Cosmology and large-scale-structure analyses, by contrast,} have largely adopted Bayesian Markov Chain Monte Carlo (MCMC) methods \blue{\cite{Trotta:2008qt}}.
