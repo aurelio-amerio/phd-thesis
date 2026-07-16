@@ -9,7 +9,7 @@ rays are among the cleanest messengers we have to look for the non-gravitational
 signatures of that dark sector, since an annihilation or decay signal would
 add photons to a sky we probe extensively.
 The difficulty is that any such signal would be buried in astrophysical
-backgrounds that are bright, structured, and imperfectly known, so the dark
+backgrounds that are bright, structured, or imperfectly known, so the dark
 matter component we are after is faint and easily mimicked.
 This thesis followed a common thread through that problem: recovering signals in
 noise-dominated regimes requires statistical
@@ -34,7 +34,7 @@ for dark matter masses between $10$~GeV and $1$~TeV~\cite{Amerio:2025fhz}
 synthetic maps to reconstruct the extragalactic source-count distribution
 \dnds{} down to fluxes a factor of fifty below the catalog
 threshold~\cite{Amerio:2023uet} (Chapter~\ref{ch:6}), and used the
-reconstructed \dnds{} as a generative model to build the public gPCS
+reconstructed \dnds{} as a generative model to build the public \texttt{gPCS}
 (gamma-ray Photon Count Statistics) probabilistic catalog, which identifies
 about $50\%$ more candidate source directions than 4FGL-DR3
 alone~\cite{Amerio:2023rjn} (Chapter~\ref{ch:7}). Finally, we forecast the
@@ -80,8 +80,8 @@ developed in this thesis.
     \item \textbf{Dark matter subhalos among unassociated sources:} We
     constrained the subhalo contribution to the unassociated sources by maximum
     likelihood, using quantification learning to handle the covariate and prior
-    shift between the associated sources used for training and the unassociated
-    targets, and we found no significant excess~\cite{Amerio:2025fhz}. A natural extension is to velocity-dependent
+    shift between the associated sources used for training and the unassociated \Fermi-LAT
+    targets, and we found no significant excess~\cite{Amerio:2025fhz}. A natural extension is to consider velocity-dependent
     annihilation, such as Sommerfeld enhancement~\cite{ArkaniHamed:2008qn}:
     the nearest small subhalos have velocity dispersions of a few
     $\mathrm{km/s}$~\cite{2024MNRAS.530.2496A}, which could raise the
@@ -111,7 +111,7 @@ developed in this thesis.
     % Chapter~\ref{ch:8}.
 
     \item \textbf{Probabilistic cataloging of the gamma-ray sky:} Using the
-    reconstructed \dnds{} as a generative model, gPCS compares synthetic and
+    reconstructed \dnds{} as a generative model, \texttt{gPCS} compares synthetic and
     real skies pixel by pixel and flags candidate source directions
     \cite{Amerio:2023rjn}. Its main application is in cross-correlation studies
     with galaxy catalogs, along two routes. Cross-matching the candidate
