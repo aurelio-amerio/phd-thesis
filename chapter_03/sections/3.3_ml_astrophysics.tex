@@ -15,7 +15,7 @@ Both appear in this thesis: Chapter~\ref{ch:6} works at the field level, feeding
 \label{sec:3.3.1}
 
 Machine learning provides \blue{additional} tools for extracting information from data when explicit physical models are either unavailable or computationally intractable~\cite{bishop,Hastie:2009}.
-\blue{Machine learning problems are conventionally divided into three canonical learning tasks.}
+\blue{In Astrophysics, machine learning problems are often divided into three common learning tasks.}
 
 \blue{The first is \textit{density estimation}: approximating the probability distribution from which the observed data are drawn.
 Rather than answering a single question about each input, a density estimator reconstructs the distribution as a whole---``what does the overall population look like?''---and any quantity of interest can then be computed from it.
@@ -36,7 +36,7 @@ The \blue{third} task is \textit{regression}: predicting a continuous quantity f
 \blue{It is important to note that when the full distribution is accessible, the other two tasks can be performed as special cases.
 Class labels can be assigned by comparing the estimated densities of the candidate populations, which is explored as a secondary result in Chapter~\ref{ch:5}.
 A point prediction can likewise be read off as a summary of the distribution---its mean, for instance--- which is what we do in Chapter~\ref{ch:6} when deriving the frequentist confidence intervals.
-In this sense, density estimation is arguably the more general of the three tasks: it retains the richest description of the data, from which discrete labels and point estimates can be derived, when needed.
+In this sense, density estimation is arguably the most fundamental of the three tasks: it retains the richest description of the data, from which discrete labels and point estimates can be derived, when needed.
 This generality has a cost---estimating a full distribution is harder than answering a single question about each input---so direct classification or regression remains the practical choice for many applications when a solid understanding of the uncertainties is not required.}
 
 \subsection{Neural Networks and Deep Learning}
@@ -55,7 +55,9 @@ The choice of cost function determines what and how the network learns.
 % and all of the losses used in this thesis are best understood as instances of maximum-likelihood estimation under an appropriate probabilistic model~\cite{bishop,Murphy:2022pml}.
 For example, for a standard regression problem, the mean squared error $\mathcal{J} = \sum_i (y_i^\mathrm{true} - y_i^\mathrm{pred})^2$ penalises deviations between predictions and targets uniformly and coincides, up to constants, with the negative log-likelihood of the targets under a homoscedastic Gaussian noise model.
 For classification, the cross-entropy loss measures the divergence between predicted class probabilities and one-hot labels and is equivalently the negative log-likelihood of the observed labels under a categorical model.
-\blue{Density estimation in machine learning is often cast as minimising the Kullback--Leibler (KL) divergence, in its forward or reverse form, although alternative objectives are also common (see for example \cite{Lipman:2023hef}). The KL divergence quantifies the mismatch between the data distribution and the parametric model: it is non-negative and vanishes only when the two distributions coincide, so smaller values indicate a better fit.}
+\blue{Density estimation in machine learning is often cast as minimising the Kullback--Leibler (KL) divergence, in its forward or reverse form. The KL divergence quantifies the mismatch between the data distribution and the parametric model: it is non-negative and vanishes only when the two distributions coincide, so smaller values indicate a better fit.
+% Minimising the forward KL divergence is equivalent to maximising the log-likelihood of the data, since the data-side entropy does not depend on the model parameters.
+The KL divergence is not the only possible measure of discrepancy between distributions, and other notions of distance exist, see~\cite{Goodfellow:2014gan, Lipman:2023hef}.}
 
 % because the data-side entropy is independent of the model parameters, this minimisation reduces to maximising the log-likelihood of the data---or, for latent-variable models in which the marginal likelihood is intractable, the evidence lower bound (ELBO).
 When the noise level varies across the output space, the Gaussian variance can itself be parameterised as a network output, yielding the heteroscedastic Gaussian negative log-likelihood~\cite{heteroscedastic-error}; the formalism is presented in Section~\ref{sec:bayesian-error}, where Chapter~\ref{ch:6} puts it to use.

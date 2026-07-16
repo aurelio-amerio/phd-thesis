@@ -69,7 +69,7 @@ Once the classifier is trained, evaluating the posterior density at any point is
 
 \blue{All three strategies support \emph{amortized} variants: the computationally expensive simulations are performed once, and the trained model can then sample the posterior for any new observation without additional calls to the simulator~\cite{Cranmer:2020}.
 This reuse of the upfront simulation cost across arbitrarily many observations is what \emph{amortization} properly refers to; as an added practical benefit, the simulated dataset itself can also be reused to train multiple neural networks, which is particularly useful for hyperparameter tuning and model selection.
-A further advantage is that SBI implicitly marginalizes over the vast latent space of the simulator, so the trained surrogate can retain information that hand-crafted summary statistics would discard; this makes SBI well suited to field-level inference.}
+A further advantage is that SBI by construction implicitly marginalizes over the vast latent space of the simulator, so the trained surrogate can retain information that hand-crafted summary statistics would discard~\cite{Cranmer:2020,Mishra-Sharma:2021oxe}. This is one of the properties that makes SBI particularly interesting for field-level inference, as demonstrated in cosmological analyses of galaxy clustering and weak gravitational lensing~\cite{Jeffrey:2020xve,SimBIG:2023ywd,Makinen:2024bff,Zeghal:2024kic}.}
 
 \paragraph{Application preview.}
 
@@ -86,13 +86,13 @@ The approach operates in the spirit of NPE: the network directly maps an observe
 
 A neural density estimator trained on finite simulations can, in principle, produce posteriors that are poorly calibrated: the reported credible intervals may be systematically too narrow or too wide.
 Validating SBI results is therefore an integral part of any simulation-based analysis, and the simulator itself provides the means for doing so. 
-\blue{We notice that validation would in principle also be required even when performing inference with a known likelihood, but it is often overlooked in practice as it is often computationally intractable for standard MCMC methods.}
+\blue{We notice that validation would in principle also be required even when performing inference with a known likelihood, but it is sometimes overlooked in practice as it is often computationally intractable for standard MCMC methods.}
 
 \blue{The standard validation strategy is \emph{coverage testing}, and the procedure is conceptually simple.}
 One samples parameters $\boldsymbol{\theta}^*$ from the prior, generates synthetic data $\mathbf{x}^* \sim p(\mathbf{x}|\boldsymbol{\theta}^*)$ using the simulator, and then applies the trained estimator to obtain the approximate posterior $\hat{p}(\boldsymbol{\theta}|\mathbf{x}^*)$.
 Because the true parameters are known by construction, one can check whether the posterior places the correct amount of probability mass around $\boldsymbol{\theta}^*$.
 Repeating this test across hundreds or thousands of independent simulations yields a statistical picture of the estimator's calibration: if the $(1-\alpha)$ credible intervals contain the true parameters in exactly a fraction $(1-\alpha)$ of trials, the estimator is well-calibrated.
-\blue{Comparing the empirical coverage with the nominal level across a range of credibility thresholds produces a coverage-vs-credibility plot; departures from the diagonal indicate over- or underdispersion of the posterior, and the discrepancy is formally quantified through the empirical calibration error~\cite{Cranmer:2020,Hermans:2021rqv}.}
+\blue{Comparing the empirical coverage with the nominal level across a range of credibility thresholds produces a coverage-vs-credibility plot; departures from the diagonal indicate over- or underdispersion of the posterior, and the discrepancy is formally quantified through the empirical calibration error~\cite{Cranmer:2020,Hermans:2021rqv}. When perfect calibration cannot be achieved, a slightly underconfident model (above the diagonal) is generally preferable in physics, since it yields conservative error bars.}
 
 \blue{Coverage testing is} particularly well-suited to amortized SBI estimators, since evaluating the posterior for each new synthetic observation is generally fast (particularly for NPE) once the network has been trained.
 \blue{For non-amortized methods, the computational cost of fitting a new posterior for each of the hundreds or thousands of required test datapoints would be prohibitive.}
@@ -106,7 +106,8 @@ Several complementary diagnostics are therefore often employed alongside it.
 \emph{Tests of accuracy with random points} (TARP) assess joint coverage through credible regions centered on random reference points, which extends the diagnostic to generative estimators whose density cannot be evaluated explicitly~\cite{Lemos:2023}.
 Local diagnostics such as the \emph{local classifier two-sample test} (L-C2ST) train a classifier to distinguish true from estimated posterior samples for individual observations, exposing failures that the global averages above wash out~\cite{Linhart:2023}.
 Most importantly, \emph{posterior predictive checks} validate the inference in data space: parameters drawn from the estimated posterior are fed back through the simulator, and the resulting synthetic observations are compared with the observed data.
-A mismatch at this stage signals a badly wrong posterior or a misspecified simulator, a failure mode to which the parameter-space tests are blind. While possibly the most complete test, posterior predictive checks are also the most computationally expensive, since they require additional simulator calls for each posterior sample.}
+% A mismatch at this stage signals a badly wrong posterior or a misspecified simulator, a failure mode to which the parameter-space tests are blind. 
+While possibly the most complete test, posterior predictive checks are also the most computationally expensive, since they require additional simulator calls for each posterior sample.}
 
 In practice, many SBI analyses supplement these general calibration checks with problem-specific diagnostics.
 % In Chapter~\ref{ch:6}, the internally estimated Bayesian uncertainties are cross-checked against frequentist error bars derived from the distribution of residuals over the validation set (see also Section~\ref{sec:3.1.4}).
