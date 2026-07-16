@@ -79,9 +79,9 @@ that a NN with arbitrary depth and  non-linearities, with dropout applied before
 In a subsequent analysis \cite{heteroscedastic-error} it has been shown how to estimate the first and second momenta (mean and variance) of the posterior distribution, under the assumption of a Gaussian likelihood of unknown variance. In particular \cite{heteroscedastic-error} shows how to define a neural network capable of determining the appropriate variances of such a multivariate Gaussian.
 In our case, training a neural network with such an approach is advantageous, as the neural network will learn to weight less the component of the measurement at low fluxes, which we expect to be more uncertain, which helps in obtaining stable measurements for the test dataset. 
 
-Following \cite{heteroscedastic-error} we define the heteroscedastic Gaussian negative log-likelihood:
+Following \cite{heteroscedastic-error}, we thus approximate our posterior distribution with a Gaussian distribution, and define the cost function accordingly:
 \begin{equation}
-    \textsl{NLL} = \sum_{i=1}^N  \left[\frac{(y_i^\textrm{true}-y_i^\textrm{pred})^2}{2\sigma_i^2} + \frac{1}{2} \log(\sigma_i^2)  +  \frac{1}{2} \log(2\pi)  \right]
+    \mathcal{C} = \sum_{i=1}^N  \left[\frac{(y_i^\textrm{true}-y_i^\textrm{pred})^2}{2\sigma_i^2} + \frac{1}{2} \log(\sigma_i^2)  +  \frac{1}{2} \log(2\pi)  \right]
 \label{costfunc}    
 \end{equation}
 where we compare the true $\dnds$ and $\fiso$ (transformed as discussed in Section \ref{sec:preprocessing}) used to generate the simulated map with the prediction of the neural network, and thus $N=20+1$.

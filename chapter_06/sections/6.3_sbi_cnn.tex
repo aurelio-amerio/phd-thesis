@@ -14,25 +14,25 @@ The generating function formalism underlying the 1pPDF method rests on several s
 
 \textit{Neglect of spatial correlations.}
 The 1pPDF treats each pixel independently.
-In practice, however, the point-spread function (PSF) of the \textit{Fermi} LAT smears a point source across multiple pixels, introducing spatial correlations that the generating function approach does not capture.
+In practice, however, the point-spread function (PSF) of the \textit{Fermi} LAT smears a point source across multiple pixels, introducing spatial correlations that the generating function approach does not entirely capture.
 These correlations carry information about the source-count distribution that is discarded in the single-pixel treatment, reducing the effective constraining power and potentially introducing biases.
 
-\textit{Parametric dependence.}
-The $dN/dS$ is typically modeled as a multiply broken power law with a fixed number of segments.
+\textit{Limited functional form flexibility.}
+The $dN/dS$ is typically modeled as a multi break power law with a fixed number of segments, for computational reasons.
 This assumption is sufficiently flexible for smooth, featureless distributions, but it cannot accommodate spectral features, bumps, or breaks at unforeseen flux values.
 The reconstruction is therefore conditional on the assumed functional form.
+Nonetheless, it is important to notice that prior works including \cite{Zechlin:2016pme} have not found a preference for a model with more than 2-3 break points, suggesting that the parametric assumption is not a major limitation in practice.
 
 \textit{Computational cost and absence of amortization.}
 The explicit 1pPDF likelihood is expensive to evaluate: each call requires recomputing the generating function at every pixel.
-Sampling the posterior with MCMC compounds this cost, since exploring the high-dimensional space of $dN/dS$ and nuisance parameters (such as the Galactic foreground normalization) requires many such evaluations.
+Sampling the posterior with MCMC compounds this cost, requiring many such evaluations.
 Moreover, the inference is not amortized: every new sky map, whether observed or simulated, demands a fresh set of MCMC chains.
 This becomes a concrete disadvantage when the method must be validated, since quantifying potential biases requires running the analysis on simulated maps with known $dN/dS$, each carrying the full cost of new chains.
 In practice, \blue{validating the method therefore carries a substantial computational cost}.
 
 \textit{Limited multi-band extension.} While multi-energy extensions of the 1pPDF have been performed \cite{Zechlin:2016pme,Lisanti:2016jub}, extending the formalism to a large number of energy bins simultaneously is practically challenging, since the number of model parameters and the computational cost grow rapidly.
 
-The community has recognized some of these issues: Zechlin et al.
-\ developed a Compound Poisson Generator (CPG) formalism \cite{Cuoco-1pdf} to address potential biases in the 1pPDF approach, though this alternative still operates within the generating-function framework.
+The community has recognized some of these issues: Zechlin et al. developed a Compound Poisson Generator (CPG) formalism \cite{Cuoco-1pdf} to address potential biases in the 1pPDF approach, though this alternative still operates within the generating-function framework.
 A fundamentally different strategy is needed to overcome all four limitations simultaneously.
 
 \subsection{A Simulation-Based Approach}
@@ -42,9 +42,9 @@ The limitations identified above share a common root: the 1pPDF relies on an a s
 An alternative is to bypass the likelihood entirely and employ implicit likelihood methods, the general framework introduced in Section~\ref{sec:3.2}.
 
 \blue{As discussed in Chapter~\ref{ch:methods}, in the \SBI paradigm the likelihood is never evaluated explicitly: it is defined implicitly by the simulator (Section~\ref{sec:3.2.1}).
-In general, writing the likelihood would require marginalizing over all the latent variables of the simulator; sampling from it, by contrast, only requires running it forward.
+Ignoring the 1pPDF formalism, in general, writing the likelihood would require marginalizing over all the latent variables of the simulator; sampling from it, by contrast, only requires running it forward.
 In practice,} one draws source fluxes from a parametric $dN/dS$, places them on the sky following an assumed spatial distribution, convolves with the instrument PSF and exposure, adds the Galactic foreground and isotropic background, and applies Poisson noise to produce a synthetic photon-count map.
-Each simulation is fast (around 0.1s) and faithful to the known instrumental and astrophysical effects.
+Each simulation is generally fast (around 0.1s) and faithful to the known instrumental and astrophysical effects.
 \blue{Crucially, the latent variables --- here, the position and flux of every individual source --- never need to be handled explicitly: each synthetic map is one random realization of them, so the intractable marginalization is performed implicitly by the simulator itself.}
 
 A convolutional neural network (CNN) is then trained on an ensemble of such simulated maps to learn the mapping from a photon-count sky to the underlying $dN/dS$, using the architecture and training methodology detailed in Section~\ref{sec:3.3}.
@@ -54,7 +54,7 @@ A convolutional neural network (CNN) is then trained on an ensemble of such simu
 % The discretized representation is critical: unlike the parametric power-law adopted by the 1pPDF, it allows the CNN to reconstruct the $dN/dS$ non-parametrically, without assuming a fixed functional form.
 The network employs the heteroscedastic Gaussian cost function and concrete dropout regularisation to estimate both the $dN/dS$ and its uncertainties; the full formalism is presented \blue{later in this chapter} (Section~\ref{sec:bayesian-error}). A frequentist cross-check using the distribution of residuals on held-out validation maps confirms that the Bayesian error bands are well calibrated (Section~\ref{sec:bias}).
 
-This framework addresses the four limitations identified in Section~\ref{sec:6.3.1}: inter-pixel PSF correlations are captured implicitly by the convolutional architecture, the $dN/dS$ is recovered non-parametrically, inference is amortized (additionally a trained network produces predictions in milliseconds), and the pipeline extends naturally to multiple energy bins by adding input channels.
+This framework addresses the four limitations identified in Section~\ref{sec:6.3.1}: inter-pixel PSF correlations are captured implicitly by the convolutional architecture, the $dN/dS$ is recovered with a more flexible shape approach, inference is amortized (additionally a trained network produces predictions in milliseconds), and the pipeline extends naturally to multiple energy bins by adding input channels.
 
 \subsection{Inference on Spherical Data}
 \label{sec:6.3.3}

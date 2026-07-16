@@ -45,10 +45,11 @@ More recently, machine learning classifiers have automated and extended the cand
 % Third, the number of DM candidates depends on an ad hoc probability threshold $p_\mathrm{DM} > p_\mathrm{threshold}$ whose value carries no statistical justification: different thresholds yield candidate counts that can differ by an order of magnitude and, consequently, different physical bounds on $\langle\sigma v\rangle$.
 % The resulting upper limits lack a well-defined confidence level---they represent an assumption ($N_\mathrm{DM} \leq N_\mathrm{candidates}$) rather than a statistical inference.
 \blue{Classification is, in itself, a legitimate way to flag DM subhalo candidates, and machine learning classifiers remain a useful tool for the task.}
-\blue{The limitation lies not in classifying individual sources, but in turning that classification into a population-level constraint on $\langle\sigma v\rangle$.}
+\blue{The limitation lies not in classifying individual sources per se, but in properly tuning those classifiers to the unassociated population and in
+turning that classification into a population-level constraint on $\langle\sigma v\rangle$.}
 \blue{The number of DM candidates depends on an arbitrary probability threshold $p_\mathrm{DM} > p_\mathrm{threshold}$ that needs to be carefully --- and sometimes arbitrarily --- chosen.}
 \blue{Different choices can shift the candidate count, and with it the derived bound on $\langle\sigma v\rangle$.}
-\blue{The resulting upper limits therefore lack a well-defined confidence level: they encode an assumption, $N_\mathrm{DM} \leq N_\mathrm{candidates}$, rather than a statistical inference.}
+\blue{The resulting upper limits therefore sometimes lack a well-defined confidence level: they encode an assumption, $N_\mathrm{DM} \leq N_\mathrm{candidates}$, rather than a statistical inference.}
 \blue{A classifier is a supervised model: it is trained on a labeled, at lest partly simulated dataset to reproduce the conditional probability $p(k|\mathbf{x})$ as accurately as possible, and then applied to the unassociated sources one by one.}
 \blue{The unassociated population as a whole does not generally enter the optimization, and shapes the classifier only through the composition of its training set.}
 \blue{A likelihood-based approach instead learns the class-conditional densities $p(\mathbf{x}|k)$ and treats the prevalences $p(k)$ as free parameters, fitted by maximizing the joint likelihood of the entire unassociated sample.}
@@ -58,7 +59,6 @@ More recently, machine learning classifiers have automated and extended the cand
 
 \subsection{The Quantification Learning Alternative}
 \label{sec:5.4.3}
-
 % The failure of classify-and-count is conceptual, not technical: the approach attempts to answer a population-level question---how many DM subhalos contribute to the unassociated catalog?
 % ---using a tool designed for individual-level decisions.
 % If we had access to an already well established population of DM subhalos, we could train a machine learning model to identify new ones, but that is currently not the case.
