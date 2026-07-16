@@ -105,7 +105,7 @@ Combined with the scanning survey mode described in Section~\ref{sec:fermi_lat},
 
 
 The accuracy of the IRFs relies directly on the underlying event reconstruction algorithms.
-\blue{The Pass~8 analysis framework is a complete reworking of the LAT event-level reconstruction} \cite{Fermi-LAT:2013jgq}.
+The Pass~8 analysis framework is a complete reworking of the LAT event-level reconstruction \cite{Fermi-LAT:2013jgq}.
 A major improvement in Pass~8 was the mitigation of ``ghost signals''---instrumental pile-up and out-of-time residual hits from previous events that previously degraded the reconstruction.
 % By introducing tree-based tracking in the tracker and Minimum Spanning Tree clustering in the calorimeter, Pass~8 successfully separated these artifacts from genuine gamma-ray showers.
 This enabled a significant expansion of the effective area, particularly below 100~MeV and above 1~TeV, while simultaneously reducing background contamination.
@@ -117,9 +117,9 @@ Subsequent iterations, most notably the P8R3 release \cite{Bruel:2018lac}, furth
 \subsection{Data Products and Catalogs}
 \label{sec:data_products}
 With the IRFs established, we now turn to how the LAT data are translated into astrophysical catalogs of gamma-ray sources.
-Converting raw photon events into measurements of individual sources requires disentangling \blue{finite} objects from the structured diffuse backgrounds.
+Converting raw photon events into measurements of individual sources requires disentangling finite objects from the structured diffuse backgrounds.
 The \textit{Fermi}-LAT collaboration achieves this through a maximum likelihood framework \cite{Mattox:1996zz,Fermi-LAT:2019yla}.
-\blue{The observed sky is modeled through the template decomposition introduced in Section~\ref{sec:gde_model}---the structured Galactic diffuse emission plus a spatially uniform isotropic component---augmented with individual point sources, each parametrized by a position and a spectral model.}
+The observed sky is modeled through the template decomposition introduced in Section~\ref{sec:gde_model}---the structured Galactic diffuse emission plus a spatially uniform isotropic component---augmented with individual point sources, each parametrized by a position and a spectral model.
 The normalizations and spectral parameters of all components are simultaneously adjusted to maximize the Poisson likelihood function against the observed photon counts across the sky.
 
 To evaluate the significance of a candidate point source, the framework computes the Test Statistic (TS), defined as \[ TS = 2\ln\frac{\mathcal{L}_1}{\mathcal{L}_0}, \] where $\mathcal{L}_1$ is the maximum likelihood of the model with the candidate source included and $\mathcal{L}_0$ is the maximum likelihood of the null hypothesis without it \cite{Mattox:1996zz}.
@@ -130,7 +130,7 @@ This threshold defines the boundary between what is considered a ``resolved'' so
 
 The results of these analyses have been systematically compiled into a series of catalogs of increasing depth.
 The progression from the First \textit{Fermi}-LAT Catalog (1FGL, based on 11 months of data) through the Third Catalog (3FGL, 4 years, 3,033 sources) to the Fourth Catalog (4FGL, 8 years, 5,064 sources) \cite{Fermi-LAT:2015bhf,Fermi-LAT:2019yla} reflects both the accumulation of exposure and successive improvements in event reconstruction and background modeling.
-The most recent published incremental release, 4FGL-DR4, extends the dataset to 14 years and contains \blue{7,195} sources \cite{Ballet:2023qzs}, with more recent data releases continuing to grow the catalog.
+The most recent published incremental release, 4FGL-DR4, extends the dataset to 14 years and contains 7,195 sources \cite{Ballet:2023qzs}, with more recent data releases continuing to grow the catalog.
 Throughout this evolution, the detection threshold has remained at $TS > 25$, so the growing source count is driven primarily by longer exposure, improvements in the galactic foreground modeling, and improved sensitivity from Pass~8 event reconstruction.
 
 Each catalog entry reports the source localization (with 95\% confidence ellipse), the integrated energy flux in multiple bands, the best-fit spectral model, a variability index, and multi-wavelength associations.
@@ -139,9 +139,9 @@ These spectral characterizations---in particular the flux, spectral index, and c
 
 The association procedure matches each gamma-ray source against catalogs at radio, infrared, optical, and X-ray wavelengths using Bayesian and likelihood-ratio methods.
 Sources receiving a high-confidence match are labeled as ``associated''; those with firm identification through periodicity, correlated variability, or resolved angular extent are labeled as ``identified.''
-In the 4FGL-DR4, \blue{4022} sources are identified or associated with extragalactic objects and \blue{610} with Galactic source classes.
-However, a substantial fraction---\blue{2563} sources---lacks any plausible multi-wavelength counterpart and remains unassociated \cite{Ballet:2023qzs}.
+In the 4FGL-DR4, 4022 sources are identified or associated with extragalactic objects and 610 with Galactic source classes.
+However, a substantial fraction---2563 sources---lacks any plausible multi-wavelength counterpart and remains unassociated \cite{Ballet:2023qzs}.
 These unassociated sources are concentrated along the Galactic plane, where the dense background complicates counterpart searches, and at high latitudes, where their average spectral properties resemble those of blazars of unknown type.
 
-\blue{This population likely consists of faint blazars and pulsars below the sensitivity of current multi-wavelength surveys, but it is also the primary search pool for exotic gamma-ray emitters such as dark matter subhalos.}
-\blue{As mentioned in Chapter~\ref{ch:1} and detailed further in Chapter~\ref{ch:5}, $\Lambda$CDM cosmology predicts a large population of low-mass Galactic subhalos that are too low in mass to retain gas or form stars, and are therefore invisible at all wavelengths except gamma rays, where WIMP annihilation could produce a faint, spectrally soft signal closely resembling an unassociated \textit{Fermi}-LAT point source. Separating such candidates from the astrophysical sources within the 4FGL catalog is the central challenge addressed in Chapter~\ref{ch:5}.}
+This population likely consists of faint blazars and pulsars below the sensitivity of current multi-wavelength surveys, but it is also the primary search pool for exotic gamma-ray emitters such as dark matter subhalos.
+As mentioned in Chapter~\ref{ch:1} and detailed further in Chapter~\ref{ch:5}, $\Lambda$CDM cosmology predicts a large population of low-mass Galactic subhalos that are too low in mass to retain gas or form stars, and are therefore invisible at all wavelengths except gamma rays, where WIMP annihilation could produce a faint, spectrally soft signal closely resembling an unassociated \textit{Fermi}-LAT point source. Separating such candidates from the astrophysical sources within the 4FGL catalog is the central challenge addressed in Chapter~\ref{ch:5}.

@@ -4,15 +4,15 @@
 The CNN-based framework described in the preceding sections was designed to overcome the limitations of existing analytical methods while retaining their strengths.
 Recovering the sub-threshold $dN/dS$ quickly and with calibrated uncertainties opens several scientific directions.
 
-First, a \blue{reliable} measurement of the source-count distribution constrains the faint-end population of astrophysical emitters --- blazars, star-forming galaxies, and millisecond pulsars --- that collectively generate the bulk of the unresolved gamma-ray background.
+First, a reliable measurement of the source-count distribution constrains the faint-end population of astrophysical emitters --- blazars, star-forming galaxies, and millisecond pulsars --- that collectively generate the bulk of the unresolved gamma-ray background.
 Quantifying their contribution is essential before any residual can be attributed to non-standard sources.
 Second, the recovered $dN/dS$ provides the empirical prior for the probabilistic source cataloging framework developed in Chapter~\ref{ch:7}: the flux distribution of sub-threshold sources directly determines the posterior probability that any given sky pixel contains a faint, as-yet-unresolved source.
 Third, the methodology itself is readily extensible.
 An energy-dependent $dN/dS$ reconstruction across multiple energy bands would enable spectral decomposition of the unresolved sky into individual source classes --- and, in principle, a search for spectral signatures inconsistent with known astrophysical populations.
-This extension, while beyond the scope of the present work, \blue{is} a natural next step toward the dark matter cross-correlation searches pursued in Chapter~\ref{ch:8}.
+This extension, while beyond the scope of the present work, is a natural next step toward the dark matter cross-correlation searches pursued in Chapter~\ref{ch:8}.
 
 % The analysis presented below should therefore be understood as a proof of principle for the deep-learning approach to population-level gamma-ray inference.
 % We apply the trained CNN to 14~years of \textit{Fermi}-LAT data in the 1--10~GeV energy band and recover the source-count distribution down to fluxes approximately 50 times below the catalog detection threshold, demonstrating that the method produces stable, well-calibrated results across a wide dynamic range.
-\blue{Applied to real \textit{Fermi}-LAT data, the framework recovers the source-count distribution down to fluxes roughly 50 times below the catalog detection threshold, with stable, well-calibrated results across a wide dynamic range.}
-\blue{The recovered distribution is broadly consistent with independent determinations in the literature. In particular, with the 1pPDF and Compound Poisson Generator analyses of Zechlin, Cuoco et al.~\cite{Cuoco-1pdf} and the recent simulation-based inference reconstruction of Eckner et al.~\cite{Eckner:2025waa}, which probe the same high-latitude sky with different SBI techniques and a more in-deapth treatment of the galactic foreground model.}
-\blue{The remainder of this chapter is based on \cite{Amerio:2023uet} and presents the analysis in full.}
+Applied to real \textit{Fermi}-LAT data, the framework recovers the source-count distribution down to fluxes roughly 50 times below the catalog detection threshold, with stable, well-calibrated results across a wide dynamic range.
+The recovered distribution is broadly consistent with independent determinations in the literature. In particular, with the 1pPDF and Compound Poisson Generator analyses of Zechlin, Cuoco et al.~\cite{Cuoco-1pdf} and the recent simulation-based inference reconstruction of Eckner et al.~\cite{Eckner:2025waa}, which probe the same high-latitude sky with different SBI techniques and a more in-deapth treatment of the galactic foreground model.
+The remainder of this chapter is based on \cite{Amerio:2023uet} and presents the analysis in full.

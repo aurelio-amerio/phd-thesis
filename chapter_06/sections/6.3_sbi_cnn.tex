@@ -1,7 +1,7 @@
 \section{Simulation-Based Inference for $dN/dS$}
 \label{sec:sbi_cnn}
 
-The 1pPDF formalism reviewed in the previous section \blue{is} the most developed analytical approach to sub-threshold source counts.
+The 1pPDF formalism reviewed in the previous section is the most developed analytical approach to sub-threshold source counts.
 It has produced the strongest existing measurements of the gamma-ray $dN/dS$ below the \textit{Fermi}-LAT detection limit.
 However, its underlying assumptions --- a parametric model for the source-count distribution, a simplified treatment of spatial correlations, and a computationally expensive likelihood --- impose limitations that motivate a complementary approach.
 
@@ -28,7 +28,7 @@ The explicit 1pPDF likelihood is expensive to evaluate: each call requires recom
 Sampling the posterior with MCMC compounds this cost, requiring many such evaluations.
 Moreover, the inference is not amortized: every new sky map, whether observed or simulated, demands a fresh set of MCMC chains.
 This becomes a concrete disadvantage when the method must be validated, since quantifying potential biases requires running the analysis on simulated maps with known $dN/dS$, each carrying the full cost of new chains.
-In practice, \blue{validating the method therefore carries a substantial computational cost}.
+In practice, validating the method therefore carries a substantial computational cost.
 
 \textit{Limited multi-band extension.} While multi-energy extensions of the 1pPDF have been performed \cite{Zechlin:2016pme,Lisanti:2016jub}, extending the formalism to a large number of energy bins simultaneously is practically challenging, since the number of model parameters and the computational cost grow rapidly.
 
@@ -41,18 +41,18 @@ A fundamentally different strategy is needed to overcome all four limitations si
 The limitations identified above share a common root: the 1pPDF relies on an a slow analytic likelihood that incorporates only a subset of the information contained in the photon-count map.
 An alternative is to bypass the likelihood entirely and employ implicit likelihood methods, the general framework introduced in Section~\ref{sec:3.2}.
 
-\blue{As discussed in Chapter~\ref{ch:methods}, in the \SBI paradigm the likelihood is never evaluated explicitly: it is defined implicitly by the simulator (Section~\ref{sec:3.2.1}).
+As discussed in Chapter~\ref{ch:methods}, in the \SBI paradigm the likelihood is never evaluated explicitly: it is defined implicitly by the simulator (Section~\ref{sec:3.2.1}).
 Ignoring the 1pPDF formalism, in general, writing the likelihood would require marginalizing over all the latent variables of the simulator; sampling from it, by contrast, only requires running it forward.
-In practice,} one draws source fluxes from a parametric $dN/dS$, places them on the sky following an assumed spatial distribution, convolves with the instrument PSF and exposure, adds the Galactic foreground and isotropic background, and applies Poisson noise to produce a synthetic photon-count map.
+In practice, one draws source fluxes from a parametric $dN/dS$, places them on the sky following an assumed spatial distribution, convolves with the instrument PSF and exposure, adds the Galactic foreground and isotropic background, and applies Poisson noise to produce a synthetic photon-count map.
 Each simulation is generally fast (around 0.1s) and faithful to the known instrumental and astrophysical effects.
-\blue{Crucially, the latent variables --- here, the position and flux of every individual source --- never need to be handled explicitly: each synthetic map is one random realization of them, so the intractable marginalization is performed implicitly by the simulator itself.}
+Crucially, the latent variables --- here, the position and flux of every individual source --- never need to be handled explicitly: each synthetic map is one random realization of them, so the intractable marginalization is performed implicitly by the simulator itself.
 
 A convolutional neural network (CNN) is then trained on an ensemble of such simulated maps to learn the mapping from a photon-count sky to the underlying $dN/dS$, using the architecture and training methodology detailed in Section~\ref{sec:3.3}.
 % The specific configuration adopted for the $dN/dS$ problem discretizes the output into 20 flux bins spanning $[5 \times 10^{-12},\, 10^{-7}]$~cm$^{-2}$~s$^{-1}$, plus the isotropic background level $F_\mathrm{iso}$, yielding 21 output parameters.
 % An ensemble of $9 \times 10^5$ synthetic maps is generated for training.
-\blue{The configuration adopted for the $dN/dS$ problem discretizes the output into a set of flux bins plus the isotropic background level $F_\mathrm{iso}$; the exact binning, flux range, and training-ensemble size are specified later in this chapter (Section~\ref{sec:architechture-and-training}).}
+The configuration adopted for the $dN/dS$ problem discretizes the output into a set of flux bins plus the isotropic background level $F_\mathrm{iso}$; the exact binning, flux range, and training-ensemble size are specified later in this chapter (Section~\ref{sec:architechture-and-training}).
 % The discretized representation is critical: unlike the parametric power-law adopted by the 1pPDF, it allows the CNN to reconstruct the $dN/dS$ non-parametrically, without assuming a fixed functional form.
-The network employs the heteroscedastic Gaussian cost function and concrete dropout regularisation to estimate both the $dN/dS$ and its uncertainties; the full formalism is presented \blue{later in this chapter} (Section~\ref{sec:bayesian-error}). A frequentist cross-check using the distribution of residuals on held-out validation maps confirms that the Bayesian error bands are well calibrated (Section~\ref{sec:bias}).
+The network employs the heteroscedastic Gaussian cost function and concrete dropout regularisation to estimate both the $dN/dS$ and its uncertainties; the full formalism is presented later in this chapter (Section~\ref{sec:bayesian-error}). A frequentist cross-check using the distribution of residuals on held-out validation maps confirms that the Bayesian error bands are well calibrated (Section~\ref{sec:bias}).
 
 This framework addresses the four limitations identified in Section~\ref{sec:6.3.1}: inter-pixel PSF correlations are captured implicitly by the convolutional architecture, the $dN/dS$ is recovered with a more flexible shape approach, inference is amortized (additionally a trained network produces predictions in milliseconds), and the pipeline extends naturally to multiple energy bins by adding input channels.
 
@@ -62,8 +62,8 @@ This framework addresses the four limitations identified in Section~\ref{sec:6.3
 \textit{Fermi}-LAT data are represented as HEALPix sky maps on the sphere.
 Applying standard planar CNNs to such data requires projecting the sphere onto a flat image, which inevitably introduces distortions.
 The \texttt{map2patches} algorithm, described in Section~\ref{sec:3.3}, addresses this by subdividing the HEALPix sphere into 12 equal-area base patches at order $n=0$, each of which is independently mapped to a 2D image and processed through standard 3D convolutions.
-This approach preserves the area and information content of each pixel without spherical distortion, while \blue{retaining the speed of highly optimized standard convolutions}.
+This approach preserves the area and information content of each pixel without spherical distortion, while retaining the speed of highly optimized standard convolutions.
 
 A fully spherical cross-check using the NNHealpix architecture \cite{Krachmalnicoff:2019} yields compatible results, confirming that the map2patches approximation is reliable for the isotropic, small-scale signal of interest.
 The map2patches implementation is approximately an order of magnitude faster, enabling efficient generation of the large training ensembles required by the SBI framework.
-Full architectural details are presented \blue{later in this chapter} (Section~\ref{sec:architechture-and-training}).
+Full architectural details are presented later in this chapter (Section~\ref{sec:architechture-and-training}).

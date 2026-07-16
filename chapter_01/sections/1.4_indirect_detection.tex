@@ -4,15 +4,15 @@
 \section{Indirect Detection via Gamma-Rays}
 \label{sec:1.4}
 
-\blue{We now turn to indirect detection searches.}
+We now turn to indirect detection searches.
 Indirect detection via gamma-rays directly probes the annihilation cross-section --- the quantity that governs the thermal relic abundance and the one quantity that underground laboratories cannot access.
 This section derives the relevant equations for the gamma-rays flux, which is key to every analysis presented in this thesis.
 % This section develops the underlying formalism.
 % We follow the signal from particle physics --- the annihilation and decay rates, the spectra they produce --- through astrophysics --- the density profiles that determine where the dark matter sits --- to derive the equations that predict the gamma-ray flux from any given target.
 % These expressions, and the assumptions that enter them, provide the quantitative foundation for every analysis presented in this thesis.
 
-\blue{We first consider the microphysics of annihilation and decay and the gamma-ray spectra they produce (\S\ref{sec:ann_decay}--\S\ref{sec:spectral_features}), then introduce the dark matter density profiles that determine how the signal varies across the sky (\S\ref{sec:density_profiles}).
-These ingredients combine into the $J$-factor and $D$-factor formalism, which factorizes the predicted flux into a particle-physics term and an astrophysical term (\S\ref{sec:jfactor}). We then survey the observational targets that define the thesis programme (\S\ref{sec:targets}--\S\ref{sec:status}).}
+We first consider the microphysics of annihilation and decay and the gamma-ray spectra they produce (\S\ref{sec:ann_decay}--\S\ref{sec:spectral_features}), then introduce the dark matter density profiles that determine how the signal varies across the sky (\S\ref{sec:density_profiles}).
+These ingredients combine into the $J$-factor and $D$-factor formalism, which factorizes the predicted flux into a particle-physics term and an astrophysical term (\S\ref{sec:jfactor}). We then survey the observational targets that define the thesis programme (\S\ref{sec:targets}--\S\ref{sec:status}).
 
 \subsection{Annihilation and Decay Physics}
 \label{sec:ann_decay}
@@ -20,7 +20,7 @@ These ingredients combine into the $J$-factor and $D$-factor formalism, which fa
 In the $\Lambda$CDM framework, structure forms hierarchically from cold, non-relativistic dark matter, and the particles that populate present-day galactic halos retain typical velocities of order $v \sim 10^{-3}\, c$ \cite{Hooper:2024}.
 They therefore annihilate or decay essentially at rest.
 This kinematic fact has two immediate consequences.
-First, the total center-of-mass energy available in an annihilation event \blue{today is roughly} $\sqrt{s} \sim 2 m_\chi$, so the most energetic photon that can be produced carries energy $E_\gamma = m_\chi$.
+First, the total center-of-mass energy available in an annihilation event today is roughly $\sqrt{s} \sim 2 m_\chi$, so the most energetic photon that can be produced carries energy $E_\gamma = m_\chi$.
 For decay, the available energy is instead $m_\chi$, and momentum conservation among at least two daughter particles limits the maximum photon energy to $E_\gamma = m_\chi / 2$.
 These hard kinematic endpoints are among the most distinctive features of a dark matter signal, since known astrophysical gamma-ray sources do not generically produce spectra with such a sharp cutoff tied to a single mass scale.
 
@@ -43,20 +43,20 @@ Decay, by contrast, is a single-particle process with a rate proportional to the
 %
 where $\tau$ is the dark matter lifetime.
 % Current gamma-ray observations constrain $\tau \gtrsim 10^{28}$ s \cite{Cohen:2016uyg,Blanco_2019}, far exceeding the age of the universe --- making decay an intrinsically rare process whose detection requires enormous integrated exposures.
-\blue{Current gamma-ray constraints place $\tau$ some ten orders of magnitude beyond the age of the universe (the numbers are collected in Section~\ref{sec:status}), making decay an intrinsically rare process whose detection requires enormous integrated exposures.}
+Current gamma-ray constraints place $\tau$ some ten orders of magnitude beyond the age of the universe (the numbers are collected in Section~\ref{sec:status}), making decay an intrinsically rare process whose detection requires enormous integrated exposures.
 The $\rho^2$ versus $\rho$ distinction has direct observational consequences: annihilation signals are sharply concentrated in the densest regions of a halo --- the inner kiloparsec of the Galactic Center, or the cores of dwarf galaxies --- while decay signals are spread diffusely across the entire halo volume, producing a much flatter angular profile.
 This morphological difference provides a powerful diagnostic: an excess that tracks the $\rho^2$ profile of the inner Galaxy but vanishes at high latitudes points toward annihilation, while a persistent, broadly distributed signal favours decay.
 
 The stable particles emerging from an annihilation or decay event --- photons, neutrinos, electrons,
 protons, antimatter --- are determined by the primary channel into which the dark matter annihilates.
-In \blue{general}, one parametrizes the annihilation as $\chi\chi \to f\bar{f}$ for a specific Standard Model final state $f$ (quarks, leptons, or gauge bosons), and the total gamma-ray spectrum is given by a sum over channels weighted by branching ratios \cite{Cirelli:2024ssz,Cirelli:2010xx,Arina:2023eic}:
+In general, one parametrizes the annihilation as $\chi\chi \to f\bar{f}$ for a specific Standard Model final state $f$ (quarks, leptons, or gauge bosons), and the total gamma-ray spectrum is given by a sum over channels weighted by branching ratios \cite{Cirelli:2024ssz,Cirelli:2010xx,Arina:2023eic}:
 
 \begin{equation}
 	\frac{dN_\gamma}{dE} = \sum_f \text{BR}_f \, \frac{dN_\gamma^{(f)}}{dE} \,.
 	\label{eq:spectrum_sum}
 \end{equation}
 
-\blue{Quite often}, limits are derived for one channel at a time --- setting $\text{BR}_f = 1$ for a chosen final state --- so each "benchmark channel" maps to a distinctive spectral shape.
+Quite often, limits are derived for one channel at a time --- setting $\text{BR}_f = 1$ for a chosen final state --- so each "benchmark channel" maps to a distinctive spectral shape.
 The spectra $dN_\gamma^{(f)}/dE$ for each channel are computed using Monte Carlo event generators such as Pythia, with the results tabulated in standard libraries such as PPPC 4 DM ID \cite{Cirelli:2010xx} or the more recent CosmiXs \cite{Arina:2023eic}.
 These spectra exhibit qualitatively different shapes depending on $f$.
 In hadronic channels such as $b\bar{b}$ or $t\bar{t}$, the quarks hadronize into jets containing many neutral pions, which decay almost instantly via $\pi^0 \to \gamma\gamma$.
@@ -70,7 +70,7 @@ Gauge boson channels ($W^+W^-$, $ZZ$) produce a combination of both behaviours: 
 
 The more hadrons produced in the cascade, the softer the spectrum, because the available energy is shared among a larger multiplicity of pions.
 Channels that produce fewer, more energetic particles yield harder spectra with sharper features.
-In practice, the distinction between the $b\bar{b}$ and $\tau^+\tau^-$ benchmarks brackets the range of spectral shapes relevant for most thermal relic models, \blue{and are often used for reference.}
+In practice, the distinction between the $b\bar{b}$ and $\tau^+\tau^-$ benchmarks brackets the range of spectral shapes relevant for most thermal relic models, and are often used for reference.
 These qualitative differences are illustrated in Figure~\ref{fig:spectra_per_channel}.
 
 \begin{figure}[t]
@@ -119,9 +119,9 @@ When the dark matter mass lies far above the electroweak scale ($m_\chi \gg M_W$
 Its effect is twofold.
 First, the subsequent decays of the radiated bosons smear sharp features such as monochromatic lines and add a soft continuum of lower-energy gamma-rays.
 Second, they feed final states that would otherwise be absent, so that even purely leptonic channels ($\chi\chi \to e^+e^-$, $\mu^+\mu^-$) end up producing antiprotons and every annihilation channel contributes to every messenger.
-\blue{These are corrections to the \emph{final state}, reshaping the spectrum produced per annihilation.
+These are corrections to the \emph{final state}, reshaping the spectrum produced per annihilation.
 They should not be confused with the Sommerfeld enhancement of Section~\ref{sec:1.2.4}, which in this regime is likewise of electroweak origin: for $m_\chi \gg M_W$, the $W$ and $Z$ mediate a long-range force between the slow incoming pair.
-That effect, however, acts on the initial state and scales the annihilation rate rather than the spectrum.}
+That effect, however, acts on the initial state and scales the annihilation rate rather than the spectrum.
 
 \textbf{Prompt versus secondary emission.}
 The gamma-ray production mechanisms discussed so far --- pion decay, final-state radiation, lines, VIB --- all occur promptly after their parent annihilation or decay event, and are thus referred to as \textit{prompt emission} \cite{Cirelli:2024ssz,Pinetti:2021jjs}.
@@ -133,14 +133,14 @@ The target photon field --- the interstellar radiation field (ISRF) --- consists
 As a representative example, a 1 TeV electron upscatters a CMB photon to $\sim 1.5$ GeV, or a UV starlight photon to $\sim 150$ GeV \cite{Cirelli:2024ssz}.
 The propagating $e^\pm$ also emit \textit{bremsstrahlung} radiation when deflected by the electric fields of interstellar gas nuclei, a process that dominates their energy losses in the 1--10 GeV range near the Galactic plane where gas densities are highest \cite{Blumenthal:1970gc,Dermer:2009zz}.
 These processes produce \textit{secondary} gamma-ray emission that is spatially extended and spectrally softer than the prompt component, and whose morphology depends on the magnetic field structure, gas distribution, and radiation fields of the host galaxy \cite{Strong:2007nh}.
-\blue{The same $e^\pm$ population also emits \textit{synchrotron} radiation as it gyrates in the Galactic magnetic field, but for weak-scale dark matter candidates this component peaks at radio and microwave frequencies --- a 10 GeV electron in the local $\sim 5\,\mu$G field radiates near 8 GHz --- and therefore does not contribute directly to gamma-ray searches.}
+The same $e^\pm$ population also emits \textit{synchrotron} radiation as it gyrates in the Galactic magnetic field, but for weak-scale dark matter candidates this component peaks at radio and microwave frequencies --- a 10 GeV electron in the local $\sim 5\,\mu$G field radiates near 8 GHz --- and therefore does not contribute directly to gamma-ray searches.
 Secondary emission therefore depends not only on the dark matter distribution but also on the astrophysical environment --- magnetic fields, radiation fields, gas densities --- that reprocesses the primary electrons and positrons.
 Despite this additional layer of modelling uncertainty, secondary emission plays a central role in the interpretation of the Galactic Center excess discussed in Chapter~\ref{ch:4}, where the identification of the signal relies on subtracting the diffuse gamma-ray background dominated by cosmic-ray ICS and bremsstrahlung in the dense inner Galaxy.
 
 \subsection{Dark Matter Density Profiles}
 \label{sec:density_profiles}
 
-The annihilation and decay rates \blue{presented} in Section~\ref{sec:ann_decay} depend directly on the dark matter density $\rho(r)$ --- and for annihilation, on $\rho(r)^2$.
+The annihilation and decay rates presented in Section~\ref{sec:ann_decay} depend directly on the dark matter density $\rho(r)$ --- and for annihilation, on $\rho(r)^2$.
 The predicted gamma-ray flux from any astrophysical target is therefore directly related to the assumed density profile.
 The same measurement constraining the particle physics simultaneously probes the dark matter distribution.
 
@@ -194,7 +194,7 @@ At large radii (around $r_\odot$) all profiles agree, but they diverge by orders
 	\label{fig:dm_profiles}
 \end{figure}
 
-When fit to the Milky Way, the parameters of these profiles are fixed by requiring consistency with the total Galactic mass ($\sim 4.7 \times 10^{11}\, M_\odot$) and the local dark matter density at the Sun's position ($r_\odot \simeq \blue{8.33}$ kpc) \cite{Cirelli:2024ssz,Pinetti:2021jjs}.
+When fit to the Milky Way, the parameters of these profiles are fixed by requiring consistency with the total Galactic mass ($\sim 4.7 \times 10^{11}\, M_\odot$) and the local dark matter density at the Sun's position ($r_\odot \simeq 8.33$ kpc) \cite{Cirelli:2024ssz,Pinetti:2021jjs}.
 The most recent determinations place the local density at $\rho_\odot \approx 0.40 \pm 0.10$ GeV/cm$^3$, though many analyses continue to use the historical benchmark of 0.3 GeV/cm$^3$.
 Characteristic Milky Way parameters are $r_s \approx 14.5$ kpc and $\rho_s \approx 0.57$ GeV/cm$^3$ for NFW, and $r_s \approx 13.6$ kpc with $\rho_s \approx 0.15$ GeV/cm$^3$ for Einasto.
 
@@ -202,15 +202,15 @@ At the solar radius, all three profiles agree by construction.
 They differ sharply in the inner kiloparsec, where no direct observational data constrain the dark matter profile and the resolution of current simulations reaches its limit (roughly a fraction of a kiloparsec for a Milky Way--sized halo) \cite{Navarro:1996gj,Bullock:2017xww}.
 The NFW and Einasto profiles predict densities at $r \sim 100$ pc that exceed the Burkert core prediction by one to two orders of magnitude. 
 % This is one of the main sources of uncertainty in indirect detection, and the choice of profile is therefore often treated as a systematic.
-\blue{This is one of the main sources of uncertainty in indirect detection, and the choice of profile propagates directly into the predicted flux, as quantified in Section~\ref{sec:jfactor}.}
+This is one of the main sources of uncertainty in indirect detection, and the choice of profile propagates directly into the predicted flux, as quantified in Section~\ref{sec:jfactor}.
 % This discrepancy propagates directly into the $J$-factor: the predicted gamma-ray flux from the Galactic Center can vary by orders of magnitude depending on whether one assumes a cusp or a core.
 
 The disagreement between cuspy simulations and cored observations is known as the \textbf{cusp--core problem} \cite{Cirelli:2024ssz,Bullock:2017xww}.
 Dark matter--only $N$-body simulations consistently produce cusps with inner slopes $\gamma \approx 1$--$1.5$, while rotation curve measurements --- particularly in dwarf galaxies --- often favour constant-density cores ($\gamma \approx 0$--$0.5$) \cite{Bullock:2017xww}.
 Several solutions to this discrepancy have been proposed.
-From the particle physics side, self-interacting dark matter \blue{(introduced in Section~\ref{sec:1.2.1})}, with $\sigma/m \approx 0.5$--$10$ cm$^2$/g, transfers heat to halo centers and produces cores of the observed size \cite{Spergel:1999mh,Tulin:2017ara,Bullock:2017xww}, while ultralight ``fuzzy'' dark matter generates solitonic cores through quantum pressure on scales comparable to the de Broglie wavelength \cite{Hu:2000ke}.
+From the particle physics side, self-interacting dark matter (introduced in Section~\ref{sec:1.2.1}), with $\sigma/m \approx 0.5$--$10$ cm$^2$/g, transfers heat to halo centers and produces cores of the observed size \cite{Spergel:1999mh,Tulin:2017ara,Bullock:2017xww}, while ultralight ``fuzzy'' dark matter generates solitonic cores through quantum pressure on scales comparable to the de Broglie wavelength \cite{Hu:2000ke}.
 From the astrophysical side, modern hydrodynamical simulations show that repeated bursts of supernova-driven outflows can rapidly alter the central gravitational potential, pushing dark matter outward and flattening a primordial cusp into a core.
-\blue{The inclusion of baryonic feedback has thus considerably relaxed the original tension --- cores of the observed size now emerge within plain $\Lambda$CDM, without invoking new dark-sector physics --- although the problem is not regarded as fully settled, since the predicted core sizes depend on phenomenological sub-grid feedback prescriptions and differ between simulation codes \cite{Bullock:2017xww}.}
+The inclusion of baryonic feedback has thus considerably relaxed the original tension --- cores of the observed size now emerge within plain $\Lambda$CDM, without invoking new dark-sector physics --- although the problem is not regarded as fully settled, since the predicted core sizes depend on phenomenological sub-grid feedback prescriptions and differ between simulation codes \cite{Bullock:2017xww}.
 
 The effectiveness of baryonic feedback depends non-monotonically on the stellar-to-halo mass ratio $M_\star / M_\text{vir}$: core formation peaks at intermediate ratios ($M_\star / M_\text{vir} \approx 5 \times 10^{-3}$, the regime of bright dwarfs), where supernovae are frequent enough to redistribute dark matter, but is negligible in ultrafaint dwarfs (too few stars) and in massive galaxies where adiabatic contraction recreates a cusp \cite{Bullock:2017xww}.
 For the Milky Way ($M_\star / M_\text{vir} \approx 0.08$), this would place the expected inner profile in the cuspy regime, although the argument rests on the assumption that feedback and contraction have been correctly modelled, which remains a field of active research with large uncertainties.
@@ -295,7 +295,7 @@ For comparing different targets, one typically quotes the $J$-factor integrated 
 For dwarf spheroidal galaxies observed by Fermi-LAT, typical integrated $J$-factors (within $\theta_\star = 0.5^\circ$) range from $\sim 10^{16}$ to $\sim 10^{19.5}$ GeV$^2$ cm$^{-5}$, depending on the system's mass, distance, and the quality of the kinematic data used to reconstruct its density profile \cite{Hooper:2024,Bonnivard:2015xpq}.
 The choice of integration angle reflects the angular extent of the target: dSphs are resolved by Fermi-LAT and extended emission can be recovered within $\sim 0.5^\circ$, while dark matter subhalos at typical Galactic distances are unresolved and effectively point-like, so their $J$-factors are integrated within $\theta_\star \sim 0.1^\circ$, matching the instrument's point-spread function.
 % These values are orders of magnitude smaller than the Galactic Center $J$-factor, but the absence of astrophysical backgrounds in dwarfs compensates for the reduced signal.
-\blue{These values are orders of magnitude smaller than the Galactic Center $J$-factor (cf.\ the signal-versus-background comparison in Section~\ref{sec:targets}).}
+These values are orders of magnitude smaller than the Galactic Center $J$-factor (cf.\ the signal-versus-background comparison in Section~\ref{sec:targets}).
 
 Several caveats affect the simple factorization above.
 First, it assumes a \textit{velocity-independent} annihilation cross-section.
@@ -304,7 +304,7 @@ In such cases, one must compute an \textit{effective $J$-factor} that folds the 
 
 Second, even for velocity-independent cross-sections, the $J$-factor depends quadratically on the density profile, making it extremely sensitive to the uncertainties discussed in Section~\ref{sec:density_profiles}.
 For the Galactic Center, the $J$-factor computed with an NFW profile can exceed the Burkert value by orders of magnitude; even within the NFW paradigm, varying the inner slope from $\gamma = 0.7$ to $\gamma = 1.3$ changes the predicted flux by more than an order of magnitude \cite{Hooper:2024}.
-The astrophysical factor is therefore the dominant systematic uncertainty in annihilation searches \blue{for a given dark matter model}.
+The astrophysical factor is therefore the dominant systematic uncertainty in annihilation searches for a given dark matter model.
 
 \subsection{Observational Targets for Gamma-Ray Searches}
 \label{sec:targets}
@@ -314,7 +314,7 @@ No single target satisfies both criteria simultaneously, and the field has conse
 We now review the principal targets, noting their advantages, limitations, and connection to the analyses developed in this thesis.
 
 \textbf{The Galactic Center.}
-The center of the Milky Way offers the largest $J$-factor of any astronomical source, owing to its proximity ($\sim 8$ kpc) and the expected steep rise of the dark matter density at small radii \cite{Hooper:2024}. \blue{In the inner $40^\circ \times 40^\circ$ region, the physical $J$-factor is approximately $J \sim 10^{23}~\mathrm{GeV}^2\,\mathrm{cm}^{-5}\,\mathrm{sr}$ \cite{Chang_2018}.}
+The center of the Milky Way offers the largest $J$-factor of any astronomical source, owing to its proximity ($\sim 8$ kpc) and the expected steep rise of the dark matter density at small radii \cite{Hooper:2024}. In the inner $40^\circ \times 40^\circ$ region, the physical $J$-factor is approximately $J \sim 10^{23}~\mathrm{GeV}^2\,\mathrm{cm}^{-5}\,\mathrm{sr}$ \cite{Chang_2018}.
 For an NFW profile with $\gamma = 1$ and a local density $\rho_\odot = 0.4$ GeV/cm$^3$, the predicted flux from the inner $10^\circ$ exceeds that from any individual dwarf galaxy by more than three orders of magnitude.
 If a steeper inner slope ($\gamma \approx 1.3$) is assumed, the flux increases by an additional factor of $\sim 5$; for a shallower slope ($\gamma \approx 0.7$) it decreases by $\sim 3$.
 In either case, the Galactic Center remains the brightest expected source of dark matter annihilation products on the sky.
@@ -325,7 +325,7 @@ Models of this diffuse foreground (see Section~\ref{sec:gde_model}) are construc
 This imperfect background knowledge is the primary obstacle to extracting a dark matter signal from the Galactic Center.
 
 Despite these difficulties, the Fermi-LAT has detected a statistically significant excess of gamma-rays from the inner Galaxy at energies between $\sim 0.5$ and 5 GeV --- the so-called Galactic Center excess (GCE) \cite{Goodenough:2009gk,Hooper:2010mq,Daylan:2014rsa}.
-The spectrum and approximately spherical morphology of this excess are consistent with the predictions for a $\sim \blue{35}$--$\blue{50}$ GeV dark matter particle annihilating into $b\bar{b}$ quarks at a rate close to the thermal relic value \cite{Daylan:2014rsa}.
+The spectrum and approximately spherical morphology of this excess are consistent with the predictions for a $\sim 35$--$50$ GeV dark matter particle annihilating into $b\bar{b}$ quarks at a rate close to the thermal relic value \cite{Daylan:2014rsa}.
 The dark matter interpretation is compelling, but an unresolved population of millisecond pulsars in the Galactic bulge provides an equally plausible astrophysical explanation.
 Multiple statistical analyses have investigated the point-source versus diffuse origin of the excess, reaching contradictory conclusions.
 The morphological debate --- whether the excess traces a spherical dark matter halo or the stellar distribution of the Galactic bulge --- remains unresolved.
@@ -334,10 +334,10 @@ This persistent ambiguity motivates the dedicated analysis in Chapter~\ref{ch:4}
 \textbf{Dwarf spheroidal galaxies.}
 The Milky Way's satellite dwarf galaxies occupy the opposite end of the signal-versus-background trade-off.
 % Dwarf spheroidals are among the most dark matter--dominated objects known: their shallow gravitational potential wells allowed early supernova feedback to expel most of the baryonic gas, halting star formation and leaving behind systems with mass-to-light ratios ranging from tens of $M_\odot/L_\odot$ for classical dwarfs like Sculptor to thousands for ultrafaint dwarfs such as Segue~1 \cite{Cirelli:2024ssz}.
-\blue{Dwarf spheroidals are among the most dark matter--dominated objects known (Section~\ref{sec:1.1.1}): their shallow gravitational potential wells allowed early supernova feedback to expel most of the baryonic gas, halting star formation and leaving behind systems with extreme mass-to-light ratios.}
+Dwarf spheroidals are among the most dark matter--dominated objects known (Section~\ref{sec:1.1.1}): their shallow gravitational potential wells allowed early supernova feedback to expel most of the baryonic gas, halting star formation and leaving behind systems with extreme mass-to-light ratios.
 The scarcity of stars, gas, and other active astrophysical objects means that their gamma-ray backgrounds are subdominant \cite{Cirelli:2024ssz}.
 % The expected dark matter flux from any individual dwarf is far smaller than from the Galactic Center --- roughly three orders of magnitude lower for a typical system \cite{Hooper:2024} --- but the absence of competing emission makes them the cleanest targets available.
-\blue{The expected dark matter flux from any individual dwarf is far smaller than from the Galactic Center, as quantified above, but the absence of much competing emission makes them the cleanest known targets available.}
+The expected dark matter flux from any individual dwarf is far smaller than from the Galactic Center, as quantified above, but the absence of much competing emission makes them the cleanest known targets available.
 
 Eight ``classical'' dwarf spheroidals (Sculptor, Fornax, Leo I and II, Ursa Minor, Draco, Carina, and Sextans) have been known since before the 1990s.
 The advent of digital surveys --- SDSS, DES, and Gaia --- has brought the total to about fifty confirmed ultrafaint dwarfs, with roughly ten more candidates awaiting spectroscopic confirmation \cite{Pace:2024sys}.
@@ -345,7 +345,7 @@ This growing census is expected to continue with the Rubin Observatory.
 
 By combining observations of dozens of these systems in a stacked analysis, the Fermi-LAT collaboration has derived some of the tightest constraints on the annihilation cross-section to date \cite{Fermi-LAT:2015att,2024PhRvD.109f3024M}.
 % The original combined analysis of 15 kinematically confirmed dSphs excluded the thermal relic cross-section ($\langle \sigma v_\text{rel} \rangle \simeq 2.2 \times 10^{-26}$ cm$^3$/s) for dark matter masses below $\sim 100$ GeV in the $b\bar{b}$ channel \cite{Fermi-LAT:2015att}; the most recent legacy analysis extends this to 50 dSphs with 14 years of data, yielding slightly tighter constraints in the 20--100 GeV mass range while confirming the earlier exclusion \cite{2024PhRvD.109f3024M}.
-\blue{These stacked analyses exclude the thermal relic cross-section for dark matter masses below $\sim 100$ GeV in the $b\bar{b}$ channel; the current numbers, and their evolution from 15 to 50 dwarfs, are collected in Section~\ref{sec:status} \cite{Fermi-LAT:2015att,2024PhRvD.109f3024M}.}
+These stacked analyses exclude the thermal relic cross-section for dark matter masses below $\sim 100$ GeV in the $b\bar{b}$ channel; the current numbers, and their evolution from 15 to 50 dwarfs, are collected in Section~\ref{sec:status} \cite{Fermi-LAT:2015att,2024PhRvD.109f3024M}.
 The dominant systematic uncertainty lies in the $J$-factors themselves, which must be inferred from the kinematics of the dwarfs' constituent stars.
 For ultrafaint systems, the number of kinematic tracers can be extremely small, and removing or adding a single star from the sample can shift the reconstructed $J$-factor by orders of magnitude \cite{Cirelli:2024ssz}.
 Additional systematics arise from the cusp--core ambiguity in the inner density profile and from the choice of integration angle $\theta_\star$.
@@ -354,10 +354,10 @@ Chapter~\ref{ch:5} of this thesis searches for dark matter subhalos --- which ma
 %, while Chapter~\ref{ch:6} develops methods to characterize the unresolved gamma-ray source population as a whole.
 
 \textbf{Dark subhalos.} $\Lambda$CDM simulations predict far more gravitationally bound subhalos within the Milky Way's halo than the $\sim 50$ known satellite galaxies can account for \cite{Springel:2008cc,Bullock:2017xww}.
-Most of these subhalos are expected to be entirely dark --- devoid of stars and gas --- yet \blue{some of them may be sufficiently massive} to produce a detectable gamma-ray flux if the annihilation cross-section is near the thermal relic value.
+Most of these subhalos are expected to be entirely dark --- devoid of stars and gas --- yet some of them may be sufficiently massive to produce a detectable gamma-ray flux if the annihilation cross-section is near the thermal relic value.
 Such dark subhalos would appear in the Fermi-LAT data as unassociated point sources with no counterpart at other wavelengths.
 Their positions are unknown a priori, turning the search into a classification problem: distinguishing rare dark matter subhalos from the much larger population of unidentified astrophysical sources (primarily pulsars and faint blazars).
-This challenge is addressed in Chapter~\ref{ch:5}, where machine learning methods are applied to \blue{search for} unassociated Fermi-LAT sources in the presence of dataset shift between simulations and real data.
+This challenge is addressed in Chapter~\ref{ch:5}, where machine learning methods are applied to search for unassociated Fermi-LAT sources in the presence of dataset shift between simulations and real data.
 
 \textbf{The unresolved gamma-ray background.}
 The cumulative, nearly isotropic gamma-ray flux that remains after subtracting resolved point sources and Galactic diffuse emission constitutes the unresolved gamma-ray background (UGRB) \cite{DGRB-review}.
@@ -367,7 +367,7 @@ Unresolved BL~Lac objects alone can account for the majority of the UGRB above $
 A dark matter component --- originating from annihilation or decay in all halos and subhalos across cosmic history --- may also be present, but it is expected to be subdominant in the total intensity spectrum \cite{DGRB-review}.
 
 Because the dark matter signal is potentially hidden beneath dominant astrophysical foregrounds, its extraction requires methods that go beyond the energy spectrum alone.
-The angular anisotropies of the UGRB carry additional information: different source classes imprint different patterns of spatial fluctuations \blue{because their clustering properties, redshift distributions, and luminosity functions differ}.
+The angular anisotropies of the UGRB carry additional information: different source classes imprint different patterns of spatial fluctuations because their clustering properties, redshift distributions, and luminosity functions differ.
 Cross-correlating these anisotropies with independent gravitational tracers of the large-scale structure --- galaxy catalogs, cosmic shear from weak lensing surveys, or $21\,$cm intensity mapping of neutral hydrogen --- can isolate the component that traces the dark matter distribution \cite{DGRB-review,Pinetti:2021jjs}.
 The approach is particularly powerful because dark matter annihilation scales as $\rho^2$ and has a redshift evolution distinct from that of astrophysical gamma-ray emitters, providing a spectral and tomographic handle for separation.
 This cross-correlation technique forms the basis of the analysis in Chapter~\ref{ch:8}, where the sensitivity of next-generation instruments to the dark matter cross-correlation signal is forecast.
@@ -378,8 +378,8 @@ Each target exposes different aspects of the dark matter parameter space and is 
 \subsection{Multi-Messenger Context}
 \label{sec:multi_messenger}
 
-\blue{We argued that, if dark matter annihilates or decays, it could produce stable Standard Model particles, not only gamma-rays.
-Each messenger would open a complementary window onto the dark sector, with its own advantages and limitations.}
+We argued that, if dark matter annihilates or decays, it could produce stable Standard Model particles, not only gamma-rays.
+Each messenger would open a complementary window onto the dark sector, with its own advantages and limitations.
 
 \textbf{Neutrinos} share the key advantage of photons --- having no electrical charge --- and therefore propagate in straight lines, preserving directional information \cite{Cirelli:2024ssz}.
 They can also escape environments opaque to photons: dark matter captured in the solar core, for instance, annihilates into neutrinos that are the only annihilation products to reach the surface, making high-energy solar neutrinos a probe of the dark matter--nucleon scattering cross-section.
@@ -393,8 +393,8 @@ These parameters overlap with those invoked for the Galactic Center excess (Chap
 Low-energy anti-deuterons and anti-helium have generally low astrophysical backgrounds, so their detection would be a qualitatively different signature.
 AMS-02 and the upcoming GAPS experiment may reach the sensitivity needed to probe the thermal relic cross-section \cite{Hooper:2024}.
 
-\textbf{CMB} --- \blue{An independent and increasingly powerful constraint comes from the \CMB, whose physics we introduced in Section~\ref{sec:1.3}: dark matter annihilation during and after recombination injects energy into the photon--baryon plasma~\cite{Lopez-Honorez:2013cua}, distorting the temperature and polarisation anisotropies in a way that is tightly bounded by Planck data \cite{Aghanim:2018eyx}.
-For $s$-wave annihilation, these bounds exclude the thermal relic cross-section below roughly $30$~GeV in leptonic channels and $10$--$15$~GeV in hadronic ones \cite{Lopez-Honorez:2013cua, Aghanim:2018eyx} --- limits that are largely independent of astrophysical modelling and therefore highly complementary to gamma-ray searches.}
+\textbf{CMB} --- An independent and increasingly powerful constraint comes from the \CMB, whose physics we introduced in Section~\ref{sec:1.3}: dark matter annihilation during and after recombination injects energy into the photon--baryon plasma~\cite{Lopez-Honorez:2013cua}, distorting the temperature and polarisation anisotropies in a way that is tightly bounded by Planck data \cite{Aghanim:2018eyx}.
+For $s$-wave annihilation, these bounds exclude the thermal relic cross-section below roughly $30$~GeV in leptonic channels and $10$--$15$~GeV in hadronic ones \cite{Lopez-Honorez:2013cua, Aghanim:2018eyx} --- limits that are largely independent of astrophysical modelling and therefore highly complementary to gamma-ray searches.
 
 % This thesis focuses exclusively on \textbf{gamma-rays} --- the messenger that provides both spatial and spectral information while relying on the fewest assumptions about particle propagation.
 % Multi-messenger results are noted where they bear on the gamma-ray analyses, but the searches in Parts II--V rely entirely on the gamma-ray formalism developed above.
@@ -402,7 +402,7 @@ For $s$-wave annihilation, these bounds exclude the thermal relic cross-section 
 \subsection{The Status of the Field}
 \label{sec:status}
 
-\blue{Despite decades} of increasingly sensitive searches across all three detection strategies, no unambiguous signal of dark matter has been found.
+Despite decades of increasingly sensitive searches across all three detection strategies, no unambiguous signal of dark matter has been found.
 The current status is best summarized as a set of progressively tightening bounds on the cross-section and decay lifetime, with a few anomalies whose dark matter interpretations have been challenged by plausible astrophysical alternatives.
 
 \textbf{Gamma-ray constraints.}
@@ -414,30 +414,30 @@ Constraints on the dark matter lifetime, derived primarily from the isotropic ga
 
 \textbf{Direct detection and collider constraints.}
 % The tightening of parameter space is not confined to indirect searches.
-The current generation of dual-phase liquid xenon detectors --- LZ, XENONnT, and PandaX-4T --- has pushed the spin-independent WIMP--nucleon cross-section below $10^{-46}$ cm$^2$ for masses near the electroweak scale \blue{(see Section~\ref{sec:1.3} for the experiments and bounds)}.
+The current generation of dual-phase liquid xenon detectors --- LZ, XENONnT, and PandaX-4T --- has pushed the spin-independent WIMP--nucleon cross-section below $10^{-46}$ cm$^2$ for masses near the electroweak scale (see Section~\ref{sec:1.3} for the experiments and bounds).
 At the LHC, mono-jet and mono-photon searches have found no evidence for new physics, excluding strongly interacting superpartners (squarks, gluinos) up to masses of 1--2 TeV and charged superpartners up to several hundred GeV.
 % The theoretical basis of the most popular WIMP candidate --- the supersymmetric neutralino --- has been substantially weakened by the absence of supersymmetry at collider energies \cite{Cirelli:2024ssz}.
 
 \textbf{Unresolved anomalies.}
 Several persistent anomalies keep the possibility of discovery alive.
 % The Galactic Center gamma-ray excess --- a signal first reported in 2009 and consistent with a $\sim$40--70 GeV dark matter particle annihilating into $b\bar{b}$ at the thermal cross-section --- remains the most debated \cite{Daylan:2014rsa,Cirelli:2024ssz,Hooper:2024}.
-\blue{The Galactic Center excess, first reported in 2009, remains the most debated (its spectrum and morphology are described in Section~\ref{sec:targets}) \cite{Daylan:2014rsa,Cirelli:2024ssz}.}
+The Galactic Center excess, first reported in 2009, remains the most debated (its spectrum and morphology are described in Section~\ref{sec:targets}) \cite{Daylan:2014rsa,Cirelli:2024ssz}.
 % Its leading astrophysical competitor, an unresolved population of millisecond pulsars in the Galactic bulge, has been alternately supported and challenged by photon-count statistics, morphological analyses, and luminosity function arguments \cite{Cirelli:2024ssz}.
 Chapter~\ref{ch:4} of this thesis contributes directly to this debate by challenging the leading astrophysical interpretation of the excess as an unresolved population of millisecond pulsars.
 Other excesses, by contrast, admit a more satisfying astrophysical explanation.
 The charged cosmic-ray anomalies discussed in Section~\ref{sec:multi_messenger} --- the AMS-02 antiproton signal and the rise in the positron fraction --- remain consistent with conventional astrophysical sources once systematic uncertainties are fully accounted for \cite{Hooper:2024}.
-\blue{A similar pattern extends beyond gamma-rays: the 511~keV positron-annihilation line from the Galactic bulge admits light dark-matter interpretations alongside plausible astrophysical ones; the 3.5~keV X-ray line, once attributed to sterile-neutrino decay, is now disfavoured; and the DAMA/LIBRA annual modulation remains unconfirmed by experiments with the same NaI target \cite{Cirelli:2024ssz}.}
+A similar pattern extends beyond gamma-rays: the 511~keV positron-annihilation line from the Galactic bulge admits light dark-matter interpretations alongside plausible astrophysical ones; the 3.5~keV X-ray line, once attributed to sterile-neutrino decay, is now disfavoured; and the DAMA/LIBRA annual modulation remains unconfirmed by experiments with the same NaI target \cite{Cirelli:2024ssz}.
 
-\blue{\textbf{Small-scale structure tensions.}
+\textbf{Small-scale structure tensions.}
 A different class of problem concerns the small-scale predictions of $\Lambda$CDM itself.
-Alongside the cusp--core problem of Section~\ref{sec:density_profiles} and the ``missing satellites'' deficit --- now largely resolved by the low galaxy-formation efficiency of small halos and the discovery of ultrafaint dwarfs --- several tensions remain open: 
+Alongside the cusp--core problem of Section~\ref{sec:density_profiles} and the ``missing satellites'' deficit --- now largely resolved by the low galaxy-formation efficiency of small halos and the discovery of ultrafaint dwarfs --- several tensions remain open:
 the observed bright Milky Way satellites are less centrally dense than the most massive subhalos predicted by dark-matter-only simulations, which, being too big for star formation to fail, should host precisely such galaxies (\textit{too-big-to-fail});
 %
 %
-% the most massive simulated subhalos appear too centrally dense to host any observed satellite (\textit{too-big-to-fail}); 
+% the most massive simulated subhalos appear too centrally dense to host any observed satellite (\textit{too-big-to-fail});
 %
 dwarfs of similar maximum circular velocity display remarkably different inner profiles (the \textit{diversity of rotation curves}); and the satellites of the Milky Way and Andromeda align in thin, apparently corotating planes that simulations struggle to reproduce.
-These tensions motivate self-interacting (Section~\ref{sec:1.2.1}), but remain entangled with baryonic feedback modelling: for now they constrain the nature of dark matter rather than reveal it \cite{Bullock:2017xww, Tulin:2017ara}.}
+These tensions motivate self-interacting (Section~\ref{sec:1.2.1}), but remain entangled with baryonic feedback modelling: for now they constrain the nature of dark matter rather than reveal it \cite{Bullock:2017xww, Tulin:2017ara}.
 
 \textbf{The methodological case for this thesis.}
 Taken together, these results define the landscape in which this thesis is situated.

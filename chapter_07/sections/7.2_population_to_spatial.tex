@@ -8,7 +8,7 @@ The previous section showed that a fixed TS threshold discards sub-threshold sou
 The $dN/dS$ is, however, a purely statistical quantity: it tells us how many sources exist at each flux level, but nothing about where they are.
 This section describes how the $dN/dS$ can be complemented with spatial information by comparing ensembles of simulated skies against the real data.
 
-The idea, \blue{developed in full later in this chapter} (Section~\ref{sec:dnds_catalog_paper}), is to use the recovered $dN/dS$ as a generative model for synthetic skies and then compare their pixel-level TS distributions with the real \textit{Fermi}-LAT sky using a frequentist test.
+The idea, developed in full later in this chapter (Section~\ref{sec:dnds_catalog_paper}), is to use the recovered $dN/dS$ as a generative model for synthetic skies and then compare their pixel-level TS distributions with the real \textit{Fermi}-LAT sky using a frequentist test.
 Section~\ref{sec:simulated_sky} describes the simulated-sky comparison at a qualitative level; Section~\ref{sec:frequentist_framework} introduces the statistical machinery --- a per-pixel TS, a KS test, and a Quality Factor --- that makes the comparison quantitative.
 % Full details appear in the paper body.
 
@@ -17,7 +17,7 @@ Section~\ref{sec:simulated_sky} describes the simulated-sky comparison at a qual
 
 % As established in Section~\ref{sec:threshold_limits}, the $dN/dS$ recovered in Chapter~\ref{ch:6} extends to fluxes roughly 50 times below the Fermi-LAT detection threshold (cf.\ Section~\ref{sec:source_count}), yet it carries no spatial content whatsoever.
 % The question we now address is whether this population-level flux distribution can be leveraged to identify specific sky directions that are likely to host sub-threshold point sources.
-\blue{Since the $dN/dS$ carries no spatial content (Section~\ref{sec:threshold_limits}), the question we now address is how to leverage this population-level flux distribution to identify specific sky directions likely to host sub-threshold point sources.}
+Since the $dN/dS$ carries no spatial content (Section~\ref{sec:threshold_limits}), the question we now address is how to leverage this population-level flux distribution to identify specific sky directions likely to host sub-threshold point sources.
 
 The idea is straightforward.
 % If the $dN/dS$ is known, one can use it as a generative model to produce realistic synthetic skies.
@@ -25,7 +25,7 @@ The idea is straightforward.
 % Since the $dN/dS$ carries no positional information, these synthetic sources are placed at uniformly random positions on the sphere.
 % Each synthetic sky is then processed through the same pipeline applied to the real data: the point sources are convolved with the Fermi-LAT PSF, multiplied by the exposure map, and converted into a pixelized photon-count map on top of a modeled diffuse background (see Section~\ref{sec:dnds_catalog_paper} for full details).
 % By repeating this procedure 5000 times --- each time sampling a slightly different $dN/dS$ realization within the uncertainties estimated via Gaussian Process interpolation --- one obtains an ensemble of synthetic skies that collectively encode what the gamma-ray sky should look like if the recovered $dN/dS$ is correct.
-\blue{Source fluxes are drawn from the $dN/dS$ and, because the population statistic carries no positional information, the sources are scattered at uniformly random positions on the sphere. Each synthetic sky is then processed through the same pipeline applied to the real data --- PSF convolution, exposure weighting, and pixelization on top of a modeled diffuse background --- and the procedure is repeated many times, resampling the $dN/dS$ within its estimated uncertainties, to build an ensemble of skies that encode what the gamma-ray sky should look like if the recovered $dN/dS$ is correct. The per-bin Poisson draws, the Gaussian-Process uncertainty treatment, and the number of realizations are detailed later in this chapter (Section~\ref{sec:dnds_catalog_paper}).}
+Source fluxes are drawn from the $dN/dS$ and, because the population statistic carries no positional information, the sources are scattered at uniformly random positions on the sphere. Each synthetic sky is then processed through the same pipeline applied to the real data --- PSF convolution, exposure weighting, and pixelization on top of a modeled diffuse background --- and the procedure is repeated many times, resampling the $dN/dS$ within its estimated uncertainties, to build an ensemble of skies that encode what the gamma-ray sky should look like if the recovered $dN/dS$ is correct. The per-bin Poisson draws, the Gaussian-Process uncertainty treatment, and the number of realizations are detailed later in this chapter (Section~\ref{sec:dnds_catalog_paper}).
 
 The comparison between synthetic and real skies cannot be performed on a pixel-by-pixel basis, because the synthetic sources are randomly positioned and their spatial pattern never matches the real sky.
 Instead, the relevant comparison is statistical: one computes a pixel-wise test statistic (TS) for every pixel in both the real and synthetic maps and then compares the resulting TS distributions.
@@ -40,7 +40,7 @@ Pixels in the real sky whose TS exceeds this threshold are labeled ``firing pixe
 % In its original implementation, PCAT was applied to a $40^\circ \times 40^\circ$ patch around the North Galactic Pole, requiring approximately 250~CPU hours for a single inference run~\cite{Daylan:2016tia}. Machine learning approaches to probabilistic cataloging have also been explored~\cite{Bhat:2022}, though these too have been applied to localized regions rather than to the full high-latitude sky.
 
 % The simulated-sky comparison framework adopted here takes a different route.
-\blue{The simulated-sky comparison framework adopted here takes an alternative route from previous probabilistic-cataloging studies~\cite{Daylan:2016tia,Bhat:2022}.}
+The simulated-sky comparison framework adopted here takes an alternative route from previous probabilistic-cataloging studies~\cite{Daylan:2016tia,Bhat:2022}.
 Rather than sampling the full catalog posterior, it reduces the problem to a comparison of one-dimensional TS distributions, which is computationally inexpensive and naturally scalable to the entire high-latitude sky.
 The price for this simplification is that the method does not return individual source parameters (flux, spectrum, position uncertainty); its output is a map of candidate firing pixels at a chosen pixel resolution.
 This is sufficient for the downstream application we have in mind --- cross-correlation studies (Chapter~\ref{ch:8}) --- where the relevant quantity is the number and angular distribution of candidate source directions, not the properties of individual sources.
@@ -56,22 +56,22 @@ Three quantities define the statistical procedure.
 A per-pixel test statistic quantifies how much the observed photon count in each pixel deviates from the background-only expectation.
 Unlike the TS used by the \textit{Fermi}-LAT collaboration, which is computed locally in each region of interest and therefore carries spatially varying significance, the TS adopted here is a single, globally coherent quantity defined identically for every pixel.
 % It is treated as a heuristic ``signal interest label'' whose probabilistic meaning comes entirely from the comparison with simulated skies, not from an assumed analytic distribution.
-\blue{Its probabilistic meaning comes entirely from the comparison with simulated skies rather than from an assumed analytic distribution.}
+Its probabilistic meaning comes entirely from the comparison with simulated skies rather than from an assumed analytic distribution.
 
 A Kolmogorov--Smirnov test then compares the cumulative TS distributions of the real sky and each synthetic realization above a minimum threshold $\mathrm{TS}^\star$.
 % At high $\mathrm{TS}^\star$, where bright sources dominate, the distributions agree; as $\mathrm{TS}^\star$ is lowered, background systematics cause them to diverge, setting the depth to which the method can probe.
-\blue{The value of $\mathrm{TS}^\star$ at which the distributions cease to agree (cf.\ Section~\ref{sec:simulated_sky}) sets the depth to which the method can probe.}
+The value of $\mathrm{TS}^\star$ at which the distributions cease to agree (cf.\ Section~\ref{sec:simulated_sky}) sets the depth to which the method can probe.
 
 % Finally, a Quality Factor (QF) --- the fraction of the 5000 synthetic realizations passing the KS test at a given $\mathrm{TS}^\star$ and significance level $\alpha$ --- controls the purity of the selection.
-\blue{Finally, a Quality Factor (QF) is defined as the fraction of synthetic realizations passing the KS test at a given $\mathrm{TS}^\star$ and significance level $\alpha$.}
+Finally, a Quality Factor (QF) is defined as the fraction of synthetic realizations passing the KS test at a given $\mathrm{TS}^\star$ and significance level $\alpha$.
 A high QF yields a conservative set of firing pixels; a lower QF extends coverage deeper into the sub-threshold regime at the cost of more spurious directions.
 The pair $(\alpha, \mathrm{QF})$ sets the operating point, and both can be tuned to the downstream application.
 
 Two features of this framework are worth noting.
 % First, the globally homogeneous TS scale --- in contrast to the \textit{Fermi}-LAT catalog's locally computed TS --- is particularly advantageous for statistical analyses that combine information across large sky areas, such as the cross-correlation studies discussed in Chapter~\ref{ch:8}.
-\blue{First, the globally homogeneous TS scale is particularly advantageous for statistical analyses that combine information across large sky areas, such as the cross-correlation studies discussed in Chapter~\ref{ch:8}.}
+First, the globally homogeneous TS scale is particularly advantageous for statistical analyses that combine information across large sky areas, such as the cross-correlation studies discussed in Chapter~\ref{ch:8}.
 % Second, at the chosen pixel resolution ($N_\mathrm{side} = 512$, corresponding to $\sim 0.12^\circ$), a single astrophysical source may produce multiple adjacent firing pixels due to PSF spreading, and conversely, multiple faint sources may contribute to a single pixel.
 % The method's output is therefore a map of firing pixels, not a traditional source catalog.
-\blue{Second, because PSF spreading lets a single source fire several adjacent pixels while several faint sources can share one, the deliverable is a map of firing pixels rather than a traditional source list --- a distinction quantified later in this chapter at the adopted pixel resolution.}
+Second, because PSF spreading lets a single source fire several adjacent pixels while several faint sources can share one, the deliverable is a map of firing pixels rather than a traditional source list --- a distinction quantified later in this chapter at the adopted pixel resolution.
 
-\blue{The remainder of this chapter is based on~\cite{Amerio:2023rjn} and presents the analysis in full: the data selection, the detailed statistical procedure, the results for different $(\alpha, \mathrm{QF})$ operating points, and the validation against the 4FGL-DR3 catalog.}
+The remainder of this chapter is based on~\cite{Amerio:2023rjn} and presents the analysis in full: the data selection, the detailed statistical procedure, the results for different $(\alpha, \mathrm{QF})$ operating points, and the validation against the 4FGL-DR3 catalog.
