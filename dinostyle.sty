@@ -176,6 +176,11 @@
 \setlength\parskip{0\p@ \@plus \p@}
 \AtBeginDocument{\setlength\parindent{1.2\parindent}}
 
+% With near-rigid \parskip, memoir's twoside default (\flushbottom) stretches
+% underfull pages into large inter-paragraph gaps wherever a heading is pushed
+% to the next page; leave the slack at the page bottom instead.
+\raggedbottom
+
 % Break penalties (matches JCAP exactly)
 \@lowpenalty   51
 \@medpenalty  151
