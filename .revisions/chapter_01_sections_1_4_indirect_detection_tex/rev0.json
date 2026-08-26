@@ -1,0 +1,22 @@
+[
+  {
+    "id": "ugex934",
+    "startLine": 418,
+    "endLine": 418,
+    "textPreview": "At the LHC, mono-jet and mono-photon searches have found no evidence for new physics, excluding strongly interacting superpartners (squarks, gluinos) up to masses of 1--2 TeV and charged superpartners up to several hundred GeV.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "6oh7y7u",
+        "text": "superpartners, have not been defined before. Perhaps  briefly mention them and\nthat you are taking SUSY as an example. Something very brief is enough",
+        "createdAt": "2026-08-26T09:27:10.011Z"
+      },
+      {
+        "id": "ximvbwe",
+        "text": "[AGENT] Added a brief parenthetical defining superpartners and framing SUSY as the benchmark example, wrapped in \\blue{}.",
+        "createdAt": "2026-08-26T09:46:24.519890+00:00"
+      }
+    ]
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "version": 3,
+  "sourceFile": "chapter_01/sections/1.4_indirect_detection.tex",
+  "revisions": [
+    {
+      "revision": 0,
+      "snapshotFile": "1.4_indirect_detection.rev0.tex",
+      "annotationsFile": "rev0.json",
+      "createdAt": "2026-08-26T09:26:36.221Z"
+    },
+    {
+      "revision": 1,
+      "snapshotFile": "1.4_indirect_detection.rev1.tex",
+      "annotationsFile": "rev1.json",
+      "createdAt": "2026-08-26T09:46:27.233Z"
+    }
+  ]
+}

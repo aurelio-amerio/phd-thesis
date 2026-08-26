@@ -1,0 +1,62 @@
+[
+  {
+    "id": "b07qo7x",
+    "startLine": 9,
+    "endLine": 9,
+    "textPreview": "The same coupling that governs dark matter annihilation in the early universe could also mediate scattering off nuclei in underground detectors and pair-production at particle colliders.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "2i5dfsa",
+        "text": "I got this feedback",
+        "createdAt": "2026-08-26T09:20:18.686Z"
+      },
+      {
+        "id": "wg8ipvy",
+        "text": "In general annihilations, scatterings and production at colliders could be governed by different quantities (couplings, mass of the mediators,\u2026).  It is true that in some scenarios (e.g. simplified models) the same couplings governs the same processes, but this is far from general.",
+        "createdAt": "2026-08-26T09:20:21.243Z"
+      },
+      {
+        "id": "9jd8rmf",
+        "text": "I think we might want to add a clarification in this section somewhere maybe, also verify the claim",
+        "createdAt": "2026-08-26T09:20:33.002Z"
+      },
+      {
+        "id": "z9bgig9",
+        "text": "[AGENT] Reworded the opener: \"The same coupling\" \u2192 \"The interactions that govern...\", and added an explicit clarification that the link between annihilation, scattering, and collider production is model-dependent (single coupling only in simplified models; in general different couplings/mediator masses per channel). Verified: the supervisor's point is correct \u2014 the one-coupling picture holds only in single-mediator simplified models. New prose wrapped in \\blue{}.",
+        "createdAt": "2026-08-26T09:27:49.100520+00:00"
+      }
+    ]
+  },
+  {
+    "id": "6ton2h9",
+    "startLine": 89,
+    "endLine": 89,
+    "textPreview": "Since it is the main strategy pursued throughout this thesis, we devote the next section entirely to it.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "2vxxk6f",
+        "text": "around this part, I got this comment",
+        "createdAt": "2026-08-26T09:22:21.271Z"
+      },
+      {
+        "id": "9i8x4h3",
+        "text": "Explain why the remark on sudominant DM applies only to DD and not ID",
+        "createdAt": "2026-08-26T09:22:27.436Z"
+      },
+      {
+        "id": "myq8kak",
+        "text": "what does it refer to? we need to consider how to clarify this",
+        "createdAt": "2026-08-26T09:22:46.162Z"
+      },
+      {
+        "id": "mfre2dv",
+        "text": "[AGENT] The remark refers to the subdominant-halo-component caveat for direct detection (\"A recoil signal underground fixes only the product...\"). Added a \\blue{} passage explaining why it doesn't apply to ID: the scattering cross-section is unconstrained by the relic abundance (density and coupling fully degenerate), while for a thermal relic \u27e8\u03c3v\u27e9 \u221d 1/f, so the ID signal scales as \u03c1\u00b2\u27e8\u03c3v\u27e9 \u221d f \u2014 a subdominant component gives a suppressed, not enhanced, signal.",
+        "createdAt": "2026-08-26T09:27:52.114887+00:00"
+      }
+    ]
+  }
+]

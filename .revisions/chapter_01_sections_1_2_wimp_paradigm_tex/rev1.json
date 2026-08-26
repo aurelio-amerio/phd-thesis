@@ -1,0 +1,67 @@
+[
+  {
+    "id": "se8z7ko",
+    "startLine": 65,
+    "endLine": 65,
+    "textPreview": "Resonant production is the more flexible of the two because it evades the most stringent free-streaming bounds from Lyman-$\\alpha$ forest data and Milky Way satellite counts, which otherwise push the allowed mass above $20$--$30$~keV~\\cite{Boyarsky:2018tvu}.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "53bb60e",
+        "text": "I got here the following comment",
+        "createdAt": "2026-08-26T09:11:09.890Z"
+      },
+      {
+        "id": "72bvybv",
+        "text": "For sterile neutrinos making all the DM\nisn\u2019t D-W already excluded \nby various bvounds?",
+        "createdAt": "2026-08-26T09:11:19.174Z"
+      },
+      {
+        "id": "xl8mfur",
+        "text": "[AGENT] Reviewer is correct (verified against Boyarsky et al. 2019 and Hooper's textbook in NotebookLM): pure Dodelson-Widrow production of 100% of the DM is entirely excluded \u2014 X-ray line searches close the parameter space from above, Lyman-alpha + MW satellite counts from below (m > 20-30 keV). Proposed fix: state the exclusion plainly and present Shi-Fuller resonant production (colder spectrum, smaller mixing angle, viable down to ~7 keV) as the surviving minimal mechanism, keeping \\cite{Boyarsky:2018tvu}.",
+        "createdAt": "2026-08-26T09:21:50.735565+00:00"
+      },
+      {
+        "id": "ax3bj3a",
+        "text": "[AGENT] Applied: new prose wrapped in \\blue{}, old text kept commented out with %.",
+        "createdAt": "2026-08-26T09:25:05.113192+00:00"
+      }
+    ]
+  },
+  {
+    "id": "0pro3j0",
+    "startLine": 96,
+    "endLine": 96,
+    "textPreview": "The appeal of this framework is that its phenomenology is governed by a single quantity, the velocity-averaged annihilation cross section $\\langle\\sigma v\\rangle$, which simultaneously fixes the cosmological relic abundance, the elastic-scattering rate on nuclei, the production cross section at colliders, and --- under some assumptions --- the present-day annihilation rate in galactic halos.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "am8c8tm",
+        "text": "I got this feedback here",
+        "createdAt": "2026-08-26T09:13:24.440Z"
+      },
+      {
+        "id": "7e6jll1",
+        "text": "The scattering cross-section off nuclei and the production cross-sections at colliders  are in general not governed by the annihilation cross-section. These are three different processes, not necessarily directly related.\nThere is not \u201cA single quantity\u201d which simulatenously governs annihilations, scatterings and collider production\u201d  \nA simple rephrasing should be enough",
+        "createdAt": "2026-08-26T09:13:28.453Z"
+      },
+      {
+        "id": "dgdlo6u",
+        "text": "and to remove \"the elastic-scattering rate on nuclei, the production cross section at colliders\"",
+        "createdAt": "2026-08-26T09:13:47.064Z"
+      },
+      {
+        "id": "43yvhgt",
+        "text": "[AGENT] Agreed \u2014 annihilation, nuclear scattering, and collider production are distinct processes. Proposed fix: drop the elastic-scattering and collider clauses so the sentence claims only what <sigma v> actually fixes: the relic abundance and (under assumptions) the present-day halo annihilation rate. Complementarity with direct/collider searches is already stated correctly and with proper hedging in Section 1.3, so nothing is lost.",
+        "createdAt": "2026-08-26T09:21:53.380622+00:00"
+      },
+      {
+        "id": "wqvnnsb",
+        "text": "[AGENT] Applied: new prose wrapped in \\blue{}, old text kept commented out with %.",
+        "createdAt": "2026-08-26T09:25:05.113208+00:00"
+      }
+    ]
+  }
+]
