@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "sourceFile": "main.pdf",
+  "revisions": [
+    {
+      "revision": 0,
+      "snapshotFile": "main.rev0.pdf",
+      "annotationsFile": "rev0.json",
+      "createdAt": "2026-08-26T09:57:07.405Z"
+    }
+  ]
+}

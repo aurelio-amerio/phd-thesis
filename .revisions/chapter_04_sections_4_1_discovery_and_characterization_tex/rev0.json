@@ -1,0 +1,27 @@
+[
+  {
+    "id": "ogv9qv5",
+    "startLine": 95,
+    "endLine": 95,
+    "textPreview": "The spatial morphology of the excess is approximately spherically symmetric.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "nb2im9c",
+        "text": "I got this comment: Here the spherical symmetry is established but later you mention analyses that challenge this conclusion",
+        "createdAt": "2026-08-26T10:12:39.323Z"
+      },
+      {
+        "id": "2y11jvx",
+        "text": "let's check for self consistency. I think that one thing is to say that the spatial morphology is approximately spherical, but if it's exactly spherical, or point like due to unresolved sources is the key point",
+        "createdAt": "2026-08-26T10:13:38.837Z"
+      },
+      {
+        "id": "sqd9px2",
+        "text": "[AGENT] Added a qualification paragraph after the morphology characterization: approximate sphericity from the template fits does not establish exact sphericity (boxy-bulge challenge, cf. 4.2.1/4.3.2) nor that the emission is truly diffuse rather than unresolved point sources (cf. 4.2/4.3). Also softened the \"no astrophysical component traces the spherical symmetry\" claim, which clashed with the stellar-bulge fits: it now excludes gas/dust/star formation only and flags the bulge stellar population as the open question. All new prose wrapped in \\blue{}.",
+        "createdAt": "2026-08-26T10:16:22.771364+00:00"
+      }
+    ]
+  }
+]

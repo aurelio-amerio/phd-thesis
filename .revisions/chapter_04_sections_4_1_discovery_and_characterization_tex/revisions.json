@@ -1,0 +1,24 @@
+{
+  "version": 3,
+  "sourceFile": "chapter_04/sections/4.1_discovery_and_characterization.tex",
+  "revisions": [
+    {
+      "revision": 0,
+      "snapshotFile": "4.1_discovery_and_characterization.rev0.tex",
+      "annotationsFile": "rev0.json",
+      "createdAt": "2026-08-26T10:12:10.827Z"
+    },
+    {
+      "revision": 1,
+      "snapshotFile": "4.1_discovery_and_characterization.rev1.tex",
+      "annotationsFile": "rev1.json",
+      "createdAt": "2026-08-26T10:16:25.485Z"
+    },
+    {
+      "revision": 2,
+      "snapshotFile": "4.1_discovery_and_characterization.rev2.tex",
+      "annotationsFile": "rev2.json",
+      "createdAt": "2026-08-26T10:40:23.025Z"
+    }
+  ]
+}

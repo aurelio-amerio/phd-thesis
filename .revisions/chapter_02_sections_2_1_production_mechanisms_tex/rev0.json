@@ -1,0 +1,27 @@
+[
+  {
+    "id": "68gocfv",
+    "startLine": 61,
+    "endLine": 61,
+    "textPreview": "The behavior of this process depends critically on the ratio of the electron energy to the target photon energy $\\epsilon$.",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "y4rmrsv",
+        "text": "I got asked to define epsilon",
+        "createdAt": "2026-08-26T09:57:56.781Z"
+      },
+      {
+        "id": "s09ixo6",
+        "text": "is that the photon energy or the ratio? we better clarify, and if it's the ratio, write the equation",
+        "createdAt": "2026-08-26T09:58:28.671Z"
+      },
+      {
+        "id": "7vvtahb",
+        "text": "[AGENT] Clarified: \u03b5 is the target photon energy; the governing quantity is the dimensionless ratio \u03b5E_e/m_e\u00b2 (the rest-frame photon energy in units of m_e), now stated explicitly. New prose wrapped in \\blue{}.",
+        "createdAt": "2026-08-26T10:01:02.237526+00:00"
+      }
+    ]
+  }
+]
