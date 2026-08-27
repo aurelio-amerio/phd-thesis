@@ -41,6 +41,10 @@ E-7.3, E-8.1, E-M.1, E-M.2): in scope per author decision, apply as drafted.
 - Draft prose lives in `reply_eckner.md`; this spec holds structure only.
 - Vocabulary blacklist and sentence-length ceiling checked before presenting prose.
 - Review passes run in fresh-context subagents, never inline.
+- **Model policy for prose:** any subagent that writes or rewrites prose (drafting,
+  humanizer, scientific-writing review) runs on Fable or Opus 4.6 only — never Sonnet
+  or Haiku (author: worse at prose writing). Mechanical tasks (grep sweeps, bib
+  fetches) are exempt.
 - `\aure{}` WIP markers are never silently deleted.
 
 ## Execution order
