@@ -667,7 +667,7 @@ candidates … remain largely unexplored"). Draft:
 
 ## Chapter 2 — The Gamma-Ray Sky and Fermi-LAT
 
-### E-2.1 · §2.1.3 — Dark gas in diffuse-emission uncertainties `[clarify]` ⬜
+### E-2.1 · §2.1.3 — Dark gas in diffuse-emission uncertainties `[clarify]` ✅
 
 **Eckner's point:** When discussing Galactic diffuse emission uncertainties, also mention
 dark gas on small scales, which cannot be inferred with the typical techniques — neither
@@ -702,7 +702,7 @@ conversion but not dark gas.
 
 ---
 
-### E-2.2 · §2.2.1 — PWNe/SNRs non-negligible beyond this thesis `[clarify]` ⬜
+### E-2.2 · §2.2.1 — PWNe/SNRs non-negligible beyond this thesis `[clarify]` ✅
 
 **Eckner's point:** The claim that PWNe and SNRs are subdominant backgrounds holds for the
 thesis topics, but add an aside that beyond them they can become non-negligible (e.g. CTAO
@@ -724,7 +724,7 @@ and the Galactic centre).
 
 ---
 
-### E-2.3 · §2.2.2 — Transient extragalactic sources missing `[structure]` ⬜
+### E-2.3 · §2.2.2 — Transient extragalactic sources missing `[structure]` ✅
 
 **Eckner's point:** The section entirely misses transient extragalactic gamma-ray
 sources, which can be used, e.g., to search for axions.
@@ -1309,9 +1309,9 @@ one phrase, the whole conclusions bullet list deserves a humanizer pass in fresh
 | E-1.4 | 1.4.7 | ref | ✅ | append newer dwarf refs at first cite |
 | E-1.5 | 1.4.7 | ref | ✅ | verified: CMZ ionisation, 2409.07515 |
 | E-1.6 | 1.4.7 | structure | ✅ | TeV/CTAO outlook paragraph |
-| E-2.1 | 2.1.3 | clarify | 🟡 | dark-gas sentence + Grenier 2005 (no arXiv) |
-| E-2.2 | 2.2.1 | clarify | 🟡 | PWNe/SNR aside for TeV |
-| E-2.3 | 2.2.2 | structure | 🟡 | transients paragraph + ALP refs |
+| E-2.1 | 2.1.3 | clarify | ✅ | dark-gas sentence + Grenier 2005 (no arXiv) |
+| E-2.2 | 2.2.1 | clarify | ✅ | PWNe/SNR aside for TeV |
+| E-2.3 | 2.2.2 | structure | ✅ | transients paragraph + ALP refs |
 | E-3.1 | ch3 intro | clarify | ⏳ | define/rename "noise-dominated" |
 | E-3.2 | eq 3.1.5 | clarify | 🟡 | mark TS as detection TS |
 | E-3.3 | 3.1.2 | clarify | 🟡 | KL in words + forward ref |
@@ -1337,6 +1337,6 @@ one phrase, the whole conclusions bullet list deserves a humanizer pass in fresh
 | E-M.1 | 3.1.1 | style | 🟡 | formalized→established (2 sites) |
 | E-M.2 | conclusions | style | 🟡 | fix + humanizer pass on conclusions |
 
-**Counts:** 25 proposed (🟡) · 13 applied (✅): E-5.3, E-5.4, E-6.5, E-6.6, E-6.8, E-6.9, E-7.3
-(mechanical batch); E-1.1–E-1.6 (ch1 quick pass) · 8 deferred (⏳): E-4.1, E-4.3, E-4.5, E-4.6, E-4.8 (chapter-4 rebalance),
+**Counts:** 22 proposed (🟡) · 16 applied (✅): E-5.3, E-5.4, E-6.5, E-6.6, E-6.8, E-6.9, E-7.3
+(mechanical batch); E-1.1–E-1.6 (ch1 quick pass); E-2.1–E-2.3 (ch2 quick pass) · 8 deferred (⏳): E-4.1, E-4.3, E-4.5, E-4.6, E-4.8 (chapter-4 rebalance),
 E-3.1 (terminology), E-6.4, E-6.7 (need author input).
