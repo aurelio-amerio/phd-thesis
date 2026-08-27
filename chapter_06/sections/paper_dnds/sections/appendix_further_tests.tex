@@ -1,10 +1,10 @@
-\subsection{Further Tests}
+\section{Further Tests}
 \label{furthertests}
 
 In this appendix we describe further tests that we have performed to cross-check the stability and robustness of the $\dnds$ derived in the main text.
 
 
-\subsubsection{Flat $S^2\,\dnds$}
+\subsection{Flat $S^2\,\dnds$}
 
 
 
@@ -32,14 +32,14 @@ As a further test, we show in Figure \ref{fig:flat-maps-v5} the case where we ap
 
 
 
-\subsubsection{UltraCleanVeto Selection} 
+\subsection{UltraCleanVeto Selection}
 
 
 In this section we further test the robustness of the results to the \fermi data selection. In particular, while for the main results we used the \texttt{SOURCEVETO} event class selection, here we test the \texttt{ULTRACLEANVETO} selection. This event class has more stringent cuts with respct to the \texttt{SOURCEVETO} class, and it thus contains a lower residual charged  cosmic-ray background, at the prize of a lower effective area (by about 15\%). Except for the different data selection all the rest of the analysis is performed in the same identical way as for the \texttt{SOURCEVETO} case. The resulting $\dnds$ is shown in Figure \ref{fig:prediction-fermi-12y-ucv} and it can be seen that it is compatible with the main results, while, as expected, the value of $\fiso$ is a bit lower. 
 
 
 
-\subsubsection{Multipole Analysis}
+\subsection{Multipole Analysis}
 
 
 
@@ -118,14 +118,14 @@ In conclusion, these tests give confidence on the reliability of the method and 
 
 
 
-\subsubsection{Changing $A_\textrm{gal}$}
+\subsection{Changing $A_\textrm{gal}$}
 \label{sec:agal-var}
 
 In order to test the stability of the results against changes in the values of $A_\textrm{gal}$, we have provided, as input to our trained CNN, \fermi maps cleaned with different values of $A_\textrm{gal}$, ranging from 0.78 to 1.0 (our fiducial value is $0.888 \pm 0.005$, thus the chosen range encompass many standard deviations around its central value). The results are shown in Figure \ref{fig:Agal_change} below. It can be seen that the $dN/dS$ is considerably robust and stable to different values of $A_\textrm{gal}$, despite the large range explored. Instead, different values of $A_\textrm{gal}$ seem to imply a significant variation in the reconstructed value of $F_\textrm{iso}$, as expected since at the large Galactic latitudes explored in our analysis ($|b| > 30^\circ$) there is a certain amount of degeneracy between a purely isotropic emission and the Galactic foreground emission itself. However, this does not affect the reconstructed $dN/dS$.
 
 
 
-\subsubsection{Fully spherical CNN}
+\subsection{Fully spherical CNN}
 \label{sec:full-spherical-nn}
 
 In this section we show a comparison of the results obtained using a fully spherical CNN, instead of the \verb|map2patch| algorithm used in the main analysis. In particular, we adopt here the NNHealpix \cite{Krachmalnicoff:2019} algorithm.

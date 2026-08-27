@@ -874,6 +874,11 @@ exactly this.
 3. Also fix the nearby typo "undertainties" → "uncertainties" at line 67 (spotted while
    reading; not in Eckner's list).
 
+**Progress note (Task 2, mechanical batch):** Typo half done — item 1 ("(statistical)uncertainty"
+→ "(statistical) uncertainty") and item 3 ("undertainties" → "uncertainties") are fixed and
+`\blue{}`-wrapped in `chapter_03/sections/3.3_ml_astrophysics.tex`. Item 2 (the added sentence on
+epistemic uncertainty from random initialization) is still outstanding, pending the science pass.
+
 ---
 
 ## Chapter 5 — Dark Matter Substructures
@@ -927,7 +932,7 @@ gravitational potential of the baryonic disk and bulge.
 
 ---
 
-### E-5.3 · §5.3.2 — Typo `[mechanical]` ⬜
+### E-5.3 · §5.3.2 — Typo `[mechanical]` ✅
 
 **Eckner's point:** "at lest partly" → "at least partly".
 
@@ -938,7 +943,7 @@ preference with author; default: mark it anyway for the supervisor diff).
 
 ---
 
-### E-5.4 · §5.4.8 — Empty sub-sub-section `[mechanical]` ⬜
+### E-5.4 · §5.4.8 — Empty sub-sub-section `[mechanical]` ✅
 
 **Eckner's point:** §5.4.8 is empty — or was it meant to be a sub-section?
 
@@ -1063,7 +1068,7 @@ stability of the neural network" with the specific statement.
 
 ---
 
-### E-6.5 · §6.5.2.2 — Broken reference "Appendix 6..6.4" `[mechanical]` ⬜
+### E-6.5 · §6.5.2.2 — Broken reference "Appendix 6..6.4" `[mechanical]` ✅
 
 **Eckner's point:** Weird reference at the bottom of the section.
 
@@ -1079,7 +1084,7 @@ renders as "Appendix 6.A.4" (or similar).
 
 ---
 
-### E-6.6 · p. 173 — Typo `[mechanical]` ⬜
+### E-6.6 · p. 173 — Typo `[mechanical]` ✅
 
 **Eckner's point:** "loose" → "lose".
 
@@ -1114,7 +1119,7 @@ handled.
 
 ---
 
-### E-6.8 · §6.5.3.4 — Typo `[mechanical]` ⬜
+### E-6.8 · §6.5.3.4 — Typo `[mechanical]` ✅
 
 **Eckner's point:** "aleatory" → "aleatoric".
 
@@ -1126,7 +1131,7 @@ error components"). Grep the whole thesis for further instances of "aleatory".
 
 ---
 
-### E-6.9 · §6.6 numbering broken `[mechanical]` ⬜
+### E-6.9 · §6.6 numbering broken `[mechanical]` ✅
 
 **Eckner's point:** Sections "6..6", "6..6.1", etc. are wrongly numbered.
 
@@ -1200,7 +1205,7 @@ whatever final wording is chosen.
 
 ---
 
-### E-7.3 · §7.3.4 — Typo `[mechanical]` ⬜
+### E-7.3 · §7.3.4 — Typo `[mechanical]` ✅
 
 **Eckner's point:** "starts to loose sensitivity" → "lose".
 
@@ -1314,23 +1319,24 @@ one phrase, the whole conclusions bullet list deserves a humanizer pass in fresh
 | E-3.5 | 3.3.2 | science | 🟡 | typo + seed-variability sentence |
 | E-5.1 | 5.1.2 | clarify | 🟡 | mass-at-infall clause |
 | E-5.2 | 5.1.2 | science | 🟡 | baryonic → gravitational potential |
-| E-5.3 | 5.3.2 | mechanical | 🟡 | typo |
-| E-5.4 | 5.4.8 | mechanical | 🟡 | demote inner headers (3 sites) |
+| E-5.3 | 5.3.2 | mechanical | ✅ | typo |
+| E-5.4 | 5.4.8 | mechanical | ✅ | demote inner headers (3 sites) |
 | E-6.1 | 6.1.1 | science | 🟡 | drop false dichotomy |
 | E-6.2 | eq 6.2.1 | clarify | 🟡 | Γ intrinsic vs observed + EBL xref |
 | E-6.3 | 6.5.2.1 | science | 🟡 | verified: 0.25-photon floor, add footnote |
 | E-6.4 | 6.5.2.2 | clarify | ⏳ | needs author: what "stability" meant |
-| E-6.5 | 6.5.2.2 | mechanical | 🟡 | fixed by E-6.9 |
-| E-6.6 | p. 173 | mechanical | 🟡 | 2× loose→lose |
+| E-6.5 | 6.5.2.2 | mechanical | ✅ | fixed by E-6.9 |
+| E-6.6 | p. 173 | mechanical | ✅ | 2× loose→lose |
 | E-6.7 | 6.5.3.2 | clarify | ⏳ | needs author: negative-pixel handling |
-| E-6.8 | 6.5.3.4 | mechanical | 🟡 | aleatory→aleatoric + sweep |
-| E-6.9 | 6.6 | mechanical | 🟡 | subappendices sectioning fix |
+| E-6.8 | 6.5.3.4 | mechanical | ✅ | aleatory→aleatoric + sweep |
+| E-6.9 | 6.6 | mechanical | ✅ | subappendices sectioning fix |
 | E-7.1 | 7.1.2 | science | 🟡 | verified: DR4 diffuse change; add sentence |
 | E-7.2 | 7.2.2 | mechanical | 🟡 | rephrase "spurious directions" |
-| E-7.3 | 7.3.4 | mechanical | 🟡 | loose→lose sweep |
+| E-7.3 | 7.3.4 | mechanical | ✅ | loose→lose sweep |
 | E-8.1 | 8.2.2 | mechanical | 🟡 | rephrase CR rejection sentence |
 | E-M.1 | 3.1.1 | style | 🟡 | formalized→established (2 sites) |
 | E-M.2 | conclusions | style | 🟡 | fix + humanizer pass on conclusions |
 
-**Counts:** 38 proposed (🟡) · 8 deferred (⏳): E-4.1, E-4.3, E-4.5, E-4.6, E-4.8
-(chapter-4 rebalance), E-3.1 (terminology), E-6.4, E-6.7 (need author input).
+**Counts:** 31 proposed (🟡) · 7 applied (✅): E-5.3, E-5.4, E-6.5, E-6.6, E-6.8, E-6.9, E-7.3
+(mechanical batch) · 8 deferred (⏳): E-4.1, E-4.3, E-4.5, E-4.6, E-4.8 (chapter-4 rebalance),
+E-3.1 (terminology), E-6.4, E-6.7 (need author input).

@@ -50,7 +50,7 @@ turning that classification into a population-level constraint on $\langle\sigma
 The number of DM candidates depends on an arbitrary probability threshold $p_\mathrm{DM} > p_\mathrm{threshold}$ that needs to be carefully --- and sometimes arbitrarily --- chosen.
 Different choices can shift the candidate count, and with it the derived bound on $\langle\sigma v\rangle$.
 The resulting upper limits therefore sometimes lack a well-defined confidence level: they encode an assumption, $N_\mathrm{DM} \leq N_\mathrm{candidates}$, rather than a statistical inference.
-A classifier is a supervised model: it is trained on a labeled, at lest partly simulated dataset to reproduce the conditional probability $p(k|\mathbf{x})$ as accurately as possible, and then applied to the unassociated sources one by one.
+A classifier is a supervised model: it is trained on a labeled, \blue{at least} partly simulated dataset to reproduce the conditional probability $p(k|\mathbf{x})$ as accurately as possible, and then applied to the unassociated sources one by one.
 The unassociated population as a whole does not generally enter the optimization, and shapes the classifier only through the composition of its training set.
 A likelihood-based approach instead learns the class-conditional densities $p(\mathbf{x}|k)$ and treats the prevalences $p(k)$ as free parameters, fitted by maximizing the joint likelihood of the entire unassociated sample.
 This amounts to unsupervised density estimation performed directly on the target data: the parameters are driven by the empirical feature distribution of the unassociated population itself, which is what makes the approach more powerful.
