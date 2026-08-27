@@ -43,8 +43,12 @@ E-7.3, E-8.1, E-M.1, E-M.2): in scope per author decision, apply as drafted.
 - Review passes run in fresh-context subagents, never inline.
 - **Model policy for prose:** any subagent that writes or rewrites prose (drafting,
   humanizer, scientific-writing review) runs on Fable or Opus 4.6 only — never Sonnet
-  or Haiku (author: worse at prose writing). Mechanical tasks (grep sweeps, bib
-  fetches) are exempt.
+  or Haiku (author: worse at prose writing). Author directive (2026-08-27): do NOT use
+  the `scientific-prose-writer` agent definition; dispatch generic agents with the
+  model set explicitly. Since the Agent tool's per-call `model` only takes aliases and
+  `opus` resolves to Opus 5 (verified), generic prose agents run with
+  `model: "fable"`. Mechanical tasks (grep sweeps, bib fetches) are exempt and may use
+  any model.
 - `\aure{}` WIP markers are never silently deleted.
 
 ## Execution order
