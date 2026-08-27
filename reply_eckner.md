@@ -502,7 +502,7 @@ changes land, to avoid edit conflicts.
 
 ## Chapter 1 — The Dark Matter Problem
 
-### E-1.1 · §1.4.5 — Narrative too WIMP-centric `[structure]` ⬜
+### E-1.1 · §1.4.5 — Narrative too WIMP-centric `[structure]` ✅
 
 **Eckner's point:** Fine given the thesis scope, but in this *introductory* section one
 could at least mention alternatives — primordial black holes, axions/axion-like particles
@@ -532,7 +532,7 @@ rather than re-introduce.
 
 ---
 
-### E-1.2 · §1.4.6 — Why neutrino constraints are weaker `[clarify]` ⬜
+### E-1.2 · §1.4.6 — Why neutrino constraints are weaker `[clarify]` ✅
 
 **Eckner's point:** In the neutrino paragraph, add the remark that neutrinos interact very
 weakly, so *detection* is the challenge (large volumes of material required) — which is
@@ -557,7 +557,7 @@ telescopes.
 
 ---
 
-### E-1.3 · §1.4.6 — Isotropisation length/time scale for CRs `[clarify]` ⬜
+### E-1.3 · §1.4.6 — Isotropisation length/time scale for CRs `[clarify]` ✅
 
 **Eckner's point:** When saying charged cosmic rays are randomised by the Galactic
 magnetic field (and nearby pulsars explain the positron excess), add a small comment on
@@ -588,7 +588,7 @@ structure. Refs: arXiv:1612.08002 (Ahlers & Mertsch review), arXiv:1812.05682
 
 ---
 
-### E-1.4 · §1.4.7 — Add recent dwarf-constraint papers to first list `[ref]` ⬜
+### E-1.4 · §1.4.7 — Add recent dwarf-constraint papers to first list `[ref]` ✅
 
 **Eckner's point:** [129] is cited for dwarf constraints on WIMPs, but more recent papers
 cited later in the thesis should be added to this first list for completeness.
@@ -606,7 +606,7 @@ different key, apply the same append-newer-refs fix at that location.
 
 ---
 
-### E-1.5 · §1.4.7 — GC ionisation fraction as another anomaly `[ref]` ⬜
+### E-1.5 · §1.4.7 — GC ionisation fraction as another anomaly `[ref]` ✅
 
 **Eckner's point:** Among unresolved anomalies, another curiosity discussed in the DM
 context is the unusually high ionisation fraction in the Galactic centre. Pedro De la
@@ -631,7 +631,7 @@ sentence at line 430 with one clause:
 
 ---
 
-### E-1.6 · §1.4.7 — Missing TeV/CTAO outlook paragraph `[structure]` ⬜
+### E-1.6 · §1.4.7 — Missing TeV/CTAO outlook paragraph `[structure]` ✅
 
 **Eckner's point:** As a thesis intro, a paragraph on higher energies is missing. Beyond
 the GCE at GeV energies, the entire TeV range for WIMPs is only marginally probed by
@@ -1303,12 +1303,12 @@ one phrase, the whole conclusions bullet list deserves a humanizer pass in fresh
 | E-4.11 | 4.5.5 | ref | 🟡 | verified: searches targeted, not systematic |
 | E-4.12 | 4.5.5 | science | 🟡 | lean into cluster-variation model |
 | E-G.1 | global | mechanical | 🟡 | /acronyms sweep, batch task |
-| E-1.1 | 1.4.5 | structure | 🟡 | PBH/ALP closing paragraph |
-| E-1.2 | 1.4.6 | clarify | 🟡 | why neutrino bounds are weaker |
-| E-1.3 | 1.4.6 | clarify | 🟡 | verified: r_g ~ mpc, anisotropy 10⁻⁴–10⁻³ |
-| E-1.4 | 1.4.7 | ref | 🟡 | append newer dwarf refs at first cite |
-| E-1.5 | 1.4.7 | ref | 🟡 | verified: CMZ ionisation, 2409.07515 |
-| E-1.6 | 1.4.7 | structure | 🟡 | TeV/CTAO outlook paragraph |
+| E-1.1 | 1.4.5 | structure | ✅ | PBH/ALP closing paragraph |
+| E-1.2 | 1.4.6 | clarify | ✅ | why neutrino bounds are weaker |
+| E-1.3 | 1.4.6 | clarify | ✅ | verified: r_g ~ mpc, anisotropy 10⁻⁴–10⁻³ |
+| E-1.4 | 1.4.7 | ref | ✅ | append newer dwarf refs at first cite |
+| E-1.5 | 1.4.7 | ref | ✅ | verified: CMZ ionisation, 2409.07515 |
+| E-1.6 | 1.4.7 | structure | ✅ | TeV/CTAO outlook paragraph |
 | E-2.1 | 2.1.3 | clarify | 🟡 | dark-gas sentence + Grenier 2005 (no arXiv) |
 | E-2.2 | 2.2.1 | clarify | 🟡 | PWNe/SNR aside for TeV |
 | E-2.3 | 2.2.2 | structure | 🟡 | transients paragraph + ALP refs |
@@ -1337,6 +1337,6 @@ one phrase, the whole conclusions bullet list deserves a humanizer pass in fresh
 | E-M.1 | 3.1.1 | style | 🟡 | formalized→established (2 sites) |
 | E-M.2 | conclusions | style | 🟡 | fix + humanizer pass on conclusions |
 
-**Counts:** 31 proposed (🟡) · 7 applied (✅): E-5.3, E-5.4, E-6.5, E-6.6, E-6.8, E-6.9, E-7.3
-(mechanical batch) · 8 deferred (⏳): E-4.1, E-4.3, E-4.5, E-4.6, E-4.8 (chapter-4 rebalance),
+**Counts:** 25 proposed (🟡) · 13 applied (✅): E-5.3, E-5.4, E-6.5, E-6.6, E-6.8, E-6.9, E-7.3
+(mechanical batch); E-1.1–E-1.6 (ch1 quick pass) · 8 deferred (⏳): E-4.1, E-4.3, E-4.5, E-4.6, E-4.8 (chapter-4 rebalance),
 E-3.1 (terminology), E-6.4, E-6.7 (need author input).
