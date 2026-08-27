@@ -1,0 +1,332 @@
+[
+  {
+    "id": "xuxawc6",
+    "startLine": 84,
+    "endLine": 96,
+    "textPreview": "**Action:** In `chapter_04/sections/4.1_discovery_and_characterization.tex:140`, update:",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "y66pa8u",
+        "text": "I agree, let's just change the range and cite the newer papers",
+        "createdAt": "2026-08-27T10:12:59.001Z"
+      }
+    ]
+  },
+  {
+    "id": "8iyypoq",
+    "startLine": 178,
+    "endLine": 209,
+    "textPreview": "**Action:** In `chapter_04/sections/4.2_msp_hypothesis.tex:71`, rework:",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "vsadh1o",
+        "text": "ok, I agree",
+        "createdAt": "2026-08-27T10:16:07.439Z"
+      }
+    ]
+  },
+  {
+    "id": "11b27gr",
+    "startLine": 282,
+    "endLine": 300,
+    "textPreview": "**Action:** In `chapter_04/sections/4.3_systematics_stalemate.tex:71-72`, rework:",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "rf3xnef",
+        "text": "agree",
+        "createdAt": "2026-08-27T10:27:52.709Z"
+      }
+    ]
+  },
+  {
+    "id": "pi48anb",
+    "startLine": 391,
+    "endLine": 406,
+    "textPreview": "**Action:** Add a closing paragraph to `comparisons.tex` (after the Hooper & Linden",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "lamkir7",
+        "text": "sounds good",
+        "createdAt": "2026-08-27T10:30:01.805Z"
+      }
+    ]
+  },
+  {
+    "id": "jies055",
+    "startLine": 430,
+    "endLine": 446,
+    "textPreview": "**Action:** In `chapter_04/sections/paper_msp/sections/implications_gce.tex:20`, rework:",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "h8khs4w",
+        "text": "sounds good",
+        "createdAt": "2026-08-27T10:31:06.070Z"
+      }
+    ]
+  },
+  {
+    "id": "9pgs84p",
+    "startLine": 462,
+    "endLine": 472,
+    "textPreview": "**Action:** In `chapter_04/sections/paper_msp/sections/implications_gce.tex`, at the end",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "ar4u13x",
+        "text": "I would not modify the text of the paper, but this comment is valid",
+        "createdAt": "2026-08-27T10:32:31.388Z"
+      }
+    ]
+  },
+  {
+    "id": "ik9eov6",
+    "startLine": 507,
+    "endLine": 509,
+    "textPreview": "**Eckner's point:** Fine given the thesis scope, but in this *introductory* section one",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "wiqs4ej",
+        "text": "it's a fair point, we shall address it",
+        "createdAt": "2026-08-27T11:05:09.185Z"
+      }
+    ]
+  },
+  {
+    "id": "wqf0qsw",
+    "startLine": 517,
+    "endLine": 531,
+    "textPreview": "**Action:** Add a closing paragraph to §1.4.5, after line 376, along these lines",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "tjrvw6b",
+        "text": "I agree with the idea",
+        "createdAt": "2026-08-27T11:05:36.117Z"
+      }
+    ]
+  },
+  {
+    "id": "lc6nb25",
+    "startLine": 537,
+    "endLine": 540,
+    "textPreview": "**Eckner's point:** In the neutrino paragraph, add the remark that neutrinos interact very",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "k9t4yp7",
+        "text": "fair",
+        "createdAt": "2026-08-27T11:05:50.905Z"
+      }
+    ]
+  },
+  {
+    "id": "uc7g5tb",
+    "startLine": 546,
+    "endLine": 556,
+    "textPreview": "**Action:** In line 387, expand:",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "bur4bm2",
+        "text": "make a smaller change. ...generally weaker due to the experimental difficulties in detecting them... or something similar.",
+        "createdAt": "2026-08-27T11:06:43.016Z"
+      }
+    ]
+  },
+  {
+    "id": "3pvrdgc",
+    "startLine": 575,
+    "endLine": 587,
+    "textPreview": "**Action:** In `chapter_01/sections/1.4_indirect_detection.tex:389`, extend the sentence:",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "doiui2o",
+        "text": "agree",
+        "createdAt": "2026-08-27T11:07:49.497Z"
+      }
+    ]
+  },
+  {
+    "id": "1o7f5qf",
+    "startLine": 602,
+    "endLine": 605,
+    "textPreview": "**Action:** At line 410, change `\\cite{Fermi-LAT:2015att}` →",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "9sgs3mb",
+        "text": "sounds good",
+        "createdAt": "2026-08-27T13:34:56.532Z"
+      }
+    ]
+  },
+  {
+    "id": "0xw2j8e",
+    "startLine": 623,
+    "endLine": 630,
+    "textPreview": "**Action:** In §1.4.7 \"Unresolved anomalies\"",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "scybciq",
+        "text": "sounds good",
+        "createdAt": "2026-08-27T13:35:34.997Z"
+      }
+    ]
+  },
+  {
+    "id": "hu3tiub",
+    "startLine": 650,
+    "endLine": 664,
+    "textPreview": "**Action:** Add a paragraph to §1.4.7, most naturally inside \"The methodological case for",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "r1ycqo6",
+        "text": "good idea, think about how to properly address the point",
+        "createdAt": "2026-08-27T13:36:49.963Z"
+      }
+    ]
+  },
+  {
+    "id": "dmv2uc6",
+    "startLine": 684,
+    "endLine": 701,
+    "textPreview": "**Action:** In `2.1_production_mechanisms.tex:141`, extend:",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "6unh197",
+        "text": "sounds good, double check the phrase",
+        "createdAt": "2026-08-27T13:37:49.166Z"
+      }
+    ]
+  },
+  {
+    "id": "yqyq4wy",
+    "startLine": 714,
+    "endLine": 723,
+    "textPreview": "**Action:** Extend line 37:",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "71ep4n0",
+        "text": "ok, but keep more concise. \"for the GeV dark matter searches undertaken in this thesis.\", \"On the other hand, at TeV energies....\". Avoid unneeded connections and qualifiers",
+        "createdAt": "2026-08-27T13:39:23.247Z"
+      }
+    ]
+  },
+  {
+    "id": "3d4zf5p",
+    "startLine": 741,
+    "endLine": 755,
+    "textPreview": "**Action:** Add a paragraph after line 74 (before the \"Detailed population models…\"",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "pehgf9w",
+        "text": "sounds good",
+        "createdAt": "2026-08-27T13:54:05.695Z"
+      }
+    ]
+  },
+  {
+    "id": "wlhpnv9",
+    "startLine": 797,
+    "endLine": 803,
+    "textPreview": "**Action:** In `chapter_03/sections/3.1_inference.tex:76`, after \"…the globally maximized",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "5gtxinm",
+        "text": "sounds good",
+        "createdAt": "2026-08-27T13:54:53.393Z"
+      }
+    ]
+  },
+  {
+    "id": "pwytbpl",
+    "startLine": 817,
+    "endLine": 828,
+    "textPreview": "**Action:** In `chapter_03/sections/3.1_inference.tex:108`, rework the AIC sentence:",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "dezltrr",
+        "text": "re-evaluate how to integrate the comment naturally in the text",
+        "createdAt": "2026-08-27T14:09:06.845Z"
+      }
+    ]
+  },
+  {
+    "id": "8gp9x1u",
+    "startLine": 840,
+    "endLine": 850,
+    "textPreview": "**Action:** In `chapter_03/sections/3.1_inference.tex:132`, extend the sentence:",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "hppk2kr",
+        "text": "ok",
+        "createdAt": "2026-08-27T14:09:37.526Z"
+      }
+    ]
+  },
+  {
+    "id": "t7n0ajp",
+    "startLine": 869,
+    "endLine": 873,
+    "textPreview": "> \\blue{In deep learning, the epistemic component includes the variability induced by the",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "dn5v7rp",
+        "text": "ok",
+        "createdAt": "2026-08-27T14:10:02.515Z"
+      }
+    ]
+  },
+  {
+    "id": "ep3d3re",
+    "startLine": 891,
+    "endLine": 902,
+    "textPreview": "**Action:** In `chapter_05/sections/5.2_dark_matter_substructure.tex:35`, modify:",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "9yjqizb",
+        "text": "ok, but make more concise, just write mass at the time of formation/accretion/infall",
+        "createdAt": "2026-08-27T14:11:15.407Z"
+      }
+    ]
+  }
+]
