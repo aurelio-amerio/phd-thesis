@@ -783,7 +783,7 @@ systematics/background-dominated rather than statistics-limited, and that we use
 
 ---
 
-### E-3.2 · Eq. 3.1.5 — TS definition is detection-specific `[clarify]` ⬜
+### E-3.2 · Eq. 3.1.5 — TS definition is detection-specific `[clarify]` ✅
 
 **Eckner's point:** As written, this is specifically the TS used for *source detection* —
 say so explicitly. Other TS definitions exist for hypothesis testing depending on the
@@ -804,7 +804,7 @@ likelihood) \cite{Mattox:1996zz}.", add:
 
 ---
 
-### E-3.3 · §3.1.2 — KL divergence used before being defined `[clarify]` ⬜
+### E-3.3 · §3.1.2 — KL divergence used before being defined `[clarify]` ✅
 
 **Eckner's point:** In "non-nested model comparison" the Kullback–Leibler divergence
 appears with no prior mention. Define it directly or explain it in words (it also
@@ -827,9 +827,15 @@ section).
 > (Check that the KL divergence is indeed defined in §3.2; if not, add the one-line
 > definition $D_{\mathrm{KL}}(p\,\|\,q)=\int p\ln(p/q)$ here instead.)
 
+**As applied (ch3 pass):** checked — §3.2 does *not* define the KL divergence, so instead of the
+forward reference the one-line formula was added as a preceding sentence to the AIC discussion
+("The criterion derives from the \emph{Kullback--Leibler divergence}, $D_{\mathrm{KL}}(p\,\|\,q)=
+\int p(\mathbf{x})\ln[p(\mathbf{x})/q(\mathbf{x})]\,d\mathbf{x}$, …"); the original AIC sentence
+is unchanged.
+
 ---
 
-### E-3.4 · §3.1.3 — Imprecise description of the evidence p(x) `[clarify]` ⬜
+### E-3.4 · §3.1.3 — Imprecise description of the evidence p(x) `[clarify]` ✅
 
 **Eckner's point:** Be more precise: the evidence is the probability of seeing the data
 across the *full landscape spanned by the model*.
@@ -851,7 +857,7 @@ likelihood weighted by the prior") describes the computation but not the meaning
 
 ---
 
-### E-3.5 · §3.3.2 — Missing space + epistemic uncertainty from initialization `[science]` ⬜
+### E-3.5 · §3.3.2 — Missing space + epistemic uncertainty from initialization `[science]` ✅
 
 **Eckner's point:** Two items: (1) space missing in "aleatoric (statistical) uncertainty";
 (2) epistemic uncertainty also has a component from random initialization of network
@@ -874,10 +880,10 @@ exactly this.
 3. Also fix the nearby typo "undertainties" → "uncertainties" at line 67 (spotted while
    reading; not in Eckner's list).
 
-**Progress note (Task 2, mechanical batch):** Typo half done — item 1 ("(statistical)uncertainty"
-→ "(statistical) uncertainty") and item 3 ("undertainties" → "uncertainties") are fixed and
-`\blue{}`-wrapped in `chapter_03/sections/3.3_ml_astrophysics.tex`. Item 2 (the added sentence on
-epistemic uncertainty from random initialization) is still outstanding, pending the science pass.
+**As applied:** all three items done in `chapter_03/sections/3.3_ml_astrophysics.tex` — the typo
+fixes (items 1 and 3, mechanical batch) and the seed-variability addition (item 2, ch3 pass),
+split into two sentences and spelled "initialisation"/"optimisation" to match the section's UK
+convention; all `\blue{}`-wrapped.
 
 ---
 
@@ -1313,10 +1319,10 @@ one phrase, the whole conclusions bullet list deserves a humanizer pass in fresh
 | E-2.2 | 2.2.1 | clarify | ✅ | PWNe/SNR aside for TeV |
 | E-2.3 | 2.2.2 | structure | ✅ | transients paragraph + ALP refs |
 | E-3.1 | ch3 intro | clarify | ⏳ | define/rename "noise-dominated" |
-| E-3.2 | eq 3.1.5 | clarify | 🟡 | mark TS as detection TS |
-| E-3.3 | 3.1.2 | clarify | 🟡 | KL in words + forward ref |
-| E-3.4 | 3.1.3 | clarify | 🟡 | evidence = prob. of data under model |
-| E-3.5 | 3.3.2 | science | 🟡 | typo + seed-variability sentence |
+| E-3.2 | eq 3.1.5 | clarify | ✅ | mark TS as detection TS |
+| E-3.3 | 3.1.2 | clarify | ✅ | KL gloss + inline formula (no §3.2 def) |
+| E-3.4 | 3.1.3 | clarify | ✅ | evidence = prob. of data under model |
+| E-3.5 | 3.3.2 | science | ✅ | typo + seed-variability sentence |
 | E-5.1 | 5.1.2 | clarify | 🟡 | mass-at-infall clause |
 | E-5.2 | 5.1.2 | science | 🟡 | baryonic → gravitational potential |
 | E-5.3 | 5.3.2 | mechanical | ✅ | typo |
@@ -1337,6 +1343,6 @@ one phrase, the whole conclusions bullet list deserves a humanizer pass in fresh
 | E-M.1 | 3.1.1 | style | 🟡 | formalized→established (2 sites) |
 | E-M.2 | conclusions | style | 🟡 | fix + humanizer pass on conclusions |
 
-**Counts:** 22 proposed (🟡) · 16 applied (✅): E-5.3, E-5.4, E-6.5, E-6.6, E-6.8, E-6.9, E-7.3
-(mechanical batch); E-1.1–E-1.6 (ch1 quick pass); E-2.1–E-2.3 (ch2 quick pass) · 8 deferred (⏳): E-4.1, E-4.3, E-4.5, E-4.6, E-4.8 (chapter-4 rebalance),
+**Counts:** 18 proposed (🟡) · 20 applied (✅): E-5.3, E-5.4, E-6.5, E-6.6, E-6.8, E-6.9, E-7.3
+(mechanical batch); E-1.1–E-1.6 (ch1 quick pass); E-2.1–E-2.3 (ch2 quick pass); E-3.2–E-3.5 (ch3 quick pass) · 8 deferred (⏳): E-4.1, E-4.3, E-4.5, E-4.6, E-4.8 (chapter-4 rebalance),
 E-3.1 (terminology), E-6.4, E-6.7 (need author input).
