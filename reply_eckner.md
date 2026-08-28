@@ -63,7 +63,7 @@ chapter-rebalancing the author asked Eckner about — treat carefully.
 
 ---
 
-### E-4.2 · §4.1.4 — Local DM density degeneracy may be underestimated `[science]` ⬜
+### E-4.2 · §4.1.4 — Local DM density degeneracy may be underestimated `[science]` ✅
 
 > "The inferred cross section is degenerate with the assumed local dark matter density..."
 
@@ -132,7 +132,7 @@ methodological clarification serving both §4.2.1 and §4.3.
 
 ---
 
-### E-4.4 · §4.2.2 — Globular clusters "continuously replenished"? `[clarify]` ⬜
+### E-4.4 · §4.2.2 — Globular clusters "continuously replenished"? `[clarify]` ✅
 
 > "unlike the disk and globular cluster populations, which are continuously replenished
 > with freshly recycled pulsars"
@@ -259,7 +259,7 @@ raised against it).
 
 ---
 
-### E-4.7 · §4.3.2 — High-energy tail is compatible with MSPs `[science]` ⬜
+### E-4.7 · §4.3.2 — High-energy tail is compatible with MSPs `[science]` ✅
 
 > "The presence of a power-law tail at higher energies is difficult to reconcile with a
 > purely MSP origin"
@@ -371,7 +371,7 @@ harmonisation).
 
 ---
 
-### E-4.10 · §4.5.4 — Common (L₀, σ_L) assumption across GCs `[science]` ⬜
+### E-4.10 · §4.5.4 — Common (L₀, σ_L) assumption across GCs `[science]` ✅
 
 **Eckner's point:** At the end of the section, also discuss the assumption that all GCs
 and their MSP populations share a common L₀ and σ_L. This needs to be verified, or at
@@ -407,7 +407,7 @@ comparison), draft:
 
 ---
 
-### E-4.11 · §4.5.5 — Reference for "systematic" radio searches? `[ref]` ⬜
+### E-4.11 · §4.5.5 — Reference for "systematic" radio searches? `[ref]` ✅
 
 > "Given systematic efforts that have been conducted to search for radio pulsations from
 > unassociated Fermi sources, this possibility seems unlikely."
@@ -447,7 +447,7 @@ checked too).
 
 ---
 
-### E-4.12 · §4.5.5 — Cluster-variation scenario is the realistic one `[science]` ⬜
+### E-4.12 · §4.5.5 — Cluster-variation scenario is the realistic one `[science]` ✅
 
 **Eckner's point:** (Supportive.) The discussion of cluster-to-cluster variation effects
 is the more realistic assessment — it would be a big surprise if 50+ GCs and their MSPs
@@ -1297,17 +1297,17 @@ one phrase, the whole conclusions bullet list deserves a humanizer pass in fresh
 | ID | Section | Type | Status | Note |
 |----|---------|------|--------|------|
 | E-4.1 | 4.1.4 | science | ⏳ | core rebalance: prediction → consistency |
-| E-4.2 | 4.1.4 | science | 🟡 | verified: local ρ⊙ ≥ 0.4 favoured |
+| E-4.2 | 4.1.4 | science | ✅ | verified: local ρ⊙ ≥ 0.4 favoured |
 | E-4.3 | 4.2.1 | science | ⏳ | joint with E-4.6 (skyFACT scoping) |
-| E-4.4 | 4.2.2 | clarify | 🟡 | double-verified (NLM+web); NSC nuance via Eckner et al. 2018; fading amplitude contested — hedge kept |
+| E-4.4 | 4.2.2 | clarify | ✅ | double-verified (NLM+web); NSC nuance via Eckner et al. 2018; fading amplitude contested — hedge kept |
 | E-4.5 | 4.2.2 | structure | ⏳ | move deposition mechanism into Ch. 4 |
 | E-4.6 | 4.3 | science | ⏳ | joint with E-4.3 |
-| E-4.7 | 4.3.2 | science | 🟡 | verified: IC tail natural for MSPs |
+| E-4.7 | 4.3.2 | science | ✅ | verified: IC tail natural for MSPs |
 | E-4.8 | 4.3.3 | science | ⏳ | verified incl. S12; core rebalance |
 | E-4.9 | 4.5.2 | mechanical | 🟡 | folded into E-G.1 |
-| E-4.10 | 4.5.4 | science | 🟡 | common (L₀,σ_L) caveat paragraph |
-| E-4.11 | 4.5.5 | ref | 🟡 | verified: searches targeted, not systematic |
-| E-4.12 | 4.5.5 | science | 🟡 | lean into cluster-variation model |
+| E-4.10 | 4.5.4 | science | ✅ | common (L₀,σ_L) caveat paragraph |
+| E-4.11 | 4.5.5 | ref | ✅ | verified: searches targeted, not systematic |
+| E-4.12 | 4.5.5 | science | ✅ | lean into cluster-variation model |
 | E-G.1 | global | mechanical | 🟡 | /acronyms sweep, batch task |
 | E-1.1 | 1.4.5 | structure | ✅ | PBH/ALP closing paragraph |
 | E-1.2 | 1.4.6 | clarify | ✅ | why neutrino bounds are weaker |
@@ -1343,6 +1343,6 @@ one phrase, the whole conclusions bullet list deserves a humanizer pass in fresh
 | E-M.1 | 3.1.1 | style | 🟡 | formalized→established (2 sites) |
 | E-M.2 | conclusions | style | 🟡 | fix + humanizer pass on conclusions |
 
-**Counts:** 18 proposed (🟡) · 20 applied (✅): E-5.3, E-5.4, E-6.5, E-6.6, E-6.8, E-6.9, E-7.3
-(mechanical batch); E-1.1–E-1.6 (ch1 quick pass); E-2.1–E-2.3 (ch2 quick pass); E-3.2–E-3.5 (ch3 quick pass) · 8 deferred (⏳): E-4.1, E-4.3, E-4.5, E-4.6, E-4.8 (chapter-4 rebalance),
+**Counts:** 12 proposed (🟡) · 26 applied (✅): E-5.3, E-5.4, E-6.5, E-6.6, E-6.8, E-6.9, E-7.3
+(mechanical batch); E-1.1–E-1.6 (ch1 quick pass); E-2.1–E-2.3 (ch2 quick pass); E-3.2–E-3.5 (ch3 quick pass); E-4.2, E-4.4, E-4.7, E-4.10–E-4.12 (ch4 quick pass) · 8 deferred (⏳): E-4.1, E-4.3, E-4.5, E-4.6, E-4.8 (chapter-4 rebalance),
 E-3.1 (terminology), E-6.4, E-6.7 (need author input).
