@@ -328,5 +328,125 @@
         "createdAt": "2026-08-27T14:11:15.407Z"
       }
     ]
+  },
+  {
+    "id": "fz5daen",
+    "startLine": 919,
+    "endLine": 926,
+    "textPreview": "**Action:** In `chapter_05/sections/5.2_dark_matter_substructure.tex:51`, rephrase:",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "w0ug3qv",
+        "text": "ok, sounds good",
+        "createdAt": "2026-08-27T14:18:35.417Z"
+      }
+    ]
+  },
+  {
+    "id": "42afhq0",
+    "startLine": 936,
+    "endLine": 937,
+    "textPreview": "**Action:** Fix the typo (no `\\blue{}` needed for pure typo corrections — confirm",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "9s2qkm4",
+        "text": "ok",
+        "createdAt": "2026-08-27T14:18:43.975Z"
+      }
+    ]
+  },
+  {
+    "id": "x10kgge",
+    "startLine": 956,
+    "endLine": 959,
+    "textPreview": "**Action:** For each of the three container headers, either (a) demote the inner headers",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "dk0s7pu",
+        "text": "ok",
+        "createdAt": "2026-08-27T14:19:10.052Z"
+      }
+    ]
+  },
+  {
+    "id": "rfdm4d9",
+    "startLine": 977,
+    "endLine": 987,
+    "textPreview": "**Action:** In `chapter_06/sections/6.1_limits_individual.tex:11`, rephrase:",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "psm4eki",
+        "text": "ok, sounds good",
+        "createdAt": "2026-08-27T14:19:44.482Z"
+      }
+    ]
+  },
+  {
+    "id": "go3o30r",
+    "startLine": 1001,
+    "endLine": 1009,
+    "textPreview": "**Action:** In `chapter_06/sections/6.2_source_count.tex:30`, expand:",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "ij4ipzm",
+        "text": "sounds good",
+        "createdAt": "2026-08-27T14:25:59.872Z"
+      }
+    ]
+  },
+  {
+    "id": "oz8coit",
+    "startLine": 1032,
+    "endLine": 1041,
+    "textPreview": "**Action:** In `chapter_06/sections/paper_dnds/sections/synthetic_map_generation.tex:104`",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "c52od1o",
+        "text": "sounds good",
+        "createdAt": "2026-08-27T14:26:49.519Z"
+      }
+    ]
+  },
+  {
+    "id": "drh5tqt",
+    "startLine": 1077,
+    "endLine": 1078,
+    "textPreview": "**Action:** Covered by E-6.9; after that fix, recompile and confirm this reference",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "uug9ij0",
+        "text": "ok",
+        "createdAt": "2026-08-27T14:39:03.001Z"
+      }
+    ]
+  },
+  {
+    "id": "mkuf5fd",
+    "startLine": 1170,
+    "endLine": 1182,
+    "textPreview": "**Action:** In `chapter_07/sections/7.1_limits_of_threshold.tex`, after line 49 (the",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "g93zcn3",
+        "text": "ok",
+        "createdAt": "2026-08-27T14:40:19.239Z"
+      }
+    ]
   }
 ]
