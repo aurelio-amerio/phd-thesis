@@ -1064,7 +1064,7 @@ rewriting, or add a footnote). Proposed footnote/addition after the sentence:
 
 ---
 
-### E-6.4 · §6.5.2.2 — "Better stability of the neural network" vague `[clarify]` ⬜
+### E-6.4 · §6.5.2.2 — "Better stability of the neural network" vague `[clarify]` ✅
 
 > "Furthermore, we also found that fixing Agal provides a better stability of the neural
 > network."
@@ -1082,6 +1082,13 @@ fabricate a result.
 what concretely improved when fixing $A_\mathrm{gal}$ — convergence reliability,
 validation-loss variance, or prediction spread? Once answered, replace "provides a better
 stability of the neural network" with the specific statement.
+
+**As applied (substantive pass):** author supplied the answer via annotation: fixing
+$A_\mathrm{gal}$ (i) required fewer simulations for convergence, (ii) made the NN
+converge faster to the simulation ground truth, and (iii) the NN's own uncertainty on
+$A_\mathrm{gal}$ was larger than the Poisson-fit determination. Added as a small
+footnote (author's preferred form) after the "better stability" sentence at
+`synthetic_map_generation.tex:179`, `\blue{}`-wrapped.
 
 ---
 
@@ -1114,7 +1121,7 @@ information".
 
 ---
 
-### E-6.7 · §6.5.3.2 — Negative pixels after diffuse subtraction + log `[clarify]` ⬜
+### E-6.7 · §6.5.3.2 — Negative pixels after diffuse subtraction + log `[clarify]` ✅
 
 > "Finally, each map is parsed into 12 patches using the map2patch algorithm discussed in
 > the previous Sections."
@@ -1133,6 +1140,16 @@ code). Once recalled, add one clarifying sentence in
 `chapter_06/sections/paper_dnds/sections/nn_architecture_training.tex` (data
 pre-processing subsubsection, line 46 ff.) stating how negative/oversubtracted pixels are
 handled.
+
+**As applied (substantive pass):** verified in the paper code
+(`thesis_project/mapGen/tfUtils.py`, `_process_map`; `find_min_max_counts_dataset` in
+`model_trainer_HL_v5.py`). The paper text is right that logs *are* taken; the code shows
+negative pixels are **not clipped**: a constant offset $1 - \min$ (dataset-minimum scan,
+stored in the training config) is added before $\log_{10}$, i.e. a shifted logarithm
+mapping the most over-subtracted pixel to $\approx 1$, so over-subtracted pixels stay
+encoded at the low end of the transformed range. Two clarifying sentences added after
+the log-transform sentence in `nn_architecture_training.tex` (\S Data pre-processing),
+`\blue{}`-wrapped.
 
 ---
 
@@ -1341,10 +1358,10 @@ one phrase, the whole conclusions bullet list deserves a humanizer pass in fresh
 | E-6.1 | 6.1.1 | science | ✅ | drop false dichotomy |
 | E-6.2 | eq 6.2.1 | clarify | ✅ | Γ intrinsic vs observed + EBL xref |
 | E-6.3 | 6.5.2.1 | science | ✅ | verified: 0.25-photon floor, add footnote |
-| E-6.4 | 6.5.2.2 | clarify | ⏳ | needs author: what "stability" meant |
+| E-6.4 | 6.5.2.2 | clarify | ✅ | footnote: fewer sims, faster convergence, larger NN uncertainty |
 | E-6.5 | 6.5.2.2 | mechanical | ✅ | fixed by E-6.9 |
 | E-6.6 | p. 173 | mechanical | ✅ | 2× loose→lose |
-| E-6.7 | 6.5.3.2 | clarify | ⏳ | needs author: negative-pixel handling |
+| E-6.7 | 6.5.3.2 | clarify | ✅ | verified in code: shifted log (offset $1-\min$), no clipping |
 | E-6.8 | 6.5.3.4 | mechanical | ✅ | aleatory→aleatoric + sweep |
 | E-6.9 | 6.6 | mechanical | ✅ | subappendices sectioning fix |
 | E-7.1 | 7.1.2 | science | ✅ | verified: DR4 diffuse change; add sentence |
