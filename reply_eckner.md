@@ -357,7 +357,7 @@ of skepticism is exactly what "balanced" means here.
 
 ---
 
-### E-4.9 · §4.5.2 — MSP acronym re-introduced `[mechanical]` ⬜
+### E-4.9 · §4.5.2 — MSP acronym re-introduced `[mechanical]` ✅
 
 **Eckner's point:** MSP is introduced again in §4.5.2 (see also E-G.1 on global acronym
 harmonisation).
@@ -475,7 +475,7 @@ of the cluster-variation paragraph (last paragraph of the file), add:
 
 ## General / cross-thesis
 
-### E-G.1 · Acronym harmonisation `[mechanical]` ⬜
+### E-G.1 · Acronym harmonisation `[mechanical]` ✅
 
 **Eckner's point:** Several acronyms are introduced more than once (e.g. MSP again in the
 Chapter 4 intro). Go through the thesis and harmonise acronym usage.
@@ -1304,11 +1304,11 @@ one phrase, the whole conclusions bullet list deserves a humanizer pass in fresh
 | E-4.6 | 4.3 | science | ⏳ | joint with E-4.3 |
 | E-4.7 | 4.3.2 | science | ✅ | verified: IC tail natural for MSPs |
 | E-4.8 | 4.3.3 | science | ⏳ | verified incl. S12; core rebalance |
-| E-4.9 | 4.5.2 | mechanical | 🟡 | folded into E-G.1 |
+| E-4.9 | 4.5.2 | mechanical | ✅ | folded into E-G.1 |
 | E-4.10 | 4.5.4 | science | ✅ | common (L₀,σ_L) caveat paragraph |
 | E-4.11 | 4.5.5 | ref | ✅ | verified: searches targeted, not systematic |
 | E-4.12 | 4.5.5 | science | ✅ | lean into cluster-variation model |
-| E-G.1 | global | mechanical | 🟡 | /acronyms sweep, batch task |
+| E-G.1 | global | mechanical | ✅ | MSP re-introductions fixed in thesis sections; paper-text re-expansions left (self-contained) |
 | E-1.1 | 1.4.5 | structure | ✅ | PBH/ALP closing paragraph |
 | E-1.2 | 1.4.6 | clarify | ✅ | why neutrino bounds are weaker |
 | E-1.3 | 1.4.6 | clarify | ✅ | verified: r_g ~ mpc, anisotropy 10⁻⁴–10⁻³ |
@@ -1343,6 +1343,6 @@ one phrase, the whole conclusions bullet list deserves a humanizer pass in fresh
 | E-M.1 | 3.1.1 | style | ✅ | formalized→established (2 sites) |
 | E-M.2 | conclusions | style | ✅ | fix + humanizer pass on conclusions |
 
-**Counts:** 2 proposed (🟡) · 36 applied (✅): E-5.3, E-5.4, E-6.5, E-6.6, E-6.8, E-6.9, E-7.3
-(mechanical batch); E-1.1–E-1.6 (ch1 quick pass); E-2.1–E-2.3 (ch2 quick pass); E-3.2–E-3.5 (ch3 quick pass); E-4.2, E-4.4, E-4.7, E-4.10–E-4.12 (ch4 quick pass); E-5.1–E-5.2 (ch5 quick pass); E-6.1–E-6.3 (ch6 quick pass); E-7.1–E-7.2 (ch7 quick pass); E-8.1, E-M.1, E-M.2 (ch8+style+conclusions) · 8 deferred (⏳): E-4.1, E-4.3, E-4.5, E-4.6, E-4.8 (chapter-4 rebalance),
+**Counts:** 0 proposed (🟡) · 38 applied (✅): E-5.3, E-5.4, E-6.5, E-6.6, E-6.8, E-6.9, E-7.3
+(mechanical batch); E-1.1–E-1.6 (ch1 quick pass); E-2.1–E-2.3 (ch2 quick pass); E-3.2–E-3.5 (ch3 quick pass); E-4.2, E-4.4, E-4.7, E-4.9, E-4.10–E-4.12 (ch4 quick pass); E-5.1–E-5.2 (ch5 quick pass); E-6.1–E-6.3 (ch6 quick pass); E-7.1–E-7.2 (ch7 quick pass); E-8.1, E-M.1, E-M.2 (ch8+style+conclusions); E-G.1 (acronym harmonisation) · 8 deferred (⏳): E-4.1, E-4.3, E-4.5, E-4.6, E-4.8 (chapter-4 rebalance),
 E-3.1 (terminology), E-6.4, E-6.7 (need author input).
