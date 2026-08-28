@@ -4,9 +4,15 @@
 \section{The Systematics Stalemate}
 \label{sec:4.3}
 
-The evidence reviewed in the preceding section, both for and against the MSP hypothesis, was obtained through template-based analyses that share a common vulnerability: their conclusions depend on modeling choices for which no unique, model-independent prescription exists.
+The evidence reviewed in the preceding section, both for and against the MSP hypothesis, was \blue{largely} obtained through template-based analyses \blue{that impose a fixed spatial morphology on each emission component}.
+\blue{These analyses} share a common vulnerability: their conclusions depend on modeling choices for which no unique, model-independent prescription exists.
 The choice of interstellar emission model, the treatment of the Fermi Bubbles at low latitudes, the masking of known point sources, and the parameterization of the source-count function at the faint end each contribute irreducible systematic uncertainties that propagate into the final answer.
 Over the past decade, a series of exchanges has demonstrated that these uncertainties are large enough to shift the conclusion between ``predominantly point sources'' and ``predominantly smooth emission'' depending on the analysis setup.
+\blue{One approach relaxes the rigid-morphology assumption itself.}
+\blue{\emph{Adaptive-template} methods such as skyFACT~\cite{Storm:2017arh}, employed by Bartels et al.~\cite{Bartels:2017vsx} (cf.\ Section~\ref{sec:4.2.1}), let the data re-modulate the input templates through $\sim 10^5$ pixel-level nuisance parameters in a penalized likelihood.}
+\blue{By construction, this mitigates the morphology mis-specification problem.}
+\blue{This flexibility trades one set of choices for another: how strongly the regularization constrains the re-modulation, and the fact that the fit remains anchored to the input templates it adjusts.}
+\blue{It also leaves untouched the underlying uncertainty in the interstellar emission model.}
 This section traces how the debate reached an impasse and how recent methodological advances are beginning to chart a path forward.
 
 \subsection{Challenges to NPTF}
@@ -39,7 +45,7 @@ To address this, Buschmann et al.
 \ introduced several improvements: a state-of-the-art hydrodynamic diffuse model (Model~O) that provided a substantially better fit to the data; a spherical-harmonic marginalization technique that corrects for large-scale mismodeling in a data-driven manner without erasing small-scale structure; and a truncated source-count function that conservatively excludes point sources below the one-photon detection threshold, thereby breaking the mathematical degeneracy between ultra-faint sources and smooth emission~\cite{Chang:2019ars}.
 With these modifications, the signal injection test worked correctly (injected dark matter signals were properly recovered), yet the data still yielded a Bayes factor of $\sim 10^{3.4}$ in favor of point sources.
 Similar conclusions were reached independently by Calore et al.~\cite{Calore_2021} using the 1-point Probability Density Function (1pPDF) technique. The 1pPDF is an analytical framework mathematically equivalent in its goals to the NPTF, leveraging pixel-count statistics to reconstruct the source-count distribution. By combining 1pPDF with adaptive template fitting, they demonstrated that point sources constitute a robust sub-threshold component of the GCE, provided the diffuse emission is accurately modeled.
-A recent work by the same group~\cite{Manconi:2025ogr} further enhanced the analysis with an improved estimation of the Galactic Diffuse Emission adopting the \texttt{SkyFACT} framework, further strengthening the evidence for point sources in the GCE.
+A recent work by the same group~\cite{Manconi:2025ogr} further enhanced the analysis with an improved estimation of the Galactic Diffuse Emission adopting the \blue{skyFACT} framework, further strengthening the evidence for point sources in the GCE.
 
 Ultimately, this exchange exposed an underlying tension: results from analysis based on NPTF-like methods depend sensitively on analysis choices that remain a matter of debate.
 % The preference for point sources can be made to appear or vanish depending on the diffuse model, the treatment of spatial asymmetries, and the parameterization of the source-count function at the faint end.
@@ -55,12 +61,12 @@ As discussed in Section~\ref{sec:4.1.3}, the excess was initially characterized 
 This morphology has no obvious astrophysical counterpart among known Galactic structures and was therefore regarded as a strong indicator of dark matter annihilation.
 % However, a series of analyses beginning with Macias et al.~\cite{Macias:2016nev,Macias:2019omb} and Bartels et al.~\cite{Bartels:2017vsx} challenged this picture by arguing that the GCE traces the boxy, X-shaped stellar bulge of the Milky Way rather than a smooth, spherically symmetric halo.
 % Using near-infrared stellar mass maps as spatial templates, these studies found that the stellar bulge template absorbed the GCE flux with a statistically better fit than a standard NFW profile, supporting an astrophysical origin tied to the old stellar population of the inner Galaxy.
-However, the stellar-bulge template analyses of Macias et al.~\cite{Macias:2016nev,Macias:2019omb} and Bartels et al.~\cite{Bartels:2017vsx}, introduced in Section~\ref{sec:4.2.1}, challenged this picture by finding that the boxy, X-shaped stellar bulge fits the GCE better than a spherically symmetric NFW halo.
+However, the stellar-bulge \blue{analyses} of Macias et al.~\cite{Macias:2016nev,Macias:2019omb} and Bartels et al.~\cite{Bartels:2017vsx}, introduced in Section~\ref{sec:4.2.1}, challenged this picture by finding that the boxy, X-shaped stellar bulge fits the GCE better than a spherically symmetric NFW halo.
 
 The significance of this claim, however, depends sensitively on the analysis setup.
 % Whether the GCE prefers an NFW or bulge morphology can shift depending on the interstellar emission model adopted, the masking procedure applied to the Galactic plane and known point sources, and how the Fermi Bubbles emission is treated at low latitudes~\cite{Macias:2019omb,Cirelli:2024ssz}.
 Whether the GCE prefers an NFW or bulge morphology can shift depending on the same diffuse-emission systematics discussed at the opening of this section~\cite{Macias:2019omb}.
-Because the true diffuse background in the inner Galaxy is not known to the precision required, the template fitting procedure is inherently subject to systematic uncertainties that propagate directly into the morphological inference.
+Because the true diffuse background in the inner Galaxy is not known to the precision required, \blue{the morphological fit} is inherently subject to systematic uncertainties that propagate directly into the \blue{inferred spatial preference}.
 Different groups, using equally defensible analysis choices, have reached opposite conclusions: some find a strong preference for the bulge template, while others recover a spherically symmetric signal fully consistent with dark matter.
 No interstellar emission model achieves statistical fluctuation-level agreement with the data in the inner Galaxy; persistent large-scale residuals remain regardless of the morphological template adopted for the GCE.
 As a result, all morphological conclusions drawn from current analyses should be regarded as provisional.
@@ -88,7 +94,7 @@ Manconi et al.\ interpret this as evidence that the high-energy tail of the GCE 
 \label{sec:4.3.3}
 While the previous sections would seem to suggest that the GCE is now firmly established as a population of unresolved point sources, the situation is more nuanced.
 A recent analysis has reframed the question entirely by incorporating energy information into the point-source inference for the first time.
-While \cite{Manconi:2025ogr} argued that including energy information does not substantially alter the conclusions of the 1pPDF, List et al.~\cite{List:2025qbx} found that it has a dramatic effect on the inferred source-count distribution and the fraction of emission that can be attributed to point sources.
+While \cite{Manconi:2025ogr} argued that including energy information does not substantially alter the conclusions of the 1pPDF, List et al.~\cite{List:2025qbx} found that it has a \blue{strong} effect on the inferred source-count distribution and the fraction of emission that can be attributed to point sources.
 List et al.~\cite{List:2025qbx} developed a CNN-based simulation-based inference framework that simultaneously fits the spatial and spectral properties of the inner Galaxy across ten logarithmically spaced energy bins from 2 to 20~GeV.
 Unlike current iterations of the 1pPDF technique, which discarded all spectral information and neglected pixel-to-pixel correlations from the finite point-spread function, this approach exploits the fact that the GCE has a distinct energy spectrum from the dominant diffuse backgrounds, providing an additional lever arm to separate signal from astrophysical contamination (see Chapter~\ref{ch:methods} for background on simulation-based inference).
 
@@ -121,7 +127,17 @@ The remaining 97\% is fully consistent with the smooth emission expected from da
 This represents a marked shift from the earlier energy-independent CNN analysis, which had been able to exclude 34\% of the emission as Poissonian at the same confidence level.
 This consistency reopens the dark matter hypothesis, but it does not demonstrate it: the result removes an obstacle to a smooth-emission origin rather than establishing one.
 
-If the results of this work are confirmed by independent studies, the implications would be twofold.
+\blue{The same standard of scrutiny we applied to the NPTF must apply here, because the analysis rests on approximations of its own.
+The astrophysical components in the training simulations are built from the same standard diffuse templates that have repeatedly been shown to mis-model the inner Galaxy, so the inference inherits the diffuse-emission systematics discussed at the opening of this section.
+This dependence is not hypothetical.
+In an appendix (their Fig.~S12), List et al.\ retrained their network with an alternative Galactic diffuse model; the recovered source-count distribution shifted almost an order of magnitude brighter, roughly consistent with the earlier energy-independent results~\cite{List:2020mzd}.
+The authors themselves concede that the result ``is not independent of the background diffuse model''~\cite{List:2025qbx}.
+The counterweight is that the alternative model fits the data far worse than their baseline ($2\Delta\ln\mathcal{L} \approx 648$), and List et al.\ frame the exercise as a stress test against mis-modeling rather than as an equally valid background choice.
+A third approximation is subtler: the simulator assigns a single shared intrinsic spectrum to all point sources, whereas the Galactic Center hosts several source classes with distinct spectra.
+This is itself a form of forced mis-modeling, and it can bias the inference.
+Whether the result survives independent reanalysis with different background treatments therefore remains to be seen; until then, it should be read as a demonstration of what spectral information can bring to this problem, not as a settled measurement.}
+
+\blue{Should the result survive this scrutiny}, the implications would be twofold.
 First, the key historical evidence that the GCE originates from point sources, including the NPTF's strong Bayes factor and the inferred SCD peaking near the detection threshold, is substantially weakened when spectral information is properly incorporated.
 Second, if the GCE is nonetheless produced by astrophysical point sources, those sources must be extraordinarily faint and numerous, forming a population with no direct precedent among known Galactic source classes.
 % As we will discuss in Section~\ref{sec:4.4}, this ultra-faint regime is precisely where independent constraints from globular cluster observations become most informative: the MSP luminosity function measured in globular clusters predicts sources that are far too bright and too few to match the distribution required by the energy-dependent analysis.

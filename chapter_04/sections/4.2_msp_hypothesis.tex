@@ -18,7 +18,16 @@ The spatial distribution of these hypothetical MSPs presents the first challenge
 The known gamma-ray MSP population follows a disk-like distribution, which would produce a signal elongated along the Galactic plane with an axis ratio of $\sim 1$:$6$---incompatible with the observed spherical morphology of the GCE~\cite{Daylan:2014rsa}.
 A standard disk MSP population can account for at most 5--10\% of the excess flux~\cite{Calore:2014xka}.
 To reproduce the concentrated, roughly spherical GCE morphology, the MSP number density would need to increase steeply toward the Galactic Center as approximately $r^{-2.5}$, requiring a distinct ``bulge'' population rather than the familiar disk population~\cite{Calore:2014xka}.
-Such a bulge component is not unreasonable---the high stellar densities in the inner Galaxy could produce MSPs through the same dynamical channels operating in globular clusters---but it cannot easily account for the signal's extension to $\sim 10$--$15^\circ$ from the Galactic Center~\cite{Calore:2014xka}.
+Such a bulge component is not unreasonable\blue{---we discuss shortly where such a population could come from---}but it cannot easily account for the signal's extension to $\sim 10$--$15^\circ$ from the Galactic Center~\cite{Calore:2014xka}.
+
+\blue{Even granting such a bulge population, a more basic question remains: where would its millisecond pulsars come from?}
+\blue{Millisecond pulsars are spun up by accretion in binary systems, and forming such binaries dynamically requires frequent close stellar encounters.}
+\blue{Despite its enormous stellar mass, the diffuse bulge field is a poor environment for this channel; its encounter rate per unit stellar mass falls orders of magnitude short of globular-cluster cores, as we quantify in Section~\ref{sec:4.2.2}.}
+\blue{The leading explanation therefore looks to the globular clusters themselves: massive clusters orbiting the inner Galaxy lose orbital energy to dynamical friction and spiral toward the Galactic Center over billions of years.}
+\blue{There the Galactic tidal field pulls them apart, and their stars---millisecond pulsars included---are left behind in the bulge~\cite{Gnedin:2013cda,Brandt:2015ula,Fragione:2017rsp}.}
+\blue{Independent support comes from the Galactic Center itself, where the nuclear star cluster is thought to have been assembled largely from these same infalling clusters~\cite{Gnedin:2013cda}.}
+\blue{If the bulge pulsars were born inside globular clusters and only later deposited in the field, then the clusters that survive today are the natural starting point for calibrating their luminosity function.}
+\blue{This is precisely the strategy we pursue in Section~\ref{sec:4.4} and in the analysis of Section~\ref{sec:msp_paper}.}
 
 Two independent statistical analyses published in 2016 provided the strongest evidence favoring the point-source interpretation.
 Lee et al.
@@ -39,9 +48,11 @@ Using near-infrared maps to trace the three-dimensional structure of the central
 Because MSPs are expected to trace the old stellar population that forms the bulge, this morphological preference was interpreted as further evidence for an astrophysical origin.
 Similar conclusions were reached by Bartels et al.
 \ \cite{Bartels:2017vsx}, who found that the GCE traces the stellar mass distribution in the inner Galaxy, suggesting a close link between the excess and the Galactic bulge population.
+\blue{Notably, they reached this conclusion with skyFACT~\cite{Storm:2017arh}, a fitting tool that, rather than imposing spatial templates with fixed morphology, lets the data re-modulate each template pixel by pixel within a penalized likelihood.}
+\blue{Their preference for a stellar-bulge morphology therefore does not rest on the fixed-template assumptions of the fits discussed above.}
 
 By the late 2010s, the NPTF photon statistics, wavelet power, and stellar bulge morphology appeared to have settled the question in favor of the MSP interpretation.
-As we will see in Section~\ref{sec:4.3}, however, subsequent studies exposed weaknesses in each of these analyses, casting doubt on their conclusions and setting off a series of rebuttals and refinements.
+As we will see in Section~\ref{sec:4.3}, however, subsequent studies exposed weaknesses in \blue{most of} these analyses, casting doubt on their conclusions and setting off a series of rebuttals and refinements.
 
 \subsection{Independent Challenges}
 \label{sec:4.2.2}

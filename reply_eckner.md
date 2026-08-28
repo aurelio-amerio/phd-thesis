@@ -26,7 +26,7 @@ confirmed, with nuances recorded per item; no claim was found wrong.
 
 ## Chapter 4 — Galactic Center Excess (main comments)
 
-### E-4.1 · §4.1.4 — "Morphology is a prediction" claim is wrong `[science]` ⬜
+### E-4.1 · §4.1.4 — "Morphology is a prediction" claim is wrong `[science]` ✅
 
 > You state "the same mass and channel that fit the spectrum also predict the correct
 > spatial distribution, and the same halo profile that matches the morphology yields the
@@ -60,6 +60,16 @@ chapter-rebalancing the author asked Eckner about — treat carefully.
   ("described by" is fine; drop any "predict" language).
 - Keep the existing "interpreted with care" paragraph as the pivot into E-4.2's updated
   density discussion.
+
+**As applied (substantive pass):** the "No tuning of separate parameters" sentence was
+replaced by four `\blue{}` sentences in `4.1_discovery_and_characterization.tex`,
+following the author's annotation (unpack the over-condensed idea): mass/channel fix
+only the spectrum; morphology is measured, fitted with an independent astrophysical
+input; the fitted profile (steep, near-spherical) is credible because N-body simulations
+independently produce such halos (`Navarro:1996gj`, `Springel:2008cc`; adiabatic
+contraction cross-ref to `sec:density_profiles`); closing frame "economy of description,
+not a prediction". The "three independent observables… could be described" sentence and
+the "interpreted with care" pivot kept unchanged.
 
 ---
 
@@ -97,7 +107,7 @@ is qualifying anyway.
 
 ---
 
-### E-4.3 · §4.2.1 — Bartels et al. (skyFACT) is not like the other analyses `[science]` ⬜
+### E-4.3 · §4.2.1 — Bartels et al. (skyFACT) is not like the other analyses `[science]` ✅
 
 > "By the late 2010s, the NPTF photon statistics, wavelet power, and stellar bulge
 > morphology appeared to have settled the question... subsequent studies exposed
@@ -129,6 +139,17 @@ methodological clarification serving both §4.2.1 and §4.3.
   anchoring).
 - Check §4.3's later text for other blanket "all template-based analyses" statements.
 - Bib: arXiv:1705.04065 (skyFACT method paper) to fetch if not present.
+
+**As applied (substantive pass, joint with E-4.6):** author-specified order (fixed-template
+critique first, then skyFACT as mitigation). In §4.2.1, two `\blue{}` sentences after the
+Bartels et al. sentence introduce skyFACT's pixel-level re-modulation and exempt the
+result from the fixed-template assumptions; the §4.2.1 closer softened to "weaknesses in
+\blue{most of} these analyses". In the §4.3 opener, "template-based analyses" scoped to
+those imposing a *fixed* spatial morphology, followed by three `\blue{}` sentences
+introducing \emph{adaptive-template} methods (skyFACT), their mitigation-by-construction,
+and their own caveats (regularization strength, input-template anchoring, unchanged
+interstellar-model uncertainty). `Storm:2017arh` (arXiv:1705.04065) fetched from
+InspireHEP and added to `bibliography.bib`.
 
 ---
 
@@ -210,7 +231,7 @@ independent non-Hooper literature sweep, per author request). The reconciled pic
 
 ---
 
-### E-4.5 · §4.2.2 — Motivate the globular-cluster storyline earlier `[structure]` ⬜
+### E-4.5 · §4.2.2 — Motivate the globular-cluster storyline earlier `[structure]` ✅
 
 **Eckner's point:** Chapter 4 never explains *why* globular clusters matter for the GCE
 until the conclusions, where the deposition mechanism (disrupted GCs depositing MSPs in
@@ -242,9 +263,20 @@ addition (placement affects the chapter roadmap), so it belongs in the substanti
 - Coordinate with the E-4.4 rewording (shared density/channel argument — avoid saying
   it twice with different words).
 
+**As applied (substantive pass):** per the author's annotation, the deposition scenario
+now enters in §4.2.1, right where the bulge-MSP population is introduced: a new
+8-sentence `\blue{}` paragraph (where would the pulsars come from → in-situ formation
+inefficient, quantified later in §4.2.2 → clusters spiral in via dynamical friction, are
+tidally disrupted, deposit their pulsars (`Gnedin:2013cda`, `Brandt:2015ula`,
+`Fragione:2017rsp`) → NSC assembled from the same clusters (self-consistency) →
+surviving clusters are the natural calibration sample → strategy of §4.4/§4.5). The
+adjacent "high stellar densities … same dynamical channels" clause was replaced (it
+overstated in-situ formation, contradicting the E-4.4 argument). Roadmap clause added in
+`4.0_introduction.tex` ("the very systems thought to have supplied the bulge pulsars").
+
 ---
 
-### E-4.6 · §4.3 — "Common vulnerability" claim excludes skyFACT `[science]` ⬜
+### E-4.6 · §4.3 — "Common vulnerability" claim excludes skyFACT `[science]` ✅
 
 > "both for and against the MSP hypothesis, was obtained through template-based analyses
 > that share a common vulnerability"
@@ -255,7 +287,9 @@ raised against it).
 
 **Response:** See E-4.3 — one joint fix.
 
-**Action:** ⏳ DEFERRED — handled jointly with E-4.3 in the substantive pass.
+**Action:** ✅ Applied jointly with E-4.3 in the substantive pass — see the "As applied"
+note under E-4.3 (§4.3 opener scoped to fixed-morphology templates; adaptive-template
+mitigation + its own caveats added).
 
 ---
 
@@ -301,7 +335,7 @@ question. This fits the user's stated goal of a balanced chapter.
 
 ---
 
-### E-4.8 · §4.3.3 — Emphasis on List et al. [221] too strong `[science]` ⬜
+### E-4.8 · §4.3.3 — Emphasis on List et al. [221] too strong `[science]` ✅
 
 **Eckner's point:** The weight given to List et al. is not supported by their results.
 Three concerns about robustness:
@@ -354,6 +388,22 @@ of skepticism is exactly what "balanced" means here.
 - The existing hedge at line 122 ("If the results of this work are confirmed by
   independent studies…") is good — consider moving it earlier so the caveats frame the
   result rather than trail it.
+
+**As applied (substantive pass):** per the author's annotation ("reformulate to state
+that this work has some approximations, and it is still to be seen if it will be proven
+robust"). A new 9-sentence `\blue{}` caveats paragraph inserted in §4.3.3 after "…rather
+than establishing one", mirroring the NPTF-skepticism structure: (i) inherited standard
+diffuse templates; (ii) diffuse-model sensitivity — the Fig. S12 retraining shifts the
+SCD ~an order of magnitude brighter, roughly consistent with energy-independent results,
+with the authors' own concession quoted verbatim, and the worse-fit counterweight
+($2\Delta\ln\mathcal{L}\approx 648$, stress-test framing) stated honestly; (iii) the
+shared-intrinsic-spectrum simulator assumption. Closes on "remains to be seen … a
+demonstration of what spectral information can bring, not a settled measurement". The
+following paragraph now opens "Should the result survive this scrutiny…"; "dramatic
+effect" softened to "strong effect". §4.4's convergence claim now carries a one-sentence
+caveat cross-referencing §4.3.3 (noting the GC-cluster constraint is independent of
+those systematics); the conclusion's convergence sentence adds "which still await
+independent confirmation".
 
 ---
 
@@ -1324,14 +1374,14 @@ one phrase, the whole conclusions bullet list deserves a humanizer pass in fresh
 
 | ID | Section | Type | Status | Note |
 |----|---------|------|--------|------|
-| E-4.1 | 4.1.4 | science | ⏳ | core rebalance: prediction → consistency |
+| E-4.1 | 4.1.4 | science | ✅ | rebalanced: consistency/economy, not prediction |
 | E-4.2 | 4.1.4 | science | ✅ | verified: local ρ⊙ ≥ 0.4 favoured |
-| E-4.3 | 4.2.1 | science | ⏳ | joint with E-4.6 (skyFACT scoping) |
+| E-4.3 | 4.2.1 | science | ✅ | skyFACT distinguished; Storm:2017arh added |
 | E-4.4 | 4.2.2 | clarify | ✅ | double-verified (NLM+web); NSC nuance via Eckner et al. 2018; fading amplitude contested — hedge kept |
-| E-4.5 | 4.2.2 | structure | ⏳ | move deposition mechanism into Ch. 4 |
-| E-4.6 | 4.3 | science | ⏳ | joint with E-4.3 |
+| E-4.5 | 4.2.2 | structure | ✅ | deposition paragraph added in §4.2.1 + roadmap clause |
+| E-4.6 | 4.3 | science | ✅ | §4.3 opener scoped to fixed-morphology templates |
 | E-4.7 | 4.3.2 | science | ✅ | verified: IC tail natural for MSPs |
-| E-4.8 | 4.3.3 | science | ⏳ | verified incl. S12; core rebalance |
+| E-4.8 | 4.3.3 | science | ✅ | caveats paragraph mirrors NPTF skepticism; §4.4+conclusion aligned |
 | E-4.9 | 4.5.2 | mechanical | ✅ | folded into E-G.1 |
 | E-4.10 | 4.5.4 | science | ✅ | common (L₀,σ_L) caveat paragraph |
 | E-4.11 | 4.5.5 | ref | ✅ | verified: searches targeted, not systematic |
@@ -1371,9 +1421,14 @@ one phrase, the whole conclusions bullet list deserves a humanizer pass in fresh
 | E-M.1 | 3.1.1 | style | ✅ | formalized→established (2 sites) |
 | E-M.2 | conclusions | style | ✅ | fix + humanizer pass on conclusions |
 
-**Counts:** 0 proposed (🟡) · 38 applied (✅): E-5.3, E-5.4, E-6.5, E-6.6, E-6.8, E-6.9, E-7.3
-(mechanical batch); E-1.1–E-1.6 (ch1 quick pass); E-2.1–E-2.3 (ch2 quick pass); E-3.2–E-3.5 (ch3 quick pass); E-4.2, E-4.4, E-4.7, E-4.9, E-4.10–E-4.12 (ch4 quick pass); E-5.1–E-5.2 (ch5 quick pass); E-6.1–E-6.3 (ch6 quick pass); E-7.1–E-7.2 (ch7 quick pass); E-8.1, E-M.1, E-M.2 (ch8+style+conclusions); E-G.1 (acronym harmonisation) · 8 deferred (⏳): E-4.1, E-4.3, E-4.5, E-4.6, E-4.8 (chapter-4 rebalance),
-E-3.1 (terminology), E-6.4, E-6.7 (need author input).
+**Counts:** 0 proposed (🟡) · 46 applied (✅) · 0 deferred (⏳). All 46 items resolved.
+Quick pass (2026-08): 38 items — E-5.3, E-5.4, E-6.5, E-6.6, E-6.8, E-6.9, E-7.3
+(mechanical batch); E-1.1–E-1.6 (ch1); E-2.1–E-2.3 (ch2); E-3.2–E-3.5 (ch3); E-4.2,
+E-4.4, E-4.7, E-4.9, E-4.10–E-4.12 (ch4); E-5.1–E-5.2 (ch5); E-6.1–E-6.3 (ch6);
+E-7.1–E-7.2 (ch7); E-8.1, E-M.1, E-M.2 (ch8+style+conclusions); E-G.1 (acronyms).
+Substantive pass (2026-08-28, spec `docs/superpowers/specs/2026-08-28-eckner-substantive-pass-design.md`):
+8 items — E-3.1 (background-dominated rename); E-6.4, E-6.7 (dN/dS paper additions);
+E-4.1, E-4.3, E-4.5, E-4.6, E-4.8 (chapter-4 rebalance).
 
 
 
