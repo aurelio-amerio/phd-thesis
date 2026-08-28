@@ -889,7 +889,7 @@ convention; all `\blue{}`-wrapped.
 
 ## Chapter 5 — Dark Matter Substructures
 
-### E-5.1 · §5.1.2 — 10⁸ M☉ threshold is an infall mass `[clarify]` ⬜
+### E-5.1 · §5.1.2 — 10⁸ M☉ threshold is an infall mass `[clarify]` ✅
 
 **Eckner's point:** The 10⁸ M☉ threshold for subhalos to accrete baryons should always be
 read as mass *at infall/accretion time*. Subhalos lose DM mass over time along their orbit
@@ -914,7 +914,7 @@ visible dwarf can today sit in a subhalo well below the formation threshold.
 
 ---
 
-### E-5.2 · §5.1.2 — Baryonic effects on subhalo survival `[science]` ⬜
+### E-5.2 · §5.1.2 — Baryonic effects on subhalo survival `[science]` ✅
 
 > "Baryonic processes also modify the survival of the subhalos themselves."
 
@@ -1323,8 +1323,8 @@ one phrase, the whole conclusions bullet list deserves a humanizer pass in fresh
 | E-3.3 | 3.1.2 | clarify | ✅ | KL gloss + inline formula (no §3.2 def) |
 | E-3.4 | 3.1.3 | clarify | ✅ | evidence = prob. of data under model |
 | E-3.5 | 3.3.2 | science | ✅ | typo + seed-variability sentence |
-| E-5.1 | 5.1.2 | clarify | 🟡 | mass-at-infall clause |
-| E-5.2 | 5.1.2 | science | 🟡 | baryonic → gravitational potential |
+| E-5.1 | 5.1.2 | clarify | ✅ | mass-at-infall clause |
+| E-5.2 | 5.1.2 | science | ✅ | baryonic → gravitational potential |
 | E-5.3 | 5.3.2 | mechanical | ✅ | typo |
 | E-5.4 | 5.4.8 | mechanical | ✅ | demote inner headers (3 sites) |
 | E-6.1 | 6.1.1 | science | 🟡 | drop false dichotomy |
@@ -1343,6 +1343,6 @@ one phrase, the whole conclusions bullet list deserves a humanizer pass in fresh
 | E-M.1 | 3.1.1 | style | 🟡 | formalized→established (2 sites) |
 | E-M.2 | conclusions | style | 🟡 | fix + humanizer pass on conclusions |
 
-**Counts:** 12 proposed (🟡) · 26 applied (✅): E-5.3, E-5.4, E-6.5, E-6.6, E-6.8, E-6.9, E-7.3
-(mechanical batch); E-1.1–E-1.6 (ch1 quick pass); E-2.1–E-2.3 (ch2 quick pass); E-3.2–E-3.5 (ch3 quick pass); E-4.2, E-4.4, E-4.7, E-4.10–E-4.12 (ch4 quick pass) · 8 deferred (⏳): E-4.1, E-4.3, E-4.5, E-4.6, E-4.8 (chapter-4 rebalance),
+**Counts:** 10 proposed (🟡) · 28 applied (✅): E-5.3, E-5.4, E-6.5, E-6.6, E-6.8, E-6.9, E-7.3
+(mechanical batch); E-1.1–E-1.6 (ch1 quick pass); E-2.1–E-2.3 (ch2 quick pass); E-3.2–E-3.5 (ch3 quick pass); E-4.2, E-4.4, E-4.7, E-4.10–E-4.12 (ch4 quick pass); E-5.1–E-5.2 (ch5 quick pass) · 8 deferred (⏳): E-4.1, E-4.3, E-4.5, E-4.6, E-4.8 (chapter-4 rebalance),
 E-3.1 (terminology), E-6.4, E-6.7 (need author input).
