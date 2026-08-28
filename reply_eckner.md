@@ -758,7 +758,7 @@ synthesis sentence), draft:
 
 ## Chapter 3 — Statistical Methods
 
-### E-3.1 · Ch. 3 intro — "Noise-dominated regimes" label misleading `[clarify]` ⬜
+### E-3.1 · Ch. 3 intro — "Noise-dominated regimes" label misleading `[clarify]` ✅
 
 **Eckner's point:** A priori, "noise-dominated" suggests statistics-limited analyses with
 a weak signal and instrument noise. What the thesis deals with is closer to
@@ -780,6 +780,17 @@ cross-references. Proposed default: option (a), one defining paragraph added at 
 of `chapter_03/sections/3.0_introduction.tex`, stating explicitly that the regime is
 systematics/background-dominated rather than statistics-limited, and that we use
 "noise" in the generalized sense of any emission component that is not the signal.
+
+**As applied (substantive pass):** author chose option (b) — full rename to
+*background-dominated* as the preferred term. Chapter 3 title renamed (plain short title
+kept for TOC/PDF bookmarks, `\blue{}` on the displayed title); all thesis-prose
+occurrences swept: `abstract_en.tex`, `abstract_es.tex` ("dominados por el fondo"),
+`resumen_en.tex` (4 sites), `resumen.tex` (4 sites), `conclusion.tex`, `outline.md`.
+A four-sentence defining passage added at the top of `3.0_introduction.tex` (photons
+plentiful; limitation is systematic uncertainty of bright astrophysical components, not
+statistics). Kept: the technical "noise-dominated" in the Ch. 8 paper appendix
+(`appendix_formalism.tex:127`, shot-noise sense) and "signal-to-noise ratio" phrasing
+throughout.
 
 ---
 
@@ -1318,7 +1329,7 @@ one phrase, the whole conclusions bullet list deserves a humanizer pass in fresh
 | E-2.1 | 2.1.3 | clarify | ✅ | dark-gas sentence + Grenier 2005 (no arXiv) |
 | E-2.2 | 2.2.1 | clarify | ✅ | PWNe/SNR aside for TeV |
 | E-2.3 | 2.2.2 | structure | ✅ | transients paragraph + ALP refs |
-| E-3.1 | ch3 intro | clarify | ⏳ | define/rename "noise-dominated" |
+| E-3.1 | ch3 intro | clarify | ✅ | renamed to "background-dominated" (full sweep + defining passage) |
 | E-3.2 | eq 3.1.5 | clarify | ✅ | mark TS as detection TS |
 | E-3.3 | 3.1.2 | clarify | ✅ | KL gloss + inline formula (no §3.2 def) |
 | E-3.4 | 3.1.3 | clarify | ✅ | evidence = prob. of data under model |

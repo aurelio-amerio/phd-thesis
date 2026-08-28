@@ -17,7 +17,7 @@
 
 ### **0.1 Scope of the Thesis**
 
-- **The Quest for Dark Matter:** The current status of DM searches and the transition from bright, smoking-gun signals to advanced statistical extraction from noise-dominated regimes.
+- **The Quest for Dark Matter:** The current status of DM searches and the transition from bright, smoking-gun signals to advanced statistical extraction from background-dominated regimes.
 - **The Data Landscape:** The role of the *Fermi* LAT after more than a decade of operations. The challenge of extracting new physics from an instrument where the low-hanging fruit has been harvested.
 - **The Methodological Shift:** The central thesis argument: progress requires moving beyond standard frequentist thresholding toward **statistical learning** and **population studies** using Machine Learning and Simulation-Based Inference.
 
@@ -73,7 +73,7 @@
   - Point Spread Function (PSF) and Energy Dispersion.
   - Standard data reduction pipelines (Fermi Science Tools).
 
-### **Chapter 3: Statistical Methods for Noise-Dominated Regimes**
+### **Chapter 3: Statistical Methods for Background-Dominated Regimes**
 
 > *Compact conceptual overview (~15 pages). Technique-specific details are introduced in the chapters where they are first applied, keeping each Part modular and self-contained.*
 
@@ -85,7 +85,7 @@
   - Why SBI matters for complex forward models with intractable likelihoods.
 - **3.3 Machine Learning in Astrophysics:**
   - ML approaches (classification, regression, density estimation).
-  - Why ML is suited to noise-dominated gamma-ray data.
+  - Why ML is suited to background-dominated gamma-ray data.
   - *(Technical details of NPE → Chapter 6; flow matching/diffusion → Chapter 9, if included)*
 - **3.4 The Domain Shift Challenge:**
   - Problem statement: training on simulations vs. testing on real data.
