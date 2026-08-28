@@ -973,7 +973,7 @@ container header. Option (a) is mechanical and safe; adopt it for all three.
 
 ## Chapter 6 — From Individual Sources to Populations
 
-### E-6.1 · §6.1.1 — "Not a lack of signal strength" phrasing `[science]` ⬜
+### E-6.1 · §6.1.1 — "Not a lack of signal strength" phrasing `[science]` ✅
 
 > "The difficulty is not a lack of signal strength but an excess of competing models:"
 
@@ -999,7 +999,7 @@ not detectability, is the bottleneck) survives a more precise phrasing.
 
 ---
 
-### E-6.2 · Eq. 6.2.1 — Clarify what Γ refers to `[clarify]` ⬜
+### E-6.2 · Eq. 6.2.1 — Clarify what Γ refers to `[clarify]` ✅
 
 **Eckner's point:** Be more precise about Γ — probably the *intrinsic* spectrum of each
 source, whereas the LAT only ever measures an *observed* spectrum modified by known
@@ -1021,7 +1021,7 @@ cross-reference is natural.
 
 ---
 
-### E-6.3 · §6.5.2.1 — One-photon limit is not the floor `[science]` ⬜
+### E-6.3 · §6.5.2.1 — One-photon limit is not the floor `[science]` ✅
 
 > "This lower limit, indeed, is also close to the theoretical sensitivity given by the
 > flux of a point source contributing exactly one photon"
@@ -1327,9 +1327,9 @@ one phrase, the whole conclusions bullet list deserves a humanizer pass in fresh
 | E-5.2 | 5.1.2 | science | ✅ | baryonic → gravitational potential |
 | E-5.3 | 5.3.2 | mechanical | ✅ | typo |
 | E-5.4 | 5.4.8 | mechanical | ✅ | demote inner headers (3 sites) |
-| E-6.1 | 6.1.1 | science | 🟡 | drop false dichotomy |
-| E-6.2 | eq 6.2.1 | clarify | 🟡 | Γ intrinsic vs observed + EBL xref |
-| E-6.3 | 6.5.2.1 | science | 🟡 | verified: 0.25-photon floor, add footnote |
+| E-6.1 | 6.1.1 | science | ✅ | drop false dichotomy |
+| E-6.2 | eq 6.2.1 | clarify | ✅ | Γ intrinsic vs observed + EBL xref |
+| E-6.3 | 6.5.2.1 | science | ✅ | verified: 0.25-photon floor, add footnote |
 | E-6.4 | 6.5.2.2 | clarify | ⏳ | needs author: what "stability" meant |
 | E-6.5 | 6.5.2.2 | mechanical | ✅ | fixed by E-6.9 |
 | E-6.6 | p. 173 | mechanical | ✅ | 2× loose→lose |
@@ -1343,6 +1343,6 @@ one phrase, the whole conclusions bullet list deserves a humanizer pass in fresh
 | E-M.1 | 3.1.1 | style | 🟡 | formalized→established (2 sites) |
 | E-M.2 | conclusions | style | 🟡 | fix + humanizer pass on conclusions |
 
-**Counts:** 10 proposed (🟡) · 28 applied (✅): E-5.3, E-5.4, E-6.5, E-6.6, E-6.8, E-6.9, E-7.3
-(mechanical batch); E-1.1–E-1.6 (ch1 quick pass); E-2.1–E-2.3 (ch2 quick pass); E-3.2–E-3.5 (ch3 quick pass); E-4.2, E-4.4, E-4.7, E-4.10–E-4.12 (ch4 quick pass); E-5.1–E-5.2 (ch5 quick pass) · 8 deferred (⏳): E-4.1, E-4.3, E-4.5, E-4.6, E-4.8 (chapter-4 rebalance),
+**Counts:** 7 proposed (🟡) · 31 applied (✅): E-5.3, E-5.4, E-6.5, E-6.6, E-6.8, E-6.9, E-7.3
+(mechanical batch); E-1.1–E-1.6 (ch1 quick pass); E-2.1–E-2.3 (ch2 quick pass); E-3.2–E-3.5 (ch3 quick pass); E-4.2, E-4.4, E-4.7, E-4.10–E-4.12 (ch4 quick pass); E-5.1–E-5.2 (ch5 quick pass); E-6.1–E-6.3 (ch6 quick pass) · 8 deferred (⏳): E-4.1, E-4.3, E-4.5, E-4.6, E-4.8 (chapter-4 rebalance),
 E-3.1 (terminology), E-6.4, E-6.7 (need author input).
