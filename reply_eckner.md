@@ -1159,7 +1159,7 @@ the E-6.5 cross-reference.
 
 ## Chapter 7 — Probabilistic Cataloging
 
-### E-7.1 · §7.1.2 — DR3→DR4 source changes also reflect new diffuse model `[science]` ⬜
+### E-7.1 · §7.1.2 — DR3→DR4 source changes also reflect new diffuse model `[science]` ✅
 
 **Eckner's point:** The final paragraph attributes source changes from 4FGL-DR3 to DR4 to
 the catalog update, but DR4 is also based on a *different Galactic diffuse model*: the
@@ -1194,7 +1194,7 @@ and changed background treatment.
 
 ---
 
-### E-7.2 · §7.2.2 — Typo `[mechanical]` ⬜
+### E-7.2 · §7.2.2 — Typo `[mechanical]` ✅
 
 **Eckner's point:** "more spurious directions" → probably "detections".
 
@@ -1336,13 +1336,13 @@ one phrase, the whole conclusions bullet list deserves a humanizer pass in fresh
 | E-6.7 | 6.5.3.2 | clarify | ⏳ | needs author: negative-pixel handling |
 | E-6.8 | 6.5.3.4 | mechanical | ✅ | aleatory→aleatoric + sweep |
 | E-6.9 | 6.6 | mechanical | ✅ | subappendices sectioning fix |
-| E-7.1 | 7.1.2 | science | 🟡 | verified: DR4 diffuse change; add sentence |
-| E-7.2 | 7.2.2 | mechanical | 🟡 | rephrase "spurious directions" |
+| E-7.1 | 7.1.2 | science | ✅ | verified: DR4 diffuse change; add sentence |
+| E-7.2 | 7.2.2 | mechanical | ✅ | rephrase "spurious directions" |
 | E-7.3 | 7.3.4 | mechanical | ✅ | loose→lose sweep |
 | E-8.1 | 8.2.2 | mechanical | 🟡 | rephrase CR rejection sentence |
 | E-M.1 | 3.1.1 | style | 🟡 | formalized→established (2 sites) |
 | E-M.2 | conclusions | style | 🟡 | fix + humanizer pass on conclusions |
 
-**Counts:** 7 proposed (🟡) · 31 applied (✅): E-5.3, E-5.4, E-6.5, E-6.6, E-6.8, E-6.9, E-7.3
-(mechanical batch); E-1.1–E-1.6 (ch1 quick pass); E-2.1–E-2.3 (ch2 quick pass); E-3.2–E-3.5 (ch3 quick pass); E-4.2, E-4.4, E-4.7, E-4.10–E-4.12 (ch4 quick pass); E-5.1–E-5.2 (ch5 quick pass); E-6.1–E-6.3 (ch6 quick pass) · 8 deferred (⏳): E-4.1, E-4.3, E-4.5, E-4.6, E-4.8 (chapter-4 rebalance),
+**Counts:** 5 proposed (🟡) · 33 applied (✅): E-5.3, E-5.4, E-6.5, E-6.6, E-6.8, E-6.9, E-7.3
+(mechanical batch); E-1.1–E-1.6 (ch1 quick pass); E-2.1–E-2.3 (ch2 quick pass); E-3.2–E-3.5 (ch3 quick pass); E-4.2, E-4.4, E-4.7, E-4.10–E-4.12 (ch4 quick pass); E-5.1–E-5.2 (ch5 quick pass); E-6.1–E-6.3 (ch6 quick pass); E-7.1–E-7.2 (ch7 quick pass) · 8 deferred (⏳): E-4.1, E-4.3, E-4.5, E-4.6, E-4.8 (chapter-4 rebalance),
 E-3.1 (terminology), E-6.4, E-6.7 (need author input).
