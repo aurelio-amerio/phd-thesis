@@ -1270,7 +1270,7 @@ vocabulary watch-list.
 
 ---
 
-### E-M.2 · Conclusions — bullet-point list quirks ⬜
+### E-M.2 · Conclusions — bullet-point list quirks ✅
 
 **Eckner's point:** The bullet-point list in the conclusions is full of LLM-favoured word
 choices and quirks; "The delivery mechanism ..." in particular sounds odd and unnatural.
@@ -1341,8 +1341,8 @@ one phrase, the whole conclusions bullet list deserves a humanizer pass in fresh
 | E-7.3 | 7.3.4 | mechanical | ✅ | loose→lose sweep |
 | E-8.1 | 8.2.2 | mechanical | ✅ | rephrase CR rejection sentence |
 | E-M.1 | 3.1.1 | style | ✅ | formalized→established (2 sites) |
-| E-M.2 | conclusions | style | 🟡 | fix + humanizer pass on conclusions |
+| E-M.2 | conclusions | style | ✅ | fix + humanizer pass on conclusions |
 
-**Counts:** 3 proposed (🟡) · 35 applied (✅): E-5.3, E-5.4, E-6.5, E-6.6, E-6.8, E-6.9, E-7.3
-(mechanical batch); E-1.1–E-1.6 (ch1 quick pass); E-2.1–E-2.3 (ch2 quick pass); E-3.2–E-3.5 (ch3 quick pass); E-4.2, E-4.4, E-4.7, E-4.10–E-4.12 (ch4 quick pass); E-5.1–E-5.2 (ch5 quick pass); E-6.1–E-6.3 (ch6 quick pass); E-7.1–E-7.2 (ch7 quick pass); E-8.1, E-M.1 (ch8+style spot fix) · 8 deferred (⏳): E-4.1, E-4.3, E-4.5, E-4.6, E-4.8 (chapter-4 rebalance),
+**Counts:** 2 proposed (🟡) · 36 applied (✅): E-5.3, E-5.4, E-6.5, E-6.6, E-6.8, E-6.9, E-7.3
+(mechanical batch); E-1.1–E-1.6 (ch1 quick pass); E-2.1–E-2.3 (ch2 quick pass); E-3.2–E-3.5 (ch3 quick pass); E-4.2, E-4.4, E-4.7, E-4.10–E-4.12 (ch4 quick pass); E-5.1–E-5.2 (ch5 quick pass); E-6.1–E-6.3 (ch6 quick pass); E-7.1–E-7.2 (ch7 quick pass); E-8.1, E-M.1, E-M.2 (ch8+style+conclusions) · 8 deferred (⏳): E-4.1, E-4.3, E-4.5, E-4.6, E-4.8 (chapter-4 rebalance),
 E-3.1 (terminology), E-6.4, E-6.7 (need author input).
