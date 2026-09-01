@@ -13,6 +13,18 @@
       "snapshotFile": "reply_eckner.rev1.md",
       "annotationsFile": "rev1.json",
       "createdAt": "2026-08-27T10:11:36.007Z"
+    },
+    {
+      "revision": 2,
+      "snapshotFile": "reply_eckner.rev2.md",
+      "annotationsFile": "rev2.json",
+      "createdAt": "2026-08-28T09:08:08.324Z"
+    },
+    {
+      "revision": 3,
+      "snapshotFile": "reply_eckner.rev3.md",
+      "annotationsFile": "rev3.json",
+      "createdAt": "2026-08-28T09:14:18.813Z"
     }
   ]
 }

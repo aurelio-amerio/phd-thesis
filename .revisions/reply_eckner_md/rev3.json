@@ -1,0 +1,157 @@
+[
+  {
+    "id": "6yn47op",
+    "startLine": 31,
+    "endLine": 33,
+    "textPreview": "> You state \"the same mass and channel that fit the spectrum also predict the correct",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "9if5kxu",
+        "text": "what I wanted to say is maybe more nuanced, and it got a bit butchered while rewriting",
+        "createdAt": "2026-08-28T09:23:36.595Z"
+      },
+      {
+        "id": "gkd2ugc",
+        "text": "I agree with what eckner wrote, one is a particle physics and the other is an astrophysics/cosmology question.",
+        "createdAt": "2026-08-28T09:24:01.162Z"
+      },
+      {
+        "id": "urcxev2",
+        "text": "the point I wanted to draw home is that wimp can be dark matter, and simulations of dark matter accretion form halos with a spherical symmetry. this ida got too condensed in this phrase, so we need to unpack a bit to be more correct",
+        "createdAt": "2026-08-28T09:24:47.081Z"
+      }
+    ]
+  },
+  {
+    "id": "chjsh7n",
+    "startLine": 126,
+    "endLine": 129,
+    "textPreview": "vulnerability\" to scope it to *rigid-template* analyses; note explicitly that",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "np8z7yk",
+        "text": "I think the right way to phrase this is by first introducing the fixed template ones with the critique, and then introduce the skyfact work to say that it mitigates this problem",
+        "createdAt": "2026-08-28T10:25:56.890Z"
+      }
+    ]
+  },
+  {
+    "id": "xycnlec",
+    "startLine": 228,
+    "endLine": 228,
+    "textPreview": "**Action:** ⏳ DEFERRED — substantive pass. Strategy:",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "vk2esei",
+        "text": "I agree with this strategy",
+        "createdAt": "2026-08-28T10:32:29.111Z"
+      },
+      {
+        "id": "aq0qdtv",
+        "text": "when introducing the explanation of MSPs as the origin of the GC we need to talk about the deposition mechanisms, which is the natural section where to introduce globular clusters",
+        "createdAt": "2026-08-28T10:33:21.834Z"
+      }
+    ]
+  },
+  {
+    "id": "ui5zita",
+    "startLine": 256,
+    "endLine": 256,
+    "textPreview": "**Response:** See E-4.3 — one joint fix.",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "7s6jbsx",
+        "text": "agree",
+        "createdAt": "2026-08-28T10:33:40.413Z"
+      }
+    ]
+  },
+  {
+    "id": "h2pvysp",
+    "startLine": 355,
+    "endLine": 356,
+    "textPreview": "independent studies…\") is good — consider moving it earlier so the caveats frame the",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "2py19d6",
+        "text": "I think that we can reformulate to state that this work has some approximations, and it is still to be seen if it will be proven robust etc",
+        "createdAt": "2026-08-28T10:37:58.955Z"
+      },
+      {
+        "id": "p61bd41",
+        "text": "in general I agree with the restructuring ideas",
+        "createdAt": "2026-08-28T10:38:14.388Z"
+      }
+    ]
+  },
+  {
+    "id": "rqotwai",
+    "startLine": 763,
+    "endLine": 767,
+    "textPreview": "**Eckner's point:** A priori, \"noise-dominated\" suggests statistics-limited analyses with",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "iai33w3",
+        "text": "I agree, we need to write we are background dominated",
+        "createdAt": "2026-08-28T10:39:33.217Z"
+      }
+    ]
+  },
+  {
+    "id": "fx68zgp",
+    "startLine": 778,
+    "endLine": 782,
+    "textPreview": "**Action:** ⏳ DEFERRED — substantive pass. Affects Ch. 3 title/framing and",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "hl3i0m2",
+        "text": "just use background dominated as the preferred term",
+        "createdAt": "2026-08-28T10:40:09.627Z"
+      }
+    ]
+  },
+  {
+    "id": "l9gnv2q",
+    "startLine": 1070,
+    "endLine": 1073,
+    "textPreview": "**Action:** ⏳ DEFERRED — needs author input. Question for the author: in the dNdS paper,",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "efx66pk",
+        "text": "it required less simulations for convergence, and the NN converging faster to the simulation ground truth, beside the uncertainity on agal was larger than the one from the poisson fit. now sure we can write something beside a small footnote here",
+        "createdAt": "2026-08-28T10:41:51.108Z"
+      }
+    ]
+  },
+  {
+    "id": "7kfz4e2",
+    "startLine": 1111,
+    "endLine": 1113,
+    "textPreview": "**Eckner's point:** Since the diffuse emission is subtracted and logs are taken: how are",
+    "priority": "none",
+    "status": "open",
+    "thread": [
+      {
+        "id": "rayv3uo",
+        "text": "check the paper again, but I think we are not taking logs? not sure. it's possible we add a constant value to the map to avoid negative logs, but I don't remember, maybe we don't need to specify this",
+        "createdAt": "2026-08-28T10:43:28.753Z"
+      }
+    ]
+  }
+]

@@ -375,6 +375,12 @@ This cross-correlation technique forms the basis of the analysis in Chapter~\ref
 The complementary strengths of these targets motivate the multi-target programme developed in Parts II through IV of this thesis.
 Each target exposes different aspects of the dark matter parameter space and is sensitive to different systematic uncertainties.
 
+\blue{The target list above is tailored to WIMP annihilation; alternative dark matter candidates change the most promising targets.
+For axions and axion-like particles (ALPs), introduced in Section~\ref{sec:1.2.1}, the observable of choice is not an annihilation flux but the \emph{spectral irregularities} that photon--ALP mixing in astrophysical magnetic fields imprints on bright gamma-ray sources~\cite{Fermi-LAT:2016nkz}.
+The preferred targets shift accordingly, toward active galactic nuclei embedded in strongly magnetized galaxy clusters and transient events such as supernovae~\cite{Payez:2014xsa} (cf.\ Section~\ref{sec:extragalactic_sources}).
+For primordial black holes, the signature is instead \emph{Hawking evaporation}, which makes the diffuse MeV background~\cite{Ballesteros:2019exr}, the individual nearby objects entering their terminal evaporation phase~\cite{Fermi-LAT:2018pfs}, and the short GeV--TeV bursts marking its final instants~\cite{HAWC:2019wla} some of the most relevant channels.
+The analyses of this thesis remain within the WIMP framework, but the statistical methods developed here are largely agnostic to the underlying candidate.}
+
 \subsection{Multi-Messenger Context}
 \label{sec:multi_messenger}
 
@@ -384,9 +390,11 @@ Each messenger would open a complementary window onto the dark sector, with its 
 \textbf{Neutrinos} share the key advantage of photons --- having no electrical charge --- and therefore propagate in straight lines, preserving directional information \cite{Cirelli:2024ssz}.
 They can also escape environments opaque to photons: dark matter captured in the solar core, for instance, annihilates into neutrinos that are the only annihilation products to reach the surface, making high-energy solar neutrinos a probe of the dark matter--nucleon scattering cross-section.
 Searches by IceCube, ANTARES, and Super-Kamiokande have found no signal, but for dark matter masses below a few hundred GeV they set bounds on the spin-dependent cross-section roughly one order of magnitude stronger than direct detection experiments \cite{IceCube:2016dgk}.
-For galactic targets, however, neutrino constraints remain generally weaker than the corresponding gamma-ray bounds, becoming competitive only above roughly 1--10 TeV depending on the annihilation channel.
+For galactic targets, however, neutrino constraints remain generally weaker than the corresponding gamma-ray bounds\blue{, owing to the experimental difficulty of detecting them; they become} competitive only above roughly 1--10 TeV depending on the annihilation channel.
 
-\textbf{Charged cosmic rays} --- electrons, positrons, antiprotons, and heavier anti-nuclei --- suffer from a fundamental limitation: galactic magnetic fields randomize their arrival directions, erasing all spatial information and leaving only the energy spectrum as the main observable \cite{Cirelli:2024ssz,Pinetti:2021jjs}.
+\textbf{Charged cosmic rays} --- electrons, positrons, antiprotons, and heavier anti-nuclei --- suffer from a fundamental limitation: galactic magnetic fields randomize their arrival directions\blue{.
+A TeV antiproton gyrates with a \emph{Larmor radius} of order $10^{-3}$~pc, six orders of magnitude below the kiloparsec distances over which it propagates, so its arrival direction retains essentially no memory of its source.
+Only weak residual anisotropies, at the $10^{-4}$--$10^{-3}$ level, survive at TeV--PeV energies~\cite{Deligny:2016asd}, leaving} the energy spectrum as the main observable \cite{Cirelli:2024ssz,Pinetti:2021jjs}.
 The positron fraction measured by PAMELA and AMS-02 rises steeply above 10 GeV \cite{PAMELA:2008gwm}, but fitting it with dark matter requires a cross-section three orders of magnitude above the thermal relic value, in severe tension with gamma-ray and CMB constraints; the excess is now widely attributed to nearby pulsars.
 AMS-02 antiproton data show a tentative excess at 10--20 GeV compatible with an $\sim$80 GeV dark matter particle annihilating into $b\bar{b}$ at roughly the thermal cross-section \cite{Cuoco:2016eej}.
 These parameters overlap with those invoked for the Galactic Center excess (Chapter~\ref{ch:4}), but the significance drops below $\sim 2\sigma$ once systematic uncertainties in the propagation model and production cross-sections are included.
@@ -407,7 +415,7 @@ The current status is best summarized as a set of progressively tightening bound
 
 \textbf{Gamma-ray constraints.}
 The tightest indirect detection limits come from the Fermi-LAT stacked analysis of Milky Way dwarf spheroidal galaxies.
-The original combined analysis of 15 dSphs with six years of data excluded the thermal relic cross-section for dark matter masses in the range $\sim 10$--$100$ GeV in the $b\bar{b}$ channel \cite{Fermi-LAT:2015att}; below $\sim 10$ GeV the Fermi-LAT effective area drops steeply and the constraints weaken.
+The original combined analysis of 15 dSphs with six years of data excluded the thermal relic cross-section for dark matter masses in the range $\sim 10$--$100$ GeV in the $b\bar{b}$ channel \blue{\cite{Fermi-LAT:2015att,2024PhRvD.109f3024M}}; below $\sim 10$ GeV the Fermi-LAT effective area drops steeply and the constraints weaken.
 The most recent legacy analysis extends the sample to 50 dSphs and 14 years of Fermi-LAT exposure, confirming and slightly strengthening these constraints \cite{2024PhRvD.109f3024M}; no significant excess is found in the combined likelihood analysis, though a marginal ($2$--$3\sigma$ local) excess near $M_\chi \approx 150$--$230$ GeV in the $b\bar{b}$ channel has motivated projections for future observations \cite{2024PhRvD.109f3024M}.
 For a generic annihilation channel, marginalizing over branching ratios yields a model-independent lower limit of $m_\chi \gtrsim 20$ GeV \cite{Cirelli:2024ssz}.
 Constraints on the dark matter lifetime, derived primarily from the isotropic gamma-ray background and Milky Way halo observations, reach $\tau \gtrsim 10^{27}$--$10^{28}$ seconds depending on the decay channel and dark matter mass --- about ten orders of magnitude longer than the age of the universe \cite{Cohen:2016uyg,Blanco_2019}.
@@ -427,7 +435,7 @@ The Galactic Center excess, first reported in 2009, remains the most debated (it
 Chapter~\ref{ch:4} of this thesis contributes directly to this debate by challenging the leading astrophysical interpretation of the excess as an unresolved population of millisecond pulsars.
 Other excesses, by contrast, admit a more satisfying astrophysical explanation.
 The charged cosmic-ray anomalies discussed in Section~\ref{sec:multi_messenger} --- the AMS-02 antiproton signal and the rise in the positron fraction --- remain consistent with conventional astrophysical sources once systematic uncertainties are fully accounted for \cite{Hooper:2024}.
-A similar pattern extends beyond gamma-rays: the 511~keV positron-annihilation line from the Galactic bulge admits light dark-matter interpretations alongside plausible astrophysical ones; the 3.5~keV X-ray line, once attributed to sterile-neutrino decay, is now disfavoured; and the DAMA/LIBRA annual modulation remains unconfirmed by experiments with the same NaI target \cite{Cirelli:2024ssz}.
+A similar pattern extends beyond gamma-rays: the 511~keV positron-annihilation line from the Galactic bulge admits light dark-matter interpretations alongside plausible astrophysical ones; the 3.5~keV X-ray line, once attributed to sterile-neutrino decay, is now disfavoured; the DAMA/LIBRA annual modulation remains unconfirmed by experiments with the same NaI target \cite{Cirelli:2024ssz}\blue{. A more recent entry is the anomalously high ionisation rate of the molecular gas in the Central Molecular Zone, which sub-GeV dark matter annihilating into electron--positron pairs could account for~\cite{DelaTorreLuque:2024fcc}}.
 
 \textbf{Small-scale structure tensions.}
 A different class of problem concerns the small-scale predictions of $\Lambda$CDM itself.
@@ -447,7 +455,16 @@ describe as a field ``at a turning point'' \cite{Cirelli:2024ssz}.
 The standard approach to indirect detection --- searching for a bright, spectrally distinctive excess from a single target above the astrophysical background --- has not yet delivered an unambiguous discovery.
 Nonetheless, the thermal relic benchmark is not the prediction of a specific model but a cosmological target: if dark matter is a thermal relic, the annihilation cross-section must have the value that produces the observed abundance, regardless of the underlying theory.
 Current exclusions cover only a portion of the mass range and a subset of annihilation channels; heavier candidates, leptonic final states, and velocity-dependent cross-sections remain largely unexplored.
-Extracting these signals demands methods that go beyond simple signal-over-background thresholding.
+
+\blue{The open territory is clearest at the highest masses.
+Fermi-LAT probes the GeV window where the Galactic Center excess resides, but the TeV regime remains only marginally explored.
+It is also where some of the simplest surviving WIMP candidates live.
+In \emph{minimal dark matter} scenarios, the candidate is a single electroweak multiplet added to the Standard Model~\cite{Cirelli:2005uq}.
+The relic abundance then fixes its mass: roughly $1$~TeV for a higgsino-like doublet and $3$~TeV for a wino-like triplet, beyond the general reach of both Fermi-LAT and current ground-based telescopes.
+Closing this window is a primary science goal of the Cherenkov Telescope Array Observatory (CTAO), whose Galactic Center observations are forecast to reach the thermal cross-section at these masses~\cite{CTA:2020qlo}.
+The cross-correlation forecast of Chapter~\ref{ch:8} contributes to this high-energy programme.}
+
+Extracting \blue{any of} these signals demands methods that go beyond simple signal-over-background thresholding.
 
 % The analyses of this thesis pursue that transition.
 The Galactic Center excess demands careful modelling of the interstellar emission and the unresolved point-source population --- distinguishing dark matter annihilation from millisecond pulsars requires statistical tools, not a single spectral fit (Chapter~\ref{ch:4}).

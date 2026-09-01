@@ -1,0 +1,602 @@
+[
+  {
+    "id": "htqce11",
+    "startLine": 84,
+    "endLine": 96,
+    "textPreview": "**Action:** In `chapter_04/sections/4.1_discovery_and_characterization.tex:140`, update:",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "y66pa8u",
+        "text": "I agree, let's just change the range and cite the newer papers",
+        "createdAt": "2026-08-27T10:12:59.001Z"
+      },
+      {
+        "id": "yyhukeo",
+        "text": "[AGENT] E-4.2 applied as requested \u2014 range and citation only: local density updated to 0.3\u20130.6 GeV/cm\u00b3 (shift in \u27e8\u03c3v\u27e9 now factor ~4), deSalas:2020hbh added to the existing cite; no long clause appended.",
+        "createdAt": "2026-08-28T09:10:45.145996+00:00"
+      }
+    ]
+  },
+  {
+    "id": "160pw3p",
+    "startLine": 178,
+    "endLine": 209,
+    "textPreview": "**Action:** In `chapter_04/sections/4.2_msp_hypothesis.tex:71`, rework:",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "vsadh1o",
+        "text": "ok, I agree",
+        "createdAt": "2026-08-27T10:16:07.439Z"
+      },
+      {
+        "id": "mrvsvav",
+        "text": "[AGENT] E-4.4 applied: replenishment-channel rework at 4.2:71 (disk star formation vs dynamical formation in cluster cores, LMXB\u2013encounter-rate correlation with Pooley:2003zb + Bahramian:2013ihw, nuclear-star-cluster bound via Eckner:2017oul) and the strengthened hedge at line 73 with Fragione/Ye cites; \\aure{} placeholder left for the field-vs-cluster encounter-rate-ratio reference.",
+        "createdAt": "2026-08-28T09:10:50.822990+00:00"
+      }
+    ]
+  },
+  {
+    "id": "llygiwa",
+    "startLine": 282,
+    "endLine": 300,
+    "textPreview": "**Action:** In `chapter_04/sections/4.3_systematics_stalemate.tex:71-72`, rework:",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "rf3xnef",
+        "text": "agree",
+        "createdAt": "2026-08-27T10:27:52.709Z"
+      },
+      {
+        "id": "dc7kglv",
+        "text": "[AGENT] E-4.7 applied: IC-tail rework at 4.3:71-72 \u2014 the tail constrains the composition of the MSP emission rather than excluding an MSP origin (Song:2019nrx, Manconi kept); \u00a74.4's \"systematic radio follow-up\" softened to \"targeted radio follow-up campaigns\" for consistency.",
+        "createdAt": "2026-08-28T09:10:53.596112+00:00"
+      }
+    ]
+  },
+  {
+    "id": "ljyp89n",
+    "startLine": 391,
+    "endLine": 406,
+    "textPreview": "**Action:** Add a closing paragraph to `comparisons.tex` (after the Hooper & Linden",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "lamkir7",
+        "text": "sounds good",
+        "createdAt": "2026-08-27T10:30:01.805Z"
+      },
+      {
+        "id": "uopmj06",
+        "text": "[AGENT] E-4.10 applied: common-(L\u2080,\u03c3_L) caveat paragraph appended to comparisons.tex after the Hooper & Linden comparison, pointing to the cluster-to-cluster variation model via the newly added sec:implications-gce label.",
+        "createdAt": "2026-08-28T09:10:55.775200+00:00"
+      }
+    ]
+  },
+  {
+    "id": "14iz0rk",
+    "startLine": 430,
+    "endLine": 446,
+    "textPreview": "**Action:** In `chapter_04/sections/paper_msp/sections/implications_gce.tex:20`, rework:",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "h8khs4w",
+        "text": "sounds good",
+        "createdAt": "2026-08-27T10:31:06.070Z"
+      },
+      {
+        "id": "lb0grtg",
+        "text": "[AGENT] E-4.11 applied: implications_gce.tex:20 reworked \u2014 radio follow-up framed as targeted (TRAPUM/MeerKAT; Clark:2022tjf, Berteaud:2025ttq) rather than systematic, with selection effects against distant dispersed pulsars and the SKA outlook.",
+        "createdAt": "2026-08-28T09:10:58.591228+00:00"
+      }
+    ]
+  },
+  {
+    "id": "lqxnke0",
+    "startLine": 462,
+    "endLine": 472,
+    "textPreview": "**Action:** In `chapter_04/sections/paper_msp/sections/implications_gce.tex`, at the end",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "ar4u13x",
+        "text": "I would not modify the text of the paper, but this comment is valid",
+        "createdAt": "2026-08-27T10:32:31.388Z"
+      },
+      {
+        "id": "mfkipqz",
+        "text": "[AGENT] E-4.12 applied without touching the paper text, as you asked: the cluster-variation-model emphasis (the more realistic assessment; 3\u201330 expected vs 3 observed, tension persists) was added to the thesis-authored conclusions instead.",
+        "createdAt": "2026-08-28T09:11:01.441294+00:00"
+      }
+    ]
+  },
+  {
+    "id": "eczmmrq",
+    "startLine": 507,
+    "endLine": 509,
+    "textPreview": "**Eckner's point:** Fine given the thesis scope, but in this *introductory* section one",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "wiqs4ej",
+        "text": "it's a fair point, we shall address it",
+        "createdAt": "2026-08-27T11:05:09.185Z"
+      },
+      {
+        "id": "ztm812r",
+        "text": "[AGENT] E-1.1 applied: closing paragraph added after the \u00a71.4.5 target survey \u2014 ALP spectral irregularities (Fermi-LAT:2016nkz, Payez:2014xsa) and PBH Hawking evaporation, cross-linked to \u00a72.2.2; \\aure{} placeholder left for a PBH-search citation.",
+        "createdAt": "2026-08-28T09:10:14.649672+00:00"
+      }
+    ]
+  },
+  {
+    "id": "hwj1kvn",
+    "startLine": 517,
+    "endLine": 531,
+    "textPreview": "**Action:** Add a closing paragraph to \u00a71.4.5, after line 376, along these lines",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "tjrvw6b",
+        "text": "I agree with the idea",
+        "createdAt": "2026-08-27T11:05:36.117Z"
+      },
+      {
+        "id": "7rrhwro",
+        "text": "[AGENT] E-1.1 applied: closing paragraph added after the \u00a71.4.5 target survey \u2014 ALP spectral irregularities (Fermi-LAT:2016nkz, Payez:2014xsa) and PBH Hawking evaporation, cross-linked to \u00a72.2.2; \\aure{} placeholder left for a PBH-search citation.",
+        "createdAt": "2026-08-28T09:10:14.649911+00:00"
+      }
+    ]
+  },
+  {
+    "id": "i9apwso",
+    "startLine": 537,
+    "endLine": 540,
+    "textPreview": "**Eckner's point:** In the neutrino paragraph, add the remark that neutrinos interact very",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "k9t4yp7",
+        "text": "fair",
+        "createdAt": "2026-08-27T11:05:50.905Z"
+      },
+      {
+        "id": "xinhxjb",
+        "text": "[AGENT] E-1.2 applied as the smaller change requested: \"...remain generally weaker than the corresponding gamma-ray bounds, owing to the experimental difficulty of detecting them; they become competitive only above roughly 1\u201310 TeV\".",
+        "createdAt": "2026-08-28T09:10:16.715383+00:00"
+      }
+    ]
+  },
+  {
+    "id": "xn6fzzl",
+    "startLine": 546,
+    "endLine": 556,
+    "textPreview": "**Action:** In line 387, expand:",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "bur4bm2",
+        "text": "make a smaller change. ...generally weaker due to the experimental difficulties in detecting them... or something similar.",
+        "createdAt": "2026-08-27T11:06:43.016Z"
+      },
+      {
+        "id": "u2ou9b8",
+        "text": "[AGENT] E-1.2 applied as the smaller change requested: \"...remain generally weaker than the corresponding gamma-ray bounds, owing to the experimental difficulty of detecting them; they become competitive only above roughly 1\u201310 TeV\".",
+        "createdAt": "2026-08-28T09:10:16.715405+00:00"
+      }
+    ]
+  },
+  {
+    "id": "mldv3uj",
+    "startLine": 575,
+    "endLine": 587,
+    "textPreview": "**Action:** In `chapter_01/sections/1.4_indirect_detection.tex:389`, extend the sentence:",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "doiui2o",
+        "text": "agree",
+        "createdAt": "2026-08-27T11:07:49.497Z"
+      },
+      {
+        "id": "f6mu4rj",
+        "text": "[AGENT] E-1.3 applied: Larmor-radius sentence (TeV antiproton, ~10\u207b\u00b3 pc vs kpc propagation distances) plus the residual 10\u207b\u2074\u201310\u207b\u00b3 anisotropies, citing Deligny:2016asd.",
+        "createdAt": "2026-08-28T09:10:18.861589+00:00"
+      }
+    ]
+  },
+  {
+    "id": "57q0pix",
+    "startLine": 602,
+    "endLine": 605,
+    "textPreview": "**Action:** At line 410, change `\\cite{Fermi-LAT:2015att}` \u2192",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "9sgs3mb",
+        "text": "sounds good",
+        "createdAt": "2026-08-27T13:34:56.532Z"
+      },
+      {
+        "id": "y9x2eyx",
+        "text": "[AGENT] E-1.4 applied: 2024PhRvD.109f3024M appended to the Fermi-LAT:2015att dwarf-limit citation at 1.4:410 (position of [129] verified first).",
+        "createdAt": "2026-08-28T09:10:21.022836+00:00"
+      }
+    ]
+  },
+  {
+    "id": "kmdu6be",
+    "startLine": 623,
+    "endLine": 630,
+    "textPreview": "**Action:** In \u00a71.4.7 \"Unresolved anomalies\"",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "scybciq",
+        "text": "sounds good",
+        "createdAt": "2026-08-27T13:35:34.997Z"
+      },
+      {
+        "id": "nf5u8ub",
+        "text": "[AGENT] E-1.5 applied: CMZ ionisation-rate anomaly added to the multi-anomaly sentence in \u00a71.4.7, citing DelaTorreLuque:2024fcc.",
+        "createdAt": "2026-08-28T09:10:22.387143+00:00"
+      }
+    ]
+  },
+  {
+    "id": "5k0mih4",
+    "startLine": 650,
+    "endLine": 664,
+    "textPreview": "**Action:** Add a paragraph to \u00a71.4.7, most naturally inside \"The methodological case for",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "r1ycqo6",
+        "text": "good idea, think about how to properly address the point",
+        "createdAt": "2026-08-27T13:36:49.963Z"
+      },
+      {
+        "id": "00cnslr",
+        "text": "[AGENT] E-1.6 applied after rethinking placement and wording: new paragraph on the under-explored TeV window \u2014 minimal dark matter (higgsino ~1 TeV, wino ~3 TeV) and CTAO's Galactic Center programme \u2014 closing with the Chapter 8 forward reference, so it reads as completing the survey rather than an advertisement.",
+        "createdAt": "2026-08-28T09:10:25.177981+00:00"
+      }
+    ]
+  },
+  {
+    "id": "d804qrg",
+    "startLine": 684,
+    "endLine": 701,
+    "textPreview": "**Action:** In `2.1_production_mechanisms.tex:141`, extend:",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "6unh197",
+        "text": "sounds good, double check the phrase",
+        "createdAt": "2026-08-27T13:37:49.166Z"
+      },
+      {
+        "id": "2eoro2p",
+        "text": "[AGENT] E-2.1 applied: dark-gas contribution added at 2.1:141 \u2014 optically thick HI + CO-dark H\u2082, traced indirectly via dust or the gamma rays themselves (Grenier:2005kbp, Fermi-LAT:2016zaq); phrasing double-checked against the item's verified facts as requested.",
+        "createdAt": "2026-08-28T09:10:26.693981+00:00"
+      }
+    ]
+  },
+  {
+    "id": "b0uji4e",
+    "startLine": 714,
+    "endLine": 723,
+    "textPreview": "**Action:** Extend line 37:",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "71ep4n0",
+        "text": "ok, but keep more concise. \"for the GeV dark matter searches undertaken in this thesis.\", \"On the other hand, at TeV energies....\". Avoid unneeded connections and qualifiers",
+        "createdAt": "2026-08-27T13:39:23.247Z"
+      },
+      {
+        "id": "as0tvq9",
+        "text": "[AGENT] E-2.2 applied in the concise form you specified: sentence ends at \"...for the GeV dark matter searches undertaken in this thesis.\", followed by a single \"On the other hand, at TeV energies...\" sentence with the cf. Chapter 8 pointer \u2014 no extra connections or qualifiers.",
+        "createdAt": "2026-08-28T09:10:31.954527+00:00"
+      }
+    ]
+  },
+  {
+    "id": "abk7xui",
+    "startLine": 741,
+    "endLine": 755,
+    "textPreview": "**Action:** Add a paragraph after line 74 (before the \"Detailed population models\u2026\"",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "pehgf9w",
+        "text": "sounds good",
+        "createdAt": "2026-08-27T13:54:05.695Z"
+      },
+      {
+        "id": "avvfiy2",
+        "text": "[AGENT] E-2.3 applied: transients paragraph (GRBs, blazar flares, ALP-conversion searches with Fermi-LAT:2016nkz + Payez:2014xsa) inserted after the SFG paragraph, cross-referencing \u00a71.4.5 consistently with the E-1.1 paragraph.",
+        "createdAt": "2026-08-28T09:10:34.058952+00:00"
+      }
+    ]
+  },
+  {
+    "id": "e4gyh4j",
+    "startLine": 797,
+    "endLine": 803,
+    "textPreview": "**Action:** In `chapter_03/sections/3.1_inference.tex:76`, after \"\u2026the globally maximized",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "5gtxinm",
+        "text": "sounds good",
+        "createdAt": "2026-08-27T13:54:53.393Z"
+      },
+      {
+        "id": "8231uso",
+        "text": "[AGENT] E-3.2 applied: detection-TS clarification added after the Mattox cite (background-only null + source alternative = the detection statistic; physical-boundary caveat forward-referenced).",
+        "createdAt": "2026-08-28T09:10:36.886512+00:00"
+      }
+    ]
+  },
+  {
+    "id": "9ovczft",
+    "startLine": 817,
+    "endLine": 828,
+    "textPreview": "**Action:** In `chapter_03/sections/3.1_inference.tex:108`, rework the AIC sentence:",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "dezltrr",
+        "text": "re-evaluate how to integrate the comment naturally in the text",
+        "createdAt": "2026-08-27T14:09:06.845Z"
+      },
+      {
+        "id": "z2fecfi",
+        "text": "[AGENT] E-3.3 re-evaluated and applied: the KL divergence is introduced as its own preceding sentence with the one-line formula (\u00a73.2 has no formal definition to point back to), instead of the em-dash parenthetical that would have produced a 45-word sentence.",
+        "createdAt": "2026-08-28T09:10:38.997004+00:00"
+      }
+    ]
+  },
+  {
+    "id": "jwmleek",
+    "startLine": 846,
+    "endLine": 856,
+    "textPreview": "**Action:** In `chapter_03/sections/3.1_inference.tex:132`, extend the sentence:",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "hppk2kr",
+        "text": "ok",
+        "createdAt": "2026-08-27T14:09:37.526Z"
+      },
+      {
+        "id": "x7fcu44",
+        "text": "[AGENT] E-3.4 applied: evidence gloss added at 3.1:132 \u2014 total probability of the data under the model as a whole; posterior normalizer within a model, comparison measure across models.",
+        "createdAt": "2026-08-28T09:10:41.118739+00:00"
+      }
+    ]
+  },
+  {
+    "id": "m5q9leo",
+    "startLine": 875,
+    "endLine": 879,
+    "textPreview": "> \\blue{In deep learning, the epistemic component includes the variability induced by the",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "dn5v7rp",
+        "text": "ok",
+        "createdAt": "2026-08-27T14:10:02.515Z"
+      },
+      {
+        "id": "tzw8mr5",
+        "text": "[AGENT] E-3.5 applied: seed-variability sentences added after the epistemic-uncertainty definition; the \"(statistical)uncertainty\" spacing and \"undertainties\" typos fixed in the same file.",
+        "createdAt": "2026-08-28T09:10:43.223940+00:00"
+      }
+    ]
+  },
+  {
+    "id": "ik6fsrq",
+    "startLine": 902,
+    "endLine": 913,
+    "textPreview": "**Action:** In `chapter_05/sections/5.2_dark_matter_substructure.tex:35`, modify:",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "9yjqizb",
+        "text": "ok, but make more concise, just write mass at the time of formation/accretion/infall",
+        "createdAt": "2026-08-27T14:11:15.407Z"
+      },
+      {
+        "id": "j45orr9",
+        "text": "[AGENT] E-5.1 applied concisely per your note: only \"at the time of infall\" inserted at 5.2:35; the reionization-threshold lines below were checked and left unchanged.",
+        "createdAt": "2026-08-28T09:11:03.530545+00:00"
+      }
+    ]
+  },
+  {
+    "id": "0lxwhrb",
+    "startLine": 930,
+    "endLine": 937,
+    "textPreview": "**Action:** In `chapter_05/sections/5.2_dark_matter_substructure.tex:51`, rephrase:",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "w0ug3qv",
+        "text": "ok, sounds good",
+        "createdAt": "2026-08-27T14:18:35.417Z"
+      },
+      {
+        "id": "lplciqt",
+        "text": "[AGENT] E-5.2 applied: topic sentence now reads \"The gravitational potential of the baryonic disk and bulge also modifies the survival of the subhalos themselves.\"",
+        "createdAt": "2026-08-28T09:11:04.651645+00:00"
+      }
+    ]
+  },
+  {
+    "id": "ugr6q6h",
+    "startLine": 947,
+    "endLine": 948,
+    "textPreview": "**Action:** Fix the typo (no `\\blue{}` needed for pure typo corrections \u2014 confirm",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "9s2qkm4",
+        "text": "ok",
+        "createdAt": "2026-08-27T14:18:43.975Z"
+      },
+      {
+        "id": "s1e3qd6",
+        "text": "[AGENT] E-5.3 applied: \"at lest\" \u2192 \"at least\" (kept in \\blue{} per the global revision convention).",
+        "createdAt": "2026-08-28T09:11:08.800222+00:00"
+      }
+    ]
+  },
+  {
+    "id": "ul7mwnr",
+    "startLine": 967,
+    "endLine": 970,
+    "textPreview": "**Action:** For each of the three container headers, either (a) demote the inner headers",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "dk0s7pu",
+        "text": "ok",
+        "createdAt": "2026-08-27T14:19:10.052Z"
+      },
+      {
+        "id": "v35p4ir",
+        "text": "[AGENT] E-5.4 applied via option (a): inner headers demoted to \\subsubsection in all three paper_dm_halos files (statistical_analysis, mixture_model_and_limits, dm_subhalos_model) \u2014 each container now has a real child.",
+        "createdAt": "2026-08-28T09:11:10.872134+00:00"
+      }
+    ]
+  },
+  {
+    "id": "vyxpj32",
+    "startLine": 988,
+    "endLine": 998,
+    "textPreview": "**Action:** In `chapter_06/sections/6.1_limits_individual.tex:11`, rephrase:",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "psm4eki",
+        "text": "ok, sounds good",
+        "createdAt": "2026-08-27T14:19:44.482Z"
+      },
+      {
+        "id": "e3u7hfz",
+        "text": "[AGENT] E-6.1 applied: 6.1:11 rephrased (\"The difficulty is not only the limited strength of the signal... but the abundance of competing models that describe it\") so \"equally well\" now appears only once in the sentence pair.",
+        "createdAt": "2026-08-28T09:11:12.980681+00:00"
+      }
+    ]
+  },
+  {
+    "id": "cc7sd5e",
+    "startLine": 1012,
+    "endLine": 1020,
+    "textPreview": "**Action:** In `chapter_06/sections/6.2_source_count.tex:30`, expand:",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "ij4ipzm",
+        "text": "sounds good",
+        "createdAt": "2026-08-27T14:25:59.872Z"
+      },
+      {
+        "id": "ute1bxb",
+        "text": "[AGENT] E-6.2 applied: \u0393 now defined as characterizing the intrinsic spectrum (for blazars, the power-law photon index), with the EBL-attenuation cross-reference to \u00a72.2.2. Note: a follow-up prose review flagged that the insert makes the \"where \u0393 is..., dV is..., and dL/dS is...\" sentence an over-long splice \u2014 a grammar polish (moving the EBL remark to its own sentence after the enumeration) is queued.",
+        "createdAt": "2026-08-28T09:11:16.528853+00:00"
+      }
+    ]
+  },
+  {
+    "id": "oteudfw",
+    "startLine": 1043,
+    "endLine": 1052,
+    "textPreview": "**Action:** In `chapter_06/sections/paper_dnds/sections/synthetic_map_generation.tex:104`",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "c52od1o",
+        "text": "sounds good",
+        "createdAt": "2026-08-27T14:26:49.519Z"
+      },
+      {
+        "id": "1iwjtms",
+        "text": "[AGENT] E-6.3 applied: one-photon-floor qualifier added as a \\blue{} sentence citing List:2021aer (collective non-Poissonian imprint detectable down to ~0.25 photons/source), without rewording the surrounding published text.",
+        "createdAt": "2026-08-28T09:11:18.681912+00:00"
+      }
+    ]
+  },
+  {
+    "id": "wp1uf1d",
+    "startLine": 1088,
+    "endLine": 1089,
+    "textPreview": "**Action:** Covered by E-6.9; after that fix, recompile and confirm this reference",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "uug9ij0",
+        "text": "ok",
+        "createdAt": "2026-08-27T14:39:03.001Z"
+      },
+      {
+        "id": "sngo5jo",
+        "text": "[AGENT] E-6.5 verified after the E-6.9 header fix: clean recompile shows no unresolved reference to sec:agal-var, and the appendix renders as 6.A / 6.A.1\u20136.A.5 in the TOC.",
+        "createdAt": "2026-08-28T09:11:21.545700+00:00"
+      }
+    ]
+  },
+  {
+    "id": "nmxgafo",
+    "startLine": 1181,
+    "endLine": 1193,
+    "textPreview": "**Action:** In `chapter_07/sections/7.1_limits_of_threshold.tex`, after line 49 (the",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "g93zcn3",
+        "text": "ok",
+        "createdAt": "2026-08-27T14:40:19.239Z"
+      },
+      {
+        "id": "cphp7b1",
+        "text": "[AGENT] E-7.1 applied: catalog-comparison paragraph added after 7.1:49 \u2014 successive releases refine the background model itself (4FGL-DR4 log-parabola rescaling pushing tens of sources across threshold; Ballet:2023qzs).",
+        "createdAt": "2026-08-28T09:11:23.247401+00:00"
+      }
+    ]
+  }
+]

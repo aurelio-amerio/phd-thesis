@@ -14,6 +14,11 @@
 \renewcommand{\thesistitle}{Probing the Dark Universe: Machine Learning and Statistical Approaches to Gamma-Ray Dark Matter Searches}
 \renewcommand{\thesisadvisorone}{Dr. Bryan Zaldívar Montero}
 
+% Paper-specific macros (shared across integrated papers).
+% Loaded in the preamble so revision macros (\blue, \aure) are available
+% in the frontmatter abstracts as well.
+\input{macros}
+
 % Glossary entries
 \makeglossaries
 \input{acronyms.tex}
@@ -68,8 +73,6 @@
 %  MAIN MATTER
 % ========================
 \mainmatter
-% Paper-specific macros (shared across integrated papers)
-\input{macros}
 
 \part{Introduction}
 

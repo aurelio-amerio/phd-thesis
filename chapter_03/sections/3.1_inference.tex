@@ -14,7 +14,7 @@ The starting point for any quantitative analysis in physics is the problem of in
 In gamma-ray astrophysics, $\mathbf{x}$ might be a photon-count map recorded by the Fermi LAT, while $\boldsymbol{\theta}$ encodes the physical quantities of interest: source fluxes, spectral indices, or the dark matter annihilation cross-section $\langle \sigma v \rangle$.
 The model $\mathcal{M}$ connects these parameters to the expected data through a forward process that may include astrophysical emission templates, instrumental response functions, and Poisson sampling of photon counts.
 
-The connection between parameters and data is formalized by the likelihood function $\mathcal{L}(\boldsymbol{\theta}) = p(\mathbf{x} \,|\, \boldsymbol{\theta})$, which quantifies how well a given parameter choice explains the observed data \cite{Cranmer:2020}.
+The connection between parameters and data \blue{is established by} the likelihood function $\mathcal{L}(\boldsymbol{\theta}) = p(\mathbf{x} \,|\, \boldsymbol{\theta})$, which quantifies how well a given parameter choice explains the observed data \cite{Cranmer:2020}.
 This function is the shared foundation of both major inference paradigms.
 In the frequentist approach, the parameters $\boldsymbol{\theta}$ are treated as fixed but unknown quantities, and inference proceeds by identifying the parameter values that maximize $\mathcal{L}$.
 In the Bayesian approach, $\boldsymbol{\theta}$ are themselves treated as random variables with a prior distribution $p(\boldsymbol{\theta})$, and the goal is to compute the posterior $p(\boldsymbol{\theta} \,|\, \mathbf{x})$ via Bayes' theorem \cite{bishop,Hastie:2009}.
@@ -74,6 +74,9 @@ To compare competing hypotheses---for instance, whether a gamma-ray source exist
 	\label{eq:ts}
 \end{equation}
 where $\mathcal{L}_0$ is the likelihood under the null hypothesis and $\mathcal{L}_1$ the likelihood under the alternative (or, more commonly, the globally maximized likelihood) \cite{Mattox:1996zz}.
+\blue{In this form, with a background-only null hypothesis and an alternative that adds a source term, the TS is the statistic used for \emph{source detection} in gamma-ray astronomy.
+Because the source flux cannot be negative, this test places a parameter on a physical boundary, a caveat we return to below.
+Other choices of null and alternative hypotheses define different likelihood-ratio tests.}
 By Wilks' theorem, under mild regularity conditions the TS is asymptotically distributed as a $\chi^2$ random variable with degrees of freedom equal to the difference in free parameters between the two hypotheses \cite{Wilks:1938}, which lets us convert a TS value into a statistical significance without resorting to explicit Monte Carlo simulations.
 Wilks' theorem is, strictly speaking, a result about hypothesis testing. In the context of this thesis, however, hypothesis testing mostly means setting confidence intervals or upper bounds on a parameter of interest. These are obtained by inverting the test: rather than fixing a single threshold and asking whether the null is rejected, we scan the parameter and retain the range over which the profile-likelihood TS stays below the appropriate $\chi^2$ quantile.
 
@@ -105,6 +108,7 @@ The Akaike Information Criterion \cite{Akaike:1974} is defined as
 	\label{eq:aic}
 \end{equation}
 where $\mathcal{L}_{\max}$ is the maximum value of the likelihood and $k$ the number of free parameters.
+\blue{The criterion derives from the \emph{Kullback--Leibler divergence}, $D_{\mathrm{KL}}(p \,\|\, q) = \int p(\mathbf{x}) \ln \left[ p(\mathbf{x}) / q(\mathbf{x}) \right] d\mathbf{x}$, which measures how strongly a distribution $q$ deviates from a reference distribution $p$.}
 The AIC provides an estimator of the relative Kullback--Leibler divergence between each candidate model and the data-generating process, with the $2k$ term penalising additional parameters and thus discouraging overfitting.
 Model selection then proceeds by minimising the AIC across the candidates; the differences in AIC quantify how strongly each model is disfavoured relative to the best one.
 
@@ -129,7 +133,9 @@ After observing data $\mathbf{x}$, this knowledge is updated through Bayes' theo
 	p(\boldsymbol{\theta} \,|\, \mathbf{x}) = \frac{p(\mathbf{x} \,|\, \boldsymbol{\theta}) \, p(\boldsymbol{\theta})}{p(\mathbf{x})},
 	\label{eq:bayes}
 \end{equation}
-where $p(\mathbf{x} \,|\, \boldsymbol{\theta}) = \mathcal{L}(\boldsymbol{\theta})$ is the same likelihood function used in the frequentist approach, and $p(\mathbf{x}) = \int p(\mathbf{x} \,|\, \boldsymbol{\theta}') \, p(\boldsymbol{\theta}') \, d\boldsymbol{\theta}'$ is the evidence, a normalization constant that integrates the likelihood weighted by the prior over the full parameter space \cite{bishop}.
+where $p(\mathbf{x} \,|\, \boldsymbol{\theta}) = \mathcal{L}(\boldsymbol{\theta})$ is the same likelihood function used in the frequentist approach, and $p(\mathbf{x}) = \int p(\mathbf{x} \,|\, \boldsymbol{\theta}') \, p(\boldsymbol{\theta}') \, d\boldsymbol{\theta}'$ is the evidence\blue{.
+The evidence is the total probability of the data under the model as a whole: the likelihood integrated over the full parameter space, weighted by the prior \cite{bishop}.
+For a single model it normalizes the posterior; across models it measures how well each model accounts for the data.}
 Within the assumed model, the posterior $p(\boldsymbol{\theta} \,|\, \mathbf{x})$ is the complete answer to the inference problem: it encodes not only the best-fit values but also the full uncertainty structure, including correlations between parameters.
 
 \paragraph{Prior, posterior, and evidence.}

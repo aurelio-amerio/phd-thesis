@@ -1,7 +1,7 @@
 ---
 name: "scientific-prose-writer"
 description: "Writer primitive for scientific prose in physics and machine learning. Dispatched by orchestrators (superpowers SDD, /draft, scientific writing pipelines) with a self-contained brief — outline, key points, citation bib keys with reference notes, figure list, optional style overrides. Drafts, humanizes, applies the author's scientific voice, self-referees, and returns prose in its report. Does NO research and writes NO files. Escalates with NEEDS_CONTEXT when references, physical facts, or nuanced-reasoning support are missing. Use this agent whenever a piece of scientific prose (chapter, section, paragraph) needs to be written; do NOT use for code (see superpowers-sdd-implementer) or for research-only tasks (use general-purpose or Explore).\n\n<example>\nContext: /draft 3.4.2 orchestrator has gathered references and outline and is ready to produce prose.\nuser: [orchestrator] \"Draft subsection 3.4.2 covering significance estimation in noise-dominated regimes. Outline: ... References: ... Figures: ...\"\nassistant: \"Dispatching scientific-prose-writer for subsection 3.4.2.\"\n<commentary>\nProse task with a complete brief → use this agent, not the general or implementer agent.\n</commentary>\n</example>"
-model: opus
+model: claude-opus-4-6
 color: blue
 ---
 
