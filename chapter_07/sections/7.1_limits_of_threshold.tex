@@ -13,26 +13,26 @@ We take these in order.
 
 The \textit{Fermi}-LAT fourth source catalog (4FGL) is the most comprehensive catalog produced from the instrument described in Chapter~\ref{chap:gamma_sky}, incorporating over a decade of survey-mode observations in the gamma-ray band~\cite{Fermi-LAT:2019yla}.
 Point-source detection in this catalog follows a well-defined statistical procedure.
-In each region of interest (RoI) partitioning the sky, the analysis evaluates a likelihood-ratio test statistic defined as $\mathrm{TS} = 2\ln(\mathcal{L}/\mathcal{L}_0)$, where $\mathcal{L}$ is the maximum likelihood including the source model and $\mathcal{L}_0$ is the maximum likelihood for the background-only hypothesis~\cite{Fermi-LAT:2019yla}. Sources are retained in the catalog if they exceed a threshold of $\mathrm{TS} > 25$, corresponding to a significance of approximately $4\sigma$ when evaluated against a $\chi^2$ distribution with four degrees of freedom (two positional and two spectral parameters for a power-law model)~\cite{Fermi-LAT:2019yla}.
-Any candidate that falls below this threshold is removed from the model, and the fit in that RoI is readjusted accordingly.
+In each \gls{RoI_} partitioning the sky, the analysis evaluates a likelihood-ratio \gls{TS_} defined as $\mathrm{TS} = 2\ln(\mathcal{L}/\mathcal{L}_0)$, where $\mathcal{L}$ is the maximum likelihood including the source model and $\mathcal{L}_0$ is the maximum likelihood for the background-only hypothesis~\cite{Fermi-LAT:2019yla}. Sources are retained in the catalog if they exceed a threshold of $\mathrm{TS} > 25$, corresponding to a significance of approximately $4\sigma$ when evaluated against a $\chi^2$ distribution with four degrees of freedom (two positional and two spectral parameters for a power-law model)~\cite{Fermi-LAT:2019yla}.
+Any candidate that falls below this threshold is removed from the model, and the fit in that \RoI is readjusted accordingly.
 
 This detection procedure is inherently local.
-The sky is divided into roughly 1750 RoIs, each containing a core region of actively fitted sources and an outer ring whose width adapts to the energy-dependent point-spread function~\cite{Fermi-LAT:2019yla}. Within each RoI, the normalization and spectral tilt of the Galactic diffuse emission template and the normalization of the isotropic component are fitted independently, and the log-likelihood is further split into components defined by energy intervals and event types before being summed for optimization~\cite{Fermi-LAT:2019yla}.
-Since the background model parameters are determined locally, the same numerical TS value carries different statistical weight at different sky positions.
+The sky is divided into roughly 1750 \glspl{RoI_}, each containing a core region of actively fitted sources and an outer ring whose width adapts to the energy-dependent \gls{PSF_}~\cite{Fermi-LAT:2019yla}. Within each \RoI, the normalization and spectral tilt of the Galactic diffuse emission template and the normalization of the isotropic component are fitted independently, and the log-likelihood is further split into components defined by energy intervals and event types before being summed for optimization~\cite{Fermi-LAT:2019yla}.
+Since the background model parameters are determined locally, the same numerical \TS value carries different statistical weight at different sky positions.
 A source yielding $\mathrm{TS} = 30$ in a sparse high-latitude field sits on a very different background than one with $\mathrm{TS} = 30$ in the crowded Galactic plane.
-The resulting detection scale is therefore spatially inhomogeneous: the TS encodes the local excess above the locally fitted background, not a globally calibrated measure of source significance.
+The resulting detection scale is therefore spatially inhomogeneous: the \TS encodes the local excess above the locally fitted background, not a globally calibrated measure of source significance.
 
 The fixed detection threshold imposes a binary classification on the sky.
 Every direction is either ``in'' the catalog ($\mathrm{TS} \geq 25$) or ``out,'' and the information carried by pixels with $\mathrm{TS}$ values just below the cut --- pixels that may well host genuine astrophysical sources --- is entirely discarded.
 The construction of each successive data release inherits this binary structure.
-While such a threshold is operationally necessary to maintain a controlled false-positive rate across thousands of candidate seeds, it discards a range of TS values that, as we show below, can be recovered by comparing observed pixels against simulated sky ensembles.
+While such a threshold is operationally necessary to maintain a controlled false-positive rate across thousands of candidate seeds, it discards a range of \TS values that, as we show below, can be recovered by comparing observed pixels against simulated sky ensembles.
 
 \subsection{The Information Below Threshold}
 \label{sec:info_below_threshold}
 
 The fixed detection threshold does not only exclude noise.
 Genuine astrophysical sources exist below $\mathrm{TS} = 25$ --- the $dN/dS$ recovered in Chapter~\ref{ch:6} shows this directly --- and their collective emission contributes to the high-latitude gamma-ray sky at a level that depends on the population model assumed.
-As discussed in Section~\ref{sec:source_count}, blazars, misaligned active galactic nuclei, star-forming galaxies, and millisecond pulsars all contribute to this unresolved emission, and their aggregate flux may account for a large fraction of the unresolved gamma-ray background~\cite{DGRB-review,Fermi-LAT:2014ryh}, though the individual budget shares remain model-dependent.
+As discussed in Section~\ref{sec:source_count}, blazars, \glspl{mAGN_}, \glspl{SFG_}, and \glspl{MSP_} all contribute to this unresolved emission, and their aggregate flux may account for a large fraction of the \gls{UGRB_}~\cite{DGRB-review,Fermi-LAT:2014ryh}, though the individual budget shares remain model-dependent.
 
 % The source-count distribution recovered in Chapter~\ref{ch:6} (cf.\ Section~\ref{sec:source_count}) quantifies this sub-threshold population directly.
 % The $dN/dS$ measured from high-latitude photon counts extends as $\sim S^{-2}$ down to fluxes of approximately $5 \times 10^{-12}~\mathrm{cm}^{-2}\,\mathrm{s}^{-1}$, roughly 50 times below the nominal catalog sensitivity in the $1$--$10~\mathrm{GeV}$ band~\cite{Korsmeier:2022cwp} (cf.\ Chapter~\ref{ch:6}).
@@ -46,7 +46,7 @@ Similarly, multi-wavelength source identification campaigns benefit from having 
 The practical consequences of the fixed threshold become visible in the incremental catalog releases.
 In the 4FGL-DR3, which extends the observation baseline from eight to twelve years, 112 sources originally included in the first data release dropped below $\mathrm{TS} = 25$, fifteen of which fell below $\mathrm{TS} = 16$, with the lowest reaching $\mathrm{TS} = 9.8$~\cite{Fermi-LAT:2022byn}.
 An additional 69 sources from the second data release also fell below threshold~\cite{Fermi-LAT:2022byn}.
-These sources were retained for continuity and explicitly flagged, but the episode exposes a structural problem: highly variable objects such as flat-spectrum radio quasars can be bright enough to enter the catalog during one observation window and fade below threshold in a subsequent accumulation~\cite{Bhat:2022}.
+These sources were retained for continuity and explicitly flagged, but the episode exposes a structural problem: highly variable objects such as \glspl{FSRQ_} can be bright enough to enter the catalog during one observation window and fade below threshold in a subsequent accumulation~\cite{Bhat:2022}.
 Lowering the threshold does not help, since it would increase false detections from background fluctuations~\cite{Bhat:2022}.
 \blue{Catalog-to-catalog comparisons entangle a second effect as well: successive releases refine the background treatment itself. In 4FGL-DR4, for instance, the Galactic interstellar emission model was rescaled through a spatially varying log-parabola modulation fitted across the sky, and this change alone pushed tens of sources across the detection threshold~\cite{Ballet:2023qzs}. A source's presence in a catalog therefore depends not only on its flux history but also on the evolving model of the sky beneath it.}
 What is needed is a framework that replaces the binary in-or-out decision with a simulation-calibrated probability of source presence, informed by the sub-threshold population measured through the $dN/dS$.
