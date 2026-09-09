@@ -55,13 +55,13 @@ Combined with a peak effective area of $\sim$9,500~cm$^2$ at normal incidence an
 
 The physical characteristics of the \textit{Fermi}-LAT---its tracking efficiency, multiple scattering within the conversion foils, and incomplete shower containment---are encapsulated in the \glspl{IRF_}.
 The \glspl{IRF_} map the true energy, direction, and conversion location of incident gamma rays to their reconstructed quantities.
-Three \IRF components are particularly relevant for the analyses in this thesis: the \gls{PSF_}, the energy dispersion, and the effective area.
+Three \IRF components are particularly relevant for the analyses in this thesis: the \gls{PSF_}, the \gls{EDISP_}, and the effective area.
 
 \PSF describes the angular resolution of the telescope, quantifying the probability distribution of reconstructed directions around the true source position.
 At energies below a few GeV, the resolution is dominated by the multiple Coulomb scattering of the newly produced electron-positron pair as it traverses the tungsten conversion foils.
 Consequently, the \PSF is strongly energy-dependent, as shown in Figure~\ref{fig:lat_psf}: at 100~MeV, the 68\% containment angle spans approximately $3.5^\circ$ to $5^\circ$; it tightens to roughly $0.6^\circ$ at 1~GeV and reaches an asymptotic limit of less than $0.15^\circ$ above 10~GeV \cite{Atwood:2009ez}.
 Off-axis, the containment angle degrades by up to a factor of 1.7 at $55^\circ$ incidence.
-The broad \PSF at lower energies creates a severe source confusion limit: because the spatial profiles of nearby point sources overlap with each other and with the intense Galactic diffuse emission, it becomes statistically difficult to disentangle individual faint objects.
+The broad \PSF at lower energies creates a severe source confusion limit: because the spatial profiles of nearby point sources overlap with each other and with the intense \GDE, it becomes statistically difficult to disentangle individual faint objects.
 This confusion directly limits the depth of point-source catalogs and motivates the use of statistical population methods---such as those developed in Chapters~\ref{ch:6} and~\ref{ch:7}---rather than standard source-by-source extraction.
 
 \begin{figure}[t]
@@ -76,11 +76,11 @@ This confusion directly limits the depth of point-source catalogs and motivates 
 	\label{fig:lat_psf}
 \end{figure}
 
-The energy dispersion quantifies the accuracy of the reconstructed photon energy.
+\EDISP quantifies the accuracy of the reconstructed photon energy.
 It is determined by the calorimeter's ability to contain and measure the electromagnetic shower.
 For on-axis photons, the equivalent Gaussian $1\sigma$ energy resolution ranges from 9\% to 15\% in the 100~MeV--1~GeV band, improves to 8\%--9\% between 1 and 10~GeV, and then degrades to $\sim$18\% near 300~GeV as shower leakage from the finite calorimeter depth becomes significant \cite{Atwood:2009ez}.
 At large off-axis angles ($>60^\circ$), where the effective calorimeter depth increases, the resolution can improve to $\sim$6\% above 10~GeV.
-For most analyses in this thesis, the energy resolution is sufficiently precise that energy dispersion is not a dominant systematic.
+For most analyses in this thesis, the energy resolution is sufficiently precise that \EDISP is not a dominant systematic.
 
 Not every gamma ray that enters the \textit{Fermi}-LAT produces a usable event: some pass through without converting, others are rejected during background filtering.
 The effective area captures this by expressing the instrument's photon-collecting power as the area of an ideal, perfectly efficient detector that would record the same number of events.
@@ -109,7 +109,7 @@ The Pass~8 analysis framework is a complete reworking of the \textit{Fermi}-LAT 
 A major improvement in Pass~8 was the mitigation of ``ghost signals''---instrumental pile-up and out-of-time residual hits from previous events that previously degraded the reconstruction.
 % By introducing tree-based tracking in the tracker and Minimum Spanning Tree clustering in the calorimeter, Pass~8 successfully separated these artifacts from genuine gamma-ray showers.
 This enabled a significant expansion of the effective area, particularly below 100~MeV and above 1~TeV, while simultaneously reducing background contamination.
-Pass~8 also introduced event subclassifications that partition data by the quality of the reconstructed direction (\PSF event types: PSF0--PSF3, from broadest to narrowest) and the quality of the energy measurement (\gls{EDISP_} event types).
+Pass~8 also introduced event subclassifications that partition data by the quality of the reconstructed direction (\PSF event types: PSF0--PSF3, from broadest to narrowest) and the quality of the energy measurement (\EDISP event types).
 This partitioning allows analyses to select event classes optimized for their specific scientific goals---angular resolution for morphological studies, or photon statistics for spectral analyses.
 
 Subsequent iterations, most notably the P8R3 release \cite{Bruel:2018lac}, further refined the residual background rejection, producing a spatially uniform and clean dataset that serves as the baseline for all modern \textit{Fermi}-LAT analyses, including the work presented in this thesis.
@@ -119,7 +119,7 @@ Subsequent iterations, most notably the P8R3 release \cite{Bruel:2018lac}, furth
 With the \glspl{IRF_} established, we now turn to how the \textit{Fermi}-LAT data are translated into astrophysical catalogs of gamma-ray sources.
 Converting raw photon events into measurements of individual sources requires disentangling finite objects from the structured diffuse backgrounds.
 The \textit{Fermi}-LAT collaboration achieves this through a maximum likelihood framework \cite{Mattox:1996zz,Fermi-LAT:2019yla}.
-The observed sky is modeled through the template decomposition introduced in Section~\ref{sec:gde_model}---the structured Galactic diffuse emission plus a spatially uniform isotropic component---augmented with individual point sources, each parametrized by a position and a spectral model.
+The observed sky is modeled through the template decomposition introduced in Section~\ref{sec:gde_model}---the structured \GDE plus a spatially uniform isotropic component---augmented with individual point sources, each parametrized by a position and a spectral model.
 The normalizations and spectral parameters of all components are simultaneously adjusted to maximize the Poisson likelihood function against the observed photon counts across the sky.
 
 To evaluate the significance of a candidate point source, the framework computes the \gls{TS_}, defined as \[ TS = 2\ln\frac{\mathcal{L}_1}{\mathcal{L}_0}, \] where $\mathcal{L}_1$ is the maximum likelihood of the model with the candidate source included and $\mathcal{L}_0$ is the maximum likelihood of the null hypothesis without it \cite{Mattox:1996zz}.
