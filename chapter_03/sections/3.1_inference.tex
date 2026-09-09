@@ -91,7 +91,7 @@ In Chapter~\ref{ch:5}, the uncertainty band on the dark matter annihilation cros
 A different question arises when we wish to assess the absolute compatibility of the data with a single model, without testing it against any specific alternative.
 Two general-purpose goodness-of-fit tests serve this purpose \cite{Cowan:1998ji}: Pearson's $\chi^2$ test and the \gls{KS_} test \cite{KS_test}.
 Pearson's $\chi^2$ test compares binned counts with model expectations and refers the sum of squared normalized residuals to a $\chi^2$ distribution.
-The \KS test instead compares data and model at the level of their cumulative distributions: its test statistic is the supremum of the absolute difference between the empirical cumulative distribution function of the data and the cumulative distribution predicted by the model.
+The \KS test instead compares data and model at the level of their cumulative distributions: its \TS is the supremum of the absolute difference between the empirical cumulative distribution function of the data and the cumulative distribution predicted by the model.
 Because it operates on the unbinned data directly, the \KS test is additionally independent of any binning choice.
 Moreover, when the null model is fully specified, the null distribution of its statistic does not depend on the model being tested.
 In practice, the model prediction is often available only as a finite simulated sample rather than an analytic cumulative distribution.
@@ -119,7 +119,7 @@ The frequentist framework developed above is used extensively in this thesis:
 	\item In Chapter~\ref{ch:4}, the \gls{MSP_} luminosity function is constrained via \MLE applied to an integrated likelihood, and model comparison is performed through $-2\Delta\ln\mathcal{L}$ values.
 	\item In Chapter~\ref{ch:5}, a profile likelihood \TS is used with Wilks' theorem to set 95\% confidence-level upper bounds on the dark matter annihilation cross-section, with the uncertainty band on those bounds derived from a parametric bootstrap; the \AIC is additionally used to compare competing models for the unassociated source population.
 	\item In Chapter~\ref{ch:7}, a two-sample \KS test compares the cumulative pixel-wise \TS distributions of the real \Fermi-LAT sky against synthetic realizations drawn from the source-count distribution, providing the statistical criterion that defines sub-threshold source candidates.
-	\item In Chapter~\ref{ch:8}, a $\Delta\chi^2$ test statistic compares astrophysical-only and astrophysical-plus-DM hypotheses for the cross-correlation \gls{APS_}.
+	\item In Chapter~\ref{ch:8}, a $\Delta\chi^2$ \TS compares astrophysical-only and astrophysical-plus-DM hypotheses for the cross-correlation \gls{APS_}.
 \end{itemize}
 
 %% --- 3.1.3 ---
