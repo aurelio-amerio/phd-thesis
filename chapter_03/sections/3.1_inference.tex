@@ -34,14 +34,14 @@ The central object is the likelihood function, which quantifies the probability 
 
 \paragraph{Maximum Likelihood Estimation.}
 
-The most common frequentist estimator is the maximum likelihood estimator (MLE), which identifies the parameter values that maximize the likelihood:
+The most common frequentist estimator is the \gls{MLE_}, which identifies the parameter values that maximize the likelihood:
 \begin{equation}
 	\hat{\boldsymbol{\theta}}_{\mathrm{MLE}} = \arg\max_{\boldsymbol{\theta}} \, \mathcal{L}(\boldsymbol{\theta}).
 	\label{eq:mle}
 \end{equation}
 As a concrete example, consider counting $N$ photons from a gamma-ray source.
 If the counts follow a Poisson distribution with expected rate $\mu$, the likelihood is $\mathcal{L}(\mu) = e^{-\mu} \mu^N / N!
-$, and the MLE is simply $\hat{\mu} = N$. While this example is trivial, the Poisson likelihood extends naturally to the pixel-by-pixel analysis of gamma-ray sky maps, where the joint likelihood is the product of Poisson terms over all pixels:
+$, and the \MLE is simply $\hat{\mu} = N$. While this example is trivial, the Poisson likelihood extends naturally to the pixel-by-pixel analysis of gamma-ray sky maps, where the joint likelihood is the product of Poisson terms over all pixels:
 \begin{equation}
 	\mathcal{L}(\boldsymbol{\theta}) = \prod_{a=1}^{N_{\mathrm{pix}}} \frac{\lambda_a(\boldsymbol{\theta})^{k_a} \, e^{-\lambda_a(\boldsymbol{\theta})}}{k_a!},
 	\label{eq:poisson_likelihood}
@@ -68,58 +68,58 @@ Although this resembles Bayesian marginalization in form, the integrated likelih
 
 \paragraph{Hypothesis testing and confidence intervals.}
 
-To compare competing hypotheses---for instance, whether a gamma-ray source exists at a given position---we construct a likelihood-ratio test statistic (TS):
+To compare competing hypotheses---for instance, whether a gamma-ray source exists at a given position---we construct a likelihood-ratio \gls{TS_}:
 \begin{equation}
 	\mathrm{TS} = -2 \ln \frac{\mathcal{L}_0}{\mathcal{L}_1},
 	\label{eq:ts}
 \end{equation}
 where $\mathcal{L}_0$ is the likelihood under the null hypothesis and $\mathcal{L}_1$ the likelihood under the alternative (or, more commonly, the globally maximized likelihood) \cite{Mattox:1996zz}.
-\blue{In this form, with a background-only null hypothesis and an alternative that adds a source term, the TS is the statistic used for \emph{source detection} in gamma-ray astronomy.
+\blue{In this form, with a background-only null hypothesis and an alternative that adds a source term, the \TS is the statistic used for \emph{source detection} in gamma-ray astronomy.
 Because the source flux cannot be negative, this test places a parameter on a physical boundary, a caveat we return to below.
 Other choices of null and alternative hypotheses define different likelihood-ratio tests.}
-By Wilks' theorem, under mild regularity conditions the TS is asymptotically distributed as a $\chi^2$ random variable with degrees of freedom equal to the difference in free parameters between the two hypotheses \cite{Wilks:1938}, which lets us convert a TS value into a statistical significance without resorting to explicit Monte Carlo simulations.
-Wilks' theorem is, strictly speaking, a result about hypothesis testing. In the context of this thesis, however, hypothesis testing mostly means setting confidence intervals or upper bounds on a parameter of interest. These are obtained by inverting the test: rather than fixing a single threshold and asking whether the null is rejected, we scan the parameter and retain the range over which the profile-likelihood TS stays below the appropriate $\chi^2$ quantile.
+By Wilks' theorem, under mild regularity conditions the \TS is asymptotically distributed as a $\chi^2$ random variable with degrees of freedom equal to the difference in free parameters between the two hypotheses \cite{Wilks:1938}, which lets us convert a \TS value into a statistical significance without resorting to explicit Monte Carlo simulations.
+Wilks' theorem is, strictly speaking, a result about hypothesis testing. In the context of this thesis, however, hypothesis testing mostly means setting confidence intervals or upper bounds on a parameter of interest. These are obtained by inverting the test: rather than fixing a single threshold and asking whether the null is rejected, we scan the parameter and retain the range over which the profile-likelihood \TS stays below the appropriate $\chi^2$ quantile.
 
 \paragraph{Bootstrap confidence intervals.}
 
-The $\chi^2$ calibration of the TS rests on the regularity conditions of Wilks' theorem, and these can fail in situations that recur in gamma-ray analyses: when a parameter lies on a physical boundary---a flux or a cross-section that cannot be negative---or when the sample is small enough that the asymptotic regime has not yet set in.
+The $\chi^2$ calibration of the \TS rests on the regularity conditions of Wilks' theorem, and these can fail in situations that recur in gamma-ray analyses: when a parameter lies on a physical boundary---a flux or a cross-section that cannot be negative---or when the sample is small enough that the asymptotic regime has not yet set in.
 In such cases the bootstrap provides a general-purpose strategy \cite{Efron:1979}: we repeatedly refit the estimator, either on datasets resampled from the observed data (the \emph{nonparametric} bootstrap, or "with replacement") or on synthetic datasets drawn from the fitted model (the \emph{parametric} bootstrap), and read the confidence interval directly from the spread of the re-fitted estimates---the containment interval of their empirical distribution.
 In Chapter~\ref{ch:5}, the uncertainty band on the dark matter annihilation cross-section bounds is obtained using a parametric bootstrap.
 
 \paragraph{Goodness of fit.}
 
 A different question arises when we wish to assess the absolute compatibility of the data with a single model, without testing it against any specific alternative.
-Two general-purpose goodness-of-fit tests serve this purpose \cite{Cowan:1998ji}: Pearson's $\chi^2$ test and the Kolmogorov--Smirnov (KS) test \cite{KS_test}.
+Two general-purpose goodness-of-fit tests serve this purpose \cite{Cowan:1998ji}: Pearson's $\chi^2$ test and the \gls{KS_} test \cite{KS_test}.
 Pearson's $\chi^2$ test compares binned counts with model expectations and refers the sum of squared normalized residuals to a $\chi^2$ distribution.
-The KS test instead compares data and model at the level of their cumulative distributions: its test statistic is the supremum of the absolute difference between the empirical cumulative distribution function of the data and the cumulative distribution predicted by the model.
-Because it operates on the unbinned data directly, the KS test is additionally independent of any binning choice.
+The \KS test instead compares data and model at the level of their cumulative distributions: its test statistic is the supremum of the absolute difference between the empirical cumulative distribution function of the data and the cumulative distribution predicted by the model.
+Because it operates on the unbinned data directly, the \KS test is additionally independent of any binning choice.
 Moreover, when the null model is fully specified, the null distribution of its statistic does not depend on the model being tested.
 In practice, the model prediction is often available only as a finite simulated sample rather than an analytic cumulative distribution.
-The same statistic computed between the two empirical cumulative distribution functions is then known as the \emph{two-sample} form of the KS test.
-The KS test is therefore a convenient distribution-free diagnostic when no specific alternative is preferred.
+The same statistic computed between the two empirical cumulative distribution functions is then known as the \emph{two-sample} form of the \KS test.
+The \KS test is therefore a convenient distribution-free diagnostic when no specific alternative is preferred.
 
 \paragraph{Non-nested model comparison.}
 
 The Wilks' likelihood-ratio test presumes that the two hypotheses are nested, with one model recovered as a special case of the other; when this is not so, we need a criterion able to rank models of different structure.
 Information criteria fill this gap.
-The Akaike Information Criterion \cite{Akaike:1974} is defined as
+The \gls{AIC_} \cite{Akaike:1974} is defined as
 \begin{equation}
 	\mathrm{AIC} = -2 \ln \mathcal{L}_{\max} + 2k,
 	\label{eq:aic}
 \end{equation}
 where $\mathcal{L}_{\max}$ is the maximum value of the likelihood and $k$ the number of free parameters.
-\blue{The criterion derives from the \emph{Kullback--Leibler divergence}, $D_{\mathrm{KL}}(p \,\|\, q) = \int p(\mathbf{x}) \ln \left[ p(\mathbf{x}) / q(\mathbf{x}) \right] d\mathbf{x}$, which measures how strongly a distribution $q$ deviates from a reference distribution $p$.}
-The AIC provides an estimator of the relative Kullback--Leibler divergence between each candidate model and the data-generating process, with the $2k$ term penalising additional parameters and thus discouraging overfitting.
-Model selection then proceeds by minimising the AIC across the candidates; the differences in AIC quantify how strongly each model is disfavoured relative to the best one.
+\blue{The criterion derives from the \emph{\gls{KL_} divergence}, $D_{\mathrm{KL}}(p \,\|\, q) = \int p(\mathbf{x}) \ln \left[ p(\mathbf{x}) / q(\mathbf{x}) \right] d\mathbf{x}$, which measures how strongly a distribution $q$ deviates from a reference distribution $p$.}
+The \AIC provides an estimator of the relative \KL divergence between each candidate model and the data-generating process, with the $2k$ term penalising additional parameters and thus discouraging overfitting.
+Model selection then proceeds by minimising the \AIC across the candidates; the differences in \AIC quantify how strongly each model is disfavoured relative to the best one.
 
 \paragraph{Application preview.}
 
 The frequentist framework developed above is used extensively in this thesis:
 \begin{itemize}
-	\item In Chapter~\ref{ch:4}, the MSP luminosity function is constrained via MLE applied to an integrated likelihood, and model comparison is performed through $-2\Delta\ln\mathcal{L}$ values.
-	\item In Chapter~\ref{ch:5}, a profile likelihood test statistic is used with Wilks' theorem to set 95\% CL upper bounds on the dark matter annihilation cross-section, with the uncertainty band on those bounds derived from a parametric bootstrap; the AIC is additionally used to compare competing models for the unassociated source population.
-	\item In Chapter~\ref{ch:7}, a two-sample KS test compares the cumulative pixel-wise TS distributions of the real \Fermi-LAT sky against synthetic realizations drawn from the source-count distribution, providing the statistical criterion that defines sub-threshold source candidates.
-	\item In Chapter~\ref{ch:8}, a $\Delta\chi^2$ test statistic compares astrophysical-only and astrophysical-plus-DM hypotheses for the cross-correlation angular power spectrum.
+	\item In Chapter~\ref{ch:4}, the \gls{MSP_} luminosity function is constrained via \MLE applied to an integrated likelihood, and model comparison is performed through $-2\Delta\ln\mathcal{L}$ values.
+	\item In Chapter~\ref{ch:5}, a profile likelihood \TS is used with Wilks' theorem to set 95\% confidence-level upper bounds on the dark matter annihilation cross-section, with the uncertainty band on those bounds derived from a parametric bootstrap; the \AIC is additionally used to compare competing models for the unassociated source population.
+	\item In Chapter~\ref{ch:7}, a two-sample \KS test compares the cumulative pixel-wise \TS distributions of the real \Fermi-LAT sky against synthetic realizations drawn from the source-count distribution, providing the statistical criterion that defines sub-threshold source candidates.
+	\item In Chapter~\ref{ch:8}, a $\Delta\chi^2$ test statistic compares astrophysical-only and astrophysical-plus-DM hypotheses for the cross-correlation \gls{APS_}.
 \end{itemize}
 
 %% --- 3.1.3 ---
@@ -167,7 +167,7 @@ These approaches are developed in Section~\ref{sec:3.2}.
 
 \paragraph{Application preview.}
 
-In Chapter~\ref{ch:6}, the Bayesian framework is implemented via simulation-based inference to reconstruct the source-count distribution $dN/dS$ from gamma-ray sky maps, with posterior uncertainty estimates validated against an independent frequentist cross-check (Section~\ref{sec:3.1.4}).
+In Chapter~\ref{ch:6}, the Bayesian framework is implemented via \SBI to reconstruct the source-count distribution $dN/dS$ from gamma-ray sky maps, with posterior uncertainty estimates validated against an independent frequentist cross-check (Section~\ref{sec:3.1.4}).
 
 %% --- 3.1.4 ---
 
@@ -183,15 +183,15 @@ A frequentist analysis imposes the same requirements through bounded parameter r
 Bounding a parameter is not entirely free of subtleties, however: when the true value may lie close to the boundary, standard interval constructions can undercover or return empty intervals.
 The unified approach of Feldman and Cousins \cite{Feldman:1997qc} resolves this by transitioning smoothly between upper limits and two-sided intervals while guaranteeing correct coverage.
 The choice between them is therefore pragmatic rather than fundamental, driven by the structure of the problem, computational considerations, and---above all---the conventions of the relevant research community.
-High-energy particle physics and the Fermi-LAT collaboration have traditionally favored frequentist methods: source detection via the TS, upper limits via the profile likelihood and Wilks' theorem, catalog pipelines built on maximum-likelihood fitting \cite{Mattox:1996zz}.
-Cosmology and large-scale-structure analyses, by contrast, have largely adopted Bayesian Markov Chain Monte Carlo (MCMC) methods \cite{Trotta:2008qt}.
+High-energy particle physics and the Fermi-LAT collaboration have traditionally favored frequentist methods: source detection via the \TS, upper limits via the profile likelihood and Wilks' theorem, catalog pipelines built on maximum-likelihood fitting \cite{Mattox:1996zz}.
+Cosmology and large-scale-structure analyses, by contrast, have largely adopted Bayesian \gls{MCMC_} methods \cite{Trotta:2008qt}.
 Neither convention reflects a judgment on the foundations of probability; both reflect what works well for the typical dimensionality and structure of the problems each field encounters most often.
 In this thesis, we follow the convention of the community relevant to each analysis.
 
 In the limit of abundant, constraining data, the distinction fades altogether: the likelihood dominates any reasonable prior, and Bayesian credible intervals coincide numerically with frequentist confidence intervals.
 The choice becomes consequential precisely when data are sparse, priors are informative, or the parameter space is high-dimensional.
 In the analyses presented in this thesis, both paradigms are used, and in some cases they are applied to the same problem as independent cross-checks.
-In Chapter~\ref{ch:6}, a simulation-based inference approach provides Bayesian posterior estimates on the reconstructed $dN/dS$.
+In Chapter~\ref{ch:6}, a \SBI approach provides Bayesian posterior estimates on the reconstructed $dN/dS$.
 These are validated against a frequentist analysis of the same data, in which confidence intervals are extracted from the empirical distribution of residuals across the validation set.
 % The frequentist cross-check also provides a formal estimate of the model's bias, which is found to be negligible across the flux range of interest.
 % The compatibility of the two independent error estimates provides confidence that the uncertainty quantification is robust.

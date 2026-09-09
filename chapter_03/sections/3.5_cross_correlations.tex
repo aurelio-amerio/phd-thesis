@@ -13,16 +13,16 @@ If dark matter annihilates or decays into gamma rays, the resulting emission mus
 % By measuring the spatial correlation between the two fields, one can isolate the collective dark matter contribution from the aggregate of unresolved cosmological structure---a statistical signal that no individual source produces, and one that would be undetectable in either dataset alone.
 
 We introduce the cross-correlation formalism in two steps.
-Section~\ref{sec:angular_power_spectrum} defines the angular power spectrum, the Limber approximation that projects three-dimensional clustering into two-dimensional observables, and the window functions that encode the redshift distribution of each signal.
-Section~\ref{sec:statistical_sensitivity} presents the signal-to-noise ratio and the $\Delta\chi^2$ test statistic---used to forecast the sensitivity of a given experiment to dark matter.
-The full application of this formalism, including the halo model computation and the detailed sensitivity forecasts for the Cherenkov Telescope Array Observatory, is deferred to Chapter~\ref{ch:8}.
+Section~\ref{sec:angular_power_spectrum} defines the \APS, the Limber approximation that projects three-dimensional clustering into two-dimensional observables, and the window functions that encode the redshift distribution of each signal.
+Section~\ref{sec:statistical_sensitivity} presents the \gls{SNRatio_} and the $\Delta\chi^2$ test statistic---used to forecast the sensitivity of a given experiment to dark matter.
+The full application of this formalism, including the halo model computation and the detailed sensitivity forecasts for the \gls{CTAO_}, is deferred to Chapter~\ref{ch:8}.
 
 \subsection{The Angular Power Spectrum}
 \label{sec:angular_power_spectrum}
 
 The observable sky maps produced by gamma-ray telescopes and galaxy surveys are two-dimensional projections of the three-dimensional matter distribution in the Universe.
 To study the spatial correlations between these projected fields, we expand them in spherical harmonics $Y_{\ell m}(\hat{n})$.
-The angular power spectrum (APS) $C_\ell$ quantifies the amplitude of these correlations as a function of the angular scale, parameterized by the multipole $\ell$.
+The \APS $C_\ell$ quantifies the amplitude of these correlations as a function of the angular scale, parameterized by the multipole $\ell$.
 
 We begin by considering a generic intensity field $I_g(\hat{n})$ along the direction $\hat{n}$, which can be written as an integral over the radial comoving distance $\chi(z)$ \cite{Fornengo:2013rga,Camera:2012cj}:
 \begin{equation}
@@ -37,18 +37,18 @@ The intensity fluctuations $\delta I_g(\hat{n}) \equiv I_g(\hat{n}) - \langle I_
 \end{equation}
 where the coefficients $a_{\ell m}$ encode the angular structure of the fluctuation field \cite{Fornengo:2013rga}.
 
-For two intensity fields labelled $i$ and $j$ (for instance, the gamma-ray flux and the galaxy number counts), the angular power spectrum is defined as the ensemble average of the product of their expansion coefficients \cite{Fornengo:2013rga,Camera:2012cj}:
+For two intensity fields labelled $i$ and $j$ (for instance, the gamma-ray flux and the galaxy number counts), the \APS is defined as the ensemble average of the product of their expansion coefficients \cite{Fornengo:2013rga,Camera:2012cj}:
 \begin{equation}
 	C_\ell^{ij} = \frac{1}{2\ell+1} \left\langle \sum_{m=-\ell}^{\ell} a_{\ell m}^{(i)}\, a_{\ell m}^{(j)*} \right\rangle\,.
 	\label{eq:aps_definition}
 \end{equation}
-When $i = j$, the expression gives the auto-correlation APS, which measures the intrinsic clustering of a single field.
-When $i \neq j$, we obtain the cross-correlation APS, which measures the spatial correlation between two distinct observables.
+When $i = j$, the expression gives the auto-correlation \APS, which measures the intrinsic clustering of a single field.
+When $i \neq j$, we obtain the cross-correlation \APS, which measures the spatial correlation between two distinct observables.
 By construction, $C_\ell^{ij} = C_\ell^{ji}$.
 
-To connect the measured two-dimensional APS to the underlying three-dimensional power spectrum $P_{ij}(k,\chi)$, which encodes the spatial clustering of the correlated fields, we apply the Limber approximation \cite{Limber:1953apj}.
+To connect the measured two-dimensional \APS to the underlying three-dimensional power spectrum $P_{ij}(k,\chi)$, which encodes the spatial clustering of the correlated fields, we apply the Limber approximation \cite{Limber:1953apj}.
 This approximation, valid for multipoles $\ell \gg 1$, replaces the oscillatory integrals over spherical Bessel functions with a single line-of-sight integral by identifying the wavenumber $k = \ell / \chi$.
-The result is a compact expression for the angular power spectrum \cite{Fornengo:2013rga,Camera:2012cj}:
+The result is a compact expression for the \APS \cite{Fornengo:2013rga,Camera:2012cj}:
 \begin{equation}
 	C_\ell^{ij} = \int \frac{d\chi}{\chi^2}\, W_i(\chi)\, W_j(\chi)\, P_{ij}\!
 	\left(k = \frac{\ell}{\chi},\, \chi\right)\,.
@@ -77,7 +77,7 @@ This idea of correlating a gamma-ray signal with a gravitational tracer of the d
 The window functions are key ingredients of this formalism, as they encode how each observable is distributed along the line of sight.
 Their specific form depends on the physical origin of the signal.
 For a galaxy catalog acting as a gravitational tracer of the large-scale structure, the window function is simply the normalized redshift distribution of the surveyed galaxies, $W_g(z) = dN_g/dz$ \cite{Fornengo:2013rga}.
-The angular power spectrum from annihilating dark matter was first formulated by Ando and Komatsu \cite{Ando:2005xg}, and the formalism was later extended to multi-wavelength and multi-tracer cross-correlations by Fornengo and Regis \cite{Fornengo:2013rga}.
+The \APS from annihilating dark matter was first formulated by Ando and Komatsu \cite{Ando:2005xg}, and the formalism was later extended to multi-wavelength and multi-tracer cross-correlations by Fornengo and Regis \cite{Fornengo:2013rga}.
 
 For dark matter annihilation, the gamma-ray window function takes the form \cite{Fornengo:2013rga,Ando:2005xg}
 \begin{equation}
@@ -105,10 +105,10 @@ The detailed computation of these terms for the specific gamma-ray and galaxy po
 \subsection{Statistical Sensitivity}
 \label{sec:statistical_sensitivity}
 
-Given the cross-correlation angular power spectrum $C_\ell^{\gamma g}$ defined in the previous section, we now turn to the statistical tools used to assess how well a given experiment can detect or constrain a dark matter signal.
-Two quantities are central to this assessment: the signal-to-noise ratio (SNR) and the $\Delta\chi^2$ test statistic.
+Given the cross-correlation \APS $C_\ell^{\gamma g}$ defined in the previous section, we now turn to the statistical tools used to assess how well a given experiment can detect or constrain a dark matter signal.
+Two quantities are central to this assessment: the \gls{SNRatio_} and the $\Delta\chi^2$ test statistic.
 
-The detectability of the cross-correlation signal from a given source population (whether astrophysical or dark matter) is quantified by the signal-to-noise ratio \cite{Fornengo:2013rga}:
+The detectability of the cross-correlation signal from a given source population (whether astrophysical or dark matter) is quantified by the \gls{SNRatio_} \cite{Fornengo:2013rga}:
 \begin{equation}
 	\mathrm{SNR} = \sqrt{\sum_{\ell,\, i} \left(\frac{C_{\ell,i}^{\gamma g}}{\Delta C_{\ell,i}^{\gamma g}}\right)^2}\,,
 	\label{eq:snr}
@@ -120,7 +120,7 @@ The variance of the cross-correlation spectrum for a fixed energy bin $i$, assum
 	(\Delta C_\ell^{\gamma g})^2 = \frac{1}{(2\ell+1)\, f_\mathrm{sky}} \left[(C_\ell^{\gamma g})^2 + \left(C_\ell^{\gamma\gamma} + \frac{C_N}{B_\ell^2}\right)(C_\ell^{gg} + C_{N_g})\right]\,,
 	\label{eq:variance_cross}
 \end{equation}
-where $f_\mathrm{sky}$ is the observed sky fraction, $C_\ell^{\gamma\gamma}$ and $C_\ell^{gg}$ are the gamma-ray and galaxy auto-correlation spectra, $C_N$ is the photon noise of the gamma-ray detector, $C_{N_g}$ is the shot noise of the galaxy catalog, and $B_\ell$ is the beam window function encoding the finite angular resolution (point-spread function) of the instrument.
+where $f_\mathrm{sky}$ is the observed sky fraction, $C_\ell^{\gamma\gamma}$ and $C_\ell^{gg}$ are the gamma-ray and galaxy auto-correlation spectra, $C_N$ is the photon noise of the gamma-ray detector, $C_{N_g}$ is the shot noise of the galaxy catalog, and $B_\ell$ is the beam window function encoding the finite angular resolution (\gls{PSF_}) of the instrument.
 No beam correction enters the galaxy term, as the angular resolution of galaxy catalogs (typically arcseconds) is negligible at the scales relevant for this analysis (Chapter~\ref{ch:8}).
 
 The structure of the variance formula reveals a fundamental advantage of cross-correlation over auto-correlation for dark matter searches.
@@ -133,7 +133,7 @@ where the photon noise $C_N$ now enters quadratically and adds directly to the s
 In an auto-correlation measurement, $C_\ell^{\gamma\gamma} + C_N$ must be measured and the noise accurately estimated and subtracted to recover the true clustering spectrum.
 In cross-correlation, by contrast, the noise sources in the gamma-ray map and in the galaxy catalog are physically independent: their cross-noise vanishes on average.
 The photon noise $C_N$ and galaxy shot noise $C_{N_g}$ therefore contribute only to the statistical uncertainty (the error bars) of the cross-correlation measurement, not to the signal itself.
-This allows faint correlated signals---such as a subdominant dark matter contribution---to be extracted even in noisy datasets where the auto-correlation would be completely dominated by instrumental noise \cite{Fornengo:2013rga,Camera:2012cj}. A quantitative comparison of auto- and cross-correlation SNR for CTAO observations is given in Table~\ref{table:SNR}.
+This allows faint correlated signals---such as a subdominant dark matter contribution---to be extracted even in noisy datasets where the auto-correlation would be completely dominated by instrumental noise \cite{Fornengo:2013rga,Camera:2012cj}. A quantitative comparison of auto- and cross-correlation \gls{SNRatio_} for \CTAO observations is given in Table~\ref{table:SNR}.
 
 To assess the sensitivity to a dark matter signal specifically, we perform a nested-model comparison in the spirit of Wilks' theorem \cite{Fornengo:2013rga}.
 The null hypothesis includes only astrophysical sources, while the alternative hypothesis adds a dark matter component for a fixed mass and parameterized by a single additional degree of freedom---the annihilation cross section $\langle \sigma v \rangle$ or, in the decay case, the lifetime $\tau_\chi$.
@@ -144,4 +144,4 @@ The test statistic is
 \end{equation}
 where $C_{\ell}^{\gamma_\mathrm{astro}\, g}$ is the predicted cross-correlation signal under the null hypothesis (astrophysical sources only) and $C_{\ell}^{\gamma_\mathrm{astro+DM}\, g}$ includes an additional dark matter component.
 The test statistic measures how much the inclusion of a dark matter signal improves the fit relative to the astrophysical-only model. In other words, we are comparing the hypothesis that the true unresolved gamma-ray emission is purely astrophysical against the alternative that it contains also a dark matter contribution.
-In Chapter~\ref{ch:8}, this formalism is applied to forecast the sensitivity of the Cherenkov Telescope Array Observatory (CTAO) to dark matter annihilation and decay, by cross-correlating the predicted gamma-ray emission with the 2MASS galaxy catalog.
+In Chapter~\ref{ch:8}, this formalism is applied to forecast the sensitivity of the \CTAO to dark matter annihilation and decay, by cross-correlating the predicted gamma-ray emission with the 2MASS galaxy catalog.
