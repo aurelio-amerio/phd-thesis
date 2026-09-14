@@ -111,7 +111,7 @@ The individual production mechanisms described in the preceding sections combine
 This emission arises from the integrated interactions of propagating cosmic rays with the interstellar gas and radiation fields of the Milky Way.
 
 To model this complex, spatially structured foreground, astrophysicists rely on numerical cosmic-ray propagation codes, of which GALPROP \cite{Strong:2007nh} and DRAGON \cite{Evoli:2016xgn} are two of the most established.
-Starting from a set of assumptions about cosmic-ray source distributions (primarily \glspl{SNR_}), injection spectra, and diffusion parameters, GALPROP solves the steady-state diffusion-loss equation for all relevant cosmic-ray species as they propagate through the Galactic magnetic field and \ISM.
+GALPROP, for example, starts from a set of assumptions about cosmic-ray source distributions (primarily \glspl{SNR_}), injection spectra, and diffusion parameters, and solves the steady-state diffusion-loss equation for all relevant cosmic-ray species as they propagate through the Galactic magnetic field and \ISM.
 The output is a set of sky maps predicting the gamma-ray intensity from each emission component: a $\pi^0$-decay map that traces the gas column density (dominated along the Galactic Plane), an inverse Compton map that traces the interstellar radiation field (producing an extended halo at high latitudes), and a bremsstrahlung map that follows the gas distribution but with a different spectral shape.
 
 The resulting spatial and spectral morphology is highly structured and energy-dependent.
@@ -143,4 +143,4 @@ Uncertainties in the gas column densities (particularly the conversion from CO e
 This component must be traced indirectly, through dust emission or through the gamma rays themselves, and its small-scale structure therefore remains poorly constrained~\cite{Fermi-LAT:2016zaq}.}
 Handling the Galactic foreground properly is a necessary condition for any analysis of the gamma-ray sky: without adequate foreground control, both spectral characterization and source detection are biased.
 This challenge recurs throughout this thesis---in the extraction of the \GCE (Chapter~\ref{ch:4}), the search for dark matter subhalos (Chapter~\ref{ch:5}), and the reconstruction of the extragalactic source-count distribution (Chapter~\ref{ch:6}).
-The probabilistic and simulation-based methods developed in later chapters are designed to operate robustly in the presence of these foreground uncertainties, rather than to eliminate them.
+The probabilistic and simulation-based methods developed in later chapters are designed to operate robustly in the presence of these foreground uncertainties, given they cannot be eliminated entirely.
