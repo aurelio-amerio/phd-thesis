@@ -30,19 +30,19 @@
 \newacro{DGRB_}{DGRB}{diffuse gamma-ray background}
 \newacro{EGB_}{EGB}{extragalactic gamma-ray background}
 \newacro{LAT_}{LAT}{Large Area Telescope}
-\newacro{SCDF_}{SCDF}{source-count distribution function}
+\newacro{SCD_}{SCD}{source-count distribution}
 \newacro[longplural={active galactic nuclei}]{AGN_}{AGN}{active galactic nucleus}
 \newacro{UV_}{UV}{ultraviolet}
 \newacro{IC_}{IC}{inverse Compton}
-\newacro[longplural={flat spectrum radio quasars}]{FSRQ_}{FSRQ}{flat spectrum radio quasar}
+\newacro[longplural={flat-spectrum radio quasars}]{FSRQ_}{FSRQ}{flat-spectrum radio quasar}
 \newacro[longplural={misaligned active galactic nuclei}]{mAGN_}{mAGN}{misaligned active galactic nucleus}
-\newacro[longplural={star forming galaxies}]{SFG_}{SFG}{star forming galaxy}
+\newacro[longplural={star-forming galaxies}]{SFG_}{SFG}{star-forming galaxy}
 \newacro[longplural={cosmic rays}]{CR_}{CR}{cosmic ray}
 \newacro{NN_}{NN}{neural network}
 \newacro{ML_}{ML}{machine learning}
 \newacro{LSP_}{LSP}{lightest supersymmetric particle}
 \newacro[longplural={weakly interacting massive particles}]{WIMP_}{WIMP}{weakly interacting massive particle}
-\newacro{PSF_}{PSF}{point spread function}
+\newacro{PSF_}{PSF}{point-spread function}
 \newacro{IRF_}{IRF}{instrument response function}
 \newacro{TPU_}{TPU}{tensor processing unit}
 \newacro{MLNN_}{MLNN}{multilayer neural network}
@@ -72,7 +72,66 @@
 \newacro{CTAO_}{CTAO}{Cherenkov Telescope Array Observatory}
 \newacro{SBI_}{SBI}{simulation-based inference}
 
+% Chapter 1 (particle candidates / indirect detection)
+\newacro{LHC_}{LHC}{Large Hadron Collider}
+\newacro{ALP_}{ALP}{axion-like particle}
+\newacro{VIB_}{VIB}{virtual internal bremsstrahlung}
+\newacro{SIDM_}{SIDM}{self-interacting dark matter}
+\newacro{ISRF_}{ISRF}{interstellar radiation field}
+\newacro{NFW_}{NFW}{Navarro-Frenk-White}
 
+% Chapter 2 (gamma-ray sky / Fermi-LAT)
+\newacro{ISM_}{ISM}{interstellar medium}
+\newacro{GDE_}{GDE}{Galactic diffuse emission}
+\newacro{MSP_}{MSP}{millisecond pulsar}
+\newacro{ACD_}{ACD}{anticoincidence detector}
+\newacro{SED_}{SED}{spectral energy distribution}
+\newacro{EDISP_}{EDISP}{energy dispersion}
+
+% Chapter 3 (statistical methods / simulation-based inference)
+\newacro{MLE_}{MLE}{maximum likelihood estimator}
+\newacro{TS_}{TS}{test statistic}
+\newacro{KS_}{KS}{Kolmogorov--Smirnov}
+\newacro{KL_}{KL}{Kullback--Leibler}
+\newacro{AIC_}{AIC}{Akaike information criterion}
+\newacro{MCMC_}{MCMC}{Markov chain Monte Carlo}
+\newacro{NPE_}{NPE}{neural posterior estimation}
+\newacro{NRE_}{NRE}{neural ratio estimation}
+\newacro{NLE_}{NLE}{neural likelihood estimation}
+\newacro{ABC_}{ABC}{approximate Bayesian computation}
+\newacro{SBC_}{SBC}{simulation-based calibration}
+\newacro{TARP_}{TARP}{tests of accuracy with random points}
+\newacro{SGD_}{SGD}{stochastic gradient descent}
+\newacro{KDE_}{KDE}{kernel density estimation}
+\newacro{APS_}{APS}{angular power spectrum}
+
+% Chapter 4 (Galactic Center excess)
+\newacro{GCE_}{GCE}{Galactic Center excess}
+\newacro{NPTF_}{NPTF}{non-Poissonian template fitting}
+\newacro[longplural={low-mass X-ray binaries}]{LMXB_}{LMXB}{low-mass X-ray binary}
+
+% Chapter 7 (probabilistic cataloging)
+\newacro{QF_}{QF}{quality factor}
+\newacro[longplural={regions of interest}]{RoI_}{RoI}{region of interest}
+
+% Chapter 8 (cross-correlations / CTAO)
+\newacro{EBL_}{EBL}{extragalactic background light}
+\newacro{IACT_}{IACT}{imaging atmospheric Cherenkov telescope}
+\newacro{LST_}{LST}{Large-Sized Telescope}
+\newacro{MST_}{MST}{Medium-Sized Telescope}
+\newacro{EGAL_}{EGAL}{Extragalactic Survey}
+\newacro{HSP_}{HSP}{high-synchrotron-peaked}
+\newacro{LISP_}{LISP}{low-to-intermediate-synchrotron-peaked}
+
+% gls-only entries: SHORT starts with a digit, so the auto-generated \SHORT
+% command is unreachable; use \gls{KEY_}
+\newacro{1pPDF_}{1pPDF}{1-point probability distribution function}
+\newacro{2MASS_}{2MASS}{Two Micron All-Sky Survey}
+\newacro{2MRS_}{2MRS}{2MASS Redshift Survey}
+
+% signal-to-noise ratio shares the visible SHORT "SNR" with SNR_ (supernova remnant);
+% raw \newacronym because a second \newacro would redefine \SNR. Use \gls{SNRatio_}.
+\newacronym{SNRatio_}{SNR}{signal-to-noise ratio}
 
 
 

@@ -49,5 +49,6 @@
     "enabled": true,
     "autoAllowBashIfSandboxed": true
   },
-  "plansDirectory": "plans"
+  "plansDirectory": "plans",
+  "outputStyle": "Concise"
 }
