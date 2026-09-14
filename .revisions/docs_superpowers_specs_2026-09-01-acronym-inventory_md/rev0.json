@@ -1,0 +1,367 @@
+[
+  {
+    "id": "5upbej7",
+    "startLine": 120,
+    "endLine": 160,
+    "textPreview": "| Acronym | Long form | Occurrences (file: count) | Registry status | Action |",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "v6y5j9d",
+        "text": "ICM is not something being used too often I think, so check if the acronym is needed",
+        "createdAt": "2026-09-09T08:26:02.162Z"
+      },
+      {
+        "id": "fap37z2",
+        "text": "SNR: not to be confused with signal to noise ratio, what shall we do?",
+        "createdAt": "2026-09-09T08:26:50.628Z"
+      },
+      {
+        "id": "srvjbfo",
+        "text": "standard model can be shortened to SM, if we want",
+        "createdAt": "2026-09-09T08:27:28.671Z"
+      },
+      {
+        "id": "r9ny2bo",
+        "text": "[AGENT] ICM: 2 uses, both in 1.1 and both already \\ICM macros \u2014 under your F2 ruling (convert even single uses) I'd keep it as-is; say the word if you'd rather spell it out and drop the entry. SNR: settled per your other comment \u2014 two entries, the ratio sense gls-only. SM: \"Standard Model\" appears ~33 times in prose (Ch1 ~32, 5.1 once); bare \"SM\" only inside math. Registering \\newacro{SM_}{SM}{Standard Model} would abbreviate all of Ch1 after first use \u2014 confirming in chat before I bake that in.",
+        "createdAt": "2026-09-09T09:45:48.343247+00:00"
+      },
+      {
+        "id": "r48mtdo",
+        "text": "[AGENT] Resolved in chat: dark matter and Standard Model both stay spelled out in full (stray bare \"DM\" tokens in 5.4/Ch8 get spelled out); ICM stays as-is (2 uses, passes the >=2-thesis-wide rule); SNR handled as two distinct entries per the other thread. All decisions recorded in the \"Author decisions\" table at the end of the document; commit amended (174b4fe).",
+        "createdAt": "2026-09-09T10:16:07.942686+00:00"
+      }
+    ]
+  },
+  {
+    "id": "18t2ld1",
+    "startLine": 627,
+    "endLine": 629,
+    "textPreview": "**Recommendation: (a) leave spelled out.** These are framing terms, not shorthand the reader needs;",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "gosj84p",
+        "text": "ok",
+        "createdAt": "2026-09-09T08:31:59.335Z"
+      },
+      {
+        "id": "cd6ofhn",
+        "text": "[AGENT] Recorded as decided (recommendation accepted): F1 leave ML/NN/LSS spelled out; F3 rename SCDF_ \u2192 SCD_; F7 ICS_ only; F8 mAGN_; F9 register NFW; F10 register 1pPDF (gls-only); F11 \"Galactic Center excess\"; F18 convert only bare \"cosmic rays\" plurals; F19 spell out CL; F20 keep \"isotropic diffuse gamma-ray background\" written full. Will be applied in phases 2-3.",
+        "createdAt": "2026-09-09T09:45:20.670874+00:00"
+      }
+    ]
+  },
+  {
+    "id": "i79cepw",
+    "startLine": 644,
+    "endLine": 646,
+    "textPreview": "**Recommendation: (a) leave literal.** A lone expansion that is never reused is pure noise; and",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "sevvfjr",
+        "text": "I think it's pedagogical to define the acronym, as people would then know how it is generally abbreviated in papers. it's not too much noise, I think",
+        "createdAt": "2026-09-09T08:32:58.036Z"
+      },
+      {
+        "id": "r4g51q9",
+        "text": "[AGENT] Decision recorded: F2 = (b) convert. A registered key converts wherever it appears, including single uses in a chapter \u2014 the per-chapter expansion is pedagogical. This flips ~20 rows previously marked leave-literal; the conversion tasks will apply it uniformly.",
+        "createdAt": "2026-09-09T09:45:23.279699+00:00"
+      }
+    ]
+  },
+  {
+    "id": "57ppazf",
+    "startLine": 654,
+    "endLine": 658,
+    "textPreview": "**Options.** (a) **Rename** the dead `SCDF_` to `\\newacro{SCD_}{SCD}{source-count distribution}`;",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "yqtdz4g",
+        "text": "ok",
+        "createdAt": "2026-09-09T08:33:11.541Z"
+      },
+      {
+        "id": "yz1md1s",
+        "text": "go for a",
+        "createdAt": "2026-09-09T08:33:20.819Z"
+      },
+      {
+        "id": "5rm3ihm",
+        "text": "[AGENT] Recorded as decided (recommendation accepted): F1 leave ML/NN/LSS spelled out; F3 rename SCDF_ \u2192 SCD_; F7 ICS_ only; F8 mAGN_; F9 register NFW; F10 register 1pPDF (gls-only); F11 \"Galactic Center excess\"; F18 convert only bare \"cosmic rays\" plurals; F19 spell out CL; F20 keep \"isotropic diffuse gamma-ray background\" written full. Will be applied in phases 2-3.",
+        "createdAt": "2026-09-09T09:45:20.671328+00:00"
+      }
+    ]
+  },
+  {
+    "id": "k4udmg2",
+    "startLine": 672,
+    "endLine": 675,
+    "textPreview": "**Recommendation: leave literal (house style).** Optional follow-up, not part of this pass: the",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "x0d1ci1",
+        "text": "I would use DM to be consistent everywhere",
+        "createdAt": "2026-09-09T08:34:17.535Z"
+      },
+      {
+        "id": "4bzuov7",
+        "text": "[AGENT] Need scope: does \"use DM everywhere\" mean (a) macro-ize it \u2014 every running-prose \"dark matter\" becomes \\DM, rendering \"dark matter (DM)\" once per chapter and \"DM\" everywhere after (hundreds of sites, changes the thesis voice) \u2014 or (b) only normalize the ~10 already-bare \"DM\" tokens in 5.4/Ch8, leaving the spelled-out phrase alone? Asking in chat.",
+        "createdAt": "2026-09-09T09:45:44.458254+00:00"
+      },
+      {
+        "id": "fhy5e5h",
+        "text": "[AGENT] Resolved in chat: dark matter and Standard Model both stay spelled out in full (stray bare \"DM\" tokens in 5.4/Ch8 get spelled out); ICM stays as-is (2 uses, passes the >=2-thesis-wide rule); SNR handled as two distinct entries per the other thread. All decisions recorded in the \"Author decisions\" table at the end of the document; commit amended (174b4fe).",
+        "createdAt": "2026-09-09T10:16:07.942726+00:00"
+      }
+    ]
+  },
+  {
+    "id": "x289usc",
+    "startLine": 690,
+    "endLine": 691,
+    "textPreview": "**Recommendation: (a).** Ch2 is the instrument chapter and earns the abbreviation 14 times; the",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "vxgpmqo",
+        "text": "I would use Fermi-LAT, not just LAT, as that's how people refer to the experiment, for consistency",
+        "createdAt": "2026-09-09T08:35:05.120Z"
+      },
+      {
+        "id": "l5n9vox",
+        "text": "[AGENT] Decision recorded: F5 = standalone \"LAT\" is rewritten as \"Fermi-LAT\" (matching the surrounding file's existing form, e.g. the \\fermi macro), NOT converted to \\gls{LAT_}. LAT_ stays registered but unused. Applies to the 14 Ch2 sites and the 3 isolated ones (5.3 x2, 8.3 x1).",
+        "createdAt": "2026-09-09T09:45:28.925463+00:00"
+      }
+    ]
+  },
+  {
+    "id": "4f5uq6b",
+    "startLine": 702,
+    "endLine": 704,
+    "textPreview": "**Recommendation: (a).** Two entries rendering the same three letters with different meanings is",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "ns7wolr",
+        "text": "I think we can have two SNR acronyms, as long as they appear distinct in the acronym table, they are bery common, and it's hard to confuse supernovas and signal to noise ratio",
+        "createdAt": "2026-09-09T08:36:26.248Z"
+      },
+      {
+        "id": "plozgdr",
+        "text": "[AGENT] Decision recorded: F6 = two SNR entries, distinct in the List of Acronyms. Technical note: the second entry must be defined with raw \\newacronym (e.g. \\newacronym{SNRatio_}{SNR}{signal-to-noise ratio}) and used as \\gls{SNRatio_} only \u2014 a second \\newacro would try to redefine the \\SNR command and break the build. Ch3/Ch8 signal-to-noise sites get \\gls{SNRatio_}; supernova-remnant sites keep SNR_.",
+        "createdAt": "2026-09-09T09:45:31.780202+00:00"
+      }
+    ]
+  },
+  {
+    "id": "3o3stbi",
+    "startLine": 717,
+    "endLine": 718,
+    "textPreview": "**Recommendation: (a).** No prose change, no visible pair of near-identical acronyms, and the",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "3pkp7e5",
+        "text": "agree",
+        "createdAt": "2026-09-09T08:36:38.873Z"
+      },
+      {
+        "id": "sqo3lrz",
+        "text": "[AGENT] Recorded as decided (recommendation accepted): F1 leave ML/NN/LSS spelled out; F3 rename SCDF_ \u2192 SCD_; F7 ICS_ only; F8 mAGN_; F9 register NFW; F10 register 1pPDF (gls-only); F11 \"Galactic Center excess\"; F18 convert only bare \"cosmic rays\" plurals; F19 spell out CL; F20 keep \"isotropic diffuse gamma-ray background\" written full. Will be applied in phases 2-3.",
+        "createdAt": "2026-09-09T09:45:20.671336+00:00"
+      }
+    ]
+  },
+  {
+    "id": "jkk77ja",
+    "startLine": 731,
+    "endLine": 733,
+    "textPreview": "**Recommendation: (a) `mAGN_`.** That is exactly what the entry was created for, its registered",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "ibm9soy",
+        "text": "agree",
+        "createdAt": "2026-09-09T08:36:53.677Z"
+      },
+      {
+        "id": "k6xlc30",
+        "text": "[AGENT] Recorded as decided (recommendation accepted): F1 leave ML/NN/LSS spelled out; F3 rename SCDF_ \u2192 SCD_; F7 ICS_ only; F8 mAGN_; F9 register NFW; F10 register 1pPDF (gls-only); F11 \"Galactic Center excess\"; F18 convert only bare \"cosmic rays\" plurals; F19 spell out CL; F20 keep \"isotropic diffuse gamma-ray background\" written full. Will be applied in phases 2-3.",
+        "createdAt": "2026-09-09T09:45:20.671340+00:00"
+      }
+    ]
+  },
+  {
+    "id": "ap5x58q",
+    "startLine": 744,
+    "endLine": 746,
+    "textPreview": "**Recommendation: (a) register.** The registry already carries the exact same shape of entry \u2014",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "pzxba5l",
+        "text": "agree, NFW is common enough to warrant the acronym entry",
+        "createdAt": "2026-09-09T08:37:16.218Z"
+      },
+      {
+        "id": "2lu0aoe",
+        "text": "[AGENT] Recorded as decided (recommendation accepted): F1 leave ML/NN/LSS spelled out; F3 rename SCDF_ \u2192 SCD_; F7 ICS_ only; F8 mAGN_; F9 register NFW; F10 register 1pPDF (gls-only); F11 \"Galactic Center excess\"; F18 convert only bare \"cosmic rays\" plurals; F19 spell out CL; F20 keep \"isotropic diffuse gamma-ray background\" written full. Will be applied in phases 2-3.",
+        "createdAt": "2026-09-09T09:45:20.671344+00:00"
+      }
+    ]
+  },
+  {
+    "id": "mbi6ai8",
+    "startLine": 757,
+    "endLine": 761,
+    "textPreview": "**Recommendation: (a) register, `\\gls{}`-only.** 20 uses across two chapters is the one digit-SHORT",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "3u4wh7o",
+        "text": "agree",
+        "createdAt": "2026-09-09T08:37:36.158Z"
+      },
+      {
+        "id": "wf9myht",
+        "text": "[AGENT] Recorded as decided (recommendation accepted): F1 leave ML/NN/LSS spelled out; F3 rename SCDF_ \u2192 SCD_; F7 ICS_ only; F8 mAGN_; F9 register NFW; F10 register 1pPDF (gls-only); F11 \"Galactic Center excess\"; F18 convert only bare \"cosmic rays\" plurals; F19 spell out CL; F20 keep \"isotropic diffuse gamma-ray background\" written full. Will be applied in phases 2-3.",
+        "createdAt": "2026-09-09T09:45:20.671348+00:00"
+      }
+    ]
+  },
+  {
+    "id": "tg6a2r3",
+    "startLine": 768,
+    "endLine": 770,
+    "textPreview": "**Recommendation: \"Galactic Center excess\".** `acronyms.tex`'s own header rule \u2014 lowercase except",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "oy05n07",
+        "text": "ok",
+        "createdAt": "2026-09-09T08:37:53.818Z"
+      },
+      {
+        "id": "zhh37dp",
+        "text": "[AGENT] Recorded as decided (recommendation accepted): F1 leave ML/NN/LSS spelled out; F3 rename SCDF_ \u2192 SCD_; F7 ICS_ only; F8 mAGN_; F9 register NFW; F10 register 1pPDF (gls-only); F11 \"Galactic Center excess\"; F18 convert only bare \"cosmic rays\" plurals; F19 spell out CL; F20 keep \"isotropic diffuse gamma-ray background\" written full. Will be applied in phases 2-3.",
+        "createdAt": "2026-09-09T09:45:20.671351+00:00"
+      }
+    ]
+  },
+  {
+    "id": "cawcwja",
+    "startLine": 781,
+    "endLine": 782,
+    "textPreview": "**Recommendation: (a) leave spelled out.** Two definitions and zero reuses is a term the reader",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "dknijri",
+        "text": "HSP and LISP are used also as labels, better to define the acronym",
+        "createdAt": "2026-09-09T08:38:29.145Z"
+      },
+      {
+        "id": "momw2y1",
+        "text": "[AGENT] Decision recorded: F12 = register HSP and LISP (they recur as source-class labels). New entries \\newacro{HSP_}{HSP}{high-synchrotron-peaked blazar} and \\newacro{LISP_}{LISP}{low- and intermediate-synchrotron-peaked blazar} (exact long forms taken from the prose at conversion time); the duplicate definitional intro at 8.3:30 is stripped as part of the conversion.",
+        "createdAt": "2026-09-09T09:45:37.254994+00:00"
+      }
+    ]
+  },
+  {
+    "id": "6j5qv1r",
+    "startLine": 793,
+    "endLine": 795,
+    "textPreview": "**Recommendation: (a) leave literal.** These are survey proper names, and the thesis already treats",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "z7uk9dq",
+        "text": "agree, write it once, use the acronym (the name of the catalog 2MRS for example) all the other times. it's also used in the labels of the plots",
+        "createdAt": "2026-09-09T09:41:11.529Z"
+      },
+      {
+        "id": "scbji4p",
+        "text": "[AGENT] Decision recorded: F13 = register 2MASS and 2MRS as \\gls{}-only entries (digit-leading, no \\SHORT command possible): spelled out once at first use per chapter, short form thereafter. The duplicate spell-out at 8.2:82 is stripped. Plot labels are untouched (figures are out of scope).",
+        "createdAt": "2026-09-09T09:45:39.338223+00:00"
+      }
+    ]
+  },
+  {
+    "id": "801s4l5",
+    "startLine": 871,
+    "endLine": 872,
+    "textPreview": "**Recommendation: (b).** The bare plurals convert cleanly; the compounds do not, and forcing them",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "ifmhvv6",
+        "text": "agree",
+        "createdAt": "2026-09-09T09:42:18.141Z"
+      },
+      {
+        "id": "37ho1kf",
+        "text": "[AGENT] Recorded as decided (recommendation accepted): F1 leave ML/NN/LSS spelled out; F3 rename SCDF_ \u2192 SCD_; F7 ICS_ only; F8 mAGN_; F9 register NFW; F10 register 1pPDF (gls-only); F11 \"Galactic Center excess\"; F18 convert only bare \"cosmic rays\" plurals; F19 spell out CL; F20 keep \"isotropic diffuse gamma-ray background\" written full. Will be applied in phases 2-3.",
+        "createdAt": "2026-09-09T09:45:20.671355+00:00"
+      }
+    ]
+  },
+  {
+    "id": "8cm78eg",
+    "startLine": 876,
+    "endLine": 879,
+    "textPreview": "`3.1:120` writes \"95\\% CL upper bounds\"; the long form is never spelled out anywhere in the thesis",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "dge9frk",
+        "text": "agree",
+        "createdAt": "2026-09-09T09:42:24.449Z"
+      },
+      {
+        "id": "y3f0lu1",
+        "text": "[AGENT] Recorded as decided (recommendation accepted): F1 leave ML/NN/LSS spelled out; F3 rename SCDF_ \u2192 SCD_; F7 ICS_ only; F8 mAGN_; F9 register NFW; F10 register 1pPDF (gls-only); F11 \"Galactic Center excess\"; F18 convert only bare \"cosmic rays\" plurals; F19 spell out CL; F20 keep \"isotropic diffuse gamma-ray background\" written full. Will be applied in phases 2-3.",
+        "createdAt": "2026-09-09T09:45:20.671358+00:00"
+      }
+    ]
+  },
+  {
+    "id": "yqu6gyq",
+    "startLine": 883,
+    "endLine": 887,
+    "textPreview": "This phrase matches no registry long form: not `DGRB_` (\"diffuse gamma-ray background\"), not",
+    "priority": "none",
+    "status": "resolved",
+    "thread": [
+      {
+        "id": "cnt1wum",
+        "text": "keep it written full, it's fine",
+        "createdAt": "2026-09-09T09:42:54.441Z"
+      },
+      {
+        "id": "q3uz32g",
+        "text": "[AGENT] Recorded as decided (recommendation accepted): F1 leave ML/NN/LSS spelled out; F3 rename SCDF_ \u2192 SCD_; F7 ICS_ only; F8 mAGN_; F9 register NFW; F10 register 1pPDF (gls-only); F11 \"Galactic Center excess\"; F18 convert only bare \"cosmic rays\" plurals; F19 spell out CL; F20 keep \"isotropic diffuse gamma-ray background\" written full. Will be applied in phases 2-3.",
+        "createdAt": "2026-09-09T09:45:20.671362+00:00"
+      }
+    ]
+  }
+]
