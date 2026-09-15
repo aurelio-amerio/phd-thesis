@@ -105,7 +105,7 @@ For each pixel of the disc, we compare the photon counts $k_{ij}$ with the estim
 \end{equation}
 Specifically, for a source $i$ and pixels $j$:
 \begin{equation}
-    \lambda_{S_i, e,j} = \left[\int_{E_{min}^e}^{E_{max}^e} \phi_{0,i}\frac{E}{E_0}^{-\alpha_i - \beta_i\log(E/E_0)} dE\right] \cdot {\rm PSF_{i,j}^e} \cdot {\rm exposure_{j}^e} \cdot \frac{4\pi}{12 N_{\rm side}^2}.
+    \lambda_{S_i, e,j} = \left[\int_{E_{min}^e}^{E_{max}^e} \phi_{0,i}\left(\frac{E}{E_0}\right)^{-\alpha_i - \beta_i\log(E/E_0)} dE\right] \cdot {\rm PSF_{i,j}^e} \cdot {\rm exposure_{j}^e} \cdot \frac{4\pi}{12 N_{\rm side}^2}.
     \label{eq:lambda}
 \end{equation}
 We repeat the fitting procedure for each DM source, at a fixed total flux, and we build the DM distribution $p_{DM}(\alpha, \beta|\phi)\equiv p_{DM}^{KDE}(\alpha, \beta|\phi)$ through the KDE.
