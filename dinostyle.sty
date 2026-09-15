@@ -64,7 +64,7 @@
 \RequirePackage{longtable,rotating}
 \RequirePackage[dvipsnames]{xcolor}      % extend color (dvipsnames for papers)
 \RequirePackage{tikz}                   % also loads pgf; used by \pgftextcircled
-\usetikzlibrary{arrows,shapes,automata,backgrounds,petri,topaths}
+\usetikzlibrary{arrows,shapes,automata,backgrounds,petri,topaths,calc}
 
 % ============================================================
 % 5. CAPTIONS & SUBCAPTIONS
@@ -289,6 +289,109 @@
 \makeatother
 
 % ============================================================
+% 14a. CHAPTER THUMB INDICES (staircase tabs on the outer page edge)
+% ============================================================
+% Coloured tabs carrying the chapter number, printed in the fore-edge margin
+% and stepped down the page with the chapter number, so that the closed,
+% printed thesis shows a staircase of chapter markers on its outer edge.
+%
+% Controls:
+%   \thumbtrue / \thumbfalse    switch the tabs on/off (e.g. off for the
+%                               bibliography and glossary, which are \chapter*)
+%   \thumbslots                 number of steps in the staircase (default 9:
+%                               chapters 1-8 plus the conclusion)
+%   thumbslot counter           slot override for starred chapters (0 = follow
+%                               the chapter counter)
+%   \thumblabel                 text override (empty = print the slot number)
+%   thumbcolor / thumbtextcolor tab fill and text colours
+%   \thumbheight \thumbwidth \thumbedge \thumbtopskip   tab geometry
+
+\makeatletter
+\newif\ifthumb
+\thumbtrue
+
+\newcommand*{\thumbslots}{8}
+
+\newcounter{thumbslot}
+\setcounter{thumbslot}{0}
+\newcommand*{\thumblabel}{}
+
+\definecolor{thumbcolor}{gray}{0.45}
+\colorlet{thumbtextcolor}{white}
+
+\newlength{\thumbheight}  \setlength{\thumbheight}{24pt}
+\newlength{\thumbwidth}   \setlength{\thumbwidth}{34pt}
+\newlength{\thumbedge}    \setlength{\thumbedge}{4pt}
+% Overhang past the trimmed page edge, so only the inner corners look rounded.
+% Raise this (e.g. to 5mm) if the printer wants bleed beyond the trim marks.
+\newlength{\thumbbleed}   \setlength{\thumbbleed}{\thumbedge}
+% Distance from the top of the page to the top of the first tab; defaults to
+% the top of the typeblock and is fixed once the layout is final.
+\newlength{\thumbtopskip}
+\AtBeginDocument{%
+  \setlength{\thumbtopskip}{\uppermargin}%
+  \addtolength{\thumbtopskip}{\headheight}%
+  \addtolength{\thumbtopskip}{\headsep}}
+
+\newcounter{thumb@n}
+\newlength{\thumb@step}
+\newlength{\thumb@ya}   % page top -> tab top
+\newlength{\thumb@yb}   % page top -> tab bottom
+\newlength{\thumb@yc}   % page top -> tab centre
+
+% Resolve the slot number and the vertical offsets for the current page.
+\newcommand*{\thumb@setup}{%
+  \setcounter{thumb@n}{\value{chapter}}%
+  \ifnum\value{thumbslot}>0\relax\setcounter{thumb@n}{\value{thumbslot}}\fi
+  \setlength{\thumb@step}{\textheight}%
+  \addtolength{\thumb@step}{-\thumbheight}%
+  \setlength{\thumb@step}{\dimexpr\thumb@step/\numexpr\thumbslots-1\relax\relax}%
+  \setlength{\thumb@ya}{\thumbtopskip}%
+  \addtolength{\thumb@ya}{\the\numexpr\value{thumb@n}-1\relax\thumb@step}%
+  \setlength{\thumb@yb}{\thumb@ya}\addtolength{\thumb@yb}{\thumbheight}%
+  \setlength{\thumb@yc}{\thumb@ya}\addtolength{\thumb@yc}{0.5\thumbheight}}
+
+\newcommand*{\thumb@text}{%
+  \sffamily\bfseries\color{thumbtextcolor}%
+  \fontsize{0.62\thumbheight}{0.62\thumbheight}\selectfont
+  \ifx\thumblabel\@empty\arabic{thumb@n}\else\thumblabel\fi}
+
+% Tab on the fore edge of a verso (even, left-hand) page.
+\newcommand*{\thumbleft}{%
+  \ifthumb
+    \thumb@setup
+    \ifnum\value{thumb@n}>0\relax
+      \begin{tikzpicture}[remember picture,overlay]
+        \fill[fill=thumbcolor,rounded corners=\thumbedge]
+          ($(current page.north west)-(\thumbbleed,\thumb@ya)$)
+          rectangle
+          ($(current page.north west)+(\thumbwidth,-\thumb@yb)$);
+        \node[anchor=center,inner sep=0pt]
+          at ($(current page.north west)+(0.5\thumbwidth,-\thumb@yc)$)
+          {\thumb@text};
+      \end{tikzpicture}%
+    \fi
+  \fi}
+
+% Tab on the fore edge of a recto (odd, right-hand) page.
+\newcommand*{\thumbright}{%
+  \ifthumb
+    \thumb@setup
+    \ifnum\value{thumb@n}>0\relax
+      \begin{tikzpicture}[remember picture,overlay]
+        \fill[fill=thumbcolor,rounded corners=\thumbedge]
+          ($(current page.north east)+(\thumbbleed,-\thumb@ya)$)
+          rectangle
+          ($(current page.north east)-(\thumbwidth,\thumb@yb)$);
+        \node[anchor=center,inner sep=0pt]
+          at ($(current page.north east)-(0.5\thumbwidth,\thumb@yc)$)
+          {\thumb@text};
+      \end{tikzpicture}%
+    \fi
+  \fi}
+\makeatother
+
+% ============================================================
 % 14. PAGE STYLE
 % ============================================================
 \makepagestyle{myvf}
@@ -298,8 +401,18 @@
 \makeoddfoot{myvf}{}{\thepage}{}
 \makeevenfoot{myvf}{}{\thepage}{}
 \makeheadrule{myvf}{\textwidth}{\normalrulethickness}
-\makeevenhead{myvf}{\small\textsc{\leftmark}}{}{}
-\makeoddhead{myvf}{}{}{\small\textsc{\rightmark}}
+\makeevenhead{myvf}{\thumbleft\small\textsc{\leftmark}}{}{}
+\makeoddhead{myvf}{}{}{\small\textsc{\rightmark}\thumbright}
+% Chapter-opening pages use memoir's `chapter' style, aliased to `plain' by
+% default. Give them their own style so the tab continues onto them, while
+% `plain' (used by \part) and `empty' (blank versos) stay tab-free.
+\makepagestyle{thumbplain}
+\makeoddfoot{thumbplain}{}{\thepage}{}
+\makeevenfoot{thumbplain}{}{\thepage}{}
+\makeoddhead{thumbplain}{}{}{\thumbright}
+\makeevenhead{thumbplain}{\thumbleft}{}{}
+\aliaspagestyle{chapter}{thumbplain}
+
 \pagestyle{myvf}
 
 % Utility: fills blank pages to next odd-numbered page
